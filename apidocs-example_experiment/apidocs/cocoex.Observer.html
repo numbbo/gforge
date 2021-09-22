@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocoex.Observer : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="apidocs.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">
+            cocoex API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocoex.Observer(<span title="interface.Observer">_Observer</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocoex.html" data-type="Package" class="code">cocoex</a></code>
+          
+          <a href="classIndex.html#cocoex.Observer">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Observer which can be "attached to" one or several problems, however not
+necessarily at the same time.</p>
+<p>The typical observer records data to be used in the COCO post-processing
+module <code>cocopp</code> afterwards.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>assert <span class="py-builtin">len</span>(suite) == 2160
+<span class="py-prompt">&gt;&gt;&gt; </span>f = suite.get_problem(33)
+<span class="py-prompt">&gt;&gt;&gt; </span>assert f.id.endswith(<span class="py-string">'f003_i04_d02'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>observer = ex.Observer(<span class="py-string">"bbob"</span>,
+<span class="py-more">... </span>                       <span class="py-string">"result_folder: doctest"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>f.observe_with(observer)  <span class="py-comment"># the same as observer.observe(f)  # doctest: +ELLIPSIS</span>
+<span class="py-output">&lt;cocoex...</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># work work work with observed f</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>f.free()</pre>
+<div class="rst-section" id="rst-details">
+<h1 class="heading">Details</h1>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">f.free()</tt> in the above example must be called before to observe
+another problem with the "bbob" observer. Otherwise the Python
+interpreter will crash due to an error raised from the C code.</li>
+<li>Due to technical sublties between Python/Cython/C, the pointer to the
+underlying C observer is passed by global assignment with
+<code>_update_current_observer_global()</code></li>
+</ul>
+</blockquote>
+</div><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id5">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.Observer.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span><tt class="rst-docutils literal">options</tt> can be a string or a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.Observer.html#observe" data-type="Method" class="code">observe</a></td>
+    <td><span><code>observe(problem)</code> let <code>self</code> observe the <code>problem: Problem</code> by calling <code>problem.observe_with(self)</code>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.Observer.html#name" data-type="Method" class="code">name</a></td>
+    <td><span>name of the observer as used with <code>Observer(name, ...)</code> to instantiate <code>self</code> before</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.Observer.html#options" data-type="Method" class="code">options</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.Observer.html#state" data-type="Method" class="code">state</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.Observer.html#result_folder" data-type="Method" class="code">result_folder</a></td>
+    <td><span>name of the output folder.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocoex.Observer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, name, options):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><tt class="rst-docutils literal">options</tt> can be a string or a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.Observer.observe">
+    
+  </a>
+  <a name="observe">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    observe(self, problem):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><code>observe(problem)</code> let <code>self</code> observe the <code>problem: Problem</code> by
+calling <code>problem.observe_with(self)</code>.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.Observer.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    name(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>name of the observer as used with <code>Observer(name, ...)</code> to instantiate
+<code>self</code> before<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.Observer.options">
+    
+  </a>
+  <a name="options">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    options(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.Observer.state">
+    
+  </a>
+  <a name="state">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    state(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.Observer.result_folder">
+    
+  </a>
+  <a name="result_folder">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    result_folder(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>name of the output folder.</p>
+<p>This name may not be the same as input option <a href="cocoex.Observer.html#result_folder"><code>result_folder</code></a>.</p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocoex, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2020-01-21 16:34:47.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

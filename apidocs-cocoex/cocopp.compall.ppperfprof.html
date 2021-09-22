@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.compall.ppperfprof : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.compall.ppperfprof</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.compall.html" data-type="Package" class="code">compall</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>For generating performance profiles. This module is not in use (anymore or not yet?).
+
+**Example**
+
+.. plot::
+   :width: 75%
+
+   import urllib
+   import tarfile
+   import glob
+   from pylab import *
+   import pickle
+   import cocopp
+   import cocopp.compall.ppperfprof
+   import cocopp.bestalg
+
+   # Collect and unarchive data
+   dsets = {}
+   for alg in cocopp.compall.ppperfprof.best:
+       for date in ('2010', '2009'):
+           try:
+               dataurl = 'http://coco.lri.fr/BBOB'+date+'/pythondata/' + alg + '.tar.gz'
+               filename, headers = urllib.urlretrieve(dataurl)
+               archivefile = tarfile.open(filename)
+               archivefile.extractall()  # write to disc
+               dsets[alg] = cocopp.load(glob.glob('BBOB'+date+'pythondata/' + alg + '/ppdata_f0*_20.pickle'))
+           except:
+               pass
+
+   # plot the profiles
+   figure()
+   # cocopp.compall.ppperfprof.plotmultiple(dsets, dsref=cocopp.bestalg.bestAlgorithmEntries)</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id42">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppperfprof.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Customize figure presentation.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppperfprof.html#plotmultiple" data-type="Function" class="code">plotmultiple</a></td>
+    <td><span>Generate performance profile figure.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppperfprof.html#plot" data-type="Function" class="code">plot</a></td>
+    <td><span>Generates a graph showing the performance profile of an algorithm.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppperfprof.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Generates image files of the performance profiles of algorithms</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.compall.ppperfprof.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Customize figure presentation.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppperfprof.plotmultiple">
+    
+  </a>
+  <a name="plotmultiple">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotmultiple(dictAlg, dsref=None, order=None, targets=defaulttargets, istoolsstats=False, rhleg=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generate performance profile figure.
+
+:param dict dictAlg: dictionary of :py:class:`DataSetList` instances
+                     one instance = one algorithm
+:param DataSetList dsref: reference data set
+:param seq targets: target function values
+:param bool istoolsstats: if True, uses bootstrapped distribution
+:param bool rhleg: if True, displays the right-hand legend</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppperfprof.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot(dsList, dsref, targets=defaulttargets, istoolsstats=False, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generates a graph showing the performance profile of an algorithm.
+
+We display the empirical cumulative distribution function ECDF of
+the bootstrapped distribution of the average running time (aRT)
+for an algorithm to reach the function value :py:data:`targets`
+normalized by the aRT of the reference algorithm for these
+targets.
+
+:param DataSetList dsList: data set for one algorithm
+:param DataSetList dsref: reference data set for normalization
+:param seq targets: target function values
+:param dict kwargs: additional parameters provided to plot function.
+
+:returns: handles</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppperfprof.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dictAlg, dsref=None, order=None, targets=defaulttargets, outputdir='', info='default', verbose=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generates image files of the performance profiles of algorithms
+
+From a dictionary of :py:class:`DataSetList` sorted by algorithms,
+generates the performance profile (Moré:2008) on multiple functions
+for multiple targets altogether.
+
+:param dict dictAlg: dictionary of :py:class:`DataSetList` instances, one
+                     dataSetList
+
+:param list targets: target function values
+:param list order: sorted list of keys to dictAlg for plotting order</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

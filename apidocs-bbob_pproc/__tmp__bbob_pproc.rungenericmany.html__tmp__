@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.rungenericmany : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.rungenericmany</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Process data to be included in a generic template.</p>
+<dl class="rst-docutils">
+<dt>Synopsis:</dt>
+<dd><tt class="rst-docutils literal">python path_to_folder/bbob_pproc/rungenericmany.py [OPTIONS] FOLDER</tt></dd>
+<dt>Help:</dt>
+<dd><tt class="rst-docutils literal">python path_to_folder/bbob_pproc/rungenericmany.py <span class="pre">-h</span></tt></dd>
+</dl><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id100">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.rungenericmany.html#usage" data-type="Function" class="code">usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.rungenericmany.html#grouped_ecdf_graphs" data-type="Function" class="code">grouped_ecdf_graphs</a></td>
+    <td><span>Generates ecdf graphs, aggregated over groups as indicated via algdict</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.rungenericmany.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Main routine for post-processing the data of multiple algorithms.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.rungenericmany.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    usage():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.rungenericmany.grouped_ecdf_graphs">
+    
+  </a>
+  <a name="grouped_ecdf_graphs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    grouped_ecdf_graphs(alg_dict, order, output_dir, function_groups):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates ecdf graphs, aggregated over groups as
+indicated via algdict<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.rungenericmany.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Main routine for post-processing the data of multiple algorithms.
+
+Provided with some data, this routine outputs figure and TeX files
+in a folder needed for the compilation of the provided LaTeX templates
+for comparing multiple algorithms (``*many.tex`` or ``*3*.tex``).
+The used template file needs to be edited so that the commands
+``\bbobdatapath`` points to the output folder created by this routine.
+
+These output files will contain performance tables, performance
+scaling figures and empirical cumulative distribution figures. On
+subsequent executions, new files will be added to the output folder,
+overwriting existing older files in the process.
+
+Keyword arguments:
+
+*argv* -- list of strings containing options and arguments. If not
+provided, sys.argv is accessed.
+
+*argv* must list folders containing BBOB data files.
+The name of these folders will be used in the output figures and
+tables to designate the algorithms. Therefore you should name the
+folders with differentiating names.
+
+Furthermore, argv can begin with facultative option flags listed
+below.
+
+    -h, --help
+        displays this message.
+    -v, --verbose
+        verbose mode, prints out operations, warnings.
+    -o OUTPUTDIR, --output-dir=OUTPUTDIR
+        changes the default output directory (:file:`ppdatamany`) to
+        :file:`OUTPUTDIR`.
+    --noise-free, --noisy
+        processes only part of the data.
+    --settings=SETTINGS
+        changes the style of the output figures and tables. At the
+        moment, the only differences are in the colors of the
+        output figures. SETTINGS can be either "grayscale", "color"
+        or "black-white". The default setting is "color".
+    --tab-only, --rld-only, --fig-only
+        these options can be used to output respectively the
+        comparison TeX tables, the run lengths distributions or the
+        figures of aRT/dim vs dim only. A combination of any two or
+        more of these options results in no output.
+    --conv
+        if this option is chosen, additionally convergence
+        plots for each function and algorithm are generated.
+    --no-rld-single-fcts
+        do not generate runlength distribution figures for each
+        single function.
+    --expensive
+        runlength-based f-target values and fixed display limits,
+        useful with comparatively small budgets.
+    --no-svg
+        do not generate the svg figures which are used in html files
+    -
+
+Exceptions raised:
+
+*Usage* -- Gives back a usage message.
+
+Examples:
+
+* Calling the rungenericmany.py interface from the command line::
+
+    $ python bbob_pproc/rungenericmany.py -v AMALGAM BFGS BIPOP-CMA-ES
+
+
+* Loading this package and calling the main from the command line
+  (requires that the path to this package is in python search path)::
+
+    $ python -m bbob_pproc.rungenericmany -h
+
+  This will print out this help message.
+
+* From the python interpreter (requires that the path to this
+  package is in python search path)::
+
+    &gt;&gt; import bbob_pproc as bb
+    &gt;&gt; bb.rungenericmany.main('-o outputfolder folder1 folder2'.split())
+
+  This will execute the post-processing on the data found in
+  :file:`folder1` and :file:`folder2`.
+  The ``-o`` option changes the output folder from the default to
+  :file:`outputfolder`.
+
+* Generate post-processing data for some algorithms with figures in
+  shades of gray::
+
+    $ python rungenericmany.py --settings grayscale NEWUOA NELDER LSSTEP</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.pptex : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.pptex</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Routines for writing TeX for tables.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id62">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.pptex.Error.html" data-type="Class" class="code">Error</a></td>
+    <td><span>Base class for errors.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.pptex.WrongInputSizeError.html" data-type="Class" class="code">WrongInputSizeError</a></td>
+    <td><span>Error if an array has the wrong size for the following operation.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#color_to_latex" data-type="Function" class="code">color_to_latex</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#marker_to_latex" data-type="Function" class="code">marker_to_latex</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#marker_to_html" data-type="Function" class="code">marker_to_html</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#numtotext" data-type="Function" class="code">numtotext</a></td>
+    <td><span>Returns a text from a positive integer.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#writeLabels" data-type="Function" class="code">writeLabels</a></td>
+    <td><span>Format text to be output by LaTeX.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#writeFEvals" data-type="Function" class="code">writeFEvals</a></td>
+    <td><span>Returns string representation of a number of function evaluations.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#writeFEvals2" data-type="Function" class="code">writeFEvals2</a></td>
+    <td><span>Returns string representation of a number of function evaluations.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#writeFEvalsMaxSymbols" data-type="Function" class="code">writeFEvalsMaxSymbols</a></td>
+    <td><span>Return the smallest string representation of a number.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#writeFEvalsMaxPrec" data-type="Function" class="code">writeFEvalsMaxPrec</a></td>
+    <td><span>Return a string representation of a number.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#tableLaTeX" data-type="Function" class="code">tableLaTeX</a></td>
+    <td><span>Generates a tabular from a sequence of sequence of strings.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#tableXLaTeX" data-type="Function" class="code">tableXLaTeX</a></td>
+    <td><span>Generates a tabular from a sequence of sequence of strings.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pptex.html#tableLaTeXStar" data-type="Function" class="code">tableLaTeXStar</a></td>
+    <td><span>Generates a tabular* from a sequence of sequence of strings</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.pptex.DataTable.html" data-type="Class" class="code">DataTable</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.pptex.color_to_latex">
+    
+  </a>
+  <a name="color_to_latex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    color_to_latex(color):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.marker_to_latex">
+    
+  </a>
+  <a name="marker_to_latex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    marker_to_latex(marker):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.marker_to_html">
+    
+  </a>
+  <a name="marker_to_html">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    marker_to_html(marker):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.numtotext">
+    
+  </a>
+  <a name="numtotext">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    numtotext(n):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a text from a positive integer.</p>
+<p>Is to be used for generating command names: they cannot include number
+characters.</p>
+<p>WARNING: n should not be larger than (53*52)-1 = 2755 for the moment</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.writeLabels">
+    
+  </a>
+  <a name="writeLabels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeLabels(label):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Format text to be output by LaTeX.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.writeFEvals">
+    
+  </a>
+  <a name="writeFEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeFEvals(fevals, precision='.2'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns string representation of a number of function evaluations.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.writeFEvals2">
+    
+  </a>
+  <a name="writeFEvals2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeFEvals2(fevals, precision=2, maxdigits=None, isscientific=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns string representation of a number of function evaluations.</p>
+<p>This method is supposed to be used for filling up a LaTeX tabular.</p>
+<p>To address the eventual need to keep their string representation
+short, the method here proposes the shortest representation between
+the full representation and a modified scientific representation.</p>
+<p>Examples:</p>
+<table class="rst-docutils" border="1">
+<colgroup>
+<col width="17%" />
+<col width="25%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="rst-head">Number</th>
+<th class="rst-head">Precision</th>
+<th class="rst-head">Output Representation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>102345</td>
+<td>2 digits</td>
+<td>1.0e5</td>
+</tr>
+</tbody>
+</table><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">float fevals</td><td></td></tr><tr><td></td><td class="fieldArg">int precision</td><td>number of significant digits</td></tr><tr><td></td><td class="fieldArg">int maxdigits</td><td></td></tr><tr><td></td><td class="fieldArg">bool isscientific</td><td></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.writeFEvalsMaxSymbols">
+    
+  </a>
+  <a name="writeFEvalsMaxSymbols">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeFEvalsMaxSymbols(fevals, maxsymbols, isscientific=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the smallest string representation of a number.</p>
+<p>This method is only concerned with the maximum number of significant
+digits.</p>
+<p>Two alternatives:</p>
+<ol class="rst-arabic simple">
+<li>modified scientific notation (without the trailing + and zero in
+the exponent)</li>
+<li>float notation</li>
+</ol><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">string representation of a number of function evaluations
+or aRT.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.writeFEvalsMaxPrec">
+    
+  </a>
+  <a name="writeFEvalsMaxPrec">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeFEvalsMaxPrec(entry, SIG, maxfloatrepr=100000.0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return a string representation of a number.</p>
+<p>Two alternatives:</p>
+<ol class="rst-arabic simple">
+<li>float notation with a precision smaller or equal to SIG (if the
+entry is one, then the result is 1).</li>
+<li>if the number is larger or equal to maxfloatrepr, a modified
+scientific notation (without the trailing + and zero in the
+exponent)</li>
+</ol><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">string representation of a number of function evaluations
+or aRT.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.tableLaTeX">
+    
+  </a>
+  <a name="tableLaTeX">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    tableLaTeX(table, spec, extra_eol=(), add_begin_tabular=True, add_end_tabular=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates a tabular from a sequence of sequence of strings.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">seq table</td><td>sequence of sequence of strings</td></tr><tr><td></td><td class="fieldArg">string spec</td><td>string for table specification, see
+<a class="rst-reference external" href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment" target="_top">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment</a></td></tr><tr><td></td><td class="fieldArg">seq extra_eol</td><td>sequence of string the same length as the table
+(same number of lines) which are added at the
+end of each line.</td></tr><tr><td></td><td class="fieldArg">bool add_begin_tabular</td><td>bool value that specifies if begin tabular is added.</td></tr><tr><td></td><td class="fieldArg">bool add_end_tabular</td><td>bool value that specifies if end tabular is added.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">sequence of strings of a LaTeX tabular.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.tableXLaTeX">
+    
+  </a>
+  <a name="tableXLaTeX">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    tableXLaTeX(table, spec, extra_eol=(), add_begin_tabular=True, add_end_tabular=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates a tabular from a sequence of sequence of strings.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">seq table</td><td>sequence of sequence of strings</td></tr><tr><td></td><td class="fieldArg">string spec</td><td>string for table specification, see
+<a class="rst-reference external" href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment" target="_top">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment</a></td></tr><tr><td></td><td class="fieldArg">seq extra_eol</td><td>sequence of string the same length as the table
+(same number of lines) which are added at the
+end of each line.</td></tr><tr><td></td><td class="fieldArg">bool add_begin_tabular</td><td>bool value that specifies if begin tabular is added.</td></tr><tr><td></td><td class="fieldArg">bool add_end_tabular</td><td>bool value that specifies if end tabular is added.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">sequence of strings of a LaTeX tabular.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pptex.tableLaTeXStar">
+    
+  </a>
+  <a name="tableLaTeXStar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    tableLaTeXStar(table, width, spec, extraeol=()):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates a tabular* from a sequence of sequence of strings<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">seq table</td><td>sequence of sequence of strings</td></tr><tr><td></td><td class="fieldArg">string width</td><td>string for the width of the table</td></tr><tr><td></td><td class="fieldArg">strin spec</td><td>string for table specification, see
+<a class="rst-reference external" href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment" target="_top">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment</a></td></tr><tr><td></td><td class="fieldArg">seq extraeol</td><td>sequence of string the same length as the table
+(same number of lines) which are added at the
+end of each line.</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-09-01 16:25:08.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.rungeneric : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.rungeneric</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Process data to be included in a latex template. Called via</p>
+<p>python -m cocopp [OPTIONS] DATAFOLDER1 DATAFOLDER2 ...</p>
+<p>For a detailed help, simply type</p>
+<p>python -m cocopp</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id99">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.rungeneric.html#usage" data-type="Function" class="code">usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.rungeneric.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Main routine for post-processing data from COCO.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><a href="cocopp.rungeneric.html#_splitshortoptlist" data-type="Function" class="code">_splitshortoptlist</a></td>
+    <td><span>Split short options list used by getopt.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction private">
+  
+  <a name="cocopp.rungeneric._splitshortoptlist">
+    
+  </a>
+  <a name="_splitshortoptlist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _splitshortoptlist(shortoptlist):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Split short options list used by getopt.</p>
+<p>Returns a set of the options.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.rungeneric.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    usage():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.rungeneric.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Main routine for post-processing data from COCO.
+
+Synopsis::
+
+    python -m cocopp [data_folder [more_data_folders]]
+
+For this call to work, the path to this package must be in python
+search path, that is,
+
+* it can be in the current working directory, or
+* the path to the package was appended to the Python path, or
+* the package was installed (which essentially copies the package
+  to a location which is in the path)
+
+This routine will:
+
+* call sub-routine :py:func:`cocopp.rungeneric1.main` for each
+  input argument; each input argument will be used as output
+  sub-folder relative to the main output folder,
+* call either sub-routines :py:func:`cocopp.rungeneric2.main`
+  (2 input arguments) or :py:func:`cocopp.rungenericmany.main`
+  (more than 2) for the input arguments altogether.
+
+The output figures and tables written by default to the output folder
+:file:`ppdata` are used in the provided LaTeX templates:
+
+* :file:`*article.tex` and :file:`*1*.tex`
+  for results with a **single** algorithm
+* :file:`*cmp.tex` and :file:`*2*.tex`
+  for showing the comparison of **2** algorithms
+* :file:`*many.tex` and :file:`*3*.tex`
+  for showing the comparison of **more than 2** algorithms.
+The templates with `noisy` mentioned in the filename have to be used
+  for the noisy testbed, the others for the noise-less one.
+
+These latex templates need to be copied in the current working directory
+and possibly edited so that the LaTeX commands ``\bbobdatapath`` and
+``\algfolder`` point to the correct output folders of the post-processing.
+Compiling the template file with LaTeX should then produce a document.
+
+Keyword arguments:
+
+*argv* -- list of strings containing options and arguments. If not
+   provided, sys.argv is accessed.
+
+*argv* must list folders containing COCO data files. Each of these
+folders should correspond to the data of ONE algorithm.
+
+Furthermore, argv can begin with facultative option flags.
+
+    -h, --help
+
+        displays this message.
+
+    -v, --verbose
+
+        verbose mode, prints out operations.
+
+    -o, --output-dir=OUTPUTDIR
+
+        changes the default output directory (:file:`ppdata`) to
+        :file:`OUTPUTDIR`.
+
+    --omit-single
+
+        omit calling :py:func:`cocopp.rungeneric1.main`, if
+        more than one data path argument is provided.
+
+    --no-rld-single-fcts
+
+        do not generate runlength distribution figures for each
+        single function.
+
+    --input-path=INPUTPATH
+
+        all folder/file arguments are prepended with the given value
+        which must be a valid path.
+
+    --in-a-hurry
+
+        takes values between 0 (default) and 1000, fast processing that
+        does not write eps files and uses a small number of bootstrap samples
+
+    --no-svg
+
+        do not generate the svg figures which are used in html files
+
+Exceptions raised:
+
+*Usage* -- Gives back a usage message.
+
+Examples:
+
+Printing out this help message::
+
+    $ python -m cocopp.rungeneric -h
+
+Post-processing two algorithms in verbose mode::
+
+    $ python -m cocopp -v AMALGAM BIPOP-CMA-ES
+
+From the python interpreter::
+
+    &gt;&gt; import cocopp as pp
+    &gt;&gt; pp.main('-o outputfolder folder1 folder2')
+
+  This will execute the post-processing on the data found in
+  :file:`folder1` and :file:`folder2`. The ``-o`` option changes the
+  output folder from the default :file:`ppdata` to
+  :file:`outputfolder`. The arguments can also be presented as
+  a list of strings.</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:44:06.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

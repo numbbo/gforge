@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.toolsdivers : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.toolsdivers</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Various tools.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id112">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#print_done" data-type="Function" class="code">print_done</a></td>
+    <td><span>prints a message with time stamp</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#equals_approximately" data-type="Function" class="code">equals_approximately</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#less" data-type="Function" class="code">less</a></td>
+    <td><span>return a &lt; b, while comparing nan results in False without warning</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#prepend_to_file" data-type="Function" class="code">prepend_to_file</a></td>
+    <td><span>"prepend lines the tex-command filename</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#replace_in_file" data-type="Function" class="code">replace_in_file</a></td>
+    <td><span>"replace a string in the file with another string</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#truncate_latex_command_file" data-type="Function" class="code">truncate_latex_command_file</a></td>
+    <td><span>truncate file but keep in good latex shape</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#strip_pathname" data-type="Function" class="code">strip_pathname</a></td>
+    <td><span>remove ../ and ./ and leading/trailing blanks and path separators from input string <tt class="rst-docutils literal">name</tt> and replace any remaining path separator with '/'</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#strip_pathname1" data-type="Function" class="code">strip_pathname1</a></td>
+    <td><span>remove ../ and ./ and leading/trailing blanks and path separators from input string <tt class="rst-docutils literal">name</tt>, replace any remaining path separator with '/', and keep only the last part of the path</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#strip_pathname2" data-type="Function" class="code">strip_pathname2</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#str_to_latex" data-type="Function" class="code">str_to_latex</a></td>
+    <td><span>do replacements in <tt class="rst-docutils literal">string</tt> such that it most likely compiles with latex</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#number_of_digits" data-type="Function" class="code">number_of_digits</a></td>
+    <td><span>returns the number of non-zero digits of a number, e.g. two for 1200 or three for 2.03.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#num2str" data-type="Function" class="code">num2str</a></td>
+    <td><span>returns the shortest string representation with either <tt class="rst-docutils literal">significant_digits</tt> digits shown or its true value, whichever is shorter.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#number_to_latex" data-type="Function" class="code">number_to_latex</a></td>
+    <td><span>usage as <tt class="rst-docutils literal"><span class="pre">number_to_latex(num2str(1.023e-12))</span> == <span class="pre">"'-1.0\times10^{-12}'"</span></tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#number_to_html" data-type="Function" class="code">number_to_html</a></td>
+    <td><span>usage as <tt class="rst-docutils literal"><span class="pre">number_to_html(num2str(1.023e-12))</span> == <span class="pre">"'-1.0</span> x <span class="pre">10&lt;sup&gt;-12&lt;/sup&gt;'"</span></tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#legend" data-type="Function" class="code">legend</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#check_output" data-type="Function" class="code">check_output</a></td>
+    <td><span>Run command with arguments and return its output as a byte string. Backported from Python 2.7 as it's implemented as pure python on stdlib.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.toolsdivers.html#git" data-type="Function" class="code">git</a></td>
+    <td><span>Run a git command and return its output.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.print_done">
+    
+  </a>
+  <a name="print_done">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    print_done(message='  done'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>prints a message with time stamp<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.equals_approximately">
+    
+  </a>
+  <a name="equals_approximately">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    equals_approximately(a, b, eps=1e-12):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.less">
+    
+  </a>
+  <a name="less">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    less(a, b):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return a &lt; b, while comparing nan results in False without warning<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.prepend_to_file">
+    
+  </a>
+  <a name="prepend_to_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    prepend_to_file(filename, lines, maxlines=1000, warn_message=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>"prepend lines the tex-command filename<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.replace_in_file">
+    
+  </a>
+  <a name="replace_in_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    replace_in_file(filename, old_text, new_text):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>"replace a string in the file with another string<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.truncate_latex_command_file">
+    
+  </a>
+  <a name="truncate_latex_command_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    truncate_latex_command_file(filename, keeplines=200):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>truncate file but keep in good latex shape<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.strip_pathname">
+    
+  </a>
+  <a name="strip_pathname">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    strip_pathname(name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <tt class="rst-docutils literal">name</tt> and replace any remaining path separator
+with '/'<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.strip_pathname1">
+    
+  </a>
+  <a name="strip_pathname1">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    strip_pathname1(name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <tt class="rst-docutils literal">name</tt>, replace any remaining path separator
+with '/', and keep only the last part of the path<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.strip_pathname2">
+    
+  </a>
+  <a name="strip_pathname2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    strip_pathname2(name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <tt class="rst-docutils literal">name</tt>, replace any remaining path separator
+with '/', and keep only the last two parts of the path, or only the
+last<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.str_to_latex">
+    
+  </a>
+  <a name="str_to_latex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    str_to_latex(string):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>do replacements in <tt class="rst-docutils literal">string</tt> such that it most likely compiles with latex<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.number_of_digits">
+    
+  </a>
+  <a name="number_of_digits">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    number_of_digits(val, precision=1e-13):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>returns the number of non-zero digits of a number, e.g. two for 1200 or three for 2.03.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.num2str">
+    
+  </a>
+  <a name="num2str">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    num2str(val, significant_digits=2, force_rounding=False, max_predecimal_digits=5, max_postdecimal_leading_zeros=1, remove_trailing_zeros=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>returns the shortest string representation with either <tt class="rst-docutils literal">significant_digits</tt>
+digits shown or its true value, whichever is shorter.</p>
+<p><tt class="rst-docutils literal">force_rounding</tt> shows no more than the desired number of significant digits,
+which means, e.g., <tt class="rst-docutils literal">12345</tt>  becomes <tt class="rst-docutils literal">12000</tt>.</p>
+<p><tt class="rst-docutils literal">remove_trailing_zeros</tt> removes zeros, if and only if the value is exactly.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> bbob_pproc <span class="py-keyword">import</span> toolsdivers <span class="py-keyword">as</span> td
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">print</span> [td.num2str(val) <span class="py-keyword">for</span> val <span class="py-keyword">in</span> [12345, 1234.5, 123.45, 12.345, 1.2345, .12345, .012345, .0012345]]
+<span class="py-output">['12345', '1234', '123', '12', '1.2', '0.12', '0.012', '1.2e-3']</span></pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.number_to_latex">
+    
+  </a>
+  <a name="number_to_latex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    number_to_latex(number_as_string):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>usage as <tt class="rst-docutils literal"><span class="pre">number_to_latex(num2str(1.023e-12))</span> == <span class="pre">"'-1.0\times10^{-12}'"</span></tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.number_to_html">
+    
+  </a>
+  <a name="number_to_html">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    number_to_html(number_as_string):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>usage as <tt class="rst-docutils literal"><span class="pre">number_to_html(num2str(1.023e-12))</span> == <span class="pre">"'-1.0</span> x <span class="pre">10&lt;sup&gt;-12&lt;/sup&gt;'"</span></tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.legend">
+    
+  </a>
+  <a name="legend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    legend(*args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.check_output">
+    
+  </a>
+  <a name="check_output">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    check_output(*popenargs, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Run command with arguments and return its output as a byte string.
+Backported from Python 2.7 as it's implemented as pure python on stdlib.</p>
+<p>WARNING: This method is also defined in ../../code-experiments/tools/cocoutils.py.
+If you change something you have to change it in both files.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.toolsdivers.git">
+    
+  </a>
+  <a name="git">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    git(args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Run a git command and return its output.</p>
+<p>All errors are deemed fatal and the system will quit.</p>
+<p>WARNING: This method is also defined in ../../code-experiments/tools/cocoutils.py.
+If you change something you have to change it in both files.</p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

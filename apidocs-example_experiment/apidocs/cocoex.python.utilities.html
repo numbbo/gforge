@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocoex.python.utilities : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocoex API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocoex.python.utilities</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocoex.html" data-type="Package" class="code">cocoex</a>.<a href="cocoex.python.html" data-type="Package" class="code">python</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div class="undocumented">No module docstring</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id13">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocoex.python.utilities.html#about_equal" data-type="Function" class="code">about_equal</a></td>
+    <td><span>Return True if the floating point number ${a} and ${b} are about equal.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocoex.python.utilities.html#args_to_dict" data-type="Function" class="code">args_to_dict</a></td>
+    <td><span>return a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> from a list of <tt class="rst-docutils literal">"name=value"</tt> strings.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.utilities.ObserverOptions.html" data-type="Class" class="code">ObserverOptions</a></td>
+    <td><span>a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> with observer options which can be passed to the (C-based) <a href="cocoex.python.Observer.html"><code>Observer</code></a> via the <a href="cocoex.python.utilities.ObserverOptions.html#as_string"><code>as_string</code></a> property.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.utilities.ProblemNonAnytime.html" data-type="Class" class="code">ProblemNonAnytime</a></td>
+    <td><span>The non-anytime problem class.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.utilities.SameFunction.html" data-type="Class" class="code">SameFunction</a></td>
+    <td><span>Count the number of consecutive instances of the same function.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.utilities.MiniPrint.html" data-type="Class" class="code">MiniPrint</a></td>
+    <td><span>print dimension when changed and a single symbol for each call.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.utilities.ShortInfo.html" data-type="Class" class="code">ShortInfo</a></td>
+    <td><span>print minimal info during benchmarking.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocoex.python.utilities.html#ascetime" data-type="Function" class="code">ascetime</a></td>
+    <td><span>return elapsed time as str.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocoex.python.utilities.html#print_flush" data-type="Function" class="code">print_flush</a></td>
+    <td><span>print without newline but with flush</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocoex.python.utilities.about_equal">
+    
+  </a>
+  <a name="about_equal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    about_equal(a, b, precision=1e-06):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Return True if the floating point number ${a} and ${b} are about equal.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocoex.python.utilities.args_to_dict">
+    
+  </a>
+  <a name="args_to_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    args_to_dict(args, known_names, specials=None, split='=', print=lambda args, kwargs: None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> from a list of <tt class="rst-docutils literal">"name=value"</tt> strings.</p>
+<p><code>args</code> come in the form of a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of <tt class="rst-docutils literal">"name=value"</tt> strings
+without spaces, like <tt class="rst-docutils literal">["budget_multiplier=100"]</tt>.</p>
+<p>Return <tt class="rst-docutils literal">dict(arg.split(split) for arg in args)</tt> in the most
+basic case, but additionally (i) checks that the keys of this
+<a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> are known names, (ii) evaluates the values in some cases
+and (iii) handles <code>specials</code>.</p>
+<p><code>know_names</code> is an iterable (<a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> or <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> or <a href="http://docs.python.org/library/stdtypes.html#tuple"><code>tuple</code></a>) of strings.
+If <tt class="rst-docutils literal">know_names is None</tt>, all args are processed, otherwise a
+<a href="http://docs.python.org/library/exceptions.html#exceptions.ValueError"><code>ValueError</code></a> is raised for unknown names. This is useful if we
+want to re-assign variables (overwrite default values) and avoid
+spelling mistakes pass silently.</p>
+<p>The value is processed as a Python literal with <a href="http://docs.python.org/library/ast.html#ast.literal_eval"><code>ast.literal_eval</code></a>
+or remains a <a href="http://docs.python.org/library/stdtypes.html#str"><code>str</code></a> when this is unsuccessful.</p>
+<p><code>specials</code> is a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> and can currently only contain <tt class="rst-docutils literal">'batch'</tt>,
+followed by <tt class="rst-docutils literal">"name1/name2"</tt> as value. <tt class="rst-docutils literal">name1</tt> and <tt class="rst-docutils literal">name2</tt> are
+then assigned from the values in <code>arg</code>, for example to 2 and 4 with
+<tt class="rst-docutils literal">batch=2/4</tt>.</p>
+<p>A main usecase is to process <tt class="rst-docutils literal">sys.argv[1:]</tt> into a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> in a
+python script, like:</p>
+<pre class="rst-literal-block">
+command_line_dict = args_to_dict(sys.argv[1:], globals())
+globals().update(command_line_dict)
+</pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex
+<span class="py-prompt">&gt;&gt;&gt; </span>d = cocoex.utilities.args_to_dict([<span class="py-string">"budget=2.3"</span>, <span class="py-string">"bed=bed-name"</span>, <span class="py-string">"number=4"</span>],
+<span class="py-more">... </span>                                  [<span class="py-string">"budget"</span>, <span class="py-string">"bed"</span>, <span class="py-string">"number"</span>, <span class="py-string">"whatever"</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>len(d)
+<span class="py-output">3</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>assert d[<span class="py-string">'bed'</span>] == <span class="py-string">'bed-name'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>assert isinstance(d[<span class="py-string">"budget"</span>], float)</pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocoex.python.utilities.ascetime">
+    
+  </a>
+  <a name="ascetime">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    ascetime(sec):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return elapsed time as str.</p>
+<p>Example: return <code>"0h33:21"</code> if <code>sec == 33*60 + 21</code>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocoex.python.utilities.print_flush">
+    
+  </a>
+  <a name="print_flush">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    print_flush(*args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>print without newline but with flush<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocoex, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2019-03-15 16:25:14.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

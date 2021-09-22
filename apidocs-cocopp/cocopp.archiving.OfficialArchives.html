@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.archiving.OfficialArchives : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="apidocs.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.archiving.OfficialArchives(<span title="object">object</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.archiving.html" data-type="Module" class="code">archiving</a></code>
+          
+          <a href="classIndex.html#cocopp.archiving.OfficialArchives">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>overdesigned class to connect URLs, names, and classes of "official" archives.</p>
+<p>The <a href="http://docs.python.org/library/functions.html#all"><code>all</code></a> archive name gets special treatment. The 'all'-archive is
+currently needed in <a href="cocopp.rungeneric.html#main"><code>cocopp.main</code></a> but could be dropped otherwise.</p>
+<p>The class collects the "official" online data archives as attributes.
+Each suite is also a different class inheriting from <a href="cocopp.archiving.COCODataArchive.html"><code>COCODataArchive</code></a>.
+The class may become the same for some or all suites in future.</p>
+<p><a href="cocopp.archives.html"><code>cocopp.archives</code></a> is an instance of <a href="cocopp.archiving.OfficialArchives.html"><code>OfficialArchives</code></a> and contains as
+archive attributes (at this point in time):</p>
+<p><tt class="rst-docutils literal">all</tt>: <a href="cocopp.archiving.COCODataArchive.html"><code>COCODataArchive</code></a>, the <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of all archived data from
+all test suites.</p>
+<p><tt class="rst-docutils literal">bbob</tt>: <a href="cocopp.archiving.COCOBBOBDataArchive.html"><code>COCOBBOBDataArchive</code></a>, the <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of archived data run on the
+<code>bbob</code> test suite.</p>
+<p><tt class="rst-docutils literal">bbob_noisy</tt>: <a href="cocopp.archiving.COCOBBOBNoisyDataArchive.html"><code>COCOBBOBNoisyDataArchive</code></a>, ditto on the <code>bbob_noisy</code>
+test suite.</p>
+<p><tt class="rst-docutils literal">bbob_biobj</tt>: <a href="cocopp.archiving.COCOBBOBBiobjDataArchive.html"><code>COCOBBOBBiobjDataArchive</code></a>, ditto...</p>
+<p>The <a href="cocopp.archiving.OfficialArchives.html#names"><code>names</code></a> property is a list of all "official" archive names available.</p>
+<div class="rst-section" id="rst-a-quick-guide">
+<h1 class="heading">A Quick Guide</h1>
+<p><strong>1) To list all available data</strong>:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.all  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['bbob/2009/AL...</span></pre>
+<p><strong>2) To see all available data from a given test suite</strong>:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['2009/ALPS...</span></pre>
+<p>or</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob_biobj  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['2016/DEMO_Tusar...</span></pre>
+<p>or</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob_noisy  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['2009/ALPS...</span></pre>
+<p><strong>3) We can extract a subset</strong> from any test suite (such as
+<a href="http://docs.python.org/library/functions.html#all"><code>cocopp.archives.all</code></a>, <code>cocopp.archives.bbob</code>, ...) of the
+archive by sub-string matching:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob.find(<span class="py-string">'bfgs'</span>)  <span class="py-comment"># doctest:+NORMALIZE_WHITESPACE,+ELLIPSIS,+SKIP</span>
+<span class="py-output">['2009/BFGS_ros_noiseless.tgz',</span>
+<span class="py-output"> '2012/DE-BFGS_voglis_noiseless.tgz',</span>
+<span class="py-output"> '2012/PSO-BFGS_voglis_noiseless.tgz',</span>
+<span class="py-output"> '2014-others/BFGS-scipy-Baudis.tgz',</span>
+<span class="py-output"> '2014-others/L-BFGS-B-scipy-Baudis.tgz'...</span></pre>
+<p>or by regex pattern matching:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob.find(<span class="py-string">'bfgs'</span>) == cocopp.archives.bbob.find(<span class="py-string">'.*bfgs'</span>)
+<span class="py-output">True</span></pre>
+<p>but</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(cocopp.archives.bbob.find(<span class="py-string">'bfgs'</span>)) &gt; <span class="py-builtin">len</span>(cocopp.archives.bbob.find(<span class="py-string">'bfgs.*'</span>))
+<span class="py-output">True</span></pre>
+<p>The <code>find</code> method will not download data and is only for inspecting the
+archives. If we want to actually process the data we need to use <a href="cocopp.archiving.html#get"><code>get</code></a>,
+<a href="cocopp.archiving.COCODataArchive.html#get_all"><code>get_all</code></a>, <a href="cocopp.archiving.COCODataArchive.html#get_extended"><code>get_extended</code></a> or <a href="cocopp.archiving.COCODataArchive.html#get_found"><code>get_found</code></a>, or use the same search string
+in <a href="cocopp.rungeneric.html#main"><code>cocopp.main</code></a> appending a <code>*</code> if more than one algorithm should be
+processed:</p>
+<p><strong>4) When postprocessing data via `cocopp.main`</strong>, we can use the archive
+like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(cocopp.archives.bbob.get_all(<span class="py-string">'bfgs'</span>).as_string)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>or the shortcut</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>using the special meaning of the trailing <code>*</code> in this case (see below).
+The <a href="cocopp.archiving.html#get"><code>get</code></a> and <a href="cocopp.archiving.COCODataArchive.html#get_extended"><code>get_extended</code></a> methods are called on each argument given in a
+string to <a href="cocopp.rungeneric.html#main"><code>main</code></a>. We can do things like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/2009/BIPOP DE-BFGS'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>When a string has multiple matches, the postprocessing bails out. For
+such cases, we can use the trailing symbols <code>*</code> (AKA take all matches)
+and <code>!</code> (AKA take the first match) which uses the <a href="cocopp.archiving.COCODataArchive.html#get_extended"><code>get_extended</code></a> method
+under the hood:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'BIPOP! 2012/DE*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>will expand to the following:</p>
+<pre class="rst-literal-block">
+Post-processing (2+)
+  Using:
+    /.../.cocopp/data-archive/bbob/2009/BIPOP-CMA-ES_hansen_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-AUTO_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-BFGS_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-ROLL_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-SIMPLEX_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE_posik_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DEAE_posik_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DEb_posik_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DEctpb_posik_noiseless.tgz
+
+Post-processing (2+)
+  loading data...
+[...]
+</pre>
+<p><strong>5) If we want to also pass other arguments to the postprocessing</strong>
+(e.g. the output folder) in case 3) above, string concatenation does
+the trick:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'-o myoutputfolder '</span> + cocopp.archives.bbob.get_all(<span class="py-string">'bfgs'</span>).as_string)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>For case 4), this works directly:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'-o myoutputfolder BIPOP! 2012/DE*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+</div><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id15">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>all URLs and classes (optional) in one place.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#add_archive" data-type="Method" class="code">add_archive</a></td>
+    <td><span>Allow to use a new official archive.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#set_as_attributes_in" data-type="Method" class="code">set_as_attributes_in</a></td>
+    <td><span>Assign all archives as attribute of <code>target</code> except for <tt class="rst-docutils literal">'test'</tt>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#names" data-type="Method" class="code">names</a></td>
+    <td><span>a list of valid key names</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#urls" data-type="Method" class="code">urls</a></td>
+    <td><span>a name-&gt;URL dictionary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#url" data-type="Method" class="code">url</a></td>
+    <td><span>return url of "official" archive named <a href="cocopp.archiving.ListOfArchives.html#name"><code>name</code></a>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#class_" data-type="Method" class="code">class_</a></td>
+    <td><span>class of archive named <a href="cocopp.archiving.ListOfArchives.html#name"><code>name</code></a> when returned by <a href="cocopp.archiving.html#get"><code>get</code></a></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#update_all" data-type="Method" class="code">update_all</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.OfficialArchives.html#_get" data-type="Method" class="code">_get</a></td>
+    <td><span>get j-th entry of <a href="cocopp.archiving.ListOfArchives.html#name"><code>name</code></a>, where j==0 is the URL and j==1 is the class</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>all URLs and classes (optional) in one place.</p>
+<p>The archive names are identical with the last part of the URL. The only
+exception is made for <code>'all'</code>, which is removed to get the URL.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.add_archive">
+    
+  </a>
+  <a name="add_archive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    add_archive(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Allow to use a new official archive.</p>
+<p>The archive must exist as a subfolder of
+<a href="http://coco.gforge.inria.fr/data-archive" class="rst-reference external" target="_top">http://coco.gforge.inria.fr/data-archive</a></p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.set_as_attributes_in">
+    
+  </a>
+  <a name="set_as_attributes_in">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    set_as_attributes_in(self, target=None, except_for=('test',), update=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Assign all archives as attribute of <code>target</code> except for <tt class="rst-docutils literal">'test'</tt>.</p>
+<p><code>target</code> is by default <code>self</code>.</p>
+<p>Details: This method can only be called when the class names and the module
+attribute <code>official_archives: OfficialArchive</code> (used in <a href="cocopp.archiving.html#get"><code>get</code></a>) are
+available. Depending on the implementation of <a href="cocopp.archiving.html#get"><code>get</code></a>, it may download the
+definition files on its first-ever call by/on any given user/machine.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.names">
+    
+  </a>
+  <a name="names">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    names(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>a list of valid key names<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.urls">
+    
+  </a>
+  <a name="urls">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    urls(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>a name-&gt;URL dictionary<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.archiving.OfficialArchives._get">
+    
+  </a>
+  <a name="_get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _get(self, name, j):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>get j-th entry of <a href="cocopp.archiving.ListOfArchives.html#name"><code>name</code></a>, where j==0 is the URL and j==1 is the class<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.url">
+    
+  </a>
+  <a name="url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    url(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return url of "official" archive named <a href="cocopp.archiving.ListOfArchives.html#name"><code>name</code></a>.</p>
+<p>The same value as <tt class="rst-docutils literal">self.urls.get(name)</tt>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.class_">
+    
+  </a>
+  <a name="class_">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    class_(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>class of archive named <a href="cocopp.archiving.ListOfArchives.html#name"><code>name</code></a> when returned by <a href="cocopp.archiving.html#get"><code>get</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.OfficialArchives.update_all">
+    
+  </a>
+  <a name="update_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    update_all(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2020-01-21 16:27:37.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

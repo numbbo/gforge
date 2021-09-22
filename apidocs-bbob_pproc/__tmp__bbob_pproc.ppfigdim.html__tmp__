@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.ppfigdim : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.ppfigdim</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Generate performance scaling figures.
+
+The figures show the scaling of the performance in terms of aRT w.r.t.
+dimensionality on a log-log scale. On the y-axis, data is represented as
+a number of function evaluations divided by dimension, this is in order
+to compare at a glance with a linear scaling for which aRT is
+proportional to the dimension and would therefore be represented by a
+horizontal line in the figure.
+
+Crosses (+) give the median number of function evaluations of successful
+trials divided by dimension for the smallest *reached* target function
+value.
+Numbers indicate the number of successful runs for the smallest
+*reached* target.
+If the smallest target function value (1e-8) is not reached for a given
+dimension, crosses (x) give the average number of overall conducted
+function evaluations divided by the dimension.
+
+Horizontal lines indicate linear scaling with the dimension, additional
+grid lines show quadratic and cubic scaling.
+The thick light line with diamond markers shows the single best results
+from BBOB-2009 for df = 1e-8.
+
+**Example**
+
+.. plot::
+    :width: 50%
+    
+    import urllib
+    import tarfile
+    import glob
+    from pylab import *
+    
+    import bbob_pproc as bb
+    
+    # Collect and unarchive data (3.4MB)
+    dataurl = 'http://coco.lri.fr/BBOB2009/pythondata/BIPOP-CMA-ES.tar.gz'
+    filename, headers = urllib.urlretrieve(dataurl)
+    archivefile = tarfile.open(filename)
+    archivefile.extractall()
+    
+    # Scaling figure
+    ds = bb.load(glob.glob('BBOB2009pythondata/BIPOP-CMA-ES/ppdata_f002_*.pickle'))
+    figure()
+    bb.ppfigdim.plot(ds)
+    bb.ppfigdim.beautify()
+    bb.ppfigdim.plot_previous_algorithms(2, False) # plot BBOB 2009 best algorithm on fun 2</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id37">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#scaling_figure_caption" data-type="Function" class="code">scaling_figure_caption</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Customize figure presentation.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#generateData" data-type="Function" class="code">generateData</a></td>
+    <td><span>Computes an array of results to be plotted.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#plot_a_bar" data-type="Function" class="code">plot_a_bar</a></td>
+    <td><span>plot/draw a notched error bar, x is the x-position, y[0,1,2] are lower, median and upper percentile respectively.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#plot" data-type="Function" class="code">plot</a></td>
+    <td><span>From a DataSetList, plot a figure of aRT/dim vs dim.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#plot_previous_algorithms" data-type="Function" class="code">plot_previous_algorithms</a></td>
+    <td><span>Add graph of the reference algorithm, specified in testbedsettings.current_testbed using the last, most difficult target in <tt class="rst-docutils literal">target</tt>.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigdim.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>From a DataSetList, returns a convergence and aRT/dim figure vs dim.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.scaling_figure_caption">
+    
+  </a>
+  <a name="scaling_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    scaling_figure_caption():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify(axesLabel=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Customize figure presentation.</p>
+<p>Uses information from the appropriate benchmark short infos file
+for figure title.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.generateData">
+    
+  </a>
+  <a name="generateData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    generateData(dataSet, targetFuncValue):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Computes an array of results to be plotted.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">(ert, success rate, number of success, total number of
+function evaluations, median of successful runs).</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.plot_a_bar">
+    
+  </a>
+  <a name="plot_a_bar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot_a_bar(x, y, plot_cmd=plt.loglog, rec_width=0.1, rec_taille_fac=0.3, styles={'color':'b'}, linewidth=1, fill_color=None, fill_transparency=0.7):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>plot/draw a notched error bar, x is the x-position,
+y[0,1,2] are lower, median and upper percentile respectively.</p>
+<p>hold(True) to see everything.</p>
+<p>TODO: with linewidth=0, inf is not visible</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot(dsList, valuesOfInterest=None, styles=styles):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>From a DataSetList, plot a figure of aRT/dim vs dim.</p>
+<p>There will be one set of graphs per function represented in the
+input data sets. Most usually the data sets of different functions
+will be represented separately.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">DataSetList dsList</td><td>data sets</td></tr><tr><td></td><td class="fieldArg">seq valuesOfInterest</td><td>target precisions via class TargetValues, there might
+be as many graphs as there are elements in
+this input. Can be different for each
+function (a dictionary indexed by ifun).</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">handles</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.plot_previous_algorithms">
+    
+  </a>
+  <a name="plot_previous_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot_previous_algorithms(func, target=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Add graph of the reference algorithm, specified in
+testbedsettings.current_testbed using the
+last, most difficult target in <tt class="rst-docutils literal">target</tt>.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigdim.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dsList, _valuesOfInterest, outputdir):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>From a DataSetList, returns a convergence and aRT/dim figure vs dim.
+
+Uses data of BBOB 2009 (:py:mod:`bbob_pproc.bestalg`).
+
+:param DataSetList dsList: data sets
+:param seq _valuesOfInterest: target precisions, either as list or as
+                              ``pproc.TargetValues`` class instance. 
+                              There will be as many graphs as there are 
+                              elements in this input. 
+:param string outputdir: output directory</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

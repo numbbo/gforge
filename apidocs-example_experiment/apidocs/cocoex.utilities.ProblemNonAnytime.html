@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocoex.utilities.ProblemNonAnytime : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="apidocs.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">
+            cocoex API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocoex.utilities.ProblemNonAnytime(<span title="object">object</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocoex.html" data-type="Package" class="code">cocoex</a>.<a href="cocoex.utilities.html" data-type="Module" class="code">utilities</a></code>
+          
+          <a href="classIndex.html#cocoex.utilities.ProblemNonAnytime">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>The non-anytime problem class.</p>
+<p>Serves to benchmark a "budgeted" algorithm whose behavior decisively
+depends on a budget input parameter.</p>
+<p>Usage:</p>
+<pre class="rst-literal-block">
+# given: suite and observer instances, budget_list, fmin
+for index in range(len(suite)):
+    with ProblemNonAnytime(suite, observer, index) as problem:
+        x0 = problem.initial_solution  # or whatever fmin needs as input
+        for budget in sorted(budget_list):
+            x = fmin(problem, x0, budget)  # minimize
+            problem.delivered(x)  # prepares for next budget also
+            if problem.final_target_hit:
+                break
+</pre>
+<p>Details: This class maintains two problems - one observed and the
+other unobserved. It switches from unobserved to observed when
+<tt class="rst-docutils literal">p_unobserved.evaluations &gt;= p_observed.evaluations</tt>.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id13">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#__call__" data-type="Method" class="code">__call__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#delivered" data-type="Method" class="code">delivered</a></td>
+    <td><span>to be called with the solution returned by the solver.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#reset" data-type="Method" class="code">reset</a></td>
+    <td><span>prepare the problem to be run on the next budget</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#free" data-type="Method" class="code">free</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#print_progress" data-type="Method" class="code">print_progress</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#__enter__" data-type="Method" class="code">__enter__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#__exit__" data-type="Method" class="code">__exit__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#final_target_hit" data-type="Method" class="code">final_target_hit</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#best_observed_fvalue1" data-type="Method" class="code">best_observed_fvalue1</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.utilities.ProblemNonAnytime.html#random_solution" data-type="Method" class="code">random_solution</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, suite, observer, index):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __call__(self, x, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.delivered">
+    
+  </a>
+  <a name="delivered">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    delivered(self, x, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>to be called with the solution returned by the solver.</p>
+<p>The method records the delivered solution (if necessary) and
+prepares the problem to be run on the next budget by calling
+<a href="cocoex.utilities.ProblemNonAnytime.html#reset"><code>reset</code></a>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.reset">
+    
+  </a>
+  <a name="reset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    reset(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>prepare the problem to be run on the next budget<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.free">
+    
+  </a>
+  <a name="free">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    free(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.print_progress">
+    
+  </a>
+  <a name="print_progress">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    print_progress(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__enter__">
+    
+  </a>
+  <a name="__enter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __enter__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__exit__">
+    
+  </a>
+  <a name="__exit__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __exit__(self, *args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.final_target_hit">
+    
+  </a>
+  <a name="final_target_hit">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    final_target_hit(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.best_observed_fvalue1">
+    
+  </a>
+  <a name="best_observed_fvalue1">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    best_observed_fvalue1(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.random_solution">
+    
+  </a>
+  <a name="random_solution">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    random_solution(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocoex, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2020-01-21 16:34:47.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.pprldistr : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.pprldistr</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>For generating empirical cumulative distribution function figures.
+
+The outputs show empirical cumulative distribution functions (ECDFs) of
+the running times of trials. These ECDFs show on the y-axis the fraction
+of cases for which the running time (left subplots) or the df-value
+(right subplots) was smaller than the value given on the x-axis. On the
+left, ECDFs of the running times from trials are shown for different
+target values. Light brown lines in the background show ECDFs for target
+value 1e-8 of all algorithms benchmarked during BBOB-2009. On the right,
+ECDFs of df-values from all trials are shown for different numbers of
+function evaluations.
+
+**Example**
+
+.. plot::
+   :width: 75%
+
+   import urllib
+   import tarfile
+   import glob
+   from pylab import *
+   import cocopp
+
+   # Collect and unarchive data (3.4MB)
+   dataurl = 'http://coco.lri.fr/BBOB2009/pythondata/BIPOP-CMA-ES.tar.gz'
+   filename, headers = urllib.urlretrieve(dataurl)
+   archivefile = tarfile.open(filename)
+   archivefile.extractall()
+
+   # Empirical cumulative distribution function figure
+   ds = cocopp.load(glob.glob('BBOB2009pythondata/BIPOP-CMA-ES/ppdata_f0*_20.pickle'))
+   figure()
+   cocopp.pprldistr.plot(ds)
+   cocopp.pprldistr.beautify() # resize the window to view whole figure
+
+CAVEAT: the naming conventions in this module mix up ART (an estimate
+of the expected running length) and run lengths.</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id127">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#load_previous_data" data-type="Function" class="code">load_previous_data</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#load_previous_RLBdata" data-type="Function" class="code">load_previous_RLBdata</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#caption_single" data-type="Function" class="code">caption_single</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#caption_two" data-type="Function" class="code">caption_two</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#beautifyECDF" data-type="Function" class="code">beautifyECDF</a></td>
+    <td><span>Generic formatting of ECDF figures.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#beautifyRLD" data-type="Function" class="code">beautifyRLD</a></td>
+    <td><span>Format and save the figure of the run length distribution.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#beautifyFVD" data-type="Function" class="code">beautifyFVD</a></td>
+    <td><span>Formats the figure of the run length distribution.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#plotECDF" data-type="Function" class="code">plotECDF</a></td>
+    <td><span>Plot an empirical cumulative distribution function.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#erld_data" data-type="Function" class="code">erld_data</a></td>
+    <td><span>return <tt class="rst-docutils literal">[sorted_runlengths_divided_by_dimension, nb_of_all_runs, functions_ids_found, functions_ids_solved]</tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#plotRLDistr" data-type="Function" class="code">plotRLDistr</a></td>
+    <td><span>Creates run length distributions from a sequence dataSetList.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#plotFVDistr" data-type="Function" class="code">plotFVDistr</a></td>
+    <td><span>Creates ECDF of final function values plot from a DataSetList.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#comp" data-type="Function" class="code">comp</a></td>
+    <td><span>Generate figures of ECDF that compare 2 algorithms.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Format the figure of the run length distribution.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#plot" data-type="Function" class="code">plot</a></td>
+    <td><span>Plot ECDF of evaluations and final function values in a single figure for demonstration purposes.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#plot_previous_algorithms" data-type="Function" class="code">plot_previous_algorithms</a></td>
+    <td><span>Display BBOB 2009 data, by default from <tt class="rst-docutils literal">pprldistr.previous_data_filename = <span class="pre">'pprldistr2009_1e-8.pickle.gz'</span></tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#plotRLB_previous_algorithms" data-type="Function" class="code">plotRLB_previous_algorithms</a></td>
+    <td><span>Display BBOB 2009 data, by default from <tt class="rst-docutils literal">pprldistr.previous_data_filename = <span class="pre">'pprldistr2009_1e-8.pickle.gz'</span></tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Generate figures of empirical cumulative distribution functions.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><a href="cocopp.pprldistr.html#_plotRLDistr_old" data-type="Function" class="code">_plotRLDistr_old</a></td>
+    <td><span>Creates run length distributions from a sequence dataSetList.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.pprldistr.load_previous_data">
+    
+  </a>
+  <a name="load_previous_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    load_previous_data(filename=previous_data_filename, force=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.load_previous_RLBdata">
+    
+  </a>
+  <a name="load_previous_RLBdata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    load_previous_RLBdata(filename=previous_RLBdata_filename):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.caption_single">
+    
+  </a>
+  <a name="caption_single">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    caption_single():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.caption_two">
+    
+  </a>
+  <a name="caption_two">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    caption_two():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.beautifyECDF">
+    
+  </a>
+  <a name="beautifyECDF">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautifyECDF():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generic formatting of ECDF figures.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.beautifyRLD">
+    
+  </a>
+  <a name="beautifyRLD">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautifyRLD(xlimit_max=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format and save the figure of the run length distribution.</p>
+<p>After calling this function, changing the boundaries of the figure
+will not update the ticks and tick labels.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.beautifyFVD">
+    
+  </a>
+  <a name="beautifyFVD">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautifyFVD(isStoringXMax=False, ylabel=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Formats the figure of the run length distribution.
+
+This function is to be used with :py:func:`plotFVDistr`
+
+:param bool isStoringMaxF: if set to True, the first call
+                           :py:func:`beautifyFVD` sets the global
+                           :py:data:`fmax` and all subsequent call
+                           will have the same maximum xlim
+:param bool ylabel: if True, y-axis will be labelled.</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.plotECDF">
+    
+  </a>
+  <a name="plotECDF">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotECDF(x, n=None, **plotArgs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Plot an empirical cumulative distribution function.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">seq x</td><td>data</td></tr><tr><td></td><td class="fieldArg">int n</td><td>number of samples, if not provided len(x) is used</td></tr><tr><td></td><td class="fieldArg">plotArgs</td><td>optional keyword arguments provided to plot.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">handles of the plot elements.</td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="cocopp.pprldistr._plotRLDistr_old">
+    
+  </a>
+  <a name="_plotRLDistr_old">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _plotRLDistr_old(dsList, target, **plotArgs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Creates run length distributions from a sequence dataSetList.</p>
+<p>Labels of the line (for the legend) will be set automatically with
+the following format: %+d: %d/%d % (log10()</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">DataSetList dsList</td><td>Input data sets</td></tr><tr><td></td><td class="fieldArg">dict or float target</td><td>target precision</td></tr><tr><td></td><td class="fieldArg">plotArgs</td><td>additional arguments passed to the plot command</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">handles of the resulting plot.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.erld_data">
+    
+  </a>
+  <a name="erld_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    erld_data(dsList, target, max_fun_evals=np.inf):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return <tt class="rst-docutils literal">[sorted_runlengths_divided_by_dimension, nb_of_all_runs,
+functions_ids_found, functions_ids_solved]</tt></p>
+<p><code>max_fun_evals</code> is only used to compute <code>function_ids_solved</code>,
+that is elements in <code>sorted_runlengths...</code> can be larger.</p>
+<p>copy-paste from <a href="cocopp.pprldistr.html#plotRLDistr"><code>plotRLDistr</code></a> and not used.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.plotRLDistr">
+    
+  </a>
+  <a name="plotRLDistr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotRLDistr(dsList, target, label='', max_fun_evals=np.inf, **plotArgs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Creates run length distributions from a sequence dataSetList.
+
+Labels of the line (for the legend) will be appended with the number
+of functions at least solved once.
+
+:param DataSetList dsList: Input data sets
+:param target: a method that delivers single target values like ``target((fun, dim))``
+:param str label: target value label to be displayed in the legend
+:param max_fun_evals: only used to determine success on a single function
+:param plotArgs: additional arguments passed to the plot command
+
+:returns: handles of the resulting plot.
+
+Example::
+
+    plotRLDistr(dsl, lambda f: 1e-6)
+
+Details: ``target`` is a function taking a (function_number, dimension) pair
+as input and returning a ``float``. It can be defined as
+``lambda fun_dim: targets(fun_dim)[j]`` returning the j-th element of
+``targets(fun_dim)``, where ``targets`` is an instance of
+``class pproc.TargetValues`` (see the ``pproc.TargetValues.__call__`` method).
+
+TODO: data generation and plotting should be in separate methods
+TODO: different number of runs/data biases the results, shouldn't
+      the number of data made the same, in case?</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.plotFVDistr">
+    
+  </a>
+  <a name="plotFVDistr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotFVDistr(dsList, budget, min_f=None, **plotArgs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Creates ECDF of final function values plot from a DataSetList.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">dsList</td><td>data sets</td></tr><tr><td></td><td class="fieldArg">min_f</td><td>used for the left limit of the plot</td></tr><tr><td></td><td class="fieldArg">float budget</td><td>maximum evaluations / dimension that "count"</td></tr><tr><td></td><td class="fieldArg">plotArgs</td><td>additional arguments passed to plot</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">handle</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.comp">
+    
+  </a>
+  <a name="comp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    comp(dsList0, dsList1, targets, isStoringXMax=False, outputdir='', info='default'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generate figures of ECDF that compare 2 algorithms.
+
+:param DataSetList dsList0: list of DataSet instances for ALG0
+:param DataSetList dsList1: list of DataSet instances for ALG1
+:param seq targets: target function values to be displayed
+:param bool isStoringXMax: if set to True, the first call
+                           :py:func:`beautifyFVD` sets the globals
+                           :py:data:`fmax` and :py:data:`maxEvals`
+                           and all subsequent calls will use these
+                           values as rightmost xlim in the generated
+                           figures.
+:param string outputdir: output directory (must exist)
+:param string info: string suffix for output file names.</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format the figure of the run length distribution.</p>
+<p>Used in conjunction with plot method (obsolete/outdated, see functions <tt class="rst-docutils literal">beautifyFVD</tt> and <tt class="rst-docutils literal">beautifyRLD</tt>).</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot(dsList, targets=None, **plotArgs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Plot ECDF of evaluations and final function values
+in a single figure for demonstration purposes.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.plot_previous_algorithms">
+    
+  </a>
+  <a name="plot_previous_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot_previous_algorithms(dim, funcs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display BBOB 2009 data, by default from
+<tt class="rst-docutils literal">pprldistr.previous_data_filename = <span class="pre">'pprldistr2009_1e-8.pickle.gz'</span></tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.plotRLB_previous_algorithms">
+    
+  </a>
+  <a name="plotRLB_previous_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotRLB_previous_algorithms(dim, funcs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display BBOB 2009 data, by default from
+<tt class="rst-docutils literal">pprldistr.previous_data_filename = <span class="pre">'pprldistr2009_1e-8.pickle.gz'</span></tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.pprldistr.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dsList, isStoringXMax=False, outputdir='', info='default'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generate figures of empirical cumulative distribution functions.
+
+This method has a feature which allows to keep the same boundaries
+for the x-axis, if ``isStoringXMax==True``. This makes sense when
+dealing with different functions or subsets of functions for one
+given dimension.
+
+CAVE: this is bug-prone, as some data depend on the maximum
+evaluations and the appearence therefore depends on the
+calling order.
+
+:param DataSetList dsList: list of DataSet instances to process.
+:param bool isStoringXMax: if set to True, the first call
+                           :py:func:`beautifyFVD` sets the
+                           globals :py:data:`fmax` and
+                           :py:data:`maxEvals` and all subsequent
+                           calls will use these values as rightmost
+                           xlim in the generated figures.
+:param string outputdir: output directory (must exist)
+:param string info: string suffix for output file names.</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

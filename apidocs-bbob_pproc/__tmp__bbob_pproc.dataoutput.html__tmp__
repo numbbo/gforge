@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.dataoutput : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.dataoutput</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Routines for outputting python-formatted data.
+
+1 file per solver per function and per dimension (unit experiment).
+
+Example use:
+
+* from the shell, assuming folder FOLDER contains raw experimental
+  data::
+
+    $ python pathtococo/python/bbob_pproc/dataoutput.py FOLDER
+
+    Searching in FOLDER ...
+    Searching in FOLDER/data_f1 ...
+    ...
+    Found ... file(s)!
+    Processing FOLDER/....info.
+    ...
+    Saved pickle in FOLDER-pickle/....pickle.
+
+This creates folder :file:`FOLDER-pickle` with python formatted files to
+use with COCO.</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id25">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.dataoutput.html#outputPickle" data-type="Function" class="code">outputPickle</a></td>
+    <td><span>Generates pickle files from a DataSetList.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.dataoutput.html#usage" data-type="Function" class="code">usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.dataoutput.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Generate python-formatted data from raw BBOB experimental data.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.dataoutput.outputPickle">
+    
+  </a>
+  <a name="outputPickle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    outputPickle(dsList):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates pickle files from a DataSetList.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.dataoutput.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    usage():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.dataoutput.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generate python-formatted data from raw BBOB experimental data.
+
+The raw experimental data (files with the extension :file:`info`
+pointing to files with extension :file:`dat` and :file:`tdat`) are
+post-processed and stored in a more condensed way as files with the
+extension :file:`pickle`.
+Supposing the raw data are stored in folder :file:`mydata`, the new
+pickle files will be put in folder :file:`mydata-pickle`.
+
+:keyword list argv: strings containing options and arguments. If not
+                    provided, sys.argv is accessed.
+
+*argv* should list either names of info files or folders containing
+info files.
+Furthermore, *argv* can begin with, in any order, facultative option
+flags listed below.
+
+    -h, --help
+
+        display this message
+
+:exception Usage: Gives back a usage message.
+
+Examples:
+
+* Calling the dataoutput.py interface from the command line::
+
+    $ python bbob_pproc/dataoutput.py experiment2/*.info
+
+* Loading this package and calling the main from the command line
+  (requires that the path to this package is in the search path)::
+
+    $ python -m bbob_pproc.dataoutput -h
+
+  This will print out this help message.
+
+* From the python interactive shell (requires that the path to this
+  package is in python search path)::
+
+    &gt;&gt; import bbob_pproc as bb
+    &gt;&gt; bb.dataoutput.main('folder1')</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

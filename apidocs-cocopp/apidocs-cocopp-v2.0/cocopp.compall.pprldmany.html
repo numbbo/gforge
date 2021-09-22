@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.compall.pprldmany : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.compall.pprldmany</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.compall.html" data-type="Package" class="code">compall</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Generates figure of the bootstrap distribution of aRT.
+    
+The main method in this module generates figures of Empirical
+Cumulative Distribution Functions of the bootstrap distribution of
+the Average Running Time (aRT) divided by the dimension for many
+algorithms.
+
+The outputs show the ECDFs of the running times of the simulated runs
+divided by dimension for 50 different targets logarithmically uniformly
+distributed in [1e−8, 1e2]. The crosses (×) give the median number of
+function evaluations of unsuccessful runs divided by dimension.
+
+**Example**
+
+.. plot::
+    :width: 50%
+
+    import urllib
+    import tarfile
+    import glob
+    from pylab import *
+    
+    import cocopp as bb
+    
+    # Collect and unarchive data (3.4MB)
+    dataurl = 'http://coco.lri.fr/BBOB2009/pythondata/BIPOP-CMA-ES.tar.gz'
+    filename, headers = urllib.urlretrieve(dataurl)
+    archivefile = tarfile.open(filename)
+    archivefile.extractall()
+    
+    # Empirical cumulative distribution function of bootstrapped aRT figure
+    ds = bb.load(glob.glob('BBOB2009pythondata/BIPOP-CMA-ES/ppdata_f0*_20.pickle'))
+    figure()
+    bb.compall.pprldmany.plot(ds) # must rather call main instead of plot?
+    bb.compall.pprldmany.beautify()</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id19">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#plt_plot" data-type="Function" class="code">plt_plot</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Customize figure presentation.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#plotdata" data-type="Function" class="code">plotdata</a></td>
+    <td><span>Draw a normalized ECDF. What means normalized?</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#plotLegend" data-type="Function" class="code">plotLegend</a></td>
+    <td><span>Display right-side legend.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#plot" data-type="Function" class="code">plot</a></td>
+    <td><span>This function is obsolete? Generates a graph of the run length distribution of an algorithm.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#all_single_functions" data-type="Function" class="code">all_single_functions</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.pprldmany.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Generates a figure showing the performance of algorithms.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.plt_plot">
+    
+  </a>
+  <a name="plt_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plt_plot(*args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Customize figure presentation.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.plotdata">
+    
+  </a>
+  <a name="plotdata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotdata(data, maxval=None, maxevals=None, CrE=0.0, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Draw a normalized ECDF. What means normalized?<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">seq data</td><td>data set, a 1-D ndarray of runlengths</td></tr><tr><td></td><td class="fieldArg">float maxval</td><td>right-most value to be displayed, will use the
+largest non-inf, non-nan value in data if not
+provided</td></tr><tr><td></td><td class="fieldArg">seq maxevals</td><td>if provided, will plot the median of this
+sequence as a single cross marker</td></tr><tr><td></td><td class="fieldArg">float CrE</td><td>Crafting effort the data will be multiplied by
+the exponential of this value.</td></tr><tr><td></td><td class="fieldArg">kwargs</td><td>optional arguments provided to plot function.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.plotLegend">
+    
+  </a>
+  <a name="plotLegend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotLegend(handles, maxval):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Display right-side legend.</p>
+<p>The figure is stopped at maxval (upper x-bound), and the graphs in
+the figure are prolonged with straight lines to the right to connect
+with labels of the graphs (uniformly spread out vertically). The
+order of the graphs at the upper x-bound line give the order of the
+labels, in case of ties, the best is the graph for which the x-value
+of the first step (from the right) is smallest.</p>
+<p>The annotation string is stripped from preceeding pathnames.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">float maxval</td><td>rightmost x boundary</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">list of (ordered) labels and handles.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot(dsList, targets=None, craftingeffort=0.0, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>This function is obsolete?
+Generates a graph of the run length distribution of an algorithm.
+
+We display the empirical cumulative distribution function ECDF of
+the bootstrapped distribution of the runlength for an algorithm
+(in number of function evaluations) to reach the target functions 
+value :py:data:`targets`.
+
+:param DataSetList dsList: data set for one algorithm
+:param seq targets: target function values
+:param float crafting effort: the data will be multiplied by the
+                              exponential of this value
+:param dict kwargs: additional parameters provided to plot function.
+
+:returns: handles</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.all_single_functions">
+    
+  </a>
+  <a name="all_single_functions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    all_single_functions(dict_alg, is_single_algorithm, sorted_algs=None, output_dir='.', parent_html_file_name=None, settings=genericsettings):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.pprldmany.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dictAlg, order=None, outputdir='.', info='default', dimension=None, parentHtmlFileName=None, plotType=PlotType.ALG, settings=genericsettings):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generates a figure showing the performance of algorithms.
+
+From a dictionary of :py:class:`DataSetList` sorted by algorithms,
+generates the cumulative distribution function of the bootstrap
+distribution of aRT for algorithms on multiple functions for
+multiple targets altogether.
+
+:param dict dictAlg: dictionary of :py:class:`DataSetList` instances
+                     one instance is equivalent to one algorithm,
+:param list targets: target function values
+:param list order: sorted list of keys to dictAlg for plotting order
+:param str outputdir: output directory
+:param str info: output file name suffix
+:param str parentHtmlFileName: defines the parent html page </pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-09-01 16:25:08.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

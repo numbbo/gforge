@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.cococommands : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.cococommands</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Module for using COCO from the (i)Python interpreter.
+
+For all operations in the Python interpreter, it will be assumed that
+the package has been imported as bb, just like it is done in the first
+line of the examples below.
+
+The main data structures used in COCO are :py:class:`DataSet`, which
+corresponds to data of one algorithm on one problem, and
+:py:class:`DataSetList`, which is for collections of :py:class:`DataSet`
+instances. Both classes are implemented in :py:mod:`cocopp.pproc`.
+
+Examples:
+
+* Start by importing :py:mod:`cocopp`::
+
+    &gt;&gt;&gt; import cocopp as pp # load COCO postprocessing
+    &gt;&gt;&gt; import os
+    &gt;&gt;&gt; import urllib
+    &gt;&gt;&gt; import tarfile
+    &gt;&gt;&gt; path = os.path.abspath(os.path.dirname(os.path.dirname('__file__')))
+    &gt;&gt;&gt; os.chdir(path)
+    &gt;&gt;&gt; pp.genericsettings.verbose = False # ensure to make below doctests work 
+
+* Load a data set, assign to variable :py:data:`ds`::
+
+    &gt;&gt;&gt; infoFile = 'data/BIPOP-CMA-ES/bbobexp_f2.info'
+    &gt;&gt;&gt; if not os.path.exists(infoFile):
+    ...   os.chdir(os.path.join(path, 'data'))
+    ...   dataurl = 'http://coco.gforge.inria.fr/data-archive/2009/BIPOP-CMA-ES_hansen_noiseless.tgz'
+    ...   filename, headers = urllib.urlretrieve(dataurl)
+    ...   archivefile = tarfile.open(filename)
+    ...   archivefile.extractall()
+    ...   os.chdir(path)
+    &gt;&gt;&gt; ds = pp.load(infoFile)
+      Data consistent according to test in consistency_check() in pproc.DataSet
+
+* Get some information on a :py:class:`DataSetList` instance::
+
+    &gt;&gt;&gt; print ds # doctest:+ELLIPSIS
+    [DataSet(BIPOP-CMA-ES on f2 2-D), ..., DataSet(BIPOP-CMA-ES on f2 40-D)]
+    &gt;&gt;&gt; pp.info(ds)
+    6 data set(s)
+    Algorithm(s): BIPOP-CMA-ES
+    1 Function with ID 2
+    Dimension(s): 2, 3, 5, 10, 20, 40
+    Max evals: [762, 1537, 2428, 6346, 20678, 75010]</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id12">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.cococommands.html#load" data-type="Function" class="code">load</a></td>
+    <td><tt>Create a :py:class:`DataSetList` instance from a file or folder.</tt></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.cococommands.html#info" data-type="Function" class="code">info</a></td>
+    <td><span>Display more info on an instance of DatasetList.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.cococommands.html#pickle" data-type="Function" class="code">pickle</a></td>
+    <td><span>Pickle a DataSetList.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.cococommands.html#systeminfo" data-type="Function" class="code">systeminfo</a></td>
+    <td><span>Display information on the system.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.cococommands.load">
+    
+  </a>
+  <a name="load">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    load(filename):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Create a :py:class:`DataSetList` instance from a file or folder.
+
+Input argument filename can be a single :file:`info` file name, a
+single pickle filename or a folder name. In the latter case, the
+folder is browsed recursively for :file:`info` or :file:`pickle`
+files.</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.cococommands.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    info(dsList):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display more info on an instance of DatasetList.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.cococommands.pickle">
+    
+  </a>
+  <a name="pickle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    pickle(dsList):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Pickle a DataSetList.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.cococommands.systeminfo">
+    
+  </a>
+  <a name="systeminfo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    systeminfo():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display information on the system.<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:44:06.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.ppfigparam : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.ppfigparam</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Generate aRT vs param. figures.</p>
+<p>The figures will show the performance in terms of aRT on a log scale
+w.r.t. parameter. On the y-axis, data is represented as
+a number of function evaluations. Crosses (+) give the median number of
+function evaluations for the smallest reached target function value
+(also divided by dimension). Crosses (×) give the average number of
+overall conducted function evaluations in case the smallest target
+function value (1e-8) was not reached.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id38">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigparam.html#read_fun_infos" data-type="Function" class="code">read_fun_infos</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigparam.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Customize figure presentation.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigparam.html#plot" data-type="Function" class="code">plot</a></td>
+    <td><span>Generate plot of aRT vs param.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfigparam.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Generates figure of aRT vs. param.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigparam.read_fun_infos">
+    
+  </a>
+  <a name="read_fun_infos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    read_fun_infos():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigparam.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Customize figure presentation.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigparam.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot(dsList, param='dim', targets=(10.0, 1.0, 0.1, 0.01, 0.001, 1e-05, 1e-08)):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generate plot of aRT vs param.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfigparam.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dsList, _targets=(10.0, 1.0, 0.1, 0.01, 0.001, 1e-05, 1e-08), param=('dim', 'Dimension'), is_normalized=True, outputdir='.'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates figure of aRT vs. param.</p>
+<p>This script will generate as many figures as there are functions.
+For a given function and a given parameter value there should be
+only <strong>one</strong> data set.
+Crosses (+) give the median number of function evaluations of
+successful trials for the smallest reached target function value.
+Crosses (x) give the average number of overall conducted function
+evaluations in case the smallest target function value (1e-8) was
+not reached.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">DataSetList dsList</td><td>data sets</td></tr><tr><td></td><td class="fieldArg">seq _targets</td><td>target precisions</td></tr><tr><td></td><td class="fieldArg">tuple param</td><td>parameter on x-axis. The first element has to
+be a string corresponding to the name of an
+attribute common to elements of dsList. The
+second element has to be a string which will
+be used as label for the figures. The values
+of attribute param have to be sortable.</td></tr><tr><td></td><td class="fieldArg">bool is_normalized</td><td>if True the y values are normalized by
+x values</td></tr><tr><td></td><td class="fieldArg">string outputdir</td><td>name of output directory for the image
+files</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

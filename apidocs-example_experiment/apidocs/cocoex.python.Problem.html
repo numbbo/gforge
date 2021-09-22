@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocoex.python.Problem : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocoex API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocoex.python.Problem(<span title=".interface.Problem">_interface.Problem</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocoex.html" data-type="Package" class="code">cocoex</a>.<a href="cocoex.python.html" data-type="Package" class="code">python</a></code>
+          
+          <a href="classIndex.html#cocoex.python.Problem">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p><a href="cocoex.python.Problem.html"><code>Problem</code></a> instances are usually generated using class <a href="cocoex.python.Suite.html"><code>Suite</code></a>.</p>
+<p>The main feature of a problem instance is that it is callable, returning the
+objective function value when called with a candidate solution as input.</p>
+<p>It provides other useful properties and methods like <a href="cocoex.python.Problem.html#dimension"><code>dimension</code></a>,
+<a href="cocoex.python.Problem.html#number_of_constraints"><code>number_of_constraints</code></a>, <a href="cocoex.python.Problem.html#observe_with"><code>observe_with</code></a>, <a href="cocoex.python.Problem.html#initial_solution_proposal"><code>initial_solution_proposal</code></a>...</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id8">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#constraint" data-type="Method" class="code">constraint</a></td>
+    <td><span>return constraint values for <code>x</code>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#logger_biobj_feed_solution" data-type="Method" class="code">logger_biobj_feed_solution</a></td>
+    <td><span>Feed the given solution to logger_biobj in order to reconstruct its output.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#add_observer" data-type="Method" class="code">add_observer</a></td>
+    <td><span><code>add_observer(self, observer: Observer)</code>, see <a href="cocoex.python.Problem.html#observe_with"><code>observe_with</code></a>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#observe_with" data-type="Method" class="code">observe_with</a></td>
+    <td><span><tt class="rst-docutils literal">observe_with(self, observer: Observer)</tt> attaches an <a href="cocoex.python.Observer.html"><code>Observer</code></a> instance to this problem.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#initial_solution_proposal" data-type="Method" class="code">initial_solution_proposal</a></td>
+    <td><span>return feasible initial solution proposals.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#initial_solution" data-type="Method" class="code">initial_solution</a></td>
+    <td><span>return feasible initial solution</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#observers" data-type="Method" class="code">observers</a></td>
+    <td><span>list of observers wrapped around this problem</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#is_observed" data-type="Method" class="code">is_observed</a></td>
+    <td><span>problem <tt class="rst-docutils literal">p</tt> is observed <tt class="rst-docutils literal">p.is_observed</tt> times.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#number_of_variables" data-type="Method" class="code">number_of_variables</a></td>
+    <td><span>Number of variables this problem instance expects as input.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#dimension" data-type="Method" class="code">dimension</a></td>
+    <td><span>alias for <a href="cocoex.python.Problem.html#number_of_variables"><code>number_of_variables</code></a> of the input space</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#number_of_objectives" data-type="Method" class="code">number_of_objectives</a></td>
+    <td><span>number of objectives, if equal to 1, call returns a scalar</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#number_of_constraints" data-type="Method" class="code">number_of_constraints</a></td>
+    <td><span>number of constraints</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#lower_bounds" data-type="Method" class="code">lower_bounds</a></td>
+    <td><span>depending on the test bed, these are not necessarily strict bounds</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#upper_bounds" data-type="Method" class="code">upper_bounds</a></td>
+    <td><span>depending on the test bed, these are not necessarily strict bounds</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#evaluations" data-type="Method" class="code">evaluations</a></td>
+    <td><span>number of times this <a href="cocoex.python.Problem.html"><code>Problem</code></a> instance was evaluated</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#final_target_hit" data-type="Method" class="code">final_target_hit</a></td>
+    <td><span>return 1 if the final target is known and has been hit, 0 otherwise</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#final_target_fvalue1" data-type="Method" class="code">final_target_fvalue1</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#best_observed_fvalue1" data-type="Method" class="code">best_observed_fvalue1</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#free" data-type="Method" class="code">free</a></td>
+    <td><span>Free the given test problem.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#id" data-type="Method" class="code">id</a></td>
+    <td><span>ID as string without spaces or weird characters</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#id_function" data-type="Method" class="code">id_function</a></td>
+    <td><span>function number inferred from <a href="cocoex.python.Problem.html#id"><code>id</code></a></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#id_instance" data-type="Method" class="code">id_instance</a></td>
+    <td><span>instance number inferred from <a href="cocoex.python.Problem.html#id"><code>id</code></a></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#name" data-type="Method" class="code">name</a></td>
+    <td><span>human readible short description with spaces</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#index" data-type="Method" class="code">index</a></td>
+    <td><span>problem index in the benchmark <a href="cocoex.python.Suite.html"><code>Suite</code></a> of origin</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#suite" data-type="Method" class="code">suite</a></td>
+    <td><span>benchmark suite this problem is from</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#info" data-type="Method" class="code">info</a></td>
+    <td><span>human readible info, alias for <tt class="rst-docutils literal">str(self)</tt>.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.Problem.html#_f0" data-type="Method" class="code">_f0</a></td>
+    <td><span>"inofficial" interface to <code>self</code> with target f-value of zero.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocoex.python.Problem.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.constraint">
+    
+  </a>
+  <a name="constraint">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    constraint(self, x):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return constraint values for <code>x</code>.</p>
+<p>By convention, constraints with values &lt;= 0 are satisfied.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.logger_biobj_feed_solution">
+    
+  </a>
+  <a name="logger_biobj_feed_solution">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    logger_biobj_feed_solution(self, evaluation, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Feed the given solution to logger_biobj in order to reconstruct its
+output.</p>
+<p>Return 1 if the given solution updated the archive and 0 otherwise.</p>
+<p>Used by preprocessing when updating the .info, .dat and .tdat files
+with new indicator reference values.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.add_observer">
+    
+  </a>
+  <a name="add_observer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    add_observer(self, observer):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><code>add_observer(self, observer: Observer)</code>, see <a href="cocoex.python.Problem.html#observe_with"><code>observe_with</code></a>.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.observe_with">
+    
+  </a>
+  <a name="observe_with">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    observe_with(self, observer):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p><tt class="rst-docutils literal">observe_with(self, observer: Observer)</tt> attaches an <a href="cocoex.python.Observer.html"><code>Observer</code></a>
+instance to this problem.</p>
+<p>Attaching an observer can be considered as wrapping the observer
+around the problem. For the observer to be finalized, the problem
+must be free'd (implictly or explicitly).</p>
+<p>Return the observed problem <code>self</code>.</p>
+<p>Details: <code>observer</code> can be <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a>, in which case nothing is done.</p>
+<p>See also: class <a href="cocoex.python.Observer.html"><code>Observer</code></a></p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocoex.python.Problem._f0">
+    
+  </a>
+  <a name="_f0">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _f0(self, x):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>"inofficial" interface to <code>self</code> with target f-value of zero.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.initial_solution_proposal">
+    
+  </a>
+  <a name="initial_solution_proposal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    initial_solution_proposal(self, restart_number=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return feasible initial solution proposals.</p>
+<p>For unconstrained problems, the proposal is different for each
+consecutive call without argument and for each <code>restart_number</code>
+and may be different under repeated calls with the same
+<code>restart_number</code>. <tt class="rst-docutils literal">self.initial_solution_proposal(0)</tt> is the
+same as <tt class="rst-docutils literal">self.initial_solution</tt>.</p>
+<p>Conceptual example:</p>
+<pre class="rst-literal-block">
+# given: a suite instance, a budget, and fmin
+for problem in suite:
+    # restart until budget is (over-)exhausted
+    while problem.evaluations &lt; budget and not problem.final_target_hit:
+        fmin(problem, problem.initial_solution_proposal())
+</pre>
+<p>Details: by default, the first proposal is the domain middle or
+the (only) known feasible solution.
+Subsequent proposals are coordinate-wise sampled as the sum
+of two iid random variates uniformly distributed within the
+domain boundaries. On the <tt class="rst-docutils literal">'bbob'</tt> suite their density is
+0.2 * (x / 5 + 1) for x in [-5, 0] and
+0.2 * (1 - x / 5) for x in [0, 5] and zero otherwise.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.initial_solution">
+    
+  </a>
+  <a name="initial_solution">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    initial_solution(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return feasible initial solution<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.observers">
+    
+  </a>
+  <a name="observers">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    observers(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>list of observers wrapped around this problem<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.is_observed">
+    
+  </a>
+  <a name="is_observed">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    is_observed(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>problem <tt class="rst-docutils literal">p</tt> is observed <tt class="rst-docutils literal">p.is_observed</tt> times.</p>
+<p>See also: the list of observers in property <a href="cocoex.python.Problem.html#observers"><code>observers</code></a>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.number_of_variables">
+    
+  </a>
+  <a name="number_of_variables">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    number_of_variables(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Number of variables this problem instance expects as input.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.dimension">
+    
+  </a>
+  <a name="dimension">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    dimension(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>alias for <a href="cocoex.python.Problem.html#number_of_variables"><code>number_of_variables</code></a> of the input space<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.number_of_objectives">
+    
+  </a>
+  <a name="number_of_objectives">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    number_of_objectives(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>number of objectives, if equal to 1, call returns a scalar<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.number_of_constraints">
+    
+  </a>
+  <a name="number_of_constraints">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    number_of_constraints(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>number of constraints<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.lower_bounds">
+    
+  </a>
+  <a name="lower_bounds">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    lower_bounds(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>depending on the test bed, these are not necessarily strict bounds<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.upper_bounds">
+    
+  </a>
+  <a name="upper_bounds">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    upper_bounds(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>depending on the test bed, these are not necessarily strict bounds<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.evaluations">
+    
+  </a>
+  <a name="evaluations">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    evaluations(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>number of times this <a href="cocoex.python.Problem.html"><code>Problem</code></a> instance was evaluated<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.final_target_hit">
+    
+  </a>
+  <a name="final_target_hit">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    final_target_hit(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return 1 if the final target is known and has been hit, 0 otherwise<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.final_target_fvalue1">
+    
+  </a>
+  <a name="final_target_fvalue1">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    final_target_fvalue1(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.best_observed_fvalue1">
+    
+  </a>
+  <a name="best_observed_fvalue1">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    best_observed_fvalue1(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.free">
+    
+  </a>
+  <a name="free">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    free(self, force=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Free the given test problem.</p>
+<p>Not strictly necessary (unless, possibly, for the observer). <a href="cocoex.python.Problem.html#free"><code>free</code></a>
+ensures that all files associated with the problem are closed as
+soon as possible and any memory is freed. After free()ing the
+problem, all other operations are invalid and will raise an
+exception.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.id">
+    
+  </a>
+  <a name="id">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    id(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>ID as string without spaces or weird characters<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.id_function">
+    
+  </a>
+  <a name="id_function">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    id_function(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>function number inferred from <a href="cocoex.python.Problem.html#id"><code>id</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.id_instance">
+    
+  </a>
+  <a name="id_instance">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    id_instance(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>instance number inferred from <a href="cocoex.python.Problem.html#id"><code>id</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    name(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>human readible short description with spaces<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    index(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>problem index in the benchmark <a href="cocoex.python.Suite.html"><code>Suite</code></a> of origin<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.suite">
+    
+  </a>
+  <a name="suite">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    suite(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>benchmark suite this problem is from<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.Problem.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    info(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>human readible info, alias for <tt class="rst-docutils literal">str(self)</tt>.</p>
+<p>The format of this info string is not guarantied and may change
+in future.</p>
+<p>See also: <tt class="rst-docutils literal">repr(self)</tt></p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocoex, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2019-03-15 16:25:14.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

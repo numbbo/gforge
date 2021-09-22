@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.toolsdivers : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.toolsdivers</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Various tools.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id103">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.toolsdivers.Infolder.html" data-type="Class" class="code">Infolder</a></td>
+    <td><span>Contextmanager to do some work in a folder of choice and change dir back in the end.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.toolsdivers.StringList.html" data-type="Class" class="code">StringList</a></td>
+    <td><span>A microtool to join a list of strings using property <a href="cocopp.toolsdivers.StringList.html#as_string"><code>as_string</code></a>.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#print_done" data-type="Function" class="code">print_done</a></td>
+    <td><span>prints a message with time stamp</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#equals_approximately" data-type="Function" class="code">equals_approximately</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#less" data-type="Function" class="code">less</a></td>
+    <td><span>return a &lt; b, while comparing nan results in False without warning</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#diff_attr" data-type="Function" class="code">diff_attr</a></td>
+    <td><span>return <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of <tt class="rst-docutils literal">[name, val1, val2]</tt> triplets for attributes with different values.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#prepend_to_file" data-type="Function" class="code">prepend_to_file</a></td>
+    <td><span>"prepend lines the tex-command filename</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#replace_in_file" data-type="Function" class="code">replace_in_file</a></td>
+    <td><span>"replace a string in the file with another string</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#truncate_latex_command_file" data-type="Function" class="code">truncate_latex_command_file</a></td>
+    <td><span>truncate file but keep in good latex shape</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#strip_pathname" data-type="Function" class="code">strip_pathname</a></td>
+    <td><span>remove ../ and ./ and leading/trailing blanks and path separators from input string <tt class="rst-docutils literal">name</tt> and replace any remaining path separator with '/'</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#strip_pathname1" data-type="Function" class="code">strip_pathname1</a></td>
+    <td><span>remove ../ and ./ and leading/trailing blanks and path separators from input string <tt class="rst-docutils literal">name</tt>, replace any remaining path separator with '/', and keep only the last part of the path</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#strip_pathname2" data-type="Function" class="code">strip_pathname2</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#str_to_latex" data-type="Function" class="code">str_to_latex</a></td>
+    <td><span>do replacements in <tt class="rst-docutils literal">string</tt> such that it most likely compiles with latex</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#number_of_digits" data-type="Function" class="code">number_of_digits</a></td>
+    <td><span>returns the number of non-zero digits of a number, e.g. two for 1200 or three for 2.03.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#num2str" data-type="Function" class="code">num2str</a></td>
+    <td><span>returns the shortest string representation with either <tt class="rst-docutils literal">significant_digits</tt> digits shown or its true value, whichever is shorter.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#number_to_latex" data-type="Function" class="code">number_to_latex</a></td>
+    <td><span>usage as <tt class="rst-docutils literal"><span class="pre">number_to_latex(num2str(1.023e-12))</span> == <span class="pre">"'-1.0\times10^{-12}'"</span></tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#number_to_html" data-type="Function" class="code">number_to_html</a></td>
+    <td><span>usage as <tt class="rst-docutils literal"><span class="pre">number_to_html(num2str(1.023e-12))</span> == <span class="pre">"'-1.0</span> x <span class="pre">10&lt;sup&gt;-12&lt;/sup&gt;'"</span></tt></span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#legend" data-type="Function" class="code">legend</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#check_output" data-type="Function" class="code">check_output</a></td>
+    <td><span>Run command with arguments and return its output as a byte string. Backported from Python 2.7 as it's implemented as pure python on stdlib.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#git" data-type="Function" class="code">git</a></td>
+    <td><span>Run a git command and return its output.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#get_version_label" data-type="Function" class="code">get_version_label</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.toolsdivers.html#path_in_package" data-type="Function" class="code">path_in_package</a></td>
+    <td><span>return the absolute path prepended to <code>subpath</code> in this module.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.print_done">
+    
+  </a>
+  <a name="print_done">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    print_done(message='  done'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>prints a message with time stamp<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.equals_approximately">
+    
+  </a>
+  <a name="equals_approximately">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    equals_approximately(a, b, eps=1e-12):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.less">
+    
+  </a>
+  <a name="less">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    less(a, b):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return a &lt; b, while comparing nan results in False without warning<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.diff_attr">
+    
+  </a>
+  <a name="diff_attr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    diff_attr(m1, m2, exclude=('_',)):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of <tt class="rst-docutils literal">[name, val1, val2]</tt> triplets for
+attributes with different values.</p>
+<p>Attributes whose names start with any string from the
+<code>exclude</code> list are skipped. Furthermore, only attributes
+present in both <code>m1</code> and <code>m2</code> are compared.</p>
+<p>This function was introduced to compare the <a href="cocopp.genericsettings.html"><code>genericsettings</code></a>
+module with its state directly after import. It should be
+applicable any other two class instances as well.</p>
+<p>Details: to "find" the attributes, <code>m1.__dict__</code> is iterated over.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.prepend_to_file">
+    
+  </a>
+  <a name="prepend_to_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    prepend_to_file(filename, lines, maxlines=1000, warn_message=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>"prepend lines the tex-command filename<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.replace_in_file">
+    
+  </a>
+  <a name="replace_in_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    replace_in_file(filename, old_text, new_text):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>"replace a string in the file with another string<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.truncate_latex_command_file">
+    
+  </a>
+  <a name="truncate_latex_command_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    truncate_latex_command_file(filename, keeplines=200):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>truncate file but keep in good latex shape<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.strip_pathname">
+    
+  </a>
+  <a name="strip_pathname">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    strip_pathname(name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <tt class="rst-docutils literal">name</tt> and replace any remaining path separator
+with '/'<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.strip_pathname1">
+    
+  </a>
+  <a name="strip_pathname1">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    strip_pathname1(name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <tt class="rst-docutils literal">name</tt>, replace any remaining path separator
+with '/', and keep only the last part of the path<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.strip_pathname2">
+    
+  </a>
+  <a name="strip_pathname2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    strip_pathname2(name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <tt class="rst-docutils literal">name</tt>, replace any remaining path separator
+with '/', and keep only the last two parts of the path, or only the
+last<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.str_to_latex">
+    
+  </a>
+  <a name="str_to_latex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    str_to_latex(string):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>do replacements in <tt class="rst-docutils literal">string</tt> such that it most likely compiles with latex<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.number_of_digits">
+    
+  </a>
+  <a name="number_of_digits">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    number_of_digits(val, precision=1e-13):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>returns the number of non-zero digits of a number, e.g. two for 1200 or three for 2.03.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.num2str">
+    
+  </a>
+  <a name="num2str">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    num2str(val, significant_digits=2, force_rounding=False, max_predecimal_digits=5, max_postdecimal_leading_zeros=1, remove_trailing_zeros=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>returns the shortest string representation with either <tt class="rst-docutils literal">significant_digits</tt>
+digits shown or its true value, whichever is shorter.</p>
+<p><tt class="rst-docutils literal">force_rounding</tt> shows no more than the desired number of significant digits,
+which means, e.g., <tt class="rst-docutils literal">12345</tt>  becomes <tt class="rst-docutils literal">12000</tt>.</p>
+<p><tt class="rst-docutils literal">remove_trailing_zeros</tt> removes zeros, if and only if the value is exactly.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp <span class="py-keyword">import</span> toolsdivers <span class="py-keyword">as</span> td
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">print</span>([td.num2str(val) <span class="py-keyword">for</span> val <span class="py-keyword">in</span> [12345, 1234.5, 123.45, 12.345, 1.2345, .12345, .012345, .0012345]])
+<span class="py-output">['12345', '1234', '123', '12', '1.2', '0.12', '0.012', '1.2e-3']</span></pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.number_to_latex">
+    
+  </a>
+  <a name="number_to_latex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    number_to_latex(number_as_string):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>usage as <tt class="rst-docutils literal"><span class="pre">number_to_latex(num2str(1.023e-12))</span> == <span class="pre">"'-1.0\times10^{-12}'"</span></tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.number_to_html">
+    
+  </a>
+  <a name="number_to_html">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    number_to_html(number_as_string):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>usage as <tt class="rst-docutils literal"><span class="pre">number_to_html(num2str(1.023e-12))</span> == <span class="pre">"'-1.0</span> x <span class="pre">10&lt;sup&gt;-12&lt;/sup&gt;'"</span></tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.legend">
+    
+  </a>
+  <a name="legend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    legend(*args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.check_output">
+    
+  </a>
+  <a name="check_output">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    check_output(*popenargs, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Run command with arguments and return its output as a byte string.
+Backported from Python 2.7 as it's implemented as pure python on stdlib.</p>
+<p>WARNING: This method is also defined in ../../code-experiments/tools/cocoutils.py.
+If you change something you have to change it in both files.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.git">
+    
+  </a>
+  <a name="git">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    git(args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Run a git command and return its output.</p>
+<p>All errors are deemed fatal and the system will quit.</p>
+<p>WARNING: This method is also defined in ../../code-experiments/tools/cocoutils.py.
+If you change something you have to change it in both files.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.get_version_label">
+    
+  </a>
+  <a name="get_version_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_version_label(algorithmID=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a string with the COCO version of the installed postprocessing,
+potentially adding the hash of the hypervolume reference values from
+the actual experiments (in the <code>bbob-biobj</code> setting).
+If algorithmID==None, the set of different hypervolume reference values
+from all algorithms, read in by the postprocessing, are returned in
+the string. If more than one reference value is present in the data,
+the string displays also a warning.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.toolsdivers.path_in_package">
+    
+  </a>
+  <a name="path_in_package">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    path_in_package(sub_path=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return the absolute path prepended to <code>subpath</code> in this module.<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.compall.determineFtarget2 : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.compall.determineFtarget2</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a>.<a href="bbob_pproc.compall.html" data-type="Package" class="code">compall</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div class="undocumented">No module docstring</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id17">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.compall.determineFtarget2.FunTarget.html" data-type="Class" class="code">FunTarget</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.compall.determineFtarget2.html#usage" data-type="Function" class="code">usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.compall.determineFtarget2.html#writeTable" data-type="Function" class="code">writeTable</a></td>
+    <td><span>Write data in tex-files for creating tables.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.compall.determineFtarget2.html#writeArray" data-type="Function" class="code">writeArray</a></td>
+    <td><span>Writes components of an numeric array in LaTex file with additional Tex-formating features. Negative numbers are printed positive but in italics.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.compall.determineFtarget2.html#postprocessing" data-type="Function" class="code">postprocessing</a></td>
+    <td><span>Substitutes all entries which are the same as the minimum reached value with 'nan'. The minimum value appears then only once in the table.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.compall.determineFtarget2.html#main" data-type="Function" class="code">main</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.compall.determineFtarget2.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    usage():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.compall.determineFtarget2.writeTable">
+    
+  </a>
+  <a name="writeTable">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeTable(data, dim, suffix=None, whichvalue='min'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Write data in tex-files for creating tables.
+
+Inputvalues:
+data - values which are to be processed (list)
+dim - corresponding dimension. There will be
+      at least one table per dimension.
+suffix - If not all data can fit within one side
+         2 files (*_part1.tex and *_part2.tex) will
+         be created. 
+whichvalue - determines wheter the min ('min') values
+             or the median ('median') values are displayed. </pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.compall.determineFtarget2.writeArray">
+    
+  </a>
+  <a name="writeArray">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    writeArray(file, vector, format, fontSize, sep=' &amp; ', linesep='\\\\ \n', suppress_entry=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Writes components of an numeric array in LaTex file with additional
+Tex-formating features. Negative numbers are printed positive but in
+italics.
+
+Inputs:
+file - file in which the output is written to
+vector - 1d-array with only numeric entries
+format - format specifier for each column.
+    CAVE: numbers are only printed correctly,
+          if format specifies two numbers of prec.
+fontSize - size of characters in math environment
+
+Optional Inputs:
+sep - string which is written between the numeric elements
+format - format for the numeric values (e.g. 'e','f')
+suppress_entry - list of boolean of len of vector, if true
+   a '.' is written. Useful to not repeat the same line of
+   function values again.</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.compall.determineFtarget2.postprocessing">
+    
+  </a>
+  <a name="postprocessing">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    postprocessing(data):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Substitutes all entries which are the same as
+the minimum reached value with 'nan'. The minimum
+value appears then only once in the table.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.compall.determineFtarget2.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>From a directory which contains the data of the algorithms
+generates tables showing the minimum reached target value and the
+median reached target value for all algorithms will be determined
+for all dimensions and functions.
+
+Input parameter:
+argv - list of strings containing options and arguments. If not given,
+       sys.argv is accessed. The first argument is the directory which
+       contains the data files.
+flags:
+-h,--help           - displays help
+-d,--dimensions DIM - dimension(s) of interest
+-f,--functions FUN  - function(s) of interest
+--noisefree         - noisefree function set 
+--noisy             - noisy function set
+-v,--verbose        - verbose output
+Either the flag -f FUN or -nf or -n should be set!</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

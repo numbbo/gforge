@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.comp2.pprldistr2 : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.comp2.pprldistr2</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a>.<a href="bbob_pproc.comp2.html" data-type="Package" class="code">comp2</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Creates run length distribution figures for the comparison of 2 algorithms.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id13">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.comp2.pprldistr2.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Format the figure of the run length distribution.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.comp2.pprldistr2.html#computeERT" data-type="Function" class="code">computeERT</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.comp2.pprldistr2.html#plotLogAbs" data-type="Function" class="code">plotLogAbs</a></td>
+    <td><span>Creates ECDF of run length ratios.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.comp2.pprldistr2.html#plotLogRel" data-type="Function" class="code">plotLogRel</a></td>
+    <td><span>Creates one run length distribution from a sequence of indexEntries.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.comp2.pprldistr2.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Generate figures of empirical cumulative distribution functions.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.comp2.pprldistr2.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify(handles):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Format the figure of the run length distribution.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.comp2.pprldistr2.computeERT">
+    
+  </a>
+  <a name="computeERT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    computeERT(fevals, maxevals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.comp2.pprldistr2.plotLogAbs">
+    
+  </a>
+  <a name="plotLogAbs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotLogAbs(dsList0, dsList1, dim, targetValuesToReach):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Creates ECDF of run length ratios.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">DataSetList dsList0</td><td>reference</td></tr><tr><td></td><td class="fieldArg">DataSetList dsList1</td><td>data set list of algorithm of interest</td></tr><tr><td></td><td class="fieldArg">int dim</td><td>dimension</td></tr><tr><td></td><td class="fieldArg">TargetValues targetValuesToReach</td><td>target function values</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">handles</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.comp2.pprldistr2.plotLogRel">
+    
+  </a>
+  <a name="plotLogRel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotLogRel(indexEntries0, indexEntries1, isByInstance=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Creates one run length distribution from a sequence of indexEntries.</p>
+<p>The function and dimension are given.
+Keyword arguments:
+indexEntries0 -- reference
+indexEntries1
+isByInstance -- loop over the function instances instead of the functions</p>
+<p>Outputs:
+res -- resulting plot.
+fsolved -- number of different functions solved.
+funcs -- number of different function considered.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.comp2.pprldistr2.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dsList0, dsList1, dim, targetsOfInterest=None, outputdir='', info='default'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generate figures of empirical cumulative distribution functions.
+
+:param DataSetList dsList0: data set of reference algorithm
+:param DataSetList dsList1: data set of algorithm of concern
+:param int dim: dimension
+:param TargetValues targetsOfInterest: target function values to be
+                                  displayed
+:param bool isStoringXMax: if set to True, the first call BeautifyVD
+                           sets the globals :py:data:`fmax` and 
+                           :py:data:`maxEvals` and all subsequent
+                           calls will use these values as rightmost
+                           xlim in the generated figures.
+:param string outputdir: output directory (must exist)
+:param string info: string suffix for output file names.
+
+Outputs:
+Image files of the empirical cumulative distribution functions.</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

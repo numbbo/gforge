@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocoex.python.__init__ : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocoex API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocoex.python.__init__</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocoex.html" data-type="Package" class="code">cocoex</a>.<a href="cocoex.python.html" data-type="Package" class="code">python</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Experimentation module of the COCO - COmparing Continuous Optimizers -
+framework.</p>
+<p>The module provides benchmark test beds in the <a href="cocoex.python.Suite.html"><code>Suite</code></a> class
+and output data facilities in the <a href="cocoex.python.Observer.html"><code>Observer</code></a> class.</p>
+<p>See the documentation of the <a href="cocoex.python.Suite.html"><code>Suite</code></a> class:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>help(ex.Suite)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">Help on class Suite...</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">print</span>(ex.known_suite_names)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">[...</span></pre>
+<p>A more complete example use case can be found in the <code>example_experiment2.py</code>
+file.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id5">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocoex.python.html#default_observers" data-type="Function" class="code">default_observers</a></td>
+    <td><span>return a map from suite names to default observer names.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.Suite.html" data-type="Class" class="code">Suite</a></td>
+    <td><span>Suite of benchmark problems.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.Observer.html" data-type="Class" class="code">Observer</a></td>
+    <td><span>Observer which can be "attached to" one or several problems, however not necessarily at the same time.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocoex.python.Problem.html" data-type="Class" class="code">Problem</a></td>
+    <td><span><a href="cocoex.python.Problem.html"><code>Problem</code></a> instances are usually generated using class <a href="cocoex.python.Suite.html"><code>Suite</code></a>.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocoex.python.html#log_level" data-type="Function" class="code">log_level</a></td>
+    <td><span><tt class="rst-docutils literal">log_level(level=None)</tt> return current log level and set new log level if <tt class="rst-docutils literal">level is not None and level</tt>.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocoex.python.default_observers">
+    
+  </a>
+  <a name="default_observers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    default_observers(update=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a map from suite names to default observer names.</p>
+<p>This function can also be used to update this map using
+a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> or a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of key-value pairs.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocoex.python.log_level">
+    
+  </a>
+  <a name="log_level">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    log_level(level=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><tt class="rst-docutils literal">log_level(level=None)</tt> return current log level and
+set new log level if <tt class="rst-docutils literal">level is not None and level</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">level</td><td>must be 'error' or 'warning' or 'info' or 'debug', listed
+with increasing verbosity, or '' which doesn't change anything.</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocoex, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2019-03-15 16:25:14.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

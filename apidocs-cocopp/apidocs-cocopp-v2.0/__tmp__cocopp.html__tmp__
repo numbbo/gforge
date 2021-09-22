@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code>cocopp</code> <small>package documentation</small></h1>
+
+        <span id="partOf">
+          
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>COmparing Continuous Optimisers (COCO) post-processing software</p>
+<p>This package is meant to generate output figures and tables for the
+benchmarking of continuous optimisers in the case of black-box
+optimisation.
+The post-processing tool takes as input data from experiments and
+generates outputs that will be used in the generation of the LateX-
+formatted article summarizing the experiments.</p>
+<p>The main method of this package is <a href="cocopp.rungeneric.html#main"><code>cocopp.main</code></a>.
+This method allows to use the post-processing through a command-line
+interface.</p>
+<p>To obtain more information on the use of this package from the python
+interpreter, type: <tt class="rst-docutils literal">help(cocopp.cococommands)</tt>, however remark that
+this info might not be entirely up-to-date.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.__main__.html" data-type="Module" class="code">__main__</a></td>
+    <td><span><tt class="rst-docutils literal">python cocopp</tt> tests the package cocopp and should run through smoothly from a system command shell. It however depends on data files that might not be available (to be improved).</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.algportfolio.html" data-type="Module" class="code">algportfolio</a></td>
+    <td><span>Algorithm portfolio data set module.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.bestalg.html" data-type="Module" class="code">bestalg</a></td>
+    <td><span>Best algorithm dataset module</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.bwsettings.html" data-type="Module" class="code">bwsettings</a></td>
+    <td><span>This module contains settings for outputting black and white figures.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.captions.html" data-type="Module" class="code">captions</a></td>
+    <td><span>Provides basic functionality for creating figure and table captions.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.changeAlgIdAndComment.html" data-type="Module" class="code">changeAlgIdAndComment</a></td>
+    <td><span class="undocumented">No module docstring; 0/1 classes, 1/2 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.cococommands.html" data-type="Module" class="code">cococommands</a></td>
+    <td><span>Module for using COCO from the (i)Python interpreter.</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><a href="cocopp.comp2.html" data-type="Package" class="code">comp2</a></td>
+    <td><span>COmparing Continuous Optimisers (COCO) post-processing tool for comparing two algorithms:</span></td>
+  </tr><tr class="package">
+    
+    <td>Package</td>
+    <td><a href="cocopp.compall.html" data-type="Package" class="code">compall</a></td>
+    <td><span>COmparing Continuous Optimisers (COCO) post-processing tool for comparing multiple algorithms:</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.config.html" data-type="Module" class="code">config</a></td>
+    <td><span>This module is an attempt for a global configuration file for various parameters.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.dataoutput.html" data-type="Module" class="code">dataoutput</a></td>
+    <td><span>Routines for outputting python-formatted data.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.determineFtarget.html" data-type="Module" class="code">determineFtarget</a></td>
+    <td><span class="undocumented">No module docstring; 2/2 classes, 4/5 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.findfiles.html" data-type="Module" class="code">findfiles</a></td>
+    <td><tt>Recursively find :file:`info` and :file:`pickle` files within a directory</tt></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.firstsession.html" data-type="Module" class="code">firstsession</a></td>
+    <td><span>First session script.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.genericsettings.html" data-type="Module" class="code">genericsettings</a></td>
+    <td><span>This module contains some variables settings for COCO.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.grayscalesettings.html" data-type="Module" class="code">grayscalesettings</a></td>
+    <td><span>This module contains settings for outputting grayscale figures.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.htmldesc.html" data-type="Module" class="code">htmldesc</a></td>
+    <td><span>Prepares the descriptions of images and tables which will be converted to html.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.old_ranksumtest.html" data-type="Module" class="code">old_ranksumtest</a></td>
+    <td><span>Stats including rank-sum test for small sample and correct tied ranks. Author: Sturla Molden <a class="rst-reference external" href="http://mail.scipy.org/pipermail/scipy-user/2009-February/019759.html" target="_top">http://mail.scipy.org/pipermail/scipy-user/2009-February/019759.html</a></span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.ppconverrorbars.html" data-type="Module" class="code">ppconverrorbars</a></td>
+    <td><span>Process data and generates some comparison results.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.ppfig.html" data-type="Module" class="code">ppfig</a></td>
+    <td><span>Generic routines for figure generation.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.ppfigdim.html" data-type="Module" class="code">ppfigdim</a></td>
+    <td><span>Generate performance scaling figures.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.ppfigparam.html" data-type="Module" class="code">ppfigparam</a></td>
+    <td><span>Generate aRT vs param. figures.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pplogloss.html" data-type="Module" class="code">pplogloss</a></td>
+    <td><span>Module for computing aRT loss ratio</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pprldistr.html" data-type="Module" class="code">pprldistr</a></td>
+    <td><span>For generating empirical cumulative distribution function figures.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pprldistr2009_hardestRLB.html" data-type="Module" class="code">pprldistr2009_hardestRLB</a></td>
+    <td><span>Generates "pprldistr2009_RLB.pickle.gz" that is used to plot, in the background, the results of the 2009 algorithms</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pproc.html" data-type="Module" class="code">pproc</a></td>
+    <td><span>Raw post-processing routines.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pprocold.html" data-type="Module" class="code">pprocold</a></td>
+    <td><span>Helper routines for read index files.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.ppsingle.html" data-type="Module" class="code">ppsingle</a></td>
+    <td><span>Single data set results output module.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pptable.html" data-type="Module" class="code">pptable</a></td>
+    <td><span>Module for generating tables used by rungeneric1.py.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.pptex.html" data-type="Module" class="code">pptex</a></td>
+    <td><span>Routines for writing TeX for tables.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.preparehtml.html" data-type="Module" class="code">preparehtml</a></td>
+    <td><span>Prepares the figure and table descriptions in html.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.preparetexforhtml.html" data-type="Module" class="code">preparetexforhtml</a></td>
+    <td><span>Prepares the descriptions of images and tables which will be converted to html.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.readalign.html" data-type="Module" class="code">readalign</a></td>
+    <td><span>Helper routines to read in data files.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.rungeneric.html" data-type="Module" class="code">rungeneric</a></td>
+    <td><span>Process data to be included in a latex template. Called via</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.rungeneric1.html" data-type="Module" class="code">rungeneric1</a></td>
+    <td><span>Module for post-processing the data of one algorithm.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.rungeneric2.html" data-type="Module" class="code">rungeneric2</a></td>
+    <td><span>Routines for the comparison of 2 algorithms.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.rungenericmany.html" data-type="Module" class="code">rungenericmany</a></td>
+    <td><span>Process data to be included in a generic template.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.sanitycheck.html" data-type="Module" class="code">sanitycheck</a></td>
+    <td><span>Module for checking data sets.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.testbedsettings.html" data-type="Module" class="code">testbedsettings</a></td>
+    <td><span class="undocumented">No module docstring; 6/6 classes, 1/8 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.toolsdivers.html" data-type="Module" class="code">toolsdivers</a></td>
+    <td><span>Various tools.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><a href="cocopp.toolsstats.html" data-type="Module" class="code">toolsstats</a></td>
+    <td><span>Bootstrapping and statistics routines.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:44:06.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

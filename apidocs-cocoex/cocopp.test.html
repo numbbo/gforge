@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.test : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.test</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Tests the cocopp module.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id75">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.test.InfolderGoneWithTheWind.html" data-type="Class" class="code">InfolderGoneWithTheWind</a></td>
+    <td><span><tt class="rst-docutils literal">with <span class="pre">InfolderGoneWithTheWind():</span> ...</tt> executes the block in a</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#depreciated_data_archive_get" data-type="Function" class="code">depreciated_data_archive_get</a></td>
+    <td><span>CAVEAT: this won't work anymore as the get_first method changed to get_one</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#data_archive_get" data-type="Function" class="code">data_archive_get</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#join_path" data-type="Function" class="code">join_path</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#copy_latex_templates" data-type="Function" class="code">copy_latex_templates</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#run_latex_template" data-type="Function" class="code">run_latex_template</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#retrieve_algorithm" data-type="Function" class="code">retrieve_algorithm</a></td>
+    <td><span>depreciated (replaced by cocopp._data_archive COCODataArchive instance)</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#depreciated_prepare_data" data-type="Function" class="code">depreciated_prepare_data</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#process_doctest_output" data-type="Function" class="code">process_doctest_output</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#delete_files" data-type="Function" class="code">delete_files</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.test.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>these tests are executed when <tt class="rst-docutils literal">python cocopp</tt> is called.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.test.depreciated_data_archive_get">
+    
+  </a>
+  <a name="depreciated_data_archive_get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    depreciated_data_archive_get(substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>CAVEAT: this won't work anymore as the get_first method changed to
+get_one</p>
+<p>return first matching data paths for each element of <code>substrs</code>
+concatenated in a string.</p>
+<p>Specifically:</p>
+<pre class="rst-literal-block">
+return ' ' + ' '.join(cocopp._data_archive.get_first(substrs))
+</pre>
+<p>Implemented via <a href="http://docs.python.org/library/subprocess.html#subprocess"><code>subprocess</code></a> to prevent the need to import <a href="cocopp.html"><code>cocopp</code></a> in
+this file here (prevent the script vs module absolute import issue).</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.data_archive_get">
+    
+  </a>
+  <a name="data_archive_get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    data_archive_get(substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.join_path">
+    
+  </a>
+  <a name="join_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    join_path(a, *p):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.copy_latex_templates">
+    
+  </a>
+  <a name="copy_latex_templates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    copy_latex_templates():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.run_latex_template">
+    
+  </a>
+  <a name="run_latex_template">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    run_latex_template(filename, all_tests):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.retrieve_algorithm">
+    
+  </a>
+  <a name="retrieve_algorithm">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    retrieve_algorithm(data_path, folder_name, algorithm_name, file_name=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>depreciated (replaced by cocopp._data_archive COCODataArchive instance)<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.depreciated_prepare_data">
+    
+  </a>
+  <a name="depreciated_prepare_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    depreciated_prepare_data(run_all_tests):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.process_doctest_output">
+    
+  </a>
+  <a name="process_doctest_output">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    process_doctest_output(stream=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.delete_files">
+    
+  </a>
+  <a name="delete_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    delete_files(all_files=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.test.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(arguments):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>these tests are executed when <tt class="rst-docutils literal">python cocopp</tt> is called.</p>
+<p>with <tt class="rst-docutils literal">wine</tt> as second argument <tt class="rst-docutils literal"><span class="pre">C:\Python26\python.exe</span></tt>
+instead of <tt class="rst-docutils literal">python</tt> is called</p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.bestalg.BestAlgSet : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.bestalg.BestAlgSet(<a href="cocopp.pproc.DataSet.html" data-type="Class" class="code">DataSet</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.bestalg.html" data-type="Module" class="code">bestalg</a></code>
+          
+          <a href="classIndex.html#cocopp.bestalg.BestAlgSet">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Unit element of best algorithm data set.
+
+Here unit element means for one function and one dimension.
+This class is derived from :py:class:`DataSet` but it does not
+inherit from it.
+
+Class attributes:
+    - funcId -- function Id (integer)
+    - dim -- dimension (integer)
+    - comment -- comment for the setting (string)
+    - algId -- algorithm name (string)
+    - evals -- collected data aligned by function values (array)
+    - maxevals -- maximum number of function evaluations (array)
+
+evals and funvals are arrays of data collected from N data sets.
+Both have the same format: zero-th column is the value on which the
+data of a row is aligned, the N subsequent columns are either the
+numbers of function evaluations for evals or function values for
+funvals.
+
+Known bug: algorithms where the aRT is NaN or Inf are not taken into
+account!?</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id123">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>Instantiate one best algorithm data set with name algId.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#__eq__" data-type="Method" class="code">__eq__</a></td>
+    <td><span>Compare indexEntry instances.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#__ne__" data-type="Method" class="code">__ne__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#__repr__" data-type="Method" class="code">__repr__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#pickle" data-type="Method" class="code">pickle</a></td>
+    <td><span>Save instance to a pickle file.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#createDictInstance" data-type="Method" class="code">createDictInstance</a></td>
+    <td><span>Returns a dictionary of the instances</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#detERT" data-type="Method" class="code">detERT</a></td>
+    <td><span>Determine the average running time to reach target values.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#detEvals" data-type="Method" class="code">detEvals</a></td>
+    <td><span>Determine the number of evaluations to reach target values.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.bestalg.BestAlgSet.html#get_success_ratio" data-type="Method" class="code">get_success_ratio</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <a href="cocopp.pproc.DataSet.html" data-type="Class" class="code">DataSet</a>:
+          </p>
+          <table class="children sortable" id="id124">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#isBiobjective" data-type="Method" class="code">isBiobjective</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#get_testbed_name" data-type="Method" class="code">get_testbed_name</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#get_data_format" data-type="Method" class="code">get_data_format</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#get_suite" data-type="Method" class="code">get_suite</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#evals_%200" data-type="Method" class="code">evals_ 0</a></td>
+    <td><span>Shall become <tt class="rst-docutils literal">evals</tt> attribute in future.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#evals_%201" data-type="Method" class="code">evals_ 1</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#evals_" data-type="Method" class="code">evals_</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#consistency_check" data-type="Method" class="code">consistency_check</a></td>
+    <td><span>checks consistency of data set according to - number of instances - instances used</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#computeERTfromEvals" data-type="Method" class="code">computeERTfromEvals</a></td>
+    <td><span>Sets the attributes ert and target from the attribute evals.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" data-type="Method" class="code">evals_with_simulated_restarts</a></td>
+    <td><span>Return a len(targets) list of <tt class="rst-docutils literal">samplesize</tt> "simulated" run lengths (#evaluations, sorted).</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#info" data-type="Method" class="code">info</a></td>
+    <td><span>print text info to stdout</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#mMaxEvals" data-type="Method" class="code">mMaxEvals</a></td>
+    <td><span>Returns the maximum number of function evaluations over all runs (trials), obsolete and replaced by attribute <a href="cocopp.pproc.DataSet.html#max_eval"><code>max_eval</code></a></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#max_eval" data-type="Method" class="code">max_eval</a></td>
+    <td><span>maximum number of function evaluations over all runs (trials),</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#nbRuns" data-type="Method" class="code">nbRuns</a></td>
+    <td><span>Returns the number of runs.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#createDictInstanceCount" data-type="Method" class="code">createDictInstanceCount</a></td>
+    <td><span>Returns a dictionary of the instances and their count.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#splitByTrials" data-type="Method" class="code">splitByTrials</a></td>
+    <td><span>Splits the post-processed data arrays by trials.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#generateRLData" data-type="Method" class="code">generateRLData</a></td>
+    <td><span>Determine the running lengths for reaching the target values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#detAverageEvals" data-type="Method" class="code">detAverageEvals</a></td>
+    <td><span>Determine the average number of f-evals for each target in <tt class="rst-docutils literal">targets</tt> list. If a target is not reached within trial itrail, self.maxevals[itrial] contributes to the average.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#detSuccesses" data-type="Method" class="code">detSuccesses</a></td>
+    <td><span>Determine for each target in targets the number of successful runs, keeping in return list the order in targets.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#detSuccessRates" data-type="Method" class="code">detSuccessRates</a></td>
+    <td><span>return a np.array with the success rate for each target in targets, easiest target first</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#plot_funvals" data-type="Method" class="code">plot_funvals</a></td>
+    <td><span>plot data of <code>funvals</code> attribute, versatile</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#plot" data-type="Method" class="code">plot</a></td>
+    <td><span>plot data from <code>evals</code> attribute.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#_cut_data" data-type="Method" class="code">_cut_data</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#_complement_data" data-type="Method" class="code">_complement_data</a></td>
+    <td><span>insert a line for each target value</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#_detMaxEvals" data-type="Method" class="code">_detMaxEvals</a></td>
+    <td><span>computes for each data column the (maximal) evaluation until final_target was reached, or <tt class="rst-docutils literal">self.maxevals</tt> otherwise.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#__parseHeader" data-type="Method" class="code">__parseHeader</a></td>
+    <td><span>Extract data from a header line in an index entry.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.DataSet.html#_detEvals2" data-type="Method" class="code">_detEvals2</a></td>
+    <td><span>Determine the number of evaluations to reach target values.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, dict_alg, algId='Virtual Best Algorithm'):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#__init__" data-type="Method" class="code">cocopp.pproc.DataSet.__init__</a></div>
+    
+    <pre>Instantiate one best algorithm data set with name algId.
+
+:keyword dict_alg: dictionary of datasets, keys are algorithm
+                  names, values are 1-element
+                  :py:class:`DataSetList`.
+:keyword algId: name of the to-be-constructed algorithm as string</pre>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __eq__(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#__eq__" data-type="Method" class="code">cocopp.pproc.DataSet.__eq__</a></div>
+    
+    <div>Compare indexEntry instances.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __ne__(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#__ne__" data-type="Method" class="code">cocopp.pproc.DataSet.__ne__</a></div>
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __repr__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#__repr__" data-type="Method" class="code">cocopp.pproc.DataSet.__repr__</a></div>
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.pickle">
+    
+  </a>
+  <a name="pickle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    pickle(self, outputdir=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#pickle" data-type="Method" class="code">cocopp.pproc.DataSet.pickle</a></div>
+    
+    <div><p>Save instance to a pickle file.</p>
+<p>Saves the instance to a pickle file. If not specified
+by argument outputdir, the location of the pickle is given by
+the location of the first index file associated.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.createDictInstance">
+    
+  </a>
+  <a name="createDictInstance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    createDictInstance(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#createDictInstance" data-type="Method" class="code">cocopp.pproc.DataSet.createDictInstance</a></div>
+    
+    <div><p>Returns a dictionary of the instances</p>
+<p>The key is the instance id, the value is a list of index.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.detERT">
+    
+  </a>
+  <a name="detERT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    detERT(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#detERT" data-type="Method" class="code">cocopp.pproc.DataSet.detERT</a></div>
+    
+    <div>Determine the average running time to reach target values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">list targets</td><td>target function values of interest</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">list of average running times corresponding to the
+targets.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.detEvals">
+    
+  </a>
+  <a name="detEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    detEvals(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.DataSet.html#detEvals" data-type="Method" class="code">cocopp.pproc.DataSet.detEvals</a></div>
+    
+    <div>Determine the number of evaluations to reach target values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">seq targets</td><td>target precisions</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">list of arrays each corresponding to one value in
+targets and the list of the corresponding algorithms</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.bestalg.BestAlgSet.get_success_ratio">
+    
+  </a>
+  <a name="get_success_ratio">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_success_ratio(self, target):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

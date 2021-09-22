@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.pproc.RunlengthBasedTargetValues : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.pproc.RunlengthBasedTargetValues(<a href="cocopp.pproc.TargetValues.html" data-type="Class" class="code">TargetValues</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.pproc.html" data-type="Module" class="code">pproc</a></code>
+          
+          <a href="classIndex.html#cocopp.pproc.RunlengthBasedTargetValues">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>a class instance call returns f-target values based on
+reference runlengths:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; import cocopp as bb
+&gt;&gt;&gt; # make sure to use the right `bbob` test suite for the test below:
+&gt;&gt;&gt; bb.genericsettings.isNoisy = False
+&gt;&gt;&gt; bb.genericsettings.isNoiseFree = False
+&gt;&gt;&gt; bb.config.config('GECCOBBOBTestbed')
+&gt;&gt;&gt; targets = bb.pproc.RunlengthBasedTargetValues([0.5, 1.2, 3, 10, 50])  # by default times_dimension==True
+&gt;&gt;&gt; # make also sure to have loaded the corresponding reference algo
+&gt;&gt;&gt; # from BBOB-2009:
+&gt;&gt;&gt; targets.reference_data = 'testbedsettings'
+&gt;&gt;&gt; targets(fun_dim=(1, 20)) # doctest:+ELLIPSIS
+Loading best algorithm data from ...
+array([  6.30957345e+01,   3.98107171e+01,   1.00000000e-08,
+         1.00000000e-08,   1.00000000e-08])
+</pre>
+<p>returns a list of target f-values for F1 in 20-D, based on the
+aRT values <tt class="rst-docutils literal"><span class="pre">[0.5,...,50]</span></tt>.</p>
+<p>Details: The computation starts from the smallest budget and the resulting f-target
+must always be at least a factor of <tt class="rst-docutils literal">force_different_targets_factor</tt> smaller
+than the previous one. If the <tt class="rst-docutils literal">smallest_target</tt> is superseded, the log values
+are linearly rescaled such that the easiest found target remains the same and
+the smallest target becomes <tt class="rst-docutils literal">smallest_target</tt>.</p>
+<p>TODO: see compall/determineFtarget2.FunTarget</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id45">
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#cast" data-type="Static Method" class="code">cast</a></td>
+    <td><span>idempotent cast to <tt class="rst-docutils literal">RunlengthBasedTargetValues</tt> class type</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>calling the class instance returns run-length based target values based on the reference data, individually computed for a given <tt class="rst-docutils literal">(funcId, dimension)</tt>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#initialize" data-type="Method" class="code">initialize</a></td>
+    <td><span>lazy initialization to prevent slow import</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#__len__" data-type="Method" class="code">__len__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#__call__" data-type="Method" class="code">__call__</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#label" data-type="Method" class="code">label</a></td>
+    <td><span>return i-th target value as string</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#loglabel" data-type="Method" class="code">loglabel</a></td>
+    <td><span><tt class="rst-docutils literal">decimals</tt> is used for <tt class="rst-docutils literal">round</tt></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#labels" data-type="Method" class="code">labels</a></td>
+    <td><span>target values as a list of <tt class="rst-docutils literal">str</tt></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#label_name" data-type="Method" class="code">label_name</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.RunlengthBasedTargetValues.html#_generate_erts" data-type="Method" class="code">_generate_erts</a></td>
+    <td><span>compute for all target values, starting with 1e-8, the ert value and store it in the reference_data_set attribute</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <a href="cocopp.pproc.TargetValues.html" data-type="Class" class="code">TargetValues</a>:
+          </p>
+          <table class="children sortable" id="id46">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.TargetValues.html#short_info" data-type="Method" class="code">short_info</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.pproc.TargetValues.html#loglabels" data-type="Method" class="code">loglabels</a></td>
+    <td><span><tt class="rst-docutils literal">log10</tt> of the target values as a list of <tt class="rst-docutils literal">str</tt></span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><a href="cocopp.pproc.TargetValues.html#_discretize" data-type="Static Method" class="code">_discretize</a></td>
+    <td><span>return a "similar" list with targets in [10**i/5]</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basestaticmethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.cast">
+    
+  </a>
+  <a name="cast">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    def
+    cast(run_lengths_or_class_instance, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#cast" data-type="Static Method" class="code">cocopp.pproc.TargetValues.cast</a></div>
+    
+    <div>idempotent cast to <tt class="rst-docutils literal">RunlengthBasedTargetValues</tt> class type<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, run_lengths, reference_data='testbedsettings', smallest_target=1e-08, times_dimension=True, force_different_targets_factor=10**0.04, unique_target_values=False, step_to_next_difficult_target=10**0.2):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#__init__" data-type="Method" class="code">cocopp.pproc.TargetValues.__init__</a></div>
+    
+    <div><p>calling the class instance returns run-length based
+target values based on the reference data, individually
+computed for a given <tt class="rst-docutils literal">(funcId, dimension)</tt>.</p>
+<p>TODO: check use case where <tt class="rst-docutils literal">reference_data</tt> is a dictionary similar
+to <tt class="rst-docutils literal">bestalg.bestAlgorithmEntries</tt> with each key dim_fun a reference
+DataSet, computed by bestalg module or portfolio module.</p>
+<blockquote>
+dsList, sortedAlgs, dictAlg = pproc.processInputArgs(args)
+ref_data = refalg.generate(dictAlg)
+targets = RunlengthBasedTargetValues([1, 2, 4, 8], ref_data)</blockquote><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">run_lengths</td><td>sequence of values.</td></tr><tr><td></td><td class="fieldArg">reference_data</td><td>can be a string indicating the filename of a reference algorithm
+data set such as <tt class="rst-docutils literal"><span class="pre">"refalgs/best2009-bbob.tar.gz"</span></tt> or a dictionary
+of best data sets (e.g. from <tt class="rst-docutils literal"><span class="pre">bestalg.generate(...)</span></tt>)
+or a list of algorithm folder/data names (not thoroughly
+tested). If chosen as <tt class="rst-docutils literal">testbedsettings</tt>, the reference algorithm
+specified in testbedsettings.py will be used.</td></tr><tr><td></td><td class="fieldArg">smallest_target</td><td></td></tr><tr><td></td><td class="fieldArg">times_dimension</td><td></td></tr><tr><td></td><td class="fieldArg">force_different_targets_factor</td><td>given the target values are computed from the
+<tt class="rst-docutils literal">reference_data</tt>, enforces that all target
+values are different by at last <tt class="rst-docutils literal">forced_different_targets_factor</tt>
+if <tt class="rst-docutils literal">forced_different_targets_factor</tt>. Default <tt class="rst-docutils literal"><span class="pre">10**0.04</span></tt> means
+that within the typical precision of <tt class="rst-docutils literal"><span class="pre">10**0.2</span></tt> at most five
+consecutive targets can be identical.</td></tr><tr><td></td><td class="fieldArg">step_to_next_difficult_target</td><td>the next more difficult target (just) not reached within the
+target run length is chosen, where <tt class="rst-docutils literal">step_to_next_difficult_target</tt>
+defines "how much more difficult".</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.initialize">
+    
+  </a>
+  <a name="initialize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    initialize(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>lazy initialization to prevent slow import<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __len__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#__len__" data-type="Method" class="code">cocopp.pproc.TargetValues.__len__</a></div>
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __call__(self, fun_dim=None, discretize=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#__call__" data-type="Method" class="code">cocopp.pproc.TargetValues.__call__</a></div>
+    
+    <div><p>Get all target values for the respective function and dimension
+and reference aRT values (passed during initialization). <code>fun_dim</code>
+is a tuple <tt class="rst-docutils literal">(fun_nb, dimension)</tt> like <tt class="rst-docutils literal">(1, 20)</tt> for the 20-D
+sphere.</p>
+<p><tt class="rst-docutils literal">if discretize</tt> all targets are in [10**i/5 for i in N], in case
+achieved via rounding on the log-scale.</p>
+<p>Details: f_target = arg min_f { ERT_ref(f) &gt; max(1, target_budget * dimension**times_dimension_flag) },
+where f are the values of the <tt class="rst-docutils literal">DataSet</tt> <tt class="rst-docutils literal">target</tt> attribute. The next difficult target is chosen
+not smaller as target / 10**0.2.</p>
+<p>Returned are the aRT for targets that, within the given budget, the
+reference algorithm just failed to achieve.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.label">
+    
+  </a>
+  <a name="label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    label(self, i):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#label" data-type="Method" class="code">cocopp.pproc.TargetValues.label</a></div>
+    
+    <div>return i-th target value as string<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.loglabel">
+    
+  </a>
+  <a name="loglabel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    loglabel(self, i, decimals=1):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#loglabel" data-type="Method" class="code">cocopp.pproc.TargetValues.loglabel</a></div>
+    
+    <div><tt class="rst-docutils literal">decimals</tt> is used for <tt class="rst-docutils literal">round</tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.labels">
+    
+  </a>
+  <a name="labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    labels(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#labels" data-type="Method" class="code">cocopp.pproc.TargetValues.labels</a></div>
+    
+    <div>target values as a list of <tt class="rst-docutils literal">str</tt><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues.label_name">
+    
+  </a>
+  <a name="label_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    label_name(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.pproc.TargetValues.html#label_name" data-type="Method" class="code">cocopp.pproc.TargetValues.label_name</a></div>
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.pproc.RunlengthBasedTargetValues._generate_erts">
+    
+  </a>
+  <a name="_generate_erts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _generate_erts(self, ds, target_values):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>compute for all target values, starting with 1e-8, the ert value
+and store it in the reference_data_set attribute<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:44:06.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

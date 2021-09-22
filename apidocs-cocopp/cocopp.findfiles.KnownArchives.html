@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.findfiles.KnownArchives : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.findfiles.KnownArchives</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.findfiles.html" data-type="Module" class="code">findfiles</a></code>
+          
+          <a href="classIndex.html#cocopp.findfiles.KnownArchives">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>collection of known online data archives as attributes.</p>
+<p><code>cocopp.archives</code> is an instance of <a href="cocopp.findfiles.KnownArchives.html"><code>KnownArchives</code></a> and contains as
+archive attributes:</p>
+<p><tt class="rst-docutils literal">all</tt>: <a href="cocopp.findfiles.COCODataArchive.html"><code>COCODataArchive</code></a>, the <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of all archived data from
+all test suites.</p>
+<p><tt class="rst-docutils literal">bbob</tt>: <a href="cocopp.findfiles.COCOBBOBDataArchive.html"><code>COCOBBOBDataArchive</code></a>, the <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of archived data run on the
+<code>bbob</code> test suite.</p>
+<p><tt class="rst-docutils literal">bbob_noisy</tt>: <code>COCOBBOBNoisyDataArchvive</code>, ditto on the <code>bbob_noisy</code>
+test suite.</p>
+<p><tt class="rst-docutils literal">bbob_biobj</tt>: <a href="cocopp.findfiles.COCOBBOBBiobjDataArchive.html"><code>COCOBBOBBiobjDataArchive</code></a>, ditto...</p>
+<div class="rst-section" id="rst-a-quick-guide">
+<h1 class="heading">A Quick Guide</h1>
+<p><strong>1) To list all available data</strong>:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.all  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['bbob/2009/AL...</span></pre>
+</blockquote>
+<p><strong>2) To see all available data from a given test suite</strong>:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['2009/ALPS...</span></pre>
+</blockquote>
+<p>or</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob_biobj  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['2016/DEMO_Tusar...</span></pre>
+</blockquote>
+<p>or</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob_noisy  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['2009/ALPS...</span></pre>
+</blockquote>
+<p><strong>3) We can extract a subset</strong> from any test suite (such as
+<code>cocopp.archives.all</code>, <code>cocopp.archives.bbob</code>, ...) of the
+archive by very basic pattern matching:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.bbob.find(<span class="py-string">'bfgs'</span>)  <span class="py-comment"># doctest:+NORMALIZE_WHITESPACE</span>
+<span class="py-output">['2009/BFGS_ros_noiseless.tgz',</span>
+<span class="py-output"> '2012/DE-BFGS_voglis_noiseless.tgz',</span>
+<span class="py-output"> '2012/PSO-BFGS_voglis_noiseless.tgz',</span>
+<span class="py-output"> '2014-others/BFGS-scipy-Baudis.tgz',</span>
+<span class="py-output"> '2014-others/L-BFGS-B-scipy-Baudis.tgz']</span></pre>
+</blockquote>
+<p>The <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> method will not download data and is only for inspecting
+the archives. If we want to actually process the data we need to get
+them to/from our disk by replacing <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> with <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> or <a href="cocopp.findfiles.COCODataArchive.html#get_all"><code>get_all</code></a>:</p>
+<p><strong>4) When postprocessing data via `cocopp.main`</strong>, we can use the above
+such as</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(cocopp.bbob.get_all(<span class="py-string">'bfgs'</span>))  <span class="py-comment"># doctest:+SKIP</span></pre>
+</blockquote>
+<p>When using <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> results in multiple matches, the postprocessing
+will complain.</p>
+<p>To make things even easier, the <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> and <a href="cocopp.findfiles.COCODataArchive.html#get_all"><code>get_all</code></a> methods are called
+on each argument given in a string to <a href="cocopp.findfiles.html#main"><code>main</code></a>, such that we can do
+things like</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/2009/BIPOP DE-BFGS'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+</blockquote>
+<p>Again, the postprocessing bails out when there are multiple
+matches. For such cases, we can use the symbols <code>*</code> (AKA take
+all matches) and <code>!</code> (AKA take the first match):</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'BIPOP! 2012/DE*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+</blockquote>
+<p>will expand to the following:</p>
+<pre class="rst-literal-block">
+Post-processing (2+)
+  Using:
+    /.../.cocopp/data-archive/bbob/2009/BIPOP-CMA-ES_hansen_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-AUTO_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-BFGS_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-ROLL_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE-SIMPLEX_voglis_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DE_posik_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DEAE_posik_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DEb_posik_noiseless.tgz
+    /.../.cocopp/data-archive/bbob/2012/DEctpb_posik_noiseless.tgz
+
+Post-processing (2+)
+  loading data...
+[...]
+</pre>
+<p><strong>5) If we want to also pass other arguments to the postprocessing</strong>
+(e.g. the output folder) in case 3) above, we can use the
+following "trick" to make a string from the returned list of
+algorithms:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'-o myoutputfolder '</span> + <span class="py-string">' '</span>.join(cocopp.bbob.get_all(<span class="py-string">'bfgs'</span>)))  <span class="py-comment"># doctest:+SKIP</span></pre>
+</blockquote>
+<p>Note the crucial space in the end of the first string.
+For case 4), this works directly:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'-o myoutputfolder BIPOP! 2012/DE*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+</blockquote>
+</div><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 17:32:28.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

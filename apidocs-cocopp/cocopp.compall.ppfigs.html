@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.compall.ppfigs : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="apidocs.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.compall.ppfigs</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.compall.html" data-type="Package" class="code">compall</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Creates aRTs and convergence figures for multiple algorithms.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id31">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#legend_fontsize_scaler" data-type="Function" class="code">legend_fontsize_scaler</a></td>
+    <td><span>return a fontsize scaling factor depending on the number of entries in the legend.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#fix_styles" data-type="Function" class="code">fix_styles</a></td>
+    <td><span>a short hack to fix length of styles</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#prepare_scaling_figure_caption" data-type="Function" class="code">prepare_scaling_figure_caption</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#scaling_figure_caption" data-type="Function" class="code">scaling_figure_caption</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#prepare_ecdfs_figure_caption" data-type="Function" class="code">prepare_ecdfs_figure_caption</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#ecdfs_figure_caption" data-type="Function" class="code">ecdfs_figure_caption</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#get_ecdfs_single_fcts_caption" data-type="Function" class="code">get_ecdfs_single_fcts_caption</a></td>
+    <td><span>Returns figure caption for single function ECDF plots.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#get_ecdfs_all_groups_caption" data-type="Function" class="code">get_ecdfs_all_groups_caption</a></td>
+    <td><span>Returns figure caption for ECDF plots aggregating over function groups.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#get_ecdfs_single_functions_single_dim_caption" data-type="Function" class="code">get_ecdfs_single_functions_single_dim_caption</a></td>
+    <td><span>Returns figure caption for single function ECDF plots showing the results of 2+ algorithms in a single dimension.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#plotLegend" data-type="Function" class="code">plotLegend</a></td>
+    <td><span>Display right-side legend.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Customize figure format.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#generateData" data-type="Function" class="code">generateData</a></td>
+    <td><span>Returns an array of results to be plotted.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>From a DataSetList, returns figures showing the scaling: aRT/dim vs dim.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.compall.ppfigs.html#providecolorsforlatex" data-type="Function" class="code">providecolorsforlatex</a></td>
+    <td><span>Provides the dvipsnames colors in pure LaTeX.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.legend_fontsize_scaler">
+    
+  </a>
+  <a name="legend_fontsize_scaler">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    legend_fontsize_scaler(number_of_entries=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a fontsize scaling factor depending on the number of entries
+in the legend.</p>
+<p>Works currently well with fontsize 14, where a legend with up to ~30
+entries will still fit into the figure.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.fix_styles">
+    
+  </a>
+  <a name="fix_styles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    fix_styles(plotting_styles, line_styles):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>a short hack to fix length of styles<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.prepare_scaling_figure_caption">
+    
+  </a>
+  <a name="prepare_scaling_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    prepare_scaling_figure_caption():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.scaling_figure_caption">
+    
+  </a>
+  <a name="scaling_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    scaling_figure_caption(for_html=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.prepare_ecdfs_figure_caption">
+    
+  </a>
+  <a name="prepare_ecdfs_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    prepare_ecdfs_figure_caption():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.ecdfs_figure_caption">
+    
+  </a>
+  <a name="ecdfs_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    ecdfs_figure_caption(for_html=False, dimension=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.get_ecdfs_single_fcts_caption">
+    
+  </a>
+  <a name="get_ecdfs_single_fcts_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_ecdfs_single_fcts_caption():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns figure caption for single function ECDF plots.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.get_ecdfs_all_groups_caption">
+    
+  </a>
+  <a name="get_ecdfs_all_groups_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_ecdfs_all_groups_caption():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns figure caption for ECDF plots aggregating over function groups.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.get_ecdfs_single_functions_single_dim_caption">
+    
+  </a>
+  <a name="get_ecdfs_single_functions_single_dim_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_ecdfs_single_functions_single_dim_caption():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns figure caption for single function ECDF plots
+showing the results of 2+ algorithms in a single dimension.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.plotLegend">
+    
+  </a>
+  <a name="plotLegend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotLegend(handles, maxval=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Display right-side legend.</p>
+<p>Sorted from smaller to larger y-coordinate values.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify(legend=False, rightlegend=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Customize figure format.</p>
+<p>adding a legend, axis label, etc</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">bool legend</td><td>if True, display a box legend</td></tr><tr><td></td><td class="fieldArg">bool rightlegend</td><td>if True, makes some space on the right for
+legend</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.generateData">
+    
+  </a>
+  <a name="generateData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    generateData(dataSet, target):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an array of results to be plotted.</p>
+<p>Oth column is ert, 1st is the success rate, 2nd the number of
+successes, 3rd the mean of the number of function evaluations, and
+4th the median of number of function evaluations of successful runs
+or numpy.nan.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(dictAlg, html_file_prefix, sorted_algorithms=None, output_dir='ppdata', latex_commands_file=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>From a DataSetList, returns figures showing the scaling: aRT/dim vs dim.</p>
+<p>One function and one target per figure.</p>
+<p><tt class="rst-docutils literal">target</tt> can be a scalar, a list with one element or a
+<tt class="rst-docutils literal">pproc.TargetValues</tt> instance with one target.</p>
+<p><tt class="rst-docutils literal">sortedAlgs</tt> is a list of string-identifies (folder names)</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.compall.ppfigs.providecolorsforlatex">
+    
+  </a>
+  <a name="providecolorsforlatex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    providecolorsforlatex():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Provides the dvipsnames colors in pure LaTeX.</p>
+<p>Used when the xcolor option of the same name is not available, e.g.
+within the new ACM LaTeX templates.</p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2020-01-21 16:27:37.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

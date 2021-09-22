@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.archiving.ListOfArchives : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="apidocs.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.archiving.ListOfArchives(<span title=".toolsdivers.StrList">_td.StrList</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.archiving.html" data-type="Module" class="code">archiving</a></code>
+          
+          <a href="classIndex.html#cocopp.archiving.ListOfArchives">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        <p>Known subclasses: <a href="cocopp.archiving._ArchivesOfficial.html" data-type="Class" class="code">cocopp.archiving._ArchivesOfficial</a>, <a href="cocopp.archiving.ArchivesKnown.html" data-type="Class" class="code">cocopp.archiving.ArchivesKnown</a>, <a href="cocopp.archiving.ArchivesLocal.html" data-type="Class" class="code">cocopp.archiving.ArchivesLocal</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>List of URLs or path names to COCO data archives available to this user.</p>
+<p>Elements can be added with <code>append</code> and deleted with the respective
+<a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> operations. After any of these operations, the current state can
+be made "permanent" with <a href="cocopp.archiving.ListOfArchives.html#save"><code>save</code></a>.</p>
+<p>Archives created with <a href="cocopp.archiving.html#create"><code>create</code></a> are automatically added to
+<a href="cocopp.archiving.ArchivesLocal.html"><code>ArchivesLocal</code></a> to find splattered archives more easily, archives
+retrieved from a remote location with <a href="cocopp.archiving.html#get"><code>get</code></a> are added to
+<a href="cocopp.archiving.ArchivesKnown.html"><code>ArchivesKnown</code></a>.</p>
+<p>Elements of the list are meant to be used directly as argument to <a href="cocopp.archiving.html#get"><code>get</code></a>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp.archiving <span class="py-keyword">as</span> ar
+<span class="py-prompt">&gt;&gt;&gt; </span>ar.ListOfArchives.lists()  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">{...</span></pre>
+<p>returns all available archive lists.</p>
+<p>To reassign a given list:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>l = ar.ListOfArchives(<span class="py-string">'test'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>l[:] = [<span class="py-string">'p2'</span>, <span class="py-string">'p1'</span>]  <span class="py-comment"># re-assign a new value to the list</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>l.sort()  <span class="py-comment"># `list` builtin in-place sort method</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>l.save()  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>To save the list, a listing name needs to be given on instantiation. Two
+inherited classes are</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ar.ArchivesKnown() <span class="py-keyword">and</span> ar.ArchivesLocal()  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">[...</span></pre>
+<p>where the former contains downloaded "inofficial" archives. To add all
+locally created archives within the user home directory tree (CAVEAT: the
+search may take a while):</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>al = ar.ArchivesLocal()  <span class="py-comment"># based on user home</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>al._walk()  <span class="py-comment"># doctest:+SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>al._save_walk()  <span class="py-comment"># add found paths (permanently) to the ArchivesLocal class</span></pre>
+<p>Details: duplicates are removed during <a href="cocopp.archiving.ListOfArchives.html#save"><code>save</code></a>. Path names are stored as
+absolute path names (OS-dependent).</p>
+<p>TODO: should we be able to generate a list on the fly? Figure out usecase with
+_walk?</p>
+<p>TODO-decide: usecase, when to decide setting search_folder?</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id14">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>print available archive lists if no listing file is given</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#name" data-type="Method" class="code">name</a></td>
+    <td><span>name of this list</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#lists" data-type="Static Method" class="code">lists</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#register" data-type="Class Method" class="code">register</a></td>
+    <td><span>add folder path or url to list of archives.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#save" data-type="Method" class="code">save</a></td>
+    <td><span>save current list making changes permanent</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#remote_update" data-type="Method" class="code">remote_update</a></td>
+    <td><span>join in the respective list from <tt class="rst-docutils literal"><span class="pre">http://coco.gforge.inria.fr/data-archives</span></tt>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#update" data-type="Method" class="code">update</a></td>
+    <td><span>update self from the listing file that may have changed</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_name" data-type="Static Method" class="code">_name</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_file" data-type="Static Method" class="code">_file</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_fullfile" data-type="Static Method" class="code">_fullfile</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_makepathsabsolute" data-type="Method" class="code">_makepathsabsolute</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_remove_double_entries" data-type="Method" class="code">_remove_double_entries</a></td>
+    <td><span>keep the first of duplicated entries</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_walk" data-type="Method" class="code">_walk</a></td>
+    <td><span>recursive search for COCO data archives in <code>folder</code> on disk.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.archiving.ListOfArchives.html#_save_walk" data-type="Method" class="code">_save_walk</a></td>
+    <td><span>extend <code>self</code> by elements of <code>_last_walk</code> not in <code>self</code> and <a href="cocopp.archiving.ListOfArchives.html#save"><code>save</code></a></span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, listing_name=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>print available archive lists if no listing file is given<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    name(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>name of this list<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._name">
+    
+  </a>
+  <a name="_name">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    def
+    _name(listing_file):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._file">
+    
+  </a>
+  <a name="_file">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    def
+    _file(listing_name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._fullfile">
+    
+  </a>
+  <a name="_fullfile">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    def
+    _fullfile(listing_name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.lists">
+    
+  </a>
+  <a name="lists">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    def
+    lists():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.register">
+    
+  </a>
+  <a name="register">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    def
+    register(cls, folder):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>add folder path or url to list of archives.</p>
+<p>Caveat: existing class instances won't be aware of new
+registrations.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._makepathsabsolute">
+    
+  </a>
+  <a name="_makepathsabsolute">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _makepathsabsolute(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.save">
+    
+  </a>
+  <a name="save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    save(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>save current list making changes permanent<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.remote_update">
+    
+  </a>
+  <a name="remote_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    remote_update(self, name=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>join in the respective list from <tt class="rst-docutils literal"><span class="pre">http://coco.gforge.inria.fr/data-archives</span></tt>.</p>
+<p>Use <a href="cocopp.archiving.ListOfArchives.html#save"><code>save</code></a> to save the joined entries.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._remove_double_entries">
+    
+  </a>
+  <a name="_remove_double_entries">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _remove_double_entries(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>keep the first of duplicated entries<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._walk">
+    
+  </a>
+  <a name="_walk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _walk(self, folder=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>recursive search for COCO data archives in <code>folder</code> on disk.</p>
+<p>This may take (many?) seconds, for example if using <tt class="rst-docutils literal"><span class="pre">folder='~'</span></tt>.</p>
+<p><code>_last_walk</code> contains the returned result and _save_walk` makes the
+result "permanent" to the current class instance / listing file.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.archiving.ListOfArchives._save_walk">
+    
+  </a>
+  <a name="_save_walk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _save_walk(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>extend <code>self</code> by elements of <code>_last_walk</code> not in <code>self</code> and <a href="cocopp.archiving.ListOfArchives.html#save"><code>save</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.archiving.ListOfArchives.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    update(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>update self from the listing file that may have changed<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2020-01-21 16:27:37.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

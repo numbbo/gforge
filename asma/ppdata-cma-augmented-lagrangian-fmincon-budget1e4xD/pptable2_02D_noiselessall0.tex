@@ -1,0 +1,77 @@
+\providecommand{\algorithmAshort}{aug}
+\providecommand{\algorithmBshort}{fmi}
+\begin{tabular}{@{}c@{}|*{5}{@{}r@{}@{}l@{}}|@{}r@{}@{}l@{}}
+$\Delta f_\mathrm{opt}$ & \multicolumn{2}{@{\,}c@{\,}}{10} & \multicolumn{2}{@{\,}c@{\,}}{0.1} & \multicolumn{2}{@{\,}c@{\,}}{1e-3} & \multicolumn{2}{@{\,}c@{\,}}{1e-5} & \multicolumn{2}{@{\,}c@{\,}}{1e-7} & \multicolumn{2}{@{}l@{}}{\#succ}\\\hline
+${\bf f_{1}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 54& & 324& & 658& & 821& & 823& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 10& & \textbf{16}&$^{\star3}$ & \textbf{32}&$^{\star3}$ & \textbf{45}&$^{\star3}$ & \textbf{345}&$^{\star2}$ & 11 & /15\\\hline
+${\bf f_{2}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 91& & 369& & 763& & 968& & \textbf{1020}&$^{\star3}$ & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{11}&$^{\star2}$ & \textbf{25}&$^{\star3}$ & \textbf{43}&$^{\star3}$ & \textbf{63}&$^{\star3}$ & \multicolumn{2}{@{}c|@{}}{$\infty$\textit{2.0e4}} & 0 & /15\\\hline
+${\bf f_{3}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 143& & 639& & 1226& & 1590& & 1609& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{12}&$^{\star2}$ & \textbf{28}&$^{\star3}$ & \textbf{40}&$^{\star3}$ & \textbf{72}&$^{\star3}$ & 13895& & 6 & /15\\\hline
+${\bf f_{4}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 37& & 262& & 674& & 870& & 884& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 13& & \textbf{22}&$^{\star3}$ & \textbf{32}&$^{\star3}$ & \textbf{42}&$^{\star3}$ & \textbf{301}&$^{\star3}$ & 11 & /15\\\hline
+${\bf f_{5}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 93& & 347& & 624& & 926& & 937& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{10}&$^{\star3}$ & \textbf{20}&$^{\star3}$ & \textbf{29}&$^{\star3}$ & \textbf{41}&$^{\star3}$ & \textbf{217}&$^{\star3}$ & 10 & /15\\\hline
+${\bf f_{6}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 76& & 408& & 909& & 1195& & 1198& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 13& & \textbf{27}&$^{\star3}$ & \textbf{45}&$^{\star3}$ & \textbf{60}&$^{\star3}$ & 19712& & 6 & /15\\\hline
+${\bf f_{7}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3148& & 3211& & 3211& & 3211& & 3211& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{71}&$^{\star3}$ & \textbf{84}&$^{\star3}$ & \textbf{84}&$^{\star3}$ & \textbf{84}&$^{\star3}$ & \textbf{84}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{8}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3231& & 3263& & 3263& & 3263& & 3263& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{119}&$^{\star3}$ & \textbf{175}&$^{\star3}$ & \textbf{175}&$^{\star3}$ & \textbf{175}&$^{\star3}$ & \textbf{175}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{9}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3236& & 3261& & 3261& & 3261& & 3261& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{103}&$^{\star3}$ & \textbf{119}&$^{\star3}$ & \textbf{125}&$^{\star3}$ & \textbf{129}&$^{\star3}$ & \textbf{129}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{10}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3043& & 3089& & 3089& & 3089& & 3089& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{70}&$^{\star3}$ & \textbf{79}&$^{\star3}$ & \textbf{82}&$^{\star3}$ & \textbf{82}&$^{\star3}$ & \textbf{82}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{11}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3023& & 3041& & 3041& & 3041& & 3041& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{67}&$^{\star3}$ & \textbf{85}&$^{\star3}$ & \textbf{85}&$^{\star3}$ & \textbf{85}&$^{\star3}$ & \textbf{85}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{12}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3295& & 3358& & 3360& & 3360& & 3360& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{88}&$^{\star3}$ & \textbf{156}&$^{\star3}$ & \textbf{156}&$^{\star3}$ & \textbf{156}&$^{\star3}$ & \textbf{156}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{13}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 45& & 334& & 778& & 959& & 964& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 8 & .7 & \textbf{13}&$^{\star3}$ & \textbf{24}&$^{\star3}$ & \textbf{33}&$^{\star3}$ & \textbf{448}&$^{\star}$ & 14 & /15\\\hline
+${\bf f_{14}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 48& & 328& & 748& & 918& & 918& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 13& & \textbf{16}&$^{\star3}$ & \textbf{28}&$^{\star3}$ & \textbf{47}&$^{\star3}$ & \textbf{147}&$^{\star3}$ & 10 & /15\\\hline
+${\bf f_{15}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 153& & 662& & 1349& & 1687& & \textbf{1695}&$^{\star2}$ & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{15}&$^{\star3}$ & \textbf{31}&$^{\star3}$ & \textbf{42}&$^{\star3}$ & \textbf{151}&$^{\star3}$ & 36952& & 4 & /15\\\hline
+${\bf f_{16}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 43& & 314& & 722& & 915& & 932& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 12& & \textbf{20}&$^{\star2}$ & \textbf{33}&$^{\star3}$ & \textbf{56}&$^{\star3}$ & \textbf{380}&$^{\star}$ & 10 & /15\\\hline
+${\bf f_{17}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 57& & 374& & 765& & 991& & 997& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 9 & .5 & \textbf{14}&$^{\star3}$ & \textbf{27}&$^{\star3}$ & \textbf{33}&$^{\star3}$ & \textbf{249}&$^{\star2}$ & 10 & /15\\\hline
+${\bf f_{18}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 144& & 542& & 1032& & 1300& & 1308& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 14& & \textbf{24}&$^{\star3}$ & \textbf{35}&$^{\star3}$ & \textbf{44}&$^{\star3}$ & \textbf{506}&$^{\star}$ & 15 & /15\\\hline
+${\bf f_{19}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 4042& & 6986& & 6986& & 6986& & 6986& & 14 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{111}&$^{\star3}$ & 5970& & 6967& & 6967& & 6967& & 13 & /15\\\hline
+${\bf f_{20}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 6281& & 7591& & 7591& & 7591& & 7591& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{1842}&$^{\star}$ & 4867& & 4867& & 4867& & 4867& & 14 & /15\\\hline
+${\bf f_{21}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 3334& & 3383& & 3383& & 3383& & 3383& & 15 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{115}&$^{\star3}$ & \textbf{123}&$^{\star3}$ & \textbf{124}&$^{\star3}$ & \textbf{124}&$^{\star3}$ & \textbf{124}&$^{\star3}$ & 15 & /15\\\hline
+${\bf f_{22}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 13273& & 15795& & 15796& & 15796& & 15796& & 10 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 3353& & 6662& & 6666& & 6666& & 6666& & 13 & /15\\\hline
+${\bf f_{23}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 13490& & 19347& & 19347& & 19347& & 19347& & 9 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & 5838& & 21239& & 21239& & 21239& & 21239& & 9 & /15\\\hline
+${\bf f_{24}}$ & \multicolumn{12}{@{}c@{}|}{}\\
+1:\:\algorithmAshort\hspace*{\fill} & 12802& & 15870& & 15870& & 15870& & 15870& & 10 & /15\\
+2:\:\algorithmBshort\hspace*{\fill} & \textbf{93}&$^{\star3}$ & \textbf{342}&$^{\star3}$ & \textbf{370}&$^{\star3}$ & \textbf{370}&$^{\star3}$ & \textbf{370}&$^{\star3}$ & 15 & /15
+\end{tabular}

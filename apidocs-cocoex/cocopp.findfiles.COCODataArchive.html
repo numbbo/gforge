@@ -1,0 +1,710 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.findfiles.COCODataArchive : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.findfiles.COCODataArchive(<span title="list">list</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.findfiles.html" data-type="Module" class="code">findfiles</a></code>
+          
+          <a href="classIndex.html#cocopp.findfiles.COCODataArchive">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        <p>Known subclasses: <a href="cocopp.findfiles.COCOBBOBBiobjDataArchive.html" data-type="Class" class="code">cocopp.findfiles.COCOBBOBBiobjDataArchive</a>, <a href="cocopp.findfiles.COCOBBOBDataArchive.html" data-type="Class" class="code">cocopp.findfiles.COCOBBOBDataArchive</a>, <a href="cocopp.findfiles.COCOBBOBNoisyDataArchive.html" data-type="Class" class="code">cocopp.findfiles.COCOBBOBNoisyDataArchive</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>[versatile/beta] An interface to retrieve archived COCO data.</p>
+<p>This class "is" a list of names which are relative path/file names
+separated with slashes "/". Each name represents the data from a
+full experiment, benchmarking one algorithm on an entire benchmark
+suite.</p>
+<p>Calling the class instance (alias to <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a>) helps to extract entries
+matching one or several substrings, e.g. a year or a method.
+<a href="cocopp.findfiles.COCODataArchive.html#find_indices"><code>find_indices</code></a> returns the respective indices instead of the names.
+<a href="cocopp.findfiles.COCODataArchive.html#print"><code>print</code></a> displays both. For example:</p>
+<pre class="rst-literal-block">
+import cocopp
+cocopp.bbob.find('bfgs')  # will give
+['2009/BFGS_ros_noiseless.tgz',
+ '2012/DE-BFGS_voglis_noiseless.tgz',
+ '2012/PSO-BFGS_voglis_noiseless.tgz',
+ '2014-others/BFGS-scipy-Baudis.tgz',
+ '2014-others/L-BFGS-B-scipy-Baudis.tgz'...
+</pre>
+<p>To post-process these data call:</p>
+<pre class="rst-literal-block">
+cocopp.main(cocopp.bbob.get_all('bfgs'))
+</pre>
+<p>Method <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> downloads a single "matching" data set if necessary and
+returns the absolute data path which can be used with
+<a href="cocopp.rungeneric.html#main"><code>cocopp.main</code></a>.</p>
+<p>Method <code>index</code> is inherited from <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> and finds the index of the
+respective name entry in the archive (exact match only).</p>
+<p><code>cocopp.data_archive</code> contains all experimental data for all test
+suites.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp <span class="py-keyword">import</span> bbob  <span class="py-comment"># the bbob testbed archive</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>len(bbob) &gt; 150
+<span class="py-output">True</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>bbob[:3]  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['2009/...</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>bbob(<span class="py-string">'2009/bi'</span>)[0]  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">'...</span></pre>
+<p>Get a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of already downloaded data full pathnames:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>[bbob.get(i, remote=False) <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(len(bbob))] <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">[...</span></pre>
+<p>Find something more specific:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>bbob(<span class="py-string">'auger'</span>)[0]  <span class="py-comment"># == bbob.find('auger')[0]</span>
+<span class="py-output">'2009/CMA-ESPLUSSEL_auger_noiseless.tgz'</span></pre>
+<p>corresponds to <tt class="rst-docutils literal"><span class="pre">cocopp.main('auger!')</span></tt>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>bbob.index(<span class="py-string">'2009/CMA-ESPLUSSEL_auger_noiseless.tgz'</span>)  <span class="py-comment"># just list.index</span>
+<span class="py-output">6</span></pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>data_path = bbob.get(bbob([<span class="py-string">'au'</span>, <span class="py-string">'2009'</span>])[0], remote=False)
+<span class="py-prompt">&gt;&gt;&gt; </span>assert data_path <span class="py-keyword">is</span> None <span class="py-keyword">or</span> str(data_path) == data_path</pre>
+<p>These commands may download data, to avoid this the option <tt class="rst-docutils literal">remote=False</tt> is given:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">' '</span>.join(bbob.get(i, remote=False) <span class="py-keyword">or</span> <span class="py-string">''</span> <span class="py-keyword">for</span> i <span class="py-keyword">in</span> [2, 13, 33])  <span class="py-comment"># can serve as argument to cocopp.main  # doctest:+ELLIPSIS</span>
+<span class="py-output">'...</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>bbob.get_all([2, 13, 33], remote=False).as_string  <span class="py-comment"># is the same  # doctest:+ELLIPSIS</span>
+<span class="py-output">' ...</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">' '</span>.join(bbob.get(name, remote=False) <span class="py-keyword">for</span> name <span class="py-keyword">in</span> [bbob[2], bbob[13], bbob[33]])  <span class="py-comment"># is the same  # doctest:+ELLIPSIS</span>
+<span class="py-output">'...</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">' '</span>.join(bbob.get(name, remote=False) <span class="py-keyword">for</span> name <span class="py-keyword">in</span> [
+<span class="py-more">... </span>        <span class="py-string">'2009/BAYEDA_gallagher_noiseless.tgz'</span>,
+<span class="py-more">... </span>        <span class="py-string">'2009/GA_nicolau_noiseless.tgz'</span>,
+<span class="py-more">... </span>        <span class="py-string">'2010/1komma2mirser_brockhoff_noiseless.tar.gz'</span>])  <span class="py-comment"># is the same  # doctest:+ELLIPSIS</span>
+<span class="py-output">'...</span></pre><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id55">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#names_found" data-type="Method" class="code">names_found</a></td>
+    <td><span>names as (to be) used in <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> when called without argument.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>Arguments are a full local path and an URL.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#__call__" data-type="Method" class="code">__call__</a></td>
+    <td><span>alias to <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a></span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#find" data-type="Method" class="code">find</a></td>
+    <td><span>return names of archived data that match all <code>substrs</code>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#find_indices" data-type="Method" class="code">find_indices</a></td>
+    <td><span>same as <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> but returns indices instead of names</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#print" data-type="Method" class="code">print</a></td>
+    <td><span>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_all" data-type="Method" class="code">get_all</a></td>
+    <td><span>Return a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> (<a href="cocopp.toolsdivers.StringList.html"><code>StringList</code></a>) of absolute pathnames,</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_first" data-type="Method" class="code">get_first</a></td>
+    <td><span>get the first archived data matching all of <code>substrs</code>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get" data-type="Method" class="code">get</a></td>
+    <td><span>return the full data pathname of <code>substr</code> in the archived data.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_one" data-type="Method" class="code">get_one</a></td>
+    <td><span>depreciated, for backwards compatibility</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_extended" data-type="Method" class="code">get_extended</a></td>
+    <td><span>return a list of valid paths.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#contains" data-type="Method" class="code">contains</a></td>
+    <td><span>return <a href="http://docs.python.org/library/constants.html#True"><code>True</code></a> if (the exact) name or path is in the archive</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#full_path" data-type="Method" class="code">full_path</a></td>
+    <td><span>return full local path of <a href="cocopp.findfiles.COCODataArchive.html#name"><code>name</code></a> or of a full path, idempotent</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#name" data-type="Method" class="code">name</a></td>
+    <td><span>return name of <a href="cocopp.findfiles.COCODataArchive.html#full_path"><code>full_path</code></a>, idempotent.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#check_hash" data-type="Method" class="code">check_hash</a></td>
+    <td><span>warn if hash is unknown, raise ValueError if hashes disagree</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_name" data-type="Method" class="code">_name</a></td>
+    <td><span>return supposed name of full_path or name without any checks</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_hash" data-type="Method" class="code">_hash</a></td>
+    <td><span>compute hash of <a href="cocopp.findfiles.COCODataArchive.html#name"><code>name</code></a> or path</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_known_hash" data-type="Method" class="code">_known_hash</a></td>
+    <td><span>return known hash or <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a></span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_read_names_list" data-type="Method" class="code">_read_names_list</a></td>
+    <td><span>read data archive info for <code>_all</code></span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_generate_names_list" data-type="Method" class="code">_generate_names_list</a></td>
+    <td><span>write an _all list of an existing archive including hashes and filesizes to <code>definition_filename</code>.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.names_found">
+    
+  </a>
+  <a name="names_found">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    names_found(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>names as (to be) used in <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> when called without argument.</p>
+<p><a href="cocopp.findfiles.COCODataArchive.html#names_found"><code>names_found</code></a> is set in the <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> or <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> methods when called
+with a search or index argument.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, local_path='~/.cocopp/data-archive', url='http://coco.gforge.inria.fr/data-archive', definition_file=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <a href="cocopp.findfiles.COCOBBOBBiobjDataArchive.html" data-type="Class" class="code">cocopp.findfiles.COCOBBOBBiobjDataArchive</a>, <a href="cocopp.findfiles.COCOBBOBDataArchive.html" data-type="Class" class="code">cocopp.findfiles.COCOBBOBDataArchive</a>, <a href="cocopp.findfiles.COCOBBOBNoisyDataArchive.html" data-type="Class" class="code">cocopp.findfiles.COCOBBOBNoisyDataArchive</a></div>
+    
+    <div><p>Arguments are a full local path and an URL.</p>
+<p><tt class="rst-docutils literal">~</tt> refers to the user home folder. By default the archive is
+hosted at <tt class="rst-docutils literal"><span class="pre">'~/.cocopp/data-archive'</span></tt>.</p>
+<p>For the time being, <code>definition_file</code> may be a filename in
+<code>local_path</code> containing the <code>_all</code> list describing the (remote)
+archive, however this functionality has never been tested and
+needs most likely a few bug fixes.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __call__(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>alias to <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.find">
+    
+  </a>
+  <a name="find">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    find(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return names of archived data that match all <code>substrs</code>.</p>
+<p>This method serves for interactive exploration of available data
+and is aliased to the shortcut of calling the instance itself.</p>
+<p>When given several <code>substrs</code> arguments the results match each
+substring (AND search, an OR can be simply achieved by appending
+the result of two finds). Upper/lower case is ignored.</p>
+<p>When given a single <code>substrs</code> argument, it may be</p>
+<ul class="rst-simple">
+<li>a list of matching substrings, used as several substrings as above</li>
+<li>an index of <a href="http://docs.python.org/library/stdtypes.html#type"><code>type</code></a> <a href="http://docs.python.org/library/stdtypes.html#int"><code>int</code></a></li>
+<li>a list of indices</li>
+</ul>
+<p>Returned names correspond to the unique trailing subpath of
+data filenames. The next call to <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> without argument will
+retrieve the first found data and return the full data path. A
+call to <a href="cocopp.findfiles.COCODataArchive.html#get_all"><code>get_all</code></a> will call <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> on all found entries and
+return a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of full data paths which can be used with
+<a href="cocopp.rungeneric.html#main"><code>cocopp.main</code></a>.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.bbob.find(<span class="py-string">'Auger'</span>, <span class="py-string">'2013'</span>)[1]
+<span class="py-output">'2013/lmm-CMA-ES_auger_noiseless.tgz'</span></pre>
+<p>Sitting in front of a shell, we prefer using the shortcut to find
+via <a href="cocopp.findfiles.COCODataArchive.html#__call__"><code>__call__</code></a>:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.bbob(<span class="py-string">'Auger'</span>, <span class="py-string">'2013'</span>) == cocopp.bbob.find(<span class="py-string">'Auger'</span>, <span class="py-string">'2013'</span>)
+<span class="py-output">True</span></pre>
+<p>Details: The list of matching names is stored in <a href="cocopp.findfiles.COCODataArchive.html#names_found"><code>names_found</code></a>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.find_indices">
+    
+  </a>
+  <a name="find_indices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    find_indices(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>same as <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> but returns indices instead of names<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.print">
+    
+  </a>
+  <a name="print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    print(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</p>
+<p>Details: does not change <a href="cocopp.findfiles.COCODataArchive.html#names_found"><code>names_found</code></a> and returns <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.get_all">
+    
+  </a>
+  <a name="get_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_all(self, indices=None, remote=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> (<a href="cocopp.toolsdivers.StringList.html"><code>StringList</code></a>) of absolute pathnames,</p>
+<p>by repeatedly calling <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a>. Elements of the <code>indices</code> list can
+be an index or a substring that matches one and only one name
+in the archive. If <tt class="rst-docutils literal">indices is None</tt>, the results from the
+last call to <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> are used. Download the data if necessary.</p>
+<p>See also <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.get_first">
+    
+  </a>
+  <a name="get_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_first(self, substrs, remote=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>get the first archived data matching all of <code>substrs</code>.</p>
+<p><code>substrs</code> is a list of substrings.</p>
+<p><code>get_first(substrs, remote)</code> is a shortcut for:</p>
+<pre class="rst-literal-block">
+self.find(*substrs)
+if self.names_found:
+    return self.get(self.names_found[0], remote=remote)
+return None
+</pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.get">
+    
+  </a>
+  <a name="get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get(self, substr=None, remote=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return the full data pathname of <code>substr</code> in the archived data.</p>
+<p>Retrieves the data from remote if necessary.</p>
+<p><code>substr</code> can be a substring that matches one and only one name in
+the data archive or an integer between 0 and <code>len(self)</code>.</p>
+<p>Raises a <a href="http://docs.python.org/library/exceptions.html#exceptions.ValueError"><code>ValueError</code></a> if <code>substr</code> matches several archive entries
+on none.</p>
+<p>If <tt class="rst-docutils literal">substr is None</tt> (default), the first match of the last
+call to <tt class="rst-docutils literal">find*</tt> or <tt class="rst-docutils literal">get*</tt> is used like <code>self.names_found[0]`</code>.</p>
+<p>If <tt class="rst-docutils literal">remote is True</tt> (default), the respective data are
+downloaded from the remote location if necessary. Otherwise
+return <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a> for a match.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.get_one">
+    
+  </a>
+  <a name="get_one">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_one(self, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>depreciated, for backwards compatibility<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.get_extended">
+    
+  </a>
+  <a name="get_extended">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_extended(self, args, remote=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a list of valid paths.</p>
+<p>Elements in <code>args</code> may be a valid path name or a known name
+from the data archive, or a uniquely matching substring of such
+a name, or a matching substring with added "!" in which case
+the first match is taken only (calling <code>self.get_first</code>),
+or a matching substring with added "*" in which case all
+matches are taken (calling <code>self.get_all</code>).</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.findfiles.COCODataArchive._name">
+    
+  </a>
+  <a name="_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _name(self, full_path):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return supposed name of full_path or name without any checks<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.contains">
+    
+  </a>
+  <a name="contains">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    contains(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return <a href="http://docs.python.org/library/constants.html#True"><code>True</code></a> if (the exact) name or path is in the archive<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.full_path">
+    
+  </a>
+  <a name="full_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    full_path(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return full local path of <a href="cocopp.findfiles.COCODataArchive.html#name"><code>name</code></a> or of a full path, idempotent<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    name(self, full_path):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return name of <a href="cocopp.findfiles.COCODataArchive.html#full_path"><code>full_path</code></a>, idempotent.</p>
+<p>If <a href="cocopp.findfiles.COCODataArchive.html#full_path"><code>full_path</code></a> is not from the data archive a warning is issued
+and path seperators are replaced with <code>/</code>.</p>
+<p>Check that all names are only once found in the data archive:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp <span class="py-keyword">import</span> bbob
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># This should become:</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># from cocopp.data_archives import open as open_da</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># bbob = open_da('bbob')</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> name <span class="py-keyword">in</span> bbob:
+<span class="py-more">... </span>    assert bbob.count(name) == 1, <span class="py-string">"%s counted %d times in data archive"</span> % (name, bbob.count(name))
+<span class="py-more">... </span>    assert len(bbob.find(name)) == 1, <span class="py-string">"%s found %d times"</span> % (name, bbob.find(name))</pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCODataArchive.check_hash">
+    
+  </a>
+  <a name="check_hash">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    check_hash(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>warn if hash is unknown, raise ValueError if hashes disagree<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.findfiles.COCODataArchive._hash">
+    
+  </a>
+  <a name="_hash">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _hash(self, name, hash_function=hashlib.sha256):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>compute hash of <a href="cocopp.findfiles.COCODataArchive.html#name"><code>name</code></a> or path<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.findfiles.COCODataArchive._known_hash">
+    
+  </a>
+  <a name="_known_hash">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _known_hash(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return known hash or <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.findfiles.COCODataArchive._read_names_list">
+    
+  </a>
+  <a name="_read_names_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _read_names_list(self, definition_filename='archive_info.txt'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>read data archive info for <code>_all</code></p>
+<p>from a file generated with <a href="cocopp.findfiles.COCODataArchive.html#_generate_names_list"><code>_generate_names_list</code></a></p>
+<p>In the best case scenario:</p>
+<pre class="rst-literal-block">
+self.local_data_path = path_to_archive
+self._all = self._read_names_list()
+</pre>
+<p>is all what is needed to make this archive work for the lifetime
+of the class instance.</p>
+<p>See also <a href="cocopp.findfiles.COCODataArchive.html#_generate_names_list"><code>_generate_names_list</code></a>.</p>
+<p>TODO: never tested</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.findfiles.COCODataArchive._generate_names_list">
+    
+  </a>
+  <a name="_generate_names_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _generate_names_list(self, definition_filename=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>write an _all list of an existing archive including hashes and
+filesizes to <code>definition_filename</code>.</p>
+<p>This may serve as new/improved/updated/final _all class
+attribute via manual copy-paste.</p>
+<p>Assumes that <code>self.local_data_path</code> points to a complete and sane
+archive.</p>
+<p>TODO: never tested.</p>
+<p>May or may not need to be modified under Windows.</p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

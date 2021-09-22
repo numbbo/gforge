@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.findfiles.COCOBBOBDataArchive : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.findfiles.COCOBBOBDataArchive(<a href="cocopp.findfiles.COCODataArchive.html" data-type="Class" class="code">COCODataArchive</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.findfiles.html" data-type="Module" class="code">findfiles</a></code>
+          
+          <a href="classIndex.html#cocopp.findfiles.COCOBBOBDataArchive">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p><a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> of archived data for the 'bbob' test suite.</p>
+<p>To see the list of all data from 2009:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob.find(<span class="py-string">"2009/"</span>)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['2009/ALPS...</span></pre>
+<p>To use the above list in <a href="cocopp.findfiles.html#main"><code>main</code></a>:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(cocopp.archives.bbob.get_all(<span class="py-string">"2009/"</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p><a href="cocopp.findfiles.COCODataArchive.html#get_all"><code>get_all</code></a> downloads the data from the online archive if necessary.
+While the data are specific to the <a href="cocopp.findfiles.COCOBBOBDataArchive.html"><code>COCOBBOBDataArchive</code></a> class, all
+functionality is inherited from the parent <code>class</code> <a href="cocopp.findfiles.COCODataArchive.html"><code>COCODataArchive</code></a>:</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id56">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCOBBOBDataArchive.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>Arguments are a full local path and an URL.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <a href="cocopp.findfiles.COCODataArchive.html" data-type="Class" class="code">COCODataArchive</a>:
+          </p>
+          <table class="children sortable" id="id57">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#names_found" data-type="Method" class="code">names_found</a></td>
+    <td><span>names as (to be) used in <a href="cocopp.findfiles.COCODataArchive.html#get"><code>get</code></a> when called without argument.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#__call__" data-type="Method" class="code">__call__</a></td>
+    <td><span>alias to <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a></span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#find" data-type="Method" class="code">find</a></td>
+    <td><span>return names of archived data that match all <code>substrs</code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#find_indices" data-type="Method" class="code">find_indices</a></td>
+    <td><span>same as <a href="cocopp.findfiles.COCODataArchive.html#find"><code>find</code></a> but returns indices instead of names</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#print" data-type="Method" class="code">print</a></td>
+    <td><span>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_all" data-type="Method" class="code">get_all</a></td>
+    <td><span>Return a <a href="http://docs.python.org/library/stdtypes.html#list"><code>list</code></a> (<a href="cocopp.toolsdivers.StringList.html"><code>StringList</code></a>) of absolute pathnames,</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_first" data-type="Method" class="code">get_first</a></td>
+    <td><span>get the first archived data matching all of <code>substrs</code>.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get" data-type="Method" class="code">get</a></td>
+    <td><span>return the full data pathname of <code>substr</code> in the archived data.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_one" data-type="Method" class="code">get_one</a></td>
+    <td><span>depreciated, for backwards compatibility</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#get_extended" data-type="Method" class="code">get_extended</a></td>
+    <td><span>return a list of valid paths.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#contains" data-type="Method" class="code">contains</a></td>
+    <td><span>return <a href="http://docs.python.org/library/constants.html#True"><code>True</code></a> if (the exact) name or path is in the archive</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#full_path" data-type="Method" class="code">full_path</a></td>
+    <td><span>return full local path of <a href="cocopp.findfiles.COCODataArchive.html#name"><code>name</code></a> or of a full path, idempotent</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#name" data-type="Method" class="code">name</a></td>
+    <td><span>return name of <a href="cocopp.findfiles.COCODataArchive.html#full_path"><code>full_path</code></a>, idempotent.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#check_hash" data-type="Method" class="code">check_hash</a></td>
+    <td><span>warn if hash is unknown, raise ValueError if hashes disagree</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_name" data-type="Method" class="code">_name</a></td>
+    <td><span>return supposed name of full_path or name without any checks</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_hash" data-type="Method" class="code">_hash</a></td>
+    <td><span>compute hash of <a href="cocopp.findfiles.COCODataArchive.html#name"><code>name</code></a> or path</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_known_hash" data-type="Method" class="code">_known_hash</a></td>
+    <td><span>return known hash or <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a></span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_read_names_list" data-type="Method" class="code">_read_names_list</a></td>
+    <td><span>read data archive info for <code>_all</code></span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.findfiles.COCODataArchive.html#_generate_names_list" data-type="Method" class="code">_generate_names_list</a></td>
+    <td><span>write an _all list of an existing archive including hashes and filesizes to <code>definition_filename</code>.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocopp.findfiles.COCOBBOBDataArchive.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, local_path='~/.cocopp/data-archive/bbob', url='http://coco.gforge.inria.fr/data-archive/bbob'):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="cocopp.findfiles.COCODataArchive.html#__init__" data-type="Method" class="code">cocopp.findfiles.COCODataArchive.__init__</a></div>
+    
+    <div><p>Arguments are a full local path and an URL.</p>
+<p><tt class="rst-docutils literal">~</tt> refers to the user home folder.</p><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 17:32:28.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.eaf.bbobbenchmarks : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.eaf.bbobbenchmarks</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.eaf.html" data-type="Package" class="code">eaf</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>BBOB noiseless testbed.
+
+The optimisation test functions are represented as classes
+:py:class:`F1` to :py:class:`F24` and :py:class:`F101` to
+:py:class:`F130`.
+Each of these classes has an _evalfull method which expects as argument
+an array of row vectors and returns a 'noisy' and a 'noiseless' float
+values.
+
+This module implements the class :py:class:`BBOBFunction` and
+sub-classes:
+
+* :py:class:`BBOBNfreeFunction` which have all the methods common to the
+  classes :py:class:`F1` to :py:class:`F24`
+* :py:class:`BBOBGaussFunction`, :py:class:`BBOBCauchyFunction`, 
+  :py:class:`BBOBUniformFunction` which have methods in classes from
+  :py:class:`F101` to :py:class:`F130`
+
+Module attributes: 
+
+* :py:data:`dictbbob` is a dictionary such that dictbbob[2] contains
+  the test function class F2 and f2 = dictbbob[2]() returns
+  the instance 0 of the test function that can be 
+  called as f2([1,2,3]). 
+* :py:data:`nfreeIDs` == range(1,25) indices for the noiseless functions that can be 
+  found in dictbbob
+* :py:data:`noisyIDs` == range(101, 131) indices for the noisy functions that can be 
+  found in dictbbob. We have nfreeIDs + noisyIDs == sorted(dictbbob.keys())
+* :py:data:`nfreeinfos` function infos
+
+Examples:
+
+&gt;&gt;&gt; from cocopp.eaf import bbobbenchmarks as bn
+&gt;&gt;&gt; for s in bn.nfreeinfos:
+...    print s
+1: Noise-free Sphere function
+2: Separable ellipsoid with monotone transformation
+&lt;BLANKLINE&gt;
+    Parameter: condition number (default 1e6)
+&lt;BLANKLINE&gt;
+&lt;BLANKLINE&gt;
+3: Rastrigin with monotone transformation separable "condition" 10
+4: skew Rastrigin-Bueche, condition 10, skew-"condition" 100
+5: Linear slope
+6: Attractive sector function
+7: Step-ellipsoid, condition 100, noise-free
+8: Rosenbrock noise-free
+9: Rosenbrock, rotated
+10: Ellipsoid with monotone transformation, condition 1e6
+11: Discus (tablet) with monotone transformation, condition 1e6
+12: Bent cigar with asymmetric space distortion, condition 1e6
+13: Sharp ridge
+14: Sum of different powers, between x^2 and x^6, noise-free
+15: Rastrigin with asymmetric non-linear distortion, "condition" 10
+16: Weierstrass, condition 100
+17: Schaffers F7 with asymmetric non-linear transformation, condition 10
+18: Schaffers F7 with asymmetric non-linear transformation, condition 1000
+19: F8F2 sum of Griewank-Rosenbrock 2-D blocks, noise-free
+20: Schwefel with tridiagonal variable transformation
+21: Gallagher with 101 Gaussian peaks, condition up to 1000, one global rotation, noise-free
+22: Gallagher with 21 Gaussian peaks, condition up to 1000, one global rotation
+23: Katsuura function
+24: Lunacek bi-Rastrigin, condition 100
+&lt;BLANKLINE&gt;
+    in PPSN 2008, Rastrigin part rotated and scaled
+&lt;BLANKLINE&gt;
+&lt;BLANKLINE&gt;
+&gt;&gt;&gt; f3 = bn.F3(13)  # instantiate function 3 on instance 13
+&gt;&gt;&gt; f3.evaluate([0, 1, 2]) # also: f3([0, 1, 2]) # doctest: +ELLIPSIS 
+59.8733529...
+&gt;&gt;&gt; f3.evaluate([[0, 1, 2], [3, 4, 5]])
+array([  59.87335291,  441.17409304])
+&gt;&gt;&gt; print bn.instantiate(5)[1] # returns evaluation function and target
+51.53
+&gt;&gt;&gt; print bn.nfreeIDs # list noise-free functions 
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+&gt;&gt;&gt; for i in bn.nfreeIDs: # evaluate all noiseless functions once
+...    print bn.instantiate(i)[0]([0., 0., 0., 0.]),
+-77.27454592 6180022.82173 92.9877507529 92.9877507529 140.510117618 70877.9554128 -72.5505202195 33355.7924722 -339.94 4374717.49343 15631566.3487 4715481.0865 550.599783901 -17.2991756229 27.3633128519 -227.827833529 -24.3305918781 131.420159348 40.7103737427 6160.81782924 376.746889545 107.830426761 220.482266557 106.094767386</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id32">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#compute_xopt" data-type="Function" class="code">compute_xopt</a></td>
+    <td><span>Generate a random vector used as optimum argument.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#compute_rotation" data-type="Function" class="code">compute_rotation</a></td>
+    <td><span>Returns an orthogonal basis.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#monotoneTFosc" data-type="Function" class="code">monotoneTFosc</a></td>
+    <td><span>Maps [-inf,inf] to [-inf,inf] with different constants for positive and negative part.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#defaultboundaryhandling" data-type="Function" class="code">defaultboundaryhandling</a></td>
+    <td><span>Returns a float penalty for being outside of boundaries [-5, 5]</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#gauss" data-type="Function" class="code">gauss</a></td>
+    <td><span>Samples N standard normally distributed numbers being the same for a given seed</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#unif" data-type="Function" class="code">unif</a></td>
+    <td><span>Generates N uniform numbers with starting seed.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#fGauss" data-type="Function" class="code">fGauss</a></td>
+    <td><span>Returns Gaussian model noisy value.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#fUniform" data-type="Function" class="code">fUniform</a></td>
+    <td><span>Returns uniform model noisy value.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#fCauchy" data-type="Function" class="code">fCauchy</a></td>
+    <td><span>Returns Cauchy model noisy value</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.AbstractTestFunction.html" data-type="Class" class="code">AbstractTestFunction</a></td>
+    <td><span>Abstract class for test functions.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.BBOBFunction.html" data-type="Class" class="code">BBOBFunction</a></td>
+    <td><span>Abstract class of BBOB test functions.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.BBOBNfreeFunction.html" data-type="Class" class="code">BBOBNfreeFunction</a></td>
+    <td><span>Class of the noise-free functions of BBOB.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.BBOBGaussFunction.html" data-type="Class" class="code">BBOBGaussFunction</a></td>
+    <td><span>Class of the Gauss noise functions of BBOB.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.BBOBUniformFunction.html" data-type="Class" class="code">BBOBUniformFunction</a></td>
+    <td><span>Class of the uniform noise functions of BBOB.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.BBOBCauchyFunction.html" data-type="Class" class="code">BBOBCauchyFunction</a></td>
+    <td><span>Class of the Cauchy noise functions of BBOB.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F1.html" data-type="Class" class="code">F1</a></td>
+    <td><span>Noise-free Sphere function</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F101.html" data-type="Class" class="code">F101</a></td>
+    <td><span>Sphere with moderate Gauss noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F102.html" data-type="Class" class="code">F102</a></td>
+    <td><span>Sphere with moderate uniform noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F103.html" data-type="Class" class="code">F103</a></td>
+    <td><span>Sphere with moderate Cauchy noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F107.html" data-type="Class" class="code">F107</a></td>
+    <td><span>Sphere with  Gauss noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F108.html" data-type="Class" class="code">F108</a></td>
+    <td><span>Sphere with uniform noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F109.html" data-type="Class" class="code">F109</a></td>
+    <td><span>Sphere with Cauchy noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F2.html" data-type="Class" class="code">F2</a></td>
+    <td><span>Separable ellipsoid with monotone transformation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F3.html" data-type="Class" class="code">F3</a></td>
+    <td><span>Rastrigin with monotone transformation separable "condition" 10</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F4.html" data-type="Class" class="code">F4</a></td>
+    <td><span>skew Rastrigin-Bueche, condition 10, skew-"condition" 100</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F5.html" data-type="Class" class="code">F5</a></td>
+    <td><span>Linear slope</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F6.html" data-type="Class" class="code">F6</a></td>
+    <td><span>Attractive sector function</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F7.html" data-type="Class" class="code">F7</a></td>
+    <td><span>Step-ellipsoid, condition 100, noise-free</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F113.html" data-type="Class" class="code">F113</a></td>
+    <td><span>Step-ellipsoid with gauss noise, condition 100</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F114.html" data-type="Class" class="code">F114</a></td>
+    <td><span>Step-ellipsoid with uniform noise, condition 100</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F115.html" data-type="Class" class="code">F115</a></td>
+    <td><span>Step-ellipsoid with Cauchy noise, condition 100</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F8.html" data-type="Class" class="code">F8</a></td>
+    <td><span>Rosenbrock noise-free</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F104.html" data-type="Class" class="code">F104</a></td>
+    <td><span>Rosenbrock non-rotated with moderate Gauss noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F105.html" data-type="Class" class="code">F105</a></td>
+    <td><span>Rosenbrock non-rotated with moderate uniform noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F106.html" data-type="Class" class="code">F106</a></td>
+    <td><span>Rosenbrock non-rotated with moderate Cauchy noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F110.html" data-type="Class" class="code">F110</a></td>
+    <td><span>Rosenbrock non-rotated with Gauss noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F111.html" data-type="Class" class="code">F111</a></td>
+    <td><span>Rosenbrock non-rotated with uniform noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F112.html" data-type="Class" class="code">F112</a></td>
+    <td><span>Rosenbrock non-rotated with Cauchy noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F9.html" data-type="Class" class="code">F9</a></td>
+    <td><span>Rosenbrock, rotated</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F10.html" data-type="Class" class="code">F10</a></td>
+    <td><span>Ellipsoid with monotone transformation, condition 1e6</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F116.html" data-type="Class" class="code">F116</a></td>
+    <td><span>Ellipsoid with Gauss noise, monotone x-transformation, condition 1e4</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F117.html" data-type="Class" class="code">F117</a></td>
+    <td><span>Ellipsoid with uniform noise, monotone x-transformation, condition 1e4</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F118.html" data-type="Class" class="code">F118</a></td>
+    <td><span>Ellipsoid with Cauchy noise, monotone x-transformation, condition 1e4</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F11.html" data-type="Class" class="code">F11</a></td>
+    <td><span>Discus (tablet) with monotone transformation, condition 1e6</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F12.html" data-type="Class" class="code">F12</a></td>
+    <td><span>Bent cigar with asymmetric space distortion, condition 1e6</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F13.html" data-type="Class" class="code">F13</a></td>
+    <td><span>Sharp ridge</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F14.html" data-type="Class" class="code">F14</a></td>
+    <td><span>Sum of different powers, between x^2 and x^6, noise-free</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F119.html" data-type="Class" class="code">F119</a></td>
+    <td><span>Sum of different powers with Gauss noise, between x^2 and x^6</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F120.html" data-type="Class" class="code">F120</a></td>
+    <td><span>Sum of different powers with uniform noise, between x^2 and x^6</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F121.html" data-type="Class" class="code">F121</a></td>
+    <td><span>Sum of different powers with seldom Cauchy noise, between x^2 and x^6</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F15.html" data-type="Class" class="code">F15</a></td>
+    <td><span>Rastrigin with asymmetric non-linear distortion, "condition" 10</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F16.html" data-type="Class" class="code">F16</a></td>
+    <td><span>Weierstrass, condition 100</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F17.html" data-type="Class" class="code">F17</a></td>
+    <td><span>Schaffers F7 with asymmetric non-linear transformation, condition 10</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F18.html" data-type="Class" class="code">F18</a></td>
+    <td><span>Schaffers F7 with asymmetric non-linear transformation, condition 1000</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F122.html" data-type="Class" class="code">F122</a></td>
+    <td><span>Schaffers F7 with Gauss noise, with asymmetric non-linear transformation, condition 10</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F123.html" data-type="Class" class="code">F123</a></td>
+    <td><span>Schaffers F7 with uniform noise, asymmetric non-linear transformation, condition 10</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F124.html" data-type="Class" class="code">F124</a></td>
+    <td><span>Schaffers F7 with seldom Cauchy noise, asymmetric non-linear transformation, condition 10</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F19.html" data-type="Class" class="code">F19</a></td>
+    <td><span>F8F2 sum of Griewank-Rosenbrock 2-D blocks, noise-free</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F125.html" data-type="Class" class="code">F125</a></td>
+    <td><span>F8F2 sum of Griewank-Rosenbrock 2-D blocks with Gauss noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F126.html" data-type="Class" class="code">F126</a></td>
+    <td><span>F8F2 sum of Griewank-Rosenbrock 2-D blocks with uniform noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F127.html" data-type="Class" class="code">F127</a></td>
+    <td><span>F8F2 sum of Griewank-Rosenbrock 2-D blocks with seldom Cauchy noise</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F20.html" data-type="Class" class="code">F20</a></td>
+    <td><span>Schwefel with tridiagonal variable transformation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F21.html" data-type="Class" class="code">F21</a></td>
+    <td><span>Gallagher with 101 Gaussian peaks, condition up to 1000, one global rotation, noise-free</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F22.html" data-type="Class" class="code">F22</a></td>
+    <td><span>Gallagher with 21 Gaussian peaks, condition up to 1000, one global rotation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F128.html" data-type="Class" class="code">F128</a></td>
+    <td><span>Gallagher with 101 Gaussian peaks with Gauss noise, condition up to 1000, one global rotation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F129.html" data-type="Class" class="code">F129</a></td>
+    <td><span>Gallagher with 101 Gaussian peaks with uniform noise, condition up to 1000, one global rotation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F130.html" data-type="Class" class="code">F130</a></td>
+    <td><span>Gallagher with 101 Gaussian peaks with seldom Cauchy noise, condition up to 1000, one global rotation</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F23.html" data-type="Class" class="code">F23</a></td>
+    <td><span>Katsuura function</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.F24.html" data-type="Class" class="code">F24</a></td>
+    <td><span>Lunacek bi-Rastrigin, condition 100</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#instantiate" data-type="Function" class="code">instantiate</a></td>
+    <td><span>Returns test function ifun, by default instance 0.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#get_param" data-type="Function" class="code">get_param</a></td>
+    <td><span>Returns the parameter values of the function ifun.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#_myrandn" data-type="Function" class="code">_myrandn</a></td>
+    <td><span>Normal random distribution sampling.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks.html#_myrand" data-type="Function" class="code">_myrand</a></td>
+    <td><span>Uniform random distribution sampling.</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FSphere.html" data-type="Class" class="code">_FSphere</a></td>
+    <td><span>Abstract Sphere function.</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FStepEllipsoid.html" data-type="Class" class="code">_FStepEllipsoid</a></td>
+    <td><span>Abstract Step-ellipsoid, condition 100</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FRosenbrock.html" data-type="Class" class="code">_FRosenbrock</a></td>
+    <td><span>Abstract Rosenbrock, non-rotated</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FEllipsoid.html" data-type="Class" class="code">_FEllipsoid</a></td>
+    <td><span>Abstract Ellipsoid with monotone transformation.</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FDiffPow.html" data-type="Class" class="code">_FDiffPow</a></td>
+    <td><span>Abstract Sum of different powers, between x^2 and x^6.</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FSchaffersF7.html" data-type="Class" class="code">_FSchaffersF7</a></td>
+    <td><span>Abstract Schaffers F7 with asymmetric non-linear transformation, condition 10</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._F8F2.html" data-type="Class" class="code">_F8F2</a></td>
+    <td><span>Abstract F8F2 sum of Griewank-Rosenbrock 2-D blocks</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FGallagher.html" data-type="Class" class="code">_FGallagher</a></td>
+    <td><span>Abstract Gallagher with nhighpeaks Gaussian peaks, condition up to 1000, one global rotation</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.bbobbenchmarks._FTemplate.html" data-type="Class" class="code">_FTemplate</a></td>
+    <td><span>Template based on F1</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.compute_xopt">
+    
+  </a>
+  <a name="compute_xopt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    compute_xopt(rseed, dim):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generate a random vector used as optimum argument.</p>
+<p>Rounded by four digits, but never to zero.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.compute_rotation">
+    
+  </a>
+  <a name="compute_rotation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    compute_rotation(seed, dim):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an orthogonal basis.</p>
+<p>The rotation is used in several ways and in combination with
+non-linear transformations. Search space rotation invariant
+algorithms are not expected to be invariant under this rotation.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.monotoneTFosc">
+    
+  </a>
+  <a name="monotoneTFosc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    monotoneTFosc(f):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Maps [-inf,inf] to [-inf,inf] with different constants
+for positive and negative part.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.defaultboundaryhandling">
+    
+  </a>
+  <a name="defaultboundaryhandling">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    defaultboundaryhandling(x, fac):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a float penalty for being outside of boundaries [-5, 5]<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.gauss">
+    
+  </a>
+  <a name="gauss">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    gauss(N, seed):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Samples N standard normally distributed numbers
+being the same for a given seed<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.unif">
+    
+  </a>
+  <a name="unif">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    unif(N, inseed):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates N uniform numbers with starting seed.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="cocopp.eaf.bbobbenchmarks._myrandn">
+    
+  </a>
+  <a name="_myrandn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _myrandn(size):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Normal random distribution sampling.</p>
+<p>For testing and comparing purpose.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="cocopp.eaf.bbobbenchmarks._myrand">
+    
+  </a>
+  <a name="_myrand">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _myrand(size):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Uniform random distribution sampling.</p>
+<p>For testing and comparing purpose.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.fGauss">
+    
+  </a>
+  <a name="fGauss">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    fGauss(ftrue, beta):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns Gaussian model noisy value.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.fUniform">
+    
+  </a>
+  <a name="fUniform">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    fUniform(ftrue, alpha, beta):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns uniform model noisy value.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.fCauchy">
+    
+  </a>
+  <a name="fCauchy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    fCauchy(ftrue, alpha, p):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns Cauchy model noisy value</p>
+<p>Cauchy with median 1e3*alpha and with p=0.2, zero otherwise</p>
+<p>P(Cauchy &gt; 1,10,100,1000) = 0.25, 0.032, 0.0032, 0.00032</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.instantiate">
+    
+  </a>
+  <a name="instantiate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    instantiate(ifun, iinstance=0, param=None, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns test function ifun, by default instance 0.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.bbobbenchmarks.get_param">
+    
+  </a>
+  <a name="get_param">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_param(ifun):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the parameter values of the function ifun.<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:42:28.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

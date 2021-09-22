@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.ppfig : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.ppfig</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Generic routines for figure generation.<table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id35">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.ppfig.Usage.html" data-type="Class" class="code">Usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#enum" data-type="Function" class="code">enum</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#saveFigure" data-type="Function" class="code">saveFigure</a></td>
+    <td><span>Save figure into an image file.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#addImage" data-type="Function" class="code">addImage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#add_link" data-type="Function" class="code">add_link</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#save_index_html_file" data-type="Function" class="code">save_index_html_file</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#getHomeLink" data-type="Function" class="code">getHomeLink</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#getConvLink" data-type="Function" class="code">getConvLink</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#getRldLink" data-type="Function" class="code">getRldLink</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#getParentLink" data-type="Function" class="code">getParentLink</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#save_single_functions_html" data-type="Function" class="code">save_single_functions_html</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#write_tables" data-type="Function" class="code">write_tables</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#copy_js_files" data-type="Function" class="code">copy_js_files</a></td>
+    <td><span>Copies js files to output directory.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#discretize_limits" data-type="Function" class="code">discretize_limits</a></td>
+    <td><span>return new limits with discrete values in k * 10**i with k in [1, 3].</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#marker_positions" data-type="Function" class="code">marker_positions</a></td>
+    <td><span>return randomized marker positions</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#plotUnifLogXMarkers" data-type="Function" class="code">plotUnifLogXMarkers</a></td>
+    <td><span>Proxy plot function: markers are evenly spaced on the log x-scale</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#consecutiveNumbers" data-type="Function" class="code">consecutiveNumbers</a></td>
+    <td><span>Groups a sequence of integers into ranges of consecutive numbers. If the prefix is set then the it's placed before each number.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#groupByRange" data-type="Function" class="code">groupByRange</a></td>
+    <td><span>Groups a sequence of integers into ranges of consecutive numbers.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#logxticks" data-type="Function" class="code">logxticks</a></td>
+    <td><span>Modify log-scale figure xticks from 10^i to i for values with the <tt class="rst-docutils literal">limits</tt> and (re-)sets the current xlim() thereby turning autoscale off (if it was on).</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#beautify" data-type="Function" class="code">beautify</a></td>
+    <td><span>Customize a figure by adding a legend, axis label, etc.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#generateData" data-type="Function" class="code">generateData</a></td>
+    <td><span>Returns an array of results to be plotted.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#plot" data-type="Function" class="code">plot</a></td>
+    <td><span>From a DataSetList, plot a graph. Not in use and superseeded by ppfigdim.main!?</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#get_first_html_file" data-type="Function" class="code">get_first_html_file</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.ppfig.html#get_sorted_html_files" data-type="Function" class="code">get_sorted_html_files</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.enum">
+    
+  </a>
+  <a name="enum">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    enum(*sequential, **named):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.saveFigure">
+    
+  </a>
+  <a name="saveFigure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    saveFigure(filename, figFormat=()):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Save figure into an image file.</p>
+<p><code>figFormat</code> can be a string or a list of strings, like
+<tt class="rst-docutils literal">('pdf', 'svg')</tt></p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.addImage">
+    
+  </a>
+  <a name="addImage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    addImage(imageName, addLink):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.add_link">
+    
+  </a>
+  <a name="add_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    add_link(currentDir, folder, fileName, label, indent='', ignoreFileExists=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.save_index_html_file">
+    
+  </a>
+  <a name="save_index_html_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    save_index_html_file(filename):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.getHomeLink">
+    
+  </a>
+  <a name="getHomeLink">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    getHomeLink(htmlPage):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.getConvLink">
+    
+  </a>
+  <a name="getConvLink">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    getConvLink(htmlPage, currentDir):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.getRldLink">
+    
+  </a>
+  <a name="getRldLink">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    getRldLink(htmlPage, current_dir):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.getParentLink">
+    
+  </a>
+  <a name="getParentLink">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    getParentLink(htmlPage, parentFileName):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.save_single_functions_html">
+    
+  </a>
+  <a name="save_single_functions_html">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    save_single_functions_html(filename, algname='', extension='svg', add_to_names='', next_html_page_suffix=None, htmlPage=HtmlPage.NON_SPECIFIED, functionGroups=None, parentFileName=None, header=None, caption=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.write_tables">
+    
+  </a>
+  <a name="write_tables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    write_tables(f, caption_string_format, best_alg_exists, html_key, legend_key):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.copy_js_files">
+    
+  </a>
+  <a name="copy_js_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    copy_js_files(outputdir):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Copies js files to output directory.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.discretize_limits">
+    
+  </a>
+  <a name="discretize_limits">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    discretize_limits(limits, smaller_steps_limit=3.1):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return new limits with discrete values in k * 10**i with k in [1, 3].</p>
+<p><code>limits</code> has len 2 and the new lower limit is always <tt class="rst-docutils literal"><span class="pre">10**-0.2</span></tt>.</p>
+<p>if <code>limits[1] / limits[0] &lt; 10**smaller_steps_limits</code>, k == 3 is an
+additional choice.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.marker_positions">
+    
+  </a>
+  <a name="marker_positions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    marker_positions(xdata, ydata, nbperdecade, maxnb, ax_limits=None, y_transformation=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return randomized marker positions</p>
+<p>replacement for downsample, could be improved by becoming independent
+of axis limits?</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.plotUnifLogXMarkers">
+    
+  </a>
+  <a name="plotUnifLogXMarkers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plotUnifLogXMarkers(x, y, nbperdecade, logscale=False, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Proxy plot function: markers are evenly spaced on the log x-scale</p>
+<p>Remark/TODO: should be called plot_with_unif_markers!? Here is where
+the ECDF plot "done in pprldmany" actually happens.</p>
+<p>This method generates plots with markers regularly spaced on the
+x-scale whereas the matplotlib.pyplot.plot function will put markers
+on data points.</p>
+<p>This method outputs a list of three lines.Line2D objects: the first
+with the line style, the second for the markers and the last for the
+label.</p>
+<p>This function only works with monotonous graph.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.consecutiveNumbers">
+    
+  </a>
+  <a name="consecutiveNumbers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    consecutiveNumbers(data, prefix=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Groups a sequence of integers into ranges of consecutive numbers.
+If the prefix is set then the it's placed before each number.
+
+Example::
+  &gt;&gt;&gt; import os
+  &gt;&gt;&gt; os.chdir(os.path.abspath(os.path.dirname(os.path.dirname('__file__'))))
+  &gt;&gt;&gt; import bbob_pproc as bb
+  &gt;&gt;&gt; bb.ppfig.consecutiveNumbers([0, 1, 2, 4, 5, 7, 8, 9])
+  '0-2, 4, 5, 7-9'
+  &gt;&gt;&gt; bb.ppfig.consecutiveNumbers([0, 1, 2, 4, 5, 7, 8, 9], 'f')
+  'f0-f2, f4, f5, f7-f9'
+
+Range of consecutive numbers is at least 3 (therefore [4, 5] is
+represented as "4, 5").</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.groupByRange">
+    
+  </a>
+  <a name="groupByRange">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    groupByRange(data):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Groups a sequence of integers into ranges of consecutive numbers.</p>
+<p>Helper function of consecutiveNumbers(data), returns a list of lists.
+The key to the solution is differencing with a range so that
+consecutive numbers all appear in same group.
+Useful for determining ranges of functions.
+Ref: <a class="rst-reference external" target="_top" href="http://docs.python.org/release/3.0.1/library/itertools.html">http://docs.python.org/release/3.0.1/library/itertools.html</a></p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.logxticks">
+    
+  </a>
+  <a name="logxticks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    logxticks(limits=[-np.inf, np.inf]):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Modify log-scale figure xticks from 10^i to i for values with the
+<tt class="rst-docutils literal">limits</tt> and (re-)sets the current xlim() thereby turning autoscale
+off (if it was on).</p>
+<p>This is to have xticks that are more visible.
+Modifying the x-limits of the figure after calling this method will
+not update the ticks.
+Please make sure the xlabel is changed accordingly.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    beautify():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Customize a figure by adding a legend, axis label, etc.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.generateData">
+    
+  </a>
+  <a name="generateData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    generateData(dataSet, targetFuncValue):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns an array of results to be plotted.</p>
+<p>1st column is ert, 2nd is  the number of success, 3rd the success
+rate, 4th the sum of the number of function evaluations, and
+finally the median on successful runs.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    plot(dsList, _valuesOfInterest=(10, 1, 0.1, 0.01, 0.001, 1e-05, 1e-08), isbyinstance=True, kwargs={}):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>From a DataSetList, plot a graph. Not in use and superseeded by ppfigdim.main!?<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.get_first_html_file">
+    
+  </a>
+  <a name="get_first_html_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_first_html_file(current_dir, prefix):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.ppfig.get_sorted_html_files">
+    
+  </a>
+  <a name="get_sorted_html_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_sorted_html_files(current_dir, prefix):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

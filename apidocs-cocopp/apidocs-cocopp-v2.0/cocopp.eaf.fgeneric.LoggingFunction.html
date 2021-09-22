@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.eaf.fgeneric.LoggingFunction : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.eaf.fgeneric.LoggingFunction(<span title="object">object</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.eaf.html" data-type="Package" class="code">eaf</a>.<a href="cocopp.eaf.fgeneric.html" data-type="Module" class="code">fgeneric</a></code>
+          
+          <a href="classIndex.html#cocopp.eaf.fgeneric.LoggingFunction">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Class for a function that records data from experiments with a given 
+   algorithm and parameter settings.
+
+This class provides recording facilities:
+
+* index files (:file:`info` extension) record information on an
+  experiment
+* data files (:file:`dat`, :file:`tdat` extensions) which record
+  number of function evaluations and function values for consecutive
+  runs.
+
+Once an instance of this class is provided with a test function and
+the function optimal value, the instance or its method :meth:`evalfun` 
+can be called to evaluate the function.
+
+At the end of the run, :meth:`finalizerun` must be called.
+
+Either the provided test function is an object with an evaluation
+method :meth:`_evalfull` which returns noisy and noiseless values
+(tuple of length 2). Otherwise, the test function should be
+callable and return a scalar if called with tuple (0., 0.).</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id383">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#__call__" data-type="Method" class="code">__call__</a></td>
+    <td><span>Returns objective function value</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><tt>Initialize LoggingFunction for an experiment. Before the LoggingFunction can be used as an objective function, method :meth:`setfun` must be called.</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#initialize" data-type="Method" class="code">initialize</a></td>
+    <td><tt>Initialize LoggingFunction with a data path and further infos. Before the LoggingFunction can be used as an objective function, method :meth:`setfun` must be called.</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#__del__" data-type="Method" class="code">__del__</a></td>
+    <td><span>Destructor.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#evalfun" data-type="Method" class="code">evalfun</a></td>
+    <td><span>Evaluate the function, return objective function value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#finalizerun" data-type="Method" class="code">finalizerun</a></td>
+    <td><span>Write the last bit of information for a given run.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#setfun" data-type="Method" class="code">setfun</a></td>
+    <td><span>Set test function, returns an evaluation method and a target</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#restart" data-type="Method" class="code">restart</a></td>
+    <td><span>Adds an output line to the restart-log. Call this if restarts occur within run_(your)_optimizer.</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.__Eval.html" data-type="Class" class="code">__Eval</a></td>
+    <td><span>Class for the object lasteval.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_is_ready" data-type="Method" class="code">_is_ready</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_readytostart" data-type="Method" class="code">_readytostart</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getdatapath" data-type="Method" class="code">_getdatapath</a></td>
+    <td><span>Main path for storing the data.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_setdatapath" data-type="Method" class="code">_setdatapath</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getalgid" data-type="Method" class="code">_getalgid</a></td>
+    <td><span>String representing the tested algorithm.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_setalgid" data-type="Method" class="code">_setalgid</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getcomments" data-type="Method" class="code">_getcomments</a></td>
+    <td><span>String with any information on the experiment set.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_setcomments" data-type="Method" class="code">_setcomments</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getinputformat" data-type="Method" class="code">_getinputformat</a></td>
+    <td><span>String giving the input format, either 'row' (default) or 'col'.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_setinputformat" data-type="Method" class="code">_setinputformat</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getfbest" data-type="Method" class="code">_getfbest</a></td>
+    <td><span>Returns the best function value obtained.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getftarget" data-type="Method" class="code">_getftarget</a></td>
+    <td><span>Returns the target function value.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getevaluations" data-type="Method" class="code">_getevaluations</a></td>
+    <td><span>Number of function evaluations so far.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getfun" data-type="Method" class="code">_getfun</a></td>
+    <td><span>Current test function to be evaluated.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_setdim" data-type="Method" class="code">_setdim</a></td>
+    <td><span>Sets the dimension.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_getfileprefix" data-type="Method" class="code">_getfileprefix</a></td>
+    <td><span>String prefix common to all files generated.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="cocopp.eaf.fgeneric.LoggingFunction.html#_setfileprefix" data-type="Method" class="code">_setfileprefix</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __call__(self, x, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns objective function value<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, datapath, algid='not-specified', comments='', inputformat='row'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Initialize LoggingFunction for an experiment. Before the 
+LoggingFunction can be used as an objective
+function, method :meth:`setfun` must be called.
+
+:param string datapath: Output folder name
+:param string algid: name of algorithm
+:param string comments: complementary information on experiment
+  (parameter settings and such)
+:param string inputformat: 'row' (default) or 'col', determines
+  the shape of the input data.</pre>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.initialize">
+    
+  </a>
+  <a name="initialize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    initialize(self, datapath, algid='not-specified', comments='', inputformat='row'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Initialize LoggingFunction with a data path and further 
+infos. Before the LoggingFunction can be used as an objective
+function, method :meth:`setfun` must be called. </pre>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.__del__">
+    
+  </a>
+  <a name="__del__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __del__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Destructor.</p>
+<p>Will attempt to finalize a run when the current instance is
+about to be deleted.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._is_ready">
+    
+  </a>
+  <a name="_is_ready">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _is_ready(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._readytostart">
+    
+  </a>
+  <a name="_readytostart">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _readytostart(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.evalfun">
+    
+  </a>
+  <a name="evalfun">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    evalfun(self, inputx, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Evaluate the function, return objective function value.</p>
+<p>Positional and keyword arguments args and kwargs are directly
+passed to the test function evaluation method.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.finalizerun">
+    
+  </a>
+  <a name="finalizerun">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    finalizerun(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Write the last bit of information for a given run.</p>
+<p>Calling this method at the end of a run is necessary as some
+information are not written otherwise.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getdatapath">
+    
+  </a>
+  <a name="_getdatapath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getdatapath(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Main path for storing the data.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._setdatapath">
+    
+  </a>
+  <a name="_setdatapath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _setdatapath(self, datapath):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getalgid">
+    
+  </a>
+  <a name="_getalgid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getalgid(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>String representing the tested algorithm.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._setalgid">
+    
+  </a>
+  <a name="_setalgid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _setalgid(self, algid):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getcomments">
+    
+  </a>
+  <a name="_getcomments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getcomments(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>String with any information on the experiment set.</p>
+<p>It is recommended to put all of the parameter settings here.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._setcomments">
+    
+  </a>
+  <a name="_setcomments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _setcomments(self, comments):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getinputformat">
+    
+  </a>
+  <a name="_getinputformat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getinputformat(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>String giving the input format, either 'row' (default) or 'col'.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._setinputformat">
+    
+  </a>
+  <a name="_setinputformat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _setinputformat(self, inputformat):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getfbest">
+    
+  </a>
+  <a name="_getfbest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getfbest(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the best function value obtained.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getftarget">
+    
+  </a>
+  <a name="_getftarget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getftarget(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the target function value.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getevaluations">
+    
+  </a>
+  <a name="_getevaluations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getevaluations(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Number of function evaluations so far.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getfun">
+    
+  </a>
+  <a name="_getfun">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getfun(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Current test function to be evaluated.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.setfun">
+    
+  </a>
+  <a name="setfun">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    setfun(self, fun, fopt=None, funId='undefined', iinstance='undefined', dftarget=deltaftarget, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set test function, returns an evaluation method and a target</p>
+<p>Using this method is necessary to start the creation of a log of
+an experiment.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">fun</td><td>test function (could be the evaluation method or an
+instance of bbobbenchmarks.)
+has to return a tuple of length 2: a noisy and a
+noiseless value. If the function is noiseless, you
+can provide (lambda x: tuple([f(x)] * 2)).</td></tr><tr><td></td><td class="fieldArg">float fopt</td><td>optimum value of the test function, used to define
+the f-values to be recorded</td></tr><tr><td></td><td class="fieldArg">float dftarget</td><td>target precision, only used to set the ftarget
+property attribute (must only be used for checking for final termination)</td></tr><tr><td></td><td class="fieldArg">funId</td><td>function identifier, typically a number, funId must have
+a string representation and is used for file names (avoid
+special characters)</td></tr><tr><td></td><td class="fieldArg">iinstance</td><td>instance of the function (has to have string
+representation)</td></tr><tr><td></td><td class="fieldArg">kwargs</td><td>additional descriptions</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><tt class="rst-docutils literal">self</tt>, <tt class="rst-docutils literal">self</tt> can be called as an objective function,
+the target function value is self.ftarget = fopt + dftarget</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._setdim">
+    
+  </a>
+  <a name="_setdim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _setdim(self, dim):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Sets the dimension.</p>
+<p>_setdim and setfun are fundamentally different:
+setfun is called by the user, whereas _setdim is called at the
+first call to method evalfun.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._getfileprefix">
+    
+  </a>
+  <a name="_getfileprefix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _getfileprefix(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>String prefix common to all files generated.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction._setfileprefix">
+    
+  </a>
+  <a name="_setfileprefix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _setfileprefix(self, fileprefix):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocopp.eaf.fgeneric.LoggingFunction.restart">
+    
+  </a>
+  <a name="restart">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    restart(self, restart_reason='restarted'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Adds an output line to the restart-log. Call this if restarts occur within run_(your)_optimizer.<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:42:28.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

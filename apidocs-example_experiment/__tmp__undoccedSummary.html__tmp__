@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Summary of Undocumented Objects</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            example_experiment API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Summary of Undocumented Objects</h1>
+      </div>
+
+      <ul>
+      <li>Method - <a href="example_experiment.ShortInfo.html#__init__" data-type="Method" class="code">example_experiment.ShortInfo.__init__</a></li><li>Method - <a href="example_experiment.ShortInfo.html#add_evals" data-type="Method" class="code">example_experiment.ShortInfo.add_evals</a></li><li>Method - <a href="example_experiment.ShortInfo.html#dimension_done" data-type="Method" class="code">example_experiment.ShortInfo.dimension_done</a></li><li>Method - <a href="example_experiment.ShortInfo.html#function_done" data-type="Method" class="code">example_experiment.ShortInfo.function_done</a></li><li>Method - <a href="example_experiment.ShortInfo.html#print" data-type="Method" class="code">example_experiment.ShortInfo.print</a></li><li>Method - <a href="example_experiment.ShortInfo.html#print_timings" data-type="Method" class="code">example_experiment.ShortInfo.print_timings</a></li><li>Static Method - <a href="example_experiment.ShortInfo.html#short_time_stap" data-type="Static Method" class="code">example_experiment.ShortInfo.short_time_stap</a></li></ul>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.findfiles.KnownArchives : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocopp.findfiles.KnownArchives</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.findfiles.html" data-type="Module" class="code">findfiles</a></code>
+          
+          <a href="classIndex.html#cocopp.findfiles.KnownArchives">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>collection of known online data archives as attributes.
+
+`cocopp.archives` is an instance of `KnownArchives` and contains as
+archive attributes:
+
+``all``: the `list` of all archived data from all test suites.
+
+`bbob`: the `list` of archived data run on the `bbob` test suite.
+
+`bbob_noisy`: ditto on the `bbob_noisy` test suite.
+
+`bbob_biobj`: ditto...
+
+A Quick Guide
+-------------
+
+**1) To list all available data**:
+
+    &gt;&gt;&gt; import cocopp
+    &gt;&gt;&gt; cocopp.archives.all  # doctest:+ELLIPSIS
+    ['bbob/2009/AL...
+
+**2) To see all available data from a given test suite**:
+
+    &gt;&gt;&gt; cocopp.archives.bbob  # doctest:+ELLIPSIS
+    ['2009/ALPS...
+
+or
+
+    &gt;&gt;&gt; cocopp.archives.bbob_biobj  # doctest:+ELLIPSIS
+    ['2016/DEMO_Tusar...
+
+or
+
+    &gt;&gt;&gt; cocopp.archives.bbob_noisy  # doctest:+ELLIPSIS
+    ['2009/ALPS...
+
+**3) We can extract a subset** from any test suite (such as
+`cocopp.archives.all`, `cocopp.archives.bbob`, ...) of the
+archive by very basic pattern matching:
+
+    &gt;&gt;&gt; cocopp.bbob.find('bfgs')  # doctest:+NORMALIZE_WHITESPACE
+    ['2009/BFGS_ros_noiseless.tgz',
+     '2012/DE-BFGS_voglis_noiseless.tgz',
+     '2012/PSO-BFGS_voglis_noiseless.tgz',
+     '2014-others/BFGS-scipy-Baudis.tgz',
+     '2014-others/L-BFGS-B-scipy-Baudis.tgz']
+
+The `find` method will not download data and is only for inspecting
+the archives. If we want to actually process the data we need to get
+them to/from our disk by replacing `find` with `get` or `get_all`:
+
+**4) When postprocessing data via `cocopp.main`**, we can use the above
+such as
+
+    &gt;&gt;&gt; cocopp.main(cocopp.bbob.get_all('bfgs'))  # doctest:+SKIP
+
+When using `get` results in multiple matches, the postprocessing
+will complain.
+
+To make things even easier, the `get` and `get_all` methods are called
+on each argument given in a string to `main`, such that we can do
+things like
+
+    &gt;&gt;&gt; cocopp.main('bbob/2009/BIPOP DE-BFGS')  # doctest:+SKIP
+
+Again, the postprocessing bails out when there are multiple
+matches. For such cases, we can use the symbols `*` (AKA take
+all matches) and `!` (AKA take the first match):
+
+    &gt;&gt;&gt; cocopp.main('BIPOP! 2012/DE*')  # doctest:+SKIP
+
+will expand to the following:
+
+    Post-processing (2+)
+      Using:
+        /.../.cocopp/data-archive/bbob/2009/BIPOP-CMA-ES_hansen_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DE-AUTO_voglis_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DE-BFGS_voglis_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DE-ROLL_voglis_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DE-SIMPLEX_voglis_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DE_posik_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DEAE_posik_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DEb_posik_noiseless.tgz
+        /.../.cocopp/data-archive/bbob/2012/DEctpb_posik_noiseless.tgz
+
+    Post-processing (2+)
+      loading data...
+    [...]
+
+**5) If we want to also pass other arguments to the postprocessing**
+(e.g. the output folder) in case 3) above, we can use the
+following "trick" to make a string from the returned list of
+algorithms:
+
+   &gt;&gt;&gt; cocopp.main('-o myoutputfolder ' + ' '.join(cocopp.bbob.get_all('bfgs')))  # doctest:+SKIP
+
+Note the crucial space in the end of the first string.
+For case 4), this works directly:
+
+   &gt;&gt;&gt; cocopp.main('-o myoutputfolder BIPOP! 2012/DE*')  # doctest:+SKIP</pre>
+      </div>
+
+      <div id="splitTables">
+        
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

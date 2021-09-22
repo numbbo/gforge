@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.readalign : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.readalign</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Helper routines to read in data files.</p>
+<p>The terms horizontal and vertical below refer to the horizontal
+(fixed-target) and vertical (fixed-budget) views. When considering
+convergence graphs of function values over times, we can view it as:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>costs for different fixed targets represented by horizontal cuts.</li>
+<li>function values for different fixed budgets represented by vertical
+cuts.</li>
+</ul>
+</blockquote>
+<p>COCO collects experimental data with respect to these two complementary
+views. This module provides data structures and methods for dealing with
+the experimental data.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id73">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.MultiReader.html" data-type="Class" class="code">MultiReader</a></td>
+    <td><span>List of data arrays to be aligned.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.VMultiReader.html" data-type="Class" class="code">VMultiReader</a></td>
+    <td><span>List of data arrays to be aligned vertically.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html" data-type="Class" class="code">HMultiReader</a></td>
+    <td><span>List of data arrays to be aligned horizontally.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.ArrayMultiReader.html" data-type="Class" class="code">ArrayMultiReader</a></td>
+    <td><span>Class of <em>aligned</em> data arrays to be aligned together.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.VArrayMultiReader.html" data-type="Class" class="code">VArrayMultiReader</a></td>
+    <td><span>Wrapper class of <em>aligned</em> data arrays to be aligned vertically.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.VArrayMultiReaderNew.html" data-type="Class" class="code">VArrayMultiReaderNew</a></td>
+    <td><span>Wrapper class of <em>aligned</em> data arrays to be aligned vertically.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.HArrayMultiReader.html" data-type="Class" class="code">HArrayMultiReader</a></td>
+    <td><span>Wrapper class of <em>aligned</em> data arrays to be aligned horizontally.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.readalign.html#alignData" data-type="Function" class="code">alignData</a></td>
+    <td><span>Aligns the data from a list of data arrays.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.readalign.html#alignArrayData" data-type="Function" class="code">alignArrayData</a></td>
+    <td><span>Aligns the data from a list of aligned arrays.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.readalign.html#openfile" data-type="Function" class="code">openfile</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.readalign.html#split" data-type="Function" class="code">split</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.readalign.html#is_close" data-type="Function" class="code">is_close</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.readalign.alignData">
+    
+  </a>
+  <a name="alignData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    alignData(data, isBiobjective):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Aligns the data from a list of data arrays.</p>
+<p>This method returns an array for which the alignment value is the
+first column and the aligned values are in subsequent columns.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.readalign.alignArrayData">
+    
+  </a>
+  <a name="alignArrayData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    alignArrayData(data):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Aligns the data from a list of aligned arrays.</p>
+<p>This method returns an array for which the alignment value is the first
+column and the aligned values are in subsequent columns.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.readalign.openfile">
+    
+  </a>
+  <a name="openfile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    openfile(filePath):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.readalign.split">
+    
+  </a>
+  <a name="split">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    split(dataFiles, isBiobjective, idx_to_load=None, dim=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Split a list of data files into arrays corresponding to data sets.
+The Boolean list idx_to_load is thereby indicating whether a
+given part of the split is to be considered or not if None, all
+instances are considered.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.readalign.is_close">
+    
+  </a>
+  <a name="is_close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    is_close(a, b, rel_tol=1e-09, abs_tol=0.0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

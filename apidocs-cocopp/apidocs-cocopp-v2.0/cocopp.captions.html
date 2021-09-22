@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.captions : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.captions</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Provides basic functionality for creating figure and table captions.</p>
+<p>In particular, a replace functionality is provided that takes a raw
+caption text and replaces certain !!KEYWORDS!!  with the corresponding
+values, depending on the current settings (genericsettings, testbedsettings,
+...).</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id9">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#replace" data-type="Function" class="code">replace</a></td>
+    <td><span>Replaces all !!KEYWORDS!! in the text as specified in replace_dict.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#get_reference_algorithm_text" data-type="Function" class="code">get_reference_algorithm_text</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#get_best_art_text" data-type="Function" class="code">get_best_art_text</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#get_light_brown_line_text" data-type="Function" class="code">get_light_brown_line_text</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#get_nblow" data-type="Function" class="code">get_nblow</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#get_nbup" data-type="Function" class="code">get_nbup</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.captions.html#get_ppfigs_ftarget" data-type="Function" class="code">get_ppfigs_ftarget</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.captions.replace">
+    
+  </a>
+  <a name="replace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    replace(text, html=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Replaces all !!KEYWORDS!! in the text as specified in replace_dict.</p>
+<p>If html==True, some translation is done before and after the
+actual replacement in order to deal with HTML-specific codings.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.captions.get_reference_algorithm_text">
+    
+  </a>
+  <a name="get_reference_algorithm_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_reference_algorithm_text(best_algorithm_mandatory=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.captions.get_best_art_text">
+    
+  </a>
+  <a name="get_best_art_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_best_art_text():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.captions.get_light_brown_line_text">
+    
+  </a>
+  <a name="get_light_brown_line_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_light_brown_line_text(testbedname):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.captions.get_nblow">
+    
+  </a>
+  <a name="get_nblow">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_nblow():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.captions.get_nbup">
+    
+  </a>
+  <a name="get_nbup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_nbup():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.captions.get_ppfigs_ftarget">
+    
+  </a>
+  <a name="get_ppfigs_ftarget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_ppfigs_ftarget():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-09-01 16:25:08.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

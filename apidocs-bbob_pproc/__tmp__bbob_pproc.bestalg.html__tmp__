@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.bestalg : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>bbob_pproc.bestalg</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <pre>Best algorithm dataset module
+
+This module implements :py:class:`BestAlgSet` class which is used as
+data structure for the data set of the virtual best algorithm.
+Therefore this module will be imported by other modules which need
+to access best algorithm data set.
+
+The best algorithm data set can be accessed by the
+:py:data:`bestAlgorithmEntries` variable. This variable needs to be
+initialized by executing functions :py:func:`load_best_algorithm(...)`
+
+This module can also be used generate the best algorithm data set
+with its generate method.</pre>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id6">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.bestalg.BestAlgSet.html" data-type="Class" class="code">BestAlgSet</a></td>
+    <td><span>Unit element of best algorithm data set.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#load_best_algorithm" data-type="Function" class="code">load_best_algorithm</a></td>
+    <td><tt>Assigns :py:data:`bestAlgorithmEntries`.</tt></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#usage" data-type="Function" class="code">usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#generate" data-type="Function" class="code">generate</a></td>
+    <td><span>Generates dictionary of best algorithm data set.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#deprecated_customgenerate" data-type="Function" class="code">deprecated_customgenerate</a></td>
+    <td><span>Generates best algorithm data set.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#custom_generate" data-type="Function" class="code">custom_generate</a></td>
+    <td><span>Generates best algorithm data set from a given set of algorithms.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#create_data_files" data-type="Function" class="code">create_data_files</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#write_to_file" data-type="Function" class="code">write_to_file</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#getAllContributingAlgorithmsToBest" data-type="Function" class="code">getAllContributingAlgorithmsToBest</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="bbob_pproc.bestalg.html#extractBestAlgorithms" data-type="Function" class="code">extractBestAlgorithms</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.load_best_algorithm">
+    
+  </a>
+  <a name="load_best_algorithm">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    load_best_algorithm(best_algo_filename, force=False, relative_load=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Assigns :py:data:`bestAlgorithmEntries`.
+
+This function is needed to set the global variable
+:py:data:`bestAlgorithmEntries`. It reads in the data, specified by
+the string best_algo_filename which can
+either be a pickled file (deprecated), generated by
+deprecated_customgenerate or any standard data set (i.e. a zipped or
+unzipped folder with .info, .dat, and .tdat files such as the ones
+generated by custom_generate). This function will also set
+the testbedsettings.current_testbed.best_algorithm_displayname
+according to the read data if not already present.
+
+:py:data:`bestAlgorithmEntries` is a dictionary accessed by providing
+a tuple :py:data:`(dimension, function)`. This returns an instance
+of :py:class:`BestAlgSet`.
+The data is that of specific algorithms (depending on the Testbed used).</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    usage():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.generate">
+    
+  </a>
+  <a name="generate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    generate(dict_alg, algId):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates dictionary of best algorithm data set.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.deprecated_customgenerate">
+    
+  </a>
+  <a name="deprecated_customgenerate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    deprecated_customgenerate(args=algs2009):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generates best algorithm data set.
+
+This functionality is deprecated because it writes
+unsupported pickle files.
+
+It will create a folder bestAlg in the current working directory
+with a pickle file corresponding to the bestalg dataSet of the
+algorithms listed in variable args.
+
+This method is called from the python command line from a directory
+containing all necessary data folders::
+
+&gt;&gt;&gt; from bbob_pproc import bestalg
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; path = os.path.abspath(os.path.dirname('__file__'))
+&gt;&gt;&gt; os.chdir(os.path.join(path, 'data'))
+&gt;&gt;&gt; infoFile = 'ALPS/bbobexp_f2.info'
+&gt;&gt;&gt; if not os.path.exists(infoFile):
+...     import urllib
+...     import tarfile
+...     dataurl = 'http://coco.gforge.inria.fr/data-archive/2009/ALPS_hornby_noiseless.tgz'
+...     filename, headers = urllib.urlretrieve(dataurl)
+...     archivefile = tarfile.open(filename)
+...     archivefile.extractall()
+&gt;&gt;&gt; os.chdir(os.path.join(path, 'data'))
+&gt;&gt;&gt; bestalg.custom_generate(('ALPS', ''), 'refAlgFromALPS') # doctest: +ELLIPSIS
+Searching in...
+&gt;&gt;&gt; os.chdir(path)</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.custom_generate">
+    
+  </a>
+  <a name="custom_generate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    custom_generate(args=algs2009, algId='bestCustomAlg'):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Generates best algorithm data set from a given set of algorithms.
+
+It will create a folder named as algId in the current working directory
+corresponding to the bestalg dataSet of the algorithms listed in
+variable args. This folder is furthermore added to a `.tar.gz` file
+of the same name.
+
+This method is called from the python command line from a directory
+containing all necessary data folders::</pre>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.create_data_files">
+    
+  </a>
+  <a name="create_data_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    create_data_files(output_dir, result):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.write_to_file">
+    
+  </a>
+  <a name="write_to_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    write_to_file(filename, lines):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.getAllContributingAlgorithmsToBest">
+    
+  </a>
+  <a name="getAllContributingAlgorithmsToBest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    getAllContributingAlgorithmsToBest(algnamelist, target_lb=1e-08, target_ub=100.0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Computes first the artificial best algorithm from given algorithm list
+algnamelist, constructed by extracting for each target/function pair
+the algorithm with best aRT among the given ones. Returns then the list
+of algorithms that are contributing to the definition of the best
+algorithm, separated by dimension, and sorted by importance (i.e. with
+respect to the number of target/function pairs where each algorithm is
+best). Only target/function pairs are taken into account where the target
+is in between target_lb and target_ub.
+This method should be called from the python command line from a directory
+containing all necessary data folders:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; from bbob_pproc import bestalg
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; path = os.path.abspath(os.path.dirname(os.path.dirname('__file__')))
+&gt;&gt;&gt; os.chdir(path)
+&gt;&gt;&gt; bestalg.getAllContributingAlgorithmsToBest(('data/IPOP-CMA-ES', 'data/RANDOMSEARCH')) # doctest:+ELLIPSIS
+Generating best algorithm data...
+&gt;&gt;&gt; os.chdir(path)
+</pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="bbob_pproc.bestalg.extractBestAlgorithms">
+    
+  </a>
+  <a name="extractBestAlgorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    extractBestAlgorithms(args=algs2009, f_factor=2, target_lb=1e-08, target_ub=1e+22):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Returns (and prints) per dimension a list of algorithms within
+algorithm list args that contains an algorithm if for any
+    dimension/target/function pair this algorithm:
+    - is the best algorithm wrt aRT
+    - its own aRT lies within a factor f_factor of the best aRT
+    - there is no algorithm within a factor of f_factor of the best aRT
+      and the current algorithm is the second best.</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

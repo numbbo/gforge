@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.__init__ : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.__init__</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p><a href="cocopp.html"><code>cocopp</code></a>, COmparing Continuous Optimisers (COCO) post-processing</p>
+<p>This package (<a href="cocopp.html"><code>cocopp</code></a>) generates output figures and tables in html format
+and for including into LaTeX-documents.</p>
+<p>The main method of this package is <a href="cocopp.rungeneric.html#main"><code>main</code></a> (currently aliased to
+<a href="cocopp.rungeneric.html#main"><code>cocopp.rungeneric.main</code></a>). The <a href="cocopp.rungeneric.html#main"><code>main</code></a> method also allows basic use of the
+post-processing through a command-line interface. The recommended use
+is however from an IPython/Jupyter shell.</p>
+<p>The <a href="cocopp.Interface.html"><code>cocopp.Interface</code></a> class lists the most basic commands and data of
+the package, sufficient for most use cases.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">print</span>("
+<span class="py-output">".join(dir(cocopp.Interface)))  # doctest:+ELLIPSIS, +NORMALIZE_WHITESPACE</span>
+<span class="py-output">_...</span>
+<span class="py-output">archives</span>
+<span class="py-output">config</span>
+<span class="py-output">genericsettings</span>
+<span class="py-output">load</span>
+<span class="py-output">main</span></pre>
+<p>The <a href="cocopp.rungeneric.html#main"><code>main</code></a> function,</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'exdata another_folder yet_another_or_not'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>postprocesses data from one or several folders, for example data
+generated with the help from the <code>cocoex</code> module. Each folder is
+considered to contain data of a full experiment with a single algorithm.</p>
+<p>Results can be explored from the <tt class="rst-docutils literal">ppdata/index.html</tt> file, unless a
+a different output folder is specified with the <tt class="rst-docutils literal"><span class="pre">-o</span></tt> option.</p>
+<p>Comparative data from over 200 full experiments are archived online and
+can be easily listed, filtered, retrieved and displayed in
+<a href="cocopp.findfiles.COCODataArchive.html"><code>COCODataArchive</code></a> instances. For example</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob(<span class="py-string">'bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">['2009/BFGS_...</span></pre>
+<p>lists all data sets containing <tt class="rst-docutils literal">'bfgs'</tt> in their name. The first in
+the list can be postprocessed by</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs!'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>All of them can be processed like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>Only a trailing <code>*</code> is accepted and any string containing the
+substring is matched. The postprocessing result of</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/2009/*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>can be investigated at <a class="rst-reference external" href="http://coco.gforge.inria.fr/ppdata-archive/bbob/2009-all" target="_top">http://coco.gforge.inria.fr/ppdata-archive/bbob/2009-all</a>.</p>
+<p>To display algorithms in the background, the <tt class="rst-docutils literal">genericsettings.background</tt>
+variables needs to be set:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.background = {None: cocopp.archives.bbob.get_all(<span class="py-string">'bfgs'</span>)}  <span class="py-comment"># doctest:+SKIP</span></pre>
+<p>where <a href="http://docs.python.org/library/constants.html#None"><code>None</code></a> invokes the default color (grey) and line style (solid)
+<tt class="rst-docutils literal">genericsettings.background_default_style</tt>. Now we can show the first
+<tt class="rst-docutils literal">'bfgs'</tt>-matching algorithm with all others in the background:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs!'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id65">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><a href="cocopp.Interface.html" data-type="Class" class="code">Interface</a></td>
+    <td><span>collection of the most user-relevant methods and data.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2018-04-27 11:01:54.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

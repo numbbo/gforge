@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>bbob_pproc.readalign.HMultiReader : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            bbob_pproc API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>bbob_pproc.readalign.HMultiReader(<a href="bbob_pproc.readalign.MultiReader.html" data-type="Class" class="code">MultiReader</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="bbob_pproc.html" data-type="Package" class="code">bbob_pproc</a>.<a href="bbob_pproc.readalign.html" data-type="Module" class="code">readalign</a></code>
+          
+          <a href="classIndex.html#bbob_pproc.readalign.HMultiReader">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        <p>Known subclasses: <a href="bbob_pproc.readalign.HArrayMultiReader.html" data-type="Class" class="code">bbob_pproc.readalign.HArrayMultiReader</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>List of data arrays to be aligned horizontally.</p>
+<p>Aligned horizontally means all the function values are lesser than
+(or equal to) the current alignment function value.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id78">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html#calculateCurrentValue" data-type="Method" class="code">calculateCurrentValue</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html#isFinished" data-type="Method" class="code">isFinished</a></td>
+    <td><span>Is finished when we found the last alignment value reached.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html#getInitialValue" data-type="Method" class="code">getInitialValue</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html#newCurrentValue" data-type="Method" class="code">newCurrentValue</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.HMultiReader.html#align" data-type="Method" class="code">align</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <a href="bbob_pproc.readalign.MultiReader.html" data-type="Class" class="code">MultiReader</a>:
+          </p>
+          <table class="children sortable" id="id79">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.MultiReader.html#currentLine" data-type="Method" class="code">currentLine</a></td>
+    <td><span>Aggregates currentLines information.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.MultiReader.html#currentValues" data-type="Method" class="code">currentValues</a></td>
+    <td><span>Gets the list of the current alignment values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="bbob_pproc.readalign.MultiReader.html#nextValues" data-type="Method" class="code">nextValues</a></td>
+    <td><span>Gets the list of the next alignment values.</span></td>
+  </tr><tr class="baseclass">
+    
+    <td>Class</td>
+    <td><a href="bbob_pproc.readalign.MultiReader.SingleReader.html" data-type="Class" class="code">SingleReader</a></td>
+    <td><span>Single data array reader class.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="bbob_pproc.readalign.HMultiReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, data, isBiobjective):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="bbob_pproc.readalign.MultiReader.html#__init__" data-type="Method" class="code">bbob_pproc.readalign.MultiReader.__init__</a></div><div class="interfaceinfo">overridden in <a href="bbob_pproc.readalign.HArrayMultiReader.html" data-type="Class" class="code">bbob_pproc.readalign.HArrayMultiReader</a></div>
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="bbob_pproc.readalign.HMultiReader.calculateCurrentValue">
+    
+  </a>
+  <a name="calculateCurrentValue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    calculateCurrentValue(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="bbob_pproc.readalign.HMultiReader.isFinished">
+    
+  </a>
+  <a name="isFinished">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    isFinished(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Is finished when we found the last alignment value reached.<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="bbob_pproc.readalign.HMultiReader.getInitialValue">
+    
+  </a>
+  <a name="getInitialValue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    getInitialValue(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="bbob_pproc.readalign.HMultiReader.newCurrentValue">
+    
+  </a>
+  <a name="newCurrentValue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    newCurrentValue(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="bbob_pproc.readalign.HMultiReader.align">
+    
+  </a>
+  <a name="align">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    align(self, currentValue):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for bbob_pproc, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-09-24 16:25:03.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

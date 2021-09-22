@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.rungeneric2 : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.rungeneric2</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Routines for the comparison of 2 algorithms.</p>
+<dl class="rst-docutils">
+<dt>Synopsis:</dt>
+<dd><tt class="rst-docutils literal">python <span class="pre">-m</span> cocopp.rungeneric2 [OPTIONS] FOLDER_NAME1 <span class="pre">FOLDER_NAME2...</span></tt></dd>
+<dt>Help:</dt>
+<dd><tt class="rst-docutils literal">python <span class="pre">-m</span> cocopp.rungeneric2 <span class="pre">--help</span></tt></dd>
+</dl><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id101">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.rungeneric2.html#usage" data-type="Function" class="code">usage</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.rungeneric2.html#main" data-type="Function" class="code">main</a></td>
+    <td><span>Routine for post-processing COCO data from two algorithms.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.rungeneric2.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    usage():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.rungeneric2.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    main(argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <pre>Routine for post-processing COCO data from two algorithms.
+
+Provided with some data, this routine outputs figure and TeX files
+in a folder needed for the compilation of the provided LaTeX templates
+for comparing two algorithms (``*cmp.tex`` or ``*2*.tex``).
+
+The used template file needs to be edited so that the command
+``\bbobdatapath`` points to the output folder created by this routine.
+
+The output files will contain performance tables, performance
+scaling figures and empirical cumulative distribution figures. On
+subsequent executions, new files will be added to the output folder,
+overwriting existing older files in the process.
+
+Keyword arguments:
+
+*argv* -- list of strings containing options and arguments. If not
+given, sys.argv is accessed.
+
+*argv* must list folders containing BBOB data files. Each of these
+folders should correspond to the data of ONE algorithm.
+
+Furthermore, argv can begin with, in any order, facultative option
+flags listed below.
+
+    -h, --help
+        displays this message.
+    -v, --verbose
+        verbose mode, prints out operations.
+    -o OUTPUTDIR, --output-dir=OUTPUTDIR
+        changes the default output directory (:file:`ppdata`) to
+        :file:`OUTPUTDIR`
+    --noise-free, --noisy
+        processes only part of the data.
+    --settings=SETTINGS
+        changes the style of the output figures and tables. At the
+        moment the only differences are  in the colors of the output
+        figures. SETTINGS can be either "grayscale" or "color".
+        The default setting is "color".
+    --fig-only, --rld-only, --tab-only, --sca-only
+        these options can be used to output respectively the aRT
+        graphs figures, run length distribution figures or the
+        comparison tables scatter plot figures only. Any combination
+        of these options results in no output.
+    --conv
+        if this option is chosen, additionally convergence
+        plots for each function and algorithm are generated.
+    --no-rld-single-fcts
+        do not generate runlength distribution figures for each
+        single function.
+    --expensive
+        runlength-based f-target values and fixed display limits,
+        useful with comparatively small budgets.
+    --no-svg
+        do not generate the svg figures which are used in html files
+
+Exceptions raised:
+
+*Usage* -- Gives back a usage message.
+
+Examples:
+
+* Calling the rungeneric2.py interface from the command line::
+
+    $ python -m cocopp.rungeneric2 -v Alg0-baseline Alg1-of-interest
+
+  will post-process the data from folders :file:`Alg0-baseline` and
+  :file:`Alg1-of-interest`, the former containing data for the
+  reference algorithm (zero-th) and the latter data for the
+  algorithm of concern (first). The results will be output in the
+  default output folder. The ``-v`` option adds verbosity.
+
+* From the python interpreter (requires that the path to this
+  package is in python search path; most simply achieved by running
+  `python do.py install-postprocessing`)::
+
+    &gt;&gt; import cocopp as pp
+    &gt;&gt; pp.rungeneric2.main('-o outputfolder PSO DEPSO'.split())
+
+This will execute the post-processing on the data found in folder
+:file:`PSO` and :file:`DEPSO`. The ``-o`` option changes the output
+folder from the default to :file:`outputfolder`.</pre>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:44:06.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

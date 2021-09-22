@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocoex.python.utilities.ObserverOptions : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="apidocs.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">
+            cocoex API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>cocoex.python.utilities.ObserverOptions(<span title="dict">dict</span>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocoex.html" data-type="Package" class="code">cocoex</a>.<a href="cocoex.python.html" data-type="Package" class="code">python</a>.<a href="cocoex.python.utilities.html" data-type="Module" class="code">utilities</a></code>
+          
+          <a href="classIndex.html#cocoex.python.utilities.ObserverOptions">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>a <a href="http://docs.python.org/library/stdtypes.html#dict"><code>dict</code></a> with observer options which can be passed to
+the (C-based) <a href="cocoex.python.Observer.html"><code>Observer</code></a> via the <a href="cocoex.python.utilities.ObserverOptions.html#as_string"><code>as_string</code></a> property.</p>
+<p>See <a href="http://numbbo.github.io/coco-doc/C/#observer-parameters" class="rst-reference external" target="_top">http://numbbo.github.io/coco-doc/C/#observer-parameters</a>
+for details on the available (C-based) options.</p>
+<p>Details: When the <a href="cocoex.python.Observer.html"><code>Observer</code></a> class in future accepts a dictionary
+also, this class becomes superfluous and could be replaced by a method
+<code>default_observer_options</code> similar to <a href="cocoex.python.html#default_observers"><code>default_observers</code></a>.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id21">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.utilities.ObserverOptions.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span>set default options from global variables and input <tt class="rst-docutils literal">options</tt>.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.utilities.ObserverOptions.html#update" data-type="Method" class="code">update</a></td>
+    <td><span>add or update options</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.utilities.ObserverOptions.html#update_gracefully" data-type="Method" class="code">update_gracefully</a></td>
+    <td><span>update from each entry of parameter <tt class="rst-docutils literal">options: dict</tt> but only if key is not already present</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="cocoex.python.utilities.ObserverOptions.html#as_string" data-type="Method" class="code">as_string</a></td>
+    <td><span>string representation which is accepted by <a href="cocoex.python.Observer.html"><code>Observer</code></a> class, which calls the underlying C interface</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="cocoex.python.utilities.ObserverOptions.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, options={}):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>set default options from global variables and input <tt class="rst-docutils literal">options</tt>.</p>
+<p>Default values are created "dynamically" based on the setting
+of module-wide variables <code>SOLVER</code>, <code>suite_name</code>, and <code>budget</code>.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.utilities.ObserverOptions.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    update(self, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>add or update options<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.utilities.ObserverOptions.update_gracefully">
+    
+  </a>
+  <a name="update_gracefully">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    update_gracefully(self, options):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>update from each entry of parameter <tt class="rst-docutils literal">options: dict</tt> but only
+if key is not already present<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="cocoex.python.utilities.ObserverOptions.as_string">
+    
+  </a>
+  <a name="as_string">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    def
+    as_string(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>string representation which is accepted by <a href="cocoex.python.Observer.html"><code>Observer</code></a> class,
+which calls the underlying C interface<table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocoex, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2020-01-21 17:05:05.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

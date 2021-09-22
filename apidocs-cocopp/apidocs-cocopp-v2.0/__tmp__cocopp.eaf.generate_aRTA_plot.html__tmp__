@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>cocopp.eaf.generate_aRTA_plot : API documentation</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="apidocs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            cocopp API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code>cocopp.eaf.generate_aRTA_plot</code> <small>module documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="cocopp.html" data-type="Package" class="code">cocopp</a>.<a href="cocopp.eaf.html" data-type="Package" class="code">eaf</a></code>
+          
+          
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Called by plot_aRTA_function.py and plot_aRTA_ratios.py and does the actual
+reading in of COCO archive data and plotting of aRT values
+to attain all objective vectors in a certain interval [ideal, maxplot]
+if logscale=False or in the interval [precision, maxplot] with logscale=True.</p>
+<p>Data might be downsampled (if downsample=True) to the precision
+10^{-decimals}. All algorithm data is furthermore cropped after
+<code>eval(cropbudget)</code> many function evaluations.</p>
+<p>Note that for the moment, only aRTA function and aRTA ratio plots that rely on
+a grid of <code>n   imes n</code> points in objective space are provided.</p>
+<p>Prerequisite: the cocopp module of the COCO platform needs to be installed.
+Run therefore <code>python do.py install-postprocessing</code> once in the root folder
+of the github project before.</p>
+<p>based on code by Thanh-Do Tran 2012--2015
+adapted by Dimo Brockhoff 2016</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id385">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.generate_aRTA_plot.html#generate_aRTA_plot" data-type="Function" class="code">generate_aRTA_plot</a></td>
+    <td><span>Objective Space plot, indicating for each (grid) point the runtime of the algorithm to attain it (aka aRTA function plots).</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.generate_aRTA_plot.html#get_all_aRT_values_in_objective_space" data-type="Function" class="code">get_all_aRT_values_in_objective_space</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.generate_aRTA_plot.html#generate_aRTA_ratio_plot" data-type="Function" class="code">generate_aRTA_ratio_plot</a></td>
+    <td><span>Objective Space plot, showing the aRT ratios between two algorithms (aka aRTA ratio function), given in <code>inputfolder_1</code> and <code>inputfolder_2</code> for each point on a grid in objective space.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.generate_aRTA_plot.html#compute_aRT" data-type="Function" class="code">compute_aRT</a></td>
+    <td><span>Computes the average runtime to attain the objective vectors in points by the algorithm, with algorithm data given in dictionary A.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.generate_aRTA_plot.html#weakly_dominates" data-type="Function" class="code">weakly_dominates</a></td>
+    <td><span>Returns True iff a weakly dominates b wrt. minimization</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><a href="cocopp.eaf.generate_aRTA_plot.html#sample_down" data-type="Function" class="code">sample_down</a></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="cocopp.eaf.generate_aRTA_plot.generate_aRTA_plot">
+    
+  </a>
+  <a name="generate_aRTA_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    generate_aRTA_plot(f_id, dim, f1_id, f2_id, outputfolder='./', inputfolder=None, tofile=True, logscale=True, downsample=True, with_grid=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Objective Space plot, indicating for each (grid) point
+the runtime of the algorithm to attain it (aka aRTA function plots).</p>
+<p>Takes into account the corresponding COCO archive files in
+the given outputfolder.</p>
+<p>Assumes for now that each instance is only contained once in the
+data.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.generate_aRTA_plot.get_all_aRT_values_in_objective_space">
+    
+  </a>
+  <a name="get_all_aRT_values_in_objective_space">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    get_all_aRT_values_in_objective_space(f_id, dim, f1_id, f2_id, inputfolder=None, logscale=True, downsample=True, with_grid=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a set of points in objective space and their corresponding
+aRT values for the specified algorithm data (on function <code>f_id</code> in
+dimension <code>dim</code>, given in the folder <code>inputfolder</code>). Data points
+produced after cropbudget function evaluations are not taken into account.</p>
+<p>The points in objective space are thereby either generated on a grid
+(if <code>with_grid == True</code> either in logscale or not) or constructed from the
+actual data points of the algorithm (TODO: not supported yet). Note that
+the returned points will be already sorted in order of their aRTs (in
+decreasing order).</p>
+<p>If <code>downsample == True</code>, the input data will be reduced by taking into
+account only one input point per objective space cell where the cells
+are given by cutting the objective vectors to the given precision of
+<code>10^{-decimals}</code>. For later plotting of the input points, the
+already downsampled input points are also returned as a third argument
+(in a dictionary, giving for each entry the data points associated to
+the corresponding instance/run).</p>
+<p>Assumes that each instance is only contained once in the data.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.generate_aRTA_plot.generate_aRTA_ratio_plot">
+    
+  </a>
+  <a name="generate_aRTA_ratio_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    generate_aRTA_ratio_plot(f_id, dim, f1_id, f2_id, outputfolder='./', inputfolder_1=None, inputfolder_2=None, tofile=True, logscale=True, downsample=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Objective Space plot, showing the aRT ratios between two algorithms
+(aka aRTA ratio function), given in <code>inputfolder_1</code> and <code>inputfolder_2</code>
+for each point on a grid in objective space.</p>
+<p>Assumes that each instance is only contained once in the
+data.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.generate_aRTA_plot.compute_aRT">
+    
+  </a>
+  <a name="compute_aRT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    compute_aRT(points, A):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Computes the average runtime to attain the objective vectors in points
+by the algorithm, with algorithm data given in dictionary A.</p>
+<p>Assumes that the algorithm data in A is given in the order of
+increasing number of function evaluations for each entry.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp.eaf <span class="py-keyword">import</span> generate_aRTA_plot
+<span class="py-prompt">&gt;&gt;&gt; </span>A = {0: [[1, 1, 1], [3, 0.75, 0.5], [7, 0.5, 0.6]],
+<span class="py-more">... </span>1: [[1, 0.9, 0.9], [2, 0.5, 0.4]]}
+<span class="py-prompt">&gt;&gt;&gt; </span>gridpoints = [[0.6, 0.5]]
+<span class="py-prompt">&gt;&gt;&gt; </span>generate_aRTA_plot.compute_aRT(gridpoints, A)
+<span class="py-output">array([ 9.])</span></pre><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.generate_aRTA_plot.weakly_dominates">
+    
+  </a>
+  <a name="weakly_dominates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    weakly_dominates(a, b):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns True iff a weakly dominates b wrt. minimization<table class="fieldTable"></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="cocopp.eaf.generate_aRTA_plot.sample_down">
+    
+  </a>
+  <a name="sample_down">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    sample_down(B, decimals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Samples down the solutions in B, given as (#funevals, f_1, f_2)
+entries in a list or an np.array such that only one of the solutions
+with the same objective vector is kept when they are rounded to the
+precision <code>10^{-decimal}</code>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp.eaf <span class="py-keyword">import</span> generate_aRTA_plot
+<span class="py-prompt">&gt;&gt;&gt; </span>A = [[1, 2.155, 3.342],
+<span class="py-more">... </span>     [2, 2.171, 3.326],
+<span class="py-more">... </span>     [2, 2.174, 3.329],
+<span class="py-more">... </span>     [4, 4, 2.2]]
+<span class="py-prompt">&gt;&gt;&gt; </span>generate_aRTA_plot.sample_down(A, 2)
+<span class="py-output">array([[ 1.   ,  2.155,  3.342],</span>
+<span class="py-output">       [ 2.   ,  2.171,  3.326],</span>
+<span class="py-output">       [ 4.   ,  4.   ,  2.2  ]])</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>generate_aRTA_plot.sample_down(A, 1)
+<span class="py-output">array([[ 1.   ,  2.155,  3.342],</span>
+<span class="py-output">       [ 4.   ,  4.   ,  2.2  ]])</span></pre><table class="fieldTable"></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for cocopp, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2017-05-03 17:42:28.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
