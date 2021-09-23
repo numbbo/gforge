@@ -1,0 +1,441 @@
+% This is based from "sig-alternate.tex" V1.8 June 2007
+% This file should be compiled with V2.3 of "sig-alternate.cls" June 2007
+%
+% ----------------------------------------------------------------------------------------------------------------
+%
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Information on the sig-alternate class file and on the
+% GECCO workshop paper format and submission can be found at these
+% locations:
+% http://www.acm.org/sigs/publications/proceedings-templates#aL2
+% http://www.sheridanprinting.com/typedept/gecco3.htm
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions to bbob@lri.fr
+% ===============================================================
+%
+
+\documentclass{sig-alternate}
+
+\usepackage{graphicx}
+\usepackage{rotating}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\special{papersize=8.5in,11in}
+
+    \renewcommand{\topfraction}{1}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{1} % max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{3}
+    \setcounter{bottomnumber}{3}
+    \setcounter{totalnumber}{3}     % 2 may work better
+    \setcounter{dbltopnumber}{4}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{1}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.0}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.80}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+\newcommand{\DIM}{\ensuremath{\mathrm{DIM}}}
+\newcommand{\ERT}{\ensuremath{\mathrm{ERT}}}
+\newcommand{\nruns}{\ensuremath{\mathrm{Nruns}}}
+\newcommand{\Dfb}{\ensuremath{\Delta f_{\mathrm{best}}}}
+\newcommand{\Df}{\ensuremath{\Delta f}}
+\newcommand{\nbFEs}{\ensuremath{\mathrm{\#FEs}}}
+\newcommand{\fopt}{\ensuremath{f_\mathrm{opt}}}
+
+\newcommand{\bbobdatapath}{ppdata/}
+\hyphenation{quad-rat-ic}
+\graphicspath{{\bbobdatapath}}
+
+\begin{document}
+%
+% --- Author Metadata here, no need to modify---
+\conferenceinfo{GECCO'09,} {July 8--12, 2009, Montr\'eal Qu\'ebec, Canada.}
+\CopyrightYear{2009}
+\crdata{978-1-60558-505-5/09/07}
+% --- End of Author Metadata, , no need to modify ---
+
+\title{Benchmarking of SNOBFIT on the Noisy Function
+Testbed
+% \titlenote{If needed}
+}
+%\subtitle{Draft version
+%\titlenote{Camera-ready paper due April 17th.}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{2} 
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Waltraud Huyer\\
+       \affaddr{Fakult\"at f\"ur Mathematik}\\
+       \affaddr{Universit\"at Wien}\\
+       \affaddr{Nordbergstra\ss e 15}\\
+       \affaddr{1090 Wien}\\
+       \affaddr{Austria}\\
+       \email{Waltraud.Huyer@univie.ac.at}
+%% 2nd. author
+\alignauthor
+Arnold Neumaier\\
+       \affaddr{Fakult\"at f\"ur Mathematik}\\
+       \affaddr{Universit\"at Wien}\\
+       \affaddr{Nordbergstra\ss e 15}\\
+       \affaddr{1090 Wien}\\
+       \affaddr{Austria}\\
+       \email{Arnold.Neumaier@univie.ac.at}
+} % author
+%% There's nothing stopping you putting the seventh, eighth, etc.
+%% author on the opening page (as the 'third row') but we ask,
+%% for aesthetic reasons that you place these 'additional authors'
+%% in the \additional authors block, viz.
+%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+%\date{30 July 1999}
+%% Just remember to make sure that the TOTAL number of authors
+%% is the number that will appear on the first page PLUS the
+%% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+
+Benchmarking results with the SNOBFIT algorithm for noisy bound-constrained global
+optimization on the noisy BBOB 2009 testbed are described.
+
+
+\end{abstract}
+
+% Add any ACM category that you feel is needed
+\category{G.1.6}{Numerical Analysis}{Optimization}{Global Optimization,
+Unconstrained Optimization}
+\category{F.2.1}{Analysis of Algorithms and Problem Complexity}{Numerical Algorithms and Problems}
+
+% Complete with anything that is needed
+\terms{Algorithms}
+
+% Complete with anything that is needed
+\keywords{Benchmarking, Black-box optimization}
+
+\section{Introduction}
+%
+
+The algorithm SNOBFIT (stable noisy optimization by branch and fit)
+\cite{snobfit} for bound-constrained global
+optimization of noisy functions
+combines global and local search by
+branching (i.e., splitting the search space $[u,v]$ into smaller boxes) and local 
+fits. Based on function values already available, the algorithm builds internally
+around each point local models of the function to minimize, and returns in each step 
+a number of points whose evaluation is likely to improve these models or is expected
+to give better function values. Surrogate functions are not interpolated but
+fitted to a stochastic (linear or quadratic) model to take noisy function values
+into account.
+
+\section{Algorithm Presentation}
+%
+
+The optimization proceeds through a number of calls to SNOBFIT producing a 
+user-specified number of new recommended evaluation points. SNOBFIT generates
+points of different character belonging to five classes. Class 1 contains at
+most one point, determined from the local quadratic model around the best point.
+Points of classes 2 and 3 are alternative good points selected with a view to
+their expected function value. The points in class 4 are points in regions
+unexplored thus far, i.e., they are generated in large subboxes of the current
+partition. Points of class 5 are only produced if the algorithm does not manage 
+to reach the desired number of points by generating points of classes 1 to 4, 
+for example, when there are not enough points yet available to build local
+quadratic models, and they are chosen from a set of random points such that
+their distances from the points already in the list are maximal.
+
+
+In the so-called
+initial call, a `resolution vector' $\Delta x >0$ is needed as an additional input. It
+is assumed that the $i$th coordinate is measured in units $\Delta x_i$. The algorithm
+only suggests evaluation points whose $i$th coordinate is an integral multiple of
+$\Delta x_i$. In each call to SNOBFIT, a list $x^j$, $j=1,\dots,J$ of points, their
+corresponding function values $f_j$, the uncertainties $\Delta f_j$ of the function
+values, a natural number $n_\text{req}$, two vectors $u'$ and $v'$, and a real number
+$p \in [0,1]$ (the desired fraction of points of class 4 among the points of 
+classes 2 to 4, i.e., $p$ controls whether local or global search should be 
+emphasized) are fed into the program. The program then returns $n_\text{req}$
+(occasionally fewer) suggested evaluation points in the box $[u',v']$, their classes,
+and the model function values at these points. The idea of the algorithm is that
+these points and their function values are used as input for the next call to
+SNOBFIT.
+
+The version of the software used can be downloaded from
+\verb|http://www.mat.univie.ac.at/~neum/software/snobfit/|.
+ 
+\section{Experimental Procedure}
+%
+In our experiments, we always set $u'=u=(-5,\dots,-5)^T$ and $v'=v=(5,\dots,5)^T$
+(i.e., the points are to be generated in the whole search space), $\Delta x = 
+10^{-8}(v-u)$ and $p=0.1$, and we generate $n_\text{req} = n+6$ points in each
+call to SNOBFIT, where $n$ is the dimension of the problem. These values are 
+considered to be meaningful default values for the algorithm. If $f$ is the function
+value at a point, the uncertainty $\Delta f$ is set to $0.03f$ for the functions
+$f_{101}$ to $f_{106}$ (moderate noise) and $0.3f$ for the functions $f_{107}$ to
+$f_{130}$ (severe noise). We start each trial with an initial call with $n+6$ 
+points drawn uniformly from $[u,v]$ as input, and we proceed by so-called
+continuation calls to SNOBFIT till 1000 function evaluations (including the ones
+made in the initial call) have been reached. Afterwards we repeat this procedure
+(at most) four times, but instead of sampling $n+6$ points for the initial calls,
+we only sample $n+5$ points and in addition keep the best point from the previous
+`iteration'. I.e., each trial consists of at most 5 attempts to solve the
+problem with the SNOBFIT algorithm, and only the best point from the previous
+attempt is reused. After each call to SNOBFIT, it is checked whether the
+target function value $f_\text{target}$ has been reached, and in that case the
+trial is terminated. So at most 5000 function calls (possibly a few more since 
+reaching the number of permitted function values is only checked after each call
+to SNOBFIT) are made in each trial.
+Three trials are made for the 5 function instances of each function.
+
+SNOBFIT uses the program MINQ for minimizing a quadratic model, which can be
+downloaded from\\
+ \verb|http://www.mat.univie.ac.at/~neum/software/minq/|.\\ 
+Since the iteration limit in MINQ was frequently exceeded in higher dimensions, we
+changed the line {\tt maxit=3*n} in {\tt minq.m} to {\tt maxit=10*n}.
+
+\section{CPU timing experiment}
+
+For the timing experiment according to \cite{hansen2009exp},
+the experimental procedure described above was run on $f_8$
+with at most 100 function evaluations in each SNOBFIT `iteration' and restarted 
+until at least 30 seconds had passed. The uncertainties were set to $\Delta f
+= \sqrt{\varepsilon}f$ (where $\varepsilon$ is the machine precision) since
+$f_8$ is a noiseless function.
+The timing experiment was carried out on an Intel Pentium 4 3.00 GHz under Ubuntu 4.0.3 
+with MATLAB 7.4.0.336, where most of the benchmarking tests were run. 
+The results were
+8.3, 8.5, 8.8, 9.1, 10, and 7.9 times $10^{-1}$ seconds per function evaluation
+in dimensions 2, 3, 5, 10, 20, and 40, respectively.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Results from experiments according to \cite{hansen2009exp} on the
+benchmarks functions given in \cite{wp200902,hansen2009noi} are
+presented in Figures~\ref{fig:ERTgraphs} and \ref{fig:RLDs} and in
+Tables~\ref{tab:ERTs1} and \ref{tab:ERTs2}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% version with one page of figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{tabular}{l@{\hspace*{-0.021\textwidth}}l@{\hspace*{-0.021\textwidth}}l@{\hspace*{-0.021\textwidth}}l@{\hspace*{-0.021\textwidth}}l}
+\hspace*{-0.021\textwidth}\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth,]{ppdata_f101}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f104}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f107}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f110}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f113}\\
+\hspace*{-0.021\textwidth}\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f102}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f105}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f108}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f111}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f114}\\
+\hspace*{-0.021\textwidth}\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f103}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f106}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f109}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f112}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f115}\\
+\hspace*{-0.021\textwidth}\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f116}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f119}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f122}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f125}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f128}\\
+\hspace*{-0.021\textwidth}\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f117}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f120}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f123}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f126}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f129}\\
+\hspace*{-0.021\textwidth}\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f118}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f121}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f124}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f127}&
+\includegraphics[trim=5mm 0mm 0mm 0mm, clip, width=0.22\textwidth]{ppdata_f130}\\
+\end{tabular}
+ \caption{\label{fig:ERTgraphs}Expected Running Time (\ERT,
+ {\Large$\bullet$}) to reach $\fopt+\Df$ and median number of function
+ evaluations of successful trials ($+$), shown for $\Df = 10, 1, 10^{-1},
+ 10^{-2}, 10^{-3}, 10^{-5}, 10^{-8}$ (the exponent is given in the legend of $f_{101}$ and $f_{130}$) versus dimension in log-log
+ presentation.
+ The $\ERT(\Df)$ equals to $\nbFEs(\Df)$
+ divided by the number of successful trials, where a trial is
+ successful if $\fopt+\Df$ was surpassed during the trial.
+ The $\nbFEs(\Df)$ are the total number of function
+ evaluations while $\fopt+\Df$ was not
+ surpassed during the trial from all respective trials (successful and unsuccessful), and \fopt\ denotes the optimal
+ function value. Crosses ($\times$) indicate the total number of function evaluations $\nbFEs(-\infty)$.
+ Numbers above ERT-symbols indicate the number of successful trials. Annotated numbers on the ordinate
+ are decimal logarithms. Additional grid lines show linear and
+ quadratic scaling. }
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newcommand{\tablecaption}[1]{Shown are, for functions #1 and for a
+ given target difference to the optimal function value \Df: the number
+ of successful trials (\textbf{$\#$}); the expected running time to
+ surpass $\fopt+\Df$ (\ERT, see Figure~\ref{fig:ERTgraphs}); the
+ \textbf{10\%}-tile and \textbf{90\%}-tile of the bootstrap
+ distribution of \ERT; the average number of function evaluations in
+ successful trials or, if none was successful, as last entry the median
+ number of function evaluations to reach the best function value
+ ($\text{RT}_\text{succ}$).  If $\fopt+\Df$ was never reached, figures in
+ \textit{italics} denote the best achieved \Df-value of the median
+ trial and the 10\% and 90\%-tile trial.  Furthermore, N denotes the
+ number of trials, and mFE denotes the maximum of number of function
+ evaluations executed in one trial. See Figure~\ref{fig:ERTgraphs} for
+ the names of functions. }
+\begin{table*}
+\centering
+\input{\bbobdatapath ppdata_f101}
+\input{\bbobdatapath ppdata_f102}
+\input{\bbobdatapath ppdata_f103}
+\input{\bbobdatapath ppdata_f104}
+\input{\bbobdatapath ppdata_f105}
+\input{\bbobdatapath ppdata_f106}
+\input{\bbobdatapath ppdata_f107}
+\input{\bbobdatapath ppdata_f108}
+\input{\bbobdatapath ppdata_f109}
+\input{\bbobdatapath ppdata_f110}
+\input{\bbobdatapath ppdata_f111}
+\input{\bbobdatapath ppdata_f112}
+\input{\bbobdatapath ppdata_f113}
+\input{\bbobdatapath ppdata_f114}
+\input{\bbobdatapath ppdata_f115}
+\input{\bbobdatapath ppdata_f116}
+\input{\bbobdatapath ppdata_f117}
+\input{\bbobdatapath ppdata_f118}
+\input{\bbobdatapath ppdata_f119}
+\input{\bbobdatapath ppdata_f120}\\
+\caption[Table of ERTs 1]{\label{tab:ERTs1}\tablecaption{$f_{101}$-$f_{120}$}
+}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table*}
+\centering
+\input{\bbobdatapath ppdata_f121}
+\input{\bbobdatapath ppdata_f122}
+\input{\bbobdatapath ppdata_f123}
+\input{\bbobdatapath ppdata_f124}
+\input{\bbobdatapath ppdata_f125}
+\input{\bbobdatapath ppdata_f126}
+\input{\bbobdatapath ppdata_f127}
+\input{\bbobdatapath ppdata_f128}
+\input{\bbobdatapath ppdata_f129}
+\input{\bbobdatapath ppdata_f130}\\
+\caption[Table of ERTs 2]{\label{tab:ERTs2}\tablecaption{$f_{121}$-$f_{130}$}
+}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rot}[2][2.5]{
+  \hspace*{-3.5\baselineskip}%
+  \begin{rotate}{90}\hspace{#1em}#2
+  \end{rotate}}
+\begin{figure*}
+\begin{tabular}{l@{\hspace*{-0.025\textwidth}}l@{\hspace*{-0.00\textwidth}}|l@{\hspace*{-0.025\textwidth}}l}
+\multicolumn{2}{c}{$D=5$} & \multicolumn{2}{c}{$D=20$}\\
+\rot{all functions}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05all} & 
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05all} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20all} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20all} \\
+\rot{moderate noise}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05nzmod} & 
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05nzmod} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20nzmod} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20nzmod} \\
+\rot{severe noise}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05nzsev} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05nzsev} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20nzsev} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20nzsev} \\
+\rot[0.5]{severe noise multimod.}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05nzsmm} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05nzsmm} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20nzsmm} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20nzsmm}
+\end{tabular}
+ \caption{\label{fig:RLDs}Empirical cumulative distribution functions (ECDFs), plotting the fraction of trials versus running time (left) or \Df.  Left subplots: ECDF of the running time (number of function evaluations), divided by
+ search space dimension $D$, to fall below $\fopt+\Df$ with
+ $\Df=10^{k}$, where $k$ is the first value in the legend. Right subplots: ECDF of the best achieved \Df\ divided by $10^k$ (upper left
+ lines in continuation of the left subplot), and best achieved \Df\
+ divided by $10^{-8}$ for running times of $D, 10\,D,
+ 100\,D\dots$ function evaluations (from right
+ to left cycling black-cyan-magenta).
+ Top row: all results from all functions; second row: moderate noise
+ functions; third row: severe noise functions; fourth row: severe noise
+ and highly-multimodal functions.
+ The legends indicate the number of functions that were solved in at
+ least one trial. FEvals denotes number of function evaluations,
+ $D$ and \textsf{DIM} denote search space dimension, and \Df\ and \textsf{Df} denote the difference to the optimal function value. }
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{bbob}  % bbob.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+% to create the ~.bbl file.  Insert that ~.bbl file into
+% the .tex source file and comment out
+% the command \texttt{{\char'134}thebibliography}.
+%
+% ACM needs 'a single self-contained file'!
+%
+\end{document}

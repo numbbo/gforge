@@ -1,0 +1,437 @@
+% This is based from "sig-alternate.tex" V1.8 June 2007
+% This file should be compiled with V2.3 of "sig-alternate.cls" June 2007
+%
+% ----------------------------------------------------------------------------------------------------------------
+%% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Information on the sig-alternate class file and on the
+% GECCO workshop paper format and submission can be found at these
+% locations:
+% http://www.acm.org/sigs/publications/proceedings-templates#aL2
+% http://www.sheridanprinting.com/typedept/gecco3.htm
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions to bbob@lri.fr
+% ===============================================================
+%
+
+\documentclass{sig-alternate}
+
+\usepackage{graphicx}
+\usepackage{rotating}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\special{papersize=8.5in,11in}
+
+    \renewcommand{\topfraction}{1}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{1} % max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{3}
+    \setcounter{bottomnumber}{3}
+    \setcounter{totalnumber}{3}     % 2 may work better
+    \setcounter{dbltopnumber}{4}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{1}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.0}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.80}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+\newcommand{\DIM}{\ensuremath{\mathrm{DIM}}}
+\newcommand{\ERT}{\ensuremath{\mathrm{ERT}}}
+\newcommand{\nruns}{\ensuremath{\mathrm{Nruns}}}
+\newcommand{\Dfb}{\ensuremath{\Delta f_{\mathrm{best}}}}
+\newcommand{\Df}{\ensuremath{\Delta f}}
+\newcommand{\nbFEs}{\ensuremath{\mathrm{\#FEs}}}
+\newcommand{\fopt}{\ensuremath{f_\mathrm{opt}}}
+
+\newcommand{\bbobdatapath}{ppdata/}
+\graphicspath{{\bbobdatapath}}
+
+\begin{document}
+%
+% --- Author Metadata here, no need to modify---
+\conferenceinfo{GECCO'09,} {July 8--12, 2009, Montr\'eal Qu\'ebec, Canada.}
+\CopyrightYear{2009}
+\crdata{978-1-60558-505-5/09/07}
+% --- End of Author Metadata, , no need to modify ---
+
+\title{Benchmarking of MCS on the Noiseless Function
+Testbed
+% \titlenote{If needed}
+}
+%\subtitle{Draft version
+%\titlenote{Camera-ready paper due April 17th.}}
+
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{2}
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Waltraud Huyer\\
+       \affaddr{Fakult\"at f\"ur Mathematik}\\
+       \affaddr{Universit\"at Wien}\\
+       \affaddr{Nordbergstra\ss e 15}\\
+       \affaddr{1090 Wien}\\
+       \affaddr{Austria}\\
+       \email{Waltraud.Huyer@univie.ac.at}
+%% 2nd. author
+\alignauthor
+Arnold Neumaier\\
+       \affaddr{Fakult\"at f\"ur Mathematik}\\
+       \affaddr{Universit\"at Wien}\\
+       \affaddr{Nordbergstra\ss e 15}\\
+       \affaddr{1090 Wien}\\
+       \affaddr{Austria}\\
+       \email{Arnold.Neumaier@univie.ac.at}
+} %author
+
+\maketitle
+\begin{abstract}
+
+Benchmarking results with the MCS algorithm for bound-constrained global optimization
+on the noiseless BBOB 2009 testbed are described. 
+
+\end{abstract}
+
+% Add any ACM category that you feel is needed
+\category{G.1.6}{Numerical Analysis}{Optimization}{Global Optimization,
+Unconstrained Optimization}
+\category{F.2.1}{Analysis of Algorithms and Problem Complexity}{Numerical Algorithms and Problems}
+
+% Complete with anything that is needed
+\terms{Algorithms}
+
+% Complete with anything that is needed
+\keywords{Benchmarking, Black-box optimization}
+
+\section{Introduction}
+
+Inspired by the {DIRECT} method by Jones et al.~\cite{jones}, the global
+optimization algorithm MCS (multilevel coordinate search) \cite{mcs} was developed 
+to minimize an objective function on a box $[u,v]$ with finite or infinite bounds.
+The algorithm proceeds by splitting the search space into smaller boxes, and each
+box contains a point whose function value is known. In the partitioning procedure
+parts where low function values are expected to be found are preferred.
+By starting a local search from certain good points, an improved result is 
+obtained.
+
+\section{Algorithm Presentation}
+
+Like {DIRECT}, the MCS algorithm combines global search (splitting boxes with
+large unexplored territory) and local search (splitting boxes with good function
+values). The key to balancing global and local search is the multilevel approach.
+As a rough measure of the number of times a box has been processed, a level
+$s \in \{1,\dots,s_{\max}\}$ is assigned to each box, where boxes with level $s_{\max}$ 
+are considered too small for further splitting. Whenever a box of level $s$
+($0 < s < s_{\max}$) is split, its descendants get level $s+1$ or $\min(s+2,s_{\max})$.
+After an initialization procedure, the algorithm proceeds by a series of sweeps
+through the levels, i.e., it splits one box at each level, starting with the 
+smallest non-empty level (i.e., with the largest boxes). We split along a single
+coordinate in each step, and information gained from already sampled points
+is used to determine the splitting coordinate as well as the position of the split.
+
+MCS with local search tries to accelerate the convergence of the algorithm by
+starting local searches from the points belonging to boxes of level $s_{\max}$
+before putting them into the so-called shopping basket (containing `useful' points). 
+The local search algorithm essentially consists of building a local quadratic
+model by triple searches, then defining a promising search direction by minimizing 
+the quadratic model on a suitable box and finally making a line search along this
+direction.
+ 
+The algorithm starts with a so-called initialization procedure producing an 
+initial set of boxes. For each coordinate $i =1,\dots,n$, at least three values
+$x_i^1 < x_i^2 < \dots < x_i^{L_i}$ in $[u_i,v_i]$, are needed, where $n$ denotes 
+the dimension of the problem and $L_i \ge 3$. Moreover, the pointers $l_i \in 
+\{1,\dots,L_i\}$ point to the initial point $x^0$, i.e., $x_i^0 = x_i^{l_i}$. The
+values $x_i^j$, $j=1,\dots,L_i$, $l_i$, and $L_i$, $i=1,\dots,n$, constitute the
+so-called initialization list.
+
+The version of the software used can be downloaded from
+\verb|http://www.mat.univie.ac.at/~neum/software/mcs/|.
+
+
+\section{Experimental Procedure}
+%
+
+For all control variables in the algorithm meaningful default values can be 
+chosen that work simultaneously for most problems. MCS essentially contains 
+the following parameters: the number $s_{\max}$ of levels, a limit $nf_{\max}$ on the 
+overall number of function calls, an additional stopping criterion, the 
+initialization list, and a limit $nf_\text{local}$ on the number of function calls 
+in a local search. We use the default value $s_{\max} = 5n+10$, and the additional 
+stopping criterion is given by reaching a target function value $f_\text{target}$.
+
+Five kinds of initialization lists are incorporated into the MCS software. The 
+safeguarded version for infinite box bounds was not considered since all the box
+bounds in our problems are finite, $u = (-5,\dots,-5)^T$ and $v = (5,\dots,5)^T$. 
+The default initialization list for finite $u$ and $v$ consists of boundary points and
+midpoint, with the midpoint as starting point, i.e., $L_i=3$, $l_i = 2$, $x_i^1 = u_i$,
+$x_i^2 = \frac12(u_i+v_i)$, and $x_i^3 = v_i$, $i=1,\dots,n$. 
+Another initialization list for finite bounds uses $x_i^1 = \frac56 u_i + \frac16 v_i$ and $x_i^3 = \frac16
+u_i + \frac56 v_i$ instead of the boundaries (all other quantities are the same).
+There is also an option to generate an initialization list with the aid of line
+searches (described in detail Section 7.6 of \cite{mcs}). We call the
+MCS algorithm with these three kinds of initialization lists MCS1, MCS2, and MCS3,
+respectively. Finally, it is
+possible to use a self-defined initialization list. After the initialization list 
+has been chosen, MCS is purely deterministic, so the initialization list is the
+only possibility to introduce a random element in MCS.
+
+In each call to MCS, we use $nf_{\max} = 500\max(n,10)$ (i.e., $nf_{\max} = 5000$
+for $n=2, 3, 5, 10$ and $nf_{\max} = 10000$ for $n=20$) and $nf_\text{local} = 
+\text{round}(nf_{\max}/5)$, and $nf_{\max}$ might be slightly exceeded since the
+algorithm does not contain a check whether $nf_{\max}$ has been reached after each
+function call. Each trial consists of first applying the predefined initialization
+lists MCS1, MCS2, and MCS3 to the problem and then using a self-defined 
+initialization list with $L_i = 3$, $l_i = 2$, and the values $x_i^j$, $j=1,2,3$, 
+drawn uniformly from $[u_i,v_i]$ for $i=1,\dots,n$ for at most 7 times for 
+dimensions $n=2,3,5$ and at most 5 times for dimensions $n=10,20$ (in order to save
+CPU time). I.e., each trial consists of at most 10 (or 8) attempts to solve the
+problem with MCS, and each call to MCS does not use any results from the previous
+calls. If the target function value $f_\text{target}$ is reached, the trial is
+terminated and the subsequent calls to MCS are not made any more. So at most
+$50000$ function calls (possibly a few more) are made in each trial for $n=2,3,5$
+and $4000\max(n,10)$ for $n=10,20$.
+Three trials are made for the 5 function instances of each function. Note that
+if MCS1, 
+MCS2, or MCS3 already solves the problem, the results are the same for the three 
+trials since these choices of initialization lists do not contain a random element. 
+
+\section{CPU timing experiment}
+
+For the timing experiment according to \cite{hansen2009exp},
+the experimental procedure described above was run on $f_8$
+with at most 1000 function evaluations in each call to MCS and restarted until 
+at least 30 seconds had passed. The timing experiment was carried out on an Intel
+Pentium 4 3.00 GHz under Ubuntu 4.0.3 with MATLAB 7.4.0.336, where most of the
+benchmarking tests were run. The results were
+3.2, 2.0, 1.4, 1.1, 2.0, and 2.1 times $10^{-8}$ seconds per function evaluation
+in dimensions 2, 3, 5, 10, 20, and 40, respectively.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Results from experiments according to \cite{hansen2009exp} on the benchmark
+functions given in \cite{wp200901,hansen2009fun} are
+presented in Figures~\ref{fig:ERTgraphs} and \ref{fig:RLDs} and in
+Table~\ref{tab:ERTs}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{tabular}{l@{\hspace*{-0.025\textwidth}}l@{\hspace*{-0.025\textwidth}}l@{\hspace*{-0.025\textwidth}}l}
+\includegraphics[width=0.268\textwidth]{ppdata_f1}&
+\includegraphics[width=0.268\textwidth]{ppdata_f2}&
+\includegraphics[width=0.268\textwidth]{ppdata_f3}&
+\includegraphics[width=0.268\textwidth]{ppdata_f4}\\[-2.2ex]
+\includegraphics[width=0.268\textwidth]{ppdata_f5}&
+\includegraphics[width=0.268\textwidth]{ppdata_f6}&
+\includegraphics[width=0.268\textwidth]{ppdata_f7}&
+\includegraphics[width=0.268\textwidth]{ppdata_f8}\\[-2.2ex]
+\includegraphics[width=0.268\textwidth]{ppdata_f9}&
+\includegraphics[width=0.268\textwidth]{ppdata_f10}&
+\includegraphics[width=0.268\textwidth]{ppdata_f11}&
+\includegraphics[width=0.268\textwidth]{ppdata_f12}\\[-2.2ex]
+\includegraphics[width=0.268\textwidth]{ppdata_f13}&
+\includegraphics[width=0.268\textwidth]{ppdata_f14}&
+\includegraphics[width=0.268\textwidth]{ppdata_f15}&
+\includegraphics[width=0.268\textwidth]{ppdata_f16}\\[-2.2ex]
+\includegraphics[width=0.268\textwidth]{ppdata_f17}&
+\includegraphics[width=0.268\textwidth]{ppdata_f18}&
+\includegraphics[width=0.268\textwidth]{ppdata_f19}&
+\includegraphics[width=0.268\textwidth]{ppdata_f20}\\[-2.2ex]
+\includegraphics[width=0.268\textwidth]{ppdata_f21}&
+\includegraphics[width=0.268\textwidth]{ppdata_f22}&
+\includegraphics[width=0.268\textwidth]{ppdata_f23}&
+\includegraphics[width=0.268\textwidth]{ppdata_f24}
+\end{tabular}
+ \caption{\label{fig:ERTgraphs}Expected Running Time (\ERT,
+ {\Large$\bullet$}) to reach $\fopt+\Df$ and median number of function
+ evaluations of successful trials ($+$), shown for $\Df =
+ 10, 1, 10^{-1}, 10^{-2}, 10^{-3}, 10^{-5}, 10^{-8}$ (the exponent is
+ given in the legend of $f_1$ and $f_{24}$) versus dimension in
+ log-log presentation.  The $\ERT(\Df)$ equals to $\nbFEs(\Df)$
+ divided by the number of successful trials, where a trial is
+ successful if $\fopt+\Df$ was surpassed during the trial.  The
+ $\nbFEs(\Df)$ are the total number of function evaluations while
+ $\fopt+\Df$ was not surpassed during the trial from all respective
+ trials (successful and unsuccessful), and \fopt\ denotes the optimal
+ function value. Crosses ($\times$) indicate the total number of
+ function evaluations $\nbFEs(-\infty)$.  Numbers above ERT-symbols indicate the number of successful trials. Annotated numbers on the
+ ordinate are decimal logarithms. Additional grid lines show linear
+ and quadratic scaling. }
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newcommand{\tablecaption}{Shown are, for a given target difference
+ to the optimal function value \Df: the number of successful trials
+ (\textbf{$\#$}); the expected running time to surpass $\fopt+\Df$
+ (\ERT, see Figure~\ref{fig:ERTgraphs}); the \textbf{10\%}-tile and
+ \textbf{90\%}-tile of the bootstrap distribution of \ERT; the average
+ number of function evaluations in successful trials or, if none was
+ successful, as last entry the median number of function evaluations
+ to reach the best function value ($\text{RT}_\text{succ}$).  If
+ $\fopt+\Df$ was never reached, figures in \textit{italics} denote the
+ best achieved \Df-value of the median trial and the 10\% and
+ 90\%-tile trial.  Furthermore, N denotes the number of trials, and
+ mFE denotes the maximum of number of function evaluations executed in
+ one trial. See Figure~\ref{fig:ERTgraphs} for the names of
+ functions. }
+\begin{table*}
+\centering
+\input{\bbobdatapath ppdata_f1}
+\input{\bbobdatapath ppdata_f2}
+\input{\bbobdatapath ppdata_f3}
+\input{\bbobdatapath ppdata_f4}
+\input{\bbobdatapath ppdata_f5}
+\input{\bbobdatapath ppdata_f6}
+\input{\bbobdatapath ppdata_f7}
+\input{\bbobdatapath ppdata_f8}
+\input{\bbobdatapath ppdata_f9}
+\input{\bbobdatapath ppdata_f10}
+\input{\bbobdatapath ppdata_f11}
+\input{\bbobdatapath ppdata_f12}
+% %
+%  \caption{\tablecaption
+%  }
+% \end{table*}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table*}
+% \centering
+\input{\bbobdatapath ppdata_f13}
+\input{\bbobdatapath ppdata_f14}
+\input{\bbobdatapath ppdata_f15}
+\input{\bbobdatapath ppdata_f16}
+\input{\bbobdatapath ppdata_f17}
+\input{\bbobdatapath ppdata_f18}
+\input{\bbobdatapath ppdata_f19}
+\input{\bbobdatapath ppdata_f20}
+\input{\bbobdatapath ppdata_f21}
+\input{\bbobdatapath ppdata_f22}
+\input{\bbobdatapath ppdata_f23}
+\input{\bbobdatapath ppdata_f24}\\
+\caption[Table of ERTs]{\label{tab:ERTs}\tablecaption
+}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rot}[2][2.5]{
+  \hspace*{-3.5\baselineskip}%
+  \begin{rotate}{90}\hspace{#1em}#2
+  \end{rotate}}
+\begin{figure*}
+\begin{tabular}{l@{\hspace*{-0.025\textwidth}}l@{\hspace*{-0.00\textwidth}}|l@{\hspace*{-0.025\textwidth}}l}
+\multicolumn{2}{c}{$D=5$} & \multicolumn{2}{c}{$D=20$}\\[-0.5ex]
+\rot{all functions}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05all} & 
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05all} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20all} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20all} \\[-2.3ex]
+\rot{separable fcts}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05separ} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05separ} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20separ} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20separ} \\[-2.3ex]
+\rot[2]{moderate fcts}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05lcond} &
+\includegraphics[width=0.23628\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05lcond} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20lcond} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20lcond} \\[-2.3ex]
+\rot[1.3]{ill-conditioned fcts}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05hcond} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05hcond} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20hcond} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20hcond} \\[-2.3ex]
+\rot[1.6]{multi-modal fcts}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05multi} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05multi} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20multi} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20multi} \\[-2.3ex]
+\rot[1.0]{weak structure fcts}
+\includegraphics[width=0.268\textwidth]{pprldistr_dim05mult2} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim05mult2} &
+\includegraphics[width=0.268\textwidth]{pprldistr_dim20mult2} &
+\includegraphics[width=0.2362\textwidth,trim=2.40cm 0 0 0, clip]{ppfvdistr_dim20mult2}
+\vspace*{-0.5ex}
+\end{tabular}
+ \caption{\label{fig:RLDs}Empirical cumulative distribution functions (ECDFs), plotting the fraction of trials versus running time (left) or \Df.  Left subplots: ECDF of the running time (number of function evaluations), divided by
+ search space dimension $D$, to fall below $\fopt+\Df$ with
+ $\Df=10^{k}$, where $k$ is the first value in the legend. Right subplots: ECDF of the best achieved \Df\ divided by $10^k$ (upper left
+ lines in continuation of the left subplot), and best achieved \Df\
+ divided by $10^{-8}$ for running times of $D, 10\,D,
+ 100\,D\dots$ function evaluations (from right
+ to left cycling black-cyan-magenta).
+ Top row: all results from all functions; second row: separable
+ functions; third row: misc.\ moderate functions; fourth row:
+ ill-conditioned functions; fifth row: multi-modal functions with
+ adequate structure; last row: multi-modal functions with weak structure.
+ The legends indicate the number of functions that were solved in at
+ least one trial. FEvals denotes number of function evaluations,
+ $D$ and \textsf{DIM} denote search space dimension, and \Df\ and \textsf{Df} denote the difference to the optimal function value. }
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{bbob}  % bbob.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+% to create the ~.bbl file.  Insert that ~.bbl file into
+% the .tex source file and comment out
+% the command \texttt{{\char'134}thebibliography}.
+%
+% ACM needs 'a single self-contained file'!
+%
+\end{document}
