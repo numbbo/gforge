@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bbob_pproc API &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="next" title="Post-processing Routines" href="bbob_pprocinternal.html" />
+    <link rel="prev" title="Python API" href="fgeneric.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bbob_pprocinternal.html" title="Post-processing Routines"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fgeneric.html" title="Python API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bbob-pproc-api">
+<h1><a class="reference internal" href="#module-bbob_pproc" title="bbob_pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc</span></code></a> API<a class="headerlink" href="#bbob-pproc-api" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bbob_pprocinternal.html">Post-processing Routines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.pproc"><code class="docutils literal"><span class="pre">bbob_pproc.pproc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.algportfolio"><code class="docutils literal"><span class="pre">bbob_pproc.algportfolio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.bestalg"><code class="docutils literal"><span class="pre">bbob_pproc.bestalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.changeAlgIdAndComment"><code class="docutils literal"><span class="pre">bbob_pproc.changeAlgIdAndComment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.cococommands"><code class="docutils literal"><span class="pre">bbob_pproc.cococommands</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.config"><code class="docutils literal"><span class="pre">bbob_pproc.config</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.dataoutput"><code class="docutils literal"><span class="pre">bbob_pproc.dataoutput</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.findfiles"><code class="docutils literal"><span class="pre">bbob_pproc.findfiles</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.readalign"><code class="docutils literal"><span class="pre">bbob_pproc.readalign</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.toolsstats"><code class="docutils literal"><span class="pre">bbob_pproc.toolsstats</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.toolsdivers"><code class="docutils literal"><span class="pre">bbob_pproc.toolsdivers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="figtables.html">Figures and Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.ppconverrorbars"><code class="docutils literal"><span class="pre">bbob_pproc.ppconverrorbars</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.ppfig"><code class="docutils literal"><span class="pre">bbob_pproc.ppfig</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.ppfigdim"><code class="docutils literal"><span class="pre">bbob_pproc.ppfigdim</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.pplogloss"><code class="docutils literal"><span class="pre">bbob_pproc.pplogloss</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.pprldistr"><code class="docutils literal"><span class="pre">bbob_pproc.pprldistr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.ppsingle"><code class="docutils literal"><span class="pre">bbob_pproc.ppsingle</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.pptable"><code class="docutils literal"><span class="pre">bbob_pproc.pptable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="figtables.html#module-bbob_pproc.pptex"><code class="docutils literal"><span class="pre">bbob_pproc.pptex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comp2.html"><code class="docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comp2.html#id1"><code class="docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comp2.html#module-bbob_pproc.comp2.ppfig2"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.ppfig2</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comp2.html#module-bbob_pproc.comp2.pprldistr2"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.pprldistr2</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comp2.html#module-bbob_pproc.comp2.ppscatter"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.ppscatter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comp2.html#module-bbob_pproc.comp2.pptable2"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.pptable2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compall.html"><code class="docutils literal"><span class="pre">bbob_pproc.compall</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compall.html#id1"><code class="docutils literal"><span class="pre">bbob_pproc.compall</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="compall.html#module-bbob_pproc.compall.organizeRTDpictures"><code class="docutils literal"><span class="pre">bbob_pproc.compall.organizeRTDpictures</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="compall.html#module-bbob_pproc.compall.ppfigs"><code class="docutils literal"><span class="pre">bbob_pproc.compall.ppfigs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="compall.html#module-bbob_pproc.compall.ppperfprof"><code class="docutils literal"><span class="pre">bbob_pproc.compall.ppperfprof</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="compall.html#module-bbob_pproc.compall.pprldmany"><code class="docutils literal"><span class="pre">bbob_pproc.compall.pprldmany</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="compall.html#module-bbob_pproc.compall.pptables"><code class="docutils literal"><span class="pre">bbob_pproc.compall.pptables</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="module-bbob_pproc">
+<span id="bbob-pproc"></span><h2><a class="reference internal" href="#module-bbob_pproc" title="bbob_pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc</span></code></a><a class="headerlink" href="#module-bbob_pproc" title="Permalink to this headline">¶</a></h2>
+<p>COmparing Continuous Optimisers (COCO) post-processing software</p>
+<p>This package is meant to generate output figures and tables for the
+benchmarking of continuous optimisers in the case of black-box
+optimisation.
+The post-processing tool takes as input data from experiments and
+generates outputs that will be used in the generation of the LateX-
+formatted article summarizing the experiments.</p>
+<p>The main method of this package is <a class="reference internal" href="#bbob_pproc.rungeneric.main" title="bbob_pproc.rungeneric.main"><code class="xref py py-func docutils literal"><span class="pre">bbob_pproc.rungeneric.main</span></code></a>
+This method allows to use the post-processing through a command-line
+interface.</p>
+<p>To obtain more information on the use of this package from the python
+interpreter, assuming this package has been imported as <code class="docutils literal"><span class="pre">bb</span></code>, type:
+<code class="docutils literal"><span class="pre">help(bb.cococommands)</span></code></p>
+</div>
+<div class="section" id="module-bbob_pproc.rungeneric">
+<span id="bbob-pproc-rungeneric"></span><h2><a class="reference internal" href="#module-bbob_pproc.rungeneric" title="bbob_pproc.rungeneric"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.rungeneric</span></code></a><a class="headerlink" href="#module-bbob_pproc.rungeneric" title="Permalink to this headline">¶</a></h2>
+<p>Process data to be included in a latex template.</p>
+<dl class="docutils">
+<dt>Synopsis:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungeneric.py</span> <span class="pre">[OPTIONS]</span> <span class="pre">FOLDERS</span></code></dd>
+<dt>Help:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungeneric.py</span> <span class="pre">-h</span></code></dd>
+</dl>
+<dl class="function">
+<dt id="bbob_pproc.rungeneric.main">
+<code class="descclassname">bbob_pproc.rungeneric.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.rungeneric.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main routine for post-processing data from COCO.</p>
+<p>Depending on the number of data path input arguments, this routine will:</p>
+<ul class="simple">
+<li>call sub-routine <a class="reference internal" href="#bbob_pproc.rungeneric1.main" title="bbob_pproc.rungeneric1.main"><code class="xref py py-func docutils literal"><span class="pre">bbob_pproc.rungeneric1.main</span></code></a> for each
+input argument; each input argument will be used as output
+sub-folder relative to the main output folder,</li>
+<li>call either sub-routines <a class="reference internal" href="#bbob_pproc.rungeneric2.main" title="bbob_pproc.rungeneric2.main"><code class="xref py py-func docutils literal"><span class="pre">bbob_pproc.rungeneric2.main</span></code></a>
+(2 input arguments) or <a class="reference internal" href="#bbob_pproc.rungenericmany.main" title="bbob_pproc.rungenericmany.main"><code class="xref py py-func docutils literal"><span class="pre">bbob_pproc.rungenericmany.main</span></code></a>
+(more than 2) for the input arguments altogether.</li>
+</ul>
+<p>The output figures and tables written by default to the output folder 
+<code class="file docutils literal"><span class="pre">ppdata</span></code> are used in the following provided LaTeX templates:</p>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">*article.tex</span></code> and <code class="file docutils literal"><span class="pre">*1*.tex</span></code>
+for results with a <strong>single</strong> algorithm</li>
+<li><code class="file docutils literal"><span class="pre">*cmp.tex</span></code> and <code class="file docutils literal"><span class="pre">*2*.tex</span></code> 
+for showing the comparison of <strong>2</strong> algorithms</li>
+<li><code class="file docutils literal"><span class="pre">*many.tex</span></code> and <code class="file docutils literal"><span class="pre">*3*.tex</span></code> 
+for showing the comparison of <strong>more than 2</strong> algorithms.</li>
+</ul>
+<dl class="docutils">
+<dt>The templates with <cite>noisy</cite> mentioned in the filename have to be used</dt>
+<dd>for the noisy testbed, the others for the noise-less one.</dd>
+</dl>
+<p>These latex templates need to be copied in the current working directory 
+and possibly edited so that the LaTeX commands <code class="docutils literal"><span class="pre">\bbobdatapath</span></code> and
+<code class="docutils literal"><span class="pre">\algfolder</span></code> point to the correct output folders of the post-processing. 
+Compiling the template file with LaTeX should then produce a document.</p>
+<p>Keyword arguments:</p>
+<dl class="docutils">
+<dt><em>argv</em> &#8211; list of strings containing options and arguments. If not</dt>
+<dd>provided, sys.argv is accessed.</dd>
+</dl>
+<p><em>argv</em> must list folders containing COCO data files. Each of these
+folders should correspond to the data of ONE algorithm.</p>
+<p>Furthermore, argv can begin with facultative option flags.</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>displays this message.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>verbose mode, prints out operations.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-o</span>, <span class="option">--output-dir=<var>OUTPUTDIR</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the default output directory (<code class="file docutils literal"><span class="pre">ppdata</span></code>) to
+<code class="file docutils literal"><span class="pre">OUTPUTDIR</span></code>.</td></tr>
+</tbody>
+</table>
+<p class="attribution">&mdash;omit-single</p>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div>omit calling <a class="reference internal" href="#bbob_pproc.rungeneric1.main" title="bbob_pproc.rungeneric1.main"><code class="xref py py-func docutils literal"><span class="pre">bbob_pproc.rungeneric1.main</span></code></a>, if
+more than one data path argument is provided.</div></blockquote>
+<p class="attribution">&mdash;rld-single-fcts</p>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div>generate also runlength distribution figures for each
+single function. Works only if more than two algorithms are given. 
+These figures are not (yet) used in the LaTeX templates.</div></blockquote>
+<p class="attribution">&mdash;input-path=INPUTPATH</p>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div>all folder/file arguments are prepended with the given value
+which must be a valid path.</div></blockquote>
+<p class="attribution">&mdash;in-a-hurry</p>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div>takes values between 0 (default) and 1000, fast processing that 
+does not write eps files and uses a small number of bootstrap samples</div></blockquote>
+<p class="attribution">&mdash;svg</p>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div>generate also the svg figures which are used in html files</div></blockquote>
+</div></blockquote>
+<p>Exceptions raised:</p>
+<p><em>Usage</em> &#8211; Gives back a usage message.</p>
+<p>Examples:</p>
+<ul>
+<li><p class="first">Calling the rungeneric.py interface from the command line:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python bbob_pproc/rungeneric.py -v AMALGAM BIPOP-CMA-ES
+</pre></div>
+</div>
+</li>
+<li><p class="first">Loading this package and calling the main from the command line
+(requires that the path to this package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python -m bbob_pproc.rungeneric -h
+</pre></div>
+</div>
+<p>This will print out this help message.</p>
+</li>
+<li><p class="first">From the python interpreter (requires that the path to this
+package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; import bbob_pproc as bb
+&gt;&gt; bb.rungeneric.main(&#39;-o outputfolder folder1 folder2&#39;.split())
+</pre></div>
+</div>
+<p>This will execute the post-processing on the data found in
+<code class="file docutils literal"><span class="pre">folder1</span></code> and <code class="file docutils literal"><span class="pre">folder2</span></code>. The <code class="docutils literal"><span class="pre">-o</span></code> option changes the
+output folder from the default <code class="file docutils literal"><span class="pre">ppdata</span></code> to
+<code class="file docutils literal"><span class="pre">outputfolder</span></code>.</p>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.rungeneric1">
+<span id="bbob-pproc-rungeneric1"></span><h2><a class="reference internal" href="#module-bbob_pproc.rungeneric1" title="bbob_pproc.rungeneric1"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.rungeneric1</span></code></a><a class="headerlink" href="#module-bbob_pproc.rungeneric1" title="Permalink to this headline">¶</a></h2>
+<p>Module for post-processing the data of one algorithm.</p>
+<p>Calls the function main with arguments from the command line. Executes
+the postprocessing on the given files and folders arguments, using the
+<code class="file docutils literal"><span class="pre">.info</span></code> files found recursively.</p>
+<dl class="docutils">
+<dt>Synopsis:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungeneric1.py</span> <span class="pre">[OPTIONS]</span> <span class="pre">FOLDER</span></code></dd>
+<dt>Help:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungeneric1.py</span> <span class="pre">-h</span></code></dd>
+</dl>
+<dl class="function">
+<dt id="bbob_pproc.rungeneric1.main">
+<code class="descclassname">bbob_pproc.rungeneric1.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.rungeneric1.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post-processing COCO data of a single algorithm.</p>
+<p>Provided with some data, this routine outputs figure and TeX files
+in a folder needed for the compilation of the provided LaTeX templates
+for one algorithm (<code class="docutils literal"><span class="pre">*article.tex</span></code> or <code class="docutils literal"><span class="pre">*1*.tex</span></code>).
+The used template file needs to be edited so that the commands
+<code class="docutils literal"><span class="pre">\bbobdatapath</span></code> and <code class="docutils literal"><span class="pre">\algfolder</span></code> point to the output folder created
+by this routine.</p>
+<p>These output files will contain performance tables, performance
+scaling figures and empirical cumulative distribution figures. On
+subsequent executions, new files will be added to the output folder,
+overwriting existing older files in the process.</p>
+<p>Keyword arguments:</p>
+<p><em>argv</em> &#8211; list of strings containing options and arguments. If not
+given, sys.argv is accessed.</p>
+<p><em>argv</em> should list either names of <code class="file docutils literal"><span class="pre">info</span></code> files or folders
+containing <code class="file docutils literal"><span class="pre">info</span></code> files. argv can also contain post-processed
+<code class="file docutils literal"><span class="pre">pickle</span></code> files generated by this routine. Furthermore, <em>argv</em>
+can begin with, in any order, facultative option flags listed below.</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>displays this message.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>verbose mode, prints out all operations.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--pickle</span></kbd></td>
+<td>generates pickle post processed data files.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-o <var>OUTPUTDIR</var></span>, <span class="option">--output-dir=<var>OUTPUTDIR</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the default output directory (<code class="file docutils literal"><span class="pre">ppdata</span></code>) to
+<code class="file docutils literal"><span class="pre">OUTPUTDIR</span></code>.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--crafting-effort=<var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>sets the crafting effort to VALUE (float). Otherwise the
+default value of 0. will be used.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--noise-free</span>, <span class="option">--noisy</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>processes only part of the data.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--settings=<var>SETTINGS</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the style of the output figures and tables. At the
+moment the only differences are  in the colors of the output
+figures. SETTINGS can be either &#8220;grayscale&#8221;, &#8220;color&#8221; or
+&#8220;black-white&#8221;. The default setting is &#8220;color&#8221;.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--tab-only</span>, <span class="option">--fig-only</span>, <span class="option">--rld-only</span>, <span class="option">--los-only</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>these options can be used to output respectively the TeX
+tables, convergence and ERTs graphs figures, run length
+distribution figures, ERT loss ratio figures only. A
+combination of any two of these options results in no
+output.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--conv</span></kbd></td>
+<td>if this option is chosen, additionally convergence plots
+for each function and algorithm are generated.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--rld-single-fcts</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>generate also runlength distribution figures for each
+single function.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--expensive</span></kbd></td>
+<td>runlength-based f-target values and fixed display limits,
+useful with comparatively small budgets. By default the
+setting is based on the budget used in the data.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--not-expensive</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>expensive setting off.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--svg</span></kbd></td>
+<td>generate also the svg figures which are used in html files</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--runlength-based</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>runlength-based f-target values, such that the
+&#8220;level of difficulty&#8221; is similar for all functions.</td></tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Exceptions raised:</p>
+<p><em>Usage</em> &#8211; Gives back a usage message.</p>
+<p>Examples:</p>
+<ul>
+<li><p class="first">Calling the rungeneric1.py interface from the command line:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python bbob_pproc/rungeneric1.py -v experiment1
+</pre></div>
+</div>
+<p>will post-process the folder experiment1 and all its containing
+data, base on the .info files found in the folder. The result will
+appear in the default output folder. The -v option adds verbosity.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python bbob_pproc/rungeneric1.py -o exp2 experiment2/*.info
+</pre></div>
+</div>
+<p>This will execute the post-processing on the info files found in
+<code class="file docutils literal"><span class="pre">experiment2</span></code>. The result will be located in the alternative
+location <code class="file docutils literal"><span class="pre">exp2</span></code>.</p>
+</li>
+<li><p class="first">Loading this package and calling the main from the command line
+(requires that the path to this package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python -m bbob_pproc.rungeneric1 -h
+</pre></div>
+</div>
+<p>This will print out this help message.</p>
+</li>
+<li><p class="first">From the python interpreter (requires that the path to this
+package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; import bbob_pproc as bb
+&gt;&gt; bb.rungeneric1.main(&#39;-o outputfolder folder1&#39;.split())
+</pre></div>
+</div>
+<p>This will execute the post-processing on the index files found in
+<code class="file docutils literal"><span class="pre">folder1</span></code>. The <code class="docutils literal"><span class="pre">-o</span></code> option changes the output folder from
+the default to <code class="file docutils literal"><span class="pre">outputfolder</span></code>.</p>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.rungeneric2">
+<span id="bbob-pproc-rungeneric2"></span><h2><a class="reference internal" href="#module-bbob_pproc.rungeneric2" title="bbob_pproc.rungeneric2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.rungeneric2</span></code></a><a class="headerlink" href="#module-bbob_pproc.rungeneric2" title="Permalink to this headline">¶</a></h2>
+<p>Routines for the comparison of 2 algorithms.</p>
+<dl class="docutils">
+<dt>Synopsis:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungeneric2.py</span> <span class="pre">[OPTIONS]</span> <span class="pre">FOLDER_NAME1</span> <span class="pre">FOLDER_NAME2...</span></code></dd>
+<dt>Help:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungeneric2.py</span> <span class="pre">-h</span></code></dd>
+</dl>
+<dl class="function">
+<dt id="bbob_pproc.rungeneric2.main">
+<code class="descclassname">bbob_pproc.rungeneric2.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.rungeneric2.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Routine for post-processing COCO data from two algorithms.</p>
+<p>Provided with some data, this routine outputs figure and TeX files
+in a folder needed for the compilation of the provided LaTeX templates
+for comparing two algorithms (<code class="docutils literal"><span class="pre">*cmp.tex</span></code> or <code class="docutils literal"><span class="pre">*2*.tex</span></code>).</p>
+<p>The used template file needs to be edited so that the command
+<code class="docutils literal"><span class="pre">\bbobdatapath</span></code> points to the output folder created by this routine.</p>
+<p>The output files will contain performance tables, performance
+scaling figures and empirical cumulative distribution figures. On
+subsequent executions, new files will be added to the output folder,
+overwriting existing older files in the process.</p>
+<p>Keyword arguments:</p>
+<p><em>argv</em> &#8211; list of strings containing options and arguments. If not
+given, sys.argv is accessed.</p>
+<p><em>argv</em> must list folders containing BBOB data files. Each of these
+folders should correspond to the data of ONE algorithm.</p>
+<p>Furthermore, argv can begin with, in any order, facultative option
+flags listed below.</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>displays this message.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>verbose mode, prints out operations.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-o <var>OUTPUTDIR</var></span>, <span class="option">--output-dir=<var>OUTPUTDIR</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the default output directory (<code class="file docutils literal"><span class="pre">ppdata</span></code>) to
+<code class="file docutils literal"><span class="pre">OUTPUTDIR</span></code></td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--noise-free</span>, <span class="option">--noisy</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>processes only part of the data.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--settings=<var>SETTING</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the style of the output figures and tables. At the
+moment only the only differences are in the colors of the
+output figures. SETTING can be either &#8220;grayscale&#8221;, &#8220;color&#8221;
+or &#8220;black-white&#8221;. The default setting is &#8220;color&#8221;.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fig-only</span>, <span class="option">--rld-only</span>, <span class="option">--tab-only</span>, <span class="option">--sca-only</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>these options can be used to output respectively the ERT
+graphs figures, run length distribution figures or the
+comparison tables scatter plot figures only. Any combination
+of these options results in no output.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--conv</span></kbd></td>
+<td>if this option is chosen, additionally convergence
+plots for each function and algorithm are generated.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--rld-single-fcts</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>generate also runlength distribution figures for each
+single function.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--expensive</span></kbd></td>
+<td>runlength-based f-target values and fixed display limits,
+useful with comparatively small budgets. By default the
+setting is based on the budget used in the data.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--not-expensive</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>expensive setting off.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--svg</span></kbd></td>
+<td>generate also the svg figures which are used in html files</td></tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Exceptions raised:</p>
+<p><em>Usage</em> &#8211; Gives back a usage message.</p>
+<p>Examples:</p>
+<ul>
+<li><p class="first">Calling the rungeneric2.py interface from the command line:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python bbob_pproc/rungeneric2.py -v Alg0-baseline Alg1-of-interest
+</pre></div>
+</div>
+<p>will post-process the data from folders <code class="file docutils literal"><span class="pre">Alg0-baseline</span></code> and
+<code class="file docutils literal"><span class="pre">Alg1-of-interest</span></code>, the former containing data for the
+reference algorithm (zero-th) and the latter data for the
+algorithm of concern (first). The results will be output in the
+default output folder. The <code class="docutils literal"><span class="pre">-v</span></code> option adds verbosity.</p>
+</li>
+<li><p class="first">From the python interpreter (requires that the path to this
+package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; import bbob_pproc as bb
+&gt;&gt; bb.rungeneric2.main(&#39;-o outputfolder PSO DEPSO&#39;.split())
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This will execute the post-processing on the data found in folder
+<code class="file docutils literal"><span class="pre">PSO</span></code> and <code class="file docutils literal"><span class="pre">DEPSO</span></code>. The <code class="docutils literal"><span class="pre">-o</span></code> option changes the output
+folder from the default to <code class="file docutils literal"><span class="pre">outputfolder</span></code>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.rungenericmany">
+<span id="bbob-pproc-rungenericmany"></span><h2><a class="reference internal" href="#module-bbob_pproc.rungenericmany" title="bbob_pproc.rungenericmany"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.rungenericmany</span></code></a><a class="headerlink" href="#module-bbob_pproc.rungenericmany" title="Permalink to this headline">¶</a></h2>
+<p>Process data to be included in a generic template.</p>
+<dl class="docutils">
+<dt>Synopsis:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungenericmany.py</span> <span class="pre">[OPTIONS]</span> <span class="pre">FOLDER</span></code></dd>
+<dt>Help:</dt>
+<dd><code class="docutils literal"><span class="pre">python</span> <span class="pre">path_to_folder/bbob_pproc/rungenericmany.py</span> <span class="pre">-h</span></code></dd>
+</dl>
+<dl class="function">
+<dt id="bbob_pproc.rungenericmany.main">
+<code class="descclassname">bbob_pproc.rungenericmany.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.rungenericmany.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main routine for post-processing the data of multiple algorithms.</p>
+<p>Provided with some data, this routine outputs figure and TeX files
+in a folder needed for the compilation of the provided LaTeX templates
+for comparing multiple algorithms (<code class="docutils literal"><span class="pre">*many.tex</span></code> or <code class="docutils literal"><span class="pre">*3*.tex</span></code>).
+The used template file needs to be edited so that the commands
+<code class="docutils literal"><span class="pre">\bbobdatapath</span></code> points to the output folder created by this routine.</p>
+<p>These output files will contain performance tables, performance
+scaling figures and empirical cumulative distribution figures. On
+subsequent executions, new files will be added to the output folder,
+overwriting existing older files in the process.</p>
+<p>Keyword arguments:</p>
+<p><em>argv</em> &#8211; list of strings containing options and arguments. If not
+provided, sys.argv is accessed.</p>
+<p><em>argv</em> must list folders containing BBOB data files.
+The name of these folders will be used in the output figures and
+tables to designate the algorithms. Therefore you should name the
+folders with differentiating names.</p>
+<p>Furthermore, argv can begin with facultative option flags listed
+below.</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>displays this message.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>verbose mode, prints out operations, warnings.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-o <var>OUTPUTDIR</var></span>, <span class="option">--output-dir=<var>OUTPUTDIR</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the default output directory (<code class="file docutils literal"><span class="pre">ppdatamany</span></code>) to
+<code class="file docutils literal"><span class="pre">OUTPUTDIR</span></code>.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--noise-free</span>, <span class="option">--noisy</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>processes only part of the data.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--settings=<var>SETTINGS</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>changes the style of the output figures and tables. At the
+moment, the only differences are in the colors of the
+output figures. SETTINGS can be either &#8220;grayscale&#8221;, &#8220;color&#8221;
+or &#8220;black-white&#8221;. The default setting is &#8220;color&#8221;.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--tab-only</span>, <span class="option">--rld-only</span>, <span class="option">--fig-only</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>these options can be used to output respectively the
+comparison TeX tables, the run lengths distributions or the
+figures of ERT/dim vs dim only. A combination of any two or
+more of these options results in no output.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--conv</span></kbd></td>
+<td>if this option is chosen, additionally convergence
+plots for each function and algorithm are generated.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--rld-single-fcts</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>generate also runlength distribution figures for each
+single function.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--expensive</span></kbd></td>
+<td>runlength-based f-target values and fixed display limits,
+useful with comparatively small budgets. By default the
+setting is based on the budget used in the data.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--not-expensive</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>expensive setting off.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--svg</span></kbd></td>
+<td>generate also the svg figures which are used in html files</td></tr>
+</tbody>
+</table>
+<ul class="simple">
+<li></li>
+</ul>
+</div></blockquote>
+<p>Exceptions raised:</p>
+<p><em>Usage</em> &#8211; Gives back a usage message.</p>
+<p>Examples:</p>
+<ul>
+<li><p class="first">Calling the rungenericmany.py interface from the command line:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python bbob_pproc/rungenericmany.py -v AMALGAM BFGS BIPOP-CMA-ES
+</pre></div>
+</div>
+</li>
+<li><p class="first">Loading this package and calling the main from the command line
+(requires that the path to this package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python -m bbob_pproc.rungenericmany -h
+</pre></div>
+</div>
+<p>This will print out this help message.</p>
+</li>
+<li><p class="first">From the python interpreter (requires that the path to this
+package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; import bbob_pproc as bb
+&gt;&gt; bb.rungenericmany.main(&#39;-o outputfolder folder1 folder2&#39;.split())
+</pre></div>
+</div>
+<p>This will execute the post-processing on the data found in
+<code class="file docutils literal"><span class="pre">folder1</span></code> and <code class="file docutils literal"><span class="pre">folder2</span></code>.
+The <code class="docutils literal"><span class="pre">-o</span></code> option changes the output folder from the default to
+<code class="file docutils literal"><span class="pre">outputfolder</span></code>.</p>
+</li>
+<li><p class="first">Generate post-processing data for some algorithms with figures in
+shades of gray:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python rungenericmany.py --settings grayscale NEWUOA NELDER LSSTEP
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.genericsettings">
+<span id="bbob-pproc-genericsettings"></span><h2><a class="reference internal" href="#module-bbob_pproc.genericsettings" title="bbob_pproc.genericsettings"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.genericsettings</span></code></a><a class="headerlink" href="#module-bbob_pproc.genericsettings" title="Permalink to this headline">¶</a></h2>
+<p>This module contains some variables settings for COCO.</p>
+<p>These variables are used for producing figures and tables 
+in rungeneric1, -2, and -many.</p>
+<p>For setting variables dynamically see config.py, where some 
+of the variables here and some</p>
+<dl class="function">
+<dt id="bbob_pproc.genericsettings.getFigFormats">
+<code class="descclassname">bbob_pproc.genericsettings.</code><code class="descname">getFigFormats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.genericsettings.getFigFormats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.genericsettings.Testbed">
+<em class="property">class </em><code class="descclassname">bbob_pproc.genericsettings.</code><code class="descname">Testbed</code><a class="headerlink" href="#bbob_pproc.genericsettings.Testbed" title="Permalink to this definition">¶</a></dt>
+<dd><p>this might become the future way to have settings related to testbeds
+TODO: should go somewhere else than genericsettings.py 
+TODO: how do we pass information from the benchmark to the post-processing?</p>
+<dl class="method">
+<dt id="bbob_pproc.genericsettings.Testbed.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>fun_number=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.genericsettings.Testbed.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>info on the testbed if <code class="docutils literal"><span class="pre">fun_number</span> <span class="pre">is</span> <span class="pre">None</span></code> or one-line info 
+for function with number <code class="docutils literal"><span class="pre">fun_number</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.genericsettings.GECCOBBOBTestbed">
+<em class="property">class </em><code class="descclassname">bbob_pproc.genericsettings.</code><code class="descname">GECCOBBOBTestbed</code><a class="headerlink" href="#bbob_pproc.genericsettings.GECCOBBOBTestbed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testbed used in the GECCO BBOB workshops 2009, 2010, 2012, 2013, 2015.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.genericsettings.GECCOBBOBNoisefreeTestbed">
+<em class="property">class </em><code class="descclassname">bbob_pproc.genericsettings.</code><code class="descname">GECCOBBOBNoisefreeTestbed</code><a class="headerlink" href="#bbob_pproc.genericsettings.GECCOBBOBNoisefreeTestbed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testbed used in the GECCO BBOB workshops 2009, 2010, 2012, 2013, 2015.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a><ul>
+<li><a class="reference internal" href="#module-bbob_pproc"><code class="docutils literal"><span class="pre">bbob_pproc</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.rungeneric"><code class="docutils literal"><span class="pre">bbob_pproc.rungeneric</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.rungeneric1"><code class="docutils literal"><span class="pre">bbob_pproc.rungeneric1</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.rungeneric2"><code class="docutils literal"><span class="pre">bbob_pproc.rungeneric2</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.rungenericmany"><code class="docutils literal"><span class="pre">bbob_pproc.rungenericmany</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.genericsettings"><code class="docutils literal"><span class="pre">bbob_pproc.genericsettings</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fgeneric.html"
+                        title="previous chapter">Python API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bbob_pprocinternal.html"
+                        title="next chapter">Post-processing Routines</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbob_pproc.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bbob_pprocinternal.html" title="Post-processing Routines"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fgeneric.html" title="Python API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

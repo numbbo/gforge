@@ -1,0 +1,4 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzsev_large.png?700 }}
+
+
+Empirical runtime distributions on noisy functions with //severe noise// (f107: Sphere with severe Gaussian noise, f108: Sphere with severe unimodal noise, f109: Sphere with severe Cauchy noise, f110: Rosenbrock with severe Gaussian noise, f111: Rosenbrock with severe uniform noise, f112: Rosenbrock with severe Cauchy noise, f113: Step-ellipsoid with severe Gaussian noise, f114: Step-ellipsoid with severe unimodal noise, f115: Step-ellipsoid with severe Cauchy noise, f116: Ellipsoid with severe Gaussian noise, f117: Ellipsoid with severe uniform noise, f118: Ellipsoid with severe Cauchy noise, f119: Sum of different powers with severe Gaussian noise, f120: Sum of different powers with severe unimodal noise, f121: Sum of different powers with severe Cauchy noise) with target values in {100, ..., 1e-8} in dimension 20.

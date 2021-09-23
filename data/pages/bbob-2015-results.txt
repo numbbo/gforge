@@ -1,0 +1,52 @@
+~~NOCACHE~~
+
+This is the BBOB 2015 results page and here are the results from the workshop held at GECCO in July 2015.
+
+   
+== Results for all algorithms ==
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+    * Comparison tables per function: noiseless testbed dimensions 2-20: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed dimensions 2-20 (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_expensive.pdf|pdf}} 
+ 
+== Single Function Tables ==
+
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. Note that there has been no submission for the noisy testbed at GECCO 2015 and only three of the algorithms have been benchmarked on the optional 40-dimensional problems.
+
+**Standard Setting**
+    * Comparison tables per function: noiseless testbed 2-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_02D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 3-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_03D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 5-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_05D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 10-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_10D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 20-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_20D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 40-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_40D.pdf|pdf}} 
+
+
+**Expensive Setting**
+    * Comparison tables per function: noiseless testbed 2-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_02D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 3-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_03D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 5-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_05D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 10-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_10D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 20-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_20D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 40-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-GECCO/BBOB2015Tables_noise-free_40D_expensive.pdf|pdf}} 
+
+
+
+
+
+== Available Source Codes ==
+[[http://coco.gforge.inria.fr/BBOB2015sourcecodes/cma.py|CMA-ES source code]] for running CMA-CSA, CMA-MSR, and CMA-TPA
+
+
+  
+== Data ==
+    * [[http://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms|overview page listing all BBOB 2015 algorithm data sets]]
+    * [[http://coco.gforge.inria.fr/data-archive/bbob/2015-GECCO| root data folder with raw data of all submitted algorithms]]
+
+
+== Resources: Accepted papers ==
+    * Asma Atamna: Benchmarking IPOP-CMA-ES-TPA and IPOP-CMA-ES-MSR on the BBOB Noiseless Testbed
+    * Lukáš Bajer, Zbynek Pitra, Martin Holena: Benchmarking Gaussian Processes and Random Forests Surrogate Models on the BBOB Noiseless Testbed
+    * Dimo Brockhoff, Bernd Bischl, Tobias Wagner: The Impact of Initial Designs on the Performance of MATSuMoTo on the Noiseless BBOB-2015 Testbed: A Preliminary Study
+    * Petr Pošík, Petr Baudiš: Dimension Selection in Axis-Parallel Brent-STEP Method for Black-Box Optimization of Separable Continuous Functions
+    
+

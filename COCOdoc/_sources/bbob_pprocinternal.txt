@@ -1,0 +1,86 @@
+Post-processing Routines
+========================
+
+.. contents::
+   :local:
+
+:py:mod:`bbob_pproc.pproc`
+--------------------------
+
+.. automodule:: bbob_pproc.pproc
+   :members:
+   :undoc-members:
+
+
+:py:mod:`bbob_pproc.algportfolio`
+---------------------------------
+
+.. automodule:: bbob_pproc.algportfolio
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.bestalg`
+----------------------------
+
+.. automodule:: bbob_pproc.bestalg
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.changeAlgIdAndComment`
+------------------------------------------
+
+.. automodule:: bbob_pproc.changeAlgIdAndComment
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.cococommands`
+---------------------------------
+
+.. automodule:: bbob_pproc.cococommands
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.config`
+---------------------------
+
+.. automodule:: bbob_pproc.config
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.dataoutput`
+-------------------------------
+
+.. automodule:: bbob_pproc.dataoutput
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.findfiles`
+------------------------------
+
+.. automodule:: bbob_pproc.findfiles
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.readalign`
+------------------------------
+
+.. automodule:: bbob_pproc.readalign
+   :members:
+   :undoc-members:
+
+
+:py:mod:`bbob_pproc.toolsstats`
+-------------------------------
+
+.. automodule:: bbob_pproc.toolsstats
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.toolsdivers`
+--------------------------------
+
+.. automodule:: bbob_pproc.toolsdivers
+   :members:
+   :undoc-members:
+
+

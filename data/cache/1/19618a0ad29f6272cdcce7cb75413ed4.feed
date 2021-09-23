@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>http://coco.gforge.inria.fr/</link>
+        <image rdf:resource="http://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2016-11-22T23:54:04+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1464614278&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1464614134&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=mo-gecco2015&amp;rev=1460037194&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1459856778&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms&amp;rev=1458950462&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms&amp;rev=1458950418&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=algorithms&amp;rev=1458950399&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>http://coco.gforge.inria.fr/</link>
+        <url>http://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1464614278&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-05-30T15:17:58+01:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>bbob-2010-results</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1464614278&amp;do=diff</link>
+        <description>This is the BBOB 2010 results page and here are the results from the workshop held in July 2010.
+
+Updates
+
+02 Sep 2010: Tables are corrected: ERT was not correct. [ List of the changes in the first set of tables], [ list of the changes in the second set of tables (reference is BBOB-2009)]. 
+
+25 Aug 2010: Tables were updated with reference to GECCO 2010 Proceedings</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1464614134&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-05-30T15:15:34+01:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>bbob-2009-results</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1464614134&amp;do=diff</link>
+        <description>This is the BBOB 2009 results page and here are the results from the workshop in July 2009. 
+
+Single Function Tables
+
+	* [ BBOB-2009: Comparison Tables of All Algorithms on All Noiseless Functions] 
+					* [pdf] Comparison Tables per function: noiseless testbed 2-D
+					* [pdf] Comparison Tables per function: noiseless testbed 3-D
+					* [pdf] Comparison Tables per function: noiseless testbed 5-D
+					* [pdf] Comparison Tables per function: noiseless testbed 10-D
+					* [pdf] Comparison Tables p…</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=mo-gecco2015&amp;rev=1460037194&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-04-07T15:53:14+01:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>mo-gecco2015 - [Multiobjective Blackbox Optimization Benchmarking] </title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=mo-gecco2015&amp;rev=1460037194&amp;do=diff</link>
+        <description>This is the supplementary material web page related to the GECCO-2015 paper by Brockhoff, Tran, and Hansen [1]. Below, you will find the source code to reproduce the results of the paper as well as many plots which had to be omitted from the paper due to space limitations.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1459856778&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-04-05T13:46:18+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>sidebar</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1459856778&amp;do=diff</link>
+        <description>*  Home
+	*  Documentation
+	*  download latest old code
+	*  new code homepage
+	*  download new code directly
+	*  BBOB 2016
+	*  BBOB 2015 @ GECCO
+		*  Algorithms
+		*  Results
+		*  Schedule
+		*  Downloads
+
+	*  BBOB 2015 @ CEC
+		*  Algorithms
+		*  Results
+		*  Downloads</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms&amp;rev=1458950462&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-03-26T01:01:02+01:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>cec-bbob-2015-algorithms</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms&amp;rev=1458950462&amp;do=diff</link>
+        <description>The following table lists all algorithms of the CEC-BBOB-2015 special session and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms&amp;rev=1458950418&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-03-26T01:00:18+01:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>bbob-2015-algorithms</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms&amp;rev=1458950418&amp;do=diff</link>
+        <description>The following table lists all algorithms of the BBOB 2015 workshop and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=algorithms&amp;rev=1458950399&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-03-26T00:59:59+01:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>algorithms</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=algorithms&amp;rev=1458950399&amp;do=diff</link>
+        <description>The following table lists all algorithms related to the BBOB workshops and special sessions in the years 2009 till 2015 together with links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+</rdf:RDF>

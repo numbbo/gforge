@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bbob_pproc.compall &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="up" title="bbob_pproc API" href="bbob_pproc.html" />
+    <link rel="next" title="Acknowledgments" href="acknowledgments.html" />
+    <link rel="prev" title="bbob_pproc.comp2" href="comp2.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="acknowledgments.html" title="Acknowledgments"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="comp2.html" title="bbob_pproc.comp2"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" accesskey="U"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bbob-pproc-compall">
+<h1><a class="reference internal" href="#module-bbob_pproc.compall" title="bbob_pproc.compall"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall</span></code></a><a class="headerlink" href="#bbob-pproc-compall" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id2"><a class="reference internal" href="#module-bbob_pproc.compall" title="bbob_pproc.compall"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.organizeRTDpictures" id="id3"><a class="reference internal" href="#module-bbob_pproc.compall.organizeRTDpictures" title="bbob_pproc.compall.organizeRTDpictures"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.organizeRTDpictures</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.ppfigs" id="id4"><a class="reference internal" href="#module-bbob_pproc.compall.ppfigs" title="bbob_pproc.compall.ppfigs"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.ppfigs</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.ppperfprof" id="id5"><a class="reference internal" href="#module-bbob_pproc.compall.ppperfprof" title="bbob_pproc.compall.ppperfprof"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.ppperfprof</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.pprldmany" id="id6"><a class="reference internal" href="#module-bbob_pproc.compall.pprldmany" title="bbob_pproc.compall.pprldmany"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.pprldmany</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.pptables" id="id7"><a class="reference internal" href="#module-bbob_pproc.compall.pptables" title="bbob_pproc.compall.pptables"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.pptables</span></code></a></a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id2"><a class="reference internal" href="#module-bbob_pproc.compall" title="bbob_pproc.compall"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall</span></code></a></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-bbob_pproc.compall"></span><p>COmparing Continuous Optimisers (COCO) post-processing tool for comparing
+multiple algorithms:</p>
+<p>Contains routines for the comparison of multiple algorithms.</p>
+</div>
+<div class="section" id="module-bbob_pproc.compall.organizeRTDpictures">
+<span id="bbob-pproc-compall-organizertdpictures"></span><h2><a class="toc-backref" href="#id3"><a class="reference internal" href="#module-bbob_pproc.compall.organizeRTDpictures" title="bbob_pproc.compall.organizeRTDpictures"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.organizeRTDpictures</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.compall.organizeRTDpictures" title="Permalink to this headline">¶</a></h2>
+<p>Routine to organize the output folder in which runcompall puts all the output.</p>
+<dl class="function">
+<dt id="bbob_pproc.compall.organizeRTDpictures.do">
+<code class="descclassname">bbob_pproc.compall.organizeRTDpictures.</code><code class="descname">do</code><span class="sig-paren">(</span><em>dirnames</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.organizeRTDpictures.do" title="Permalink to this definition">¶</a></dt>
+<dd><p>moves images into different folders, only the overall RL distributions remain in the root folder</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.compall.ppfigs">
+<span id="bbob-pproc-compall-ppfigs"></span><h2><a class="toc-backref" href="#id4"><a class="reference internal" href="#module-bbob_pproc.compall.ppfigs" title="bbob_pproc.compall.ppfigs"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.ppfigs</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.compall.ppfigs" title="Permalink to this headline">¶</a></h2>
+<p>Creates ERTs and convergence figures for multiple algorithms.</p>
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.fix_styles">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">fix_styles</code><span class="sig-paren">(</span><em>number, styles=[{'marker': 'o', 'color': '#000080', 'markersize': 31, 'linestyle': '-'}, {'marker': 'd', 'color': '#ff00ff', 'markersize': 26, 'linestyle': '-'}, {'marker': '*', 'color': '#ffa500', 'markersize': 33, 'linestyle': '-'}, {'marker': 'v', 'color': '#6495ed', 'markersize': 28, 'linestyle': '-'}, {'marker': 'h', 'color': 'r', 'markersize': 30, 'linestyle': '-'}, {'marker': '^', 'color': '#9acd32', 'markersize': 25, 'linestyle': '-'}, {'marker': 'p', 'color': 'c', 'markersize': 24, 'linestyle': '-'}, {'marker': 'H', 'color': '#bebebe', 'markersize': 23, 'linestyle': '-'}, {'marker': '3', 'color': '#adff2f', 'markersize': 23, 'linestyle': '-'}, {'marker': '1', 'color': '#228b22', 'markersize': 23, 'linestyle': '-'}, {'marker': 'D', 'color': '#ffc0cb', 'markersize': 23, 'linestyle': '-'}, {'marker': '&lt;', 'color': '#87ceeb', 'markersize': 23, 'linestyle': '-'}, {'marker': 'v', 'color': '#000080', 'markersize': 23, 'linestyle': '--'}, {'marker': '*', 'color': 'r', 'markersize': 23, 'linestyle': '--'}, {'marker': 's', 'color': '#ffd700', 'markersize': 23, 'linestyle': '--'}, {'marker': 'd', 'color': '#d02090', 'markersize': 23, 'linestyle': '--'}, {'marker': '^', 'color': '#6495ed', 'markersize': 23, 'linestyle': '--'}, {'marker': '&lt;', 'color': '#ffa500', 'markersize': 23, 'linestyle': '--'}, {'marker': 'h', 'color': '#ff00ff', 'markersize': 23, 'linestyle': '--'}, {'marker': 'p', 'color': '#bebebe', 'markersize': 23, 'linestyle': '--'}, {'marker': 'H', 'color': '#87ceeb', 'markersize': 23, 'linestyle': '--'}, {'marker': '1', 'color': '#ffc0cb', 'markersize': 23, 'linestyle': '--'}, {'marker': '2', 'color': '#228b22', 'markersize': 23, 'linestyle': '--'}, {'marker': '4', 'color': '#32cd32', 'markersize': 23, 'linestyle': '--'}, {'marker': '3', 'color': '#9acd32', 'markersize': 23, 'linestyle': '--'}, {'marker': 'D', 'color': '#adff2f', 'markersize': 23, 'linestyle': '--'}]</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.fix_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>a short hack to fix length of styles</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.scaling_figure_caption">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">scaling_figure_caption</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.scaling_figure_caption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.ecdfs_figure_caption">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">ecdfs_figure_caption</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.ecdfs_figure_caption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.scaling_figure_caption_html">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">scaling_figure_caption_html</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.scaling_figure_caption_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.ecdfs_figure_caption_html">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">ecdfs_figure_caption_html</code><span class="sig-paren">(</span><em>target</em>, <em>dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.ecdfs_figure_caption_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.plotLegend">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">plotLegend</code><span class="sig-paren">(</span><em>handles</em>, <em>maxval=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.plotLegend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display right-side legend.</p>
+<p>Sorted from smaller to larger y-coordinate values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.beautify">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">beautify</code><span class="sig-paren">(</span><em>legend=False</em>, <em>rightlegend=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Customize figure format.</p>
+<p>adding a legend, axis label, etc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>legend</strong> (<em>bool</em>) &#8211; if True, display a box legend</li>
+<li><strong>rightlegend</strong> (<em>bool</em>) &#8211; if True, makes some space on the right for
+legend</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.generateData">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">generateData</code><span class="sig-paren">(</span><em>dataSet</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.generateData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an array of results to be plotted.</p>
+<p>Oth column is ert, 1st is the success rate, 2nd the number of
+successes, 3rd the mean of the number of function evaluations, and
+4th the median of number of function evaluations of successful runs
+or numpy.nan.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppfigs.main">
+<code class="descclassname">bbob_pproc.compall.ppfigs.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>htmlFilePrefix</em>, <em>sortedAlgs=None</em>, <em>target=1e-08</em>, <em>outputdir='ppdata'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppfigs.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>From a DataSetList, returns figures showing the scaling: ERT/dim vs dim.</p>
+<p>One function and one target per figure.</p>
+<p><code class="docutils literal"><span class="pre">target</span></code> can be a scalar, a list with one element or a 
+<code class="docutils literal"><span class="pre">pproc.TargetValues</span></code> instance with one target.</p>
+<p><code class="docutils literal"><span class="pre">sortedAlgs</span></code> is a list of string-identifies (folder names)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.compall.ppperfprof">
+<span id="bbob-pproc-compall-ppperfprof"></span><h2><a class="toc-backref" href="#id5"><a class="reference internal" href="#module-bbob_pproc.compall.ppperfprof" title="bbob_pproc.compall.ppperfprof"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.ppperfprof</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.compall.ppperfprof" title="Permalink to this headline">¶</a></h2>
+<p>For generating performance profiles. This module is not in use (anymore or not yet?).</p>
+<p><strong>Example</strong></p>
+<p>(<a class="reference external" href=".//compall-1.py">Source code</a>, <a class="reference external" href=".//compall-1.png">png</a>, <a class="reference external" href=".//compall-1.hires.png">hires.png</a>, <a class="reference external" href=".//compall-1.pdf">pdf</a>)</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/compall-1.png"><img alt="_images/compall-1.png" src="_images/compall-1.png" style="width: 75%;" /></a>
+</div>
+<dl class="function">
+<dt id="bbob_pproc.compall.ppperfprof.beautify">
+<code class="descclassname">bbob_pproc.compall.ppperfprof.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppperfprof.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Customize figure presentation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppperfprof.plot">
+<code class="descclassname">bbob_pproc.compall.ppperfprof.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>dsList</em>, <em>dsref</em>, <em>targets=(1e-08</em>, <em>1.5848931924611143e-08</em>, <em>2.5118864315095821e-08</em>, <em>3.9810717055349776e-08</em>, <em>6.3095734448019429e-08</em>, <em>1.0000000000000021e-07</em>, <em>1.5848931924611173e-07</em>, <em>2.5118864315095876e-07</em>, <em>3.9810717055349856e-07</em>, <em>6.3095734448019561e-07</em>, <em>1.0000000000000042e-06</em>, <em>1.5848931924611206e-06</em>, <em>2.5118864315095924e-06</em>, <em>3.9810717055349937e-06</em>, <em>6.3095734448019686e-06</em>, <em>1.0000000000000062e-05</em>, <em>1.5848931924611239e-05</em>, <em>2.5118864315095974e-05</em>, <em>3.981071705535002e-05</em>, <em>6.3095734448019822e-05</em>, <em>0.00010000000000000082</em>, <em>0.00015848931924611272</em>, <em>0.00025118864315096029</em>, <em>0.00039810717055350098</em>, <em>0.00063095734448019949</em>, <em>0.0010000000000000102</em>, <em>0.0015848931924611303</em>, <em>0.0025118864315096081</em>, <em>0.0039810717055350185</em>, <em>0.0063095734448020075</em>, <em>0.010000000000000123</em>, <em>0.015848931924611336</em>, <em>0.025118864315096131</em>, <em>0.039810717055350262</em>, <em>0.063095734448020205</em>, <em>0.10000000000000143</em>, <em>0.15848931924611367</em>, <em>0.25118864315096179</em>, <em>0.39810717055350342</em>, <em>0.63095734448020335</em>, <em>1.0000000000000164</em>, <em>1.5848931924611369</em>, <em>2.5118864315096232</em>, <em>3.9810717055350509</em>, <em>6.3095734448020462</em>, <em>10.000000000000163</em>, <em>15.848931924611433</em>, <em>25.118864315096335</em>, <em>39.810717055350509</em>, <em>63.095734448020458)</em>, <em>istoolsstats=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppperfprof.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a graph showing the performance profile of an algorithm.</p>
+<p>We display the empirical cumulative distribution function ECDF of
+the bootstrapped distribution of the expected running time (ERT)
+for an algorithm to reach the function value <code class="xref py py-data docutils literal"><span class="pre">targets</span></code>
+normalized by the ERT of the reference algorithm for these
+targets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data set for one algorithm</li>
+<li><strong>dsref</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; reference data set for normalization</li>
+<li><strong>targets</strong> (<em>seq</em>) &#8211; target function values</li>
+<li><strong>kwargs</strong> (<em>dict</em>) &#8211; additional parameters provided to plot function.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handles</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.ppperfprof.main">
+<code class="descclassname">bbob_pproc.compall.ppperfprof.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>dsref=None</em>, <em>order=None</em>, <em>targets=(1e-08</em>, <em>1.5848931924611143e-08</em>, <em>2.5118864315095821e-08</em>, <em>3.9810717055349776e-08</em>, <em>6.3095734448019429e-08</em>, <em>1.0000000000000021e-07</em>, <em>1.5848931924611173e-07</em>, <em>2.5118864315095876e-07</em>, <em>3.9810717055349856e-07</em>, <em>6.3095734448019561e-07</em>, <em>1.0000000000000042e-06</em>, <em>1.5848931924611206e-06</em>, <em>2.5118864315095924e-06</em>, <em>3.9810717055349937e-06</em>, <em>6.3095734448019686e-06</em>, <em>1.0000000000000062e-05</em>, <em>1.5848931924611239e-05</em>, <em>2.5118864315095974e-05</em>, <em>3.981071705535002e-05</em>, <em>6.3095734448019822e-05</em>, <em>0.00010000000000000082</em>, <em>0.00015848931924611272</em>, <em>0.00025118864315096029</em>, <em>0.00039810717055350098</em>, <em>0.00063095734448019949</em>, <em>0.0010000000000000102</em>, <em>0.0015848931924611303</em>, <em>0.0025118864315096081</em>, <em>0.0039810717055350185</em>, <em>0.0063095734448020075</em>, <em>0.010000000000000123</em>, <em>0.015848931924611336</em>, <em>0.025118864315096131</em>, <em>0.039810717055350262</em>, <em>0.063095734448020205</em>, <em>0.10000000000000143</em>, <em>0.15848931924611367</em>, <em>0.25118864315096179</em>, <em>0.39810717055350342</em>, <em>0.63095734448020335</em>, <em>1.0000000000000164</em>, <em>1.5848931924611369</em>, <em>2.5118864315096232</em>, <em>3.9810717055350509</em>, <em>6.3095734448020462</em>, <em>10.000000000000163</em>, <em>15.848931924611433</em>, <em>25.118864315096335</em>, <em>39.810717055350509</em>, <em>63.095734448020458)</em>, <em>outputdir=''</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.ppperfprof.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates image files of the performance profiles of algorithms</p>
+<p>From a dictionary of <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> sorted by algorithms,
+generates the performance profile (Moré:2008) on multiple functions
+for multiple targets altogether.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dictAlg</strong> (<em>dict</em>) &#8211; dictionary of <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> instances, one
+dataSetList</li>
+<li><strong>targets</strong> (<em>list</em>) &#8211; target function values</li>
+<li><strong>order</strong> (<em>list</em>) &#8211; sorted list of keys to dictAlg for plotting order</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.compall.pprldmany">
+<span id="bbob-pproc-compall-pprldmany"></span><h2><a class="toc-backref" href="#id6"><a class="reference internal" href="#module-bbob_pproc.compall.pprldmany" title="bbob_pproc.compall.pprldmany"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.pprldmany</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.compall.pprldmany" title="Permalink to this headline">¶</a></h2>
+<p>Generates figure of the bootstrap distribution of ERT.</p>
+<p>The main method in this module generates figures of Empirical
+Cumulative Distribution Functions of the bootstrap distribution of
+the Expected Running Time (ERT) divided by the dimension for many
+algorithms.</p>
+<p>The outputs show the ECDFs of the running times of the simulated runs
+divided by dimension for 50 different targets logarithmically uniformly
+distributed in [1e−8, 1e2]. The crosses (×) give the median number of
+function evaluations of unsuccessful runs divided by dimension.</p>
+<p><strong>Example</strong></p>
+<p>(<a class="reference external" href=".//compall-2.py">Source code</a>, <a class="reference external" href=".//compall-2.png">png</a>, <a class="reference external" href=".//compall-2.hires.png">hires.png</a>, <a class="reference external" href=".//compall-2.pdf">pdf</a>)</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/compall-2.png"><img alt="_images/compall-2.png" src="_images/compall-2.png" style="width: 50%;" /></a>
+</div>
+<dl class="data">
+<dt id="bbob_pproc.compall.pprldmany.refcolor">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">refcolor</code><em class="property"> = 'wheat'</em><a class="headerlink" href="#bbob_pproc.compall.pprldmany.refcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>color of reference (best) algorithm</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.plt_plot">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">plt_plot</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.plt_plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.beautify">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Customize figure presentation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.plotdata">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">plotdata</code><span class="sig-paren">(</span><em>data</em>, <em>maxval=None</em>, <em>maxevals=None</em>, <em>CrE=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.plotdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a normalized ECDF. What means normalized?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>seq</em>) &#8211; data set, a 1-D ndarray of runlengths</li>
+<li><strong>maxval</strong> (<em>float</em>) &#8211; right-most value to be displayed, will use the
+largest non-inf, non-nan value in data if not
+provided</li>
+<li><strong>maxevals</strong> (<em>seq</em>) &#8211; if provided, will plot the median of this
+sequence as a single cross marker</li>
+<li><strong>CrE</strong> (<em>float</em>) &#8211; Crafting effort the data will be multiplied by
+the exponential of this value.</li>
+<li><strong>kwargs</strong> &#8211; optional arguments provided to plot function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.plotLegend">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">plotLegend</code><span class="sig-paren">(</span><em>handles</em>, <em>maxval</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.plotLegend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display right-side legend.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxval</strong> (<em>float</em>) &#8211; rightmost x boundary</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of (ordered) labels and handles.</td>
+</tr>
+</tbody>
+</table>
+<p>The figure is stopped at maxval (upper x-bound), and the graphs in
+the figure are prolonged with straight lines to the right to connect
+with labels of the graphs (uniformly spread out vertically). The
+order of the graphs at the upper x-bound line give the order of the
+labels, in case of ties, the best is the graph for which the x-value
+of the first step (from the right) is smallest.</p>
+<p>The annotation string is stripped from preceeding pathnames.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.plot">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>dsList</em>, <em>targets=None</em>, <em>craftingeffort=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is obsolete?
+Generates a graph of the run length distribution of an algorithm.</p>
+<p>We display the empirical cumulative distribution function ECDF of
+the bootstrapped distribution of the runlength for an algorithm
+(in number of function evaluations) to reach the target functions 
+value <code class="xref py py-data docutils literal"><span class="pre">targets</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data set for one algorithm</li>
+<li><strong>targets</strong> (<em>seq</em>) &#8211; target function values</li>
+<li><strong>crafting effort</strong> (<em>float</em>) &#8211; the data will be multiplied by the
+exponential of this value</li>
+<li><strong>kwargs</strong> (<em>dict</em>) &#8211; additional parameters provided to plot function.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handles</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.all_single_functions">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">all_single_functions</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>sortedAlgs=None</em>, <em>outputdir='.'</em>, <em>verbose=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.all_single_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pprldmany.main">
+<code class="descclassname">bbob_pproc.compall.pprldmany.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>order=None</em>, <em>outputdir='.'</em>, <em>info='default'</em>, <em>dimension=None</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pprldmany.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a figure showing the performance of algorithms.</p>
+<p>From a dictionary of <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> sorted by algorithms,
+generates the cumulative distribution function of the bootstrap
+distribution of ERT for algorithms on multiple functions for
+multiple targets altogether.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dictAlg</strong> (<em>dict</em>) &#8211; dictionary of <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> instances
+one instance is equivalent to one algorithm,</li>
+<li><strong>targets</strong> (<em>list</em>) &#8211; target function values</li>
+<li><strong>order</strong> (<em>list</em>) &#8211; sorted list of keys to dictAlg for plotting order</li>
+<li><strong>outputdir</strong> (<em>str</em>) &#8211; output directory</li>
+<li><strong>info</strong> (<em>str</em>) &#8211; output file name suffix</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.compall.pptables">
+<span id="bbob-pproc-compall-pptables"></span><h2><a class="toc-backref" href="#id7"><a class="reference internal" href="#module-bbob_pproc.compall.pptables" title="bbob_pproc.compall.pptables"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall.pptables</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.compall.pptables" title="Permalink to this headline">¶</a></h2>
+<p>Routines for the generation of TeX tables.</p>
+<dl class="function">
+<dt id="bbob_pproc.compall.pptables.cite">
+<code class="descclassname">bbob_pproc.compall.pptables.</code><code class="descname">cite</code><span class="sig-paren">(</span><em>algName</em>, <em>isNoisefree</em>, <em>isNoisy</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pptables.cite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the citation key associated to the algorithm name.</p>
+<p>Hard coded while no other solution is found.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pptables.getTopIndicesOfColumns">
+<code class="descclassname">bbob_pproc.compall.pptables.</code><code class="descname">getTopIndicesOfColumns</code><span class="sig-paren">(</span><em>table</em>, <em>maxRank=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pptables.getTopIndicesOfColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each column, returns a list of the maxRank-ranked elements.</p>
+<p>This list may have a length larger than maxRank in the case of ties.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.compall.pptables.main">
+<code class="descclassname">bbob_pproc.compall.pptables.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>sortedAlgs</em>, <em>outputdir='.'</em>, <em>verbose=True</em>, <em>function_targets_line=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.compall.pptables.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate one table per func with results of multiple algorithms.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">bbob_pproc.compall</span></code></a><ul>
+<li><a class="reference internal" href="#id1"><code class="docutils literal"><span class="pre">bbob_pproc.compall</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.organizeRTDpictures"><code class="docutils literal"><span class="pre">bbob_pproc.compall.organizeRTDpictures</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.ppfigs"><code class="docutils literal"><span class="pre">bbob_pproc.compall.ppfigs</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.ppperfprof"><code class="docutils literal"><span class="pre">bbob_pproc.compall.ppperfprof</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.pprldmany"><code class="docutils literal"><span class="pre">bbob_pproc.compall.pprldmany</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.compall.pptables"><code class="docutils literal"><span class="pre">bbob_pproc.compall.pptables</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="comp2.html"
+                        title="previous chapter"><code class="docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="acknowledgments.html"
+                        title="next chapter">Acknowledgments</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/compall.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="acknowledgments.html" title="Acknowledgments"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="comp2.html" title="bbob_pproc.comp2"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" ><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

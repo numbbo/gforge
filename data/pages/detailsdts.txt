@@ -1,0 +1,6 @@
+====== Details on the Differences Between the DTS-CMA-ES from 2017 and the Updated 2018 Version ======
+[from the authors]
+
+  * new selection of points to be evaluated by the original fitness using an uncertainty criterion: selecting the union of the $k$ nearest neighbors of every point for which the fitness should be predicted ($k$ is maximal such that the total number of selected points does not exceed $N_{max}$)
+  * bugfix in the surrogate selection algorithm (compared to the 2017 version)
+  * sligthly different parameter settings (maximum radius for selecting points to the training set = 4 times the 0.99-quantile of the length of vectors from $N(\mathbf{0},\mathbf{I})$, maximum number of points in the training set = $20 D$, probability of improvement as the surrogate selection criterion)

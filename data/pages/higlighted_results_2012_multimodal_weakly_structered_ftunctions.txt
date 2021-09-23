@@ -1,0 +1,4 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_mult2_large.png?700 }}
+
+
+Empirical runtime distributions on //multimodal weakly structured// functions (f20: Schwefel, f21: Gallagher’s Gaussian 101-me Peaks, f22: Gallagher’s Gaussian 21-hi Peaks, f23: Katsuura, f24: Lunacek bi-Rastrigin) with target values in {100, ..., 1e-8} in dimension 20.

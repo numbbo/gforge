@@ -1,0 +1,33 @@
+~~NOCACHE~~
+
+This is the BBOB 2015 download page (v15.02). Besides the standard BBOB setting, we encourage submissions with small budgets on the noise-free testbed (f1-f24) or the noisy testbed (f101-f130). For both testbeds, an expensive and the standard setting are available and you can submit papers showcasing the performance of only one algorithm, papers comparing two algorithms, and papers comparing three or more algorithms. LaTeX templates following the ACM GECCO-2015 style are provided. 
+
+[[http://coco.lri.fr/downloads/download15.02/bbobexp15.02.tar.gz|BBOB (6MB)]] is all that is needed to run the benchmarking experiments and compile a workshop paper (gathering post-processed results). 
+
+[[http://coco.lri.fr/downloads/download15.02/bboball15.02.tar.gz|BBOB (36MB)]] contains all files, as listed below. 
+
+  * CODE:
+    *[[http://coco.lri.fr/downloads/download15.02/bbobmatlab.tar.gz|tar]] code in Matlab/Octave to run experiments
+    *[[http://coco.lri.fr/downloads/download15.02/bbobc.tar.gz|tar]] code in C to run experiments
+    *[[http://coco.lri.fr/downloads/download15.02/bbobjava.tar.gz|tar]] code in Java to run experiments
+    *[[http://coco.lri.fr/downloads/download15.02/bbobpproc.tar.gz|tar]] code in Python to run experiments and post-processing and latex templates (3MB)
+    *[[http://coco.lri.fr/downloads/download15.02/bbobr.tar.gz|tar]] code in R to run experiments
+
+  * Latex templates for the workshop:
+      *[[http://coco.lri.fr/downloads/download15.02/bbobworkshoptemplates.tar.gz|tar]] BBOB specific latex templates
+
+  * PDF DOCS:
+    *[[http://coco.lri.fr/downloads/download15.02/bbobdocexperiment.pdf|pdf]] description of experimental procedure  
+    *[[http://coco.lri.fr/downloads/download15.02/bbobdocfunctions.pdf|pdf]] (12MB) noiseless functions documentation with figures
+    *[[http://coco.lri.fr/downloads/download15.02/bbobdocfunctionsdef.pdf|pdf]] noiseless functions documentation, version without figures
+    *[[http://coco.lri.fr/downloads/download15.02/bbobdocnoisyfunctions.pdf|pdf]] (20MB) noisy function documentation with figures      
+    *[[http://coco.lri.fr/downloads/download15.02/bbobdocnoisyfunctionsdef.pdf|pdf]] noisy function documentation, version without figures  
+    *[[http://coco.lri.fr/downloads/download15.02/bbobdocsoftware.pdf|pdf]] software user documentation  
+
+  * ONLINE DOCS:
+    *[[http://coco.lri.fr/COCOdoc|html online]] post-processing package documentation and more
+
+
+For reporting bugs or feature requests and to see the current list of known issues, please visit  [[https://code.google.com/p/numbbo/issues/list|our bug tracking system]].
+
+\\

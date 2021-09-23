@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="https://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="https://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO (.''.)''),</title>
+        <description></description>
+        <link>https://coco.gforge.inria.fr/</link>
+        <image rdf:resource="https://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2019-08-01T00:13:35+02:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj&amp;rev=1562800619&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale&amp;rev=1562708832&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-noisy&amp;rev=1507986493&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob&amp;rev=1562708037&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms&amp;rev=1506548402&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-algorithms&amp;rev=1494839656&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-downloads&amp;rev=1317911554&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1551881515&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1288707266&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads&amp;rev=1317911535&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1493648503&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2010&amp;rev=1288707021&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-algorithms&amp;rev=1493648307&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-discussion-topics&amp;rev=1341406061&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-downloads&amp;rev=1332551514&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-results&amp;rev=1493648546&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2012&amp;rev=1435409948&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-algorithms&amp;rev=1494841983&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads&amp;rev=1365875952&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-program&amp;rev=1373625684&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-results&amp;rev=1494840515&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2013&amp;rev=1376595917&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms&amp;rev=1498603167&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-downloads&amp;rev=1423132770&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-program&amp;rev=1439279814&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-results&amp;rev=1494842191&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-upload&amp;rev=1435914352&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2015&amp;rev=1433860821&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms&amp;rev=1494842067&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads&amp;rev=1418219790&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-results&amp;rev=1437068587&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015&amp;rev=1433190078&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=cec-uploads&amp;rev=1421789591&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=detailsdts&amp;rev=1552576993&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1550489302&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=ecj-special-issue&amp;rev=1285694401&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_all_noise-free_functions&amp;rev=1342177596&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_all_noisy_functions&amp;rev=1342369356&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_functions_with_severe_noise&amp;rev=1342369655&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_ill-conditioned_functions&amp;rev=1342177313&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_moderate_functions&amp;rev=1342177259&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_moderate_noise&amp;rev=1342369295&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_functions_with_severe_noise&amp;rev=1342369813&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_structured_functions_functions&amp;rev=1342177384&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_weakly_structered_ftunctions&amp;rev=1342177435&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_separable_functions&amp;rev=1342177184&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_all_functions&amp;rev=1320316723&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_ill-conditioned_functions&amp;rev=1320326226&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_moderate_functions&amp;rev=1320325991&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_multimodal_structured_functions_functions&amp;rev=1320326388&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_multimodal_weakly_structered_ftunctions&amp;rev=1342177570&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_non-smooth_functions&amp;rev=1329002493&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_separable_functions&amp;rev=1320326006&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=mo-gecco2015&amp;rev=1460037194&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=program&amp;rev=1341655546&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1562708268&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1551881161&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=uploads&amp;rev=1364755484&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="https://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>https://coco.gforge.inria.fr/</link>
+        <url>https://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj&amp;rev=1562800619&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-11T01:16:59+02:00</dc:date>
+        <title>algorithms-bbob-biobj</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj&amp;rev=1562800619&amp;do=diff</link>
+        <description>The following table lists all submitted algorithm data sets on the bbob-biobj test suite, related to the BBOB workshops together with links to their corresponding papers. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale&amp;rev=1562708832&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-09T23:47:12+02:00</dc:date>
+        <title>algorithms-bbob-largescale</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale&amp;rev=1562708832&amp;do=diff</link>
+        <description>The following table lists all submitted algorithm data sets on the bbob-largescale test suite, related to the BBOB workshops together with links to their corresponding papers. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-noisy&amp;rev=1507986493&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-10-14T15:08:13+02:00</dc:date>
+        <title>algorithms-bbob-noisy</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-noisy&amp;rev=1507986493&amp;do=diff</link>
+        <description>The following table lists all algorithm data sets available for the bbob-noisy test suite of COCO that have been collected throughout the years as submissions to BBOB workshops and special sessions in the years 2009 till 2017. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob&amp;rev=1562708037&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-09T23:33:57+02:00</dc:date>
+        <title>algorithms-bbob</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob&amp;rev=1562708037&amp;do=diff</link>
+        <description>The following table lists all algorithm data sets related to the noiseless bbob test suite as collected during the BBOB workshops and special sessions in the years 2009 till 2019. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms&amp;rev=1506548402&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-09-27T23:40:02+02:00</dc:date>
+        <title>algorithms</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms&amp;rev=1506548402&amp;do=diff</link>
+        <description>With the COCO platform, we aim (amongst other goals) at reproducible benchmarking results. To this end, we collect and provide many algorithm data sets for the different COCO test suites here on this web page.
+
+Through the links below, you can find all COCO algorithm data sets, supported by the COCO/BBOB team, together with the corresponding research papers describing the results as well as the source code of the algorithms if available.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-algorithms&amp;rev=1494839656&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-15T11:14:16+02:00</dc:date>
+        <title>bbob-2009-algorithms</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2009-algorithms&amp;rev=1494839656&amp;do=diff</link>
+        <description>The following table lists all algorithms submitted for BBOB-2009 and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. 
+NoAlgorithmYearAuthor(s)Data NoiselessData Noisyrelated PDFs and Remarks1ALPS2009HornbynoiselessDatanoisyDataPDF2AMALGAM2009Bosman et al.noiselessDatanoisyDataPDFnoiseless PDFnoisy3BAYEDA2009GallaghernoiselessDatanoisyDataPDFnoiseless PDFnoisy4BFGS2009RosnoiselessDatanoisyDataPDFnoiseless PDFnoisy5BIPOP-CM…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-downloads&amp;rev=1317911554&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-10-06T16:32:34+02:00</dc:date>
+        <title>bbob-2009-downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2009-downloads&amp;rev=1317911554&amp;do=diff</link>
+        <description>This is the BBOB 2009 download page.  The most recent BBOB version can be found here.
+
+[BBOB 2009 (Version 3.6)] (30MB) is all that you need to prepare a workshop paper and contains the following files
+
+
+	*  CODE:
+		* [tar] code in Matlab/Octave 
+		* [tar] code in C 
+		* [tar] post-processing Python package + workshop paper LaTeX templates  
+		*  soon available: post-processing Python package including comparing analysis</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1551881515&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-03-06T15:11:55+02:00</dc:date>
+        <title>bbob-2009-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1551881515&amp;do=diff</link>
+        <description>This is the BBOB 2009 results page and here are the results from the workshop in July 2009. 
+
+Single Function Tables
+
+	* [ BBOB-2009: Comparison Tables of All Algorithms on All Noiseless Functions] 
+					* [pdf] Comparison Tables per function: noiseless testbed 2-D
+					* [pdf] Comparison Tables per function: noiseless testbed 3-D
+					* [pdf] Comparison Tables per function: noiseless testbed 5-D
+					* [pdf] Comparison Tables per function: noiseless testbed 10-D
+					* [pdf] Comparison Tables p…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1288707266&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-11-02T15:14:26+02:00</dc:date>
+        <title>bbob-2009</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1288707266&amp;do=diff</link>
+        <description>A GECCO Workshop for Real-Parameter Optimization
+
+The Black-Box Optimization Benchmarking workshop has taken place in Montreal, July 2009. A list of the published papers is here and result are presented here. 
+
+ Quantifying and comparing performance of optimization algorithms is
+ one important aspect of research in search and optimization. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it in a s…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads&amp;rev=1317911535&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-10-06T16:32:15+02:00</dc:date>
+        <title>bbob-2010-downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads&amp;rev=1317911535&amp;do=diff</link>
+        <description>This is the BBOB 2010 download page. The most recent BBOB version can be found here.
+
+BBOB 2010 (Version 10.2, 3.6MB) is all that is needed to run the benchmarking experiments, prepare a single-algorithm workshop paper (comparing to data obtained during BBOB-2009) or compare two or more benchmarked algorithms.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1493648503&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-01T16:21:43+02:00</dc:date>
+        <title>bbob-2010-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1493648503&amp;do=diff</link>
+        <description>This is the BBOB 2010 results page and here are the results from the workshop held in July 2010.
+
+Updates
+
+02 Sep 2010: Tables are corrected: ERT was not correct. [ List of the changes in the first set of tables], [ list of the changes in the second set of tables (reference is BBOB-2009)]. 
+
+25 Aug 2010: Tables were updated with reference to GECCO 2010 Proceedings</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2010&amp;rev=1288707021&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-11-02T15:10:21+02:00</dc:date>
+        <title>bbob-2010</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2010&amp;rev=1288707021&amp;do=diff</link>
+        <description>2nd GECCO Workshop for Real-Parameter Optimization
+
+
+ The second Black-Box Optimization Benchmarking workshop has taken place in Portland, Wednesday July 7th. The program of the workshop can be downloaded [here], a list of the published papers is here and result are presented here.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-algorithms&amp;rev=1493648307&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-01T16:18:27+02:00</dc:date>
+        <title>bbob-2012-algorithms</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2012-algorithms&amp;rev=1493648307&amp;do=diff</link>
+        <description>The following table lists all algorithms related to the BBOB-2012 workshop together with links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-discussion-topics&amp;rev=1341406061&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-04T14:47:41+02:00</dc:date>
+        <title>bbob-2012-discussion-topics</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2012-discussion-topics&amp;rev=1341406061&amp;do=diff</link>
+        <description>*  Where is BBOB/COCO going?
+		*  What is BBOB 2013/14 going to be about? 
+
+	*  What extensions are planned? What extensions do you wish? What should their priorities be?
+		*  Short runs / limited budget?
+		*  Constrained optimization?
+		*  Large scale optimization?
+		*  Multi-objective optimization?
+		*  Real-world problems?
+			*  Which ones? 
+			*  They are usually not scalable...
+			*  We often do not know their optimal solution...</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-downloads&amp;rev=1332551514&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-03-24T02:11:54+02:00</dc:date>
+        <title>bbob-2012-downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2012-downloads&amp;rev=1332551514&amp;do=diff</link>
+        <description>This is the BBOB 2012 download page. BBOB 2012 requires version 11.01 or newer. The most recent BBOB version can be found here. 
+
+BBOB 2012 (Version 11.05, 5MB) is all that is needed to run the benchmarking experiments and prepare a workshop paper.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2012-results&amp;rev=1493648546&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-01T16:22:26+02:00</dc:date>
+        <title>bbob-2012-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2012-results&amp;rev=1493648546&amp;do=diff</link>
+        <description>This is the BBOB 2012 results page and here are the results from the workshop held at GECCO in July 2012.
+
+Overview of results on noise-free testbed
+
+The figures below show selected results from BBOB 2012. The empirical runtime distribution is shown for all (bottom right) and five subgroups of the BBOB functions. Click on the respective figures for more details.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2012&amp;rev=1435409948&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-06-27T14:59:08+02:00</dc:date>
+        <title>bbob-2012</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2012&amp;rev=1435409948&amp;do=diff</link>
+        <description>3rd GECCO Workshop for Real-Parameter Optimization
+
+
+The third Black-Box Optimization Benchmarking workshop took place in Philadelphia, as part of GECCO 2012, July 07 - 11.
+A list of the published papers is here and results are presented here. 
+
+ Benchmarking of optimization algorithms is crucial to assess
+performance of optimizers quantitatively, understand weaknesses and
+strengths of each algorithm and is a compulsory path to evaluate new
+algorithm designs. However,
+ this task turns out to be …</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-algorithms&amp;rev=1494841983&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-15T11:53:03+02:00</dc:date>
+        <title>bbob-2013-algorithms</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2013-algorithms&amp;rev=1494841983&amp;do=diff</link>
+        <description>The following table lists all algorithms submitted for BBOB-2013 and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads&amp;rev=1365875952&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-04-13T19:59:12+02:00</dc:date>
+        <title>bbob-2013-downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads&amp;rev=1365875952&amp;do=diff</link>
+        <description>This is the BBOB 2013 download page (v13.09). We encourage submission with small budgets on the noise-free testbed (f1-f24). On the noisy testbed use the not-expensive option for the Python postprocessing. 
+
+BBOB (5MB) is all that is needed to run the benchmarking experiments and compile a workshop paper (gathering post-processed results).</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-program&amp;rev=1373625684&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-07-12T12:41:24+02:00</dc:date>
+        <title>bbob-2013-program</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2013-program&amp;rev=1373625684&amp;do=diff</link>
+        <description>BBOB-2013 - Saturday, July 6th 2013, GECCO 2013, Amsterdam
+
+Preliminary Schedule
+
+(Please note that the schedule below is tentative and might be subject to changes)
+
+Location: Room 04A00
+ 8:30-10:20 (surrogates and linkage)   08:30 - 09:00   Nikolaus Hansen:
+Introduction to Blackbox Optimization Benchmarking   09:00 - 09:35   Ilya Loshchilov:
+BI-population CMA-ES Algorithms with Surrogate Models
+and Line Searches [Slides]  09:35 - 10:10   László Pál:
+Benchmarking a Multi Level Single Linkage Alg…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2013-results&amp;rev=1494840515&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-15T11:28:35+02:00</dc:date>
+        <title>bbob-2013-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2013-results&amp;rev=1494840515&amp;do=diff</link>
+        <description>This is the BBOB 2013 results page and here are the results from the workshop held at GECCO in July 2013.
+
+Results for all algorithms
+
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2013&amp;rev=1376595917&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-08-15T21:45:17+02:00</dc:date>
+        <title>bbob-2013</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2013&amp;rev=1376595917&amp;do=diff</link>
+        <description>4th GECCO Workshop for Real-Parameter Optimization
+
+
+The forth Black-Box Optimization Benchmarking workshop took place in Amsterdam on July 06, 2013, as part of GECCO 2013.
+
+
+
+workshop results (incl. tables comparing the algorithms)
+
+workshop schedule (incl. PDFs of slides)</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms&amp;rev=1498603167&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-06-28T00:39:27+02:00</dc:date>
+        <title>bbob-2015-algorithms</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2015-algorithms&amp;rev=1498603167&amp;do=diff</link>
+        <description>The following table lists all algorithms of the BBOB 2015 workshop and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-downloads&amp;rev=1423132770&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-02-05T11:39:30+02:00</dc:date>
+        <title>bbob-2015-downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2015-downloads&amp;rev=1423132770&amp;do=diff</link>
+        <description>This is the BBOB 2015 download page (v15.02). Besides the standard BBOB setting, we encourage submissions with small budgets on the noise-free testbed (f1-f24) or the noisy testbed (f101-f130). For both testbeds, an expensive and the standard setting are available and you can submit papers showcasing the performance of only one algorithm, papers comparing two algorithms, and papers comparing three or more algorithms. LaTeX templates following the ACM GECCO-2015 style are provided.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-program&amp;rev=1439279814&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-08-11T09:56:54+02:00</dc:date>
+        <title>bbob-2015-program</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2015-program&amp;rev=1439279814&amp;do=diff</link>
+        <description>BBOB-2015 - Sunday, July 12th 2015, GECCO 2015, Madrid
+
+Location: Patio 3
+ 9:00-10:50 Evaluating Algorithm Components (chaired by Youhei Akimoto)  09:00 - 09:45   Dimo Brockhoff:
+Introduction to Blackbox Optimization Benchmarking slides   09:45 - 10:20   Petr Pošík* (Czech Technical University in Prague) and Petr Baudiš (Czech Technical University in Prague):
+Dimension Selection in Axis-Parallel Brent-STEP Method for Black-Box Optimization of Separable Continuous Functions slides  10:20 - 10:50 …</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-results&amp;rev=1494842191&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-15T11:56:31+02:00</dc:date>
+        <title>bbob-2015-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2015-results&amp;rev=1494842191&amp;do=diff</link>
+        <description>This is the BBOB 2015 results page and here are the results from the workshop held at GECCO in July 2015.
+
+Results for all algorithms
+
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2015-upload&amp;rev=1435914352&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-07-03T11:05:52+02:00</dc:date>
+        <title>bbob-2015-upload</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2015-upload&amp;rev=1435914352&amp;do=diff</link>
+        <description>How to submit papers for the BBOB-2015 workshop
+
+
+In order to submit your BBOB-2015 workshop paper, we ask authors to follow the following procedure:
+
+For each single paper submission (in addition to submitting the paper itself):
+
+	*  prepare an archive with the following files:
+		*  paper as pdf (required),
+		*  corresponding raw data (required if applicable),
+		*  algorithm source code or library (optional, but desired), including make files and/or calling script(s) like exampleexperiment.*. I…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2015&amp;rev=1433860821&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-06-09T16:40:21+02:00</dc:date>
+        <title>bbob-2015</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2015&amp;rev=1433860821&amp;do=diff</link>
+        <description>5th GECCO Workshop for Real-Parameter Optimization
+
+
+The sixth Black-Box Optimization Benchmarking (BBOB) workshop (the 5th at GECCO) is going to take place in Madrid, Spain on July 12, 2015, as part of GECCO 2015.
+
+
+Benchmarking of optimization algorithms is crucial to assess performance of optimizers quantitatively, understand weaknesses and
+strengths of each algorithm and is a compulsory path to evaluate new algorithm designs. However, this task turns out to be tedious and difficult to realiz…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms&amp;rev=1494842067&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2017-05-15T11:54:27+02:00</dc:date>
+        <title>cec-bbob-2015-algorithms</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms&amp;rev=1494842067&amp;do=diff</link>
+        <description>The following table lists all algorithms of the CEC-BBOB-2015 special session and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads&amp;rev=1418219790&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-12-10T14:56:30+02:00</dc:date>
+        <title>cec-bbob-2015-downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads&amp;rev=1418219790&amp;do=diff</link>
+        <description>This is the CEC-BBOB 2015 download page (v15.02). Besides the standard BBOB setting, we encourage submissions with small budgets on the noise-free testbed (f1-f24) or the noisy testbed (f101-f130). For both testbeds, an expensive and the standard setting are available and you can submit papers showcasing the performance of only one algorithm, papers comparing two algorithms, and papers comparing three or more algorithms. LaTeX templates following the IEEE CEC-2015 style are provided.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-results&amp;rev=1437068587&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-07-16T19:43:07+02:00</dc:date>
+        <title>cec-bbob-2015-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-results&amp;rev=1437068587&amp;do=diff</link>
+        <description>This is the CEC-BBOB 2015 results page and here are the results from the special session held at CEC in May 2015.
+
+Results for all algorithms
+
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015&amp;rev=1433190078&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-06-01T22:21:18+02:00</dc:date>
+        <title>cec-bbob-2015</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015&amp;rev=1433190078&amp;do=diff</link>
+        <description>Special session on Unbounded Real-Parameter Blackbox Optimization
+
+
+Benchmarking of optimization algorithms is crucial to assess performance
+of optimizers quantitatively, understand weaknesses and strengths of
+each algorithm and is the compulsory path to test new algorithm designs.
+The black-box-optimization benchmarking special session at CEC'2015 is focused on
+benchmarking for (i) unconstrained optimization and (ii) possibly in
+expensive settings where only a limited budget is affordable (e.g.…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=cec-uploads&amp;rev=1421789591&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-01-20T22:33:11+02:00</dc:date>
+        <title>cec-uploads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=cec-uploads&amp;rev=1421789591&amp;do=diff</link>
+        <description>How to submit papers for the CEC-BBOB-2015 special session
+
+
+While all papers have to be submitted via the normal CEC'2015 submission system at &lt;http://sites.ieee.org/cec2015/paper-submission/&gt; (please choose “SS23. CEC Black Box Optimization Benchmarking 2015”), we ask authors to follow an additional procedure regarding the data:</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=detailsdts&amp;rev=1552576993&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-03-14T16:23:13+02:00</dc:date>
+        <title>detailsdts</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=detailsdts&amp;rev=1552576993&amp;do=diff</link>
+        <description>[from the authors]
+
+
+	*  new selection of points to be evaluated by the original fitness using an uncertainty criterion: selecting the union of the $k$ nearest neighbors of every point for which the fitness should be predicted ($k$ is maximal such that the total number of selected points does not exceed $N_{max}$)
+	*  bugfix in the surrogate selection algorithm (compared to the 2017 version)
+	*  sligthly different parameter settings (maximum radius for selecting points to the training set = 4 ti…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1550489302&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-02-18T12:28:22+02:00</dc:date>
+        <title>downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1550489302&amp;do=diff</link>
+        <description>This is the old COCO download page. Please note that we moved in 2015 to github (see our web page there) where you find the newest version of the code. Although this page here will remain to offer access to the last version before the move, we recommend to use the newest version.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=ecj-special-issue&amp;rev=1285694401&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-28T19:20:01+02:00</dc:date>
+        <title>ecj-special-issue</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=ecj-special-issue&amp;rev=1285694401&amp;do=diff</link>
+        <description>Evolutionary Computation Journal special issue
+
+Call for papers
+
+Following the two BBOB GECCO workshops, we invite participants and other researchers to submit their original work on benchmarking optimizers for real-parameter black-box optimization for an ECJ special issue. Submissions can be extensions of works submitted at the workshops or new submissions. They should be original research which is not published nor currently under review by other journals or conferences.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_all_noise-free_functions&amp;rev=1342177596&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T13:06:36+02:00</dc:date>
+        <title>higlighted_results_2012_all_noise-free_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_all_noise-free_functions&amp;rev=1342177596&amp;do=diff</link>
+        <description>Empirical runtime distributions on all noise-free functions (f1-f24) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_all_noisy_functions&amp;rev=1342369356&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-15T18:22:36+02:00</dc:date>
+        <title>higlighted_results_2012_all_noisy_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_all_noisy_functions&amp;rev=1342369356&amp;do=diff</link>
+        <description>Empirical runtime distributions on noisy functions with moderate noise  (f101-f130) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_functions_with_severe_noise&amp;rev=1342369655&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-15T18:27:35+02:00</dc:date>
+        <title>higlighted_results_2012_functions_with_severe_noise</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_functions_with_severe_noise&amp;rev=1342369655&amp;do=diff</link>
+        <description>Empirical runtime distributions on noisy functions with severe noise (f107: Sphere with severe Gaussian noise, f108: Sphere with severe unimodal noise, f109: Sphere with severe Cauchy noise, f110: Rosenbrock with severe Gaussian noise, f111: Rosenbrock with severe uniform noise, f112: Rosenbrock with severe Cauchy noise, f113: Step-ellipsoid with severe Gaussian noise, f114: Step-ellipsoid with severe unimodal noise, f115: Step-ellipsoid with severe Cauchy noise, f116: Ellipsoid with severe Gaus…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_ill-conditioned_functions&amp;rev=1342177313&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T13:01:53+02:00</dc:date>
+        <title>higlighted_results_2012_ill-conditioned_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_ill-conditioned_functions&amp;rev=1342177313&amp;do=diff</link>
+        <description>Empirical runtime distributions on ill-conditioned functions (f10: High conditioning Ellipsoid, f11: Discus, f12: Bent Cigar, f13: Sharp Ridge, f14: Different Powers) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_moderate_functions&amp;rev=1342177259&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T13:00:59+02:00</dc:date>
+        <title>higlighted_results_2012_moderate_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_moderate_functions&amp;rev=1342177259&amp;do=diff</link>
+        <description>Empirical runtime distributions on moderate functions (f6: Attractive Sector, f7: Step Ellipsoid, f8: Rosenbrock, f9: Rotated Rosenbrock) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_moderate_noise&amp;rev=1342369295&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-15T18:21:35+02:00</dc:date>
+        <title>higlighted_results_2012_moderate_noise</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_moderate_noise&amp;rev=1342369295&amp;do=diff</link>
+        <description>Empirical runtime distributions on noisy functions with moderate noise  (f101: Sphere with moderate Gaussian noise, f102: Sphere with moderate unimodal noise, f103: Sphere with moderate Cauchy noise, f104: Rosenbrock with moderate Gaussian noise, f105: Rosenbrock with moderate uniform noise, f106: Rosenbrock with moderate Cauchy noise) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_functions_with_severe_noise&amp;rev=1342369813&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-15T18:30:13+02:00</dc:date>
+        <title>higlighted_results_2012_multimodal_functions_with_severe_noise</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_functions_with_severe_noise&amp;rev=1342369813&amp;do=diff</link>
+        <description>Empirical runtime distributions on noisy multimodal functions with severe noise (f122: Schaffer F7 with moderate Gaussian noise, f123: Shaffer F7 with moderate unimodal noise, f124: Schaffer F7 with moderate Cauchy noise, f125: Griewank-Rosenbrock with moderate Gaussian noise, f126: Griewank-Rosenbrock with moderate uniform noise, f127: Griewank-Rosenbrock with moderate Cauchy noise, f128: Gallagher with severe Gaussian noise, f129: Gallagher with severe uniform noise, f130: Gallagher with sever…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_structured_functions_functions&amp;rev=1342177384&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T13:03:04+02:00</dc:date>
+        <title>higlighted_results_2012_multimodal_structured_functions_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_structured_functions_functions&amp;rev=1342177384&amp;do=diff</link>
+        <description>Empirical runtime distributions on multimodal structured functions (f15: Rastrigin, f16: Weierstrass, f17: Schaffers F7, f18: Moderately ill-conditioned Schaffers F7, f19: Composite Griewank-Rosenbrock) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_weakly_structered_ftunctions&amp;rev=1342177435&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T13:03:55+02:00</dc:date>
+        <title>higlighted_results_2012_multimodal_weakly_structered_ftunctions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_multimodal_weakly_structered_ftunctions&amp;rev=1342177435&amp;do=diff</link>
+        <description>Empirical runtime distributions on multimodal weakly structured functions (f20: Schwefel, f21: Gallagher’s Gaussian 101-me Peaks, f22: Gallagher’s Gaussian 21-hi Peaks, f23: Katsuura, f24: Lunacek bi-Rastrigin) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_separable_functions&amp;rev=1342177184&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T12:59:44+02:00</dc:date>
+        <title>higlighted_results_2012_separable_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_2012_separable_functions&amp;rev=1342177184&amp;do=diff</link>
+        <description>Empirical runtime distributions on separabale functions (f1: Sphere, f2: Ellipsoid, f3: Rastrigin, f4: Büche-Rastrigin, f5: Linear Slope) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_all_functions&amp;rev=1320316723&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-03T11:38:43+02:00</dc:date>
+        <title>higlighted_results_all_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_all_functions&amp;rev=1320316723&amp;do=diff</link>
+        <description>Empirical runtime distributions (runtime in number of function evaluations divided by dimension) on all functions with target values in {100, ... , 1e-8} in dimension 10. The cross indicates the maximum number of function evaluations. A decline in steepness right after the cross (e.g. for IPOP-SEP-CMA-ES) indicates that the maximum number of function evaluations should have been chosen larger. A steep increase right after the cross (e.g. for simple GA) indicates that a restart should have been i…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_ill-conditioned_functions&amp;rev=1320326226&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-03T14:17:06+02:00</dc:date>
+        <title>higlighted_results_ill-conditioned_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_ill-conditioned_functions&amp;rev=1320326226&amp;do=diff</link>
+        <description>Empirical runtime distributions on ill-conditioned functions (f10: High conditioning Ellipsoid, f11: Discus, f12: Bent Cigar, f13: Sharp Ridge, f14: Different Powers) with target values in {100, ..., 1e-8} in dimension 20.
+
+The following algorithms perform particularly well up to their individual maximum number of function evaluations: GLOBAL (Sampling, clustering and local search using BFGS or Nelder-Mead), iAMALGAM (Adapted Maximum-Likelihood Gaussian Model Iterated Density Estimation Algorith…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_moderate_functions&amp;rev=1320325991&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-03T14:13:11+02:00</dc:date>
+        <title>higlighted_results_moderate_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_moderate_functions&amp;rev=1320325991&amp;do=diff</link>
+        <description>Empirical runtime distributions on moderate functions (f6: Attractive Sector, f7: Step Ellipsoid, f8: Rosenbrock, f9: Rotated Rosenbrock) with target values in {100, ..., 1e-8} in dimension 20.
+
+The following algorithms perform particularly well up to their individual maximum number of function evaluations:  NEWUOA (NEW Unconstraint Optimization Algorithm builds a second order model using 2n+1 points and with minimal Frobenius norm) and IPOP-SEP-CMA-ES (CMA-ES restarted with Increasing POPulatio…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_multimodal_structured_functions_functions&amp;rev=1320326388&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-03T14:19:48+02:00</dc:date>
+        <title>higlighted_results_multimodal_structured_functions_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_multimodal_structured_functions_functions&amp;rev=1320326388&amp;do=diff</link>
+        <description>Empirical runtime distributions on multimodal structured functions (f15: Rastrigin, f16: Weierstrass, f17: Schaffers F7, f18: Moderately ill-conditioned Schaffers F7, f19: Composite Griewank-Rosenbrock) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_multimodal_weakly_structered_ftunctions&amp;rev=1342177570&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-13T13:06:10+02:00</dc:date>
+        <title>higlighted_results_multimodal_weakly_structered_ftunctions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_multimodal_weakly_structered_ftunctions&amp;rev=1342177570&amp;do=diff</link>
+        <description>Empirical runtime distributions on multimodal weakly structured functions (f20: Schwefel, f21: Gallagher’s Gaussian 101-me Peaks, f22: Gallagher’s Gaussian 21-hi Peaks, f23: Katsuura, f24: Lunacek bi-Rastrigin) with target values in {100, ..., 1e-8} in dimension 20.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_non-smooth_functions&amp;rev=1329002493&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-02-12T00:21:33+02:00</dc:date>
+        <title>higlighted_results_non-smooth_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_non-smooth_functions&amp;rev=1329002493&amp;do=diff</link>
+        <description>Empirical runtime distributions on non-smooth functions (f7: Step Ellipsoid, f16: Weierstrass, f23: Katsuura) with target values in {100, ..., 1e-8} in dimension 20.
+
+The following algorithms perform particularly well up to their individual maximum number of function evaluations: AMALGAM and iAMALGAM (Adapted Maximum-Likelihood Gaussian Model Iterated Density Estimation Algorithm with no-improvement stretch, anticipated mean shift and interlaced restarts with one large or several small populatio…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=higlighted_results_separable_functions&amp;rev=1320326006&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-03T14:13:26+02:00</dc:date>
+        <title>higlighted_results_separable_functions</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=higlighted_results_separable_functions&amp;rev=1320326006&amp;do=diff</link>
+        <description>Empirical runtime distributions on separabale functions (f1: Sphere, f2: Ellipsoid, f3: Rastrigin, f4: Büche-Rastrigin, f5: Linear Slope) with target values in {100, ..., 1e-8} in dimension 20.
+
+The following algorithms perform particularly well up to their individual maximum number of function evaluations: NEWUOA (NEW Unconstraint Optimization Algorithm builds a second order model using 2n+1 points and with minimal Frobenius norm), LSfminbnd (Axis-parallel line search with MATLAB fminbnd univar…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=mo-gecco2015&amp;rev=1460037194&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-04-07T15:53:14+02:00</dc:date>
+        <title>mo-gecco2015</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=mo-gecco2015&amp;rev=1460037194&amp;do=diff</link>
+        <description>This is the supplementary material web page related to the GECCO-2015 paper by Brockhoff, Tran, and Hansen [1]. Below, you will find the source code to reproduce the results of the paper as well as many plots which had to be omitted from the paper due to space limitations.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=program&amp;rev=1341655546&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-07-07T12:05:46+02:00</dc:date>
+        <title>program</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=program&amp;rev=1341655546&amp;do=diff</link>
+        <description>Preliminary program for the BBOB 2012 workshop, 7th July 2012.
+
+ 1st session: 8:30 - 10:208:30-9:00 BBOB introduction (AA)9:00-9:30 P. Pošík “Towards an Adaptive Differential Evolution”9:30-10:05 T. Schaul “Benchmarking Natural Evolution Strategies”10:05-10:20 Special Mini-Tutorial (PP) 2nd session: 10:40 - 12:3010:40-10:55 Turbo-Intro to BBOB and introduction to noisy functions (NH)10:55-11:35 I. Loshchilov “New surrogate-assisted search control and restart strategies for CMA-ES”11:40-12:00 M. …</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1562708268&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-09T23:37:48+02:00</dc:date>
+        <title>sidebar</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1562708268&amp;do=diff</link>
+        <description>*  Home
+	*  Documentation
+	*  new code homepage
+	*  download new code directly
+	*  download latest old code
+
+
+ algorithm data sets:
+
+	*  bbob
+		*  bbob-noisy
+		*  bbob-biobj
+		*  bbob-largescale
+
+
+ postprocessed data for each year
+
+ BBOB workshops:
+
+	*  BBOB 2019
+		*  BBOB 2018
+		*  BBOB 2017
+		*  BBOB 2016
+		*  BBOB 2015 @ GECCO
+			*  Algorithms
+			*  Results
+			*  Schedule
+			*  Downloads</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1551881161&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-03-06T15:06:01+02:00</dc:date>
+        <title>start</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1551881161&amp;do=diff</link>
+        <description>[ Results from BBOB-2009: all functions]
+COCO (COmparing Continuous Optimisers) is a platform for systematic and sound comparisons of real-parameter global optimisers. COCO provides benchmark function testbeds, experimentation templates which are easy to parallelize, and tools for processing and visualizing data generated by one or several optimizers. The COCO platform has been used for the Black-Box-Optimization-Benchmarking (BBOB) workshops that took place during the GECCO conference in 2009, …</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=uploads&amp;rev=1364755484&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-03-31T20:44:44+02:00</dc:date>
+        <title>uploads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=uploads&amp;rev=1364755484&amp;do=diff</link>
+        <description>How to submit papers
+
+For each single paper submission:
+
+	*  prepare an archive with the following files:
+		*  paper as pdf (required),
+		*  corresponding raw data (required if applicable),
+		*  algorithm source code or library (optional, but desired), including make files and/or calling script(s) like exampleexperiment.*. If a commercial optimizer was used, only the calling script(s) should be submitted.</description>
+    </item>
+</rdf:RDF>

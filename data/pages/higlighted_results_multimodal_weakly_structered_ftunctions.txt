@@ -1,0 +1,6 @@
+{{ http://coco.lri.fr/COCOdoc/_images/examplefigure_group5.png?700 }}
+
+
+Empirical runtime distributions on //multimodal weakly structured// functions (f20: Schwefel, f21: Gallagher’s Gaussian 101-me Peaks, f22: Gallagher’s Gaussian 21-hi Peaks, f23: Katsuura, f24: Lunacek bi-Rastrigin) with target values in {100, ..., 1e-8} in dimension 20.
+
+The following algorithms perform particularly well up to their individual maximum number of function evaluations: //GLOBAL// (Sampling, clustering and local search using BFGS or Nelder-Mead) and //BIPOP-CMA-ES// (CMA-ES restarted with budgets for small and large population size).

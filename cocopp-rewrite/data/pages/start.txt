@@ -1,0 +1,5 @@
+====== Rewrite of COCO's cocopp ======
+
+This wiki intends to group all discussions around a planned rewrite of the current postprocessing of the COCO platform towards a lightweight version with less code duplication and which is easier maintainable and extendable. Please feel free to contribute: to this end (and to keep this wiki spam-free), please register to the COCO mailing list via  http://numbbo.github.io/register
+
+[[:discussions]]

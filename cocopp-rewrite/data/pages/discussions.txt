@@ -1,0 +1,7 @@
+===== Random list of thoughts =====
+
+  - use [[https://plot.ly|plotly]] as replacement of matplotlib?
+  - full compatible with any Python >=2.6 (currently 3.6 is in alpha)
+  - do not use [[http://pandas.pydata.org|pandas]], or should we?
+  - follow rather strict coding guidelines, e.g. from http://google.github.io/styleguide/pyguide.html
+  - keep the organization one file/submodule per figure type, with a stable meaning of the `main`, `plot` and... functions.

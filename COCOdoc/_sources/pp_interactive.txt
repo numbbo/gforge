@@ -1,0 +1,812 @@
+Post-Processing from the Python Interpreter
+================================================
+
+.. contents::
+   :local:
+
+The package :py:mod:`bbob_pproc` can also be used interactively. 
+A Matlab-like interaction is available when using the Python interpreter in Pylab mode
+(see below).
+
+.. _pylabInteractive:
+
+Pylab
+_____
+
+Installing :py:mod:`matplotlib` also installs :py:mod:`pylab`, 
+providing a Matlab-style interface to the functionalities in :py:mod:`numpy` and
+:py:mod:`matplotlib`.
+To start pylab mode from the Python interpreter, type:
+
+.. sourcecode:: python
+
+   >>> from pylab import *
+   >>> 
+
+which
+
+* imports the :py:mod:`matplotlib.pyplot` and :py:mod:`numpy` packages, and
+* switches the interactive mode of matplotlib on.
+
+.. note::
+    We recommend using `iPython <http://ipython.scipy.org/>`_, an
+    environment enhancing the Python interpreter for interactive use:
+    
+    .. sourcecode:: guess
+    
+       $ ipython 
+    
+       Python 2.7.9... 
+       Type "copyright", "credits" or "license" for more information.
+    
+       IPython 2.3.1 -- An enhanced Interactive Python.
+       ?         -> Introduction and overview of IPython's features.
+       %quickref -> Quick reference.
+       help      -> Python's own help system.
+       object?   -> Details about 'object'. ?object also works, ?? prints more.
+    
+       In [1]: 
+         
+    Next, we activate pylab mode, a MATLAB-like environment. 
+
+    .. sourcecode:: guess
+    
+       In [1]: %pylab 
+       Using matplotlib backend: MacOSX
+       Populating the interactive namespace from numpy and matplotlib    
+
+    Some differences with the Python interpreter are:
+    
+    * the prompt is different: ``In [1]:`` versus ``>>>``
+    * system commands are directly available, like ``ls``, ``cd``, ...
+    * the excellent tab completion is directly available  
+    * ``run myfile.py`` runs a python script, just as ``python myfile.py`` 
+      from the OS-shell command line, ``help plot`` displays help, and 
+      many other so-called magic commands are available
+    * pasting code into the shell usually works (``%doctest_mode`` allows to 
+      paste code preceded with a ``>>>`` prompt). 
+    * typing ``debug`` after an error occurs jumps into the execution code
+      into the state before the error was raised, where all variables can be 
+      inspected and commands executed like in an interactive python shell. 
+    
+Pre-requisites
+______________
+
+For this session, we assume that:
+
+* the folder :file:`~/code` contains the folder
+  :file:`bbob.v10.74/python/bbob_pproc` extracted from one of the archives. The latter folder contains the Python module :py:mod:`bbob_pproc`. 
+* the following files are downloaded
+  and unarchived in the current working directory:
+
+    * http://coco.lri.fr/BBOB2009/rawdata/BIPOP-CMA-ES_hansen_noiseless.tar.gz
+    * http://coco.lri.fr/BBOB2009/pythondata/BIPOP-CMA-ES.tar.gz
+    * http://coco.lri.fr/BBOB2009/pythondata/NEWUOA.tar.gz
+
+The following describes a step-by-step interactive session with
+:py:mod:`bbob_pproc`.
+
+Start of the Session
+____________________
+
+First, we start the Python interpreter here by typing ``python`` from the command line:
+
+.. sourcecode:: guess
+
+   $ python
+   Python 2....
+   ...
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>> 
+
+On Unix systems, enabling the tab-completion in the python shell makes life much more convenient: 
+
+.. sourcecode:: python 
+
+    >>> import rlcompleter
+    >>> import readline  # only available on Unix systems
+    >>> readline.parse_and_bind("tab: complete")
+    >>>
+    
+.. note::
+    One might like to write these commands into a ``startup.py`` file and type
+    
+    .. sourcecode:: python
+    
+        >>> exec open('startup.py')
+        >>>
+        
+    or even better put them into the file pointed to by 
+    the ``PYTHONSTARTUP`` system enviroment variable, e.g. ``~/.pythonrc`` . 
+
+An alternative is to use ``ipython`` or ``IDLE``. 
+
+In order to have a matlab-like enviroment we can "start pylab mode":
+
+.. sourcecode:: python
+
+   >>> from pylab import *
+   >>> 
+
+An alternative is to use ``ipython`` as noted above.  
+
+The :py:mod:`bbob_pproc` package is then loaded into memory:
+
+.. sourcecode:: python
+    
+    >>> import sys
+    >>> sys.path.append('~/code/bbob.v10.74/python')  # where bbob_proc can be found
+    >>> import bbob_pproc as bb
+    >>> help(bb)
+    Help on package bbob_pproc:
+    [...]
+    
+will list the :py:mod:`bbob_pproc` documentation_. 
+
+.. _documentation: bbob_pproc.html
+
+Commands in :py:mod:`bbob_pproc` can now be accessed by prepending
+'``bb.``' to command names.
+
+Typing ``help(bb.cococommands)`` provides some help on the use of
+:py:mod:`bbob_pproc` in the Python interpreter.
+
+Data is loaded into memory with the :py:func:`load` function:
+
+.. sourcecode:: python
+
+    >>> ds = bb.load('BIPOP-CMA-ES_hansen_noiseless/bbobexp_f2.info')
+    Processing BIPOP-CMA-ES_hansen_noiseless/bbobexp_f2.info.
+        [...]
+    Processing ['BIPOP-CMA-ES_hansen_noiseless/data_f2/bbobexp_f2_DIM40.tdat']: 15/15 trials found.
+    >>> ds
+    [DataSet(cmaes V3.30.beta on f2 2-D), ..., DataSet(cmaes V3.30.beta on f2 40-D)]
+    >>> type(ds)
+    <class 'bbob_pproc.pproc.DataSetList'>
+    >>> len(ds)
+    324
+    >>> 
+
+The variable :py:data:`ds` stores an instance of class :py:class:`pproc.DataSetList <bbob_pproc.pproc.DataSetList>`
+represented between square brackets. This instance in :py:data:`ds` is
+a list of :py:class:`pproc.DataSet <bbob_pproc.pproc.DataSet>` instances.
+
+.. sourcecode:: python
+
+    >>> help(ds)
+    Help on DataSetList in module bbob_pproc.pproc object:
+    
+    class DataSetList(__builtin__.list)
+     |  List of instances of DataSet with some useful slicing functions.
+     |  
+     |  Will merge data of DataSet instances that are identical (according
+     |  to function __eq__ of DataSet).
+     |  
+     |  Method resolution order:
+     |      DataSetList
+     |      __builtin__.list
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, args=[], verbose=True)
+     |      Instantiate self from a list of inputs.
+     |      
+     |      Keyword arguments:
+     |      args -- list of strings being either info file names, folder containing
+     |              info files or pickled data files.
+     |      verbose -- controls verbosity.
+     |      
+     |      Exception:
+     |      Warning -- Unexpected user input.
+     |      pickle.UnpicklingError
+     |  
+     |  append(self, o)
+     |      Redefines the append method to check for unicity.
+     |  
+     |  dictByAlg(self)
+     |      Returns a dictionary of DataSetList instances by algorithm.
+     |      
+     |      The resulting dict uses algId and comment as keys and the
+     |      corresponding slices of DataSetList as values.
+     |  
+     |  dictByDim(self)
+     |      Returns a dictionary of DataSetList instances by dimensions.
+     |      
+     |      Returns a dictionary with dimension as keys and the
+     |      corresponding slices of DataSetList as values.
+     |  
+     |  dictByFunc(self)
+     |      Returns a dictionary of DataSetList instances by functions.
+     |      
+     |      Returns a dictionary with the function id as keys and the
+     |      corresponding slices of DataSetList as values.
+     |  
+     |  dictByFuncGroup(self)
+     |      Returns a dictionary of DataSetList instances by function groups.
+     |      
+     |      Returns a dictionary with function group names as keys and the
+     |      corresponding slices of DataSetList as values.
+     |  
+     |  dictByNoise(self)
+     |      Returns a dictionary splitting noisy and non-noisy entries.
+     |  
+     |  extend(self, o)
+     |      Extend a DataSetList with elements.
+     |      
+     |      This method is implemented to prevent problems since append was
+     |      superseded. This method could be the origin of efficiency issue.
+     |  
+     |  info(self, opt='all')
+     |      Display some information onscreen.
+     |      
+     |      Keyword arguments:
+     |      opt -- changes size of output, can be 'all' (default), 'short'
+     |  
+     |  pickle(self, outputdir=None, verbose=True)
+     |      Loop over self to pickle each elements.
+     |  
+     |  processIndexFile(self, indexFile, verbose=True)
+     |      Reads in an index file information on the different runs.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from __builtin__.list:
+     |  
+        [...]
+    
+The central data structure in COCO is the ``DataSet`` that holds all trials on a single function on a given dimension.  
+ 
+ .. sourcecode:: python
+
+    >>> help(ds[0])
+    Help on instance of DataSet in module bbob_pproc.pproc:
+    
+    class DataSet
+     |  Unit element for the BBOB post-processing.
+     |  
+     |  One unit element corresponds to data with given algId and comment, a
+     |  funcId, and dimension.
+     |  
+     |  Class attributes:
+     |      funcId -- function Id (integer)
+     |      dim -- dimension (integer)
+     |      indexFiles -- associated index files (list of strings)
+     |      dataFiles -- associated data files (list of strings)
+     |      comment -- comment for the setting (string)
+     |      targetFuncValue -- target function value (float)
+     |      algId -- algorithm name (string)
+     |      evals -- data aligned by function values (array)
+     |      funvals -- data aligned by function evaluations (array)
+     |      maxevals -- maximum number of function evaluations (array)
+     |      finalfunvals -- final function values (array)
+     |      readmaxevals -- maximum number of function evaluations read from
+     |                      index file (array)
+     |      readfinalFminusFtarget -- final function values - ftarget read
+     |                                from index file (array)
+     |      pickleFile -- associated pickle file name (string)
+     |      target -- target function values attained (array)
+     |      ert -- ert for reaching the target values in target (array)
+     |      instancenumbers -- list of numbers corresponding to the instances of the
+     |                 test function considered (list of int)
+     |      isFinalized -- list of bool for if runs were properly finalized
+     |  
+     |  evals and funvals are arrays of data collected from N data sets.
+     |  Both have the same format: zero-th column is the value on which the
+     |  data of a row is aligned, the N subsequent columns are either the
+     |  numbers of function evaluations for evals or function values for
+     |  funvals.
+     |  
+     |  Methods defined here:
+     |  
+     |  __eq__(self, other)
+     |      Compare indexEntry instances.
+     |  
+     |  __init__(self, header, comment, data, indexfile, verbose=True)
+     |      Instantiate a DataSet.
+     |      
+     |      The first three input argument corresponds to three consecutive
+     |      lines of an index file (info extension).
+     |      
+     |      Keyword argument:
+     |      header -- string presenting the information of the experiment
+     |      comment -- more information on the experiment
+     |      data -- information on the runs of the experiment
+     |      indexfile -- string for the file name from where the information come
+     |      verbose -- controls verbosity
+     |  
+     |  __ne__(self, other)
+     |  
+     |  __repr__(self)
+     |  
+     |  computeERTfromEvals(self)
+     |      Sets the attributes ert and target from the attribute evals.
+     |  
+     |  createDictInstance(self)
+     |      Returns a dictionary of the instances.
+     |      
+     |      The key is the instance id, the value is a list of index.
+     |  
+     |  detERT(self, targets)
+     |      Determine the expected running time to reach target values.
+     |      
+     |      Keyword arguments:
+     |      targets -- list of target function values of interest
+     |      
+     |      Output:
+     |      list of expected running times corresponding to the targets
+     |  
+     |  detEvals(self, targets)
+     |      Determine the number of evaluations to reach target values.
+     |      
+     |      Keyword arguments:
+     |      targets -- list of target function values of interest
+     |      
+     |      Output:
+     |      list of arrays each corresponding to one value in targets
+     |  
+     |  generateRLData(self, targets)
+     |      Determine the running lengths for reaching the target values.
+     |      
+     |      Keyword arguments:
+     |      targets -- list of target function values of interest
+     |      
+     |      Output:
+     |      dict of arrays, one array has for first element a target
+     |      function value smaller or equal to the element of inputtargets
+     |      considered and has for other consecutive elements the
+     |      corresponding number of function evaluations.
+     |  
+     |  info(self)
+     |      Return some text info to display onscreen.
+     |  
+     |  mMaxEvals(self)
+     |      Returns the maximum number of function evaluations.
+     |  
+     |  nbRuns(self)
+     |      Returns the number of runs.
+     |  
+     |  pickle(self, outputdir=None, verbose=True)
+     |      Save DataSet instance to a pickle file.
+     |      
+     |      Saves the instance of DataSet to a pickle file. If not specified
+     |      by argument outputdir, the location of the pickle is given by
+     |      the location of the first index file associated to the DataSet.
+     |      This method will overwrite existing files.
+     |  
+     |  splitByTrials(self, whichdata=None)
+     |      Splits the post-processed data arrays by trials.
+     |      
+     |      Returns a two-element list of dictionaries of arrays, the key of
+     |      the dictionary being the instance id, the value being a smaller
+     |      post-processed data array corresponding to the instance id.
+    >>> 
+
+The :py:func:`load <bbob_pproc.cococommands.load>` function also works on pickle files or folders. For instance:
+
+.. todo::
+   try with doctest
+
+.. sourcecode:: python
+
+   >>> ds = bb.load('BIPOP-CMA-ES/ppdata_f002_20.pickle')
+   Unpickled BIPOP-CMA-ES/ppdata_f002_20.pickle.
+   >>> ds = bb.load('BIPOP-CMA-ES_hansen_noiseless')
+   Searching in BIPOP-CMA-ES_hansen_noiseless ...
+       [...]
+   Processing ['BIPOP-CMA-ES_hansen_noiseless/data_f9/bbobexp_f9_DIM40.tdat']: 15/15 trials found.
+   >>> 
+
+To use wildcards for loading only part of the files in a folder, the
+:py:mod:`glob` package included in Python standard library can be used:
+
+.. sourcecode:: python
+
+   >>> import glob
+   >>> ds = bb.load(glob.glob('BIPOP-CMA-ES/ppdata_f002_*.pickle'))
+   >>> 
+
+Some information on loaded data can be obtained with the :py:func:`info <bbob_pproc.pproc.DataSetList.info>`
+method:
+
+.. sourcecode:: python
+
+    >>> ds = bb.load('BIPOP-CMA-ES/ppdata_f002_20.pickle')
+    >>> ds.info() # display information on DataSetList ds
+    1 data set(s)
+    Algorithm(s): cmaes V3.30.beta
+    Dimension(s): 20
+    Function(s): 2
+    Max evals: 20690
+    Df      |     min       10      med       90      max
+    --------|--------------------------------------------
+    1.0e+01 |   10875    11049    13483    16152    16826
+    1.0e+00 |   13329    14061    15155    17421    17675
+    1.0e-01 |   15392    15581    16481    18382    18463
+    1.0e-03 |   16706    17282    18162    19081    19083
+    1.0e-05 |   17854    17855    18939    19629    19831
+    1.0e-08 |   18726    18749    19757    20599    20678
+    >>> 
+
+The actual data in a :py:class:`pproc.DataSet <bbob_pproc.pproc.DataSet>` instance can be displayed on-screen:
+
+.. sourcecode:: python
+
+    >>> d = ds[0] # store the first element of ds in d for convenience
+    >>> d.funcId  # in IPython d.<TAB> displays all available attributes and methods
+    2
+    >>> d.instancenumbers # instance numbers of the available trials
+    [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]
+    >> type(d.funvals)  # numpy array type is fundamental
+    <type 'numpy.ndarray'>
+    >>> d.funvals.shape  # we find 95 rows in function value data
+    (95, 16)
+    >>> d.funvals[[0,1,-1], :]  # let's see the first two and last row
+    array([[  1.00000000e+00,   1.91046048e+07,   3.40744851e+07,
+              1.16378912e+07,   1.88965407e+07,   2.41571279e+06,
+              3.22847770e+07,   2.85601634e+06,   3.51908185e+07,
+              2.82405771e+07,   1.79074770e+07,   2.71439178e+07,
+              1.22112898e+07,   1.65690802e+07,   3.57969327e+07,
+              2.94479644e+07],
+           [  2.00000000e+00,   1.83130834e+07,   3.40744851e+07,
+              1.16378912e+07,   1.88965407e+07,   2.41571279e+06,
+              3.22847770e+07,   2.20298276e+06,   3.51908185e+07,
+              2.82405771e+07,   1.79074770e+07,   2.71439178e+07,
+              9.46258565e+06,   1.65690802e+07,   3.57969327e+07,
+              2.94479644e+07],
+           [  2.06900000e+04,   4.79855089e-09,   2.78740231e-09,
+              5.28442001e-09,   5.17276533e-09,   4.54151916e-09,
+              5.04810771e-09,   5.50441826e-09,   3.25114513e-09,
+              7.20403648e-09,   6.95291646e-09,   5.91512617e-09,
+              3.79441190e-09,   8.42007353e-09,   6.33018260e-09,
+              8.59924398e-09]])
+    >>> budgets = d.funvals[:, 0] # first column contains budgets
+    >>> funvals = d.funvals[:, 1:] # stores columns 1,...,15 in funvals
+    >>> 
+
+The first column (with index 0) of :py:attr:`DataSet <bbob_pproc.pproc.DataSet>` attribute :py:attr:`funvals` contains number of function evaluations. The remaining columns contain the best function value precision (difference to the optimal function value) in the respective trial or run. 
+
+Graphs of the evolution of the best precision over time for each single run
+can be displayed as follows [#]_:
+
+.. sourcecode:: python
+
+    >>> for f in funvals.T:  # T==transpose: iterate over columns of funvals
+    ...     loglog(budgets, f)
+    ... 
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+        [...]
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> grid()
+    >>> xlabel('Budgets')
+    <matplotlib.text.Text object at 0x1[...]>
+    >>> ylabel('Best Function Values')
+    <matplotlib.text.Text object at 0x1[...]>
+
+.. plot:: pyplots/firstsession_00a.py
+   :width: 50%
+
+.. TODO: use semilogy instead of loglog, plot median of NEWUOA data, not CMA data,
+   don't use dashed lines
+
+We might add the median data points.
+
+.. sourcecode:: python
+
+    >>> loglog(budgets, median(funvals, axis=1), linewidth=3, color='r',
+    ...        label='median CMA-ES')
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> legend() # display legend
+    <matplotlib.legend.Legend object at 0x1[...]>
+
+.. plot:: pyplots/firstsession_00b.py
+   :width: 50%
+
+The options :py:data:`linewidth` and :py:data:`color` makes the line bold and red.
+The :py:func:`matplotlib.pyplot.legend` function displays a legend for the figure which uses the
+:py:data:`label` option.
+
+We display another data set for comparison:
+
+.. sourcecode:: python
+
+    >>> ds1 = bb.load('NEWUOA/ppdata_f002_20.pickle')
+    >>> d1 = ds1[0]
+    >>> budgets1 = d1.funvals[:, 0]
+    >>> funvals1 = d1.funvals[:, 1:]
+    >>> for i in range(0, funvals1.shape[1]):
+    ...     loglog(budgets1, funvals1[:, i], linestyle='--')
+    ... 
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+        [...]
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> loglog(budgets1, median(funvals1, axis=1), linewidth=3,
+    ...        color='g', label='median NEWUOA')
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> legend() # updates legend
+    <matplotlib.legend.Legend object at 0x1[...]>
+
+.. plot:: pyplots/firstsession_00.py
+   :width: 50%
+
+A figure can be saved using the :py:func:`matplotlib.pyplot.savefig` function:
+
+.. sourcecode:: python
+
+    >>> savefig('examplefigure')  # save active figure as image
+
+An image file is then created. The format of the output image file depends on
+the extension of the file name provided to :py:func:`matplotlib.pyplot.savefig` or the
+default settings of :py:mod:`matplotlib`.
+
+In the previous figures, it is the evolution of the best function values versus
+time which is considered, in other words the best function values given a
+budget (vertical view). Instead, we can consider the horizontal view:
+determining the run lengths for attaining a target precision. This defines the
+Expected Run Time performance measure. Please refer to Experimental Set-Up
+Document for more details.
+
+.. todo::
+   provide reference for Experimental set-tup
+
+.. sourcecode:: python
+
+    >>> targets = d.evals[:, 0]
+    >>> evals =  d.evals[:, 1:]
+    >>> nruns = evals.shape[1]
+    >>> figure()
+    <matplotlib.figure.Figure object at 0x1[...]
+    >>> for i in range(0, nruns):
+    ...     loglog(targets, evals[:, i])
+    ... 
+    [<matplotlib.lines.Line2D object at 0x1[...]
+        [...]
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> grid()
+    >>> xlabel('Targets')
+    <matplotlib.text.Text object at 0x1[...]>
+    >>> ylabel('Function Evaluations')
+    <matplotlib.text.Text object at 0x1[...]>
+    >>> loglog(d.target[d.target>=1e-8], d.ert[d.target>=1e-8], lw=3,
+    ...        color='r', label='ert')
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> gca().invert_xaxis() # xaxis from the easiest to the hardest
+    >>> legend() # this operation updates the figure with the inverse axis.
+    <matplotlib.legend.Legend object at 0xa84592c>
+
+.. plot:: pyplots/firstsession_01.py
+   :width: 50%
+
+If we swap the abscissa and the ordinate of the previous figure, we can
+directly compare the horizontal view and vertical view figures:
+
+    >>> figure()
+    <matplotlib.figure.Figure object at 0x1[...]>
+    >>> for i in range(0, nruns):
+    ...     loglog(evals[:, i], targets)
+    ... 
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+        [...]
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> grid()
+    >>> xlabel('Function Evaluations')
+    <matplotlib.text.Text object at 0x1[...]>
+    >>> ylabel('Targets')
+    <matplotlib.text.Text object at 0x1[...]>
+    >>> loglog(d.ert[d.target>=1e-8], d.target[d.target>=1e-8], lw=3,
+    ...        color='r', label='ert')
+    [<matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> legend()
+
+.. plot:: pyplots/firstsession_02.py
+   :width: 50%
+
+The process for displaying the median function values and interquartile ranges
+for different targets is described thereafter:
+
+.. sourcecode:: python
+
+    >>> figure() # open a new figure
+    <matplotlib.figure.Figure object at 0x1[...]>
+    >>> from bbob_pproc.bootstrap import prctile
+    >>> q = array(list(prctile(i, [25, 50, 75]) for i in evals))
+    >>> xmed = q[:, 1]
+    >>> xlow = xmed - q[:, 0]
+    >>> xhig = q[:, 2] - xmed
+    >>> xerr = vstack((xlow, xhig))
+    >>> errorbar(xmed, targets, xerr=xerr, color='r', label='CMA-ES')
+    (<matplotlib.lines.Line2D object at 0x1[...]>, [...], [<matplotlib.collections.LineCollection object at 0x1[...]>])
+    >>> grid()
+    >>> xscale('log')
+    >>> yscale('log')
+    >>> xlabel('Function Evaluations')
+    <matplotlib.text.Text object at 0x1[...]>
+    >>> ylabel('Targets')
+    <matplotlib.text.Text object at 0x1[...]>
+
+.. plot:: pyplots/firstsession_03.py
+   :width: 50%
+
+Other types of figures are generated by different modules in
+:py:mod:`bbob_pproc`. Each of these modules has a :py:func:`plot` function and a
+:py:func:`beautify` function. The :py:func:`plot` function is used for generating a
+type of graph. The :py:func:`beautify` function accommodates the general
+presentation of the figure to its content.
+
+The modules for generating figures in this manner are
+:py:mod:`bbob_pproc.pprldistr`, :py:mod:`bbob_pproc.compall.ppperfprof`,
+:py:mod:`bbob_pproc.ppfigdim`.
+
+The :py:mod:`bbob_pproc.pprldistr` module generates Empirical Cumulative
+Distribution Function (ECDF) graphs of the number of evaluations for attaining
+target precisions and the function values for a given budget:
+
+.. %# ECDFs (%runs vs (#evals or values): 1 algorithm, 1 dimension
+
+.. sourcecode:: python
+
+    >>> help(bb.pprldistr)
+    Help on module bbob_pproc.pprldistr in bbob_pproc:
+    
+    NAME
+        bbob_pproc.pprldistr - Creates run length distribution figures.
+    
+    FILE
+        [...]/python/bbob_pproc/pprldistr.py
+    
+    FUNCTIONS
+        beautify()
+            Format the figure of the run length distribution.
+        
+        comp(dsList0, dsList1, valuesOfInterest, isStoringXMax=False, outputdir='', info='default', verbose=True)
+            Generate figures of empirical cumulative distribution functions.
+            Dashed lines will correspond to ALG0 and solid lines to ALG1.
+            
+            Keyword arguments:
+            dsList0 -- list of DataSet instances for ALG0.
+            dsList1 -- list of DataSet instances for ALG1
+            valuesOfInterest -- target function values to be displayed.
+            isStoringXMax -- if set to True, the first call BeautifyVD sets the
+              globals fmax and maxEvals and all subsequent calls will use these
+              values as rightmost xlim in the generated figures.
+            outputdir -- output directory (must exist)
+            info --- string suffix for output file names.
+        
+        main(dsList, valuesOfInterest, isStoringXMax=False, outputdir='', info='default', verbose=True)
+            Generate figures of empirical cumulative distribution functions.
+            
+            Keyword arguments:
+            dsList -- list of DataSet instances to process.
+            valuesOfInterest -- target function values to be displayed.
+            isStoringXMax -- if set to True, the first call BeautifyVD sets the
+              globals fmax and maxEvals and all subsequent calls will use these
+              values as rightmost xlim in the generated figures.
+            outputdir -- output directory (must exist)
+            info --- string suffix for output file names.
+            
+            Outputs:
+            Image files of the empirical cumulative distribution functions.
+        
+        plot(dsList, valuesOfInterest=(10.0, 0.10000000000000001, 0.0001, 1e-08), kwargs={})
+            Plot ECDF of final function values and evaluations.
+    DATA
+        __all__ = ['beautify', 'comp', 'main', 'plot']
+    
+    >>> ds = bb.load(glob.glob('BIPOP-CMA-ES/ppdata_f0*_20.pickle'))
+    >>> figure()
+    <matplotlib.figure.Figure object at 0x1[...]>
+    >>> pprldistr.plot(ds)
+    >>> pprldistr.beautify() # resize the window to view whole figure
+
+.. plot:: pyplots/firstsession_04.py
+   :width: 75%
+
+The :py:mod:`bbob_pproc.compall.ppperfprof` module generates ECDF graphs of
+the bootstrap distribution of the Expected Running Time for target precisions:
+
+.. sourcecode:: python
+
+    >>> help(bb.compall.ppperfprof)
+    Help on module bbob_pproc.compall.ppperfprof in bbob_pproc.compall:
+    
+    NAME
+        bbob_pproc.compall.ppperfprof - Generates figure of the bootstrap distribution of ERT.
+    
+    FILE
+        [...]/python/bbob_pproc/compall/ppperfprof.py
+    
+    DESCRIPTION
+        The main method in this module generates figures of Empirical
+        Cumulative Distribution Functions of the bootstrap distribution of
+        the Expected Running Time (ERT) divided by the dimension for many
+        algorithms.
+    
+    FUNCTIONS
+        beautify()
+            Customize figure presentation.
+        
+        main(dictAlg, targets, order=None, plotArgs={}, outputdir='', info='default', verbose=True)
+            Generates a figure showing the performance of algorithms.
+            From a dictionary of DataSetList sorted by algorithms, generates the
+            cumulative distribution function of the bootstrap distribution of
+            ERT for algorithms on multiple functions for multiple targets
+            altogether.
+            
+            Keyword arguments:
+            dictAlg -- dictionary of dataSetList instances containing all data
+            to be represented in the figure
+            targets -- list of target function values
+            order -- sorted list of keys to dictAlg for plotting order
+    
+        plot(dsList, targets=(1e-08, [...]), rhleg=False, kwargs={})
+            Generates a plot showing the performance of an algorithm.
+            
+            Keyword arguments:
+            dsList -- a DataSetList instance
+            targets -- list of target function values
+            kwargs
+    
+    DATA
+        __all__ = ['beautify', 'main', 'plot']
+    
+    >>> ds = bb.load(glob.glob('BIPOP-CMA-ES/ppdata_f0*_20.pickle'))
+    >>> figure()
+    <matplotlib.figure.Figure object at 0x1[...]>
+    >>> ppperfprof.plot(ds)
+    [<matplotlib.lines.Line2D object at 0x1[...]>, <matplotlib.lines.Line2D object at 0x1[...]>]
+    >>> ppperfprof.beautify()
+    
+.. plot:: pyplots/firstsession_05.py
+   :width: 50%
+
+The :py:mod:`bbob_pproc.ppfigdim` module generates scaling figures.
+
+.. sourcecode:: python
+    
+    >>> from bbob_pproc import ppfigdim
+    >>> help(ppfigdim)
+    Help on module bbob_pproc.ppfigdim in bbob_pproc:
+    
+    NAME
+        bbob_pproc.ppfigdim - Generate performance scaling figures.
+    
+    FILE
+        [...]/python/bbob_pproc/ppfigdim.py
+    
+    FUNCTIONS
+        beautify()
+            Customize figure presentation.
+        
+        main(dsList, _valuesOfInterest, outputdir, verbose=True)
+            From a DataSetList, returns a convergence and ERT/dim figure vs dim.
+        
+        plot(dsList, _valuesOfInterest=(10, 1, [...], 1e-08))
+            From a DataSetList, plot a figure of ERT/dim vs dim.
+    
+    DATA
+        __all__ = ['beautify', 'plot', 'main']
+    
+    >>> ds = bb.load(glob.glob('BIPOP-CMA-ES/ppdata_f002_*.pickle'))
+    Unpickled BIPOP-CMA-ES/ppdata_f002_02.pickle.
+    [...]
+    Unpickled BIPOP-CMA-ES/ppdata_f002_40.pickle.
+    >>> figure()
+    >>> ppfigdim.plot(ds)
+    >>> ppfigdim.beautify()
+
+.. plot:: pyplots/firstsession_06.py
+   :width: 50%
+
+.. .. plot:: pyplots/firstsession.py
+
+.. [#] More information on plot functions from http://matplotlib.sourceforge.net/users/pyplot_tutorial.html
+
+

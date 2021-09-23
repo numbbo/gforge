@@ -1,0 +1,5 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_separ_large.png?700 }}
+
+
+Empirical runtime distributions on //separabale// functions (f1: Sphere, f2: Ellipsoid, f3: Rastrigin, f4: Büche-Rastrigin, f5: Linear Slope) with target values in {100, ..., 1e-8} in dimension 20.
+

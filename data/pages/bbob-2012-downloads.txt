@@ -1,0 +1,31 @@
+~~NOCACHE~~
+
+This is the BBOB 2012 download page. BBOB 2012 requires version 11.01 or newer. The most recent BBOB version can be found [[http://coco.gforge.inria.fr/doku.php?id=downloads|here]]. 
+
+[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobexp11.05.tar.gz|BBOB 2012 (Version 11.05, 5MB)]] is all that is needed to run the benchmarking experiments and prepare a workshop paper. 
+
+[[http://coco.lri.fr/BBOB-downloads/download11.05/bboball11.05.tar.gz|BBOB-2012 tarball (35MB)]] is the full tarball with all technical documentations and presentation of the functions. It contains all files listed below.
+
+  * CODE:
+    *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobmatlab.tar.gz|tar]] code in Matlab/Octave to run experiments
+    *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobc.tar.gz|tar]] code in C to run experiments
+    *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobjava.tar.gz|tar]] code in Java to run experiments
+    *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobr.tar.gz|tar]] R package to run experiments
+    *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobpproc.tar.gz|tar]] code in Python to run experiments and post-processing and latex templates (3MB) 
+
+  * DOCS:
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobdocexperiment.pdf|pdf]] description of experimental procedure  
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobdocfunctions.pdf|pdf]] (12MB) noiseless functions documentation with figures
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobdocfunctionsdef.pdf|pdf]] noiseless functions documentation, version without figures
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobdocnoisyfunctions.pdf|pdf]] (19MB) noisy function documentation with figures      
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobdocnoisyfunctionsdef.pdf|pdf]] noisy function documentation, version without figures  
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobdocsoftware.pdf|pdf]] software user documentation  
+
+  * Latex templates for BBOB2012:
+      *[[http://coco.lri.fr/BBOB-downloads/download11.05/bbobworkshoptemplates.tar.gz|tar]] BBOB specific latex templates
+
+
+  * TECHNICAL DOCS:
+      *[[http://coco.lri.fr/COCOdoc20130225|html]] post-processing package documentation
+
+\\

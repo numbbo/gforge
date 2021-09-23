@@ -1,0 +1,97 @@
+~~NOCACHE~~
+
+This is the old COCO download page. Please note that we moved in 2015 to github (see [[http://github.com/numbbo/coco/|our web page there]]) where you find the newest version of the code. Although this page here will remain to offer access to the last version before the move, we recommend to use [[http://github/numbbo/coco/|the newest version]].
+
+Last release: **November 17, 2015** v15.03 ([[http://coco.lri.fr/downloads/download15.03/svn-release-info.txt|svn version info]])\\
+
+[[http://coco.lri.fr/downloads/download15.03/bbobexp15.03.tar.gz|BBOB (6MB)]] is all that is needed to run the benchmarking experiments and compile a template paper (gathering post-processed results). 
+
+[[http://coco.lri.fr/downloads/download15.03/bboball15.03.tar.gz|BBOB (36MB)]] contains all files, as listed below. 
+
+  * CODE:
+    *[[http://coco.lri.fr/downloads/download15.03/bbobmatlab.tar.gz|tar]] code in Matlab/Octave to run experiments
+    *[[http://coco.lri.fr/downloads/download15.03/bbobc.tar.gz|tar]] code in C to run experiments
+    *[[http://coco.lri.fr/downloads/download15.03/bbobjava.tar.gz|tar]] code in Java to run experiments
+    *[[http://coco.lri.fr/downloads/download15.03/bbobpproc.tar.gz|tar]] code in Python to run experiments and post-processing and latex templates (3MB)
+    *[[http://coco.lri.fr/downloads/download15.03/bbobr.tar.gz|tar]] code in R to run experiments
+
+  * DOCS:
+    *[[http://coco.lri.fr/downloads/download15.03/bbobdocexperiment.pdf|pdf]] description of experimental procedure  
+    * Noiseless functions documentation
+      *[[http://coco.gforge.inria.fr/downloads/download16.00/bbobdocfunctions.pdf|pdf]] with figures (12MB) 
+      *[[http://coco.gforge.inria.fr/downloads/download16.00/bbobdocfunctionsdef.pdf|pdf]] without figures
+    * Noisy functions documentation
+      *[[http://coco.lri.fr/downloads/download15.03/bbobdocnoisyfunctions.pdf|pdf]] with figures (20MB)       
+      *[[http://coco.lri.fr/downloads/download15.03/bbobdocnoisyfunctionsdef.pdf|pdf]] without figures  
+    *[[http://coco.lri.fr/downloads/download15.03/bbobdocsoftware.pdf|pdf]] software user documentation  
+    *[[http://coco.lri.fr/COCOdoc|html]] online post-processing package documentation
+
+
+
+For reporting bugs or feature requests and to see the current list of known issues, please visit  [[https://github.com/numbbo/numbbo/issues|our bug tracking system]].
+
+**NEW FEATURES AND BUGFIXES in release 15.03 (Nov 17, 2015) in comparison to 15.02 (Dec 10, 2014):**
+  * cosmetics of some figures
+  * minor bugfixes
+  * consistency check
+  * rld-single-fcts functionality added
+  * LaTeX templates corrected
+  * cleanup rungenerics options
+  * skip data extraction if already extracted
+  * new html output
+  * fixed unit tests
+  * allow to compare more than 52 algorithms
+
+**BUGS for older versions:**
+  * **Bugs in version 15.01**:
+     * CPU Timing section in LaTeX templates had no text
+     * changeAlgIdAndComment.py and consistency_check() not fully consistent with arbitrary folder structure and 2009 setting respectively
+  * **Bugs in version 15.00**:
+     * compare two algorithm templates did not support expensive setting
+     * CEC LaTeX templates for two algorithm comparison not available
+  * **Bugs in version 13.09**:
+     * Several inconsistencies in LaTeX templates with expensive setting 
+  * **Bugs in version 13.08**:
+     * Typos in the R version for running experiments
+  * **Bugs in version 13.07**:
+     * Too small lower y-limit for the display in scaling figures (ppfigdim)
+  * **Bugs in version 13.05**:
+     * Data consistency check produces an error instead of a warning (self.funcId instead of str(self.funcId) is attempted to print)  
+  * **Bugs in version 13.04**: 
+     * Data from trials for the same function and dimension that are distributed over several folders in a deep folder structure are possibly not read in correctly. 
+  * **Bugs in version 13.03**: 
+     * The computation of maximal function evaluations for a single run was based on the last reached target. Reverted to the true maximal evaluations iff the final target was not reached. 
+  * **Bugs in version 13.01/2**: 
+     * the (last) data entry to reach the final target has been cut away during read-in. This could have significant effects on the displays, in particular for algorithms that improved largely in this step. 
+  * **Bugs in version 10.71?-12.xx**: 
+     * zero or negative f-values were replace by 1 in the ECDF plots. This is likely to have only had small effects in the display. 
+  * **Bugs in version 11.05**: 
+     * BBOB R package became incompatible due to a not backwards compatible change in the API
+  * **Bugs in version 11.04**:
+     * bug in ppconferrorbars.py
+     * bug in templateBBOB*.tex with Windows-paths
+  * **Bugs in version 11.01**:
+     * post-processcing: some wrong captions
+  * **Bugs in version 11.00**:
+     * Bugs in exampletiming.*: wrong test function
+     * python experiments: renamed cocoexp to fgeneric
+  * **Bugs in version 10.74**:
+     * Bugs in latex templates
+  * **Bugs in version 10.71**:
+     * Bug in readalign.py
+  * **Bugs in version 10.6**:
+     * Post-processing: Bug in comparison tables which results in displaying 0.00 when ERT ratio is smaller than 0.01 (more than 100 times faster than the best algorithm from BBOB 2009)
+     * Post-processing: Bug when changing the reference algorithm
+  * **Bugs in version 10.4 and 10.5**:
+     * Post-processing: Major bug that results in an underestimation of ERT. It is strongly recommended to upgrade to v10.6.
+  * **Bugs in version 10.4**:
+     * Post-processing: bug in bbob_pproc.comp2.pprldistr2 and potential bug with matplotlib 1.0.0, wrong data used for representing best BBOB 2009 and 2010
+  * **Bugs in version 10.2**:
+     * Post-processing: the significance test vs. the BBOB-2009 entry in Table 1 is wrongly computed when the BBOB-2009 entry did not reach the target function value.
+  * **Bugs in version 10.1**:
+     * Post-processing: the significance test in Figure 1 of the comparison template is wrongly computed.
+     * Post-processing: running the runcomp2 routine with input parameters path0/samefoldername and path1/samefoldername processed only one data set.  
+     * Java code: the attributes of JNIfgeneric.Params were not modifiable from outside the javabbob package.
+
+  * **Bug in version 10.0**:
+     * ECDF figures: data of the entries in 2009 were represented in a wrong manner, making them appear better than they actually were.

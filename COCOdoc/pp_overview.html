@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview of the bbob_pproc Package &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="up" title="Post-Processing with COCO" href="postprocessing.html" />
+    <link rel="next" title="Standard Use of the bbob_pproc Package" href="pp_commandline.html" />
+    <link rel="prev" title="Post-Processing with COCO" href="postprocessing.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pp_commandline.html" title="Standard Use of the bbob_pproc Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="postprocessing.html" title="Post-Processing with COCO"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="postprocessing.html" accesskey="U">Post-Processing with COCO</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="overview-of-the-bbob-pproc-package">
+<h1>Overview of the <a class="reference internal" href="bbob_pproc.html#module-bbob_pproc" title="bbob_pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc</span></code></a> Package<a class="headerlink" href="#overview-of-the-bbob-pproc-package" title="Permalink to this headline">¶</a></h1>
+<p>We present here the content of version 10.7 of the <a class="reference internal" href="bbob_pproc.html#module-bbob_pproc" title="bbob_pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc</span></code></a>
+package.</p>
+<dl class="docutils">
+<dt><code class="file docutils literal"><span class="pre">rungeneric.py</span></code></dt>
+<dd>is the main interface of the package that performs different routines listed below,</dd>
+<dt><code class="file docutils literal"><span class="pre">rungeneric1.py</span></code></dt>
+<dd>post-processes data from <em>one</em> single algorithm and outputs figures and tables included in the templates <code class="file docutils literal"><span class="pre">template1generic.tex</span></code>,
+<code class="file docutils literal"><span class="pre">noisytemplate1generic.tex</span></code>,</dd>
+<dt><code class="file docutils literal"><span class="pre">rungeneric2.py</span></code></dt>
+<dd>post-processes data from <em>two</em> algorithms using modules from <a class="reference internal" href="comp2.html#module-bbob_pproc.comp2" title="bbob_pproc.comp2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a> and
+outputs comparison figures and tables included in the template <code class="file docutils literal"><span class="pre">template2generic.tex</span></code>,
+<code class="file docutils literal"><span class="pre">noisytemplate2generic.tex</span></code>,</dd>
+<dt><code class="file docutils literal"><span class="pre">rungenericmany.py</span></code></dt>
+<dd>post-processes data from 1 or more algorithms <a class="footnote-reference" href="#id2" id="id1">[1]</a> using modules from <a class="reference internal" href="compall.html#module-bbob_pproc.compall" title="bbob_pproc.compall"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall</span></code></a> and outputs
+comparison figures and tables included in the template,
+<code class="file docutils literal"><span class="pre">template3generic.tex</span></code>, <code class="file docutils literal"><span class="pre">noisytemplate3generic.tex</span></code></dd>
+<dt><code class="file docutils literal"><span class="pre">genericsettings.py</span></code></dt>
+<dd>defines generic settings for the output figures and tables during module import,</dd>
+<dt><code class="file docutils literal"><span class="pre">config.py</span></code></dt>
+<dd>configuration and modification of settings depending on input parameters while the module is running</dd>
+</dl>
+<dl class="docutils">
+<dt><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.pproc" title="bbob_pproc.pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pproc</span></code></a></dt>
+<dd>defines the classes <a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">bbob_pproc.pproc.DataSetList</span></code></a> and
+<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">bbob_pproc.pproc.DataSet</span></code></a> which are the main data structures that we use to gather the
+experimental raw data,</dd>
+<dt><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.dataoutput" title="bbob_pproc.dataoutput"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.dataoutput</span></code></a></dt>
+<dd>contain routine to output instances of <a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">bbob_pproc.pproc.DataSet</span></code></a> in Python-formatted data files,</dd>
+<dt><a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.readalign" title="bbob_pproc.readalign"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.readalign</span></code></a>, <a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.toolsstats" title="bbob_pproc.toolsstats"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.toolsstats</span></code></a></dt>
+<dd>contain routines for the post-processing of the raw experimental data,</dd>
+<dt><a class="reference internal" href="figtables.html#module-bbob_pproc.pptex" title="bbob_pproc.pptex"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pptex</span></code></a></dt>
+<dd>defines some routines for generating TeXtables,</dd>
+<dt><a class="reference internal" href="figtables.html#module-bbob_pproc.ppfig" title="bbob_pproc.ppfig"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppfig</span></code></a></dt>
+<dd>defines some routines for generating figures,</dd>
+<dt><a class="reference internal" href="figtables.html#module-bbob_pproc.ppfigdim" title="bbob_pproc.ppfigdim"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppfigdim</span></code></a>, <a class="reference internal" href="figtables.html#module-bbob_pproc.pptable" title="bbob_pproc.pptable"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pptable</span></code></a>, <a class="reference internal" href="figtables.html#module-bbob_pproc.pprldistr" title="bbob_pproc.pprldistr"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pprldistr</span></code></a>, <a class="reference internal" href="figtables.html#module-bbob_pproc.pplogloss" title="bbob_pproc.pplogloss"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pplogloss</span></code></a></dt>
+<dd>are used to produce figures and tables presenting the results of one algorithm,</dd>
+<dt><a class="reference internal" href="compall.html#module-bbob_pproc.compall" title="bbob_pproc.compall"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.compall</span></code></a></dt>
+<dd>is a sub-package which contains modules
+for the comparison of the performances of algorithms, routines in this
+package can be called using the interface of <code class="file docutils literal"><span class="pre">rungenericmany.py</span></code>,</dd>
+<dt><a class="reference internal" href="comp2.html#module-bbob_pproc.comp2" title="bbob_pproc.comp2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></dt>
+<dd>is a sub-package which contains modules for
+the comparison of the performances of two algorithms, routines in this package
+can be called using the interface of <code class="file docutils literal"><span class="pre">rungeneric2.py</span></code>.</dd>
+</dl>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>for more than ten algorithm, the template shall be modified,</td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="postprocessing.html"
+                        title="previous chapter">Post-Processing with COCO</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pp_commandline.html"
+                        title="next chapter">Standard Use of the <code class="docutils literal"><span class="pre">bbob_pproc</span></code> Package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pp_overview.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pp_commandline.html" title="Standard Use of the bbob_pproc Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="postprocessing.html" title="Post-Processing with COCO"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="postprocessing.html" >Post-Processing with COCO</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module bbob_pproc.dataoutput</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="bbob_pproc.html"><font color="#ffffff">bbob_pproc</font></a>.dataoutput</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial">&nbsp;</font></td></tr></table>
+    <p><tt>Generates&nbsp;output&nbsp;either&nbsp;pickle&nbsp;files&nbsp;or&nbsp;elaborate&nbsp;data&nbsp;files.&nbsp;1&nbsp;file&nbsp;per<br>
+solver&nbsp;per&nbsp;function&nbsp;and&nbsp;per&nbsp;dimension&nbsp;(unit&nbsp;experiment).</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pickle.html">pickle</a><br>
+</td><td width="25%" valign=top><a href="bbob_pproc.pproc.html">bbob_pproc.pproc</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-outputDataFiles"><strong>outputDataFiles</strong></a>(dsList, verbose<font color="#909090">=True</font>)</dt><dd><tt>Generates&nbsp;data&nbsp;files&nbsp;from&nbsp;a&nbsp;DataSetList.</tt></dd></dl>
+ <dl><dt><a name="-outputPickle"><strong>outputPickle</strong></a>(dsList, verbose<font color="#909090">=True</font>)</dt><dd><tt>Generates&nbsp;pickle&nbsp;files&nbsp;from&nbsp;a&nbsp;DataSetList.</tt></dd></dl>
+ <dl><dt><a name="-updateAlgorithmInfo"><strong>updateAlgorithmInfo</strong></a>(alg)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>absolute_import</strong> = _Feature((2, 5, 0, 'alpha', 1), (2, 7, 0, 'alpha', 0), 16384)<br>
+<strong>algId</strong> = 'SPSA'<br>
+<strong>algLongInfos</strong> = {'AMALGAM': [('AMaLGaM-Full-Free', '% AMaLGaM-Full-Free')], 'AVGNEWUOA': [('NEWUOA', '% NPT=AVG, RHOBEG=10, RHOEND=1e-16, X0=[-5,5]**DIM')], 'BAYEDA': [('BAYEDA', '% Simple continuous BAYEDA with 0.8 selection, p...ion=10*DIM, 2000*DIM fn evals, so 200 generations')], 'BFGS': [('BFGS', '% [-5, 5]^n, max 100 independent restarts.')], 'CMA-ES': [('cmaes V3.30.beta', '% cmaes25 ccum=new stopstagnation, sigmaUp=10^20...100 + 50 * (N+3)^2/sqrt(popsize) no xopt sigma0=2'), ('cmaes V3.30.beta', '% cmaes24noi BIPOP like 21 with deflam sigup=10^...arts=9 maxiter=1000 + 500 * (N+3)^2/sqrt(popsize)')], 'CMA-ESPLUSSEL': [('cmaesplussel', '%')], 'Cauchy-EDA': [('Cauchy EDA', '% restarts up to 100, outermaxfevals 5e4*dim, inner maxfunevals 5e4*dim')], 'DASA': [('DASA', '% test')], 'DE-PSO': [('DEPSO', '% MORE DETAILED INFORMATION, PARAMETER SETTINGS ETC')], 'DIRECT': [('Original DIRECT', '% No restarts, outermaxfevals 1e5, inner maxfunevals 1e5')], ...}<br>
+<strong>algPlotInfos</strong> = {('AMaLGaM-Full-Free', '% AMaLGaM-Full-Free'): {'color': 'tomato', 'label': 'AMaLGaM IDEA'}, ('BAYEDA', '% Simple continuous BAYEDA with 0.8 selection, p...ion=10*DIM, 2000*DIM fn evals, so 200 generations'): {'color': 'pink', 'label': 'BayEDAcG'}, ('BFGS', '% [-5, 5]^n, max 100 independent restarts.'): {'color': 'r', 'label': 'BFGS'}, ('Cauchy EDA', '% restarts up to 100, outermaxfevals 5e4*dim, inner maxfunevals 5e4*dim'): {'color': 'slategray', 'label': 'Cauchy EDA'}, ('DASA', '% test'): {'color': 'sienna', 'label': 'DASA'}, ('DEPSO', '% MORE DETAILED INFORMATION, PARAMETER SETTINGS ETC'): {'color': 'springgreen', 'label': 'DEPSO', 'ls': '--'}, ('EDA-PSO', '% All historical information with correlation-triggered adaptive variance scaling.'): {'color': 'springgreen', 'label': 'EDA-PSO'}, ('EDA-PSO', '% An EDA and PSO hybrid algorithm.'): {'color': 'springgreen', 'label': 'EDA-PSO'}, ('EGS_ipopcma_KappaAdapt', '% 10 independent restarts, EGS-CMA implementatio...ambda, kappa adaptation, each pop has size lambda'): {'color': 'red', 'label': 'EGS', 'ls': '--'}, ('EGSipopcma', '% 10 restarts, EGS-CMA implementation from D.Arn...im, ipop-cma with factor 2 for increase of lambda'): {'color': 'red', 'label': 'EGS', 'ls': '--'}, ...}<br>
+<strong>algShortInfo</strong> = 'SPSAv5'<br>
+<strong>algShortInfos</strong> = {('AMaLGaM-Full-Free', '% AMaLGaM-Full-Free'): 'AMALGAM', ('BAYEDA', '% Simple continuous BAYEDA with 0.8 selection, p...ion=10*DIM, 2000*DIM fn evals, so 200 generations'): 'BAYEDA', ('BFGS', '% [-5, 5]^n, max 100 independent restarts.'): 'BFGS', ('Cauchy EDA', '% restarts up to 100, outermaxfevals 5e4*dim, inner maxfunevals 5e4*dim'): 'Cauchy-EDA', ('DASA', '% test'): 'DASA', ('DEPSO', '% MORE DETAILED INFORMATION, PARAMETER SETTINGS ETC'): 'DE-PSO', ('EDA-PSO', '% All historical information with correlation-triggered adaptive variance scaling.'): 'EDA-PSO', ('EDA-PSO', '% An EDA and PSO hybrid algorithm.'): 'EDA-PSO', ('EGS_ipopcma_KappaAdapt', '% 10 independent restarts, EGS-CMA implementatio...ambda, kappa adaptation, each pop has size lambda'): 'EGS', ('EGSipopcma', '% 10 restarts, EGS-CMA implementation from D.Arn...im, ipop-cma with factor 2 for increase of lambda'): 'EGS', ...}<br>
+<strong>comment</strong> = '% 10 restarts, kmax = 1e3, for improvement step kmax = 5e2, restart changes lambda and step'<br>
+<strong>f</strong> = &lt;closed file 'bbob_pproc/algorithmshortinfos.txt', mode 'r' at 0x867f968&gt;<br>
+<strong>infofile</strong> = 'bbob_pproc/algorithmshortinfos.txt'<br>
+<strong>infofilename</strong> = 'algorithmshortinfos.txt'<br>
+<strong>isAlgorithminfosFound</strong> = True<br>
+<strong>line</strong> = 'SPSAv5:SPSA:% 10 restarts, kmax = 1e3, for impro...ambda and step:{"label":"SPSAv5","color":"blue"}<font color="#c040c0">\n</font>'<br>
+<strong>plotinfo</strong> = '{"label":"SPSAv5","color":"blue"}'</td></tr></table>
+</body></html>

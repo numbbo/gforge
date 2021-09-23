@@ -1,0 +1,37 @@
+The following table lists all algorithms submitted for BBOB-2013 and links to their data. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.
+
+
+<sortable>
+^No^Algorithm^Year^Authors^Data Noiseless^Data Noisy^related PDFs^
+|95|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/loshchilov_BBOB2013_noiseless_BIPOPsaACM-k.tgz|BIPOP-saACM-k]]|2013|Loshchilov et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/BIPOP-saACM-k_loshchilov_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0306-loshchilov.pdf|cmpLoshchilov}}|
+|96|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/loshchilov_BBOB2013_noiseless_BIPOP-aCMA-STEP.tgz|BIPOP-aCMA-STEP]]|2013|Loshchilov et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/BIPOP-aCMA-STEP_loshchilov_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0306-loshchilov.pdf|cmpLoshchilov}}|
+|97|CGA-grid16|2013|Holtschulte and Moses|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/CGA-grid16_holtschulte_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0309-holtschulte.pdf|cmpHoltschulte}}|
+|98|CGA-grid100|2013|Holtschulte and Moses|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/CGA-grid100_holtschulte_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0309-holtschulte.pdf|cmpHoltschulte}}|
+|99|CGA-ring16|2013|Holtschulte and Moses|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/CGA-ring16_holtschulte_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0309-holtschulte.pdf|cmpHoltschulte}}|
+|100|CGA-ring100|2013|Holtschulte and Moses|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/CGA-ring100_holtschulte_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0309-holtschulte.pdf|cmpHoltschulte}}|
+|101|CMAES_Hutter|2013|Hutter et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/CMAES_Hutter_hutter_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0311-hutter.pdf|cmpHutter}}|
+|102|DE_Pal|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/DE_Pal_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0302-pal.pdf|cmpPalBenchmarking}}|
+|103|fmincon|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/fmincon_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0303-pal.pdf|cmpPalComparison}}|
+|104|fminunc|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/fminunc_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0303-pal.pdf|cmpPalComparison}}|
+|105|GA-100|2013|Holtschulte and Moses|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/GA-100_holtschulte_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0309-holtschulte.pdf|cmpHoltschulte}}|
+|106|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/loshchilov_BBOB2013_noiseless_HCMA.tgz|HCMA]]|2013|Loshchilov et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/HCMA_loshchilov_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0306-loshchilov.pdf|cmpLoshchilov}}|
+|107|HILL|2013|Holtschulte and Moses|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/HILL_holtschulte_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0309-holtschulte.pdf|cmpHoltschulte}}|
+|108|HMLSL|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/HMLSL_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0302-pal.pdf|cmpPalBenchmarking}}|
+|109|IP|2013|Liao and Stützle|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/IP_liao_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0305-liao.pdf|cmpLiaoTesting}} {{pdf2013:w0304-liao.pdf|cmpLiaoBounding}}|
+|110|IP-10DDr|2013|Liao and Stützle|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/IP-10DDr_liao_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0304-liao.pdf|cmpLiaoBounding}}|
+|111|IP-500|2013|Liao and Stützle|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/IP-500_liao_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0304-liao.pdf|cmpLiaoBounding}}|
+|112|IPOP400D|2013|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/IPOP400D_auger_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0313-auger.pdf|Auger}}|
+|113|lmm-CMA-ES|2013|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/lmm-CMA-ES_auger_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0313-auger.pdf|Auger}}|
+|114|MEMPSODE|2013|Voglis|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/MEMPSODE_voglis_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0301-voglis.pdf|Voglis}}|
+|115|MLSL|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/MLSL_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0302-pal.pdf|cmpPalBenchmarking}}|
+|116|OQNLP|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/OQNLP_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0303-pal.pdf|cmpPalComparison}}|
+|117|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/tran_BBOB2013_noiseless_P-DCN.tar.gz|P-DCN]]|2013|Tran et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/P-DCN_tran_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0312-tran.pdf|cmpTran}}|
+|118|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/tran_BBOB2013_noiseless_P-zero.tar.gz|P-zero]]|2013|Tran et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/P-zero_tran_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0312-tran.pdf|cmpTran}}|
+|119|PRCGA|2013|Sawyerr et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/PRCGA_sawyerr_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0308-sawyerr.pdf|Sawyerr}}|
+|120|simplex|2013|Pàl|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/simplex_pal_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0303-pal.pdf|cmpPalComparison}}|
+|121|SMAC-BBOB|2013|Hutter et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/SMAC-BBOB_hutter_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0311-hutter.pdf|cmpHutter}}|
+|122|tany|2013|Liao and Stützle|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/tany_liao_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0305-liao.pdf|cmpLiaoTesting}}|
+|123|texp|2013|Liao and Stützle|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/texp_liao_noiseless.tgz|noiselessData]]\\ :!: BBOB2010 instances|n/a|{{pdf2013:w0305-liao.pdf|cmpLiaoTesting}}|
+|124|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/tran_BBOB2013_noiseless_U-DCN.tar.gz|U-DCN]]|2013|Tran et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/U-DCN_tran_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0312-tran.pdf|cmpTran}}|
+|125|[[http://coco.gforge.inria.fr/BBOB2013sourcecodes/tran_BBOB2013_noiseless_U-zero.tar.gz|U-zero]]|2013|Tran et al.|[[http://coco.gforge.inria.fr/data-archive/bbob/2013/U-zero_tran_noiseless.tgz|noiselessData]]|n/a|{{pdf2013:w0312-tran.pdf|cmpTran}}|
+</sortable>

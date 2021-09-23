@@ -1,0 +1,15 @@
+Below, you can upload your pdf file (workshop paper) and your data files archive. Please use as filename the authors name (for example smith.pdf, smith.tar.gz). The filesize limit is 25MB. You cannot delete previous submissions but submit as many times as necessary (provided you changed the file names).
+
+<html>
+<form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input type="hidden" name="MAX_FILE_SIZE" value="262144000" /> 
+Choose a file to upload: <input name="uploadedfile" type="file" />
+<input type="submit" value="Upload File" />
+</form>
+</html>
+
+
+For any questions or requests, please contact bbob@lri.fr
+
+
+

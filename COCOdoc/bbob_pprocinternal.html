@@ -1,0 +1,2262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Post-processing Routines &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="up" title="bbob_pproc API" href="bbob_pproc.html" />
+    <link rel="next" title="Figures and Tables" href="figtables.html" />
+    <link rel="prev" title="bbob_pproc API" href="bbob_pproc.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="figtables.html" title="Figures and Tables"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bbob_pproc.html" title="bbob_pproc API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" accesskey="U"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="post-processing-routines">
+<h1>Post-processing Routines<a class="headerlink" href="#post-processing-routines" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#module-bbob_pproc.pproc" id="id3"><a class="reference internal" href="#module-bbob_pproc.pproc" title="bbob_pproc.pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pproc</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.algportfolio" id="id4"><a class="reference internal" href="#module-bbob_pproc.algportfolio" title="bbob_pproc.algportfolio"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.algportfolio</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.bestalg" id="id5"><a class="reference internal" href="#module-bbob_pproc.bestalg" title="bbob_pproc.bestalg"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.bestalg</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.changeAlgIdAndComment" id="id6"><a class="reference internal" href="#module-bbob_pproc.changeAlgIdAndComment" title="bbob_pproc.changeAlgIdAndComment"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.changeAlgIdAndComment</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.cococommands" id="id7"><a class="reference internal" href="#module-bbob_pproc.cococommands" title="bbob_pproc.cococommands"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.cococommands</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.config" id="id8"><a class="reference internal" href="#module-bbob_pproc.config" title="bbob_pproc.config"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.config</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.dataoutput" id="id9"><a class="reference internal" href="#module-bbob_pproc.dataoutput" title="bbob_pproc.dataoutput"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.dataoutput</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.findfiles" id="id10"><a class="reference internal" href="#module-bbob_pproc.findfiles" title="bbob_pproc.findfiles"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.findfiles</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.readalign" id="id11"><a class="reference internal" href="#module-bbob_pproc.readalign" title="bbob_pproc.readalign"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.readalign</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.toolsstats" id="id12"><a class="reference internal" href="#module-bbob_pproc.toolsstats" title="bbob_pproc.toolsstats"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.toolsstats</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.toolsdivers" id="id13"><a class="reference internal" href="#module-bbob_pproc.toolsdivers" title="bbob_pproc.toolsdivers"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.toolsdivers</span></code></a></a></li>
+</ul>
+</div>
+<div class="section" id="module-bbob_pproc.pproc">
+<span id="bbob-pproc-pproc"></span><h2><a class="toc-backref" href="#id3"><a class="reference internal" href="#module-bbob_pproc.pproc" title="bbob_pproc.pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pproc</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.pproc" title="Permalink to this headline">¶</a></h2>
+<p>Raw post-processing routines.</p>
+<p>This module implements class <a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a>, unit element in the
+post-processing and class <a class="reference internal" href="#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code></a>, sequence of instances
+of <a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a>.</p>
+<p>Futhermore it implements methods for dealing with a third data structure
+which is a dictionary of <a class="reference internal" href="#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code></a> which is handy when
+dealing with <a class="reference internal" href="#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code></a> instances from multiple algorithms
+for comparisons.</p>
+<dl class="function">
+<dt id="bbob_pproc.pproc.cocofy">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">cocofy</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.cocofy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces bbob_pproc references in pickles files with coco_pproc
+This could become necessary for future backwards compatibility,
+however rather should become a class method.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.pproc.TargetValues">
+<em class="property">class </em><code class="descclassname">bbob_pproc.pproc.</code><code class="descname">TargetValues</code><span class="sig-paren">(</span><em>target_values</em>, <em>discretize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>store and retrieve a list of target function values:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bbob_pproc.pproc</span> <span class="kn">as</span> <span class="nn">pp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">targets_as_class</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">TargetValues</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">targets_as_class</span><span class="p">()</span> <span class="o">==</span> <span class="n">targets</span>
+</pre></div>
+</div>
+<p>In itself this class is useless, as it does not more than a simple list
+could do, but it serves as interface for derived classes, where <code class="docutils literal"><span class="pre">targets()</span></code>
+requires an actual argument <code class="docutils literal"><span class="pre">targets(fun_dim)</span></code>.</p>
+<p>Details: The optional argument for calling the class instance is needed to 
+be consistent with the derived <code class="docutils literal"><span class="pre">class</span> <span class="pre">RunlengthBasedTargetValues</span></code>.</p>
+<dl class="attribute">
+<dt id="bbob_pproc.pproc.TargetValues.short_info">
+<code class="descname">short_info</code><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.short_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="bbob_pproc.pproc.TargetValues.cast">
+<em class="property">static </em><code class="descname">cast</code><span class="sig-paren">(</span><em>target_values_or_class_instance</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.cast" title="Permalink to this definition">¶</a></dt>
+<dd><p>idempotent cast to <code class="docutils literal"><span class="pre">TargetValues</span></code> class type, specifically
+<a href="#id1"><span class="problematic" id="id2">``</span></a>return TargetValues(target_values_or_class_instance)</p>
+<blockquote>
+<div>if not isinstance(target_values_or_class_instance, TargetValues) 
+else target_values_or_class_instance``</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.TargetValues.label">
+<code class="descname">label</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the <code class="docutils literal"><span class="pre">i</span></code>-th target value as <code class="docutils literal"><span class="pre">str</span></code>, to be overwritten by a derived class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.TargetValues.loglabel">
+<code class="descname">loglabel</code><span class="sig-paren">(</span><em>i</em>, <em>decimals=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.loglabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>return <code class="docutils literal"><span class="pre">log10</span></code> of the <code class="docutils literal"><span class="pre">i</span></code>-th target value as <code class="docutils literal"><span class="pre">str</span></code>, to be overwritten by a derived class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.TargetValues.labels">
+<code class="descname">labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>target values as a list of <code class="docutils literal"><span class="pre">str</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.TargetValues.loglabels">
+<code class="descname">loglabels</code><span class="sig-paren">(</span><em>decimals=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.loglabels" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">log10</span></code> of the target values as a list of <code class="docutils literal"><span class="pre">str</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.TargetValues.label_name">
+<code class="descname">label_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.TargetValues.label_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues">
+<em class="property">class </em><code class="descclassname">bbob_pproc.pproc.</code><code class="descname">RunlengthBasedTargetValues</code><span class="sig-paren">(</span><em>run_lengths</em>, <em>reference_data='bestGECCO2009'</em>, <em>smallest_target=1e-08</em>, <em>times_dimension=True</em>, <em>force_different_targets_factor=1.096478196143185</em>, <em>unique_target_values=False</em>, <em>step_to_next_difficult_target=1.5848931924611136</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>a class instance call returns f-target values based on 
+reference runlengths:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bbob_pproc</span> <span class="kn">as</span> <span class="nn">bb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">targets</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">pproc</span><span class="o">.</span><span class="n">RunlengthBasedTargetValues</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>  <span class="c"># by default times_dimension==True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">targets</span><span class="p">(</span><span class="n">fun_dim</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span> 
+<span class="go">Loading best algorithm data from BBOB-2009...   done ...</span>
+<span class="go">array([  6.30957345e+01,   5.75439938e+01,   1.00000000e-08,</span>
+<span class="go">         1.00000000e-08,   1.00000000e-08])</span>
+</pre></div>
+</div>
+<p>returns a list of target f-values for F1 in 20-D, based on the 
+ERT values <code class="docutils literal"><span class="pre">[0.5,...,50]</span></code>.</p>
+<p>Details: The computation starts from the smallest budget and the resulting f-target 
+must always be at least a factor of <code class="docutils literal"><span class="pre">force_different_targets_factor</span></code> smaller 
+than the previous one. If the <code class="docutils literal"><span class="pre">smallest_target</span></code> is superseded, the log values
+are linearly rescaled such that the easiest found target remains the same and 
+the smallest target becomes <code class="docutils literal"><span class="pre">smallest_target</span></code>.</p>
+<p>TODO: see compall/determineFtarget2.FunTarget</p>
+<dl class="staticmethod">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.cast">
+<em class="property">static </em><code class="descname">cast</code><span class="sig-paren">(</span><em>run_lengths_or_class_instance</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.cast" title="Permalink to this definition">¶</a></dt>
+<dd><p>idempotent cast to <code class="docutils literal"><span class="pre">RunlengthBasedTargetValues</span></code> class type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>lazy initialization to prevent slow import</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.get_targets">
+<code class="descname">get_targets</code><span class="sig-paren">(</span><em>fun_dim=None</em>, <em>discretize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.get_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all target values for the respective function and dimension  
+and reference ERT values (passed during initialization). <cite>fun_dim</cite>
+is a tuple <code class="docutils literal"><span class="pre">(fun_nb,</span> <span class="pre">dimension)</span></code> like <code class="docutils literal"><span class="pre">(1,</span> <span class="pre">20)</span></code> for the 20-D
+sphere.</p>
+<p><code class="docutils literal"><span class="pre">if</span> <span class="pre">discretize</span></code> all targets are in [10**i/5 for i in N], in case
+achieved via rounding on the log-scale.</p>
+<p>Details: f_target = arg min_f { ERT_best(f) &gt; max(1, target_budget * dimension**times_dimension_flag) }, 
+where f are the values of the <code class="docutils literal"><span class="pre">DataSet</span></code> <code class="docutils literal"><span class="pre">target</span></code> attribute. The next difficult target is chosen
+not smaller as target / 10**0.2.</p>
+<p>Returned are the ERT for targets that, within the given budget, the
+best 2009 algorithm just failed to achieve.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.label">
+<code class="descname">label</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>return i-th target value as string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.loglabel">
+<code class="descname">loglabel</code><span class="sig-paren">(</span><em>i</em>, <em>decimals=1</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.loglabel" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">decimals</span></code> is used for <code class="docutils literal"><span class="pre">round</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.labels">
+<code class="descname">labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>target values as a list of <code class="docutils literal"><span class="pre">str</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.RunlengthBasedTargetValues.label_name">
+<code class="descname">label_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.RunlengthBasedTargetValues.label_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.pproc.DataSet">
+<em class="property">class </em><code class="descclassname">bbob_pproc.pproc.</code><code class="descname">DataSet</code><span class="sig-paren">(</span><em>header</em>, <em>comment</em>, <em>data</em>, <em>indexfile</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit element for the COCO post-processing.</p>
+<p>An instance of this class is created from one unit element of
+experimental data. One unit element would correspond to data for a
+given algorithm (a given <code class="xref py py-attr docutils literal"><span class="pre">algId</span></code> and a <code class="xref py py-attr docutils literal"><span class="pre">comment</span></code>
+line) and a given problem (<code class="xref py py-attr docutils literal"><span class="pre">funcId</span></code> and
+<code class="xref py py-attr docutils literal"><span class="pre">dimension</span></code>).</p>
+<p>Class attributes:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>funcId</em> &#8211; function Id (integer)</p>
+</li>
+<li><p class="first"><em>dim</em> &#8211; dimension (integer)</p>
+</li>
+<li><p class="first"><em>indexFiles</em> &#8211; associated index files (list of strings)</p>
+</li>
+<li><p class="first"><em>dataFiles</em> &#8211; associated data files (list of strings)</p>
+</li>
+<li><p class="first"><em>comment</em> &#8211; comment for the setting (string)</p>
+</li>
+<li><p class="first"><em>targetFuncValue</em> &#8211; final target function value (float), might be missing</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>precision</em> &#8211; final ftarget - fopt (float), data with </dt>
+<dd><p class="first last">target[idat] &lt; precision are optional and not relevant.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>algId</em> &#8211; algorithm name (string)</p>
+</li>
+<li><p class="first"><em>evals</em> &#8211; data aligned by function values (2xarray, list of data rows [f_val, eval_run1, eval_run2,...]), cave: in a portfolio data rows can have different lengths</p>
+</li>
+<li><p class="first"><em>funvals</em> &#8211; data aligned by function evaluations (2xarray)</p>
+</li>
+<li><p class="first"><em>maxevals</em> &#8211; maximum number of function evaluations (array)</p>
+</li>
+<li><p class="first"><em>finalfunvals</em> &#8211; final function values (array)</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>readmaxevals</em> &#8211; maximum number of function evaluations read</dt>
+<dd><p class="first last">from index file (array)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>readfinalFminusFtarget</em> &#8211; final function values - ftarget read</dt>
+<dd><p class="first last">from index file (array)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>pickleFile</em> &#8211; associated pickle file name (string)</p>
+</li>
+<li><p class="first"><em>target</em> &#8211; target function values attained (array)</p>
+</li>
+<li><p class="first"><em>ert</em> &#8211; ert for reaching the target values in target (array)</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>instancenumbers</em> &#8211; list of numbers corresponding to the instances of</dt>
+<dd><p class="first last">the test function considered (list of int)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>isFinalized</em> &#8211; list of bool for if runs were properly finalized</p>
+</li>
+</ul>
+</div></blockquote>
+<p><a class="reference internal" href="#bbob_pproc.pproc.DataSet.evals" title="bbob_pproc.pproc.DataSet.evals"><code class="xref py py-attr docutils literal"><span class="pre">evals</span></code></a> and <code class="xref py py-attr docutils literal"><span class="pre">funvals</span></code> are arrays of data collected
+from <code class="xref py py-data docutils literal"><span class="pre">N</span></code> data sets.</p>
+<p>Both have the same format: zero-th column is the value on which the
+data of a row is aligned, the <code class="xref py py-data docutils literal"><span class="pre">N</span></code> subsequent columns are
+either the numbers of function evaluations for <a class="reference internal" href="#bbob_pproc.pproc.DataSet.evals" title="bbob_pproc.pproc.DataSet.evals"><code class="xref py py-attr docutils literal"><span class="pre">evals</span></code></a> or
+function values for <code class="xref py py-attr docutils literal"><span class="pre">funvals</span></code>.</p>
+<p>A short example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">&#39;__file__&#39;</span><span class="p">))))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bbob_pproc</span> <span class="kn">as</span> <span class="nn">bb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dslist</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;BIPOP-CMA-ES_hansen_noiseless/bbobexp_f2.info&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dslist</span>  <span class="c"># nice display in particular in IPython</span>
+<span class="go">[DataSet(BIPOP-CMA-ES on f2 2-D), DataSet(BIPOP-CMA-ES on f2 3-D), DataSet(BIPOP-CMA-ES on f2 5-D), DataSet(BIPOP-CMA-ES on f2 10-D), DataSet(BIPOP-CMA-ES on f2 20-D), DataSet(BIPOP-CMA-ES on f2 40-D)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">dslist</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bbob_pproc.pproc.DataSetList&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">dslist</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dslist</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="c"># a single data set of type DataSet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span>
+<span class="go">DataSet(BIPOP-CMA-ES on f2 10-D)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span> <span class="k">print</span> <span class="n">d</span>  <span class="c"># dir(ds) shows attributes and methods of ds</span>
+<span class="go">_DataSet__parseHeader</span>
+<span class="go">__doc__</span>
+<span class="go">__eq__</span>
+<span class="go">__init__</span>
+<span class="go">__module__</span>
+<span class="go">__ne__</span>
+<span class="go">__repr__</span>
+<span class="go">_attributes</span>
+<span class="go">_complement_data</span>
+<span class="go">_cut_data</span>
+<span class="go">_detEvals2</span>
+<span class="go">_detMaxEvals</span>
+<span class="go">_evals</span>
+<span class="go">_extra_attr</span>
+<span class="go">algId</span>
+<span class="go">comment</span>
+<span class="go">computeERTfromEvals</span>
+<span class="go">consistency_check</span>
+<span class="go">createDictInstance</span>
+<span class="go">createDictInstanceCount</span>
+<span class="go">dataFiles</span>
+<span class="go">detAverageEvals</span>
+<span class="go">detERT</span>
+<span class="go">detEvals</span>
+<span class="go">detSuccessRates</span>
+<span class="go">detSuccesses</span>
+<span class="go">dim</span>
+<span class="go">ert</span>
+<span class="go">evals</span>
+<span class="go">evals_</span>
+<span class="go">finalfunvals</span>
+<span class="go">funcId</span>
+<span class="go">funvals</span>
+<span class="go">generateRLData</span>
+<span class="go">indexFiles</span>
+<span class="go">info</span>
+<span class="go">instancenumbers</span>
+<span class="go">isFinalized</span>
+<span class="go">mMaxEvals</span>
+<span class="go">max_eval</span>
+<span class="go">maxevals</span>
+<span class="go">nbRuns</span>
+<span class="go">pickle</span>
+<span class="go">plot</span>
+<span class="go">precision</span>
+<span class="go">readfinalFminusFtarget</span>
+<span class="go">readmaxevals</span>
+<span class="go">splitByTrials</span>
+<span class="go">target</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">all</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">evals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ds</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>  <span class="c"># first column of ds.evals is the &quot;target&quot; f-value</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">evals</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span>  <span class="c"># show row 0,10,20,... and of the result columns 0,5,6, index 0 is ftarget</span>
+<span class="go">array([[  3.98107171e+07,   1.00000000e+00,   1.00000000e+00],</span>
+<span class="go">       [  3.98107171e+05,   2.00000000e+01,   8.40000000e+01],</span>
+<span class="go">       [  3.98107171e+03,   1.61600000e+03,   1.04500000e+03],</span>
+<span class="go">       [  3.98107171e+01,   3.04400000e+03,   3.21000000e+03],</span>
+<span class="go">       [  3.98107171e-01,   4.42400000e+03,   5.11800000e+03],</span>
+<span class="go">       [  3.98107171e-03,   4.73200000e+03,   5.41300000e+03],</span>
+<span class="go">       [  3.98107171e-05,   5.04000000e+03,   5.74800000e+03],</span>
+<span class="go">       [  3.98107171e-07,   5.36200000e+03,   6.07000000e+03]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">evals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span>  <span class="c"># show last row, same columns</span>
+<span class="go">array([  1.00000000e-08,   5.67600000e+03,   6.26900000e+03])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>  <span class="c"># prints similar data more nicely formated </span>
+<span class="go">Algorithm: BIPOP-CMA-ES</span>
+<span class="go">Function ID: 2</span>
+<span class="go">Dimension DIM = 10</span>
+<span class="go">Number of trials: 15</span>
+<span class="go">Final target Df: 1e-08</span>
+<span class="go">min / max number of evals per trial: 5676 / 6346</span>
+<span class="go">   evals/DIM:  best     15%     50%     85%     max |  ERT/DIM  nsucc</span>
+<span class="go">  ---Df---|-----------------------------------------|----------------</span>
+<span class="go">  1.0e+03 |     102     126     170     205     235 |    164.2  15</span>
+<span class="go">  1.0e+01 |     278     306     364     457     480 |    374.5  15</span>
+<span class="go">  1.0e-01 |     402     445     497     522     536 |    490.8  15</span>
+<span class="go">  1.0e-03 |     480     516     529     554     567 |    532.8  15</span>
+<span class="go">  1.0e-05 |     513     546     563     584     593 |    562.5  15</span>
+<span class="go">  1.0e-08 |     568     594     611     628     635 |    609.6  15</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>  <span class="c"># not necessary in IPython</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">ds</span><span class="o">.</span><span class="n">ert</span><span class="p">[</span><span class="n">idx</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>  <span class="c"># ERT expected runtime for some targets</span>
+<span class="go">array([[  0.00000000e+00,   3.98107171e+07,   1.00000000e+00],</span>
+<span class="go">       [  1.00000000e+01,   3.98107171e+05,   6.12666667e+01],</span>
+<span class="go">       [  2.00000000e+01,   3.98107171e+03,   1.13626667e+03],</span>
+<span class="go">       [  3.00000000e+01,   3.98107171e+01,   3.07186667e+03],</span>
+<span class="go">       [  4.00000000e+01,   3.98107171e-01,   4.81333333e+03],</span>
+<span class="go">       [ -1.00000000e+00,   1.00000000e-08,   6.09626667e+03]])</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="bbob_pproc.pproc.DataSet.evals">
+<code class="descname">evals</code><em class="property"> = None</em><a class="headerlink" href="#bbob_pproc.pproc.DataSet.evals" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">evals</span></code> are the central data. Each line <code class="docutils literal"><span class="pre">evals[i]</span></code> has a
+(target) function value in <code class="docutils literal"><span class="pre">evals[i][0]</span></code> and the function evaluation
+for which this target was reached the first time in trials 1,...
+in <code class="docutils literal"><span class="pre">evals[i][1:]</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bbob_pproc.pproc.DataSet.evals_">
+<code class="descname">evals_</code><a class="headerlink" href="#bbob_pproc.pproc.DataSet.evals_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shall become <code class="docutils literal"><span class="pre">evals</span></code> attribute in future.</p>
+<p><code class="docutils literal"><span class="pre">evals</span></code> are the central data. Each line <code class="docutils literal"><span class="pre">evals[i]</span></code> has a 
+(target) function value in <code class="docutils literal"><span class="pre">evals[i][0]</span></code> and the function evaluation
+for which this target was reached the first time in trials 1,...
+in <code class="docutils literal"><span class="pre">evals[i][1:]</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.consistency_check">
+<code class="descname">consistency_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.consistency_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>yet a stump</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.computeERTfromEvals">
+<code class="descname">computeERTfromEvals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.computeERTfromEvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the attributes ert and target from the attribute evals.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>targets=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>print text info to stdout</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.mMaxEvals">
+<code class="descname">mMaxEvals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.mMaxEvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum number of function evaluations over all runs (trials), 
+obsolete and replaced by attribute <cite>max_eval</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bbob_pproc.pproc.DataSet.max_eval">
+<code class="descname">max_eval</code><a class="headerlink" href="#bbob_pproc.pproc.DataSet.max_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>maximum number of function evaluations over all runs (trials),</p>
+<p>return max(self.maxevals)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.nbRuns">
+<code class="descname">nbRuns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.nbRuns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of runs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.pickle">
+<code class="descname">pickle</code><span class="sig-paren">(</span><em>outputdir=None</em>, <em>verbose=True</em>, <em>gzipped=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this instance to a pickle file.</p>
+<p>Saves this instance to a (by default gzipped) pickle file. If not 
+specified by argument outputdir, the location of the pickle is 
+given by the location of the first index file associated to this
+instance.</p>
+<p>This method will overwrite existing files.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.createDictInstance">
+<code class="descname">createDictInstance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.createDictInstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of the instances.</p>
+<p>The key is the instance Id, the value is a list of index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.createDictInstanceCount">
+<code class="descname">createDictInstanceCount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.createDictInstanceCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of the instances and their count.</p>
+<p>The keys are instance id and the values are the number of
+repetitions of such instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.splitByTrials">
+<code class="descname">splitByTrials</code><span class="sig-paren">(</span><em>whichdata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.splitByTrials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits the post-processed data arrays by trials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>whichdata</strong> (<em>string</em>) &#8211; either &#8216;evals&#8217; or &#8216;funvals&#8217;
+determines the output</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">this method returns dictionaries of arrays,
+the key of the dictionaries being the instance id, the
+value being a smaller post-processed data array
+corresponding to the instance Id.
+If whichdata is &#8216;evals&#8217; then the array contains
+function evaluations (1st column is alignment
+targets).
+Else if whichdata is &#8216;funvals&#8217; then the output data
+contains function values (1st column is alignment
+budgets).
+Otherwise this method returns a tuple of these two
+arrays in this order.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.generateRLData">
+<code class="descname">generateRLData</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.generateRLData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the running lengths for reaching the target values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> (<em>list</em>) &#8211; target function values of interest</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict of arrays, one array for each target. Each array
+are copied from attribute <a class="reference internal" href="#bbob_pproc.pproc.DataSet.evals" title="bbob_pproc.pproc.DataSet.evals"><code class="xref py py-attr docutils literal"><span class="pre">evals</span></code></a> of
+<a class="reference internal" href="#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code></a>: first element is a target
+function value smaller or equal to the element of
+targets considered and has for other consecutive
+elements the corresponding number of function
+evaluations.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.detAverageEvals">
+<code class="descname">detAverageEvals</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.detAverageEvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the average number of f-evals for each target 
+in <code class="docutils literal"><span class="pre">targets</span></code> list. If a target is not reached within trial
+itrail, self.maxevals[itrial] contributes to the average.</p>
+<p>Equals to sum(evals(target)) / nbruns. If ERT is finite 
+this equals to ERT * psucc == (sum(evals) / ntrials / psucc) * psucc, 
+where ERT, psucc, and evals are a function of target.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.detSuccesses">
+<code class="descname">detSuccesses</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.detSuccesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine for each target in targets the number of 
+successful runs, keeping in return list the order in targets.</p>
+<blockquote>
+<div>dset.SuccessRates(targets) == np.array(dset.detNbSuccesses(targets)) / dset.nbRuns()</div></blockquote>
+<p>are the respective success rates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.detSuccessRates">
+<code class="descname">detSuccessRates</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.detSuccessRates" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a np.array with the success rate for each target 
+in targets, easiest target first</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.detERT">
+<code class="descname">detERT</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.detERT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the expected running time to reach target values.
+The value is numpy.inf, if the target was never reached.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> (<em>list</em>) &#8211; target function values of interest</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of expected running times (# f-evals) for the
+respective targets.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.detEvals">
+<code class="descname">detEvals</code><span class="sig-paren">(</span><em>targets</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.detEvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns len(targets) data rows self.evals[idata, 1:] each row with 
+the closest but not larger target such that self.evals[idata, 0] &lt;= target, 
+and self.evals[idata-1, 0] &gt; target or in the &#8220;limit&#8221; cases the
+idata==0 line or the line np.array(self.nbRuns() * [np.nan]).</p>
+<p>Makes by default a copy of the data, however this might change in
+future.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSet.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSet.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.pproc.DataSetList">
+<em class="property">class </em><code class="descclassname">bbob_pproc.pproc.</code><code class="descname">DataSetList</code><span class="sig-paren">(</span><em>args=[]</em>, <em>verbose=False</em>, <em>check_data_type=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of instances of <a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a>.</p>
+<p>This class implements some useful slicing functions.</p>
+<p>Also it will merge data of DataSet instances that are identical
+(according to function __eq__ of DataSet).</p>
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.processIndexFile">
+<code class="descname">processIndexFile</code><span class="sig-paren">(</span><em>indexFile</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.processIndexFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads in an index (.info?) file information on the different runs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>o</em>, <em>check_data_type=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redefines the append method to check for unicity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>o</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend with elements.</p>
+<p>This method is implemented to prevent problems since append was
+superseded. This method could be the origin of efficiency issue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.pickle">
+<code class="descname">pickle</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loop over self to pickle each element.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByAlg">
+<code class="descname">dictByAlg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByAlg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of instances of this class by algorithm.</p>
+<p>The resulting dict uses algId and comment as keys and the
+corresponding slices as values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByDim">
+<code class="descname">dictByDim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByDim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of instances of this class by dimensions.</p>
+<p>Returns a dictionary with dimension as keys and the
+corresponding slices as values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByFunc">
+<code class="descname">dictByFunc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByFunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of instances of this class by functions.</p>
+<p>Returns a dictionary with the function id as keys and the
+corresponding slices as values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByDimFunc">
+<code class="descname">dictByDimFunc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByDimFunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of instances of this class 
+by dimensions and for each dimension by function.</p>
+<p>Returns a dictionary with dimension as keys and the
+corresponding slices as values.</p>
+<blockquote>
+<div>ds = dsl.dictByDimFunc[40][2]  # DataSet dimension 40 on F2</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByNoise">
+<code class="descname">dictByNoise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByNoise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary splitting noisy and non-noisy entries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByFuncGroup">
+<code class="descname">dictByFuncGroup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByFuncGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of instances of this class by function groups.</p>
+<p>The output dictionary has function group names as keys and the
+corresponding slices as values. Current groups are based on the
+GECCO-BBOB 2009-2013 function testbeds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.dictByParam">
+<code class="descname">dictByParam</code><span class="sig-paren">(</span><em>param</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.dictByParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of DataSetList by parameter values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a dictionary with values of parameter param as keys and
+the corresponding slices of DataSetList as values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>opt=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display some information onscreen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opt</strong> (<em>string</em>) &#8211; changes size of output, can be &#8216;all&#8217;
+(default), &#8216;short&#8217;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.sort">
+<code class="descname">sort</code><span class="sig-paren">(</span><em>key1='dim'</em>, <em>key2='funcId'</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.sort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.run_length_distributions">
+<code class="descname">run_length_distributions</code><span class="sig-paren">(</span><em>dimension</em>, <em>target_values</em>, <em>fun_list=None</em>, <em>reference_data_set_list=None</em>, <em>reference_scoring_function=&lt;function &lt;lambda&gt;&gt;</em>, <em>data_per_target=15</em>, <em>flatten_output_dict=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.run_length_distributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a dictionary with an entry for each algorithm (or
+the dictionary value for only one algorithm if
+<code class="docutils literal"><span class="pre">flatten_output_dict</span> <span class="pre">is</span> <span class="pre">True</span></code>) and
+the left envelope rld-array. For each algorithm the entry contains
+a sorted rld-array of evaluations to reach the targets on all
+functions in <code class="docutils literal"><span class="pre">func_list</span></code> or all available functions, the
+list of solved functions, the list of processed functions. If
+the sorted rld-array is normalized by the reference score (after
+sorting), the last entry is the original rld.</p>
+<p>TODO: change interface to return always rld_original and optional
+the scores to compare with. Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rld</span> <span class="o">=</span> <span class="n">dsl</span><span class="o">.</span><span class="n">run_length_distributions</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">semilogy</span><span class="p">([</span><span class="n">x</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+          <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">rld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal"><span class="pre">reference_data_set_list</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code> evaluations
+are normalized by the reference data, however
+the data remain to be sorted without normalization.
+TODO:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.get_all_data_lines">
+<code class="descname">get_all_data_lines</code><span class="sig-paren">(</span><em>target_value</em>, <em>fct</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.get_all_data_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of all data lines in <code class="docutils literal"><span class="pre">self</span></code> for each
+algorithm and a list of the respective
+computed ERTs.</p>
+<p>Get all run lengths of all trials on f1 in 20-D to reach
+target 1e-7:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">dsl</span><span class="o">.</span><span class="n">get_all_data_lines</span><span class="p">(</span><span class="mf">1e-7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">flat_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">flat_data</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flat_data</span><span class="p">),</span>
+     <span class="n">sort</span><span class="p">(</span><span class="n">flat_data</span><span class="p">))</span>  <span class="c"># sorted fails on nan</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.det_best_data">
+<code class="descname">det_best_data</code><span class="sig-paren">(</span><em>target_values</em>, <em>fct</em>, <em>dim</em>, <em>number=15</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.det_best_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of the <code class="docutils literal"><span class="pre">number</span></code> smallest evaluations over all
+data sets in <code class="docutils literal"><span class="pre">self</span></code> for each <code class="docutils literal"><span class="pre">target</span> <span class="pre">in</span> <span class="pre">target_values</span></code>.</p>
+<p>Detail: currently, the minimal observed evaluation is computed
+instance-wise and the <code class="docutils literal"><span class="pre">number</span></code> &#8220;easiest&#8221; instances are returned.
+Also the smallest <code class="docutils literal"><span class="pre">number</span></code> evaluations regardless of instance
+are computed, but not returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.det_best_data_lines">
+<code class="descname">det_best_data_lines</code><span class="sig-paren">(</span><em>target_values</em>, <em>fct</em>, <em>dim</em>, <em>scoring_function=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.det_best_data_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of the respective best data lines over all data
+sets in <code class="docutils literal"><span class="pre">self</span></code> for each <code class="docutils literal"><span class="pre">target</span> <span class="pre">in</span> <span class="pre">target_values</span></code> and an
+array of the computed scores (ERT <code class="docutils literal"><span class="pre">if</span> <span class="pre">scoring_function</span> <span class="pre">==</span> <span class="pre">'ERT'</span></code>).</p>
+<p>If <code class="docutils literal"><span class="pre">scoring_function</span> <span class="pre">is</span> <span class="pre">None</span></code>, the best is determined with method
+<code class="docutils literal"><span class="pre">detERT</span></code>. Using <code class="docutils literal"><span class="pre">scoring_function=lambda</span> <span class="pre">x:</span>
+<span class="pre">toolsstat.prctile(x,</span> <span class="pre">[5],</span> <span class="pre">ignore_nan=False)</span></code> is another useful
+alternative.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.pproc.DataSetList.get_sorted_algorithms">
+<code class="descname">get_sorted_algorithms</code><span class="sig-paren">(</span><em>dimension</em>, <em>target_values</em>, <em>fun_list=None</em>, <em>reference_dataset_list=None</em>, <em>smallest_evaluation_to_use=3</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DataSetList.get_sorted_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>return list of the algorithms from <code class="docutils literal"><span class="pre">self</span></code>, sorted by
+minimum loss factor in the ECDF.</p>
+<p>Best means to be within <cite>loss</cite> of the best algorithm at
+at least one point of the ECDF from the functions <cite>fun_list</cite>,
+i.e. minimal distance to the left envelope in the semilogx plot.</p>
+<p><code class="docutils literal"><span class="pre">target_values</span></code> gives for each function-dimension pair a list of
+target values.</p>
+<p>TODO: data generation via run_length_distributions and sorting
+should probably be separated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.parseinfoold">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">parseinfoold</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.parseinfoold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated: Extract data from a header line in an index entry.</p>
+<p>Older but verified version of <a class="reference internal" href="#bbob_pproc.pproc.parseinfo" title="bbob_pproc.pproc.parseinfo"><code class="xref py py-meth docutils literal"><span class="pre">parseinfo</span></code></a></p>
+<p>The header line should be a string of comma-separated pairs of
+key=value, for instance: key = value, key = &#8216;value&#8217;</p>
+<p>Keys should not use comma or quote characters.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.parseinfo">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">parseinfo</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.parseinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract data from a header line in an index entry.</p>
+<p>Use a &#8216;smarter&#8217; regular expression than <a class="reference internal" href="#bbob_pproc.pproc.parseinfoold" title="bbob_pproc.pproc.parseinfoold"><code class="xref py py-meth docutils literal"><span class="pre">parseinfoold</span></code></a>.
+The header line should be a string of comma-separated pairs of
+key=value, for instance: key = value, key = &#8216;value&#8217;</p>
+<p>Keys should not use comma or quote characters.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.set_unique_algId">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">set_unique_algId</code><span class="sig-paren">(</span><em>ds_list</em>, <em>ds_list_reference</em>, <em>taken_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.set_unique_algId" title="Permalink to this definition">¶</a></dt>
+<dd><p>on return, elements in <code class="docutils literal"><span class="pre">ds_list</span></code> do not have an <code class="docutils literal"><span class="pre">algId</span></code>
+attribute value from <code class="docutils literal"><span class="pre">taken_ids</span></code> or from
+<code class="docutils literal"><span class="pre">ds_list_reference</span></code> <code class="docutils literal"><span class="pre">if</span> <span class="pre">taken_ids</span> <span class="pre">is</span> <span class="pre">None</span></code>.</p>
+<p>In case, <code class="docutils literal"><span class="pre">BFGS</span></code> becomes <code class="docutils literal"><span class="pre">BFGS</span> <span class="pre">2</span></code> etc.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.processInputArgs">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">processInputArgs</code><span class="sig-paren">(</span><em>args</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.processInputArgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process command line arguments.</p>
+<p>Returns several instances of <a class="reference internal" href="#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code></a>, and a list of 
+algorithms from a list of strings representing file and folder names,
+see below for details. This command operates folder-wise: one folder 
+corresponds to one algorithm.</p>
+<p>It is recommended that if a folder listed in args contain both
+<code class="file docutils literal"><span class="pre">info</span></code> files and the associated <code class="file docutils literal"><span class="pre">pickle</span></code> files, they be
+kept in different locations for efficiency reasons.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>args</strong> (<em>list</em>) &#8211; string arguments for folder names</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controlling verbosity</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns (all_datasets, pathnames, datasetlists_by_alg):</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><dl class="first last docutils">
+<dt>all_datasets</dt>
+<dd><p class="first last">a list containing all DataSet instances, this is to
+prevent the regrouping done in instances of DataSetList.
+Caveat: algorithms with the same name are overwritten!?</p>
+</dd>
+<dt>pathnames</dt>
+<dd><p class="first last">a list of keys of datasetlists_per_alg with the ordering as
+given by the input argument args</p>
+</dd>
+<dt>datasetlists_by_alg</dt>
+<dd><p class="first last">a dictionary which associates each algorithm via its input path
+name to a DataSetList</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.pproc.DictAlg">
+<em class="property">class </em><code class="descclassname">bbob_pproc.pproc.</code><code class="descname">DictAlg</code><span class="sig-paren">(</span><em>d={}</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DictAlg" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="bbob_pproc.pproc.DictAlg.by_dim">
+<code class="descname">by_dim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.DictAlg.by_dim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.dictAlgByDim">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">dictAlgByDim</code><span class="sig-paren">(</span><em>dictAlg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.dictAlgByDim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with problem dimension as key from
+a dictionary of DataSet lists.</p>
+<p>The input argument is a dictionary with algorithm names as 
+keys and a list of <a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a> instances as values.
+The resulting dictionary will have dimension as key and as values
+dictionaries with algorithm names as keys.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.dictAlgByDim2">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">dictAlgByDim2</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>remove_empty=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.dictAlgByDim2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with problem dimension as key.</p>
+<p>The difference with <a class="reference internal" href="#bbob_pproc.pproc.dictAlgByDim" title="bbob_pproc.pproc.dictAlgByDim"><code class="xref py py-func docutils literal"><span class="pre">dictAlgByDim</span></code></a> is that there is an
+entry for each algorithm even if the resulting
+<a class="reference internal" href="#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code></a> is empty.</p>
+<p>This function is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a> instances as values.
+The resulting dictionary will have dimension as key and as values
+dictionaries with algorithm names as keys.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.dictAlgByFun">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">dictAlgByFun</code><span class="sig-paren">(</span><em>dictAlg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.dictAlgByFun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with function id as key.</p>
+<p>This method is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a> instances as values.
+The resulting dictionary will have function id as key and as values
+dictionaries with algorithm names as keys.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.dictAlgByNoi">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">dictAlgByNoi</code><span class="sig-paren">(</span><em>dictAlg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.dictAlgByNoi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with noise group as key.</p>
+<p>This method is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a> instances as values.
+The resulting dictionary will have a string denoting the noise group
+(&#8216;noiselessall&#8217; or &#8216;nzall&#8217;) and as values dictionaries with
+algorithm names as keys.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pproc.dictAlgByFuncGroup">
+<code class="descclassname">bbob_pproc.pproc.</code><code class="descname">dictAlgByFuncGroup</code><span class="sig-paren">(</span><em>dictAlg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pproc.dictAlgByFuncGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with function group as key.</p>
+<p>This method is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code></a> instances as values.
+The resulting dictionary will have a string denoting the function
+group and as values dictionaries with algorithm names as keys.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.algportfolio">
+<span id="bbob-pproc-algportfolio"></span><h2><a class="toc-backref" href="#id4"><a class="reference internal" href="#module-bbob_pproc.algportfolio" title="bbob_pproc.algportfolio"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.algportfolio</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.algportfolio" title="Permalink to this headline">¶</a></h2>
+<p>Algorithm portfolio data set module.</p>
+<p>The algorithm portfolio consists in running multiple algorithms in
+parallel.
+Current limitation: the portfolio data set must come from data sets that
+are identical (same number of repetitions on the same instances of the
+functions.</p>
+<p><strong>Example:</strong></p>
+<p>(<a class="reference external" href=".//bbob_pprocinternal-1.py">Source code</a>, <a class="reference external" href=".//bbob_pprocinternal-1.png">png</a>, <a class="reference external" href=".//bbob_pprocinternal-1.hires.png">hires.png</a>, <a class="reference external" href=".//bbob_pprocinternal-1.pdf">pdf</a>)</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/bbob_pprocinternal-1.png"><img alt="_images/bbob_pprocinternal-1.png" src="_images/bbob_pprocinternal-1.png" style="width: 75%;" /></a>
+</div>
+<dl class="exception">
+<dt id="bbob_pproc.algportfolio.Usage">
+<em class="property">exception </em><code class="descclassname">bbob_pproc.algportfolio.</code><code class="descname">Usage</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.algportfolio.Usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.algportfolio.DataSet">
+<em class="property">class </em><code class="descclassname">bbob_pproc.algportfolio.</code><code class="descname">DataSet</code><span class="sig-paren">(</span><em>dslist</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.algportfolio.DataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit element of algorithm portfolio data set.</p>
+<dl class="docutils">
+<dt>Modified class attributes:</dt>
+<dd><ul class="first last simple">
+<li>comment &#8211; comments for the setting (list)</li>
+<li>algId &#8211; algorithm name (list)</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.algportfolio.build">
+<code class="descclassname">bbob_pproc.algportfolio.</code><code class="descname">build</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>sortedAlg=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.algportfolio.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge datasets in an algorithm portfolio.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dictAlg</strong> (<em>dict</em>) &#8211; dictionary of data sets with algorithm name for
+keys, see <code class="docutils literal"><span class="pre">pproc.DataSetList.dictByAlg</span></code></li>
+<li><strong>sortedAlgs</strong> (<em>seq</em>) &#8211; sequence for sorting the entries of
+<code class="xref py py-data docutils literal"><span class="pre">dictAlg</span></code>, if not provided,
+dictAlg.keys() will be instead</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">an instance of <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> with the porfolio
+data sets</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.bestalg">
+<span id="bbob-pproc-bestalg"></span><h2><a class="toc-backref" href="#id5"><a class="reference internal" href="#module-bbob_pproc.bestalg" title="bbob_pproc.bestalg"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.bestalg</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.bestalg" title="Permalink to this headline">¶</a></h2>
+<p>Best algorithm dataset module</p>
+<p>This module implements <a class="reference internal" href="#bbob_pproc.bestalg.BestAlgSet" title="bbob_pproc.bestalg.BestAlgSet"><code class="xref py py-class docutils literal"><span class="pre">BestAlgSet</span></code></a> class which is used as
+data structure for the data set of the virtual best algorithm.
+Therefore this module will be imported by other modules which need
+to access best algorithm data set.</p>
+<p>The best algorithm data set can be accessed by the
+<code class="xref py py-data docutils literal"><span class="pre">bestalgentries2009</span></code> variable. This variable needs to be
+initialized by executing functions <a class="reference internal" href="#bbob_pproc.bestalg.loadBBOB2009" title="bbob_pproc.bestalg.loadBBOB2009"><code class="xref py py-func docutils literal"><span class="pre">loadBBOB2009</span></code></a></p>
+<p>This module can also be used generate the best algorithm data set
+with its generate method.</p>
+<dl class="exception">
+<dt id="bbob_pproc.bestalg.Usage">
+<em class="property">exception </em><code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">Usage</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.Usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.bestalg.BestAlgSet">
+<em class="property">class </em><code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">BestAlgSet</code><span class="sig-paren">(</span><em>dictAlg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.BestAlgSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit element of best algorithm data set.</p>
+<p>Here unit element means for one function and one dimension.
+This class is derived from <code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code> but it does not
+inherit from it.</p>
+<dl class="docutils">
+<dt>Class attributes:</dt>
+<dd><ul class="first last simple">
+<li>funcId &#8211; function Id (integer)</li>
+<li>dim &#8211; dimension (integer)</li>
+<li>comment &#8211; comment for the setting (string)</li>
+<li>algId &#8211; algorithm name (string)</li>
+<li>evals &#8211; collected data aligned by function values (array)</li>
+<li>maxevals &#8211; maximum number of function evaluations (array)</li>
+</ul>
+</dd>
+</dl>
+<p>evals and funvals are arrays of data collected from N data sets.
+Both have the same format: zero-th column is the value on which the
+data of a row is aligned, the N subsequent columns are either the
+numbers of function evaluations for evals or function values for
+funvals.</p>
+<p>Known bug: algorithms where the ERT is NaN or Inf are not taken into
+account!?</p>
+<dl class="method">
+<dt id="bbob_pproc.bestalg.BestAlgSet.pickle">
+<code class="descname">pickle</code><span class="sig-paren">(</span><em>outputdir=None</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.BestAlgSet.pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save instance to a pickle file.</p>
+<p>Saves the instance to a pickle file. If not specified
+by argument outputdir, the location of the pickle is given by
+the location of the first index file associated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.bestalg.BestAlgSet.createDictInstance">
+<code class="descname">createDictInstance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.BestAlgSet.createDictInstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of the instances</p>
+<p>The key is the instance id, the value is a list of index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.bestalg.BestAlgSet.detERT">
+<code class="descname">detERT</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.BestAlgSet.detERT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the expected running time to reach target values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> (<em>list</em>) &#8211; target function values of interest</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of expected running times corresponding to the
+targets.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.bestalg.BestAlgSet.detEvals">
+<code class="descname">detEvals</code><span class="sig-paren">(</span><em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.BestAlgSet.detEvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the number of evaluations to reach target values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targets</strong> (<em>seq</em>) &#8211; target precisions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of arrays each corresponding to one value in
+targets and the list of the corresponding algorithms</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.loadBBOB2009">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">loadBBOB2009</code><span class="sig-paren">(</span><em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.loadBBOB2009" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns <code class="xref py py-data docutils literal"><span class="pre">bestalgentries2009</span></code>.</p>
+<p>This function is needed to set the global variable
+<code class="xref py py-data docutils literal"><span class="pre">bestalgentries2009</span></code>. It unpickles file 
+<code class="file docutils literal"><span class="pre">bestalgentries2009.pickle.gz</span></code></p>
+<p><code class="xref py py-data docutils literal"><span class="pre">bestalgentries2009</span></code> is a dictionary accessed by providing
+a tuple <code class="xref py py-data docutils literal"><span class="pre">(dimension,</span> <span class="pre">function)</span></code>. This returns an instance
+of <a class="reference internal" href="#bbob_pproc.bestalg.BestAlgSet" title="bbob_pproc.bestalg.BestAlgSet"><code class="xref py py-class docutils literal"><span class="pre">BestAlgSet</span></code></a>.
+The data is that of algorithms submitted to BBOB 2009, the list of
+which can be found in variable <code class="xref py py-data docutils literal"><span class="pre">algs2009</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.loadBBOB2010">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">loadBBOB2010</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.loadBBOB2010" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns <code class="xref py py-data docutils literal"><span class="pre">bestalgentries2010</span></code>.</p>
+<p>This function is needed to set the global variable
+<code class="xref py py-data docutils literal"><span class="pre">bestalgentries2010</span></code>. It unpickles file 
+<code class="file docutils literal"><span class="pre">bestalgentries2010.pickle.gz</span></code></p>
+<p><code class="xref py py-data docutils literal"><span class="pre">bestalgentries2010</span></code> is a dictionary accessed by providing
+a tuple <code class="xref py py-data docutils literal"><span class="pre">(dimension,</span> <span class="pre">function)</span></code>. This returns an instance
+of <a class="reference internal" href="#bbob_pproc.bestalg.BestAlgSet" title="bbob_pproc.bestalg.BestAlgSet"><code class="xref py py-class docutils literal"><span class="pre">BestAlgSet</span></code></a>.
+The data is that of algorithms submitted to BBOB 20&amp;0, the list of
+which can be found in variable <code class="xref py py-data docutils literal"><span class="pre">algs2010</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.loadBBOB2012">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">loadBBOB2012</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.loadBBOB2012" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns <code class="xref py py-data docutils literal"><span class="pre">bestalgentries2012</span></code>.</p>
+<p>This function is needed to set the global variable
+<code class="xref py py-data docutils literal"><span class="pre">bestalgentries2012</span></code>. It unpickles file 
+<code class="file docutils literal"><span class="pre">bestalgentries2012.pickle.gz</span></code></p>
+<p><code class="xref py py-data docutils literal"><span class="pre">bestalgentries2012</span></code> is a dictionary accessed by providing
+a tuple <code class="xref py py-data docutils literal"><span class="pre">(dimension,</span> <span class="pre">function)</span></code>. This returns an instance
+of <a class="reference internal" href="#bbob_pproc.bestalg.BestAlgSet" title="bbob_pproc.bestalg.BestAlgSet"><code class="xref py py-class docutils literal"><span class="pre">BestAlgSet</span></code></a>.
+The data is that of algorithms submitted to BBOB 20&amp;0, the list of
+which can be found in variable <code class="xref py py-data docutils literal"><span class="pre">algs2012</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.loadBBOBever">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">loadBBOBever</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.loadBBOBever" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns <code class="xref py py-data docutils literal"><span class="pre">bestalgentriesever</span></code>.</p>
+<p>This function is needed to set the global variable
+<code class="xref py py-data docutils literal"><span class="pre">bestalgentriesever</span></code>. It unpickles file 
+<code class="file docutils literal"><span class="pre">bestalgentriesever.pickle.gz</span></code></p>
+<p><code class="xref py py-data docutils literal"><span class="pre">bestalgentriesever</span></code> is a dictionary accessed by providing
+a tuple <code class="xref py py-data docutils literal"><span class="pre">(dimension,</span> <span class="pre">function)</span></code>. This returns an instance
+of <a class="reference internal" href="#bbob_pproc.bestalg.BestAlgSet" title="bbob_pproc.bestalg.BestAlgSet"><code class="xref py py-class docutils literal"><span class="pre">BestAlgSet</span></code></a>.
+The data is that of algorithms submitted to BBOB 2009 and 2010, the
+list of which is the union in variables <code class="xref py py-data docutils literal"><span class="pre">algs2009</span></code>
+and <code class="xref py py-data docutils literal"><span class="pre">algs2010</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.usage">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">usage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.generate">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">generate</code><span class="sig-paren">(</span><em>dictalg</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates dictionary of best algorithm data set.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.customgenerate">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">customgenerate</code><span class="sig-paren">(</span><em>args=('ALPS'</em>, <em>'AMALGAM'</em>, <em>'BAYEDA'</em>, <em>'BFGS'</em>, <em>'Cauchy-EDA'</em>, <em>'BIPOP-CMA-ES'</em>, <em>'CMA-ESPLUSSEL'</em>, <em>'DASA'</em>, <em>'DE-PSO'</em>, <em>'DIRECT'</em>, <em>'EDA-PSO'</em>, <em>'FULLNEWUOA'</em>, <em>'G3PCX'</em>, <em>'GA'</em>, <em>'GLOBAL'</em>, <em>'iAMALGAM'</em>, <em>'IPOP-SEP-CMA-ES'</em>, <em>'LSfminbnd'</em>, <em>'LSstep'</em>, <em>'MA-LS-CHAIN'</em>, <em>'MCS'</em>, <em>'NELDER'</em>, <em>'NELDERDOERR'</em>, <em>'NEWUOA'</em>, <em>'ONEFIFTH'</em>, <em>'POEMS'</em>, <em>'PSO'</em>, <em>'PSO_Bounds'</em>, <em>'RANDOMSEARCH'</em>, <em>'Rosenbrock'</em>, <em>'SNOBFIT'</em>, <em>'VNS')</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.customgenerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates best algorithm data set.</p>
+<p>It will create a folder bestAlg in the current working directory
+with a pickle file corresponding to the bestalg dataSet of the
+algorithms listed in variable args.</p>
+<p>This method is called from the python command line from a directory
+containing all necessary data folders:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bbob_pproc</span> <span class="kn">import</span> <span class="n">bestalg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">&#39;__file__&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">&quot;../../../data-archive/data/gecco-bbob-1-24/2009/data&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bestalg</span><span class="o">.</span><span class="n">customgenerate</span><span class="p">()</span> 
+<span class="go">Searching in ALPS ...</span>
+<span class="go">Found 144 file(s).</span>
+<span class="go">  using: ALPS</span>
+<span class="gp">...</span>
+<span class="go">done with writing pickle...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.getAllContributingAlgorithmsToBest">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">getAllContributingAlgorithmsToBest</code><span class="sig-paren">(</span><em>algnamelist</em>, <em>target_lb=1e-08</em>, <em>target_ub=100.0</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.getAllContributingAlgorithmsToBest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes first the artificial best algorithm from given algorithm list
+algnamelist, constructed by extracting for each target/function pair
+the algorithm with best ERT among the given ones. Returns then the list
+of algorithms that are contributing to the definition of the best
+algorithm, separated by dimension, and sorted by importance (i.e. with
+respect to the number of target/function pairs where each algorithm is
+best). Only target/function pairs are taken into account where the target
+is in between target_lb and target_ub.</p>
+<p>This method should be called from the python command line from a directory
+containing all necessary data folders:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bbob_pproc</span> <span class="kn">import</span> <span class="n">bestalg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">&#39;__file__&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">&quot;../../../data-archive/data/gecco-bbob-1-24/2009/data&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bestalg</span><span class="o">.</span><span class="n">getAllContributingAlgorithmsToBest</span><span class="p">((</span><span class="s">&#39;BIPOP-CMA-ES&#39;</span><span class="p">,</span> <span class="s">&#39;RANDOMSEARCH&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+<p>Generating best algorithm data from given algorithm list...
+Searching in BIPOP-CMA-ES ...
+...
+Found 144 file(s).
+...
+&gt;&gt;&gt; os.chdir(path)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.bestalg.extractBestAlgorithms">
+<code class="descclassname">bbob_pproc.bestalg.</code><code class="descname">extractBestAlgorithms</code><span class="sig-paren">(</span><em>args=('ALPS'</em>, <em>'AMALGAM'</em>, <em>'BAYEDA'</em>, <em>'BFGS'</em>, <em>'Cauchy-EDA'</em>, <em>'BIPOP-CMA-ES'</em>, <em>'CMA-ESPLUSSEL'</em>, <em>'DASA'</em>, <em>'DE-PSO'</em>, <em>'DIRECT'</em>, <em>'EDA-PSO'</em>, <em>'FULLNEWUOA'</em>, <em>'G3PCX'</em>, <em>'GA'</em>, <em>'GLOBAL'</em>, <em>'iAMALGAM'</em>, <em>'IPOP-SEP-CMA-ES'</em>, <em>'LSfminbnd'</em>, <em>'LSstep'</em>, <em>'MA-LS-CHAIN'</em>, <em>'MCS'</em>, <em>'NELDER'</em>, <em>'NELDERDOERR'</em>, <em>'NEWUOA'</em>, <em>'ONEFIFTH'</em>, <em>'POEMS'</em>, <em>'PSO'</em>, <em>'PSO_Bounds'</em>, <em>'RANDOMSEARCH'</em>, <em>'Rosenbrock'</em>, <em>'SNOBFIT'</em>, <em>'VNS')</em>, <em>f_factor=2</em>, <em>target_lb=1e-08</em>, <em>target_ub=1e+22</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.bestalg.extractBestAlgorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (and prints) per dimension a list of algorithms within
+algorithm list args that contains an algorithm if for any</p>
+<blockquote>
+<div><p>dimension/target/function pair this algorithm:
+- is the best algorithm wrt ERT
+- its own ERT lies within a factor f_factor of the best ERT
+- there is no algorithm within a factor of f_factor of the best ERT</p>
+<blockquote>
+<div>and the current algorithm is the second best.</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.changeAlgIdAndComment">
+<span id="bbob-pproc-changealgidandcomment"></span><h2><a class="toc-backref" href="#id6"><a class="reference internal" href="#module-bbob_pproc.changeAlgIdAndComment" title="bbob_pproc.changeAlgIdAndComment"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.changeAlgIdAndComment</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.changeAlgIdAndComment" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="bbob_pproc.changeAlgIdAndComment.main">
+<code class="descclassname">bbob_pproc.changeAlgIdAndComment.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.changeAlgIdAndComment.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main routine.</p>
+<p>This script allows to change algorithm name (algId) and algorithm
+comment after a run finished, i.e., after an output folder has been
+created.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>argv</strong> (<em>seq</em>) &#8211; list of strings containing options and arguments.
+If not provided, sys.argv is accessed.</td>
+</tr>
+</tbody>
+</table>
+<p><code class="xref py py-data docutils literal"><span class="pre">argv</span></code> should list an output folder (first argument) and
+additionally an algorithm name (2nd argument) and the algorithm
+comment (3rd argument).
+If only the output folder is given, the script asks for an algorithm
+name and a comment interactively.</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>display this message</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>verbose mode, prints out operations. When not in verbose mode, no
+output is to be expected, except for errors.</td></tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Examples:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Changing algorithm name and comments for given output folder from the</dt>
+<dd><p class="first">command line:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ python bbob_pproc/changeAlgIdAndComment.py outfolder &quot;CMA-ES&quot; &quot;CMA_with_lambda_100&quot;
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Changing algorithm name and comments for given output folder</dt>
+<dd><p class="first">interactively:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ python bbob_pproc/changeAlgIdAndComment.py outputfolder
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.cococommands">
+<span id="bbob-pproc-cococommands"></span><h2><a class="toc-backref" href="#id7"><a class="reference internal" href="#module-bbob_pproc.cococommands" title="bbob_pproc.cococommands"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.cococommands</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.cococommands" title="Permalink to this headline">¶</a></h2>
+<p>Module for using COCO from the (i)Python interpreter.</p>
+<p>For all operations in the Python interpreter, it will be assumed that
+the package has been imported as bb, just like it is done in the first
+line of the examples below.</p>
+<p>The main data structures used in COCO are <code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code>, which
+corresponds to data of one algorithm on one problem, and
+<code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code>, which is for collections of <code class="xref py py-class docutils literal"><span class="pre">DataSet</span></code>
+instances. Both classes are implemented in <a class="reference internal" href="#module-bbob_pproc.pproc" title="bbob_pproc.pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pproc</span></code></a>.</p>
+<p>Examples:</p>
+<ul>
+<li><p class="first">Start by importing <a class="reference internal" href="bbob_pproc.html#module-bbob_pproc" title="bbob_pproc"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc</span></code></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bbob_pproc</span> <span class="kn">as</span> <span class="nn">bb</span> <span class="c"># load bbob_pproc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">&#39;__file__&#39;</span><span class="p">))))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Load a data set, assign to variable <code class="xref py py-data docutils literal"><span class="pre">ds</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;BIPOP-CMA-ES_hansen_noiseless/bbobexp_f2.info&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get some information on a <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">ds</span> 
+<span class="go">[DataSet(BIPOP-CMA-ES on f2 2-D), ..., DataSet(BIPOP-CMA-ES on f2 40-D)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bb</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="go">6 data set(s)</span>
+<span class="go">Algorithm(s): BIPOP-CMA-ES</span>
+<span class="go">1 Function with ID 2</span>
+<span class="go">Dimension(s): 2, 3, 5, 10, 20, 40</span>
+<span class="go">Max evals: [762, 1537, 2428, 6346, 20678, 75010]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<dl class="function">
+<dt id="bbob_pproc.cococommands.load">
+<code class="descclassname">bbob_pproc.cococommands.</code><code class="descname">load</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.cococommands.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <code class="xref py py-class docutils literal"><span class="pre">DataSetList</span></code> instance from a file or folder.</p>
+<p>Input argument filename can be a single <code class="file docutils literal"><span class="pre">info</span></code> file name, a
+single pickle filename or a folder name. In the latter case, the
+folder is browsed recursively for <code class="file docutils literal"><span class="pre">info</span></code> or <code class="file docutils literal"><span class="pre">pickle</span></code>
+files.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.cococommands.info">
+<code class="descclassname">bbob_pproc.cococommands.</code><code class="descname">info</code><span class="sig-paren">(</span><em>dsList</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.cococommands.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display more info on an instance of DatasetList.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.cococommands.pickle">
+<code class="descclassname">bbob_pproc.cococommands.</code><code class="descname">pickle</code><span class="sig-paren">(</span><em>dsList</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.cococommands.pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pickle a DataSetList.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.cococommands.systeminfo">
+<code class="descclassname">bbob_pproc.cococommands.</code><code class="descname">systeminfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.cococommands.systeminfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display information on the system.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.config">
+<span id="bbob-pproc-config"></span><h2><a class="toc-backref" href="#id8"><a class="reference internal" href="#module-bbob_pproc.config" title="bbob_pproc.config"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.config</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.config" title="Permalink to this headline">¶</a></h2>
+<p>This module is an attempt for a global configuration file for various parameters.</p>
+<p>The import of this module, <code class="xref py py-mod docutils literal"><span class="pre">config</span></code>, changes default settings (attributes) 
+of other modules. This works, because each module has only one instance.</p>
+<p>Before this module is imported somewhere, modules use their default settings.</p>
+<p>This file could be dynamically modified and reloaded.</p>
+<p>See also genericsettings.py which is a central place to define settings
+used by other modules, but does not modify settings of other modules.</p>
+<dl class="function">
+<dt id="bbob_pproc.config.target_values">
+<code class="descclassname">bbob_pproc.config.</code><code class="descname">target_values</code><span class="sig-paren">(</span><em>is_expensive</em>, <em>dict_max_fun_evals={}</em>, <em>runlength_limit=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.config.target_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>manage target values setting in &#8220;expensive&#8221; optimization scenario, 
+when <code class="docutils literal"><span class="pre">is_expensive</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">(True,</span> <span class="pre">False),</span> <span class="pre">the</span> <span class="pre">setting</span> <span class="pre">is</span> <span class="pre">based</span> <span class="pre">on</span> 
+<span class="pre">the</span> <span class="pre">comparison</span> <span class="pre">of</span> <span class="pre">entries</span> <span class="pre">in</span> <span class="pre">``dict_max_fun_evals</span></code> with
+<code class="docutils literal"><span class="pre">runlength_limit</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.config.config">
+<code class="descclassname">bbob_pproc.config.</code><code class="descname">config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.config.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>called from a high level, e.g. rungeneric, to configure the lower level 
+modules via modifying parameter settings.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.config.main">
+<code class="descclassname">bbob_pproc.config.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.config.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.dataoutput">
+<span id="bbob-pproc-dataoutput"></span><h2><a class="toc-backref" href="#id9"><a class="reference internal" href="#module-bbob_pproc.dataoutput" title="bbob_pproc.dataoutput"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.dataoutput</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.dataoutput" title="Permalink to this headline">¶</a></h2>
+<p>Routines for outputting python-formatted data.</p>
+<p>1 file per solver per function and per dimension (unit experiment).</p>
+<p>Example use:</p>
+<ul>
+<li><p class="first">from the shell, assuming folder FOLDER contains raw experimental
+data:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python pathtococo/python/bbob_pproc/dataoutput.py FOLDER
+
+Searching in FOLDER ...
+Searching in FOLDER/data_f1 ...
+...
+Found ... file(s)!
+Processing FOLDER/....info.
+...
+Saved pickle in FOLDER-pickle/....pickle.
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This creates folder <code class="file docutils literal"><span class="pre">FOLDER-pickle</span></code> with python formatted files to
+use with COCO.</p>
+<dl class="function">
+<dt id="bbob_pproc.dataoutput.main">
+<code class="descclassname">bbob_pproc.dataoutput.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.dataoutput.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate python-formatted data from raw BBOB experimental data.</p>
+<p>The raw experimental data (files with the extension <code class="file docutils literal"><span class="pre">info</span></code>
+pointing to files with extension <code class="file docutils literal"><span class="pre">dat</span></code> and <code class="file docutils literal"><span class="pre">tdat</span></code>) are
+post-processed and stored in a more condensed way as files with the
+extension <code class="file docutils literal"><span class="pre">pickle</span></code>.
+Supposing the raw data are stored in folder <code class="file docutils literal"><span class="pre">mydata</span></code>, the new
+pickle files will be put in folder <code class="file docutils literal"><span class="pre">mydata-pickle</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>argv</strong> (<em>list</em>) &#8211; strings containing options and arguments. If not
+provided, sys.argv is accessed.</td>
+</tr>
+</tbody>
+</table>
+<p><em>argv</em> should list either names of info files or folders containing
+info files.
+Furthermore, <em>argv</em> can begin with, in any order, facultative option
+flags listed below.</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>display this message</td></tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises Usage:</th><td class="field-body">Gives back a usage message.</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<ul>
+<li><p class="first">Calling the dataoutput.py interface from the command line:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python bbob_pproc/dataoutput.py experiment2/*.info
+</pre></div>
+</div>
+</li>
+<li><p class="first">Loading this package and calling the main from the command line
+(requires that the path to this package is in the search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python -m bbob_pproc.dataoutput -h
+</pre></div>
+</div>
+<p>This will print out this help message.</p>
+</li>
+<li><p class="first">From the python interactive shell (requires that the path to this
+package is in python search path):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; import bbob_pproc as bb
+&gt;&gt; bb.dataoutput.main(&#39;folder1&#39;)
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.findfiles">
+<span id="bbob-pproc-findfiles"></span><h2><a class="toc-backref" href="#id10"><a class="reference internal" href="#module-bbob_pproc.findfiles" title="bbob_pproc.findfiles"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.findfiles</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.findfiles" title="Permalink to this headline">¶</a></h2>
+<p>Recursively find <code class="file docutils literal"><span class="pre">info</span></code> and <code class="file docutils literal"><span class="pre">pickle</span></code> files within a directory</p>
+<p>This module can be called from the shell, it will recursively look for
+<code class="file docutils literal"><span class="pre">info</span></code> and <code class="file docutils literal"><span class="pre">pickle</span></code> files in the current working directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python pathtococo/bbob_pproc/findfiles.py
+Searching in ...
+Found ... file(s)!
+</pre></div>
+</div>
+<dl class="function">
+<dt id="bbob_pproc.findfiles.is_recognized_repository_filetype">
+<code class="descclassname">bbob_pproc.findfiles.</code><code class="descname">is_recognized_repository_filetype</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.findfiles.is_recognized_repository_filetype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.findfiles.main">
+<code class="descclassname">bbob_pproc.findfiles.</code><code class="descname">main</code><span class="sig-paren">(</span><em>directory='.'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.findfiles.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists &#8220;data&#8221; files recursively in a given directory, tar files
+are extracted.</p>
+<p>The &#8220;data&#8221; files have <code class="file docutils literal"><span class="pre">info</span></code> and <code class="file docutils literal"><span class="pre">pickle</span></code> extensions.</p>
+<p>TODO: not only recognize .tar and .tar.gz and .tgz but .zip...</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.findfiles.get_directory">
+<code class="descclassname">bbob_pproc.findfiles.</code><code class="descname">get_directory</code><span class="sig-paren">(</span><em>directory</em>, <em>extractFiles</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.findfiles.get_directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.findfiles.get_output_directory_subfolder">
+<code class="descclassname">bbob_pproc.findfiles.</code><code class="descname">get_output_directory_subfolder</code><span class="sig-paren">(</span><em>directory</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.findfiles.get_output_directory_subfolder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.readalign">
+<span id="bbob-pproc-readalign"></span><h2><a class="toc-backref" href="#id11"><a class="reference internal" href="#module-bbob_pproc.readalign" title="bbob_pproc.readalign"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.readalign</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.readalign" title="Permalink to this headline">¶</a></h2>
+<p>Helper routines to read in data files.</p>
+<p>The terms horizontal and vertical below refer to the horizontal
+(fixed-target) and vertical (fixed-budget) views. When considering
+convergence graphs of function values over times, we can view it as:</p>
+<blockquote>
+<div><ul class="simple">
+<li>costs for different fixed targets represented by horizontal cuts.</li>
+<li>function values for different fixed budgets represented by vertical
+cuts.</li>
+</ul>
+</div></blockquote>
+<p>COCO collects experimental data with respect to these two complementary
+views. This module provides data structures and methods for dealing with
+the experimental data.</p>
+<dl class="class">
+<dt id="bbob_pproc.readalign.MultiReader">
+<em class="property">class </em><code class="descclassname">bbob_pproc.readalign.</code><code class="descname">MultiReader</code><span class="sig-paren">(</span><em>data</em>, <em>isHArray=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.MultiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of data arrays to be aligned.</p>
+<p>The main purpose of this class is to be used as a single container
+of the data arrays to be aligned by <a class="reference internal" href="#bbob_pproc.readalign.alignData" title="bbob_pproc.readalign.alignData"><code class="xref py py-meth docutils literal"><span class="pre">alignData</span></code></a> in the
+parent module.
+A data array is defined as an array where rows correspond to
+recordings at different moments of an experiment. Elements of these
+rows correspond to different measures.
+These data arrays can be aligned along the time or the function
+values for instance.</p>
+<p>This class is part abstract. Some methods have to be defined by
+inheriting classes depending on wanted alignment:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="xref py py-meth docutils literal"><span class="pre">isFinished</span></code>, True when all the data is read.</li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">getInitialValue</span></code>, returns the initial alignment
+value.</li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">newCurrentValue</span></code>, returns the next alignment value.</li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">align</span></code>, process all the elements of self to make
+them aligned.</li>
+</ul>
+</div></blockquote>
+<p>Some attributes have to be defined as well <code class="xref py py-attr docutils literal"><span class="pre">idx</span></code>,
+the index of the column with alignment values in the data array,
+<code class="xref py py-attr docutils literal"><span class="pre">idxData</span></code>, the index of the column with the actual data.</p>
+<dl class="method">
+<dt id="bbob_pproc.readalign.MultiReader.currentLine">
+<code class="descname">currentLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.MultiReader.currentLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregates currentLines information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.MultiReader.currentValues">
+<code class="descname">currentValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.MultiReader.currentValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the list of the current alignment values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.MultiReader.nextValues">
+<code class="descname">nextValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.MultiReader.nextValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the list of the next alignment values.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.readalign.MultiReader.SingleReader">
+<em class="property">class </em><code class="descname">SingleReader</code><span class="sig-paren">(</span><em>data</em>, <em>isHArray=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.MultiReader.SingleReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single data array reader class.</p>
+<dl class="method">
+<dt id="bbob_pproc.readalign.MultiReader.SingleReader.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.MultiReader.SingleReader.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the next (last if undefined) line of the array data.</p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.readalign.VMultiReader">
+<em class="property">class </em><code class="descclassname">bbob_pproc.readalign.</code><code class="descname">VMultiReader</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of data arrays to be aligned vertically.</p>
+<p>Aligned vertically means, all number of function evaluations are the
+closest from below or equal to the alignment number of function
+evaluations.</p>
+<dl class="attribute">
+<dt id="bbob_pproc.readalign.VMultiReader.idx">
+<code class="descname">idx</code><em class="property"> = 0</em><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader.idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="bbob_pproc.readalign.VMultiReader.idxData">
+<code class="descname">idxData</code><em class="property"> = 2</em><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader.idxData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.VMultiReader.isFinished">
+<code class="descname">isFinished</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader.isFinished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.VMultiReader.getInitialValue">
+<code class="descname">getInitialValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader.getInitialValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.VMultiReader.newCurrentValue">
+<code class="descname">newCurrentValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader.newCurrentValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.VMultiReader.align">
+<code class="descname">align</code><span class="sig-paren">(</span><em>currentValue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.VMultiReader.align" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.readalign.HMultiReader">
+<em class="property">class </em><code class="descclassname">bbob_pproc.readalign.</code><code class="descname">HMultiReader</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of data arrays to be aligned horizontally.</p>
+<p>Aligned horizontally means all the function values are lesser than
+(or equal to) the current alignment function value.</p>
+<dl class="attribute">
+<dt id="bbob_pproc.readalign.HMultiReader.idx">
+<code class="descname">idx</code><em class="property"> = 2</em><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader.idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="bbob_pproc.readalign.HMultiReader.idxData">
+<code class="descname">idxData</code><em class="property"> = 0</em><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader.idxData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.HMultiReader.isFinished">
+<code class="descname">isFinished</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader.isFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is finished when we found the last alignment value reached.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.HMultiReader.getInitialValue">
+<code class="descname">getInitialValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader.getInitialValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.HMultiReader.newCurrentValue">
+<code class="descname">newCurrentValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader.newCurrentValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.HMultiReader.align">
+<code class="descname">align</code><span class="sig-paren">(</span><em>currentValue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.HMultiReader.align" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.readalign.ArrayMultiReader">
+<em class="property">class </em><code class="descclassname">bbob_pproc.readalign.</code><code class="descname">ArrayMultiReader</code><span class="sig-paren">(</span><em>data</em>, <em>isHArray=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.ArrayMultiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of <em>aligned</em> data arrays to be aligned together.</p>
+<p>This class is used for dealing with the output of
+<a class="reference internal" href="#bbob_pproc.readalign.MultiReader" title="bbob_pproc.readalign.MultiReader"><code class="xref py py-class docutils literal"><span class="pre">MultiReader</span></code></a>:</p>
+<ul class="simple">
+<li>From <em>raw</em> data arrays, <a class="reference internal" href="#bbob_pproc.readalign.MultiReader" title="bbob_pproc.readalign.MultiReader"><code class="xref py py-class docutils literal"><span class="pre">MultiReader</span></code></a> generates aligned
+data arrays (first column is the alignment value, subsequent
+columns are aligned data).</li>
+<li>This class also generates aligned data arrays but from other
+aligned data arrays.</li>
+</ul>
+<dl class="attribute">
+<dt id="bbob_pproc.readalign.ArrayMultiReader.idx">
+<code class="descname">idx</code><em class="property"> = 0</em><a class="headerlink" href="#bbob_pproc.readalign.ArrayMultiReader.idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="bbob_pproc.readalign.ArrayMultiReader.currentLine">
+<code class="descname">currentLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.ArrayMultiReader.currentLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregates currentLines information.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.readalign.VArrayMultiReader">
+<em class="property">class </em><code class="descclassname">bbob_pproc.readalign.</code><code class="descname">VArrayMultiReader</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.VArrayMultiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class of <em>aligned</em> data arrays to be aligned vertically.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.readalign.HArrayMultiReader">
+<em class="property">class </em><code class="descclassname">bbob_pproc.readalign.</code><code class="descname">HArrayMultiReader</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.HArrayMultiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class of <em>aligned</em> data arrays to be aligned horizontally.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.readalign.alignData">
+<code class="descclassname">bbob_pproc.readalign.</code><code class="descname">alignData</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.alignData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aligns the data from a list of data arrays.</p>
+<p>This method returns an array for which the alignment value is the
+first column and the aligned values are in subsequent columns.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.readalign.alignArrayData">
+<code class="descclassname">bbob_pproc.readalign.</code><code class="descname">alignArrayData</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.alignArrayData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aligns the data from a list of aligned arrays.</p>
+<p>This method returns an array for which the alignment value is the first
+column and the aligned values are in subsequent columns.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.readalign.split">
+<code class="descclassname">bbob_pproc.readalign.</code><code class="descname">split</code><span class="sig-paren">(</span><em>dataFiles</em>, <em>dim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.readalign.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split a list of data files into arrays corresponding to data sets.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.toolsstats">
+<span id="bbob-pproc-toolsstats"></span><h2><a class="toc-backref" href="#id12"><a class="reference internal" href="#module-bbob_pproc.toolsstats" title="bbob_pproc.toolsstats"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.toolsstats</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.toolsstats" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrapping and statistics routines.</p>
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.fix_data_number">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">fix_data_number</code><span class="sig-paren">(</span><em>data</em>, <em>ndata=15</em>, <em>last_elements_randomized=True</em>, <em>warn=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.fix_data_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>return copy of data vector modified to length <code class="docutils literal"><span class="pre">ndata</span></code>
+or <code class="docutils literal"><span class="pre">data</span></code> itself.</p>
+<p>Assures <code class="docutils literal"><span class="pre">len(data)</span> <span class="pre">==</span> <span class="pre">ndata</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; is a (row)-vector</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bbob_pproc.toolsstats</span> <span class="kn">import</span> <span class="n">fix_data_number</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">fix_data_number</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">fix_data_number</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">fix_data_number</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">==</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">fix_data_number</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span> <span class="o">==</span> <span class="mi">14</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">fix_data_number</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">14</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.sp1">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">sp1</code><span class="sig-paren">(</span><em>data</em>, <em>maxvalue=inf</em>, <em>issuccessful=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.sp1" title="Permalink to this definition">¶</a></dt>
+<dd><p>sp1(data, maxvalue=Inf, issuccessful=None) computes a
+mean value over successful entries in data divided by
+success rate, the so-called SP1</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><dl class="first last docutils">
+<dt>data &#8211; array contains, e.g., number of function</dt>
+<dd>evaluations to reach the target value</dd>
+<dt>maxvalue &#8211; number, if issuccessful is not provided, data[i]</dt>
+<dd>is defined successful if it is truly smaller than maxvalue</dd>
+<dt>issuccessful &#8211; None or array of same length as data. Entry</dt>
+<dd>i in data is defined successful, if issuccessful[i] is
+True or non-zero</dd>
+</dl>
+</dd>
+<dt>Returns: (SP1, success_rate, nb_of_successful_entries), where</dt>
+<dd>SP1 is the mean over successful entries in data divided
+by the success rate. SP1 equals np.Inf when the success
+rate is zero.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.sp">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">sp</code><span class="sig-paren">(</span><em>data</em>, <em>maxvalue=inf</em>, <em>issuccessful=None</em>, <em>allowinf=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.sp" title="Permalink to this definition">¶</a></dt>
+<dd><p>sp(data, issuccessful=None) computes the sum of the function
+evaluations over all runs divided by the number of success,
+the so-called success performance which estimates the expected
+runtime ERT.</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><dl class="first last docutils">
+<dt>data &#8211; array contains, e.g., number of function</dt>
+<dd>evaluations to reach the target value</dd>
+<dt>maxvalue &#8211; number, if issuccessful is not provided, data[i]</dt>
+<dd>is defined successful if it is truly smaller than maxvalue</dd>
+<dt>issuccessful &#8211; None or array of same length as data. Entry</dt>
+<dd>i in data is defined successful, if issuccessful[i] is
+True or non-zero</dd>
+<dt>allowinf &#8211; If False, replace inf output (in case of no success)</dt>
+<dd>with the sum of function evaluations.</dd>
+</dl>
+</dd>
+<dt>Returns: (SP, success_rate, nb_of_successful_entries), where SP is the sum</dt>
+<dd>of successful entries in data divided by the number of success.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.drawSP_from_dataset">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">drawSP_from_dataset</code><span class="sig-paren">(</span><em>data_set</em>, <em>ftarget</em>, <em>percentiles</em>, <em>samplesize=10</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.drawSP_from_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns <code class="docutils literal"><span class="pre">(percentiles,</span> <span class="pre">all_sampled_values_sorted)</span></code> of simulated 
+runlengths to reach <code class="docutils literal"><span class="pre">ftarget</span></code> based on a <code class="docutils literal"><span class="pre">DataSet</span></code> class instance, 
+specifically:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">evals</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">detEvals</span><span class="p">([</span><span class="n">ftarget</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># likely to be 15 &quot;data points&quot;</span>
+<span class="n">idx_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span>  <span class="c"># nan == did not reach ftarget</span>
+<span class="k">return</span> <span class="n">drawSP</span><span class="p">(</span><span class="n">evals</span><span class="p">[</span><span class="o">~</span><span class="n">idx_nan</span><span class="p">],</span> <span class="n">data_set</span><span class="o">.</span><span class="n">maxevals</span><span class="p">[</span><span class="n">idx_nan</span><span class="p">],</span> <span class="n">percentiles</span><span class="p">,</span> <span class="n">samplesize</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The expected value of <code class="docutils literal"><span class="pre">all_sampled_values_sorted</span></code> is the expected 
+runtime ERT, as obtained by <code class="docutils literal"><span class="pre">data_set.detERT([ftarget])[0]</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.drawSP">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">drawSP</code><span class="sig-paren">(</span><em>runlengths_succ</em>, <em>runlengths_unsucc</em>, <em>percentiles</em>, <em>samplesize=10</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.drawSP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the percentiles of the bootstrapped distribution of
+&#8216;simulated&#8217; running lengths of successful runs.</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><ul class="first last">
+<li><p class="first"><em>runlengths_succ</em> &#8211; array of running lengths of successful runs</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>runlengths_unsucc</em> &#8211; array of running lengths of unsuccessful</dt>
+<dd><p class="first last">runs</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Return:</dt>
+<dd>(percentiles, all_sampled_values_sorted)</dd>
+<dt>Details:</dt>
+<dd>A single successful running length is computed by adding
+uniformly randomly chosen running lengths until the first time a
+successful one is chosen. In case of no successful run the sum of
+unsuccessful runs is bootstrapped.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.draw">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">draw</code><span class="sig-paren">(</span><em>data</em>, <em>percentiles</em>, <em>samplesize=1000.0</em>, <em>func=&lt;function sp1&gt;</em>, <em>args=()</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the empirical bootstrap distribution from a sample.</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><ul class="first last simple">
+<li><em>data</em> &#8211; a sequence of data values</li>
+<li><em>percentiles</em> &#8211; a single scalar value or a sequence of
+percentiles to be computed from the bootstrapped distribution.</li>
+<li><em>func</em> &#8211; function that computes the statistics as
+func(data,*args) or func(data,*args)[0], by default toolsstats.sp1</li>
+<li><em>args</em> &#8211; arguments to func, the zero-th element of args is
+expected to be a sequence of boolean giving the success status
+of the associated data value. This specialization of the draw
+procedure is due to the interface of the performance computation
+methods sp1 and sp.</li>
+<li><em>samplesize</em> &#8211; number of bootstraps drawn, default is 1e3,
+for more reliable values choose rather 1e4. 
+performance is linear in samplesize, 0.2s for samplesize=1000.</li>
+</ul>
+</dd>
+<dt>Return:</dt>
+<dd>(prctiles, all_samplesize_bootstrapped_values_sorted)</dd>
+<dt>Example:</dt>
+<dd>&gt;&gt; import toolsstats
+&gt;&gt; data = np.random.randn(22)
+&gt;&gt; res = toolsstats.draw(data, (10,50,90), samplesize=1e4)
+&gt;&gt; print res[0]</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">NaN-values are also bootstrapped, but disregarded for the 
+calculation of percentiles which can lead to somewhat
+unexpected results.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.prctile">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">prctile</code><span class="sig-paren">(</span><em>x</em>, <em>arrprctiles</em>, <em>issorted=False</em>, <em>ignore_nan=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.prctile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes percentile based on data with linear interpolation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>sequence</em>) &#8211; (list, array) of data values</li>
+<li><strong>prctiles</strong> (<em>scalar or sequence</em>) &#8211; percentiles to be calculated. Values beyond the 
+interval [0,100] also return the respective
+extreme value in data.</li>
+<li><strong>issorted</strong> &#8211; indicate if data is sorted</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">sequence of percentile values in data according to argument
+prctiles</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">treats np.Inf and -np.Inf and np.NaN, the latter are
+simply disregarded</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.randint">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">randint</code><span class="sig-paren">(</span><em>upper</em>, <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.randint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.ranksum_statistic">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">ranksum_statistic</code><span class="sig-paren">(</span><em>N1</em>, <em>N2</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.ranksum_statistic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the U test statistic of the rank-sum (Mann-Whitney-Wilcoxon) test.</p>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U">http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U</a>
+Small sample sizes (direct method).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.zprob">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">zprob</code><span class="sig-paren">(</span><em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.zprob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the area under the normal curve &#8216;to the left of&#8217; the given z value.</p>
+<p><a class="reference external" href="http://www.nmr.mgh.harvard.edu/Neural_Systems_Group/gary/python.html">http://www.nmr.mgh.harvard.edu/Neural_Systems_Group/gary/python.html</a></p>
+<p>Thus:</p>
+<blockquote>
+<div><ul class="simple">
+<li>for z&lt;0, zprob(z) = 1-tail probability</li>
+<li>for z&gt;0, 1.0-zprob(z) = 1-tail probability</li>
+<li>for any z, 2.0*(1.0-zprob(abs(z))) = 2-tail probability</li>
+</ul>
+</div></blockquote>
+<p>Adapted from z.c in Gary Perlman&#8217;s |Stat.  Can handle multiple dimensions.</p>
+<p>Usage:   azprob(z)    where z is a z-value</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.ranksumtest">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">ranksumtest</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.ranksumtest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the rank sum statistics for the two input data sets 
+<code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> and returns z and p.</p>
+<p>This method returns a slight difference compared to scipy.stats.ranksumtest
+in the two-tailed p-value. Should be test drived...</p>
+<p>Returns: z-value for first data set <code class="docutils literal"><span class="pre">x</span></code> and two-tailed p-value</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.rankdata">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">rankdata</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.rankdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ranks the data in a, dealing with ties appropriately.</p>
+<p>Equal values are assigned a rank that is the average of the ranks that
+would have been otherwise assigned to all of the values within that set.
+Ranks begin at 1, not 0.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>In [15]: stats.rankdata([0, 2, 2, 3])
+Out[15]: array([ 1. ,  2.5,  2.5,  4. ])</dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li><em>a</em> : array
+This array is first flattened.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>An array of length equal to the size of a, containing rank scores.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.significancetest">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">significancetest</code><span class="sig-paren">(</span><em>entry0</em>, <em>entry1</em>, <em>targets</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.significancetest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the rank-sum test between two data sets.</p>
+<p>For a given target function value, the performances of two
+algorithms are compared. The result of a significance test is
+computed on the number of function evaluations for reaching the
+target or, if not available, the function values for the smallest
+budget in an unsuccessful trial.</p>
+<p>Known bugs: this is not a fair comparison, because the successful 
+trials could be very long.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entry0</strong> (<a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><em>DataSet</em></a>) &#8211; &#8211; data set 0</li>
+<li><strong>entry1</strong> (<a class="reference internal" href="#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><em>DataSet</em></a>) &#8211; &#8211; data set 1</li>
+<li><strong>targets</strong> (<em>list</em>) &#8211; &#8211; list of target function values</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of (z, p) for each target function values in
+input argument targets. z and p are values returned by the
+ranksumtest method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.significance_all_best_vs_other">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">significance_all_best_vs_other</code><span class="sig-paren">(</span><em>datasets</em>, <em>targets</em>, <em>best_alg_idx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.significance_all_best_vs_other" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>datasets</strong> &#8211; is a list of DataSet from different algorithms, otherwise on the same function and dimension (which is not necessarily checked)</li>
+<li><strong>targets</strong> &#8211; is a list of target values,</li>
+<li><strong>best_alg_idx</strong> &#8211; for each target the best algorithm to be tested against the others</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>returns a list of <code class="docutils literal"><span class="pre">(z,</span> <span class="pre">p)</span></code> tuples, each is the result for the ranksumtest 
+for the respective target value in targets and the index list of best algorithm.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.fastsort">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">fastsort</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.fastsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort an array and provide the argsort.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><em>a</em> : array</dd>
+<dt>Returns:</dt>
+<dd>(sorted array, indices into the original array)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.sliding_window_data">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">sliding_window_data</code><span class="sig-paren">(</span><em>data</em>, <em>width=2</em>, <em>operator=&lt;function median&gt;</em>, <em>number_of_stats=0</em>, <em>only_finite_data=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.sliding_window_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>width is an absolute number, the resulting data has
+the same length as the original data and the window width
+is between width/2 at the border and width in the middle.</p>
+<p>Return (smoothed_data, stats), where stats is a list with elements
+[index_in_data, 2_10_25_50_75_90_98_percentile_of_window_at_i]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.equals_approximately">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">equals_approximately</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>abs=1e-11</em>, <em>rel=1e-11</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.equals_approximately" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsstats.in_approximately">
+<code class="descclassname">bbob_pproc.toolsstats.</code><code class="descname">in_approximately</code><span class="sig-paren">(</span><em>a</em>, <em>list_</em>, <em>abs=1e-11</em>, <em>rel=1e-11</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsstats.in_approximately" title="Permalink to this definition">¶</a></dt>
+<dd><p>return True if <code class="docutils literal"><span class="pre">a</span></code> equals approximately any of the elements
+in <code class="docutils literal"><span class="pre">list_</span></code>, in short</p>
+<blockquote>
+<div>return any([equals_approximately(a, b) for b in <a href="#id14"><span class="problematic" id="id15">list_</span></a>])</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.toolsdivers">
+<span id="bbob-pproc-toolsdivers"></span><h2><a class="toc-backref" href="#id13"><a class="reference internal" href="#module-bbob_pproc.toolsdivers" title="bbob_pproc.toolsdivers"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.toolsdivers</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.toolsdivers" title="Permalink to this headline">¶</a></h2>
+<p>Various tools.</p>
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.print_done">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">print_done</code><span class="sig-paren">(</span><em>message='  done'</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.print_done" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints a message with time stamp</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.equals_approximately">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">equals_approximately</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>eps=1e-12</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.equals_approximately" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.less">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">less</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.less" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a &lt; b, while comparing nan results in False without warning</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.prepend_to_file">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">prepend_to_file</code><span class="sig-paren">(</span><em>filename</em>, <em>lines</em>, <em>maxlines=1000</em>, <em>warn_message=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.prepend_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;prepend lines the tex-command filename</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.replace_in_file">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">replace_in_file</code><span class="sig-paren">(</span><em>filename</em>, <em>old_text</em>, <em>new_text</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.replace_in_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;replace a string in the file with another string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.truncate_latex_command_file">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">truncate_latex_command_file</code><span class="sig-paren">(</span><em>filename</em>, <em>keeplines=200</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.truncate_latex_command_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>truncate file but keep in good latex shape</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.strip_pathname">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">strip_pathname</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.strip_pathname" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <code class="docutils literal"><span class="pre">name</span></code> and replace any remaining path separator
+with &#8216;/&#8217;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.strip_pathname1">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">strip_pathname1</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.strip_pathname1" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <code class="docutils literal"><span class="pre">name</span></code>, replace any remaining path separator
+with &#8216;/&#8217;, and keep only the last part of the path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.strip_pathname2">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">strip_pathname2</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.strip_pathname2" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove ../ and ./ and leading/trailing blanks and path separators
+from input string <code class="docutils literal"><span class="pre">name</span></code>, replace any remaining path separator
+with &#8216;/&#8217;, and keep only the last two parts of the path, or only the
+last</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.str_to_latex">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">str_to_latex</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.str_to_latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>do replacements in <code class="docutils literal"><span class="pre">string</span></code> such that it most likely compiles with latex</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.number_of_digits">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">number_of_digits</code><span class="sig-paren">(</span><em>val</em>, <em>precision=1e-13</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.number_of_digits" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the number of non-zero digits of a number, e.g. two for 1200 or three for 2.03.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.num2str">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">num2str</code><span class="sig-paren">(</span><em>val</em>, <em>significant_digits=2</em>, <em>force_rounding=False</em>, <em>max_predecimal_digits=5</em>, <em>max_postdecimal_leading_zeros=1</em>, <em>remove_trailing_zeros=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.num2str" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the shortest string representation with either <code class="docutils literal"><span class="pre">significant_digits</span></code> 
+digits shown or its true value, whichever is shorter.</p>
+<p><code class="docutils literal"><span class="pre">force_rounding</span></code> shows no more than the desired number of significant digits, 
+which means, e.g., <code class="docutils literal"><span class="pre">12345</span></code>  becomes <code class="docutils literal"><span class="pre">12000</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">remove_trailing_zeros</span></code> removes zeros, if and only if the value is exactly.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bbob_pproc</span> <span class="kn">import</span> <span class="n">toolsdivers</span> <span class="k">as</span> <span class="n">td</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">[</span><span class="n">td</span><span class="o">.</span><span class="n">num2str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">12345</span><span class="p">,</span> <span class="mf">1234.5</span><span class="p">,</span> <span class="mf">123.45</span><span class="p">,</span> <span class="mf">12.345</span><span class="p">,</span> <span class="mf">1.2345</span><span class="p">,</span> <span class="o">.</span><span class="mi">12345</span><span class="p">,</span> <span class="o">.</span><span class="mo">012345</span><span class="p">,</span> <span class="o">.</span><span class="mo">0012345</span><span class="p">]]</span>
+<span class="go">[&#39;12345&#39;, &#39;1234&#39;, &#39;123&#39;, &#39;12&#39;, &#39;1.2&#39;, &#39;0.12&#39;, &#39;0.012&#39;, &#39;1.2e-3&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.number_to_latex">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">number_to_latex</code><span class="sig-paren">(</span><em>number_as_string</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.number_to_latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>usage as <code class="docutils literal"><span class="pre">number_to_latex(num2str(1.023e-12))</span> <span class="pre">==</span> <span class="pre">&quot;'-1.0\times10^{-12}'&quot;</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.toolsdivers.number_to_html">
+<code class="descclassname">bbob_pproc.toolsdivers.</code><code class="descname">number_to_html</code><span class="sig-paren">(</span><em>number_as_string</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.toolsdivers.number_to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>usage as <code class="docutils literal"><span class="pre">number_to_html(num2str(1.023e-12))</span> <span class="pre">==</span> <span class="pre">&quot;'-1.0</span> <span class="pre">x</span> <span class="pre">10&lt;sup&gt;-12&lt;/sup&gt;'&quot;</span></code></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Post-processing Routines</a><ul>
+<li><a class="reference internal" href="#module-bbob_pproc.pproc"><code class="docutils literal"><span class="pre">bbob_pproc.pproc</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.algportfolio"><code class="docutils literal"><span class="pre">bbob_pproc.algportfolio</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.bestalg"><code class="docutils literal"><span class="pre">bbob_pproc.bestalg</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.changeAlgIdAndComment"><code class="docutils literal"><span class="pre">bbob_pproc.changeAlgIdAndComment</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.cococommands"><code class="docutils literal"><span class="pre">bbob_pproc.cococommands</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.config"><code class="docutils literal"><span class="pre">bbob_pproc.config</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.dataoutput"><code class="docutils literal"><span class="pre">bbob_pproc.dataoutput</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.findfiles"><code class="docutils literal"><span class="pre">bbob_pproc.findfiles</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.readalign"><code class="docutils literal"><span class="pre">bbob_pproc.readalign</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.toolsstats"><code class="docutils literal"><span class="pre">bbob_pproc.toolsstats</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.toolsdivers"><code class="docutils literal"><span class="pre">bbob_pproc.toolsdivers</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bbob_pproc.html"
+                        title="previous chapter"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="figtables.html"
+                        title="next chapter">Figures and Tables</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbob_pprocinternal.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="figtables.html" title="Figures and Tables"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bbob_pproc.html" title="bbob_pproc API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" ><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

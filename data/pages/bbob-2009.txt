@@ -1,0 +1,86 @@
+====== Black-Box Optimization Benchmarking (BBOB) 2009 ======
+=== A GECCO Workshop for Real-Parameter Optimization ===
+The Black-Box Optimization Benchmarking workshop has taken place in Montreal, July 2009. A list of the published papers is [[http://sci2s.ugr.es/eamhco/contributionsGECCO09.php|here]] and result are presented [[http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results|here]]. 
+
+ Quantifying and comparing performance of optimization algorithms is
+ one important aspect of research in search and optimization. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2009 workshop for real-parameter optimization will furnish most of this
+ tedious task for it's participants: (1) choice and implementation of
+ a well-motivated single-objective benchmark function testbed, (2) design of an
+ experimental set-up, (3) generation of data output for (4)
+ post-processing and presentation of the results in graphs and
+ tables. What remains to be done for the participants is to allocate
+ CPU-time, run their favorite (not necessarily brand-new) black-box real-parameter optimizer in
+ different dimensions a few hundreds of times and finally start the
+ post-processing procedure. Two testbeds are provided, 
+
+  * noise-free functions and 
+  * noisy functions 
+
+The participants can freely choose any or all of them.
+
+
+During the workshop the overall process will be critically presented,
+the algorithms will be presented by the participants, quantitative
+performance measurements of all submitted algorithms will be
+presented, categorized by early versus late performance and function
+properties like multi-modality, ill-conditioning, symmetry,
+ridge-solving, coarse- and fine-grain ruggedness, weak global
+structure, outlier noise...
+
+=== The Workshop Papers ===
+should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software). The used algorithm is presented and the necessary details to reproduce the result are given (see also {{:download3.6:bbobdocexperiment.pdf|experimental procedure}}). The paper has no more than 8 pages (a template is provided).   
+
+Example papers: 
+  * {{MonteCarloBBOBpaper.pdf|Monte-Carlo}} random search on the noiseless testbed
+  * {{wk2029-hansen.pdf|Nelder-Mead}} downhill simplex on the noiseless testbed
+  * {{ros-newuoanoisy.pdf|NEWUOA}} on the noisy testbed
+  * **ERRATUM** By mistake, the RT_succ columns in the tables do not show the average number of function evaluations of all Nsucc successful trials, but the average number of Nsucc arbitrary trials. Additionally, the last entry in the same column, displaying the median number of function evaluations of all unsuccessful trials, can be up to 12% too small.
+
+
+Paper & data submission:
+  * [[http://coco.gforge.inria.fr/doku.php?id=bbob-2009-uploads&do=login|upload page]] is closed
+
+=== Special Issue ===
+
+Extended versions of selected papers will appear in a special issue of
+the journal Evolutionary Computation.
+
+=== Support Material ===
+
+Experimental setup documents, code for the benchmark functions
+(Matlab, C, Java (soon)) and for the post-processing (Python) are
+provided at the [[BBOB-2009-downloads|download page]]. To be notified about the release of the code, subscribe to the feed
+http://coco.gforge.inria.fr/feed.php and / or subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+
+=== Important Dates ===
+  * 03/29/2009 paper and data submission deadline
+  * 04/03/2009 decision notification
+  * 04/17/2009 camera ready paper due
+  * 04/27/2009 registration deadline for presenting authors
+  * 07/08/2009 workshop
+  * end of 2009 extended paper submission tentative deadline for an anticipated  special issue of //Evolutionary Computation Journal//  
+
+=== Downloads ===
+
+[[BBOB-2009-downloads]]
+
+=== Results ===
+
+[[BBOB-2009-results]]
+
+=== Contact and Mailing List ===
+
+To subscribe (or unsubscribe) to our discussion mailing list ( bbob-discuss _at_ lists.lri.fr ) and announcement list, send an email to the organizers at bbob _at_ lri.fr .
+
+
+=== External Links ===
+[[http://www.sigevo.org/gecco-2009/workshops.html|GECCO Workshops]]
+
+[[http://portal.acm.org/toc.cfm?id=1570256&type=proceeding&coll=GUIDE&dl=GUIDE&CFID=67685436&CFTOKEN=93041000#1570310|Full list of papers of the GECCO 2009 Workshop]]
+
+=== Organization Committee ===
+Anne Auger, Hans-Georg Beyer, Nikolaus Hansen, Steffen Finck, Raymond Ros, Marc Schoenauer, Darrell Whitley
+

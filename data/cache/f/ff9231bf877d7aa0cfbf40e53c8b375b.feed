@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>http://coco.gforge.inria.fr/</link>
+        <image rdf:resource="http://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2011-10-05T11:41:04+02:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=downloadsbeta&amp;rev=1306867277&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1305727874&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>http://coco.gforge.inria.fr/</link>
+        <url>http://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=downloadsbeta&amp;rev=1306867277&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-05-31T20:41:17+02:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>downloadsbeta</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=downloadsbeta&amp;rev=1306867277&amp;do=diff</link>
+        <description>This is the COCO download page.
+
+Latest release: 31/05/2011 v10.7beta1
+
+
+Download: COCO/BBOB (Version 10.7beta1, 4.7MB)
+
+COCO/BBOB (35MB) provides the full documentation as well.
+
+Content of the archives:
+
+
+	*  CODE FGENERIC/COCOEXP for running experiments:
+		*  Matlab/Octave 
+		*  C/C++
+		*  Python</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1305727874&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-05-18T16:11:14+02:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>sidebar</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1305727874&amp;do=diff</link>
+        <description>*  Home
+	*  Documentation
+	*  Downloads
+	*  BBOB 2009
+		*  Downloads
+		*  Results
+		*  Uploads
+
+	*  BBOB 2010
+		*  Downloads
+		*  Results
+		*  Uploads
+
+	*  ECJ
+	*  Uploads</description>
+    </item>
+</rdf:RDF>

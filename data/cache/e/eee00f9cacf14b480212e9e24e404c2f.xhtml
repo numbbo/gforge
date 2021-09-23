@@ -1,0 +1,114 @@
+
+<h1 class="sectionedit1"><a name="multiobjective_blackbox_optimization_benchmarking" id="multiobjective_blackbox_optimization_benchmarking">Multiobjective Blackbox Optimization Benchmarking</a></h1>
+<div class="level1">
+
+<p>
+
+This is the supplementary material web page related to the GECCO-2015 paper by Brockhoff, Tran, and Hansen [1]. Below, you will find the source code to reproduce the results of the paper as well as many plots which had to be omitted from the paper due to space limitations.
+</p>
+
+<p>
+Note that in the meantime, the code has evolved into the new version of the <a href="https://github.com/numbbo/coco" class="urlextern" title="https://github.com/numbbo/coco"  rel="nofollow">COCO platform</a>.
+
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Multiobjective Blackbox Optimization Benchmarking" [1-466] -->
+<h2 class="sectionedit2"><a name="source_code" id="source_code">Source Code</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/src/mobenchmarking.tar.gz" onclick="var that=this;_gaq.push(['_trackEvent','Download','tar.gz',this.href]);setTimeout(function(){location.href=that.href;},200);return false;">Download Source Code (19MB)</a>
+
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Source Code" [467-769] -->
+<h2 class="sectionedit3"><a name="empirical_cumulative_distribution_function_plots" id="empirical_cumulative_distribution_function_plots">Empirical Cumulative Distribution Function Plots</a></h2>
+<div class="level2">
+
+<p>
+Empirical Cumulative Distribution Function (ECDF) plots for all 300 bi-objective problems with search space dimension 2, 3, 5, 10, and 20 can be found in the following pdfs:
+</p>
+
+<p>
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_2D_single.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_2D_single.pdf"  rel="nofollow">single problem ECDFs in 2D (6.9MB)</a><br/>
+
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_3D_single.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_3D_single.pdf"  rel="nofollow">single problem ECDFs in 3D (6.6MB)</a><br/>
+
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_5D_single.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_5D_single.pdf"  rel="nofollow">single problem ECDFs in 5D (6.4MB)</a><br/>
+
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_10D_single.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_10D_single.pdf"  rel="nofollow">single problem ECDFs in 10D (6MB)</a><br/>
+
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_20D_single.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_20D_single.pdf"  rel="nofollow">single problem ECDFs in 20D (6MB)</a>
+</p>
+
+<p>
+The paper only shows the combination of f_2 (separable ellipsoid) with f_3 (separable Rastrigin).
+</p>
+
+<p>
+
+ECDF plots, aggregating over function groups, can be found 
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plot_ecdf_hv_3algos_3runs_20D_aggregate.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plot_ecdf_hv_3algos_3runs_20D_aggregate.pdf"  rel="nofollow">here (1MB)</a>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Empirical Cumulative Distribution Function Plots" [770-1980] -->
+<h2 class="sectionedit4"><a name="scaling_plots" id="scaling_plots">Scaling Plots</a></h2>
+<div class="level2">
+
+<p>
+The scaling plots of the Empirical Running Time (ERT) of NSGA-II, MOEA/D, and MO-CMA-ES over the search space dimension for all 300 bi-objective problems and a target precision of 1e-3 can be found in the following pdf:
+</p>
+
+<p>
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plots_3algos_5insts_1runs_ERT_hv_target1.0e-03.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plots_3algos_5insts_1runs_ERT_hv_target1.0e-03.pdf"  rel="nofollow">scaling plots of NSGA-II, MOEA/D, and MO-CMA-ES on all 300 problems and f_target = 1e-3 (6MB)</a><br/>
+
+</p>
+
+<p>
+The paper only shows the combination of f_2 (separable ellipsoid) with f_3 (separable Rastrigin), f_1 (sphere) with f_9 (rotated Rosenbrock), f_1 with f_12 (bent cigar), and for the combination of f_2 (separable ellipsoid) with f_16 (Weierstrass).
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Scaling Plots" [1981-2687] -->
+<h2 class="sectionedit5"><a name="influence_of_population_size_in_nsga-ii" id="influence_of_population_size_in_nsga-ii">Influence of Population Size in NSGA-II</a></h2>
+<div class="level2">
+
+<p>
+All ECDF plots, showing the impact of NSGA-II&#039;s population size can be found in the following pdf:
+</p>
+
+<p>
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plot_ecdf_hv_nsgaPopsizes_maxfevalDiff_1runs_5D_single.pdf" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plot_ecdf_hv_nsgaPopsizes_maxfevalDiff_1runs_5D_single.pdf"  rel="nofollow">ECDFs of NSGA-II with different population sizes in 5D (9MB)</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Influence of Population Size in NSGA-II" [2688-3023] -->
+<h2 class="sectionedit6"><a name="references" id="references">References</a></h2>
+<div class="level2">
+
+<p>
+[1] Dimo Brockhoff, Thanh-Do Tran, and Nikolaus Hansen. Benchmarking Numerical Multiobjective Optimizers Revisited. In Genetic and Evolutionary Computation Conference (GECCO 2015), pages 639–646. ACM, 2015. (<a href="http://researchers.lille.inria.fr/~brockhof/publicationListFiles/bth2015a.pdf" class="urlextern" title="http://researchers.lille.inria.fr/~brockhof/publicationListFiles/bth2015a.pdf"  rel="nofollow">pdf</a> | <a href="http://coco.gforge.inria.fr/GECCO2015-MOBBOB/" class="urlextern" title="http://coco.gforge.inria.fr/GECCO2015-MOBBOB/"  rel="nofollow">suppl. material</a>)
+</p>
+
+<p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62171618-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</p>
+
+</div>
+<!-- EDIT6 SECTION "References" [3024-] -->

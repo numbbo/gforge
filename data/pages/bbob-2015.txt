@@ -1,0 +1,89 @@
+
+====== Black-Box Optimization Benchmarking (BBOB) 2015 ======
+=== 5th GECCO Workshop for Real-Parameter Optimization ===
+
+The sixth Black-Box Optimization Benchmarking (BBOB) workshop (the 5th at GECCO) is going to take place in Madrid, Spain on July 12, 2015, as part of GECCO 2015.
+
+
+Benchmarking of optimization algorithms is crucial to assess performance of optimizers quantitatively, understand weaknesses and
+strengths of each algorithm and is a compulsory path to evaluate new algorithm designs. However, this task turns out to be tedious and difficult to realize even in the single-objective case---at least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2015 workshop for real-parameter optimization, a follow-up of previous editions in [[http://coco.gforge.inria.fr/doku.php?id=bbob-2009|2009]], [[http://coco.gforge.inria.fr/doku.php?id=bbob-2010|2010]], [[http://coco.gforge.inria.fr/doku.php?id=bbob-2012|2012]], [[http://coco.gforge.inria.fr/doku.php?id=bbob-2013|2013]], and at [[http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015|CEC-2015]], will furnish most of these tedious tasks for its participants: 
+  * choice and implementation of a well-motivated single-objective benchmark function testbed, 
+  * design of an experimental set-up, 
+  * generation of data output, and
+  * post-processing and presentation of the results in graphs and tables. 
+
+
+For this new edition, **we provide essentially the same test-suite** as in the previous years and welcome all high-quality contributions about benchmarking and comparing general numerical optimizers for black-box problems for which the data from all previously benchmarked algorithms is made available on this web page. In addition, we would like to again **place further emphasis on expensive optimization** and collect data of optimizers that are especially tailored for problems where only a small budget of function evaluations is affordable. 
+
+Source code for running experiments in different languages (C, Matlab, Java, R, Python) and
+postprocessing data will be provided as in previous years. What remains to be done for the participants is to allocate CPU-time, run the black-box real-parameter optimizer(s) of their interest in
+ different dimensions a few hundreds of times and finally start the
+ post-processing procedure. Two testbeds are provided, 
+
+  * noise-free functions and 
+  * noisy functions
+
+for which we distinguish between an expensive optimization scenario (where a focus on the first 100D function evaluations is assumed) and a general scenario---compatible with the comparison plots of the previous years.
+
+The participants can freely choose any or all of them. This new
+edition entirely bans different parameter settings for different test
+functions and encourages analyses that study the impact of parameter
+setting changes.
+
+
+During the workshop, algorithms and results will be presented by the participants. 
+An overall analysis and comparison will be accomplished by the organizers
+and the overall process will be critically reviewed. 
+A plenary discussion on future improvements will, among others, 
+address the question, of how the testbed should evolve.
+
+The source code of the test-functions is available in
+Matlab, C, Java, R and Python. 
+Downloads will be made available at [[http://coco.gforge.inria.fr/doku.php?id=bbob-2015-downloads|BBOB 2015 downloads]] and for the moment, the code from the [[http://coco.gforge.inria.fr/doku.php?id=downloads|general download page]] can be used. 
+
+
+=== The Workshop Papers ===
+We encourage any submission that is concerned with black-box optimization benchmarking of continuous optimizers, for example, benchmarking new or not-so-new algorithms on the BBOB-2015 testbed (which have not been tested in previous years) or analyzing the data obtained in previous workshops or... This year, we also focus on benchmarking optimization algorithms for expensive optimization which especially invites to benchmark surrogate-assisted algorithms (e.g. based on kriging, support vector machines etc.).
+
+Several templates, that comply with the ACM guidelines, are going to be provided:
+
+    * one for benchmarking one algorithm that should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software) and where the used algorithm is presented and the necessary details to reproduce the result are given (see also [[http://coco.lri.fr/BBOB-downloads/download15.2/bbobdocexperiment.pdf|experimental procedure]]). The paper has no more than 8 pages. We encourage to provide the algorithm source code as well. Example papers: 
+       * {{example2012nelder.pdf|Nelder-Mead}} downhill simplex on the noiseless testbed
+       * {{example2012noisynewuoa.pdf|NEWUOA}} on the noisy testbed
+    * one which allows the comparison of two optimizers. Example papers:
+       * {{example2012cmpnoisefree.pdf| IPOP-CMA-ES vs. BIPOP-CMA-ES}} on the noiseless testbed
+       * {{example2012cmpnoisy.pdf| NEWUOA vs. BIPOP-CMA-ES}} on the noisy testbed
+    * one which allows the comparison of more than optimizers. Example papers:
+       * {{example2012manynoisefree.pdf| NEWUOA, BIPOP-CMA-ES and IPOP-CMA-ES}} on the noiseless testbed
+       * {{example2012manynoisy.pdf| NEWUOA, BIPOP-CMA-ES and IPOP-CMA-ES}} on the noisy testbed
+
+== How to submit papers ==
+Get all the material from the [[BBOB-2015-downloads|download page]] to run an experiment and prepare the paper. For the paper & data submission see [[uploads|submission procedure]]. 
+
+=== Support Material ===
+
+Experimental setup documents, code for the benchmark functions (Matlab, C, Java, R, Python) and for the post-processing (Python) will be
+provided at the [[BBOB-2015-downloads|download page]]. To be notified about the release of the code, subscribe to the feed
+http://coco.gforge.inria.fr/feed.php and / or subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+
+=== Important dates ===
+
+   * 03/01: planned code release
+   * 04/03: old submission deadline
+   * 04/08: extended submission deadline
+   * 04/20: acceptance notification
+   * 05/04: final paper version due
+   * 07/12: workshop at [[http://www.sigevo.org/gecco-2015|GECCO]]
+
+In order to prepare linking an optimizer to the BBOB-framework code and running first tests, the currently available [[http://coco.gforge.inria.fr/doku.php?id=downloads|downloads]] can be used. The code for the final experiment and post-processing obey the very same interface are released soon (see above). 
+
+=== Contact and Mailing List ===
+
+You can subscribe (or unsubscribe) to our discussion mailing list by following this link http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss 
+
+To receive announcement about the workshop, send an email to the BBOB team bbob_at_lri.fr with title "register to BBOB announcement list".
+
+=== Organization Committee ===
+
+Youhei Akimoto, Anne Auger, Dimo Brockhoff, Nikolaus Hansen, Olaf Mersmann, Petr Pošík

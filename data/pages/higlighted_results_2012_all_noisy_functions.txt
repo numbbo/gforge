@@ -1,0 +1,4 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzall_large.png?700 }}
+
+
+Empirical runtime distributions on noisy functions with //moderate noise // (f101-f130) with target values in {100, ..., 1e-8} in dimension 20.

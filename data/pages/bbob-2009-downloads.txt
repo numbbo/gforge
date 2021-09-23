@@ -1,0 +1,43 @@
+~~NOCACHE~~
+This is the BBOB 2009 download page.  The most recent BBOB version can be found [[http://coco.gforge.inria.fr/doku.php?id=downloads|here]].
+
+{{:download3.6:bboball3.6.tar.gz|BBOB 2009 (Version 3.6)}} (30MB) is all that you need to prepare a workshop paper and contains the following files
+
+  * CODE:
+    *{{:download3.6:bbobmatlab.tar.gz|tar}} code in Matlab/Octave 
+    *{{:download3.6:bbobc.tar.gz|tar}} code in C 
+    *{{:download3.6:bbobpproc.tar.gz|tar}} post-processing Python package + workshop paper LaTeX templates  
+    * soon available: post-processing Python package including comparing analysis
+
+  * DOCS:
+      *{{:download3.6:bbobdocexperiment.pdf|pdf}} description of experimental procedure  
+      *{{:download3.6:bbobdocfunctions.pdf|pdf}} (13MB) noiseless functions documentation with figures
+      *{{:download3.6:bbobdocfunctionsdef.pdf|pdf}} noiseless functions documentation, version without figures   
+      *{{:download3.6:bbobdocnoisyfunctions.pdf|pdf}} (20MB) noisy function documentation with figures      
+      *{{:download3.6:bbobdocnoisyfunctionsdef.pdf|pdf}} noisy function documentation, version without figures  
+      *{{:download3.6:bbobdocsoftware.pdf|pdf}} software user documentation  
+        
+  * TECHNICAL DOCS:
+    * [[http://coco.gforge.inria.fr/data/media/download3.6/pydoc/bbob_pproc.html|html]] post-processing package documentation
+
+\\
+[[bbob-2009-results | Here are the results from the workshop in July 2009]]
+
+\\
+\\
+BUGS for older versions:
+  * **Bug in version 3.51**: The following error could occur due to the use of the 3.51 code and numpy version 1.0.4.
+<code>
+Traceback (most recent call last):
+File "bbob_pproc/run.py", line 307, in sys.exit(main())
+File "bbob_pproc/run.py", line 234, in main verbose)
+File "bbob_pproc/../bbob_pproc/ppfigdim.py", line 236, in main valuesOfInterest[i])
+File "bbob_pproc/../bbob_pproc/ppfigdim.py", line 184, in generateData res.append(bootstrap.prctile(data[1:indexEntry.nbRuns()+1], 50)[0])
+File "bbob_pproc/../bbob_pproc/bootstrap.py", line 195, in prctile x = [d for d in x if not numpy.isnan(d[0]) and d is not None]
+TypeError: 'numpy.float64' object is unsubscriptable.
+</code>
+To fix this bug update numpy or bbob_pproc. 
+  * **Bug in version up to 3.51**: due to a bug in the post-processing module does the RT-column of the tables in the workshop papers not show the average number of function evaluations of all ''Nsucc'' successful trials, but, by mistake, the average number of ''Nsucc'' //arbitrary// trials. Additionally, the last entry in the column, when it is showing the median number of function evaluations of all unsuccessful trials, can be up to 12% too small.
+  * **Bug-fix for version 3.4**: fixes the formatting of the output tables. The issue occurs if the maximum number of function evaluations is greater than ten million and results in tables placed one above the other instead of next to each other. This issue can be solved by placing {{:download3.4:pptex.py|this pptex.py}} file in bbob.vX.Y/python/bbob_pproc replacing the old one, or otherwise using the new version of the post-processing above. The post-processing must be re-run afterwards.
+  * **Bug-fix for version 3.3**: for the noisy testbed some figure labels occur to have the wrong function names. This issue can be solved by placing {{:download3.4:benchmarkshortinfos.txt|this benchmarkshortinfos.txt}} file in bbob.vX.Y/python/bbob_pproc replacing the old one, or otherwise using the new version of the post-processing above. The post-processing must be re-run afterwards. 
+

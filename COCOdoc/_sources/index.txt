@@ -1,0 +1,62 @@
+.. COCO documentation master file, created by
+   sphinx-quickstart on Wed Mar  9 17:00:01 2011.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. more information on sphinx and reStructuredText markup language
+   http://sphinx.pocoo.org/
+   http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
+   http://matplotlib.sourceforge.net/sampledoc/
+
+Contents
+========
+
+This document serves as documentation for the
+COCO (COmparing Continuous Optimizers) software.
+
+This software was mainly developed in the TAO_ team.
+
+.. _TAO: http://tao.lri.fr/
+
+COCO's website: http://coco.gforge.inria.fr/
+
+`Download the pdf version of this documentation <http://coco.lri.fr/COCOdoc/COCO.pdf>`_.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   introduction.rst
+   installation.rst
+   firsttime.rst
+   bbo_experiment.rst
+   runningexp.rst
+   postprocessing.rst
+   fgeneric.rst
+   bbob_pproc.rst
+   acknowledgments.rst
+
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
+
+.. todo::
+   Page explaining ERT etc.
+
+.. todo::
+   C API
+
+.. todo::
+   Java API
+
+.. todo::
+   Gallery of figures
+
+.. todo::
+   BBOB test functions presentation
+
+.. todolist::

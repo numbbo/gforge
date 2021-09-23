@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>http://coco.gforge.inria.fr/</link>
+        <image rdf:resource="http://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2009-02-09T14:47:05+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=download"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2009"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=start"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>http://coco.gforge.inria.fr/</link>
+        <url>http://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=download">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-09T14:42:06+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>download - created</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=download</link>
+        <description>&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot; width=&quot;50%&quot;&gt;&lt;/th&gt;&lt;th colspan=&quot;2&quot; width=&quot;50%&quot;&gt;current&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;diff-blockheader&quot; colspan=&quot;2&quot;&gt;Line 1:&lt;/td&gt;
+&lt;td class=&quot;diff-blockheader&quot; colspan=&quot;2&quot;&gt;Line 1:&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;+&lt;/td&gt;&lt;td class=&quot;diff-addedline&quot;&gt;&lt;strong&gt;This is the download page.&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2009">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-30T16:23:15+01:00</dc:date>
+        <dc:creator>aauger</dc:creator>
+        <title>bbob-2009</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2009</link>
+        <description>&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot; width=&quot;50%&quot;&gt;1234184536&lt;/th&gt;&lt;th colspan=&quot;2&quot; width=&quot;50%&quot;&gt;current&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;diff-blockheader&quot; colspan=&quot;2&quot;&gt;Line 56:&lt;/td&gt;
+&lt;td class=&quot;diff-blockheader&quot; colspan=&quot;2&quot;&gt;Line 56:&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;=== Downloads ===&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;=== Downloads ===&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td class=&quot;diff-deletedline&quot;&gt;[[BBOB-2009-downloads|download page]]&lt;/td&gt;&lt;td&gt;+&lt;/td&gt;&lt;td class=&quot;diff-addedline&quot;&gt;[[BBOB-2009-downloads|download page&lt;strong&gt;, will soon be available&lt;/strong&gt;]]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=start">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-11-10T20:35:40+01:00</dc:date>
+        <dc:creator>aauger</dc:creator>
+        <title>start</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=start</link>
+        <description>&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot; width=&quot;50%&quot;&gt;1226068754&lt;/th&gt;&lt;th colspan=&quot;2&quot; width=&quot;50%&quot;&gt;current&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;diff-blockheader&quot; colspan=&quot;2&quot;&gt;Line 1:&lt;/td&gt;
+&lt;td class=&quot;diff-blockheader&quot; colspan=&quot;2&quot;&gt;Line 1:&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;COCO (COmparing Continuous Optimisers) is a platform for systematic and sound comparisons of real-parameter global optimisers. COCO provides a benchmark function testbed and tools for processing and visualizing data generated by one or several optimizers.&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;COCO (COmparing Continuous Optimisers) is a platform for systematic and sound comparisons of real-parameter global optimisers. COCO provides a benchmark function testbed and tools for processing and visualizing data generated by one or several optimizers.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td class=&quot;diff-deletedline&quot;&gt;[[Black-Box Optimization Benchmarking (BBOB) 2009]]&lt;/td&gt;&lt;td&gt;+&lt;/td&gt;&lt;td class=&quot;diff-addedline&quot;&gt;[[&lt;strong&gt;BBOB-2009|&lt;/strong&gt;Black-Box Optimization Benchmarking (BBOB) 2009]]&lt;strong&gt; &lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class=&quot;diff-context&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</description>
+    </item>
+</rdf:RDF>

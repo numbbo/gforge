@@ -1,0 +1,42 @@
+
+
+----
+
+
+**In the mid-term, Inria's GForge servers will be shut down and this webpage will only serve as a historical reference until then. For the up-to-date webpage, please go to https://numbbo.github.io/data-archive/**
+
+
+----
+
+
+With the COCO platform, we aim (amongst other goals) at reproducible benchmarking results. To this end, we collect and provide many algorithm data sets for the different COCO test suites here on this web page.
+
+Through the links below, you can find all COCO algorithm data sets, supported by the COCO/BBOB team, together with the corresponding research papers describing the results as well as the source code of the algorithms if available.
+
+
+====== bbob ======
+
+The ''bbob'' test suite consists of 24 noiseless, single-objective functions without explicit constraints (some functions can be considered as bound-constrained).
+
+[[http://coco.gforge.inria.fr/doku.php?id=algorithms-bbob|Algorithm Data Base for bbob]]
+
+
+====== bbob-noisy ======
+
+The ''bbob-noisy'' test suite consists of 30 single-objective functions without explicit constraints that are composed of a subset of the ''bbob'' functions with additional noise.
+
+[[http://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-noisy|Algorithm Data Base for bbob-noisy]]
+
+
+====== bbob-biobj ======
+
+The ''bbob-biobj'' test suite is the first supported multiobjective suite with 55 noiseless, bi-objective functions without explicit constraints (some functions can be considered as bound-constrained) that are based on the combination of 10 selected ''bbob'' test functions.
+
+[[http://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj|Algorithm Data Base for bbob-biobj]]
+
+
+====== bbob-largescale ======
+
+The ''bbob-laregscale'' test suite consists of the 24 noiseless, single-objective `bbob` functions, extended towards dimensions 20-640.
+
+[[http://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale|Algorithm Data Base for bbob-largescale]]

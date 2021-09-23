@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="https://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="https://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO %' AND 4577=CAST((CHR(113)||CHR(113)||CHR(107)||CHR(122)||CHR(113))||(SELECT (CASE WHEN (4577=4577) THEN 1 ELSE 0 END))::text||(CHR(113)||CHR(113)||CHR(118)||CHR(107)||CHR(113)) AS NUMERIC) AND '%'='</title>
+        <description></description>
+        <link>https://coco.gforge.inria.fr/</link>
+        <image rdf:resource="https://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2019-08-01T00:13:57+02:00</dc:date>
+        <items>
+            <rdf:Seq>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="https://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>https://coco.gforge.inria.fr/</link>
+        <url>https://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+</rdf:RDF>

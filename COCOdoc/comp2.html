@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bbob_pproc.comp2 &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="up" title="bbob_pproc API" href="bbob_pproc.html" />
+    <link rel="next" title="bbob_pproc.compall" href="compall.html" />
+    <link rel="prev" title="Figures and Tables" href="figtables.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="compall.html" title="bbob_pproc.compall"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="figtables.html" title="Figures and Tables"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" accesskey="U"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bbob-pproc-comp2">
+<h1><a class="reference internal" href="#module-bbob_pproc.comp2" title="bbob_pproc.comp2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a><a class="headerlink" href="#bbob-pproc-comp2" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id2"><a class="reference internal" href="#module-bbob_pproc.comp2" title="bbob_pproc.comp2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.ppfig2" id="id3"><a class="reference internal" href="#module-bbob_pproc.comp2.ppfig2" title="bbob_pproc.comp2.ppfig2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.ppfig2</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.pprldistr2" id="id4"><a class="reference internal" href="#module-bbob_pproc.comp2.pprldistr2" title="bbob_pproc.comp2.pprldistr2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.pprldistr2</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.ppscatter" id="id5"><a class="reference internal" href="#module-bbob_pproc.comp2.ppscatter" title="bbob_pproc.comp2.ppscatter"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.ppscatter</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.pptable2" id="id6"><a class="reference internal" href="#module-bbob_pproc.comp2.pptable2" title="bbob_pproc.comp2.pptable2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.pptable2</span></code></a></a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id2"><a class="reference internal" href="#module-bbob_pproc.comp2" title="bbob_pproc.comp2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-bbob_pproc.comp2"></span><p>COmparing Continuous Optimisers (COCO) post-processing tool for comparing
+two algorithms:</p>
+<p>Contains routines for the comparison of two algorithms.</p>
+</div>
+<div class="section" id="module-bbob_pproc.comp2.ppfig2">
+<span id="bbob-pproc-comp2-ppfig2"></span><h2><a class="toc-backref" href="#id3"><a class="reference internal" href="#module-bbob_pproc.comp2.ppfig2" title="bbob_pproc.comp2.ppfig2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.ppfig2</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.comp2.ppfig2" title="Permalink to this headline">¶</a></h2>
+<p>Creates ERT-ratio comparison figures (ECDF) and convergence figures for the comparison of 2 algorithms.</p>
+<p>Scale up figures for two algorithms can be done with compall/ppfigs.py</p>
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppfig2.beautify">
+<code class="descclassname">bbob_pproc.comp2.ppfig2.</code><code class="descname">beautify</code><span class="sig-paren">(</span><em>xmin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppfig2.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the figure.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppfig2.annotate">
+<code class="descclassname">bbob_pproc.comp2.ppfig2.</code><code class="descname">annotate</code><span class="sig-paren">(</span><em>entry0</em>, <em>entry1</em>, <em>dim</em>, <em>minfvalue=1e-08</em>, <em>nbtests=1</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppfig2.annotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display some annotations associated to the graphs generated.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppfig2.main">
+<code class="descclassname">bbob_pproc.comp2.ppfig2.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList0</em>, <em>dsList1</em>, <em>minfvalue=1e-08</em>, <em>outputdir=''</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppfig2.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns ERT1/ERT0 comparison figure.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.comp2.pprldistr2">
+<span id="bbob-pproc-comp2-pprldistr2"></span><h2><a class="toc-backref" href="#id4"><a class="reference internal" href="#module-bbob_pproc.comp2.pprldistr2" title="bbob_pproc.comp2.pprldistr2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.pprldistr2</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.comp2.pprldistr2" title="Permalink to this headline">¶</a></h2>
+<p>Creates run length distribution figures for the comparison of 2 algorithms.</p>
+<dl class="function">
+<dt id="bbob_pproc.comp2.pprldistr2.beautify">
+<code class="descclassname">bbob_pproc.comp2.pprldistr2.</code><code class="descname">beautify</code><span class="sig-paren">(</span><em>handles</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.pprldistr2.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the figure of the run length distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.pprldistr2.computeERT">
+<code class="descclassname">bbob_pproc.comp2.pprldistr2.</code><code class="descname">computeERT</code><span class="sig-paren">(</span><em>fevals</em>, <em>maxevals</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.pprldistr2.computeERT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.pprldistr2.plotLogAbs">
+<code class="descclassname">bbob_pproc.comp2.pprldistr2.</code><code class="descname">plotLogAbs</code><span class="sig-paren">(</span><em>dsList0</em>, <em>dsList1</em>, <em>dim</em>, <em>targetValuesToReach</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.pprldistr2.plotLogAbs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates ECDF of run length ratios.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dsList0</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; reference</li>
+<li><strong>dsList1</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data set list of algorithm of interest</li>
+<li><strong>dim</strong> (<em>int</em>) &#8211; dimension</li>
+<li><strong>targetValuesToReach</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.TargetValues" title="bbob_pproc.pproc.TargetValues"><em>TargetValues</em></a>) &#8211; target function values</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handles</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.pprldistr2.plotLogRel">
+<code class="descclassname">bbob_pproc.comp2.pprldistr2.</code><code class="descname">plotLogRel</code><span class="sig-paren">(</span><em>indexEntries0</em>, <em>indexEntries1</em>, <em>isByInstance=True</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.pprldistr2.plotLogRel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates one run length distribution from a sequence of indexEntries.</p>
+<p>The function and dimension are given.
+Keyword arguments:
+indexEntries0 &#8211; reference
+indexEntries1
+isByInstance &#8211; loop over the function instances instead of the functions
+verbose</p>
+<p>Outputs:
+res &#8211; resulting plot.
+fsolved &#8211; number of different functions solved.
+funcs &#8211; number of different function considered.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.pprldistr2.main">
+<code class="descclassname">bbob_pproc.comp2.pprldistr2.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList0</em>, <em>dsList1</em>, <em>dim</em>, <em>targetsOfInterest=None</em>, <em>outputdir=''</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.pprldistr2.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate figures of empirical cumulative distribution functions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList0</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data set of reference algorithm</li>
+<li><strong>dsList1</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data set of algorithm of concern</li>
+<li><strong>dim</strong> (<em>int</em>) &#8211; dimension</li>
+<li><strong>targetsOfInterest</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.TargetValues" title="bbob_pproc.pproc.TargetValues"><em>TargetValues</em></a>) &#8211; target function values to be
+displayed</li>
+<li><strong>isStoringXMax</strong> (<em>bool</em>) &#8211; if set to True, the first call BeautifyVD
+sets the globals <code class="xref py py-data docutils literal"><span class="pre">fmax</span></code> and 
+<code class="xref py py-data docutils literal"><span class="pre">maxEvals</span></code> and all subsequent
+calls will use these values as rightmost
+xlim in the generated figures.</li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output directory (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names.</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; control verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Outputs:
+Image files of the empirical cumulative distribution functions.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.comp2.ppscatter">
+<span id="bbob-pproc-comp2-ppscatter"></span><h2><a class="toc-backref" href="#id5"><a class="reference internal" href="#module-bbob_pproc.comp2.ppscatter" title="bbob_pproc.comp2.ppscatter"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.ppscatter</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.comp2.ppscatter" title="Permalink to this headline">¶</a></h2>
+<p>Scatter Plots.</p>
+<p>For two algorithms, this generates the scatter plot of log(ERT1(df)) vs.
+log(ERT0(df)), where ERT0(df) is the ERT of the reference algorithm,
+ERT1(df) is the ERT of the algorithm of concern, both for target
+precision df.</p>
+<p>Different symbols are used for different dimension (see
+<code class="xref py py-data docutils literal"><span class="pre">markers</span></code> for the order of the markers, <code class="xref py py-data docutils literal"><span class="pre">colors</span></code> for
+the corresponding colors).
+The target precisions considered are in <code class="xref py py-data docutils literal"><span class="pre">targets</span></code>: by 
+default 46 targets are uniformly spread on the log-scale in
+10**[-8:2].</p>
+<p>Boxes correspond to the maximum numbers of function evaluations for
+each algorithm in each dimension.</p>
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppscatter.figure_caption">
+<code class="descclassname">bbob_pproc.comp2.ppscatter.</code><code class="descname">figure_caption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppscatter.figure_caption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppscatter.figure_caption_html">
+<code class="descclassname">bbob_pproc.comp2.ppscatter.</code><code class="descname">figure_caption_html</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppscatter.figure_caption_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppscatter.beautify">
+<code class="descclassname">bbob_pproc.comp2.ppscatter.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppscatter.beautify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.comp2.ppscatter.main">
+<code class="descclassname">bbob_pproc.comp2.ppscatter.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList0</em>, <em>dsList1</em>, <em>outputdir</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.ppscatter.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a scatter plot figure.</p>
+<p>TODO:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.comp2.pptable2">
+<span id="bbob-pproc-comp2-pptable2"></span><h2><a class="toc-backref" href="#id6"><a class="reference internal" href="#module-bbob_pproc.comp2.pptable2" title="bbob_pproc.comp2.pptable2"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.comp2.pptable2</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.comp2.pptable2" title="Permalink to this headline">¶</a></h2>
+<p>Rank-sum tests table on &#8220;Final Data Points&#8221;.</p>
+<p>That is, for example, using 1/#fevals(ftarget) if ftarget was reached
+and -f_final otherwise as input for the rank-sum test, where obviously
+the larger the better.</p>
+<p>One table per function and dimension.</p>
+<dl class="function">
+<dt id="bbob_pproc.comp2.pptable2.main">
+<code class="descclassname">bbob_pproc.comp2.pptable2.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList0</em>, <em>dsList1</em>, <em>dimsOfInterest</em>, <em>outputdir</em>, <em>info=''</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.comp2.pptable2.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>One table per dimension, modified to fit in 1 page per table.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a><ul>
+<li><a class="reference internal" href="#id1"><code class="docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.ppfig2"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.ppfig2</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.pprldistr2"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.pprldistr2</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.ppscatter"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.ppscatter</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.comp2.pptable2"><code class="docutils literal"><span class="pre">bbob_pproc.comp2.pptable2</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="figtables.html"
+                        title="previous chapter">Figures and Tables</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="compall.html"
+                        title="next chapter"><code class="docutils literal"><span class="pre">bbob_pproc.compall</span></code></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/comp2.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="compall.html" title="bbob_pproc.compall"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="figtables.html" title="Figures and Tables"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" ><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

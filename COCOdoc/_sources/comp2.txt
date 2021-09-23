@@ -1,0 +1,40 @@
+:py:mod:`bbob_pproc.comp2`
+==========================
+
+.. contents::
+   :local:
+
+:py:mod:`bbob_pproc.comp2`
+--------------------------
+
+.. automodule:: bbob_pproc.comp2
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.comp2.ppfig2`
+---------------------------------
+
+.. automodule:: bbob_pproc.comp2.ppfig2
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.comp2.pprldistr2`
+-------------------------------------
+
+.. automodule:: bbob_pproc.comp2.pprldistr2
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.comp2.ppscatter`
+------------------------------------
+
+.. automodule:: bbob_pproc.comp2.ppscatter
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.comp2.pptable2`
+-----------------------------------
+
+.. automodule:: bbob_pproc.comp2.pptable2
+   :members:
+   :undoc-members:

@@ -1,0 +1,5 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzmod_large.png?700 }}
+
+
+Empirical runtime distributions on noisy functions with //moderate noise // (f101: Sphere with moderate Gaussian noise, f102: Sphere with moderate unimodal noise, f103: Sphere with moderate Cauchy noise, f104: Rosenbrock with moderate Gaussian noise, f105: Rosenbrock with moderate uniform noise, f106: Rosenbrock with moderate Cauchy noise) with target values in {100, ..., 1e-8} in dimension 20.
+

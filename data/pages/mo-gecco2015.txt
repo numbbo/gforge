@@ -1,0 +1,56 @@
+====== Multiobjective Blackbox Optimization Benchmarking ======
+
+This is the supplementary material web page related to the GECCO-2015 paper by Brockhoff, Tran, and Hansen [1]. Below, you will find the source code to reproduce the results of the paper as well as many plots which had to be omitted from the paper due to space limitations.
+
+Note that in the meantime, the code has evolved into the new version of the [[https://github.com/numbbo/coco|COCO platform]].
+===== Source Code =====
+<html>
+<a href="http://coco.gforge.inria.fr/GECCO2015-download/src/mobenchmarking.tar.gz" onclick="var that=this;_gaq.push(['_trackEvent','Download','tar.gz',this.href]);setTimeout(function(){location.href=that.href;},200);return false;">Download Source Code (19MB)</a>
+</html>
+
+===== Empirical Cumulative Distribution Function Plots =====
+Empirical Cumulative Distribution Function (ECDF) plots for all 300 bi-objective problems with search space dimension 2, 3, 5, 10, and 20 can be found in the following pdfs:
+
+[[http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_2D_single.pdf|single problem ECDFs in 2D (6.9MB)]]\\
+[[http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_3D_single.pdf|single problem ECDFs in 3D (6.6MB)]]\\
+[[http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_5D_single.pdf|single problem ECDFs in 5D (6.4MB)]]\\
+[[http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_10D_single.pdf|single problem ECDFs in 10D (6MB)]]\\
+[[http://coco.gforge.inria.fr/GECCO2015-download/ecdfplots/ecdfs_hv_3algos_5instances_20D_single.pdf|single problem ECDFs in 20D (6MB)]]
+
+The paper only shows the combination of f_2 (separable ellipsoid) with f_3 (separable Rastrigin).
+
+
+ECDF plots, aggregating over function groups, can be found 
+[[http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plot_ecdf_hv_3algos_3runs_20D_aggregate.pdf|here (1MB)]].
+
+
+
+===== Scaling Plots =====
+The scaling plots of the Empirical Running Time (ERT) of NSGA-II, MOEA/D, and MO-CMA-ES over the search space dimension for all 300 bi-objective problems and a target precision of 1e-3 can be found in the following pdf:
+
+[[http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plots_3algos_5insts_1runs_ERT_hv_target1.0e-03.pdf|scaling plots of NSGA-II, MOEA/D, and MO-CMA-ES on all 300 problems and f_target = 1e-3 (6MB)]]\\
+
+The paper only shows the combination of f_2 (separable ellipsoid) with f_3 (separable Rastrigin), f_1 (sphere) with f_9 (rotated Rosenbrock), f_1 with f_12 (bent cigar), and for the combination of f_2 (separable ellipsoid) with f_16 (Weierstrass).
+
+
+===== Influence of Population Size in NSGA-II =====
+All ECDF plots, showing the impact of NSGA-II's population size can be found in the following pdf:
+
+[[http://coco.gforge.inria.fr/GECCO2015-download/otherplots/plot_ecdf_hv_nsgaPopsizes_maxfevalDiff_1runs_5D_single.pdf|ECDFs of NSGA-II with different population sizes in 5D (9MB)]]
+
+
+===== References =====
+[1] Dimo Brockhoff, Thanh-Do Tran, and Nikolaus Hansen. Benchmarking Numerical Multiobjective Optimizers Revisited. In Genetic and Evolutionary Computation Conference (GECCO 2015), pages 639–646. ACM, 2015. ([[http://researchers.lille.inria.fr/~brockhof/publicationListFiles/bth2015a.pdf|pdf]] | [[http://coco.gforge.inria.fr/GECCO2015-MOBBOB/|suppl. material]])
+
+<html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62171618-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

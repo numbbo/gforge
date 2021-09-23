@@ -1,0 +1,48 @@
+~~NOCACHE~~
+
+This is the BBOB 2009 results page and here are the results from the workshop in July 2009. 
+ 
+== Single Function Tables ==
+        *{{http://hal.inria.fr/docs/00/47/12/51/PDF/RT-0383.pdf | BBOB-2009: Comparison Tables of All Algorithms on All Noiseless Functions}} 
+          *{{:download3.6:comptableperfunction02d.pdf|pdf}} Comparison Tables per function: noiseless testbed 2-D
+          *{{:download3.6:comptableperfunction03d.pdf|pdf}} Comparison Tables per function: noiseless testbed 3-D
+          *{{:download3.6:comptableperfunction05d.pdf|pdf}} Comparison Tables per function: noiseless testbed 5-D
+          *{{:download3.6:comptableperfunction10d.pdf|pdf}} Comparison Tables per function: noiseless testbed 10-D
+          *{{:download3.6:comptableperfunction20d.pdf|pdf}} Comparison Tables per function: noiseless testbed 20-D
+          *{{:download3.6:comptableperfunction40d.pdf|pdf}} Comparison Tables per function: noiseless testbed 40-D
+        *{{http://hal.inria.fr/docs/00/47/12/53/PDF/RT-0384.pdf | BBOB-2009: Comparison Tables of All Algorithms on All Noisy Functions}} 
+          *{{:download3.6:comptableperfunctionnoisy02d.pdf|pdf}} Comparison Tables per function: noisy testbed 2-D
+          *{{:download3.6:comptableperfunctionnoisy03d.pdf|pdf}} Comparison Tables per function: noisy testbed 3-D
+          *{{:download3.6:comptableperfunctionnoisy05d.pdf|pdf}} Comparison Tables per function: noisy testbed 5-D
+          *{{:download3.6:comptableperfunctionnoisy10d.pdf|pdf}} Comparison Tables per function: noisy testbed 10-D
+          *{{:download3.6:comptableperfunctionnoisy20d.pdf|pdf}} Comparison Tables per function: noisy testbed 20-D
+          *{{:download3.6:comptableperfunctionnoisy40d.pdf|pdf}} Comparison Tables per function: noisy testbed 40-D
+
+== Comparison Papers ==
+    * N. Hansen, A. Auger, R. Ros, S. Finck, P. Posik: [[http://www.cmap.polytechnique.fr/~nikolaus.hansen/ws1p34.pdf | Comparing Results of 31 Algorithms from the Black-Box Optimization Benchmarking BBOB-2009.]] Workshop Proceedings of the GECCO Genetic and Evolutionary Computation Conference 2010, ACM. 
+
+    * O. Mersmann, M. Preuss, H. Trautmann: {{mersmann2010.pdf|Benchmarking Evolutionary Algorithms: Towards Exploratory Landscape Analysis.}} PPSN XI, LNCS 6238, p. 73 ff, Springer.
+
+== Data ==
+    * [[http://coco.gforge.inria.fr/doku.php?id=bbob-2009-algorithms|overview page listing all 2009 algorithm data sets]]
+    * [[http://coco.gforge.inria.fr/data-archive/bbob/2009 | root data folder for noiseless bbob data]]
+    * [[http://coco.gforge.inria.fr/data-archive/bbob-noisy/2009 | root data folder for bbob-noisy data]]
+
+== Resources (pdf) ==
+    * {{:pdf2009:hornby-alps.pdf| G.S. Hornby: The Age-Layered Population Structure (ALPS) 
+        Evolutionary Algorithm}}
+    * [[http://www.mat.univie.ac.at/~neum/papers.html#global_noisy
+| L. Pal, M.C. Markot, T. Csendes and A. Neumaier, BBO-Benchmarking of the GLOBAL method for the Noiseless Function Testbed, Manuscript (2009).]]
+    * [[http://www.mat.univie.ac.at/~neum/papers.html#global_exact
+| L. Pal, M.C. Markot, T. Csendes and A. Neumaier, BBO-Benchmarking of the GLOBAL method for the Noiseless Function Testbed, Manuscript (2009).]]
+    * [[http://www.mat.univie.ac.at/~neum/papers.html#snobfit_noisy
+| W. Huyer and A. Neumaier, Benchmarking of SNOBFIT on the Noisy Function Testbed, Manuscript (2009).]]
+    * [[http://www.mat.univie.ac.at/~neum/papers.html#mcs_noisy
+| W. Huyer and A. Neumaier, Benchmarking of MCS on the Noisy Function Testbed, Manuscript (2009).]]
+    * [[ http://www.mat.univie.ac.at/~neum/papers.html#mcs_exact
+| W. Huyer and A. Neumaier, Benchmarking of MCS on the Noiseless Function Testbed, Manuscript (2009).]]
+    * More pdfs can be found on the [[bbob-2009-algorithms|general BBOB-2009 algorithm overview page]].
+
+== Reference ==
+    * [[http://hal.inria.fr/inria-00471251/en/ | BBOB 2009: Comparison Tables of All Algorithms on All Noiseless Functions, INRIA RT-0383, Updated 07/04/2010]]
+    * [[http://hal.inria.fr/inria-00471253/en/ | BBOB 2009: Comparison Tables of All Algorithms on All Noisy Functions, INRIA RT-0384, Updated 07/04/2010]]

@@ -1,0 +1,84 @@
+====== Black-Box Optimization Benchmarking (BBOB) 2010 ======
+=== 2nd GECCO Workshop for Real-Parameter Optimization ===
+
+ The second Black-Box Optimization Benchmarking workshop has taken place in Portland, Wednesday July 7th. The program of the workshop can be downloaded {{BBOB2010-program.pdf|here}}, a list of the published papers is [[http://sci2s.ugr.es/eamhco/contributionsGECCO10.php|here]] and result are presented [[http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results|here]]. 
+ 
+
+ Quantifying and comparing performance of optimization algorithms is
+ one important aspect of research in search and optimization. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2010 workshop for real-parameter optimization, follow-up of [[http://coco.gforge.inria.fr/doku.php?id=bbob-2009|BBOB 2009 workshop]], will furnish most of this
+ tedious task for its participants: (1) choice and implementation of
+ a well-motivated single-objective benchmark function testbed, (2) design of an
+ experimental set-up, (3) generation of data output for (4)
+ post-processing and presentation of the results in graphs and
+ tables. This year, the post-processing also allows a comparison 
+ between two algorithms, for example for a well-grounded assessment 
+ of a (new) algorithm modification. Data from last years contributions 
+ are also be used for a comparison.  
+
+ What remains to be done for the participants is to allocate
+ CPU-time, run the black-box real-parameter optimizer(s) of their interest in
+ different dimensions a few hundreds of times and finally start the
+ post-processing procedure. Two testbeds are provided, 
+
+  * noise-free functions and 
+  * noisy functions 
+
+The participants can freely choose any or all of them. 
+
+During the workshop, algorithms and results will be presented by the participants. 
+An overall analysis and comparison will be accomplished by the organizers
+and the overall process will be critically reviewed. 
+A plenary discussion on future improvements will, among others, 
+address the question, of how the testbed should evolve.
+
+Downloads are available at [[http://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads|BBOB 2010 downloads]] 
+
+===What is new in 2010?===
+
+  * Java interface is available (additional to Matlab and C)
+
+  * new results are compared with results from BBOB-2009 in the presentation in the provided paper latex template
+
+  * a new latex template allows the direct comparison of two algorithms
+
+=== The Workshop Papers ===
+We encourage any submission that is concerned with black-box optimization benchmarking of continuous optimizers, for example, benchmarking new or not-so-new algorithms on the BBOB-2010 testbed (which have not been tested in BBOB-2009) or analyzing the data obtained in BBOB-2009 or... 
+
+Two templates are provided:
+
+    * one for benchmarking one algorithm that should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software) and where the used algorithm is presented and the necessary details to reproduce the result are given (see also [[http://coco.lri.fr/BBOB-downloads/download10.0/bbobdocexperiment.pdf|experimental procedure]]). The paper has no more than 8 pages. Example paper: 
+       * {{example2010nelder.pdf|Nelder-Mead}} downhill simplex on the noiseless testbed
+       * {{example2010noisynewuoa.pdf|NEWUOA}} on the noisy testbed
+    * one which allows the comparison of two optimizers. Example paper:
+       * {{examplecmppaper2010.pdf| NEWUOA vs. BIPOP-CMA-ES}} on the noiseless testbed
+
+Paper & data submission:
+  * [[http://coco.gforge.inria.fr/doku.php?id=bbob-2010-uploads&do=login|upload page]] (you will need your upload login)
+
+=== Support Material ===
+
+Experimental setup documents, code for the benchmark functions (Matlab, C, Java) and for the post-processing (Python) (soon) are
+provided at the [[BBOB-2010-downloads|download page]]. To be notified about the release of the code, subscribe to the feed
+http://coco.gforge.inria.fr/feed.php and / or subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+
+=== Important dates ===
+
+   * 03/25: submission deadline
+   * 04/01: acceptance notification
+   * 04/13: final paper version due
+   * 07/07: workshop and first day of [[http://www.sigevo.org/gecco-2010|GECCO]]
+   * 07/31: ECJ special issue on black-box optimization submission deadline
+
+=== Results ===
+
+[[BBOB-2010-results]]
+
+=== Contact and Mailing List ===
+
+To subscribe (or unsubscribe) to our discussion mailing list ( bbob-discuss _at_ lists.lri.fr ) and announcement list, send an email to the organizers at bbob _at_ lri.fr .
+
+=== Organization Committee ===
+Anne Auger, Hans-Georg Beyer, Steffen Finck, Nikolaus Hansen, Petr Posik, Raymond Ros

@@ -1,0 +1,199 @@
+
+<h1 class="sectionedit1"><a name="black-box_optimization_benchmarking_at_cec_2015_cec-bbob" id="black-box_optimization_benchmarking_at_cec_2015_cec-bbob">Black-Box Optimization Benchmarking at CEC&#039;2015 (CEC-BBOB)</a></h1>
+<div class="level1">
+
+</div>
+
+<h4><a name="special_session_on_unbounded_real-parameter_blackbox_optimization" id="special_session_on_unbounded_real-parameter_blackbox_optimization">Special session on Unbounded Real-Parameter Blackbox Optimization</a></h4>
+<div class="level4">
+
+<p>
+
+Benchmarking of optimization algorithms is crucial to assess performance
+of optimizers quantitatively, understand weaknesses and strengths of
+each algorithm and is the compulsory path to test new algorithm designs.
+The black-box-optimization benchmarking special session at CEC&#039;2015 is focused on
+benchmarking for (i) unconstrained optimization and (ii) possibly in
+expensive settings where only a limited budget is affordable (e.g.
+(meta-)model assisted algorithms).
+</p>
+
+<p>
+A thorough methodology for benchmarking has been defined in [1] and
+is implemented within the COCO framework (<a href="http://coco.gforge.inria.fr/" class="urlextern" title="http://coco.gforge.inria.fr/"  rel="nofollow">http://coco.gforge.inria.fr/</a>)
+that eases the benchmarking task. It indeed provides source code in
+various languages (C, Matlab, Java, R, Python) to furnish most of the tedious tasks of benchmarking for the participants:
+</p>
+<ul>
+<li class="level1"><div class="li"> choice and implementation of a well-motivated single-objective benchmark function testbed, </div>
+</li>
+<li class="level1"><div class="li"> design of an experimental set-up, </div>
+</li>
+<li class="level1"><div class="li"> generation of data output, and</div>
+</li>
+<li class="level1"><div class="li"> post-processing and presentation of the results in graphs and tables (up to already prepared LaTeX templates for writing papers).</div>
+</li>
+</ul>
+
+<p>
+
+Participants of the special session are invited to submit a paper with
+the results of any black-box optimization algorithm of their choice. We
+encourage particularly submissions related to expensive optimization
+(with a limited budget) and comparisons with algorithms from the COCO
+database. Participants are also encouraged to use the existing database
+for statistical analyses or for designing a portfolio of algorithms.
+</p>
+
+<p>
+This session being related to the special session and competition on bound constrained
+optimization organized by Ponnuthurai Nagaratnam Suganthan et al. (<a href="http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2015/CEC2015.htm" class="urlextern" title="http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2015/CEC2015.htm"  rel="nofollow">http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2015/CEC2015.htm</a>), submissions
+to both sessions are encouraged while we require here that papers
+presenting benchmarking results follow the benchmarking methodology
+defined in [1] and implemented within the COCO framework. Papers
+discussing benchmarking methodology are also welcome.
+</p>
+
+<p>
+Note that for the CEC-BBOB-2015 special session, we provide essentially the same test-suite as in the previous editions of BBOB held at GECCO. Two testbeds are provided, 
+
+</p>
+<ul>
+<li class="level1"><div class="li"> noise-free functions and </div>
+</li>
+<li class="level1"><div class="li"> noisy functions</div>
+</li>
+</ul>
+
+<p>
+
+for which we distinguish between an expensive optimization scenario (where a focus on the first 100D function evaluations is assumed) and a general scenario for which we do not limit the maximal number of function evaluations made.
+</p>
+
+<p>
+The participants can freely choose any or all of them. We entirely ban different parameter settings for different test functions and encourage analyses that study the impact of parameter setting changes.
+</p>
+
+<p>
+The source code of the test-functions is available in
+Matlab, C, Java, R and Python. 
+Downloads will be made available at <a href="http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads"  rel="nofollow">CEC-BBOB-2015 downloads</a>. 
+</p>
+
+<p>
+
+[1] Real-Parameter Black-Box Optimization Benchmarking: Experimental
+Setup, <a href="http://coco.lri.fr/downloads/download13.09/bbobdocexperiment.pdf" class="urlextern" title="http://coco.lri.fr/downloads/download13.09/bbobdocexperiment.pdf"  rel="nofollow">http://coco.lri.fr/downloads/download13.09/bbobdocexperiment.pdf</a>.
+</p>
+
+</div>
+
+<h4><a name="the_special_session_papers" id="the_special_session_papers">The Special Session Papers</a></h4>
+<div class="level4">
+
+<p>
+We encourage any submission that is concerned with black-box optimization benchmarking of continuous optimizers, for example, benchmarking new or not-so-new algorithms on the CEC-BBOB-2015 testbed or analyzing the data obtained in previous editions of BBOB. Similar to the BBOB-2013 edition, we also focus on benchmarking optimization algorithms for expensive optimization which especially invites to benchmark surrogate-assisted algorithms (e.g. based on kriging, support vector machines etc.).
+</p>
+
+<p>
+All papers shall follow the CEC&#039;2015 guidelines and several templates, that comply with these guidelines, are going to be provided:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> one for benchmarking one algorithm that should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software) and where the used algorithm is presented and the necessary details to reproduce the result are given</div>
+</li>
+<li class="level2"><div class="li"> one for comparing two algorithms</div>
+</li>
+<li class="level2"><div class="li"> and one for comparing three or more algorithms</div>
+</li>
+</ul>
+
+</div>
+
+<h4><a name="organisation_of_the_special_session_during_the_cec_conference" id="organisation_of_the_special_session_during_the_cec_conference">Organisation of the Special Session during the CEC conference</a></h4>
+<div class="level4">
+
+<p>
+
+During the special session, algorithms and results will be presented by the participants. 
+An overall analysis and comparison will be accomplished by the organizers
+and all submitted papers will be critically reviewed as for any other CEC&#039;2015 paper. 
+A planned plenary discussion on future improvements will, among others, 
+address the question, of how the testbed should evolve.
+</p>
+
+</div>
+
+<h4><a name="how_to_submit_papers" id="how_to_submit_papers">How to submit papers</a></h4>
+<div class="level4">
+
+<p>
+Get all the material from the <a href="/doku.php?id=cec-bbob-2015-downloads" class="wikilink1" title="cec-bbob-2015-downloads">download page</a> to run an experiment and prepare the paper. For the paper &amp; data submission see <a href="/doku.php?id=cec-uploads" class="wikilink1" title="cec-uploads">submission procedure</a>. 
+</p>
+
+</div>
+
+<h4><a name="support_material" id="support_material">Support Material</a></h4>
+<div class="level4">
+
+<p>
+Experimental setup documents, code for the benchmark functions (Matlab, C, Java, R, Python) and for the post-processing (Python) are
+provided at the <a href="/doku.php?id=cec-bbob-2015-downloads" class="wikilink1" title="cec-bbob-2015-downloads">download page</a>. To be notified about the release of the code and other news, subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+</p>
+
+</div>
+
+<h4><a name="important_dates" id="important_dates">Important dates</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> 01/11/2014: code released</div>
+</li>
+<li class="level1"><div class="li"> <del>19/12/2014</del>: submission deadline</div>
+</li>
+<li class="level1"><div class="li"> <del>16/01/2015</del>: extended submission deadline</div>
+</li>
+<li class="level1"><div class="li"> <del>20/02/2015</del>: acceptance notification</div>
+</li>
+<li class="level1"><div class="li"> <del>13/03/2015</del>: final paper version due</div>
+</li>
+<li class="level1"><div class="li"> <del>27/05/2015</del>: special session at <a href="http://sites.ieee.org/cec2015" class="urlextern" title="http://sites.ieee.org/cec2015"  rel="nofollow">CEC&#039;2015</a></div>
+</li>
+</ul>
+
+</div>
+
+<h4><a name="contact_and_mailing_list" id="contact_and_mailing_list">Contact and Mailing List</a></h4>
+<div class="level4">
+
+<p>
+
+You can subscribe (or unsubscribe) to our discussion mailing list by following this link <a href="http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss" class="urlextern" title="http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss"  rel="nofollow">http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss</a>
+</p>
+
+<p>
+To receive announcement about the workshop, send an email to the BBOB team bbob_at_lri.fr with title “register to BBOB announcement list”.
+</p>
+
+</div>
+
+<h4><a name="organization_committee" id="organization_committee">Organization Committee</a></h4>
+<div class="level4">
+
+<p>
+
+<a href="https://sites.google.com/site/youheiakimotospage/" class="urlextern" title="https://sites.google.com/site/youheiakimotospage/"  rel="nofollow">Youhei Akimoto</a>, Shinshu University, Nagano, Japan<br/>
+
+<a href="https://www.lri.fr/~auger/" class="urlextern" title="https://www.lri.fr/~auger/"  rel="nofollow">Anne Auger</a>, Inria Saclay - Ile-de-France, Orsay, France<br/>
+
+<a href="http://researchers.lille.inria.fr/~brockhof/" class="urlextern" title="http://researchers.lille.inria.fr/~brockhof/"  rel="nofollow">Dimo Brockhoff</a>, Inria Lille - Nord Europe, Villeneuve d&#039;Ascq, France<br/>
+
+<a href="https://www.lri.fr/~hansen/" class="urlextern" title="https://www.lri.fr/~hansen/"  rel="nofollow">Nikolaus Hansen</a>, Inria Saclay - Ile-de-France, Orsay, France<br/>
+
+<a href="https://p-value.net/" class="urlextern" title="https://p-value.net/"  rel="nofollow">Olaf Mersmann</a>, TU Dortmund University, Dortmund, Germany<br/>
+
+<a href="http://labe.felk.cvut.cz/~posik/" class="urlextern" title="http://labe.felk.cvut.cz/~posik/"  rel="nofollow">Petr Pošík</a>, Czech Technical University, Prague, Czech Republic
+
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Black-Box Optimization Benchmarking at CEC'2015 (CEC-BBOB)" [2-] -->

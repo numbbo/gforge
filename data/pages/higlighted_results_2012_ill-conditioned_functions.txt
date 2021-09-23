@@ -1,0 +1,4 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_hcond_large.png?700 }}
+
+
+Empirical runtime distributions on //ill-conditioned// functions (f10: High conditioning Ellipsoid, f11: Discus, f12: Bent Cigar, f13: Sharp Ridge, f14: Different Powers) with target values in {100, ..., 1e-8} in dimension 20.

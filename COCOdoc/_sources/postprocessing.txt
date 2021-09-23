@@ -1,0 +1,15 @@
+Post-Processing with COCO
+=========================
+
+.. toctree::
+
+   pp_overview.rst
+   pp_commandline.rst
+   pp_interactive.rst
+
+The post-processing tool :py:mod:`bbob_pproc` generates image files and
+LaTeX tables from the raw experimental data obtained with COCO.
+
+Its main usage is through the command line interface. To generate custom
+figures, :py:mod:`bbob_pproc` can be used alternatively from the Python
+interpreter.

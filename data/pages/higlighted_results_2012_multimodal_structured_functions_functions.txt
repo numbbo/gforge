@@ -1,0 +1,4 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_multi_large.png?700 }}
+
+
+Empirical runtime distributions on //multimodal structured// functions (f15: Rastrigin, f16: Weierstrass, f17: Schaffers F7, f18: Moderately ill-conditioned Schaffers F7, f19: Composite Griewank-Rosenbrock) with target values in {100, ..., 1e-8} in dimension 20.

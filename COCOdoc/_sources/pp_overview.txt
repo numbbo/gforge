@@ -1,0 +1,65 @@
+Overview of the :py:mod:`bbob_pproc` Package
+============================================
+
+We present here the content of version 10.7 of the :py:mod:`bbob_pproc`
+package.
+
+:file:`rungeneric.py`
+  is the main interface of the package that performs different routines listed below,
+
+:file:`rungeneric1.py`
+  post-processes data from *one* single algorithm and outputs figures and tables included in the templates :file:`template1generic.tex`,
+  :file:`noisytemplate1generic.tex`,
+
+:file:`rungeneric2.py`
+  post-processes data from *two* algorithms using modules from :py:mod:`bbob_pproc.comp2` and
+  outputs comparison figures and tables included in the template :file:`template2generic.tex`,
+  :file:`noisytemplate2generic.tex`,
+
+:file:`rungenericmany.py`
+  post-processes data from 1 or more algorithms [#]_ using modules from :py:mod:`bbob_pproc.compall` and outputs
+  comparison figures and tables included in the template,
+  :file:`template3generic.tex`, :file:`noisytemplate3generic.tex`
+
+:file:`genericsettings.py`
+  defines generic settings for the output figures and tables during module import, 
+
+:file:`config.py`
+    configuration and modification of settings depending on input parameters while the module is running
+    
+.. obsolete :file:`bwsettings.py`
+  defines generic settings with figures in black and white,
+.. obsolete :file:`grayscalesettings.py`
+  defines generic settings with grayscale figures,
+
+:py:mod:`bbob_pproc.pproc`
+  defines the classes :py:class:`bbob_pproc.pproc.DataSetList` and
+  :py:class:`bbob_pproc.pproc.DataSet` which are the main data structures that we use to gather the
+  experimental raw data,
+
+:py:mod:`bbob_pproc.dataoutput`
+  contain routine to output instances of :py:class:`bbob_pproc.pproc.DataSet` in Python-formatted data files,
+
+:py:mod:`bbob_pproc.readalign`, :py:mod:`bbob_pproc.toolsstats`
+  contain routines for the post-processing of the raw experimental data,
+
+:py:mod:`bbob_pproc.pptex`
+  defines some routines for generating \TeX\ tables,
+
+:py:mod:`bbob_pproc.ppfig`
+  defines some routines for generating figures,
+
+:py:mod:`bbob_pproc.ppfigdim`, :py:mod:`bbob_pproc.pptable`, :py:mod:`bbob_pproc.pprldistr`, :py:mod:`bbob_pproc.pplogloss`
+  are used to produce figures and tables presenting the results of one algorithm,
+
+:py:mod:`bbob_pproc.compall`
+  is a sub-package which contains modules
+  for the comparison of the performances of algorithms, routines in this
+  package can be called using the interface of :file:`rungenericmany.py`,
+
+:py:mod:`bbob_pproc.comp2`
+  is a sub-package which contains modules for
+  the comparison of the performances of two algorithms, routines in this package
+  can be called using the interface of :file:`rungeneric2.py`.
+
+.. [#] for more than ten algorithm, the template shall be modified,

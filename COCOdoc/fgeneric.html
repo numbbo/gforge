@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python API &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="next" title="bbob_pproc API" href="bbob_pproc.html" />
+    <link rel="prev" title="Post-Processing from the Python Interpreter" href="pp_interactive.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bbob_pproc.html" title="bbob_pproc API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pp_interactive.html" title="Post-Processing from the Python Interpreter"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-api">
+<h1>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#module-fgeneric" id="id1"><a class="reference internal" href="#module-fgeneric" title="fgeneric"><code class="xref py py-mod docutils literal"><span class="pre">fgeneric</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbobbenchmarks" id="id2"><a class="reference internal" href="#module-bbobbenchmarks" title="bbobbenchmarks"><code class="xref py py-mod docutils literal"><span class="pre">bbobbenchmarks</span></code></a></a></li>
+</ul>
+</div>
+<div class="section" id="module-fgeneric">
+<span id="fgeneric"></span><h2><a class="toc-backref" href="#id1"><a class="reference internal" href="#module-fgeneric" title="fgeneric"><code class="xref py py-mod docutils literal"><span class="pre">fgeneric</span></code></a></a><a class="headerlink" href="#module-fgeneric" title="Permalink to this headline">¶</a></h2>
+<p>Test function interface.</p>
+<p>This module implements class LoggingFunction which is the main class for
+logging a whole experiment.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fgeneric</span><span class="o">,</span> <span class="nn">bbobbenchmarks</span> <span class="kn">as</span> <span class="nn">bb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fgeneric</span><span class="o">.</span><span class="n">LoggingFunction</span><span class="p">(</span><span class="s">&#39;fgeneric_doctest_no_algorihm&#39;</span><span class="p">,</span> <span class="s">&#39;no-name-algorithm&#39;</span><span class="p">)</span>  <span class="c"># like a LoggingFunction class</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">setfun</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">F1</span><span class="p">())</span><span class="o">.</span><span class="n">ftarget</span>  <span class="c"># assumes that F1().fopt is accessible, prints target value</span>
+<span class="go">-92.649999990000012</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>  <span class="c"># call f1 while logging the results, same as f.evalfun(x)</span>
+<span class="go">-61.233399680000005</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">finalizerun</span><span class="p">()</span>  <span class="c"># reset counter for f-evaluations etc</span>
+</pre></div>
+</div>
+<p>For other examples of how to use fgeneric, see exampleexperiment.py and exampletiming.py</p>
+<p>Test:</p>
+<blockquote>
+<div>python fgeneric.py</div></blockquote>
+<p>runs doctest, using -v option gives verbosity.</p>
+<dl class="class">
+<dt id="fgeneric.LoggingFunction">
+<em class="property">class </em><code class="descclassname">fgeneric.</code><code class="descname">LoggingFunction</code><span class="sig-paren">(</span><em>datapath</em>, <em>algid='not-specified'</em>, <em>comments=''</em>, <em>inputformat='row'</em><span class="sig-paren">)</span><a class="headerlink" href="#fgeneric.LoggingFunction" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Class for a function that records data from experiments with a given</dt>
+<dd>algorithm and parameter settings.</dd>
+</dl>
+<p>This class provides recording facilities:</p>
+<ul class="simple">
+<li>index files (<code class="file docutils literal"><span class="pre">info</span></code> extension) record information on an
+experiment</li>
+<li>data files (<code class="file docutils literal"><span class="pre">dat</span></code>, <code class="file docutils literal"><span class="pre">tdat</span></code> extensions) which record
+number of function evaluations and function values for consecutive
+runs.</li>
+</ul>
+<p>Once an instance of this class is provided with a test function and
+the function optimal value, the instance or its method <a class="reference internal" href="#fgeneric.LoggingFunction.evalfun" title="fgeneric.LoggingFunction.evalfun"><code class="xref py py-meth docutils literal"><span class="pre">evalfun</span></code></a>
+can be called to evaluate the function.</p>
+<p>At the end of the run, <a class="reference internal" href="#fgeneric.LoggingFunction.finalizerun" title="fgeneric.LoggingFunction.finalizerun"><code class="xref py py-meth docutils literal"><span class="pre">finalizerun</span></code></a> must be called.</p>
+<p>Either the provided test function is an object with an evaluation
+method <code class="xref py py-meth docutils literal"><span class="pre">_evalfull</span></code> which returns noisy and noiseless values
+(tuple of length 2). Otherwise, the test function should be
+callable and return a scalar if called with tuple (0., 0.).</p>
+<dl class="method">
+<dt id="fgeneric.LoggingFunction.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><em>datapath</em>, <em>algid='not-specified'</em>, <em>comments=''</em>, <em>inputformat='row'</em><span class="sig-paren">)</span><a class="headerlink" href="#fgeneric.LoggingFunction.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize LoggingFunction with a data path and further
+infos. Before the LoggingFunction can be used as an objective
+function, method <a class="reference internal" href="#fgeneric.LoggingFunction.setfun" title="fgeneric.LoggingFunction.setfun"><code class="xref py py-meth docutils literal"><span class="pre">setfun</span></code></a> must be called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fgeneric.LoggingFunction.evalfun">
+<code class="descname">evalfun</code><span class="sig-paren">(</span><em>inputx</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#fgeneric.LoggingFunction.evalfun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function, return objective function value.</p>
+<p>Positional and keyword arguments args and kwargs are directly
+passed to the test function evaluation method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fgeneric.LoggingFunction.finalizerun">
+<code class="descname">finalizerun</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fgeneric.LoggingFunction.finalizerun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the last bit of information for a given run.</p>
+<p>Calling this method at the end of a run is necessary as some
+information are not written otherwise.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.datapath">
+<code class="descname">datapath</code><a class="headerlink" href="#fgeneric.LoggingFunction.datapath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main path for storing the data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.algid">
+<code class="descname">algid</code><a class="headerlink" href="#fgeneric.LoggingFunction.algid" title="Permalink to this definition">¶</a></dt>
+<dd><p>String representing the tested algorithm.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.comments">
+<code class="descname">comments</code><a class="headerlink" href="#fgeneric.LoggingFunction.comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>String with any information on the experiment set.</p>
+<p>It is recommended to put all of the parameter settings here.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.inputformat">
+<code class="descname">inputformat</code><a class="headerlink" href="#fgeneric.LoggingFunction.inputformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>String giving the input format, either &#8216;row&#8217; (default) or &#8216;col&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.fbest">
+<code class="descname">fbest</code><a class="headerlink" href="#fgeneric.LoggingFunction.fbest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the best function value obtained.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.best">
+<code class="descname">best</code><a class="headerlink" href="#fgeneric.LoggingFunction.best" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the best function value obtained.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.ftarget">
+<code class="descname">ftarget</code><a class="headerlink" href="#fgeneric.LoggingFunction.ftarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the target function value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.evaluations">
+<code class="descname">evaluations</code><a class="headerlink" href="#fgeneric.LoggingFunction.evaluations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of function evaluations so far.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fgeneric.LoggingFunction.setfun">
+<code class="descname">setfun</code><span class="sig-paren">(</span><em>fun</em>, <em>fopt=None</em>, <em>funId='undefined'</em>, <em>iinstance='undefined'</em>, <em>dftarget=1e-08</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#fgeneric.LoggingFunction.setfun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set test function, returns an evaluation method and a target</p>
+<p>Using this method is necessary to start the creation of a log of
+an experiment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fun</strong> &#8211; test function (could be the evaluation method or an
+instance of bbobbenchmarks.)
+has to return a tuple of length 2: a noisy and a
+noiseless value. If the function is noiseless, you
+can provide (lambda x: tuple([f(x)] * 2)).</li>
+<li><strong>fopt</strong> (<em>float</em>) &#8211; optimum value of the test function, used to define
+the f-values to be recorded</li>
+<li><strong>dftarget</strong> (<em>float</em>) &#8211; target precision, only used to set the ftarget
+property attribute (must only be used for checking for final termination)</li>
+<li><strong>funId</strong> &#8211; function identifier, typically a number, funId must have
+a string representation and is used for file names (avoid
+special characters)</li>
+<li><strong>iinstance</strong> &#8211; instance of the function (has to have string
+representation)</li>
+<li><strong>kwargs</strong> &#8211; additional descriptions</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">self</span></code>, <code class="docutils literal"><span class="pre">self</span></code> can be called as an objective function,
+the target function value is self.ftarget = fopt + dftarget</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.fun">
+<code class="descname">fun</code><a class="headerlink" href="#fgeneric.LoggingFunction.fun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current test function to be evaluated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fgeneric.LoggingFunction.restart">
+<code class="descname">restart</code><span class="sig-paren">(</span><em>restart_reason='restarted'</em><span class="sig-paren">)</span><a class="headerlink" href="#fgeneric.LoggingFunction.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an output line to the restart-log. Call this if restarts occur within run_(your)_optimizer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fgeneric.LoggingFunction.fileprefix">
+<code class="descname">fileprefix</code><a class="headerlink" href="#fgeneric.LoggingFunction.fileprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>String prefix common to all files generated.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbobbenchmarks">
+<span id="bbobbenchmarks"></span><h2><a class="toc-backref" href="#id2"><a class="reference internal" href="#module-bbobbenchmarks" title="bbobbenchmarks"><code class="xref py py-mod docutils literal"><span class="pre">bbobbenchmarks</span></code></a></a><a class="headerlink" href="#module-bbobbenchmarks" title="Permalink to this headline">¶</a></h2>
+<p>BBOB noiseless testbed.</p>
+<p>The optimisation test functions are represented as classes <cite>F1</cite> to
+<cite>F24</cite> (and <cite>F101</cite> to <cite>F130</cite>).</p>
+<p>This module implements the class <a class="reference internal" href="#bbobbenchmarks.BBOBFunction" title="bbobbenchmarks.BBOBFunction"><code class="xref py py-class docutils literal"><span class="pre">BBOBFunction</span></code></a> and
+sub-classes:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#bbobbenchmarks.BBOBNfreeFunction" title="bbobbenchmarks.BBOBNfreeFunction"><code class="xref py py-class docutils literal"><span class="pre">BBOBNfreeFunction</span></code></a> which have all the methods common to the
+classes <a class="reference internal" href="#bbobbenchmarks.F1" title="bbobbenchmarks.F1"><code class="xref py py-class docutils literal"><span class="pre">F1</span></code></a> to <a class="reference internal" href="#bbobbenchmarks.F24" title="bbobbenchmarks.F24"><code class="xref py py-class docutils literal"><span class="pre">F24</span></code></a></li>
+<li><a class="reference internal" href="#bbobbenchmarks.BBOBGaussFunction" title="bbobbenchmarks.BBOBGaussFunction"><code class="xref py py-class docutils literal"><span class="pre">BBOBGaussFunction</span></code></a>, <a class="reference internal" href="#bbobbenchmarks.BBOBCauchyFunction" title="bbobbenchmarks.BBOBCauchyFunction"><code class="xref py py-class docutils literal"><span class="pre">BBOBCauchyFunction</span></code></a>,
+<a class="reference internal" href="#bbobbenchmarks.BBOBUniformFunction" title="bbobbenchmarks.BBOBUniformFunction"><code class="xref py py-class docutils literal"><span class="pre">BBOBUniformFunction</span></code></a> which have methods in classes from
+<a class="reference internal" href="#bbobbenchmarks.F101" title="bbobbenchmarks.F101"><code class="xref py py-class docutils literal"><span class="pre">F101</span></code></a> to <a class="reference internal" href="#bbobbenchmarks.F130" title="bbobbenchmarks.F130"><code class="xref py py-class docutils literal"><span class="pre">F130</span></code></a></li>
+</ul>
+<p>Module attributes:</p>
+<ul class="simple">
+<li><code class="xref py py-data docutils literal"><span class="pre">dictbbob</span></code> is a dictionary such that dictbbob[2] contains
+the test function class F2 and f2 = dictbbob[2]() returns
+the instance 0 of the test function that can be
+called as f2([1,2,3]).</li>
+<li><code class="xref py py-data docutils literal"><span class="pre">nfreeIDs</span></code> == range(1,25) indices for the noiseless functions that can be
+found in dictbbob</li>
+<li><code class="xref py py-data docutils literal"><span class="pre">noisyIDs</span></code> == range(101, 131) indices for the noisy functions that can be
+found in dictbbob. We have nfreeIDs + noisyIDs == sorted(dictbbob.keys())</li>
+<li><code class="xref py py-data docutils literal"><span class="pre">nfreeinfos</span></code> function infos</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bbobbenchmarks</span> <span class="kn">as</span> <span class="nn">bn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">bn</span><span class="o">.</span><span class="n">nfreeinfos</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="k">print</span> <span class="n">s</span>
+<span class="go">1: Noise-free Sphere function</span>
+<span class="go">2: Separable ellipsoid with monotone transformation</span>
+
+<span class="go">    Parameter: condition number (default 1e6)</span>
+
+
+<span class="go">3: Rastrigin with monotone transformation separable &quot;condition&quot; 10</span>
+<span class="go">4: skew Rastrigin-Bueche, condition 10, skew-&quot;condition&quot; 100</span>
+<span class="go">5: Linear slope</span>
+<span class="go">6: Attractive sector function</span>
+<span class="go">7: Step-ellipsoid, condition 100, noise-free</span>
+<span class="go">8: Rosenbrock noise-free</span>
+<span class="go">9: Rosenbrock, rotated</span>
+<span class="go">10: Ellipsoid with monotone transformation, condition 1e6</span>
+<span class="go">11: Discus (tablet) with monotone transformation, condition 1e6</span>
+<span class="go">12: Bent cigar with asymmetric space distortion, condition 1e6</span>
+<span class="go">13: Sharp ridge</span>
+<span class="go">14: Sum of different powers, between x^2 and x^6, noise-free</span>
+<span class="go">15: Rastrigin with asymmetric non-linear distortion, &quot;condition&quot; 10</span>
+<span class="go">16: Weierstrass, condition 100</span>
+<span class="go">17: Schaffers F7 with asymmetric non-linear transformation, condition 10</span>
+<span class="go">18: Schaffers F7 with asymmetric non-linear transformation, condition 1000</span>
+<span class="go">19: F8F2 sum of Griewank-Rosenbrock 2-D blocks, noise-free</span>
+<span class="go">20: Schwefel with tridiagonal variable transformation</span>
+<span class="go">21: Gallagher with 101 Gaussian peaks, condition up to 1000, one global rotation, noise-free</span>
+<span class="go">22: Gallagher with 21 Gaussian peaks, condition up to 1000, one global rotation</span>
+<span class="go">23: Katsuura function</span>
+<span class="go">24: Lunacek bi-Rastrigin, condition 100</span>
+
+<span class="go">    in PPSN 2008, Rastrigin part rotated and scaled</span>
+
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f3</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">F3</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>  <span class="c"># instantiate instance 13 of function f3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f3</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c"># short-cut for f3.evaluate([0, 1, 2])</span>
+<span class="go">59.87335291</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">bn</span><span class="o">.</span><span class="n">instantiate</span><span class="p">(</span><span class="mi">5</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>  <span class="c"># returns function instance and optimal f-value</span>
+<span class="go">51.53</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">bn</span><span class="o">.</span><span class="n">nfreeIDs</span> <span class="c"># list noise-free functions</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bn</span><span class="o">.</span><span class="n">nfreeIDs</span><span class="p">:</span> <span class="c"># evaluate all noiseless functions once</span>
+<span class="gp">... </span>   <span class="k">print</span> <span class="n">bn</span><span class="o">.</span><span class="n">instantiate</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">]([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]),</span>
+<span class="go">-77.27454592 6180022.82173 92.9877507529 92.9877507529 140.510117618 70877.9554128 -72.5505202195 33355.7924722 -339.94 4374717.49343 15631566.3487 4715481.0865 550.599783901 -17.2991756229 27.3633128519 -227.827833529 -24.3305918781 131.420159348 40.7103737427 6160.81782924 376.746889545 107.830426761 220.482266557 106.094767386</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="bbobbenchmarks.compute_xopt">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">compute_xopt</code><span class="sig-paren">(</span><em>rseed</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.compute_xopt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random vector used as optimum argument.</p>
+<p>Rounded by four digits, but never to zero.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.compute_rotation">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">compute_rotation</code><span class="sig-paren">(</span><em>seed</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.compute_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an orthogonal basis.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.monotoneTFosc">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">monotoneTFosc</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.monotoneTFosc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps [-inf,inf] to [-inf,inf] with different constants
+for positive and negative part.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.defaultboundaryhandling">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">defaultboundaryhandling</code><span class="sig-paren">(</span><em>x</em>, <em>fac</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.defaultboundaryhandling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a float penalty for being outside of boundaries [-5, 5]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.gauss">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">gauss</code><span class="sig-paren">(</span><em>N</em>, <em>seed</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.gauss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples N standard normally distributed numbers
+being the same for a given seed</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.unif">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">unif</code><span class="sig-paren">(</span><em>N</em>, <em>inseed</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.unif" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates N uniform numbers with starting seed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.fGauss">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">fGauss</code><span class="sig-paren">(</span><em>ftrue</em>, <em>beta</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.fGauss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns Gaussian model noisy value.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.fUniform">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">fUniform</code><span class="sig-paren">(</span><em>ftrue</em>, <em>alpha</em>, <em>beta</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.fUniform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns uniform model noisy value.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.fCauchy">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">fCauchy</code><span class="sig-paren">(</span><em>ftrue</em>, <em>alpha</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.fCauchy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns Cauchy model noisy value</p>
+<p>Cauchy with median 1e3*alpha and with p=0.2, zero otherwise</p>
+<p>P(Cauchy &gt; 1,10,100,1000) = 0.25, 0.032, 0.0032, 0.00032</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.AbstractTestFunction">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">AbstractTestFunction</code><a class="headerlink" href="#bbobbenchmarks.AbstractTestFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class for test functions.</p>
+<p>Defines methods to be implemented in test functions which are to be
+provided to method setfun of class Logger.
+In particular, (a) the attribute fopt and (b) the method _evalfull.</p>
+<p>The _evalfull method returns two values, the possibly noisy value and
+the noise-free value. The latter is only meant to be for recording purpose.</p>
+<dl class="method">
+<dt id="bbobbenchmarks.AbstractTestFunction.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.AbstractTestFunction.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the objective function value (in case noisy).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbobbenchmarks.AbstractTestFunction.getfopt">
+<code class="descname">getfopt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.AbstractTestFunction.getfopt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the best function value of this instance of the function.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bbobbenchmarks.AbstractTestFunction.fopt">
+<code class="descname">fopt</code><a class="headerlink" href="#bbobbenchmarks.AbstractTestFunction.fopt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the best function value of this instance of the function.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.BBOBFunction">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">BBOBFunction</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class of BBOB test functions.</p>
+<p>Implements some base functions that are used by the test functions
+of BBOB such as initialisations of class attributes.</p>
+<dl class="method">
+<dt id="bbobbenchmarks.BBOBFunction.getiinstance">
+<code class="descname">getiinstance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBFunction.getiinstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Designates the instance of the function class.</p>
+<p>An instance in this case means a given target function value, a
+given optimal argument x, and given transformations for the
+function. It needs to have a string representation. Preferably
+it should be a number or a string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bbobbenchmarks.BBOBFunction.iinstance">
+<code class="descname">iinstance</code><a class="headerlink" href="#bbobbenchmarks.BBOBFunction.iinstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Designates the instance of the function class.</p>
+<p>An instance in this case means a given target function value, a
+given optimal argument x, and given transformations for the
+function. It needs to have a string representation. Preferably
+it should be a number or a string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bbobbenchmarks.BBOBFunction.shortstr">
+<code class="descname">shortstr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBFunction.shortstr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives a short string self representation (shorter than str(self)).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bbobbenchmarks.BBOBFunction.xopt">
+<code class="descname">xopt</code><a class="headerlink" href="#bbobbenchmarks.BBOBFunction.xopt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the argument of the optimum of the function.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.BBOBNfreeFunction">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">BBOBNfreeFunction</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBNfreeFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of the noise-free functions of BBOB.</p>
+<dl class="method">
+<dt id="bbobbenchmarks.BBOBNfreeFunction.noise">
+<code class="descname">noise</code><span class="sig-paren">(</span><em>ftrue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBNfreeFunction.noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the noise-free function values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.BBOBGaussFunction">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">BBOBGaussFunction</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBGaussFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of the Gauss noise functions of BBOB.</p>
+<p>Attribute gaussbeta needs to be defined by inheriting classes.</p>
+<dl class="method">
+<dt id="bbobbenchmarks.BBOBGaussFunction.noise">
+<code class="descname">noise</code><span class="sig-paren">(</span><em>ftrue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBGaussFunction.noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the noisy function values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.BBOBUniformFunction">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">BBOBUniformFunction</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBUniformFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of the uniform noise functions of BBOB.</p>
+<p>Attributes unifalphafac and unifbeta need to be defined by inheriting
+classes.</p>
+<dl class="method">
+<dt id="bbobbenchmarks.BBOBUniformFunction.noise">
+<code class="descname">noise</code><span class="sig-paren">(</span><em>ftrue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBUniformFunction.noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the noisy function values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.BBOBCauchyFunction">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">BBOBCauchyFunction</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBCauchyFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of the Cauchy noise functions of BBOB.</p>
+<p>Attributes cauchyalpha and cauchyp need to be defined by inheriting
+classes.</p>
+<dl class="method">
+<dt id="bbobbenchmarks.BBOBCauchyFunction.noise">
+<code class="descname">noise</code><span class="sig-paren">(</span><em>ftrue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.BBOBCauchyFunction.noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the noisy function values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F1">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F1</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Noise-free Sphere function</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F101">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F101</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F101" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphere with moderate Gauss noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F102">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F102</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F102" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphere with moderate uniform noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F103">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F103</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F103" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphere with moderate Cauchy noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F107">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F107</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F107" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphere with  Gauss noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F108">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F108</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F108" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphere with uniform noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F109">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F109</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F109" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphere with Cauchy noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F2">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F2</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Separable ellipsoid with monotone transformation</p>
+<p>Parameter: condition number (default 1e6)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F3">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F3</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rastrigin with monotone transformation separable &#8220;condition&#8221; 10</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F4">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F4</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F4" title="Permalink to this definition">¶</a></dt>
+<dd><p>skew Rastrigin-Bueche, condition 10, skew-&#8220;condition&#8221; 100</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F5">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F5</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear slope</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F6">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F6</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attractive sector function</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F7">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F7</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step-ellipsoid, condition 100, noise-free</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F113">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F113</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F113" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step-ellipsoid with gauss noise, condition 100</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F114">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F114</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F114" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step-ellipsoid with uniform noise, condition 100</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F115">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F115</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F115" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step-ellipsoid with Cauchy noise, condition 100</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F8">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F8</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock noise-free</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F104">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F104</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F104" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock non-rotated with moderate Gauss noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F105">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F105</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F105" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock non-rotated with moderate uniform noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F106">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F106</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F106" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock non-rotated with moderate Cauchy noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F110">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F110</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F110" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock non-rotated with Gauss noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F111">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F111</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F111" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock non-rotated with uniform noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F112">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F112</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F112" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock non-rotated with Cauchy noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F9">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F9</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rosenbrock, rotated</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F10">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F10</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ellipsoid with monotone transformation, condition 1e6</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F116">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F116</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F116" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ellipsoid with Gauss noise, monotone x-transformation, condition 1e4</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F117">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F117</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F117" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ellipsoid with uniform noise, monotone x-transformation, condition 1e4</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F118">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F118</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F118" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ellipsoid with Cauchy noise, monotone x-transformation, condition 1e4</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F11">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F11</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F11" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discus (tablet) with monotone transformation, condition 1e6</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F12">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F12</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bent cigar with asymmetric space distortion, condition 1e6</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F13">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F13</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F13" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sharp ridge</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F14">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F14</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F14" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of different powers, between x^2 and x^6, noise-free</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F119">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F119</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F119" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of different powers with Gauss noise, between x^2 and x^6</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F120">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F120</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F120" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of different powers with uniform noise, between x^2 and x^6</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F121">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F121</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F121" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of different powers with seldom Cauchy noise, between x^2 and x^6</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F15">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F15</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F15" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rastrigin with asymmetric non-linear distortion, &#8220;condition&#8221; 10</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F16">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F16</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F16" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weierstrass, condition 100</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F17">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F17</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F17" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schaffers F7 with asymmetric non-linear transformation, condition 10</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F18">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F18</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F18" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schaffers F7 with asymmetric non-linear transformation, condition 1000</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F122">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F122</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F122" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schaffers F7 with Gauss noise, with asymmetric non-linear transformation, condition 10</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F123">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F123</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F123" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schaffers F7 with uniform noise, asymmetric non-linear transformation, condition 10</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F124">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F124</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F124" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schaffers F7 with seldom Cauchy noise, asymmetric non-linear transformation, condition 10</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F19">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F19</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F19" title="Permalink to this definition">¶</a></dt>
+<dd><p>F8F2 sum of Griewank-Rosenbrock 2-D blocks, noise-free</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F125">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F125</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F125" title="Permalink to this definition">¶</a></dt>
+<dd><p>F8F2 sum of Griewank-Rosenbrock 2-D blocks with Gauss noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F126">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F126</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F126" title="Permalink to this definition">¶</a></dt>
+<dd><p>F8F2 sum of Griewank-Rosenbrock 2-D blocks with uniform noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F127">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F127</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F127" title="Permalink to this definition">¶</a></dt>
+<dd><p>F8F2 sum of Griewank-Rosenbrock 2-D blocks with seldom Cauchy noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F20">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F20</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F20" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schwefel with tridiagonal variable transformation</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F21">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F21</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F21" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gallagher with 101 Gaussian peaks, condition up to 1000, one global rotation, noise-free</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F22">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F22</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F22" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gallagher with 21 Gaussian peaks, condition up to 1000, one global rotation</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F128">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F128</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F128" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gallagher with 101 Gaussian peaks with Gauss noise, condition up to 1000, one global rotation</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F129">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F129</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F129" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gallagher with 101 Gaussian peaks with uniform noise, condition up to 1000, one global rotation</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F130">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F130</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F130" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gallagher with 101 Gaussian peaks with seldom Cauchy noise, condition up to 1000, one global rotation</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F23">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F23</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F23" title="Permalink to this definition">¶</a></dt>
+<dd><p>Katsuura function</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbobbenchmarks.F24">
+<em class="property">class </em><code class="descclassname">bbobbenchmarks.</code><code class="descname">F24</code><span class="sig-paren">(</span><em>iinstance=0</em>, <em>zerox=False</em>, <em>zerof=False</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.F24" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lunacek bi-Rastrigin, condition 100</p>
+<p>in PPSN 2008, Rastrigin part rotated and scaled</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.instantiate">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">instantiate</code><span class="sig-paren">(</span><em>ifun</em>, <em>iinstance=0</em>, <em>param=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns test function ifun, by default instance 0,
+and its optimal f-value.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbobbenchmarks.get_param">
+<code class="descclassname">bbobbenchmarks.</code><code class="descname">get_param</code><span class="sig-paren">(</span><em>ifun</em><span class="sig-paren">)</span><a class="headerlink" href="#bbobbenchmarks.get_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the parameter values of the function ifun.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python API</a><ul>
+<li><a class="reference internal" href="#module-fgeneric"><code class="docutils literal"><span class="pre">fgeneric</span></code></a></li>
+<li><a class="reference internal" href="#module-bbobbenchmarks"><code class="docutils literal"><span class="pre">bbobbenchmarks</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pp_interactive.html"
+                        title="previous chapter">Post-Processing from the Python Interpreter</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bbob_pproc.html"
+                        title="next chapter"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fgeneric.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bbob_pproc.html" title="bbob_pproc API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pp_interactive.html" title="Post-Processing from the Python Interpreter"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+
+====== Black-Box Optimization Benchmarking (BBOB) 2012 ======
+=== 3rd GECCO Workshop for Real-Parameter Optimization ===
+
+The third Black-Box Optimization Benchmarking workshop took place in Philadelphia, as part of GECCO 2012, July 07 - 11.
+A list of the published papers is [[http://dl.acm.org/citation.cfm?id=2330163&picked=prox|here]] and results are presented [[http://coco.gforge.inria.fr/doku.php?id=bbob-2012-results|here]]. 
+ 
+ Benchmarking of optimization algorithms is crucial to assess
+performance of optimizers quantitatively, understand weaknesses and
+strengths of each algorithm and is a compulsory path to evaluate new
+algorithm designs. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2012 workshop for real-parameter optimization, follow-up of [[http://coco.gforge.inria.fr/doku.php?id=bbob-2009|BBOB 2009 workshop]] and [[http://coco.gforge.inria.fr/doku.php?id=bbob-2010|BBOB 2010 workshop]], will furnish most of this
+ tedious task for its participants: 
+  * choice and implementation of a well-motivated single-objective benchmark function testbed, 
+  * design of an experimental set-up, 
+  * generation of data output, and
+  * post-processing and presentation of the results in graphs and tables. 
+
+ For this new edition, we provide essentially the same test-suite as in
+2010. This year, the post-processing also allows a comparison 
+ between more than two algorithms, for example for a well-grounded assessment 
+ of a (new) algorithm modification. Data from BBOB 2009 contributions 
+ are also used for a comparison.  
+
+ What remains to be done for the participants is to allocate
+ CPU-time, run the black-box real-parameter optimizer(s) of their interest in
+ different dimensions a few hundreds of times and finally start the
+ post-processing procedure. Two testbeds are provided, 
+
+  * noise-free functions and 
+  * noisy functions. 
+
+The participants can freely choose any or all of them. 
+This new
+edition entirely bans different parameter settings for different test
+functions and encourages analyses that study the impact of parameter
+setting changes.
+
+
+During the workshop, algorithms and results will be presented by the participants. 
+An overall analysis and comparison will be accomplished by the organizers
+and the overall process will be critically reviewed. 
+A plenary discussion on future improvements will, among others, 
+address the question, of how the testbed should evolve.
+
+The source code of the test-functions is available in
+Matlab, C, Java, R and Python. 
+Downloads are available at [[http://coco.gforge.inria.fr/doku.php?id=bbob-2012-downloads|BBOB 2012 downloads]]. 
+
+===What is new in 2012?===
+
+  * Python and R code for the experiments is available (additional to Matlab, Java and C),
+  * results from the previous editions can be used for portfolio aproaches,
+  * different parameter settings for different test functions are banned, and
+  * the postprocessing allows to compare more than two algorithms.
+
+=== The Workshop Papers ===
+We encourage any submission that is concerned with black-box optimization benchmarking of continuous optimizers, for example, benchmarking new or not-so-new algorithms on the BBOB-2012 testbed (which have not been tested in BBOB-2009 or BBOB-2010) or analyzing the data obtained in BBOB-2009/ BBOB-2010 or... 
+
+Three templates are provided:
+
+    * one for benchmarking one algorithm that should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software) and where the used algorithm is presented and the necessary details to reproduce the result are given (see also [[http://coco.lri.fr/BBOB-downloads/download10.0/bbobdocexperiment.pdf|experimental procedure]]). The paper has no more than 8 pages. We encourace to provide the algorithm source code as well. Example paper: 
+       * {{example2012nelder.pdf|Nelder-Mead}} downhill simplex on the noiseless testbed
+       * {{example2012noisynewuoa.pdf|NEWUOA}} on the noisy testbed
+    * one which allows the comparison of two optimizers. Example paper:
+       * {{example2012cmpnoisefree.pdf| IPOP-CMA-ES vs. BIPOP-CMA-ES}} on the noiseless testbed
+       * {{example2012cmpnoisy.pdf| NEWUOA vs. BIPOP-CMA-ES}} on the noisy testbed
+    * one which allows the comparison of more than optimizers. Example paper:
+       * {{example2012manynoisefree.pdf| NEWUOA, BIPOP-CMA-ES and IPOP-CMA-ES}} on the noiseless testbed
+       * {{example2012manynoisy.pdf| NEWUOA, BIPOP-CMA-ES and IPOP-CMA-ES}} on the noisy testbed
+
+== How to submit papers ==
+
+Paper & data submission:
+  * request an upload login by sending an email to bbob _at_ lri.fr.
+  * [[http://coco.gforge.inria.fr/doku.php?id=bbob-2012-uploads&do=login|upload page]] (you will need the bbob upload login) 
+  * files to submit:
+    * paper (required),
+    * data (required),
+    * algorithm source code or library (optional, but desired), including make files and/or calling script(s) like exampleexperiment.*. If a commercial optimizer was used, only the calling script(s) should be submitted.
+
+=== Support Material ===
+
+Experimental setup documents, code for the benchmark functions (Matlab, C, Java, R, Python) and for the post-processing (Python) are
+provided at the [[BBOB-2012-downloads|download page]]. To be notified about the release of the code, subscribe to the feed
+http://coco.gforge.inria.fr/feed.php and / or subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+
+=== Important dates ===
+
+   * 03/28: submission deadline
+   * 04/09: acceptance notification
+   * 04/22: final paper version due
+   * 07/07: workshop at [[http://www.sigevo.org/gecco-2012|GECCO]], [[http://coco.gforge.inria.fr/doku.php?id=program| program]]
+
+=== Results ===
+
+All results about the 2012 algorithms can be found [[http://coco.gforge.inria.fr/doku.php?id=bbob-2012-results|here]].
+
+=== Contact and Mailing List ===
+
+You can subscribe (or unsubscribe) to our discussion mailing list by following this link http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss 
+
+To receive announcement about the workshop, send an email to the BBOB team bbob_at_lri.fr with title "register to BBOB announcement list".
+
+=== Organization Committee ===
+Anne Auger, Nikolaus Hansen, Verena Heidrich-Meisner, Olaf Mersmann, Petr Posik, Mike Preuss

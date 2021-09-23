@@ -1,0 +1,55 @@
+====== Navigation  ======
+
+  * [[https://github.com/numbbo/coco|new homepage]]
+  * [[https://github.com/numbbo/coco/archive/master.zip|download new code directly]]
+  * [[https://numbbo.github.io/data-archive/|algorithm data sets]]
+  * [[https://numbbo.github.io/ppdata-archive/|postprocessed data for each year]]
+
+
+
+----
+
+Older links:
+  * [[start|Old Home]]
+  * [[http://coco.gforge.inria.fr/COCOdoc/|Old Documentation]]
+  * [[downloads|download latest old code]]
+
+ **[[algorithms|algorithm data sets:]]**
+    * [[algorithms-bbob|bbob]]
+    * [[algorithms-bbob-noisy|bbob-noisy]]
+    * [[algorithms-bbob-biobj|bbob-biobj]]
+    * [[algorithms-bbob-largescale|bbob-largescale]]
+
+ **[[http://coco.gforge.inria.fr/ppdata-archive|postprocessed data for each year]]**
+
+ **BBOB workshops:**
+    * [[http://numbbo.github.io/workshops/BBOB-2021/|BBOB 2021]]
+    * [[http://numbbo.github.io/workshops/BBOB-2019/|BBOB 2019]]
+    * [[http://numbbo.github.io/workshops/BBOB-2018/|BBOB 2018]]
+    * [[http://numbbo.github.io/workshops/BBOB-2017/|BBOB 2017]]
+    * [[http://numbbo.github.io/workshops/BBOB-2016/|BBOB 2016]]
+    * [[bbob-2015|BBOB 2015 @ GECCO]]
+      * [[bbob-2015-algorithms|Algorithms]]
+      * [[bbob-2015-results|Results]]
+      * [[bbob-2015-program|Schedule]]
+      * [[bbob-2015-downloads|Downloads]]
+    * [[cec-bbob-2015|BBOB 2015 @ CEC]]
+      * [[cec-bbob-2015-algorithms|Algorithms]]
+      * [[cec-bbob-2015-results|Results]]
+      * [[cec-bbob-2015-downloads|Downloads]]
+    * [[bbob-2013|BBOB 2013]]
+      * [[bbob-2013-algorithms|Algorithms]]
+      * [[bbob-2013-results|Results]]
+      * [[bbob-2013-program|Schedule]]
+      * [[bbob-2013-downloads|Downloads]]
+    * [[bbob-2012|BBOB 2012]]
+      * [[bbob-2012-algorithms|Algorithms]]
+      * [[bbob-2012-results|Results]]
+      * [[bbob-2012-downloads|Downloads]]
+    * [[bbob-2010|BBOB 2010]]
+      * [[bbob-2010-results|Results]]
+      * [[bbob-2010-downloads|Downloads]]
+    * [[bbob-2009|BBOB 2009]]
+      * [[bbob-2009-algorithms|Algorithms]]
+      * [[bbob-2009-results|Results]]
+      * [[bbob-2009-downloads|Downloads]]

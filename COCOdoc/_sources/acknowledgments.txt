@@ -1,0 +1,13 @@
+Acknowledgments
+===============
+
+Steffen Finck was supported by the Austrian Science Fund (FWF)
+under grant P19069-N18.
+The BBOBies would like to acknowledge:
+
+* Miguel Nicolau for his insights and the help he has provided on the
+  implementation of the C-code,
+* Mike Preuss for his implementation of the JNI for using the C-code in
+  Java,
+* Petr Posik for his help and feedback overall,
+* Alvaro Fialho for providing the C++ version of the code.

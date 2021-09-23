@@ -1,0 +1,208 @@
+Running Experiments with COCO
+=============================
+
+COCO provides an interface for running experiments. This interface :c:func:`fgeneric` has been
+ported in different languages:
+
+* in Python, Matlab/GNU Octave, C/C++, R and Java,
+
+.. contents::
+   :local:
+
+.. todo::
+   Not so informative...
+
+:file:`exampleexperiment` and :file:`exampletiming`
+---------------------------------------------------
+
+In each language, two example scripts are provided. Below are the example
+scripts in Matlab/GNU Octave:
+
+* :file:`exampleexperiment` runs an experiment on one testbed,
+
+.. literalinclude:: ../../../code/matlab/exampleexperiment.m
+   :language: matlab
+   :linenos:
+
+* :file:`exampletiming` runs the CPU-timing experiment.
+
+.. literalinclude:: ../../../code/matlab/exampletiming.m
+   :language: matlab
+   :linenos:
+
+Matlab/GNU Octave
+_________________
+
+The above example scripts run a complete experiment. The entire interface
+for running experiments is defined via the function :file:`fgeneric.m`.
+:func:`fgeneric` is *initialized* with a function number, instance number and
+output data path. :func:`fgeneric` can then be called to evaluate the test function.
+The end of a run or trial is signaled by calling :func:`fgeneric` with the 'finalize'
+keyword.
+
+C/C++
+_____
+
+The interface for running experiments relies on functions such as
+:c:func:`fgeneric_initialize()`, :c:func:`fgeneric_finalize()`, :c:func:`fgeneric_ftarget()`.
+The evaluation function is :c:func:`fgeneric_evaluate()` for a
+single vector or :c:func:`fgeneric_evaluate_vector()`
+for an array of vectors as input. 
+
+.. with input arguments :c:data:`XX` is the concatenation of the
+   :c:data:`np` candidate vectors, :c:data:`np` the number of individual
+   vectors, and :c:data:`result` is an array of size :c:data:`np` which
+   will contain the resulting function values.
+
+A specific folder structure is needed for running an experiment. This folder
+structure can be obtained by un-tarring the archive :file:`createfolders.tar.gz`
+and renaming the output folder or alternatively by executing the Python script
+:file:`createfolders.py` before executing any experiment program. Make sure
+:file:`createfolders.py` is in your current working directory and from the
+command-line simply execute:
+
+.. sourcecode:: bash
+
+  $ python createfolders.py FOLDERNAME
+  FOLDERNAME was created.
+
+The code provided can be compiled in C or C++.
+
+.. todo::
+   something about java
+
+.. Java
+   ----
+   
+   See
+   JNI, generatelib, library... set environment variable
+ 
+R
+_
+
+.. include:: READSPHINX
+.. todo: READSPHINX is created by the global BBOB-Makefile
+
+Python
+______
+
+The interface for running an experiment is :py:mod:`fgeneric` which is used
+within :file:`exampleexperiment.py`:
+
+.. literalinclude:: ../../../code/python/exampleexperiment.py
+   :language: python
+   :linenos:
+
+Testing New Functions
+---------------------
+
+We describe here how to use :py:mod:`fgeneric` to record experiments on functions
+that are not part of the BBOB testbeds.
+
+.. note::
+   This feature is only available in Python for the moment.
+
+Example: log experiment using the Nelder-Mead simplex algorithm
+(:py:meth:`scipy.optimize.fmin`) on the sphere function.
+The following commands from the Python Interpreter does 15 runs of the
+Nelder-Mead simplex algorithm on the 2-D sphere functions. The data is recorded
+in folder :file:`data` in the current working directory.
+
+.. sourcecode:: python
+
+   >>> from pylab import *
+   >>> import fgeneric as fg
+   >>> import scipy.optimize as so
+   >>> f = lambda x: sum(i**2 for i in x) # function definition
+   >>> e = fg.LoggingFunction(datapath='data', algid='Nelder-Mead simplex',
+                     comments='x0 uniformly sampled in [0, 1]^2, '
+                              'default settings')
+   >>> for i in range(15): # 15 repetitions
+   ...     e.setfun(fun=f, fopt=0., funId='sphere', iinstance='0')
+   ...     so.fmin(e.evalfun, x0=rand(2)) # algorithm call
+   ...     e.finalizerun()
+   (<bound method LoggingFunction.evalfun of <fgeneric.LoggingFunction object at [...]>>, 1e-08)
+   Optimization terminated successfully.
+            Current function value: 0.000000
+            Iterations: [...]
+            Function evaluations: [...]
+   array([...])
+   [...]
+   >>> # Display convergence graphs
+   >>> import bbob_pproc as bb
+   >>> ds = bb.load('data')
+   >>> ds.plot()
+
+.. plot::
+
+   import os
+   import fgeneric as fg
+   import scipy.optimize as so
+   import numpy as np
+   datapath = 'data0'
+   while os.path.exists(datapath):
+       datapath = datapath[:4] + str(int(datapath[4:]) + 1)
+   f = lambda x: sum(i**2 for i in x) # function definition
+   e = fg.LoggingFunction(datapath=datapath, algid='Nelder-Mead simplex',
+                 comments='x0 uniformly sampled in [0, 1]^2, '
+                          'default settings')
+   for i in range(15): # 15 repetitions
+       e.setfun(fun=f, fopt=0., funId='sphere', iinstance='0')
+       so.fmin(e.evalfun, x0=np.random.rand(2)) # algorithm call
+       e.finalizerun()
+   # Display convergence graphs
+   import bbob_pproc as bb
+   dsl = bb.load(datapath)
+   for ds in dsl: ds.plot()
+
+Testing Functions with Parameter
+________________________________
+
+.. note::
+   This feature is only available in Python for the moment.
+
+Example: log experiment using the BFGS algorithm
+(:py:meth:`scipy.optimize.fmin`) on the ellipsoid function with different
+condition numbers.
+
+The following commands from the Python Interpreter does 15 runs of the
+BFGS algorithm on the 2-D sphere functions. The data is recorded
+in folder :file:`data` in the current working directory and generate
+
+.. sourcecode:: python
+
+   >>> from pylab import *
+   >>> import fgeneric as fg
+   >>> import scipy.optimize as so
+   >>> import numpy as np
+
+   >>> e = fg.LoggingFunction(datapath='ellipsoid', algid='BFGS',
+                     comments='x0 uniformly sampled in [0, 1]^5, default settings')
+   >>> cond_num = 10**np.arange(0, 7)
+   >>> for c in cond_num:
+   ...     f = lambda x: np.sum(c**np.linspace(0, 1, len(x)) * x**2)
+   ...     # function definition: these are term-by-term operations
+   ...     for i in range(5): # 5 repetitions
+   ...         e.setfun(fun=f, fopt=0., funId='ellipsoid', iinstance=0,
+   ...                  condnum=c)
+   ...         so.fmin_bfgs(e.evalfun, x0=np.random.rand(5)) # algorithm call
+   ...         e.finalizerun()
+   (<bound method LoggingFunction.evalfun of <fgeneric.LoggingFunction object at [...]>>, 1e-08)
+   Optimization terminated successfully.
+            Current function value: 0.000000
+            Iterations: [...]
+            Function evaluations: [...]
+            Gradient evaluations: [...]
+   array([...])
+   [...]
+   >>> # plot data
+   >>> import bbob_pproc as bb
+   >>> import bbob_pproc.ppfigparam
+   >>> ds = bb.load('ellipsoid')
+   >>> bb.ppfigparam.plot(ds, param='condnum')
+   >>> bb.ppfigparam.beautify()
+   >>> import matplotlib.pyplot as plt
+   >>> plt.xlabel('Condition Number')
+
+
+.. plot::  pyplots/varcond.py

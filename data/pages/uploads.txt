@@ -1,0 +1,10 @@
+== How to submit papers ==
+For each single paper submission:
+  - prepare an archive with the following files:
+    * paper as pdf (required),
+    * corresponding raw data (required if applicable),
+    * algorithm source code or library (optional, but desired), including make files and/or calling script(s) like exampleexperiment.*. If a commercial optimizer was used, only the calling script(s) should be submitted.
+  - upload the archive to a site of your choice, for example
+    * https://mega.co.nz (no login required, encrypted) or 
+    * https://www.dropbox.com/ 
+  - email the download link to bbob _at_ lri.fr, mentioning paper title and authors

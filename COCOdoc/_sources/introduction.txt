@@ -1,0 +1,60 @@
+Introduction
+============
+
+**COmparing Continuous Optimisers** (**COCO**) is a tool for benchmarking
+algorithms for black-box optimisation. COCO facilitates systematic
+experimentation in the field of continuous optimization.
+
+.. figure:: examplefigure.*
+   :width: 80%
+   :align: center
+   :alt: example figure
+   
+   The pictures show (a) a scatterplot of run lengths (log10-scale) comparing two
+   algorithms in different dimensions on a single function, (b) the run length distribution of two
+   algorithms for different target difficulties :math:`\{10, 10^{-1}, 10^{-4}, 10^{-8}\}` on a set
+   of 24 functions and (c) box-whisker plots of the loss ratios of the expected
+   run length compared to best (shortest) observed expected run length in BBOB-2009.
+
+.. todo::
+    which algorithm is shown? 
+
+**COCO** has been used in several Black-Box Optimization Benchmarking (BBOB) workshops at the GECCO_ conference, the first in 2009_ (BBOB-2009_). Overall around a 100 articles and algorithms have been benchmarked. 
+
+.. _GECCO: http://www.sigevo.org/gecco-archives.html
+.. _2009: http://www.sigevo.org/gecco-2009/workshops.html#bbob
+.. _2010: http://www.sigevo.org/gecco-2010/workshops.html#bbob
+.. _BBOB-2009: http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results
+.. _BBOB-2010: http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results
+
+.. These BBOB workshops compile:
+.. 
+    * the submissions of *83* articles
+    * presenting the results of *55* algorithms.
+
+COCO provides:
+
+#. an **experimental framework** for testing the algorithms,
+#. **post-processing facilities** for generating publication quality figures
+   and tables,
+#. LaTeX templates of articles which present the figures and tables in a
+   single document.
+
+The practitioner in continuous optimization who wants to benchmark one or many
+algorithms has to download COCO, plug the algorithm(s) into the provided experimental template and use the post-processing tools.
+
+The COCO software is composed of two parts:
+
+1. an interface available in different programming languages which allows to 
+   run and log experiments on multiple test functions; testbeds of
+   functions (noisy and noiseless) are provided
+2. a Python tool for generating figures and tables that can be used in the LaTeX templates.
+
+The typical user of COCO renders the interface of
+the considered algorithm compatible with COCOs interface of the objective/fitness
+function, runs the provided main script (most presumably several times with increasing allowed maxfunevals until the waiting time becomes infeasible), invokes the postprocessing on the generated data and latexs the provided template.
+
+An extensive documentation of the **test functions** can be found here_. 
+
+.. _here: http://coco.gforge.inria.fr/doku.php?id=downloads
+

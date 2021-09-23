@@ -1,0 +1,34 @@
+===== BBOB-2013 - Saturday, July 6th 2013, GECCO 2013, Amsterdam =====
+=== Preliminary Schedule === 
+(Please note that the schedule below is tentative and might be subject to changes)
+
+==Location: Room 04A00==
+
+^ 8:30-10:20 (surrogates and linkage) ^^
+|  08:30 - 09:00  | Nikolaus Hansen:\\ **Introduction to Blackbox Optimization Benchmarking** |
+|  09:00 - 09:35  | Ilya Loshchilov:\\ **BI-population CMA-ES Algorithms with Surrogate Models\\ and Line Searches** {{slides2013:SlidesIlya.pdf|Slides}}|
+|  09:35 - 10:10  | László Pál:\\ **Benchmarking a Multi Level Single Linkage Algorithm\\ with Improved Global and Local Phases** {{slides2013:mlsl.pdf|Slides}}|
+|  10:10 - 10:20  | Nikolaus Hansen:\\ **Session Wrap-up** |
+
+
+^ 10:40-12:30 (an algorithmic jam-session) ^^
+| 10:40 - 10:45 | Dimo Brockhoff:\\ **Session Introduction** {{slides2013:session2-bbob-turbo-intro.pdf|Slides}}|
+| 10:45 - 11:05 | Dimo Brockhoff:\\ **Multiobjectivization with NSGA-II on the Noiseless BBOB\\ Testbed** {{slides2013:session2-multiobjectivization.pdf|Slides}}|
+| 11:05 - 11:30 | Costas Voglis:\\ **Adapt-MEMPSODE: A Memetic Algorithm with Adaptive\\ Selection of Local Searches** {{slides2013:voglis_bbob_present.pdf|Slides}}|
+| 11:30 - 11:55 | Babatunde Sawyerr:\\ **Benchmarking Projection-Based Real Coded Genetic\\ Algorithm on BBOB-2013 Noiseless Function Testbed** {{slides2013:BBOB-2013 conference-prcga.pdf|Slides}}|
+| 11:55 - 12:20 | Neal Holtschulte:\\ **Benchmarking Cellular Genetic Algorithms on the BBOB\\ Noiseless Testbed** {{slides2013:cellularGA_2013_NealHoltschulte.pdf|Slides}}|
+| 12:20 - 12:30 | Dimo Brockhoff:\\ **Session Wrap-up** {{slides2013:session2-wrapup.pdf|Slides}}|
+
+
+^ 14:00-15:50 (expensive optimization) ^^
+| 14:00 - 14:05 | Anne Auger:\\ **Session Introduction** |
+| 14:05 - 14:35 | Anne Auger:\\ **Benchmarking within the Expensive BBOB Setting: a\\ Case-Study on the local meta-model CMA-ES** |
+| 14:35 - 15:00 | Holger Hoos:\\ **An evaluation of sequential model-based optimization\\ for expensive blackbox functions** |
+| 15:00 - 15:25 | Thomas Stützle:\\ **Bounding the population size of IPOP-CMA-ES on the\\ Noiseless BBOB Testbed** {{slides2013:00-bbob2013slides.pdf|Slides}}|
+| 15:25 - 15:40 | Nikolaus Hansen:\\ **A Short Hands-On Tutorial of BBOB/COCO** |
+| 15:40 - 15:50 | Nikolaus Hansen:\\ **Session Wrap-up** |
+
+^ 16:10-18:00 (wrap-up + panel) ^^
+| 16:10 - 16:25 | Nikolaus Hansen:\\ **A Brief Overview of Blackbox Optimization Benchmarking** |
+| 16:25 - 16:40 | Nikolaus Hansen:\\ **Wrap-up of the BBOB-2013 Results** |
+| 16:40 - 18:00 | Mike Preuss (moderator):\\ **panel discussion**, panelists to be announced |

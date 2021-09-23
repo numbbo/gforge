@@ -1,0 +1,17 @@
+Python API
+==========
+
+.. contents::
+   :local:
+
+:py:mod:`fgeneric`
+__________________
+
+.. automodule:: fgeneric
+   :members:
+
+:py:mod:`bbobbenchmarks`
+________________________
+
+.. automodule:: bbobbenchmarks
+   :members:

@@ -1,0 +1,136 @@
+Installation
+============
+
+To install COCO, provided that the minimal requirements are met (see
+:ref:`requirements` below), you only need to:
+
+1. download the *first* archive :file:`bbobexpXX.XX.tar.gz` from the `COCO download page <http://coco.gforge.inria.fr/doku.php?id=downloads>`_. 
+2. extract the archive
+
+To check that COCO is running correctly, please proceed to :doc:`firsttime`.
+
+.. _Numpy: http://sourceforge.net/projects/numpy/files/
+.. _Matplotlib: http://sourceforge.net/projects/matplotlib/files/
+
+.. _requirements:
+
+Requirements
+------------
+
+Running Experiments
+___________________
+
+The interface for running experiments is provided in C/C++, Matlab/Gnu Octave,
+Java, R and Python. An algorithm to be tested with COCO has to be adapted to work
+with either of these versions.
+
+Our code has been tested with:
+
+* C/C++ gcc 4.2.1 and higher, the code provided is ANSI C,
+* Matlab R2008a and higher
+* Java 1.6, the code uses the Java Native Interface to call a library created
+  from the C/C++ version of the code
+* Python 2.6, 2.7
+* R 2.14.2
+
+Python and Post-Processing
+__________________________
+
+The requirements below are for the post-processing tool of COCO that runs in Python.
+
+.. note::
+..   All packages are easily available for 32-bit Python 2.X.
+     Using 64-bit Python 2.X is possible but not straightforward.
+
+   Numpy and Matplotlib do not work with Python 3.X.
+   
+Needed are
+
+* `python 2.6.x or 2.7.x <http://www.python.org/>`_ (**not python 3.x**)
+
+* `numpy 1.2.1 or later <http://numpy.scipy.org/>`_ (the version must fit to the python version)
+
+* `matplotlib 1.0.1 or later <http://matplotlib.sourceforge.net/>`_ (the version must fit to the python version)
+
+All three are part of 
+
+* Anaconda_ (first choice)
+
+* `Enthought python distribution <http://www.enthought.com/products/epd_free.php>`_ and 
+
+* Sage_ (then ``sage`` instead of ``python`` must be used). 
+
+Documents and articles that aggregate tables and figures are generated using
+`LaTeX <http://www.latex-project.org/>`_
+
+How do I install on Windows?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For installing Python under Windows, either install Anaconda_ or Enthought_ or go to the `Python download page <http://www.python.org/download/>`_
+and download the Python Windows Installer :file:`python-2.7.X.msi` (the default Windows is for Win 32 architecture).
+This file requires the Microsoft Installer, which is a part of Windows XP and later releases.
+`Numpy`_ and `Matplotlib`_
+can be installed with the standard :file:`.exe` files which are respectively:
+
+* :file:`numpy-X-win32-superpack-python2.X.exe` and,
+* :file:`matplotlib-X.win32-py2.X.exe`.
+
+How do I install on Linux?
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Either install Anaconda_ or Sage_ or Enthought_. 
+Otherwise, Python is usually already part of the installation. If
+not, use your favorite package manager to install Python (package name:
+python). The same needs to be done for Numpy (python-numpy) and
+Matplotlib (python-matplotlib) and their dependencies.  
+
+How do I install on Mac OS X?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Either install Anaconda_ or Sage_ or Enthought_. Otherwise, 
+Mac OS X comes with Python pre-installed but if your version of Python is
+2.5 or earlier, you might need to `upgrade <http://www.python.org/download/mac/>`_.
+
+You then need to download and install `Numpy`_ and `Matplotlib`_:
+
+* :file:`numpy-X-py2.X-python.org-macosx10.X.dmg`
+* :file:`matplotlib-X-python.org-32bit-py2.X-macosx10.X.dmg`
+
+.. .. [#]  The `discussion over IDLE for Leopard user <http://wiki.python.org/moin/MacPython/Leopard>`_
+           is not relevant for the use of COCO.
+
+Interactive Python
+------------------
+
+In order to fully enjoy a Python shell, we enable tab-completion on Unix systems like 
+
+.. sourcecode:: python 
+
+    >>> import rlcompleter
+    >>> import readline
+    >>> readline.parse_and_bind("tab: complete")
+
+or we use IPython_. In order to have a matlab-like environment with hundreds of additional commands directly available (including the ``plot`` command) use 
+
+.. sourcecode:: python 
+
+    >>> from pylab import *
+
+or 
+
+.. sourcecode:: python 
+
+    >>> import pylab as pl
+
+which provides ``pl.plot`` etc. 
+
+See also :ref:`pylabInteractive`. 
+
+.. _Anaconda: http://continuum.io/downloads
+.. _Enthought: http://www.enthought.com/products/epd_free.php
+.. _Sage: http://www.sagemath.org/
+.. _IPython: http://ipython.org/
+
+
+
+

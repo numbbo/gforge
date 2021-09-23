@@ -1,0 +1,25 @@
+
+----
+
+
+**In the mid-term, Inria's GForge servers will be shut down and this webpage will only serve as a historical reference until then. For the up-to-date webpage, please go to https://numbbo.github.io/data-archive/bbob-largescale/**
+
+
+----
+
+The following table lists all submitted algorithm data sets on the bbob-largescale test suite, related to the BBOB workshops together with links to their corresponding papers. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column. 
+
+<sortable>
+^No^Algorithm (+Code)^Year^Author(s)^COCO data^related PDFs and Remarks^
+|largescale-000|CMA|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/CMA_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-001|LBFGS|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/LBFGS_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-002|LMCMA14|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/LMCMA14_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-003|LMCMA17|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/LMCMA17_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-004|R2ES|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/R2ES_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-005|R10ES|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/R10ES_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-006|V2D|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/V2D_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-007|VD|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/VD_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-008|VkD|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/VkD_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-009|m2DLBFGS|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/m2DLBFGS_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+|largescale-010|sepCMA|2019|Varelas|[[http://coco.gforge.inria.fr/data-archive/bbob-largescale/2019/sepCMA_Varelas_largescale.tgz|data]]|[[https://hal.inria.fr/hal-02160106/file/wksp213s2-file1.pdf|GECCO 2019 paper]]|
+</sortable>

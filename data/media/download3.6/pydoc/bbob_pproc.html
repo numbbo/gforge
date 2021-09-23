@@ -1,0 +1,144 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package bbob_pproc</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>bbob_pproc</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial">&nbsp;</font></td></tr></table>
+    <p><tt>Black-Box&nbsp;Optimization&nbsp;Benchmarking&nbsp;(BBOB)&nbsp;post&nbsp;processing&nbsp;tool:<br>
+&nbsp;<br>
+The&nbsp;BBOB&nbsp;post-processing&nbsp;tool&nbsp;takes&nbsp;as&nbsp;input&nbsp;data&nbsp;from&nbsp;BBOB&nbsp;experiments&nbsp;and<br>
+generates&nbsp;output&nbsp;that&nbsp;will&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;generation&nbsp;of&nbsp;the&nbsp;LateX-formatted<br>
+article&nbsp;summarizing&nbsp;the&nbsp;experiments.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="bbob_pproc.bootstrap.html">bootstrap</a><br>
+<a href="bbob_pproc.dataoutput.html">dataoutput</a><br>
+<a href="bbob_pproc.determineFtarget.html">determineFtarget</a><br>
+<a href="bbob_pproc.determineFtarget2.html">determineFtarget2</a><br>
+<a href="bbob_pproc.determineFtarget3.html">determineFtarget3</a><br>
+<a href="bbob_pproc.findindexfiles.html">findindexfiles</a><br>
+</td><td width="25%" valign=top><a href="bbob_pproc.minirun.html">minirun</a><br>
+<a href="bbob_pproc.minirun_2.html">minirun_2</a><br>
+<a href="bbob_pproc.ppfig.html">ppfig</a><br>
+<a href="bbob_pproc.ppfigdim.html">ppfigdim</a><br>
+<a href="bbob_pproc.ppperfprof.html">ppperfprof</a><br>
+<a href="bbob_pproc.ppperfprof_2.html">ppperfprof_2</a><br>
+</td><td width="25%" valign=top><a href="bbob_pproc.pprldistr.html">pprldistr</a><br>
+<a href="bbob_pproc.pproc.html">pproc</a><br>
+<a href="bbob_pproc.pprocold.html">pprocold</a><br>
+<a href="bbob_pproc.pptables.html">pptables</a><br>
+<a href="bbob_pproc.pptex.html">pptex</a><br>
+<a href="bbob_pproc.readalign.html">readalign</a><br>
+</td><td width="25%" valign=top><a href="bbob_pproc.readindexfiles.html">readindexfiles</a><br>
+<a href="bbob_pproc.run.html">run</a><br>
+<a href="bbob_pproc.runmarc.html">runmarc</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>(argv<font color="#909090">=None</font>)</dt><dd><tt>Generates&nbsp;from&nbsp;BBOB&nbsp;experiment&nbsp;data&nbsp;some&nbsp;outputs&nbsp;for&nbsp;a&nbsp;tex&nbsp;document.<br>
+&nbsp;<br>
+If&nbsp;provided&nbsp;with&nbsp;some&nbsp;index&nbsp;entries&nbsp;(from&nbsp;info&nbsp;files),&nbsp;this&nbsp;should&nbsp;return<br>
+many&nbsp;output&nbsp;files&nbsp;in&nbsp;the&nbsp;folder&nbsp;'ppdata'&nbsp;needed&nbsp;for&nbsp;the&nbsp;compilation&nbsp;of<br>
+latex&nbsp;document&nbsp;templateBBOBarticle.tex.&nbsp;These&nbsp;output&nbsp;files&nbsp;will&nbsp;contain<br>
+performance&nbsp;tables,&nbsp;performance&nbsp;scaling&nbsp;figures&nbsp;and&nbsp;empirical&nbsp;cumulative<br>
+distribution&nbsp;figures.&nbsp;On&nbsp;subsequent&nbsp;executions,&nbsp;new&nbsp;files&nbsp;will&nbsp;be&nbsp;added&nbsp;<br>
+to&nbsp;the&nbsp;output&nbsp;directory,&nbsp;overwriting&nbsp;existing&nbsp;older&nbsp;files&nbsp;in&nbsp;the&nbsp;process.<br>
+&nbsp;<br>
+Keyword&nbsp;arguments:<br>
+argv&nbsp;--&nbsp;list&nbsp;of&nbsp;strings&nbsp;containing&nbsp;options&nbsp;and&nbsp;arguments.&nbsp;If&nbsp;not&nbsp;given,<br>
+sys.argv&nbsp;is&nbsp;accessed.<br>
+&nbsp;<br>
+argv&nbsp;should&nbsp;list&nbsp;either&nbsp;names&nbsp;of&nbsp;info&nbsp;files&nbsp;or&nbsp;folders&nbsp;containing&nbsp;info<br>
+files.&nbsp;argv&nbsp;can&nbsp;also&nbsp;contain&nbsp;post-processed&nbsp;pickle&nbsp;files&nbsp;generated&nbsp;by&nbsp;this<br>
+routine.&nbsp;Furthermore,&nbsp;argv&nbsp;can&nbsp;begin&nbsp;with,&nbsp;in&nbsp;any&nbsp;order,&nbsp;facultative&nbsp;option<br>
+flags&nbsp;listed&nbsp;below.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-h,&nbsp;--help<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display&nbsp;this&nbsp;message<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-v,&nbsp;--verbose<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verbose&nbsp;mode,&nbsp;prints&nbsp;out&nbsp;operations.&nbsp;When&nbsp;not&nbsp;in&nbsp;verbose&nbsp;mode,&nbsp;no<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;is&nbsp;to&nbsp;be&nbsp;expected,&nbsp;except&nbsp;for&nbsp;errors.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-p,&nbsp;--pickle<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generates&nbsp;pickle&nbsp;post&nbsp;processed&nbsp;data&nbsp;files.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-o,&nbsp;--output-dir&nbsp;OUTPUTDIR<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change&nbsp;the&nbsp;default&nbsp;output&nbsp;directory&nbsp;('ppdata')&nbsp;to&nbsp;OUTPUTDIR<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-f,&nbsp;--final<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lengthens&nbsp;the&nbsp;bootstrapping&nbsp;process&nbsp;used&nbsp;as&nbsp;dispersion&nbsp;measure&nbsp;in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;tables&nbsp;generation.&nbsp;This&nbsp;might&nbsp;at&nbsp;least&nbsp;double&nbsp;the&nbsp;time&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whole&nbsp;post-processing.&nbsp;Please&nbsp;use&nbsp;this&nbsp;option&nbsp;when&nbsp;generating&nbsp;your<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;paper.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;--tab-only,&nbsp;--fig-only,&nbsp;--rld-only<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;these&nbsp;options&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;output&nbsp;respectively&nbsp;the&nbsp;tex&nbsp;tables,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;convergence&nbsp;and&nbsp;ENFEs&nbsp;graphs&nbsp;figures,&nbsp;run&nbsp;length&nbsp;distribution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;figures&nbsp;only.&nbsp;A&nbsp;combination&nbsp;of&nbsp;any&nbsp;two&nbsp;of&nbsp;these&nbsp;options&nbsp;results&nbsp;in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no&nbsp;output.<br>
+&nbsp;<br>
+Exceptions&nbsp;raised:<br>
+Usage&nbsp;--&nbsp;Gives&nbsp;back&nbsp;a&nbsp;usage&nbsp;message.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;<br>
+*&nbsp;Calling&nbsp;the&nbsp;run.py&nbsp;interface&nbsp;from&nbsp;the&nbsp;command&nbsp;line:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;python&nbsp;bbob_pproc/run.py&nbsp;-v&nbsp;experiment1<br>
+&nbsp;<br>
+will&nbsp;post-process&nbsp;the&nbsp;folder&nbsp;experiment1&nbsp;and&nbsp;all&nbsp;its&nbsp;containing&nbsp;data,<br>
+base&nbsp;on&nbsp;the&nbsp;found&nbsp;.info&nbsp;files&nbsp;in&nbsp;the&nbsp;folder.&nbsp;The&nbsp;result&nbsp;will&nbsp;appear<br>
+in&nbsp;folder&nbsp;ppdata.&nbsp;The&nbsp;-v&nbsp;option&nbsp;adds&nbsp;verbosity.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;python&nbsp;bbob_pproc/run.py&nbsp;-o&nbsp;otherppdata&nbsp;experiment2/*.info<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;execute&nbsp;the&nbsp;post-processing&nbsp;on&nbsp;the&nbsp;info&nbsp;files&nbsp;found&nbsp;in<br>
+experiment2.&nbsp;The&nbsp;result&nbsp;will&nbsp;be&nbsp;located&nbsp;in&nbsp;the&nbsp;alternative&nbsp;location<br>
+otherppdata.<br>
+&nbsp;<br>
+*&nbsp;Loading&nbsp;this&nbsp;package&nbsp;and&nbsp;calling&nbsp;the&nbsp;main&nbsp;from&nbsp;the&nbsp;command&nbsp;line<br>
+&nbsp;&nbsp;(requires&nbsp;that&nbsp;the&nbsp;path&nbsp;to&nbsp;this&nbsp;package&nbsp;is&nbsp;in&nbsp;python&nbsp;search&nbsp;path):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;python&nbsp;-m&nbsp;bbob_pproc&nbsp;-h<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;print&nbsp;out&nbsp;this&nbsp;help&nbsp;message.<br>
+&nbsp;<br>
+*&nbsp;From&nbsp;the&nbsp;python&nbsp;interactive&nbsp;shell&nbsp;(requires&nbsp;that&nbsp;the&nbsp;path&nbsp;to&nbsp;this<br>
+&nbsp;&nbsp;package&nbsp;is&nbsp;in&nbsp;python&nbsp;search&nbsp;path):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;import&nbsp;bbob_pproc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;bbob_pproc.<a href="#-main">main</a>('-o&nbsp;outputfolder&nbsp;folder1'.split())<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;execute&nbsp;the&nbsp;post-processing&nbsp;on&nbsp;the&nbsp;index&nbsp;files&nbsp;found&nbsp;in&nbsp;folder1.<br>
+The&nbsp;-o&nbsp;option&nbsp;changes&nbsp;the&nbsp;output&nbsp;folder&nbsp;from&nbsp;the&nbsp;default&nbsp;ppdata&nbsp;to<br>
+outputfolder.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['readalign', 'findindexfiles', 'pptex', 'pprldistr', 'main', 'ppfigdim', 'pproc', 'dataoutput']</td></tr></table>
+</body></html>

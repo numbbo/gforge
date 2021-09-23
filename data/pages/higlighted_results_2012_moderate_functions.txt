@@ -1,0 +1,4 @@
+{{ http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_lcond_large.png?700 }}
+
+
+Empirical runtime distributions on //moderate// functions (f6: Attractive Sector, f7: Step Ellipsoid, f8: Rosenbrock, f9: Rotated Rosenbrock) with target values in {100, ..., 1e-8} in dimension 20.

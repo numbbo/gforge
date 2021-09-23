@@ -1,0 +1,61 @@
+====== Topics for the discussion at BBOB 2012 ======
+  - Where is BBOB/COCO going?
+    * What is BBOB 2013/14 going to be about? 
+  - What extensions are planned? What extensions do you wish? What should their priorities be?
+    * Short runs / limited budget?
+    * Constrained optimization?
+    * Large scale optimization?
+    * Multi-objective optimization?
+    * Real-world problems?
+      * Which ones? 
+      * They are usually not scalable...
+      * We often do not know their optimal solution...
+    * Are the functions representative of real world problems? Do we currently miss any important traits?
+    * Landscape analysis 
+  - What do you dislike (or even hate) about BBOB/COCO?
+  - During the optimization, algorithms sample points in the search space. Based on them they should provide the user with the **recommendation**, an estimate of the optimal solution. This recommendation part is currently ignored by the COCO evaluation process.
+    * Are recommendations necessary to make an algorithm performance evaluation (keyword explicit recommendations)?
+      * In the noiseless case?
+      * In the noisy case? 
+    * How are the algorithms without recommendations evaluated in a framework where recommendations are used for evaluation (keyword implicit recommendations)?
+    * Do we see explicit recommendations as a complement or as a replacement of the samples produced by an algorithm?
+    * How is the performance computed from a sequence of solutions (each possibly associated with a noisy f-evaluation)?
+  - Is the COCO methodology limited to real-valued domain?
+    * What are the required conditions for the app domain to use the COCO methodology?
+    * Is the COCO benchmarking methodology actually suitable for other domains?
+  - Statistical comparisons of algorithms:
+    * COCO can compare 2 algos against each other or several algos against the best of BBOB 2009
+    * Can it be done better? Is something missing?
+    * Feature request: User choice of the baseline algorithm when comparing several algos?
+    * Feature request: Comparison of all pairs of alos in the study?
+    * Feature request: A support for a systematic analysis of the algorithm parameters sensitivity?
+  - Suggestions for implementation changes/improvements:
+    * Improved modularization with clearly defined interfaces between the modules
+    * Make more settings part of the command-line scripts arguments:
+      * The choice of line patterns for the graphs
+      * The choice of the baseline algorithm when comparing more than two algorithms
+
+
+===== Feature requests =====
+
+==== The ability to use line patterns specified by the user ====
+For the comparison of more than 2 algorithms, I would appreciate the ability to define my own line patterns for the graphs. Why? If I compare several unrelated algos, it is OK to have them each plotted with a different color... But, if I have e.g. 6 algorithms which are actually 6 instances of the same algorithm differing only in the levels of e.g. 2 factors, say popsize (large, medium, small) and crossover (on, off), than it would be highly desirable to encode the popsize e.g. by 3 different markers, and the presence of crossover e.g. by the line type (solid, dashed).
+
+Current solution (not sure to which graphs this applies): the variable line_styles in file genericsettings.py defines the line styles. The simplest solution is therefore to assign this variable with a different value. An example will be provided in the file in the next release. 
+
+===== Tutorial requests =====
+
+==== How to build my own "algorithm performance index" using the COCO API? ====
+
+Provide the user with means (and tutorial) how to easilly define 1 definitive criterion that could be used to rank the algorithms. In the docs, it is actually suggested to use COCO to explore various parameter settings of the algorithms. But what COCO provides to the user with its automatically generated graphs and tables is usually a kind of "feeling" which algorithm works best and this feeling is based on some nonarticulated criterion the user implicitly uses.
+
+This issue will be covered by a short tutorial during BBOB if time permits. We will show how to access the experimental data using the COCO DataSet and DataSetList classes and we will show how to aggregate them using (variants of) the geometric mean as the performance index.
+
+===== FAQs =====
+Things worth repeating over and over.
+
+==== How to interpret the ECDF lines on the right from the big cross? ====
+
+Q: If I benchmarked 2 algorithms with the same evaluations budget and they both solved the same proportion of probles (as indicated by the crosses in the ECDF graphs which are virtually in the same place), how come that the curve on the right from the cross rises significantly for one of the algorithms, while it stagnates for the other algorithm?
+
+A: This happens if one algorithm has solved for some functions on each of them only a few instances, while another solves all instances on one of these functions, and none on the others. Before the cross is reached, their performance could look similar (they solve the same overall number of instances). However, as the ECDF graphs are derived from virtual restarts on the same function (but with random instances), the first algorithm will raise and appear to solve all functions after the cross, whereas the second will stagnate as it only solved one of the functions.  

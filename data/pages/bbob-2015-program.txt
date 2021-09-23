@@ -1,0 +1,19 @@
+===== BBOB-2015 - Sunday, July 12th 2015, GECCO 2015, Madrid =====
+
+==Location: Patio 3==
+
+^ 9:00-10:50 Evaluating Algorithm Components (chaired by Youhei Akimoto)^^
+|  09:00 - 09:45  | Dimo Brockhoff:\\ **Introduction to Blackbox Optimization Benchmarking** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/01_Dimo-gecco-2015-intro.pdf|slides]] |
+|  09:45 - 10:20  | Petr Pošík* (Czech Technical University in Prague) and Petr Baudiš (Czech Technical University in Prague):\\ **Dimension Selection in Axis-Parallel Brent-STEP Method for Black-Box Optimization of Separable Continuous Functions** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/02_Petr_BrentSTEP.pdf|slides]]|
+|  10:20 - 10:50  | Asma Atamna* (INRIA Saclay - Ile-de-France):\\ **Benchmarking IPOP-CMA-ES-TPA and IPOP-CMA-ES-MSR on the BBOB Noiseless Testbed** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/01_Asma_TPA_MSR_CMA.pdf|slides]]|
+
+
+^ 11:10-13:00 Expensive Optimization (chaired by Petr Pošík)^^
+| 11:10 - 11:30 | Dimo Brockhoff:\\ **Session Introduction** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/04_Dimo-turbointro.pdf|slides]] |
+| 11:30 - 12:10 | Lukáš Bajer* (Academy of Sciences of the Czech Republic), Zbynek Pitra* (National Institute of Mental Health), and Martin Holena (Academy of Sciences of the Czech Republic):\\ **Benchmarking Gaussian Processes and Random Forests Surrogate Models on the BBOB Noiseless Testbed** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/05_LukasZbynek_GPandRF-CMA.pdf|slides]] |
+| 12:10 - 12:30 | Dimo Brockhoff* (INRIA Lille - Nord Europe), Bernd Bischl (Ludwig-Maximilians-Universität München), and Tobias Wagner (TU Dortmund University):\\ **The Impact of Initial Designs on the Performance of MATSuMoTo on the Noiseless BBOB-2015 Testbed: A Preliminary Study ** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/06_Dimo_matsumoto.pdf|slides]]|
+| 12:30 - 12:45 | Dimo Brockhoff:\\ **Wrap-up of the BBOB-2015 Results** [[http://coco.gforge.inria.fr/presentation-archive/2015-GECCO/07_Dimo_overallwrapup.pdf|slides]]|
+| 12:45 - 13:00 | **Open Discussion**\\ attractivity of the workshop\\ what should we change?\\ what should be keep?|
+
+
+A '*' indicates the speaker(s) for each talk.

@@ -1,0 +1,32 @@
+This page is not public.
+
+As for the uploads, the wiki users who have the rights can upload through the [[http://coco.gforge.inria.fr/lib/exe/mediamanager.php|media manager]] (also accessible by putting the link).
+
+So to make it easier for them, the link will appear clearly in the [[bbob-2009-uploads]] page.
+
+Here are the information that we can provide to the users:
+  *To access the upload page http://coco.gforge.inria.fr/doku.php?id=bbob-2009-uploads, you will need to login as 'bbob' with the password 'upload'.
+  *To upload a file click on bbob-2009-uploads on the right side panel and follow the instructions
+
+Nota:
+It seems there is a problem with the registration procedure which freezes at the validation of the registration. This rules out users registering on their own.
+
+Nota2:
+The montecarlo.pdf in upload should be the same as montecarlobbobpaper.pdf
+It is there for practical purpose and can be removed as soon as another file is submitted in upload.
+
+<html>
+<form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input type="hidden" name="MAX_FILE_SIZE" value="262144000" /> <!-- 250MB --!>
+Choose a file to upload: <input name="uploadedfile" type="file" /><br />
+<input type="submit" value="Upload File" />
+</form>
+</html>
+
+We want a procedure where people:
+  *can upload certain file types (pdf, tar.gz, zip,...no executables...but why not?)
+  *make sure those are not overwritten
+  *they get a notification (could be done manually)
+  *can deal with 2 people at the same time (nom auteur, nom de l'algo, noisy/noisefree)
+  *upload directory invisible to people.
+

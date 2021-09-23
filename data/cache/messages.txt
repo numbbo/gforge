@@ -1,0 +1,6 @@
+New release available: 2009-02-14.
+          <a href="http://www.splitbrain.org/go/dokuwiki">upgrade now!</a> [17] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a>
+%
+New release candidate available: 2009-01-30 (RC2).
+          <a href="http://www.splitbrain.org/go/dokuwiki">upgrade now!</a> [16] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a>
+%

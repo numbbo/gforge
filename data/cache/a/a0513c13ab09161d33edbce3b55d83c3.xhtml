@@ -1,0 +1,60 @@
+
+<p>
+This page is not public.
+</p>
+
+<p>
+As for the uploads, the wiki users who have the rights can upload through the <a href="http://coco.gforge.inria.fr/lib/exe/mediamanager.php" class="urlextern" title="http://coco.gforge.inria.fr/lib/exe/mediamanager.php"  rel="nofollow">media manager</a> (also accessible by putting the link).
+</p>
+
+<p>
+So to make it easier for them, the link will appear clearly in the <a href="/doku.php?id=bbob-2009-uploads" class="wikilink1" title="bbob-2009-uploads">bbob-2009-uploads</a> page.
+</p>
+
+<p>
+Here are the information that we can provide to the users:
+</p>
+<ul>
+<li class="level1"><div class="li">To access the upload page <a href="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-uploads" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-uploads"  rel="nofollow">http://coco.gforge.inria.fr/doku.php?id=bbob-2009-uploads</a>, you will need to login as &#039;bbob&#039; with the password &#039;upload&#039;.</div>
+</li>
+<li class="level1"><div class="li">To upload a file click on bbob-2009-uploads on the right side panel and follow the instructions</div>
+</li>
+</ul>
+
+<p>
+
+Nota:
+It seems there is a problem with the registration procedure which freezes at the validation of the registration. This rules out users registering on their own.
+</p>
+
+<p>
+Nota2:
+The montecarlo.pdf in upload should be the same as montecarlobbobpaper.pdf
+It is there for practical purpose and can be removed as soon as another file is submitted in upload.
+</p>
+
+<p>
+
+<form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input type="hidden" name="MAX_FILE_SIZE" value="262144000" /> <!-- 250MB --!>
+Choose a file to upload: <input name="uploadedfile" type="file" /><br />
+<input type="submit" value="Upload File" />
+</form>
+
+</p>
+
+<p>
+We want a procedure where people:
+</p>
+<ul>
+<li class="level1"><div class="li">can upload certain file types (pdf, tar.gz, zip,…no executables…but why not?)</div>
+</li>
+<li class="level1"><div class="li">make sure those are not overwritten</div>
+</li>
+<li class="level1"><div class="li">they get a notification (could be done manually)</div>
+</li>
+<li class="level1"><div class="li">can deal with 2 people at the same time (nom auteur, nom de l&#039;algo, noisy/noisefree)</div>
+</li>
+<li class="level1"><div class="li">upload directory invisible to people.</div>
+</li>
+</ul>

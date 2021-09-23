@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>http://coco.gforge.inria.fr/</link>
+        <image rdf:resource="http://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2013-03-05T08:19:05+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1362106814&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads&amp;rev=1362106597&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2013&amp;rev=1361913872&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=downloadsbeta&amp;rev=1361809558&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>http://coco.gforge.inria.fr/</link>
+        <url>http://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1362106814&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-03-01T04:00:14+01:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>downloads</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1362106814&amp;do=diff</link>
+        <description>This is the COCO download page.
+
+Last release: 01/03/2013 v13.04
+
+
+BBOB (5MB) is all that is needed to run the benchmarking experiments and compile a template paper (gathering post-processed results). 
+
+BBOB (35MB) contains all files, as listed below.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads&amp;rev=1362106597&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-03-01T03:56:37+01:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>bbob-2013-downloads</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads&amp;rev=1362106597&amp;do=diff</link>
+        <description>This is the BBOB 2013 download page (v13.04). We encourage submission with small budgets on the noise-free testbed (f1-f24). On the noisy testbed use the --non-expensive option for the Python postprocessing. 
+
+BBOB (5MB) is all that is needed to run the benchmarking experiments and compile a workshop paper (gathering post-processed results).</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2013&amp;rev=1361913872&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-02-26T22:24:32+01:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>bbob-2013 - [Black-Box Optimization Benchmarking (BBOB) 2013] </title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2013&amp;rev=1361913872&amp;do=diff</link>
+        <description>4th GECCO Workshop for Real-Parameter Optimization
+
+
+The forth Black-Box Optimization Benchmarking workshop is going to take place in Amsterdam, as part of GECCO 2013, July 06 - 10.
+
+Benchmarking of optimization algorithms is crucial to assess performance of optimizers quantitatively, understand weaknesses and
+strengths of each algorithm and is a compulsory path to evaluate new algorithm designs. However, this task turns out to be tedious and difficult to realize even in the single-objective cas…</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=downloadsbeta&amp;rev=1361809558&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-02-25T17:25:58+01:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>downloadsbeta</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=downloadsbeta&amp;rev=1361809558&amp;do=diff</link>
+        <description>This is the COCO download page.
+
+Last release: 25/02/2013 v13.01
+
+
+BBOB (5MB) is all that is needed to run the benchmarking experiments and compile a template paper (gathering post-processed results). 
+
+BBOB (35MB) contains all files, as listed below.</description>
+    </item>
+</rdf:RDF>

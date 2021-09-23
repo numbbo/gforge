@@ -1,0 +1,1225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Figures and Tables &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="up" title="bbob_pproc API" href="bbob_pproc.html" />
+    <link rel="next" title="bbob_pproc.comp2" href="comp2.html" />
+    <link rel="prev" title="Post-processing Routines" href="bbob_pprocinternal.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="comp2.html" title="bbob_pproc.comp2"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bbob_pprocinternal.html" title="Post-processing Routines"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" accesskey="U"><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="figures-and-tables">
+<h1>Figures and Tables<a class="headerlink" href="#figures-and-tables" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#module-bbob_pproc.ppconverrorbars" id="id1"><a class="reference internal" href="#module-bbob_pproc.ppconverrorbars" title="bbob_pproc.ppconverrorbars"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppconverrorbars</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.ppfig" id="id2"><a class="reference internal" href="#module-bbob_pproc.ppfig" title="bbob_pproc.ppfig"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppfig</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.ppfigdim" id="id3"><a class="reference internal" href="#module-bbob_pproc.ppfigdim" title="bbob_pproc.ppfigdim"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppfigdim</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pplogloss" id="id4"><a class="reference internal" href="#module-bbob_pproc.pplogloss" title="bbob_pproc.pplogloss"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pplogloss</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pprldistr" id="id5"><a class="reference internal" href="#module-bbob_pproc.pprldistr" title="bbob_pproc.pprldistr"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pprldistr</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.ppsingle" id="id6"><a class="reference internal" href="#module-bbob_pproc.ppsingle" title="bbob_pproc.ppsingle"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppsingle</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pptable" id="id7"><a class="reference internal" href="#module-bbob_pproc.pptable" title="bbob_pproc.pptable"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pptable</span></code></a></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pptex" id="id8"><a class="reference internal" href="#module-bbob_pproc.pptex" title="bbob_pproc.pptex"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pptex</span></code></a></a></li>
+</ul>
+</div>
+<div class="section" id="module-bbob_pproc.ppconverrorbars">
+<span id="bbob-pproc-ppconverrorbars"></span><h2><a class="toc-backref" href="#id1"><a class="reference internal" href="#module-bbob_pproc.ppconverrorbars" title="bbob_pproc.ppconverrorbars"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppconverrorbars</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.ppconverrorbars" title="Permalink to this headline">¶</a></h2>
+<p>Process data and generates some comparison results.</p>
+<dl class="docutils">
+<dt>Synopsis:</dt>
+<dd>python path_to_folder/bbob_pproc/runcompall.py [OPTIONS] FOLDER_NAME...</dd>
+<dt>Help:</dt>
+<dd>python path_to_folder/bbob_pproc/runcompall.py -h</dd>
+</dl>
+<dl class="function">
+<dt id="bbob_pproc.ppconverrorbars.rearrange">
+<code class="descclassname">bbob_pproc.ppconverrorbars.</code><code class="descname">rearrange</code><span class="sig-paren">(</span><em>blist</em>, <em>flist</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppconverrorbars.rearrange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alligns the number of evaluations taken from the blist with the
+corresponding flist</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppconverrorbars.beautify">
+<code class="descclassname">bbob_pproc.ppconverrorbars.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppconverrorbars.beautify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppconverrorbars.main">
+<code class="descclassname">bbob_pproc.ppconverrorbars.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dictAlg</em>, <em>outputdir='.'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppconverrorbars.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main routine for generating convergence plots</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.ppfig">
+<span id="bbob-pproc-ppfig"></span><h2><a class="toc-backref" href="#id2"><a class="reference internal" href="#module-bbob_pproc.ppfig" title="bbob_pproc.ppfig"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppfig</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.ppfig" title="Permalink to this headline">¶</a></h2>
+<p>Generic routines for figure generation.</p>
+<dl class="function">
+<dt id="bbob_pproc.ppfig.enum">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">enum</code><span class="sig-paren">(</span><em>*sequential</em>, <em>**named</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.enum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="bbob_pproc.ppfig.AlgorithmCount">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">AlgorithmCount</code><a class="headerlink" href="#bbob_pproc.ppfig.AlgorithmCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Enum</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.saveFigure">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">saveFigure</code><span class="sig-paren">(</span><em>filename</em>, <em>figFormat=()</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.saveFigure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save figure into an image file.</p>
+<p><cite>figFormat</cite> can be a string or a list of strings, like
+<code class="docutils literal"><span class="pre">('pdf',</span> <span class="pre">'svg')</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.next_dimension_str">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">next_dimension_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.next_dimension_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.next_dimension">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">next_dimension</code><span class="sig-paren">(</span><em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.next_dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>next dimension when clicking single function html pages</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.save_single_functions_html">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">save_single_functions_html</code><span class="sig-paren">(</span><em>filename</em>, <em>algname=''</em>, <em>extension='svg'</em>, <em>add_to_names=''</em>, <em>algorithmCount=0</em>, <em>values_of_interest=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.save_single_functions_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.write_ECDF">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">write_ECDF</code><span class="sig-paren">(</span><em>f</em>, <em>dimension</em>, <em>extension</em>, <em>captionStringFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.write_ECDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes line for ECDF images.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.write_pptables">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">write_pptables</code><span class="sig-paren">(</span><em>f</em>, <em>dimension</em>, <em>captionStringFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.write_pptables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes line for pptables images.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.copy_js_files">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">copy_js_files</code><span class="sig-paren">(</span><em>outputdir</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.copy_js_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies js files to output directory.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.discretize_limits">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">discretize_limits</code><span class="sig-paren">(</span><em>limits</em>, <em>smaller_steps_limit=3.1</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.discretize_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>return new limits with discrete values in k * 10**i with k in [1, 3].</p>
+<p><cite>limits</cite> has len 2 and the new lower limit is always <code class="docutils literal"><span class="pre">10**-0.2</span></code>.</p>
+<p>if <cite>limits[1] / limits[0] &lt; 10**smaller_steps_limits</cite>, k == 3 is an 
+additional choice.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.marker_positions">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">marker_positions</code><span class="sig-paren">(</span><em>xdata</em>, <em>ydata</em>, <em>nbperdecade</em>, <em>maxnb</em>, <em>ax_limits=None</em>, <em>y_transformation=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.marker_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>return randomized marker positions</p>
+<p>replacement for downsample, could be improved by becoming independent
+of axis limits?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.plotUnifLogXMarkers">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">plotUnifLogXMarkers</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>nbperdecade</em>, <em>logscale=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.plotUnifLogXMarkers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proxy plot function: markers are evenly spaced on the log x-scale</p>
+<p>Remark/TODO: should be called plot_with_unif_markers!? Here is where
+the ECDF plot &#8220;done in pprldmany&#8221; actually happens.</p>
+<p>This method generates plots with markers regularly spaced on the
+x-scale whereas the matplotlib.pyplot.plot function will put markers
+on data points.</p>
+<p>This method outputs a list of three lines.Line2D objects: the first
+with the line style, the second for the markers and the last for the
+label.</p>
+<p>This function only works with monotonous graph.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.consecutiveNumbers">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">consecutiveNumbers</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.consecutiveNumbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Groups a sequence of integers into ranges of consecutive numbers.</p>
+<dl class="docutils">
+<dt>Example::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">&#39;__file__&#39;</span><span class="p">))))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bbob_pproc</span> <span class="kn">as</span> <span class="nn">bb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bb</span><span class="o">.</span><span class="n">ppfig</span><span class="o">.</span><span class="n">consecutiveNumbers</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="go">&#39;0-2, 4, 5, 7-9&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Range of consecutive numbers is at least 3 (therefore [4, 5] is
+represented as &#8220;4, 5&#8221;).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.groupByRange">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">groupByRange</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.groupByRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Groups a sequence of integers into ranges of consecutive numbers.</p>
+<p>Helper function of consecutiveNumbers(data), returns a list of lists.
+The key to the solution is differencing with a range so that
+consecutive numbers all appear in same group.
+Useful for determining ranges of functions.
+Ref: <a class="reference external" href="http://docs.python.org/release/3.0.1/library/itertools.html">http://docs.python.org/release/3.0.1/library/itertools.html</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.logxticks">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">logxticks</code><span class="sig-paren">(</span><em>limits=[-inf, inf]</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.logxticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify log-scale figure xticks from 10^i to i for values with the
+<code class="docutils literal"><span class="pre">limits</span></code> and (re-)sets the current xlim() thereby turning autoscale
+off (if it was on).</p>
+<p>This is to have xticks that are more visible.
+Modifying the x-limits of the figure after calling this method will
+not update the ticks.
+Please make sure the xlabel is changed accordingly.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.beautify">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Customize a figure by adding a legend, axis label, etc.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.generateData">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">generateData</code><span class="sig-paren">(</span><em>dataSet</em>, <em>targetFuncValue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.generateData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an array of results to be plotted.</p>
+<p>1st column is ert, 2nd is  the number of success, 3rd the success
+rate, 4th the sum of the number of function evaluations, and
+finally the median on successful runs.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfig.plot">
+<code class="descclassname">bbob_pproc.ppfig.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>dsList</em>, <em>_valuesOfInterest=(10</em>, <em>1</em>, <em>0.1</em>, <em>0.01</em>, <em>0.001</em>, <em>1e-05</em>, <em>1e-08)</em>, <em>isbyinstance=True</em>, <em>kwargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfig.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>From a DataSetList, plot a graph. Not in use and superseeded by ppfigdim.main!?</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.ppfigdim">
+<span id="bbob-pproc-ppfigdim"></span><h2><a class="toc-backref" href="#id3"><a class="reference internal" href="#module-bbob_pproc.ppfigdim" title="bbob_pproc.ppfigdim"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppfigdim</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.ppfigdim" title="Permalink to this headline">¶</a></h2>
+<p>Generate performance scaling figures.</p>
+<p>The figures show the scaling of the performance in terms of ERT w.r.t.
+dimensionality on a log-log scale. On the y-axis, data is represented as
+a number of function evaluations divided by dimension, this is in order
+to compare at a glance with a linear scaling for which ERT is
+proportional to the dimension and would therefore be represented by a
+horizontal line in the figure.</p>
+<p>Crosses (+) give the median number of function evaluations of successful
+trials divided by dimension for the smallest <em>reached</em> target function
+value.
+Numbers indicate the number of successful runs for the smallest
+<em>reached</em> target.
+If the smallest target function value (1e-8) is not reached for a given
+dimension, crosses (x) give the average number of overall conducted
+function evaluations divided by the dimension.</p>
+<p>Horizontal lines indicate linear scaling with the dimension, additional
+grid lines show quadratic and cubic scaling.
+The thick light line with diamond markers shows the single best results
+from BBOB-2009 for df = 1e-8.</p>
+<p><strong>Example</strong></p>
+<p>(<a class="reference external" href=".//figtables-1.py">Source code</a>, <a class="reference external" href=".//figtables-1.png">png</a>, <a class="reference external" href=".//figtables-1.hires.png">hires.png</a>, <a class="reference external" href=".//figtables-1.pdf">pdf</a>)</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/figtables-1.png"><img alt="_images/figtables-1.png" src="_images/figtables-1.png" style="width: 50%;" /></a>
+</div>
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.scaling_figure_caption">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">scaling_figure_caption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.scaling_figure_caption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.read_fun_infos">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">read_fun_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.read_fun_infos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.beautify">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">beautify</code><span class="sig-paren">(</span><em>axesLabel=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Customize figure presentation.</p>
+<p>Uses information from <code class="file docutils literal"><span class="pre">benchmarkshortinfos.txt</span></code> for figure
+title.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.generateData">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">generateData</code><span class="sig-paren">(</span><em>dataSet</em>, <em>targetFuncValue</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.generateData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes an array of results to be plotted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(ert, success rate, number of success, total number of
+function evaluations, median of successful runs).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.plot_a_bar">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">plot_a_bar</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>plot_cmd=&lt;function loglog&gt;</em>, <em>rec_width=0.1</em>, <em>rec_taille_fac=0.3</em>, <em>styles={'color': 'b'}</em>, <em>linewidth=1</em>, <em>fill_color=None</em>, <em>fill_transparency=0.7</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.plot_a_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot/draw a notched error bar, x is the x-position,
+y[0,1,2] are lower, median and upper percentile respectively.</p>
+<p>hold(True) to see everything.</p>
+<p>TODO: with linewidth=0, inf is not visible</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.plot">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>dsList, valuesOfInterest=&lt;bbob_pproc.pproc.TargetValues object&gt;, styles=[{'color': 'r', 'marker': 'o', 'linewidth': 4, 'markeredgewidth': 2, 'markeredgecolor': 'k'}, {'color': 'm', 'marker': '.', 'linewidth': 4}, {'color': 'y', 'marker': '^', 'linewidth': 4, 'markeredgewidth': 2, 'markeredgecolor': 'k'}, {'color': 'g', 'marker': '.', 'linewidth': 4}, {'color': 'c', 'marker': 'v', 'linewidth': 4, 'markeredgewidth': 2, 'markeredgecolor': 'k'}, {'color': 'b', 'marker': '.', 'linewidth': 4}, {'color': 'k', 'marker': 'o', 'linewidth': 4, 'markeredgewidth': 2, 'markeredgecolor': 'k'}]</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>From a DataSetList, plot a figure of ERT/dim vs dim.</p>
+<p>There will be one set of graphs per function represented in the
+input data sets. Most usually the data sets of different functions
+will be represented separately.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data sets</li>
+<li><strong>valuesOfInterest</strong> (<em>seq</em>) &#8211; target precisions via class TargetValues, there might 
+be as many graphs as there are elements in
+this input. Can be different for each
+function (a dictionary indexed by ifun).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handles</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.plot_previous_algorithms">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">plot_previous_algorithms</code><span class="sig-paren">(</span><em>func</em>, <em>target=&lt;bbob_pproc.pproc.TargetValues object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.plot_previous_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add graph of the BBOB-2009 virtual best algorithm using the
+last, most difficult target in <code class="docutils literal"><span class="pre">target</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppfigdim.main">
+<code class="descclassname">bbob_pproc.ppfigdim.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList</em>, <em>_valuesOfInterest</em>, <em>outputdir</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppfigdim.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>From a DataSetList, returns a convergence and ERT/dim figure vs dim.</p>
+<p>Uses data of BBOB 2009 (<a class="reference internal" href="bbob_pprocinternal.html#module-bbob_pproc.bestalg" title="bbob_pproc.bestalg"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.bestalg</span></code></a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; data sets</li>
+<li><strong>_valuesOfInterest</strong> (<em>seq</em>) &#8211; target precisions, either as list or as
+<code class="docutils literal"><span class="pre">pproc.TargetValues</span></code> class instance. 
+There will be as many graphs as there are 
+elements in this input.</li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output directory</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.pplogloss">
+<span id="bbob-pproc-pplogloss"></span><h2><a class="toc-backref" href="#id4"><a class="reference internal" href="#module-bbob_pproc.pplogloss" title="bbob_pproc.pplogloss"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pplogloss</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.pplogloss" title="Permalink to this headline">¶</a></h2>
+<p>Module for computing ERT loss ratio</p>
+<p>This module outputs figures and tables showing ERT loss ratios.
+Comparisons are based on computing the ratio between an ERT value and a
+reference (best) ERT value (or the inverse)</p>
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.detERT">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">detERT</code><span class="sig-paren">(</span><em>entry</em>, <em>funvals</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.detERT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.detf">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">detf</code><span class="sig-paren">(</span><em>entry</em>, <em>evals</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.detf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines a function value given a number of evaluations.</p>
+<p>Let A be the algorithm considered. Let f=f_A(evals) be the smallest
+target value such that the expected running time of algorithm A was
+smaller than or equal to evals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entry</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSet" title="bbob_pproc.pproc.DataSet"><em>DataSet</em></a>) &#8211; data set</li>
+<li><strong>evals</strong> (<em>list</em>) &#8211; numbers of function evaluations considered</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of the target function values</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.generateData">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">generateData</code><span class="sig-paren">(</span><em>dsList</em>, <em>evals</em>, <em>CrE_A</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.generateData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.boxplot">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">boxplot</code><span class="sig-paren">(</span><em>x</em>, <em>notch=0</em>, <em>sym='b+'</em>, <em>positions=None</em>, <em>widths=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.boxplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a box and whisker plot.</p>
+<p>Adapted from matplotlib.axes 0.98.5.2
+Modified such that the caps are set to the 10th and 90th
+percentiles, and to have some control on the colors.</p>
+<p>call signature:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">notch</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sym</span><span class="o">=</span><span class="s">&#39;+&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Make a box and whisker plot for each column of <em>x</em> or each
+vector in sequence <em>x</em>.  The box extends from the lower to
+upper quartile values of the data, with a line at the median.
+The whiskers extend from the box to show the range of the
+data.  Flier points are those past the end of the whiskers.</p>
+<ul class="simple">
+<li><em>notch</em> = 0 (default) produces a rectangular box plot.</li>
+<li><em>notch</em> = 1 will produce a notched box plot</li>
+</ul>
+<p><em>sym</em> (default &#8216;b+&#8217;) is the default symbol for flier points.
+Enter an empty string (&#8216;&#8217;) if you don&#8217;t want to show fliers.</p>
+<p><em>whis</em> (default 1.5) defines the length of the whiskers as
+a function of the inner quartile range.  They extend to the
+most extreme data point within ( <code class="docutils literal"><span class="pre">whis*(75%-25%)</span></code> ) data range.</p>
+<p><em>positions</em> (default 1,2,...,n) sets the horizontal positions of
+the boxes. The ticks and limits are automatically set to match
+the positions.</p>
+<p><em>widths</em> is either a scalar or a vector and sets the width of
+each box. The default is 0.5, or <code class="docutils literal"><span class="pre">0.15*(distance</span> <span class="pre">between</span> <span class="pre">extreme</span>
+<span class="pre">positions)</span></code> if that is smaller.</p>
+<p><em>x</em> is an array or a sequence of vectors.</p>
+<p>Returns a dictionary mapping each component of the boxplot
+to a list of the <code class="xref py py-class docutils literal"><span class="pre">matplotlib.lines.Line2D</span></code>
+instances created.</p>
+<p>Copyright (c) 2002-2009 John D. Hunter; All Rights Reserved</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.plot">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>xdata</em>, <em>ydata</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the ERT log loss figures.</p>
+<p>Two cases: box-whisker plot is used for representing the data of all
+functions, otherwise all data is represented using crosses.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.beautify">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the figure.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.generateTable">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">generateTable</code><span class="sig-paren">(</span><em>dsList</em>, <em>CrE=0.0</em>, <em>outputdir='.'</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.generateTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates ERT loss ratio tables.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; input data set</li>
+<li><strong>CrE</strong> (<em>float</em>) &#8211; crafting effort (see COCO documentation)</li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output folder (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.generateSingleTableTex">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">generateSingleTableTex</code><span class="sig-paren">(</span><em>dsList</em>, <em>funcs</em>, <em>mFE</em>, <em>d</em>, <em>prcOfInterest</em>, <em>EVALS</em>, <em>data</em>, <em>outputdir='.'</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.generateSingleTableTex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates single ERT loss ratio table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; input data set</li>
+<li><strong>funcs</strong> &#8211; </li>
+<li><strong>mFE</strong> &#8211; </li>
+<li><strong>d</strong> &#8211; </li>
+<li><strong>prcOfInterest</strong> &#8211; </li>
+<li><strong>EVALS</strong> &#8211; </li>
+<li><strong>data</strong> &#8211; </li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output folder (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.generateSingleTableHtml">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">generateSingleTableHtml</code><span class="sig-paren">(</span><em>dsList</em>, <em>funcs</em>, <em>mFE</em>, <em>d</em>, <em>prcOfInterest</em>, <em>EVALS</em>, <em>data</em>, <em>outputdir='.'</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.generateSingleTableHtml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates single ERT loss ratio table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; input data set</li>
+<li><strong>funcs</strong> &#8211; </li>
+<li><strong>mFE</strong> &#8211; </li>
+<li><strong>d</strong> &#8211; </li>
+<li><strong>prcOfInterest</strong> &#8211; </li>
+<li><strong>EVALS</strong> &#8211; </li>
+<li><strong>data</strong> &#8211; </li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output folder (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.generateFigure">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">generateFigure</code><span class="sig-paren">(</span><em>dsList</em>, <em>CrE=0.0</em>, <em>isStoringXRange=True</em>, <em>outputdir='.'</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.generateFigure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates ERT loss ratio figures.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; input data set</li>
+<li><strong>CrE</strong> (<em>float</em>) &#8211; crafting effort (see COCO documentation)</li>
+<li><strong>isStoringXRange</strong> (<em>bool</em>) &#8211; if set to True, the first call to this
+function sets the global
+<code class="xref py py-data docutils literal"><span class="pre">evalf</span></code> and all subsequent
+calls will use this value as boundaries
+in the generated figures.</li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output folder (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; controls verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pplogloss.main">
+<code class="descclassname">bbob_pproc.pplogloss.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList</em>, <em>CrE=0.0</em>, <em>isStoringXRange=True</em>, <em>outputdir='.'</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pplogloss.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates ERT loss ratio boxplot figures.</p>
+<p>Calls method generateFigure.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.pprldistr">
+<span id="bbob-pproc-pprldistr"></span><h2><a class="toc-backref" href="#id5"><a class="reference internal" href="#module-bbob_pproc.pprldistr" title="bbob_pproc.pprldistr"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pprldistr</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.pprldistr" title="Permalink to this headline">¶</a></h2>
+<p>For generating empirical cumulative distribution function figures.</p>
+<p>The outputs show empirical cumulative distribution functions (ECDFs) of
+the running times of trials. These ECDFs show on the y-axis the fraction
+of cases for which the running time (left subplots) or the df-value
+(right subplots) was smaller than the value given on the x-axis. On the
+left, ECDFs of the running times from trials are shown for different
+target values. Light brown lines in the background show ECDFs for target
+value 1e-8 of all algorithms benchmarked during BBOB-2009. On the right,
+ECDFs of df-values from all trials are shown for different numbers of
+function evaluations.</p>
+<p><strong>Example</strong></p>
+<p>(<a class="reference external" href=".//figtables-2.py">Source code</a>, <a class="reference external" href=".//figtables-2.png">png</a>, <a class="reference external" href=".//figtables-2.hires.png">hires.png</a>, <a class="reference external" href=".//figtables-2.pdf">pdf</a>)</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/figtables-2.png"><img alt="_images/figtables-2.png" src="_images/figtables-2.png" style="width: 75%;" /></a>
+</div>
+<p>CAVEAT: the naming conventions in this module mix up ERT (an estimate
+of the expected running length) and run lengths.</p>
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.load_previous_data">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">load_previous_data</code><span class="sig-paren">(</span><em>filename='/Users/hansen/svn/coco/BBOB/code/python/bbob_pproc/pprldistr2009_1e-8.pickle.gz'</em>, <em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.load_previous_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.load_previous_RLBdata">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">load_previous_RLBdata</code><span class="sig-paren">(</span><em>filename='/Users/hansen/svn/coco/BBOB/code/python/bbob_pproc/pprldistr2009_hardestRLB.pickle.gz'</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.load_previous_RLBdata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.caption_single">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">caption_single</code><span class="sig-paren">(</span><em>max_evals_div_dim</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.caption_single" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.caption_two">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">caption_two</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.caption_two" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.beautifyECDF">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">beautifyECDF</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.beautifyECDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic formatting of ECDF figures.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.beautifyRLD">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">beautifyRLD</code><span class="sig-paren">(</span><em>xlimit_max=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.beautifyRLD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format and save the figure of the run length distribution.</p>
+<p>After calling this function, changing the boundaries of the figure
+will not update the ticks and tick labels.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.beautifyFVD">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">beautifyFVD</code><span class="sig-paren">(</span><em>isStoringXMax=False</em>, <em>ylabel=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.beautifyFVD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats the figure of the run length distribution.</p>
+<p>This function is to be used with <a class="reference internal" href="#bbob_pproc.pprldistr.plotFVDistr" title="bbob_pproc.pprldistr.plotFVDistr"><code class="xref py py-func docutils literal"><span class="pre">plotFVDistr</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>isStoringMaxF</strong> (<em>bool</em>) &#8211; if set to True, the first call
+<a class="reference internal" href="#bbob_pproc.pprldistr.beautifyFVD" title="bbob_pproc.pprldistr.beautifyFVD"><code class="xref py py-func docutils literal"><span class="pre">beautifyFVD</span></code></a> sets the global
+<code class="xref py py-data docutils literal"><span class="pre">fmax</span></code> and all subsequent call
+will have the same maximum xlim</li>
+<li><strong>ylabel</strong> (<em>bool</em>) &#8211; if True, y-axis will be labelled.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.plotECDF">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">plotECDF</code><span class="sig-paren">(</span><em>x</em>, <em>n=None</em>, <em>**plotArgs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.plotECDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot an empirical cumulative distribution function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>seq</em>) &#8211; data</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; number of samples, if not provided len(x) is used</li>
+<li><strong>plotArgs</strong> &#8211; optional keyword arguments provided to plot.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handles of the plot elements.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.erld_data">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">erld_data</code><span class="sig-paren">(</span><em>dsList</em>, <em>target</em>, <em>max_fun_evals=inf</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.erld_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>return <code class="docutils literal"><span class="pre">[sorted_runlengths_divided_by_dimension,</span> <span class="pre">nb_of_all_runs,</span> <span class="pre">functions_ids_found,</span> <span class="pre">functions_ids_solved]</span></code></p>
+<p><cite>max_fun_evals</cite> is only used to compute <cite>function_ids_solved</cite>,
+that is elements in <cite>sorted_runlengths...</cite> can be larger.</p>
+<p>copy-paste from <cite>plotRLDistr</cite> and not used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.plotRLDistr">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">plotRLDistr</code><span class="sig-paren">(</span><em>dsList</em>, <em>target</em>, <em>label=''</em>, <em>max_fun_evals=inf</em>, <em>**plotArgs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.plotRLDistr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates run length distributions from a sequence dataSetList.</p>
+<p>Labels of the line (for the legend) will be appended with the number
+of functions at least solved once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; Input data sets</li>
+<li><strong>target</strong> &#8211; a method that delivers single target values like <code class="docutils literal"><span class="pre">target((fun,</span> <span class="pre">dim))</span></code></li>
+<li><strong>label</strong> (<em>str</em>) &#8211; target value label to be displayed in the legend</li>
+<li><strong>max_fun_evals</strong> &#8211; only used to determine success on a single function</li>
+<li><strong>plotArgs</strong> &#8211; additional arguments passed to the plot command</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handles of the resulting plot.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plotRLDistr</span><span class="p">(</span><span class="n">dsl</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Details: <code class="docutils literal"><span class="pre">target</span></code> is a function taking a (function_number, dimension) pair
+as input and returning a <code class="docutils literal"><span class="pre">float</span></code>. It can be defined as
+<code class="docutils literal"><span class="pre">lambda</span> <span class="pre">fun_dim:</span> <span class="pre">targets(fun_dim)[j]</span></code> returning the j-th element of
+<code class="docutils literal"><span class="pre">targets(fun_dim)</span></code>, where <code class="docutils literal"><span class="pre">targets</span></code> is an instance of
+<code class="docutils literal"><span class="pre">class</span> <span class="pre">pproc.TargetValues</span></code> (see the <code class="docutils literal"><span class="pre">pproc.TargetValues.__call__</span></code> method).</p>
+<p>TODO: data generation and plotting should be in separate methods
+TODO: different number of runs/data biases the results, shouldn&#8217;t</p>
+<blockquote>
+<div>the number of data made the same, in case?</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.plotFVDistr">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">plotFVDistr</code><span class="sig-paren">(</span><em>dsList</em>, <em>budget</em>, <em>min_f=1e-08</em>, <em>**plotArgs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.plotFVDistr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates ECDF of final function values plot from a DataSetList.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dsList</strong> &#8211; data sets</li>
+<li><strong>min_f</strong> &#8211; used for the left limit of the plot</li>
+<li><strong>budget</strong> (<em>float</em>) &#8211; maximum evaluations / dimension that &#8220;count&#8221;</li>
+<li><strong>plotArgs</strong> &#8211; additional arguments passed to plot</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handle</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.comp">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">comp</code><span class="sig-paren">(</span><em>dsList0</em>, <em>dsList1</em>, <em>targets</em>, <em>isStoringXMax=False</em>, <em>outputdir=''</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.comp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate figures of ECDF that compare 2 algorithms.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList0</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; list of DataSet instances for ALG0</li>
+<li><strong>dsList1</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; list of DataSet instances for ALG1</li>
+<li><strong>targets</strong> (<em>seq</em>) &#8211; target function values to be displayed</li>
+<li><strong>isStoringXMax</strong> (<em>bool</em>) &#8211; if set to True, the first call
+<a class="reference internal" href="#bbob_pproc.pprldistr.beautifyFVD" title="bbob_pproc.pprldistr.beautifyFVD"><code class="xref py py-func docutils literal"><span class="pre">beautifyFVD</span></code></a> sets the globals
+<code class="xref py py-data docutils literal"><span class="pre">fmax</span></code> and <code class="xref py py-data docutils literal"><span class="pre">maxEvals</span></code>
+and all subsequent calls will use these
+values as rightmost xlim in the generated
+figures.</li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output directory (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names.</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; control verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.beautify">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.beautify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the figure of the run length distribution.</p>
+<p>Used in conjunction with plot method (obsolete/outdated, see functions <code class="docutils literal"><span class="pre">beautifyFVD</span></code> and <code class="docutils literal"><span class="pre">beautifyRLD</span></code>).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.plot">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>dsList</em>, <em>targets=&lt;bbob_pproc.pproc.TargetValues object&gt;</em>, <em>**plotArgs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot ECDF of evaluations and final function values
+in a single figure for demonstration purposes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.plot_previous_algorithms">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">plot_previous_algorithms</code><span class="sig-paren">(</span><em>dim</em>, <em>funcs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.plot_previous_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display BBOB 2009 data, by default from <code class="docutils literal"><span class="pre">pprldistr.previous_data_filename</span> <span class="pre">=</span> <span class="pre">'pprldistr2009_1e-8.pickle.gz'</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.plotRLB_previous_algorithms">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">plotRLB_previous_algorithms</code><span class="sig-paren">(</span><em>dim</em>, <em>funcs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.plotRLB_previous_algorithms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display BBOB 2009 data, by default from <code class="docutils literal"><span class="pre">pprldistr.previous_data_filename</span> <span class="pre">=</span> <span class="pre">'pprldistr2009_1e-8.pickle.gz'</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pprldistr.main">
+<code class="descclassname">bbob_pproc.pprldistr.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList</em>, <em>isStoringXMax=False</em>, <em>outputdir=''</em>, <em>info='default'</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pprldistr.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate figures of empirical cumulative distribution functions.</p>
+<p>This method has a feature which allows to keep the same boundaries
+for the x-axis, if <code class="docutils literal"><span class="pre">isStoringXMax==True</span></code>. This makes sense when
+dealing with different functions or subsets of functions for one
+given dimension.</p>
+<p>CAVE: this is bug-prone, as some data depend on the maximum
+evaluations and the appearence therefore depends on the
+calling order.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dsList</strong> (<a class="reference internal" href="bbob_pprocinternal.html#bbob_pproc.pproc.DataSetList" title="bbob_pproc.pproc.DataSetList"><em>DataSetList</em></a>) &#8211; list of DataSet instances to process.</li>
+<li><strong>isStoringXMax</strong> (<em>bool</em>) &#8211; if set to True, the first call
+<a class="reference internal" href="#bbob_pproc.pprldistr.beautifyFVD" title="bbob_pproc.pprldistr.beautifyFVD"><code class="xref py py-func docutils literal"><span class="pre">beautifyFVD</span></code></a> sets the
+globals <code class="xref py py-data docutils literal"><span class="pre">fmax</span></code> and
+<code class="xref py py-data docutils literal"><span class="pre">maxEvals</span></code> and all subsequent
+calls will use these values as rightmost
+xlim in the generated figures.</li>
+<li><strong>outputdir</strong> (<em>string</em>) &#8211; output directory (must exist)</li>
+<li><strong>info</strong> (<em>string</em>) &#8211; string suffix for output file names.</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; control verbosity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.ppsingle">
+<span id="bbob-pproc-ppsingle"></span><h2><a class="toc-backref" href="#id6"><a class="reference internal" href="#module-bbob_pproc.ppsingle" title="bbob_pproc.ppsingle"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.ppsingle</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.ppsingle" title="Permalink to this headline">¶</a></h2>
+<p>Single data set results output module.</p>
+<dl class="function">
+<dt id="bbob_pproc.ppsingle.beautify">
+<code class="descclassname">bbob_pproc.ppsingle.</code><code class="descname">beautify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppsingle.beautify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppsingle.plot">
+<code class="descclassname">bbob_pproc.ppsingle.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>dataset</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppsingle.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot function values versus function evaluations.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppsingle.plot2">
+<code class="descclassname">bbob_pproc.ppsingle.</code><code class="descname">plot2</code><span class="sig-paren">(</span><em>dataset</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppsingle.plot2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot function values versus function evaluations.</p>
+<p>Plus (+) markers for final function values and run lengths and
+dashed lines.
+Lines for the max and min and median.</p>
+<p>Plot markers for all quartiles when:
+* the first run stops
+* the median run stops
+* the maximum number of evaluations is reached
+* at 1/2 of the first run stops</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppsingle.generatefig">
+<code class="descclassname">bbob_pproc.ppsingle.</code><code class="descname">generatefig</code><span class="sig-paren">(</span><em>dsList</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppsingle.generatefig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot function values versus function evaluations for multiple sets.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.ppsingle.main">
+<code class="descclassname">bbob_pproc.ppsingle.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList</em>, <em>outputdir</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.ppsingle.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate output image files of function values vs. function evaluations.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.pptable">
+<span id="bbob-pproc-pptable"></span><h2><a class="toc-backref" href="#id7"><a class="reference internal" href="#module-bbob_pproc.pptable" title="bbob_pproc.pptable"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pptable</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.pptable" title="Permalink to this headline">¶</a></h2>
+<p>Module for generating tables used by rungeneric1.py.</p>
+<p>The generated tables give the ERT and in brackets the 10th to 90th
+percentile range divided by two of 100 simulated runs divided by the
+best ERT measured during BBOB-2009 (given in the respective first row)
+for different target precisions for different functions. If no algorithm
+in BBOB-2009 reached the target precision, the absolute values are
+given.</p>
+<p>The median number of conducted function evaluations is given in
+<em>italics</em>, if no run reached 1e-7.
+#succ is the number of trials that reached the target precision 1e-8
+<strong>Bold</strong> entries are statistically significantly better (according to
+the rank-sum test) compared to the best algorithm in BBOB-2009, with
+p = 0.05 or p = 1e-k where k &gt; 1 is the number following the
+downarrow symbol, with Bonferroni correction by the number of
+functions.</p>
+<dl class="function">
+<dt id="bbob_pproc.pptable.main2">
+<code class="descclassname">bbob_pproc.pptable.</code><code class="descname">main2</code><span class="sig-paren">(</span><em>dsList</em>, <em>dimsOfInterest</em>, <em>outputdir='.'</em>, <em>info=''</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptable.main2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a table of ratio ERT/ERTbest vs target precision.</p>
+<p>1 table per dimension will be generated.</p>
+<p>Rank-sum tests table on &#8220;Final Data Points&#8221; for only one algorithm.
+that is, for example, using 1/#fevals(ftarget) if ftarget was
+reached and -f_final otherwise as input for the rank-sum test, where
+obviously the larger the better.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptable.main">
+<code class="descclassname">bbob_pproc.pptable.</code><code class="descname">main</code><span class="sig-paren">(</span><em>dsList</em>, <em>dimsOfInterest</em>, <em>outputdir</em>, <em>info=''</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptable.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a table of ratio ERT/ERTbest vs target precision.</p>
+<p>1 table per dimension will be generated.</p>
+<p>Rank-sum tests table on &#8220;Final Data Points&#8221; for only one algorithm.
+that is, for example, using 1/#fevals(ftarget) if ftarget was
+reached and -f_final otherwise as input for the rank-sum test, where
+obviously the larger the better.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-bbob_pproc.pptex">
+<span id="bbob-pproc-pptex"></span><h2><a class="toc-backref" href="#id8"><a class="reference internal" href="#module-bbob_pproc.pptex" title="bbob_pproc.pptex"><code class="xref py py-mod docutils literal"><span class="pre">bbob_pproc.pptex</span></code></a></a><a class="headerlink" href="#module-bbob_pproc.pptex" title="Permalink to this headline">¶</a></h2>
+<p>Routines for writing TeX for tables.</p>
+<dl class="exception">
+<dt id="bbob_pproc.pptex.Error">
+<em class="property">exception </em><code class="descclassname">bbob_pproc.pptex.</code><code class="descname">Error</code><a class="headerlink" href="#bbob_pproc.pptex.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for errors.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="bbob_pproc.pptex.WrongInputSizeError">
+<em class="property">exception </em><code class="descclassname">bbob_pproc.pptex.</code><code class="descname">WrongInputSizeError</code><span class="sig-paren">(</span><em>arrName</em>, <em>arrSize</em>, <em>reqSize</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.WrongInputSizeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error if an array has the wrong size for the following operation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">message containing the size of the array and the required
+size.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.color_to_latex">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">color_to_latex</code><span class="sig-paren">(</span><em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.color_to_latex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.marker_to_latex">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">marker_to_latex</code><span class="sig-paren">(</span><em>marker</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.marker_to_latex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.marker_to_html">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">marker_to_html</code><span class="sig-paren">(</span><em>marker</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.marker_to_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.numtotext">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">numtotext</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.numtotext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a text from a positive integer.</p>
+<p>Is to be used for generating command names: they cannot include number
+characters.</p>
+<p>WARNING: n should not be larger than (53*52)-1 = 2755 for the moment</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.writeLabels">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">writeLabels</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.writeLabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format text to be output by LaTeX.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.writeFEvals">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">writeFEvals</code><span class="sig-paren">(</span><em>fevals</em>, <em>precision='.2'</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.writeFEvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns string representation of a number of function evaluations.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.writeFEvals2">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">writeFEvals2</code><span class="sig-paren">(</span><em>fevals</em>, <em>precision=2</em>, <em>maxdigits=None</em>, <em>isscientific=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.writeFEvals2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns string representation of a number of function evaluations.</p>
+<p>This method is supposed to be used for filling up a LaTeX tabular.</p>
+<p>To address the eventual need to keep their string representation
+short, the method here proposes the shortest representation between
+the full representation and a modified scientific representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fevals</strong> (<em>float</em>) &#8211; </li>
+<li><strong>precision</strong> (<em>int</em>) &#8211; number of significant digits</li>
+<li><strong>maxdigits</strong> (<em>int</em>) &#8211; </li>
+<li><strong>isscientific</strong> (<em>bool</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="25%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Number</th>
+<th class="head">Precision</th>
+<th class="head">Output Representation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>102345</td>
+<td>2 digits</td>
+<td>1.0e5</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.writeFEvalsMaxSymbols">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">writeFEvalsMaxSymbols</code><span class="sig-paren">(</span><em>fevals</em>, <em>maxsymbols</em>, <em>isscientific=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.writeFEvalsMaxSymbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the smallest string representation of a number.</p>
+<p>This method is only concerned with the maximum number of significant
+digits.</p>
+<p>Two alternatives:</p>
+<ol class="arabic simple">
+<li>modified scientific notation (without the trailing + and zero in
+the exponent)</li>
+<li>float notation</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string representation of a number of function evaluations
+or ERT.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.writeFEvalsMaxPrec">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">writeFEvalsMaxPrec</code><span class="sig-paren">(</span><em>entry</em>, <em>SIG</em>, <em>maxfloatrepr=100000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.writeFEvalsMaxPrec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string representation of a number.</p>
+<p>Two alternatives:</p>
+<ol class="arabic simple">
+<li>float notation with a precision smaller or equal to SIG (if the
+entry is one, then the result is 1).</li>
+<li>if the number is larger or equal to maxfloatrepr, a modified
+scientific notation (without the trailing + and zero in the
+exponent)</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string representation of a number of function evaluations
+or ERT.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.tableLaTeX">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">tableLaTeX</code><span class="sig-paren">(</span><em>table</em>, <em>spec</em>, <em>extraeol=()</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.tableLaTeX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a tabular from a sequence of sequence of strings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>table</strong> (<em>seq</em>) &#8211; sequence of sequence of strings</li>
+<li><strong>spec</strong> (<em>string</em>) &#8211; string for table specification, see
+<a class="reference external" href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment</a></li>
+<li><strong>extraeol</strong> (<em>seq</em>) &#8211; sequence of string the same length as the table
+(same number of lines) which are added at the
+end of each line.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sequence of strings of a LaTeX tabular.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.tableXLaTeX">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">tableXLaTeX</code><span class="sig-paren">(</span><em>table</em>, <em>spec</em>, <em>extraeol=()</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.tableXLaTeX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a tabular from a sequence of sequence of strings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>table</strong> (<em>seq</em>) &#8211; sequence of sequence of strings</li>
+<li><strong>spec</strong> (<em>string</em>) &#8211; string for table specification, see
+<a class="reference external" href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment</a></li>
+<li><strong>extraeol</strong> (<em>seq</em>) &#8211; sequence of string the same length as the table
+(same number of lines) which are added at the
+end of each line.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sequence of strings of a LaTeX tabular.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bbob_pproc.pptex.tableLaTeXStar">
+<code class="descclassname">bbob_pproc.pptex.</code><code class="descname">tableLaTeXStar</code><span class="sig-paren">(</span><em>table</em>, <em>width</em>, <em>spec</em>, <em>extraeol=()</em><span class="sig-paren">)</span><a class="headerlink" href="#bbob_pproc.pptex.tableLaTeXStar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a tabular* from a sequence of sequence of strings</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>table</strong> (<em>seq</em>) &#8211; sequence of sequence of strings</li>
+<li><strong>width</strong> (<em>string</em>) &#8211; string for the width of the table</li>
+<li><strong>spec</strong> (<em>strin</em>) &#8211; string for table specification, see
+<a class="reference external" href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment</a></li>
+<li><strong>extraeol</strong> (<em>seq</em>) &#8211; sequence of string the same length as the table
+(same number of lines) which are added at the
+end of each line.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="bbob_pproc.pptex.DataTable">
+<em class="property">class </em><code class="descclassname">bbob_pproc.pptex.</code><code class="descname">DataTable</code><a class="headerlink" href="#bbob_pproc.pptex.DataTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Figures and Tables</a><ul>
+<li><a class="reference internal" href="#module-bbob_pproc.ppconverrorbars"><code class="docutils literal"><span class="pre">bbob_pproc.ppconverrorbars</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.ppfig"><code class="docutils literal"><span class="pre">bbob_pproc.ppfig</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.ppfigdim"><code class="docutils literal"><span class="pre">bbob_pproc.ppfigdim</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pplogloss"><code class="docutils literal"><span class="pre">bbob_pproc.pplogloss</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pprldistr"><code class="docutils literal"><span class="pre">bbob_pproc.pprldistr</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.ppsingle"><code class="docutils literal"><span class="pre">bbob_pproc.ppsingle</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pptable"><code class="docutils literal"><span class="pre">bbob_pproc.pptable</span></code></a></li>
+<li><a class="reference internal" href="#module-bbob_pproc.pptex"><code class="docutils literal"><span class="pre">bbob_pproc.pptex</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bbob_pprocinternal.html"
+                        title="previous chapter">Post-processing Routines</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="comp2.html"
+                        title="next chapter"><code class="docutils literal"><span class="pre">bbob_pproc.comp2</span></code></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/figtables.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="comp2.html" title="bbob_pproc.comp2"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bbob_pprocinternal.html" title="Post-processing Routines"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="bbob_pproc.html" ><code class="docutils literal"><span class="pre">bbob_pproc</span></code> API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

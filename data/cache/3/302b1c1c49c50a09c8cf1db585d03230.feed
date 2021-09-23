@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="https://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="https://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>https://coco.gforge.inria.fr/</link>
+        <image rdf:resource="https://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2019-08-01T00:13:01+02:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj&amp;rev=1562800619&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale&amp;rev=1562708832&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1562708268&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob&amp;rev=1562708037&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=detailsdts&amp;rev=1552576993&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1551881515&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1551881161&amp;do=diff"/>
+                <rdf:li rdf:resource="https://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1550489302&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="https://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>https://coco.gforge.inria.fr/</link>
+        <url>https://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj&amp;rev=1562800619&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-11T01:16:59+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>algorithms-bbob-biobj - added BBOB-2019 bbob-biobj data sets</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-biobj&amp;rev=1562800619&amp;do=diff</link>
+        <description>The following table lists all submitted algorithm data sets on the bbob-biobj test suite, related to the BBOB workshops together with links to their corresponding papers. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale&amp;rev=1562708832&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-09T23:47:12+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>algorithms-bbob-largescale - created</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob-largescale&amp;rev=1562708832&amp;do=diff</link>
+        <description>The following table lists all submitted algorithm data sets on the bbob-largescale test suite, related to the BBOB workshops together with links to their corresponding papers. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1562708268&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-09T23:37:48+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>sidebar</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=sidebar&amp;rev=1562708268&amp;do=diff</link>
+        <description>*  Home
+	*  Documentation
+	*  new code homepage
+	*  download new code directly
+	*  download latest old code
+
+
+ algorithm data sets:
+
+	*  bbob
+		*  bbob-noisy
+		*  bbob-biobj
+		*  bbob-largescale
+
+
+ postprocessed data for each year
+
+ BBOB workshops:
+
+	*  BBOB 2019
+		*  BBOB 2018
+		*  BBOB 2017
+		*  BBOB 2016
+		*  BBOB 2015 @ GECCO
+			*  Algorithms
+			*  Results
+			*  Schedule
+			*  Downloads</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob&amp;rev=1562708037&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-07-09T23:33:57+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>algorithms-bbob</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=algorithms-bbob&amp;rev=1562708037&amp;do=diff</link>
+        <description>The following table lists all algorithm data sets related to the noiseless bbob test suite as collected during the BBOB workshops and special sessions in the years 2009 till 2019. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column.</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=detailsdts&amp;rev=1552576993&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-03-14T16:23:13+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>detailsdts - created</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=detailsdts&amp;rev=1552576993&amp;do=diff</link>
+        <description>[from the authors]
+
+
+	*  new selection of points to be evaluated by the original fitness using an uncertainty criterion: selecting the union of the $k$ nearest neighbors of every point for which the fitness should be predicted ($k$ is maximal such that the total number of selected points does not exceed $N_{max}$)
+	*  bugfix in the surrogate selection algorithm (compared to the 2017 version)
+	*  sligthly different parameter settings (maximum radius for selecting points to the training set = 4 ti…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1551881515&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-03-06T15:11:55+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>bbob-2009-results</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1551881515&amp;do=diff</link>
+        <description>This is the BBOB 2009 results page and here are the results from the workshop in July 2009. 
+
+Single Function Tables
+
+	* [ BBOB-2009: Comparison Tables of All Algorithms on All Noiseless Functions] 
+					* [pdf] Comparison Tables per function: noiseless testbed 2-D
+					* [pdf] Comparison Tables per function: noiseless testbed 3-D
+					* [pdf] Comparison Tables per function: noiseless testbed 5-D
+					* [pdf] Comparison Tables per function: noiseless testbed 10-D
+					* [pdf] Comparison Tables p…</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1551881161&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-03-06T15:06:01+02:00</dc:date>
+        <dc:creator>brockho</dc:creator>
+        <title>start</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1551881161&amp;do=diff</link>
+        <description>[ Results from BBOB-2009: all functions]
+COCO (COmparing Continuous Optimisers) is a platform for systematic and sound comparisons of real-parameter global optimisers. COCO provides benchmark function testbeds, experimentation templates which are easy to parallelize, and tools for processing and visualizing data generated by one or several optimizers. The COCO platform has been used for the Black-Box-Optimization-Benchmarking (BBOB) workshops that took place during the GECCO conference in 2009, …</description>
+    </item>
+    <item rdf:about="https://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1550489302&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2019-02-18T12:28:22+02:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>downloads</title>
+        <link>https://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1550489302&amp;do=diff</link>
+        <description>This is the old COCO download page. Please note that we moved in 2015 to github (see our web page there) where you find the newest version of the code. Although this page here will remain to offer access to the last version before the move, we recommend to use the newest version.</description>
+    </item>
+</rdf:RDF>

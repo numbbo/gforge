@@ -1,0 +1,36 @@
+~~NOCACHE~~
+
+This is the BBOB 2010 download page. The most recent BBOB version can be found [[http://coco.gforge.inria.fr/doku.php?id=downloads|here]].
+
+[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobexp10.2.tar.gz|BBOB 2010 (Version 10.2, 3.6MB)]] is all that is needed to run the benchmarking experiments, prepare a single-algorithm workshop paper (comparing to data obtained during BBOB-2009) or compare two or more benchmarked algorithms. 
+
+[[http://coco.lri.fr/BBOB-downloads/download10.2/bboball10.2.tar.gz|BBOB-2010 tarball (34MB)]] is the full tarball with all technical documentations and presentation of the functions. It contains all files listed below.
+
+  * CODE:
+    *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobmatlab.tar.gz|tar]] code in Matlab/Octave 
+    *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobc.tar.gz|tar]] code in C
+    *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobcpp.tar.gz|tar]] code in C++ (still in BETA)
+    *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobjava.tar.gz|tar]] code in Java
+    *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobpproc.tar.gz|tar]] post-processing in Python (3.1MB)
+
+  * DOCS:
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobdocexperiment.pdf|pdf]] description of experimental procedure  
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobdocfunctions.pdf|pdf]] (13MB) noiseless functions documentation with figures
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobdocfunctionsdef.pdf|pdf]] noiseless functions documentation, version without figures
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobdocnoisyfunctions.pdf|pdf]] (20MB) noisy function documentation with figures      
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobdocnoisyfunctionsdef.pdf|pdf]] noisy function documentation, version without figures  
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/bbobdocsoftware.pdf|pdf]] software user documentation  
+
+  * TECHNICAL DOCS:
+      *[[http://coco.lri.fr/BBOB-downloads/download10.2/pydoc/bbob_pproc.html|html]] post-processing package documentation
+
+\\
+\\
+BUGS for older versions:
+  * **Bugs in version 10.1**:
+     * Post-processing: the significance test in Figure 1 of the comparison template is wrongly computed.
+     * Post-processing: running the runcomp2 routine with input parameters path0/samefoldername and path1/samefoldername processed only one data set.  
+     * Java code: the attributes of JNIfgeneric.Params were not modifiable from outside the javabbob package.
+
+  * **Bug in version 10.0**:
+     * ECDF figures: data of the entries in 2009 were represented in a wrong manner, making them appear better than they actually were.

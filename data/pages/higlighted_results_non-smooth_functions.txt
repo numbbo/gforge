@@ -1,0 +1,6 @@
+{{ http://coco.lri.fr/COCOdoc/_images/examplefigure_group6.png?700 }}
+
+
+Empirical runtime distributions on //non-smooth// functions (f7: Step Ellipsoid, f16: Weierstrass, f23: Katsuura) with target values in {100, ..., 1e-8} in dimension 20.
+
+The following algorithms perform particularly well up to their individual maximum number of function evaluations: //AMALGAM// and //iAMALGAM// (Adapted Maximum-Likelihood Gaussian Model Iterated Density Estimation Algorithm with no-improvement stretch, anticipated mean shift and interlaced restarts with one large or several small populations with incremental model building) and //IPOP-SEP-CMA-ES// and //BIPOP-CMA-ES// (CMA-ES restarted with budgets for small and large population size). 

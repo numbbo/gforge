@@ -1,0 +1,57 @@
+~~NOCACHE~~
+
+This is the COCO download page.
+
+Last release: **25/02/2013** v13.01\\
+
+[[http://coco.lri.fr/downloads/download13.01/bbobexp13.01.tar.gz|BBOB (5MB)]] is all that is needed to run the benchmarking experiments and compile a template paper (gathering post-processed results). 
+
+[[http://coco.lri.fr/downloads/download13.01/bboball13.01.tar.gz|BBOB (35MB)]] contains all files, as listed below. 
+
+  * CODE:
+    *[[http://coco.lri.fr/downloads/download13.01/bbobmatlab.tar.gz|tar]] code in Matlab/Octave to run experiments
+    *[[http://coco.lri.fr/downloads/download13.01/bbobc.tar.gz|tar]] code in C to run experiments
+    *[[http://coco.lri.fr/downloads/download13.01/bbobjava.tar.gz|tar]] code in Java to run experiments
+    *[[http://coco.lri.fr/downloads/download13.01/bbobpproc.tar.gz|tar]] code in Python to run experiments and post-processing and latex templates (3MB)
+    *[[http://coco.lri.fr/downloads/download13.01/bbobr.tar.gz|tar]] R package to run experiments
+
+  * DOCS:
+    *[[http://coco.lri.fr/downloads/download13.01/bbobdocexperiment.pdf|pdf]] description of experimental procedure  
+    *[[http://coco.lri.fr/downloads/download13.01/bbobdocfunctions.pdf|pdf]] (12MB) noiseless functions documentation with figures
+    *[[http://coco.lri.fr/downloads/download13.01/bbobdocfunctionsdef.pdf|pdf]] noiseless functions documentation, version without figures
+    *[[http://coco.lri.fr/downloads/download13.01/bbobdocnoisyfunctions.pdf|pdf]] (19MB) noisy function documentation with figures      
+    *[[http://coco.lri.fr/downloads/download13.01/bbobdocnoisyfunctionsdef.pdf|pdf]] noisy function documentation, version without figures  
+    *[[http://coco.lri.fr/downloads/download13.01/bbobdocsoftware.pdf|pdf]] software user documentation  
+    *[[http://coco.lri.fr/COCOdoc|html]] online post-processing package documentation
+
+BUGS for older versions:
+  * **Bugs in version 11.05**: 
+     * BBOB R package became incompatible due to a not backwards compatible change in the API
+  * **Bugs in version 11.04**:
+     * bug in ppconferrorbars.py
+     * bug in templateBBOB*.tex with Windows-paths
+  * **Bugs in version 11.01**:
+     * post-processcing: some wrong captions
+  * **Bugs in version 11.00**:
+     * Bugs in exampletiming.*: wrong test function
+     * python experiments: renamed cocoexp to fgeneric
+  * **Bugs in version 10.74**:
+     * Bugs in latex templates
+  * **Bugs in version 10.71**:
+     * Bug in readalign.py
+  * **Bugs in version 10.6**:
+     * Post-processing: Bug in comparison tables which results in displaying 0.00 when ERT ratio is smaller than 0.01 (more than 100 times faster than the best algorithm from BBOB 2009)
+     * Post-processing: Bug when changing the reference algorithm
+  * **Bugs in version 10.4 and 10.5**:
+     * Post-processing: Major bug that results in an underestimation of ERT. It is strongly recommended to upgrade to v10.6.
+  * **Bugs in version 10.4**:
+     * Post-processing: bug in bbob_pproc.comp2.pprldistr2 and potential bug with matplotlib 1.0.0, wrong data used for representing best BBOB 2009 and 2010
+  * **Bugs in version 10.2**:
+     * Post-processing: the significance test vs. the BBOB-2009 entry in Table 1 is wrongly computed when the BBOB-2009 entry did not reach the target function value.
+  * **Bugs in version 10.1**:
+     * Post-processing: the significance test in Figure 1 of the comparison template is wrongly computed.
+     * Post-processing: running the runcomp2 routine with input parameters path0/samefoldername and path1/samefoldername processed only one data set.  
+     * Java code: the attributes of JNIfgeneric.Params were not modifiable from outside the javabbob package.
+
+  * **Bug in version 10.0**:
+     * ECDF figures: data of the entries in 2009 were represented in a wrong manner, making them appear better than they actually were.

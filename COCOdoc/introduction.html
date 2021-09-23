@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Contents" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Contents"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><strong>COmparing Continuous Optimisers</strong> (<strong>COCO</strong>) is a tool for benchmarking
+algorithms for black-box optimisation. COCO facilitates systematic
+experimentation in the field of continuous optimization.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/examplefigure.png"><img alt="example figure" src="_images/examplefigure.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The pictures show (a) a scatterplot of run lengths (log10-scale) comparing two
+algorithms in different dimensions on a single function, (b) the run length distribution of two
+algorithms for different target difficulties <img class="math" src="_images/math/789814660c7b86c2eb5906e3c9d029840e13ef81.png" alt="\{10, 10^{-1}, 10^{-4}, 10^{-8}\}"/> on a set
+of 24 functions and (c) box-whisker plots of the loss ratios of the expected
+run length compared to best (shortest) observed expected run length in BBOB-2009.</span></p>
+</div>
+<p><strong>COCO</strong> has been used in several Black-Box Optimization Benchmarking (BBOB) workshops at the <a class="reference external" href="http://www.sigevo.org/gecco-archives.html">GECCO</a> conference, the first in <a class="reference external" href="http://www.sigevo.org/gecco-2009/workshops.html#bbob">2009</a> (<a class="reference external" href="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results">BBOB-2009</a>). Overall around a 100 articles and algorithms have been benchmarked.</p>
+<p>COCO provides:</p>
+<ol class="arabic simple">
+<li>an <strong>experimental framework</strong> for testing the algorithms,</li>
+<li><strong>post-processing facilities</strong> for generating publication quality figures
+and tables,</li>
+<li>LaTeX templates of articles which present the figures and tables in a
+single document.</li>
+</ol>
+<p>The practitioner in continuous optimization who wants to benchmark one or many
+algorithms has to download COCO, plug the algorithm(s) into the provided experimental template and use the post-processing tools.</p>
+<p>The COCO software is composed of two parts:</p>
+<ol class="arabic simple">
+<li>an interface available in different programming languages which allows to
+run and log experiments on multiple test functions; testbeds of
+functions (noisy and noiseless) are provided</li>
+<li>a Python tool for generating figures and tables that can be used in the LaTeX templates.</li>
+</ol>
+<p>The typical user of COCO renders the interface of
+the considered algorithm compatible with COCOs interface of the objective/fitness
+function, runs the provided main script (most presumably several times with increasing allowed maxfunevals until the waiting time becomes infeasible), invokes the postprocessing on the generated data and latexs the provided template.</p>
+<p>An extensive documentation of the <strong>test functions</strong> can be found <a class="reference external" href="http://coco.gforge.inria.fr/doku.php?id=downloads">here</a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Contents</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Installation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Contents"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+
+----
+
+
+**In the mid-term, Inria's GForge servers will be shut down and this webpage will only serve as a historical reference until then. For the up-to-date webpage, please go to https://numbbo.github.io/data-archive/bbob-biobj/**
+
+
+----
+
+
+The following table lists all submitted algorithm data sets on the bbob-biobj test suite, related to the BBOB workshops together with links to their corresponding papers. In order to sort the table according to some columns, please click on the corresponding table header. If available, the source codes of the algorithms can be downloaded by clicking on the link with the corresponding algorithm name in the second column. 
+
+<sortable>
+^No^Algorithm (+Code)^Year^Author(s)^COCO data^related PDFs and Remarks^
+|biobj-000|DEMO|2016|Tušar and Filipič|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/DEMO_Tusar_bbob-biobj.tgz|data]]|[[http://coco.gforge.inria.fr/presentation-archive/2016-GECCO/02_Tea_DEMO_handouts.pdf|slides]]|
+|biobj-001|HMO-CMA-ES|2016|Loshchilov and Glasmachers|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/HMO-CMA-ES_Loshchilov_bbob-biobj.tgz|data]]|[[https://arxiv.org/pdf/1605.02720|PDF]]|
+|biobj-002|MAT-DIRECT|2016|Al-Dujaili and Sundaram|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/MAT-DIRECT_Al-Dujaili_bbob-biobj.tgz|data]]|[[http://coco.gforge.inria.fr/presentation-archive/2016-GECCO/06_Cheryl_MO-MATSuMoTo.pdf|slides]]|
+|biobj-003|MAT-SMS|2016|Al-Dujaili and Sundaram|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/MAT-SMS_Al-Dujaili_bbob-biobj.tgz|data]]|[[http://coco.gforge.inria.fr/presentation-archive/2016-GECCO/06_Cheryl_MO-MATSuMoTo.pdf|slides]]|
+|biobj-004|MO-DIRECT-HV-Rank|2016|Wong et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/MO-DIRECT-HV-Rank_Wong_bbob-biobj.tgz|data]]|[[http://atmri.ntu.edu.sg/Publications/Documents/Cognitive_team_theoretic/6%20Hypervolume-Based%20Direct.pdf|PDF]]|
+|biobj-005|MO-DIRECT-ND|2016|Wong et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/MO-DIRECT-ND_Wong_bbob-biobj.tgz|data]]|[[http://atmri.ntu.edu.sg/Publications/Documents/Cognitive_team_theoretic/6%20Hypervolume-Based%20Direct.pdf|PDF]]|
+|biobj-006|MO-DIRECT-Rank|2016|Wong et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/MO-DIRECT-Rank_Wong_bbob-biobj.tgz|data]]|[[http://atmri.ntu.edu.sg/Publications/Documents/Cognitive_team_theoretic/6%20Hypervolume-Based%20Direct.pdf|PDF]]|
+|biobj-007|NSGA-II-MATLAB|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/NSGA-II-MATLAB_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435445/document|PDF]]|
+|biobj-008|RANDOMSEARCH-4|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/RANDOMSEARCH-4_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435453/document|PDF]]|
+|biobj-009|RANDOMSEARCH-5|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/RANDOMSEARCH-5_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435455/document|PDF]][[https://hal.inria.fr/hal-01435453/document|PDFcmp]]|
+|biobj-010|RANDOMSEARCH-100|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/RANDOMSEARCH-100_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435453/document|PDF]]|
+|biobj-011|RM-MEDA|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/RM-MEDA_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435449/document|PDF]]|
+|biobj-012|SMS-EMOA-DE|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/SMS-EMOA-DE_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435456/document|PDF]]|
+|biobj-013|SMS-EMOA-PM|2016|Auger et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/SMS-EMOA-PM_Auger_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-01435456/document|PDF]]|
+|biobj-014|UP-MO-CMA-ES|2016|Krause et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2016/UP-MO-CMA-ES_Krause_bbob-biobj.tgz|data]]|[[https://www.ini.rub.de/PEOPLE/glasmtbl/paper/krause2016.pdf|PDF]]|
+|biobj-015|SMS-EMOA-SA|2017|Wessing|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2017/SMS-EMOA-SA_Wessing_bbob-biobj.tgz|data]]|[[http://dl.acm.org/authorize?N33826|doi]] [[http://ls11-www.cs.tu-dortmund.de/staff/wessing#section20171|link to paper]]|
+|biobj-016|COMO-1e3|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/COMO-1e3_dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-017|COMO-3|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/COMO-3_dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-018|COMO-10|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/COMO-10_dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-019|COMO-32|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/COMO-32_dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-020|COMO-100|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/COMO-100_dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-021|COMO-316|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/COMO-316_dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-022|GDE3-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/GDE3-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-023|IBEA-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/IBEA-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-024|MO-CMA-ES-10|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/MO-CMA-ES-10-autoref_Dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-025|MO-CMA-ES-32|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/MO-CMA-ES-32-autoref_Dufosse_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-026|MO-CMA-ES-100|2019|Dufossé and Touré|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/MO-CMA-ES-100-autoref_Dufosse__bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02161252/file/report.pdf|BBOB-2019 paper]]|
+|biobj-027|MOEAD-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/MOEAD-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-028|N-III-11-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/N-III-11-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-029|N-III-111-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/N-III-111-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-030|NSGA-II-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/NSGA-II-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-031|SPEA2-platypus|2019|Brockhoff and Tušar|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2019/SPEA2-platypus_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-02171136/file/templateBIOBJmultiple-authorversion-compressed.pdf|BBOB-2019 paper]]|
+|biobj-032|DMS|2021|Brockhoff et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2021/DMS_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-03284476/document|BBOB-2021 paper]]|
+|biobj-033|MultiGLODS|2021|Brockhoff et al.|[[http://coco.gforge.inria.fr/data-archive/bbob-biobj/2021/MultiGLODS_Brockhoff_bbob-biobj.tgz|data]]|[[https://hal.inria.fr/hal-03284476/document|BBOB-2021 paper]]|
+</sortable>

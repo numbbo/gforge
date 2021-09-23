@@ -1,0 +1,65 @@
+~~NOCACHE~~
+
+This is the BBOB 2012 results page and here are the results from the workshop held at GECCO in July 2012.
+
+
+== Overview of results on noise-free testbed ==
+The figures below show selected results from BBOB 2012. The empirical runtime distribution is shown for all (bottom right) and five subgroups of the BBOB functions. Click on the respective figures for more details.
+
+[[Higlighted results 2012 (separable functions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_separ.png?200 | Results from BBOB-2012: separable functions  }}]]
+[[Higlighted results 2012 (moderate functions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_lcond.png?200 | Results from BBOB-2012: moderate functions}}]]
+[[Higlighted results 2012 (ill-conditioned functions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_hcond.png?200 | Results from BBOB-2012: ill-conditioned functions}}]]
+
+
+[[Higlighted results 2012 (multimodal structured functions functions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_multi.png?200 | Results from BBOB-2012: multimodal structured functions}}]]
+[[Higlighted results 2012 (multimodal weakly structered ftunctions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_mult2.png?200 | Results from BBOB-2012: multimodal weakly structured functions}}]]
+[[Higlighted results 2012 (all noise-free functions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_noiselessall.png?200 | Results from BBOB-2012: all noise-free functions}}]]
+
+== Overview of results on noisy testbed ==
+The figures below show selected results from BBOB 2012. The empirical runtime distribution is shown for all (bottom right) and three subgroups of the noisy BBOB functions. Click on the respective figures for more details.
+
+[[Higlighted results 2012 (moderate noise)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzmod.png?200 | Results from BBOB-2012: functions with moderate noise }}]]
+[[Higlighted results 2012 (multimodal functions with severe noise)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzsmm.png?200 | Results from BBOB-2012: multimodal functions with severe noise}}]]
+
+[[Higlighted results 2012 (functions with severe noise)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzsev.png?200 | Results from BBOB-2012: functions with severe noise}}]]
+[[Higlighted results 2012 (all noisy functions)|{{http://coco.lri.fr/BBOB2012-results/figures/BBOB2012_20D_nzall.png?200 | Results from BBOB-2012: all noisy functions}}]]
+   
+== Results for all algorithms ==
+The following tables display (the same) results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+    * Comparison tables per function: noiseless testbed dimensions 2-40: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free.pdf|pdf}} 
+    * Comparison tables per function: noisy testbed dimensions 2-40: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy.pdf|pdf}} 
+== Single Function Tables ==
+
+The following tables display (the same) results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+    * Comparison tables per function: noiseless testbed 2-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free_02D.pdf|pdf}} 
+    * Comparison Tables per function: noiseless testbed 3-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free_03D.pdf|pdf}} 
+    * Comparison Tables per function: noiseless testbed 5-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free_05D.pdf|pdf}} 
+    * Comparison Tables per function: noiseless testbed 10-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free_10D.pdf|pdf}} 
+    * Comparison Tables per function: noiseless testbed 20-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free_20D.pdf|pdf}} 
+    * Comparison Tables per function: noiseless testbed 40-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noise-free_40D.pdf|pdf}} 
+    * Comparison tables per function: noisy testbed 2-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy_02D.pdf|pdf}} 
+    * Comparison Tables per function: noisy testbed 3-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy_03D.pdf|pdf}} 
+    * Comparison Tables per function: noisy testbed 5-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy_05D.pdf|pdf}} 
+    * Comparison Tables per function: noisy testbed 10-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy_10D.pdf|pdf}} 
+    * Comparison Tables per function: noisy testbed 20-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy_20D.pdf|pdf}} 
+    * Comparison Tables per function: noisy testbed 40-D: {{http://coco.lri.fr/BBOB2012-results/tables/BBOB2012Tables_noisy_40D.pdf|pdf}} 
+
+
+== Data ==
+    * [[http://coco.gforge.inria.fr/data-archive/bbob/2012/ | root data folder for noiseless test suite ]]
+    * [[http://coco.gforge.inria.fr/data-archive/bbob-noisy/2012/ | root data folder for noisy test suite ]]
+    * [[algorithms | overview page for all algorithms (PDFs, data, etc.) ]]
+
+== Resources: Source code ==
+    * Ilya Loshchilov, Marc Schoenauer, and Michèle Sebag: Black-Box Optimization Benchmarking of IPOP-SaACM-ES and Bipop-SaACM-ES on the BBOB-2012 Noiseless Testbed {{http://coco.gforge.inria.fr/BBOB2012sourcecodes/loshchilov_BBOB2012_noiseless_BIPOPsaACM.tgz|BIPOPsaACM}} {{http://coco.gforge.inria.fr/BBOB2012sourcecodes/loshchilov_BBOB2012_noiseless_IPOPsaACM.tgz|IPOPsaACM}}
+    * Ilya Loshchilov, Marc Schoenauer, and Michèle Sebag: Black-box Optimization Benchmarking of NIPOP-aCMA-ES and NBIPOP-aCMA-ES on the BBOB-2012 Noiseless Testbed {{http://coco.gforge.inria.fr/BBOB2012sourcecodes/loshchilov_BBOB2012_noiseless_BIPOPaCMA.tgz|BIPOPaCMA}} {{http://coco.gforge.inria.fr/BBOB2012sourcecodes/loshchilov_BBOB2012_noiseless_NBIPOP_NIPOPaCMA.tgz|NBIPOP and NBIPOPaCMA}}
+    * Ilya Loshchilov, Marc Schoenauer, and Michèle Sebag: Black-box Optimization Benchmarking of IPOP-saACM-ES on the BBOB-2012 Noisy Testbed {{http://coco.gforge.inria.fr/BBOB2012sourcecodes/loshchilov_BBOB2012_noisy_IPOPsaACM.tgz|IPOPsaACMnoisy}}
+    * Petr Pošík and Václav Klemš: Benchmarking the Differential Evolution with Adaptive Encoding on Noiseless Functions ([[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_DEAE_code_v1.zip|DEAE]], [[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_JADE_code_v1.zip|JADE]], [[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_DE_code_v1.zip|DE]], [[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_CMAES_code_v1.zip|CMAES]])
+    * Petr Pošík and Václav Klemš: JADE, an Adaptive Differential Evolution Algorithm, Benchmarked on the BBOB Noiseless Testbed ([[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_JADEctpb_code_v1.zip|JADEctpb]], [[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_JADEb_code_v1.zip|JADEb]], [[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_DEctpb_code_v1.zip|DEctpb]], [[http://coco.gforge.inria.fr/BBOB2012sourcecodes/posik_BBOB2012_DEb_code_v1.zip|DEb]])
+
+
+
+
+== Resources: Published papers ==
+    * [[http://www.lri.fr/~hansen/proceedings/2012/GECCO/forms/companion.htm#5 | all papers by title and authors ]]
+    * [[http://coco.lri.fr/BBOB2012-papers | all papers by first author and paper ID]]

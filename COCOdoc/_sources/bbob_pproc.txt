@@ -1,0 +1,69 @@
+:py:mod:`bbob_pproc` API
+========================
+
+.. only:: html
+    
+    .. contents::
+       :local:
+    
+    .. toctree::
+       :maxdepth: 2
+    
+       bbob_pprocinternal.rst
+       figtables.rst
+       comp2.rst
+       compall.rst
+    
+    :py:mod:`bbob_pproc`
+    --------------------
+    
+    .. automodule:: bbob_pproc
+    
+    :py:mod:`bbob_pproc.rungeneric`
+    -------------------------------
+    
+    .. automodule:: bbob_pproc.rungeneric
+       :members:
+       :undoc-members:
+    
+    :py:mod:`bbob_pproc.rungeneric1`
+    --------------------------------
+    
+    .. automodule:: bbob_pproc.rungeneric1
+       :members:
+       :undoc-members:
+
+    :py:mod:`bbob_pproc.rungeneric2`
+    --------------------------------
+    
+    .. automodule:: bbob_pproc.rungeneric2
+       :members:
+       :undoc-members:
+
+    :py:mod:`bbob_pproc.rungenericmany`
+    -----------------------------------
+    
+    .. automodule:: bbob_pproc.rungenericmany
+       :members:
+       :undoc-members:
+
+    :py:mod:`bbob_pproc.genericsettings`
+    ------------------------------------
+    
+    .. automodule:: bbob_pproc.genericsettings
+       :members:
+       :undoc-members:
+
+..    :py:mod:`bbob_pproc.bwsettings`
+    -------------------------------
+    
+..    .. automodule:: bbob_pproc.bwsettings
+       :members:
+       :undoc-members:
+
+..    :py:mod:`bbob_pproc.grayscalesettings`
+    --------------------------------------
+    
+..    .. automodule:: bbob_pproc.grayscalesettings
+       :members:
+       :undoc-members:

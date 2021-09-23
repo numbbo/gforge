@@ -1,0 +1,21 @@
+Preliminary program for the BBOB 2012 workshop, 7th July 2012.
+
+|| ||**1st session: 8:30 - 10:20**||
+||8:30-9:00 ||BBOB introduction (AA)||
+||9:00-9:30 ||//P. Pošík// "Towards an Adaptive Differential Evolution"||
+||9:30-10:05 ||//T. Schaul// "Benchmarking Natural Evolution Strategies"||
+||10:05-10:20 ||Special Mini-Tutorial (PP)||
+|| ||**2nd session: 10:40 - 12:30**||
+||10:40-10:55 ||Turbo-Intro to BBOB and introduction to noisy functions (NH)||
+||10:55-11:35 ||//I. Loshchilov// "New surrogate-assisted search control and restart strategies for CMA-ES"||
+||11:40-12:00 ||//M. A. Montes de Oca// "An ACO Algorithm Benchmarked on the BBOB Noiseless Function Testbed"||
+|| ||**3rd session: 14:00 - 15:50 (short session)**||
+||14:00-14:10||Turbo-Intro to BBOB and last sessions highlights (VHM)||
+||14:10-14:35|| //G. Piperagkas// "Introducing MEMPSODE to BBOB Competition"||
+||14:40-14:55 ||//V. Melo// "Benchmarking the Multi-View Differential Evolution on the Noiseless BBOB-2012 Function Testbed"||
+|| || <del>//Y.-C. Chuang// "Black-Box Optimization Benchmarking for Noiseless Function Testbed Using Direction-Based RCGA"</del>||
+||15:00-15:20 ||Tutorial "What can be learned from the BBOB functions?" (VHM)||
+|| ||**4th session: 16:10 - 18:00**||
+||16:10-16:40 ||//D. Brockhoff// "Weighted Recombination Evolution Strategies with Mirrored Sampling on the Noiseless BBOB Test Bed"||
+||16:45-17:00 ||Summary of Workshop Results (NN)||
+||17:00-18:00 ||[[bbob-2012-discussion-topics|Panel discussion]]||

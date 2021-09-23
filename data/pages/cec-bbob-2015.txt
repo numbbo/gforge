@@ -1,0 +1,103 @@
+
+====== Black-Box Optimization Benchmarking at CEC'2015 (CEC-BBOB) ======
+=== Special session on Unbounded Real-Parameter Blackbox Optimization ===
+
+Benchmarking of optimization algorithms is crucial to assess performance
+of optimizers quantitatively, understand weaknesses and strengths of
+each algorithm and is the compulsory path to test new algorithm designs.
+The black-box-optimization benchmarking special session at CEC'2015 is focused on
+benchmarking for (i) unconstrained optimization and (ii) possibly in
+expensive settings where only a limited budget is affordable (e.g.
+(meta-)model assisted algorithms).
+
+A thorough methodology for benchmarking has been defined in [1] and
+is implemented within the COCO framework (http://coco.gforge.inria.fr/)
+that eases the benchmarking task. It indeed provides source code in
+various languages (C, Matlab, Java, R, Python) to furnish most of the tedious tasks of benchmarking for the participants: 
+  * choice and implementation of a well-motivated single-objective benchmark function testbed, 
+  * design of an experimental set-up, 
+  * generation of data output, and
+  * post-processing and presentation of the results in graphs and tables (up to already prepared LaTeX templates for writing papers).
+
+Participants of the special session are invited to submit a paper with
+the results of any black-box optimization algorithm of their choice. We
+encourage particularly submissions related to expensive optimization
+(with a limited budget) and comparisons with algorithms from the COCO
+database. Participants are also encouraged to use the existing database
+for statistical analyses or for designing a portfolio of algorithms.
+
+This session being related to the special session and competition on bound constrained
+optimization organized by Ponnuthurai Nagaratnam Suganthan et al. (http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2015/CEC2015.htm), submissions
+to both sessions are encouraged while we require here that papers
+presenting benchmarking results follow the benchmarking methodology
+defined in [1] and implemented within the COCO framework. Papers
+discussing benchmarking methodology are also welcome.
+
+Note that for the CEC-BBOB-2015 special session, we provide essentially the same test-suite as in the previous editions of BBOB held at GECCO. Two testbeds are provided, 
+
+  * noise-free functions and 
+  * noisy functions
+
+for which we distinguish between an expensive optimization scenario (where a focus on the first 100D function evaluations is assumed) and a general scenario for which we do not limit the maximal number of function evaluations made.
+
+The participants can freely choose any or all of them. We entirely ban different parameter settings for different test functions and encourage analyses that study the impact of parameter setting changes.
+
+
+
+The source code of the test-functions is available in
+Matlab, C, Java, R and Python. 
+Downloads will be made available at [[http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads|CEC-BBOB-2015 downloads]]. 
+
+
+[1] Real-Parameter Black-Box Optimization Benchmarking: Experimental
+Setup, http://coco.lri.fr/downloads/download13.09/bbobdocexperiment.pdf.
+
+=== The Special Session Papers ===
+We encourage any submission that is concerned with black-box optimization benchmarking of continuous optimizers, for example, benchmarking new or not-so-new algorithms on the CEC-BBOB-2015 testbed or analyzing the data obtained in previous editions of BBOB. Similar to the BBOB-2013 edition, we also focus on benchmarking optimization algorithms for expensive optimization which especially invites to benchmark surrogate-assisted algorithms (e.g. based on kriging, support vector machines etc.).
+
+All papers shall follow the CEC'2015 guidelines and several templates, that comply with these guidelines, are going to be provided:
+
+    * one for benchmarking one algorithm that should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software) and where the used algorithm is presented and the necessary details to reproduce the result are given
+    * one for comparing two algorithms
+    * and one for comparing three or more algorithms
+
+
+=== Organisation of the Special Session during the CEC conference ===
+
+During the special session, algorithms and results will be presented by the participants. 
+An overall analysis and comparison will be accomplished by the organizers
+and all submitted papers will be critically reviewed as for any other CEC'2015 paper. 
+A planned plenary discussion on future improvements will, among others, 
+address the question, of how the testbed should evolve.
+
+=== How to submit papers ===
+Get all the material from the [[CEC-BBOB-2015-downloads|download page]] to run an experiment and prepare the paper. For the paper & data submission see [[CEC-uploads|submission procedure]]. 
+
+
+=== Support Material ===
+Experimental setup documents, code for the benchmark functions (Matlab, C, Java, R, Python) and for the post-processing (Python) are
+provided at the [[CEC-BBOB-2015-downloads|download page]]. To be notified about the release of the code and other news, subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+
+
+=== Important dates ===
+   * 01/11/2014: code released
+   * <del>19/12/2014</del>: submission deadline
+   * <del>16/01/2015</del>: extended submission deadline
+   * <del>20/02/2015</del>: acceptance notification
+   * <del>13/03/2015</del>: final paper version due
+   * <del>27/05/2015</del>: special session at [[http://sites.ieee.org/cec2015|CEC'2015]]
+
+=== Contact and Mailing List ===
+
+You can subscribe (or unsubscribe) to our discussion mailing list by following this link http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss 
+
+To receive announcement about the workshop, send an email to the BBOB team bbob_at_lri.fr with title "register to BBOB announcement list".
+
+=== Organization Committee ===
+
+[[https://sites.google.com/site/youheiakimotospage/|Youhei Akimoto]], Shinshu University, Nagano, Japan\\
+[[https://www.lri.fr/~auger/|Anne Auger]], Inria Saclay - Ile-de-France, Orsay, France\\
+[[http://researchers.lille.inria.fr/~brockhof/|Dimo Brockhoff]], Inria Lille - Nord Europe, Villeneuve d'Ascq, France\\
+[[https://www.lri.fr/~hansen/|Nikolaus Hansen]], Inria Saclay - Ile-de-France, Orsay, France\\
+[[https://p-value.net/|Olaf Mersmann]], TU Dortmund University, Dortmund, Germany\\
+[[http://labe.felk.cvut.cz/~posik/|Petr Pošík]], Czech Technical University, Prague, Czech Republic

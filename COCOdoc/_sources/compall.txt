@@ -1,0 +1,47 @@
+:py:mod:`bbob_pproc.compall`
+============================
+
+.. contents::
+   :local:
+
+:py:mod:`bbob_pproc.compall`
+----------------------------
+
+.. automodule:: bbob_pproc.compall
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.compall.organizeRTDpictures`
+------------------------------------------------
+
+.. automodule:: bbob_pproc.compall.organizeRTDpictures
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.compall.ppfigs`
+-----------------------------------
+
+.. automodule:: bbob_pproc.compall.ppfigs
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.compall.ppperfprof`
+---------------------------------------
+
+.. automodule:: bbob_pproc.compall.ppperfprof
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.compall.pprldmany`
+---------------------------------------
+
+.. automodule:: bbob_pproc.compall.pprldmany
+   :members:
+   :undoc-members:
+
+:py:mod:`bbob_pproc.compall.pptables`
+-------------------------------------
+
+.. automodule:: bbob_pproc.compall.pptables
+   :members:
+   :undoc-members:

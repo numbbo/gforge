@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Black-Box Optimization Benchmarking Procedure &mdash; COCO 15.03
+ documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '15.03
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="COCO 15.03
+ documentation" href="index.html" />
+    <link rel="next" title="Running Experiments with COCO" href="runningexp.html" />
+    <link rel="prev" title="What is the purpose of COCO?" href="firsttime.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="runningexp.html" title="Running Experiments with COCO"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="firsttime.html" title="What is the purpose of COCO?"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="black-box-optimization-benchmarking-procedure">
+<span id="sec-bbob"></span><h1>Black-Box Optimization Benchmarking Procedure<a class="headerlink" href="#black-box-optimization-benchmarking-procedure" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://coco.gforge.inria.fr">COCO</a> has been used in several workshops during the <a class="reference external" href="http://www.sigevo.org/gecco-2012/">GECCO</a> conference since <a class="reference external" href="http://www.sigevo.org/gecco-2009/workshops.html#bbob">2009</a> (<a class="reference external" href="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results">BBOB-2009</a>).</p>
+<p>For these workshops, a testbed of 24 noiseless functions and another of 30
+noisy functions are provided. Descriptions of the functions can be found at
+<a class="reference external" href="http://coco.gforge.inria.fr/doku.php?id=downloads">http://coco.gforge.inria.fr/doku.php?id=downloads</a></p>
+<p>This section describes the setup of the experimental procedures and their rationales,  giving the guidelines to produce an article for a GECCO-BBOB workshop using COCO.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#symbols-constants-and-parameters" id="id26">Symbols, Constants, and Parameters</a><ul>
+<li><a class="reference internal" href="#rationale-for-the-choice-of-ntrial-15" id="id27">Rationale for the Choice of Ntrial = 15</a></li>
+<li><a class="reference internal" href="#rationale-for-the-choice-of-ftarget" id="id28">Rationale for the Choice of f<sub>target</sub></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#benchmarking-experiment" id="id29">Benchmarking Experiment</a><ul>
+<li><a class="reference internal" href="#input-to-the-algorithm-and-initialization" id="id30">Input to the Algorithm and Initialization</a></li>
+<li><a class="reference internal" href="#termination-criteria-and-restarts" id="id31">Termination Criteria and Restarts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-complexity-experiment" id="id32">Time Complexity Experiment</a></li>
+<li><a class="reference internal" href="#parameter-setting-and-tuning-of-algorithms" id="id33">Parameter Setting and Tuning of Algorithms</a></li>
+<li><a class="reference internal" href="#performance-measurement" id="id34">Performance Measurement</a><ul>
+<li><a class="reference internal" href="#fixed-cost-versus-fixed-target-scenario" id="id35">Fixed-Cost versus Fixed-Target Scenario</a></li>
+<li><a class="reference internal" href="#expected-running-time" id="id36">Expected Running Time</a></li>
+<li><a class="reference internal" href="#bootstrapping" id="id37">Bootstrapping</a></li>
+<li><a class="reference internal" href="#empirical-cumulative-distribution-functions" id="id38">Empirical Cumulative Distribution Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="symbols-constants-and-parameters">
+<h2><a class="toc-backref" href="#id26">Symbols, Constants, and Parameters</a><a class="headerlink" href="#symbols-constants-and-parameters" title="Permalink to this headline">¶</a></h2>
+<p>For the workshops, some constants were set:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><img class="math" src="_images/math/f9564a9778b8feed126cf83a51952f944d06c7ba.png" alt="D = 2; 3; 5; 10; 20; 40"/></dt>
+<dd>is search space dimensionalities used for all functions.</dd>
+<dt><img class="math" src="_images/math/9da7d9ffff0d7b719eb15b709bb9313154eec884.png" alt="\texttt{Ntrial} = 15"/></dt>
+<dd>is the number of trials for each single setup,
+i.e. each function and dimensionality. The performance is evaluated over all trials.</dd>
+<dt><img class="math" src="_images/math/066c655c4c0b38d522800a4b627f5a46dc72e2ee.png" alt="\Delta f = 10^{-8}"/></dt>
+<dd>precision to reach, that is, a difference to the smallest
+possible function value <img class="math" src="_images/math/48779e2946ac0aa4d8ea6ef9c62e4c6f48e2747e.png" alt="f_\mathrm{opt}"/>.</dd>
+<dt><img class="math" src="_images/math/fa658c3b3cc336d454a31971713d84c00012332e.png" alt="f_\mathrm{target} = f_\mathrm{opt}+\Delta f"/></dt>
+<dd>is target function value to reach for different <img class="math" src="_images/math/27dbe5f0cf8dd28bcf55b9a0672441b210c02cbe.png" alt="\Delta f"/> values.
+The final, smallest considered target function value is
+<img class="math" src="_images/math/af6c4e2df29ecfeaec58f2651ab66ae1df87f26e.png" alt="f_\mathrm{target} = f_\mathrm{opt} + 10^{-8}"/>, but also larger values
+for <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> are evaluated.</dd>
+</dl>
+</div></blockquote>
+<p>The <img class="math" src="_images/math/624aa8fb06170324038d683780fbab4827312ca9.png" alt="\texttt{Ntrial}"/> runs are conducted on different instances of the functions.</p>
+<div class="section" id="rationale-for-the-choice-of-ntrial-15">
+<span id="sec-rationales"></span><h3><a class="toc-backref" href="#id27">Rationale for the Choice of Ntrial = 15</a><a class="headerlink" href="#rationale-for-the-choice-of-ntrial-15" title="Permalink to this headline">¶</a></h3>
+<p>All functions can be instantiated in different &#8220;versions&#8221; (with
+different location of the global optimum and different optimal function value).
+Overall <img class="math" src="_images/math/624aa8fb06170324038d683780fbab4827312ca9.png" alt="\texttt{Ntrial}"/> runs are conducted on different instantiations (in the
+<a class="reference external" href="http://www.sigevo.org/gecco-2009/workshops.html#bbob">2009</a> setup each instance was repeated three times). The parameter
+<img class="math" src="_images/math/624aa8fb06170324038d683780fbab4827312ca9.png" alt="\texttt{Ntrial}"/>, the overall number of trials on each function/dimension pair,
+determines the minimal measurable success rate and influences the
+overall necessary CPU time.  Compared to a standard setup for testing
+stochastic search procedures, we have chosen a small value, <img class="math" src="_images/math/624aa8fb06170324038d683780fbab4827312ca9.png" alt="\texttt{Ntrial}"/> <img class="math" src="_images/math/a25782f6ae29ec432276c6c4010e796c30fd125d.png" alt="=15"/>.
+Consequently, within the same CPU-time budget, single trials can be
+longer and conduct more function evaluations (until <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> is
+reached). If an algorithm terminates before <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> is reached,
+longer trials can simply be achieved by independent multistarts.
+Because these multistarts are conducted within each trial, more
+sophisticated restart strategies are feasible. <strong>Within-trial multistarts
+never impair the used performance measures and are encouraged.</strong> Finally,
+15 trials are sufficient to make relevant performance differences statistically
+significant. <a class="footnote-reference" href="#id5" id="id4">[1]</a></p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>If the number of trials is chosen <em>much</em> larger, small and
+therefore irrelevant
+performance differences become statistically significant.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rationale-for-the-choice-of-ftarget">
+<h3><a class="toc-backref" href="#id28">Rationale for the Choice of f<sub>target</sub></a><a class="headerlink" href="#rationale-for-the-choice-of-ftarget" title="Permalink to this headline">¶</a></h3>
+<p>The initial search domain and the target function value are an essential part
+of the benchmark function definition.  Different target function values might
+lead to different characteristics of the problem to be solved, besides that
+larger target values are invariably less difficult to reach. Functions might be
+easy to solve up to a function value of 1 and become intricate for smaller
+target values.
+We take records for a larger number of predefined target values, defined relative to the known optimal function value <img class="math" src="_images/math/48779e2946ac0aa4d8ea6ef9c62e4c6f48e2747e.png" alt="f_\mathrm{opt}"/> and in principle unbounded from above.
+The chosen value for the final (smallest) <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> is somewhat arbitrary.
+Reasonable values can change by simple modifications in the function
+definition. In order to safely prevent numerical precision problems, the final target is <img class="math" src="_images/math/af6c4e2df29ecfeaec58f2651ab66ae1df87f26e.png" alt="f_\mathrm{target} = f_\mathrm{opt} + 10^{-8}"/>.</p>
+</div>
+</div>
+<div class="section" id="benchmarking-experiment">
+<h2><a class="toc-backref" href="#id29">Benchmarking Experiment</a><a class="headerlink" href="#benchmarking-experiment" title="Permalink to this headline">¶</a></h2>
+<p>The real-parameter search algorithm under consideration is run on a testbed of
+benchmark functions to be minimized (the implementation of the functions is
+provided in C/C++, Java, MATLAB/Octave and Python). On each function and for
+each dimensionality <img class="math" src="_images/math/624aa8fb06170324038d683780fbab4827312ca9.png" alt="\texttt{Ntrial}"/> trials are carried out (see also
+<a class="reference internal" href="#sec-rationales"><span>Rationale for the Choice of Ntrial = 15</span></a>). Different function <em>instances</em> can be used.</p>
+<p>The <code class="file docutils literal"><span class="pre">exampleexperiment.*</span></code> code template is provided to run this experiment. For BBOB-2012, the instances are 1 to 5 and 21 to 30.</p>
+<div class="section" id="input-to-the-algorithm-and-initialization">
+<span id="sec-input"></span><h3><a class="toc-backref" href="#id30">Input to the Algorithm and Initialization</a><a class="headerlink" href="#input-to-the-algorithm-and-initialization" title="Permalink to this headline">¶</a></h3>
+<p>An algorithm can use the following input:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>the search space dimensionality <img class="math" src="_images/math/9dfa31437b58c0473299320aa638151cd88cf61b.png" alt="D"/></li>
+<li>the search domain; all functions of BBOB are defined everywhere in
+<img class="math" src="_images/math/3cac033b4f7c16ed262bf51019f2c93e30e48f4b.png" alt="\mathbb{R}^{D}"/> and have their global optimum in <img class="math" src="_images/math/ec6145ab0c84855ff674787d38bc3e169155f89f.png" alt="[-5,5]^{D}"/>.
+Most BBOB functions have their global optimum in the range
+<img class="math" src="_images/math/3a457e3be1d4d23cf65f7fc405b5aa44c1718505.png" alt="[-4,4]^{D}"/> which can be a reasonable setting for initial solutions.</li>
+<li>indication of the testbed under consideration, i.e. different
+algorithms and/or parameter settings can be used for the
+noise-free and the noisy testbed.</li>
+<li>the final target precision delta-value <img class="math" src="_images/math/066c655c4c0b38d522800a4b627f5a46dc72e2ee.png" alt="\Delta f = 10^{-8}"/> (see above),
+in order to implement effective termination and restart mechanisms
+(which should also prevent early termination)</li>
+<li>the target function value <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/>, however provided <em>only</em> for
+conclusive (final) termination of trials, in order to reduce the
+overall CPU requirements. The target function value must not be used as
+algorithm input otherwise (not even to trigger within-trial
+restarts).</li>
+</ol>
+</div></blockquote>
+<p>Based on these input parameters, the parameter setting and initialization of
+the algorithm is entirely left to the user. As a consequence, the setting shall
+be identical for all benchmark functions of one testbed (the function
+identifier or any known characteristics of the function are, for natural reasons, not allowed as
+input to the algorithm, see also Section <a class="reference internal" href="#sec-tuning"><span>Parameter Setting and Tuning of Algorithms</span></a>).</p>
+</div>
+<div class="section" id="termination-criteria-and-restarts">
+<span id="sec-stopping"></span><h3><a class="toc-backref" href="#id31">Termination Criteria and Restarts</a><a class="headerlink" href="#termination-criteria-and-restarts" title="Permalink to this headline">¶</a></h3>
+<p>Algorithms with any budget of function evaluations, small or large, are
+considered in the analysis of the results. Exploiting a larger number of
+function evaluations increases the chance to achieve better function values or
+even to solve the function up to the final <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> <a class="footnote-reference" href="#id9" id="id6">[2]</a>.
+In any case, a trial can be conclusively terminated if <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> is reached.
+Otherwise, the choice of termination is a relevant part of the algorithm: the
+termination of unsuccessful trials affects the performance. To exploit a large
+number of function evaluations effectively, we suggest considering a multistart
+procedure, which relies on an interim termination of the algorithm.</p>
+<p>Independent restarts do not change the main performance measure,
+<em>expected running time</em> (<img class="math" src="_images/math/d65f00aaaf2311c86f1dc2f1eab26382f43dfe07.png" alt="\mathrm{ERT}"/>, see Appendix <a class="reference internal" href="#sec-ert"><span>Expected Running Time</span></a>) to hit
+a given target. Independent restarts mainly improve the reliability and
+&#8220;visibility&#8221; of the measured value. For example, using a fast algorithm
+with a small success probability, say 5% (or 1%), chances are that not a
+single of 15 trials is successful. With 10 (or 90) independent restarts,
+the success probability will increase to 40% and the performance will
+become visible. At least four to five (here out of 15) successful trials are
+desirable to accomplish a stable performance measurement. This reasoning
+remains valid for any target function value (different values are
+considered in the evaluation).</p>
+<p>Restarts either from a previous solution, or with a different parameter
+setup, for example with different (increasing) population sizes, might be
+considered, as it has been applied quite successful <a class="reference internal" href="#auger-2005a" id="id7">[Auger:2005a]</a> <a class="reference internal" href="#harik-1999" id="id8">[Harik:1999]</a>.</p>
+<p>Choosing different setups mimics what might be done in practice. All restart
+mechanisms are finally considered as part of the algorithm under consideration.</p>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td>The easiest functions of BBOB can be solved
+in less than <img class="math" src="_images/math/7288fa64e66e369b40834b543f04d9944cb5c65d.png" alt="10 D"/> function evaluations, while on the most difficult
+functions a budget of more than <img class="math" src="_images/math/dc87f27b4363a389f9d180aa755227808550947a.png" alt="1000 D^2"/> function
+evaluations to reach the final <img class="math" src="_images/math/af6c4e2df29ecfeaec58f2651ab66ae1df87f26e.png" alt="f_\mathrm{target} = f_\mathrm{opt} + 10^{-8}"/> is expected.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="time-complexity-experiment">
+<h2><a class="toc-backref" href="#id32">Time Complexity Experiment</a><a class="headerlink" href="#time-complexity-experiment" title="Permalink to this headline">¶</a></h2>
+<p>In order to get a rough measurement of the time complexity of the algorithm,
+the overall CPU time is measured when running the algorithm on <img class="math" src="_images/math/bebbe44765f2762a4dd408a4146a98ae53034a08.png" alt="f_8"/>
+(Rosenbrock function) of the BBOB testbed for at least a few tens of seconds
+(and at least a few iterations).  The chosen setup should reflect a &#8220;realistic
+average scenario&#8221;. If another termination criterion is reached, the algorithm
+is restarted (like for a new trial). The <em>CPU-time per function evaluation</em> is
+reported for each dimension. The time complexity experiment is conducted in the
+same dimensions as the benchmarking experiment. The chosen setup, coding
+language, compiler and computational architecture for conducting these
+experiments are described.</p>
+<p>The <code class="file docutils literal"><span class="pre">exampletiming.*</span></code> code template is provided to run this experiment. For CPU-inexpensive algorithms the timing might mainly reflect the time spent in function <a class="reference internal" href="fgeneric.html#module-fgeneric" title="fgeneric"><code class="xref py py-meth docutils literal"><span class="pre">fgeneric</span></code></a>.</p>
+</div>
+<div class="section" id="parameter-setting-and-tuning-of-algorithms">
+<span id="sec-tuning"></span><h2><a class="toc-backref" href="#id33">Parameter Setting and Tuning of Algorithms</a><a class="headerlink" href="#parameter-setting-and-tuning-of-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>The algorithm and the used parameter setting for the algorithm should be
+described thoroughly. Any tuning of parameters to the testbed should be
+described and the approximate number of tested parameter settings should be
+given.</p>
+<p>On all functions the very same parameter setting must be used (which might well depend on the dimensionality, see Section <a class="reference internal" href="#sec-input"><span>Input to the Algorithm and Initialization</span></a>). That means, <em>a priori</em> use of function-dependent parameter settings is prohibited (since 2012).  In other words, the function ID or any function characteristics (like
+separability, multi-modality, ...) cannot be considered as input parameter to the algorithm. Instead, we encourage benchmarking different
+parameter settings as &#8220;different algorithms&#8221; on the entire testbed. In order
+to combine different parameter settings, one might use either multiple runs
+with different parameters (for example restarts, see also
+Section <a class="reference internal" href="#sec-stopping"><span>Termination Criteria and Restarts</span></a>), or use (other) probing techniques for identifying
+function-wise the appropriate parameters online. The underlying assumption in
+this experimental setup is that also in practice we do not know in advance
+whether the algorithm will face <img class="math" src="_images/math/aad9832dd45598090e4be6aaeeaa038dfc093751.png" alt="f_1"/> or <img class="math" src="_images/math/ff9078c258266635e46b9767b0c7e248c865e4ab.png" alt="f_2"/>, a unimodal or a
+multimodal function... therefore we cannot adjust algorithm parameters <em>a
+priori</em> <a class="footnote-reference" href="#id11" id="id10">[3]</a>.</p>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[3]</a></td><td>In contrast to most other function properties, the property of having
+noise can usually be verified easily. Therefore, for noisy functions a
+<em>second</em> testbed has been defined. The two testbeds can be approached <em>a
+priori</em> with different parameter settings or different algorithms.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="performance-measurement">
+<h2><a class="toc-backref" href="#id34">Performance Measurement</a><a class="headerlink" href="#performance-measurement" title="Permalink to this headline">¶</a></h2>
+<p>We advocate performance measures that are:</p>
+<ul class="simple">
+<li>quantitative, ideally with a ratio scale (opposed to interval or ordinal
+scale) <a class="footnote-reference" href="#id16" id="id12">[4]</a> and with a wide variation (i.e., for example, with values ranging
+not only between 0.98 and 1.0)</li>
+<li>well-interpretable, in particular by having a meaning and semantics attached
+to the numbers</li>
+<li>relevant with respect to the &#8220;real world&#8221;</li>
+<li>as simple as possible</li>
+</ul>
+<p>For these reasons we measure &#8220;running times&#8221; to reach a target function value, denoted as fixed-target scenario in the following.</p>
+<div class="section" id="fixed-cost-versus-fixed-target-scenario">
+<span id="sec-verthori"></span><h3><a class="toc-backref" href="#id35">Fixed-Cost versus Fixed-Target Scenario</a><a class="headerlink" href="#fixed-cost-versus-fixed-target-scenario" title="Permalink to this headline">¶</a></h3>
+<p>Two different approaches for collecting data and making measurements from
+experiments are schematically depicted in Figure <a class="reference internal" href="#fig-horizontalvsvertical"><span>Horizontal vs Vertical View</span></a>.</p>
+<div class="figure align-center" id="id24">
+<span id="fig-horizontalvsvertical"></span><a class="reference internal image-reference" href="_images/HorizontalvsVertical.png"><img alt="_images/HorizontalvsVertical.png" src="_images/HorizontalvsVertical.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">Horizontal vs Vertical View</span></p>
+<div class="legend">
+Illustration of fixed-cost view (vertical cuts) and fixed-target view
+(horizontal cuts). Black lines depict the best function value plotted versus
+number of function evaluations.</div>
+</div>
+<dl class="docutils">
+<dt><strong>Fixed-cost scenario (vertical cuts)</strong></dt>
+<dd>Fixing a number of function evaluations (this corresponds to fixing a cost)
+and measuring the function values reached for this given number of function
+evaluations. Fixing search costs can be pictured as drawing a vertical line
+on the convergence graphs (see Figure <a class="reference internal" href="#fig-horizontalvsvertical"><span>Horizontal vs Vertical View</span></a> where
+the line is depicted in red).</dd>
+<dt><strong>Fixed-target scenario (horizontal cuts)</strong></dt>
+<dd>Fixing a target function value and measuring the number of function
+evaluations needed to reach this target function value. Fixing a target can
+be pictured as drawing a horizontal line in the convergence graphs
+(Figure <a class="reference internal" href="#fig-horizontalvsvertical"><span>Horizontal vs Vertical View</span></a> where the line is depicted in blue).</dd>
+</dl>
+<p>It is often argued that the fixed-cost approach is close to what is needed for
+real word applications where the total number of function evaluations is
+limited. On the other hand, also a minimum target requirement needs to be
+achieved in real world applications, for example, getting (noticeably) better
+than the currently available best solution or than a competitor.</p>
+<p>For benchmarking algorithms we prefer the fixed-target scenario over the
+fixed-cost scenario since it gives <em>quantitative and interpretable</em>
+data: the fixed-target scenario (horizontal cut) <em>measures a time</em>
+needed to reach a target function value and allows therefore conclusions
+of the type: Algorithm A is two/ten/hundred times faster than Algorithm
+B in solving this problem (i.e. reaching the given target function
+value). The fixed-cost scenario (vertical cut) does not give
+<em>quantitatively interpretable</em> data: there is no interpretable meaning
+to the fact that Algorithm A reaches a function value that is
+two/ten/hundred times smaller than the one reached by Algorithm B,
+mainly because there is no <em>a priori</em> evidence <em>how much</em> more difficult
+it is to reach a function value that is two/ten/hundred times smaller.
+This, indeed, largely depends on the specific function and on the
+specific function value reached. Furthermore, for algorithms
+that are invariant under certain transformations of the function value (for
+example under order-preserving transformations as algorithms based on
+comparisons like DE, ES, PSO), fixed-target measures can be made
+invariant under these transformations by simply choosing different
+target values while fixed-cost measures require the transformation
+of all resulting data.</p>
+</div>
+<div class="section" id="expected-running-time">
+<span id="sec-ert"></span><h3><a class="toc-backref" href="#id36">Expected Running Time</a><a class="headerlink" href="#expected-running-time" title="Permalink to this headline">¶</a></h3>
+<p>We use the <em>expected running time</em> (<img class="math" src="_images/math/d65f00aaaf2311c86f1dc2f1eab26382f43dfe07.png" alt="\mathrm{ERT}"/>, introduced in <a class="reference internal" href="#price-1997" id="id13">[Price:1997]</a> as
+ENES and analyzed in <a class="reference internal" href="#auger-2005b" id="id14">[Auger:2005b]</a> as success performance) as most
+prominent performance measure. The Expected Running Time is defined as the
+expected number of function evaluations to reach a target function value for
+the first time. For a non-zero success rate <img class="math" src="_images/math/086aaf1079dddbef4cb92f5feb6cf485b60ace08.png" alt="p_{\mathrm{s}}"/>, the <img class="math" src="_images/math/d65f00aaaf2311c86f1dc2f1eab26382f43dfe07.png" alt="\mathrm{ERT}"/> computes to:</p>
+<div class="math" id="eq-spone">
+<p><img src="_images/math/562db009e0ef5ae583c8eb75638a72fdb555b763.png" alt="\begin{eqnarray}
+  \mathrm{ERT}(f_\mathrm{target}) &amp;=&amp; \mathrm{RT}_\mathrm{S} + \frac{1-p_{\mathrm{s}}}{p_{\mathrm{s}}} \,\mathrm{RT}_\mathrm{US} \\
+                                  &amp;=&amp; \frac{p_{\mathrm{s}} \mathrm{RT}_\mathrm{S} + (1-p_{\mathrm{s}}) \mathrm{RT}_\mathrm{US}}{p_{\mathrm{s}}} \\
+                                  &amp;=&amp; \frac{\#\mathrm{FEs}(f_\mathrm{best}\ge f_\mathrm{target})}{\#\mathrm{succ}}
+\end{eqnarray}"/></p>
+</div><p>where the <em>running times</em> <img class="math" src="_images/math/f04afe0b9c4458b8af630d1bb9575a70fd4727c0.png" alt="\mathrm{RT}_\mathrm{S}"/> and <img class="math" src="_images/math/0409f37ab227082b3bbb66cbd5178c628041b73d.png" alt="\mathrm{RT}_\mathrm{US}"/> denote the average number of
+function evaluations for successful and unsuccessful trials, respectively (zero
+for none respective trial), and <img class="math" src="_images/math/086aaf1079dddbef4cb92f5feb6cf485b60ace08.png" alt="p_{\mathrm{s}}"/> denotes the fraction of successful trials.
+Successful trials are those that reached <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/>; evaluations after
+<img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> was reached are disregarded. The
+<img class="math" src="_images/math/9d5d554c75d675e64f7cb6e9059d0ac24722f57a.png" alt="\#\mathrm{FEs}(f_\mathrm{best}(\mathrm{FE}) \ge f_\mathrm{target})"/> is
+the number of function evaluations
+conducted in all trials, while the best function value was not smaller than
+<img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> during the trial, i.e. the sum over all trials of:</p>
+<div class="math">
+<p><img src="_images/math/55f9db91405b9195e241d473a799f9a14369d525.png" alt="\max \{\mathrm{FE} \mbox{ s.t. } f_\mathrm{best}(\mathrm{FE}) \ge f_\mathrm{target} \} ."/></p>
+</div><p>The <img class="math" src="_images/math/297d69d32ebb58bbee2e04511f8221d4fe640f48.png" alt="\#\mathrm{succ}"/> denotes the number of successful trials. <img class="math" src="_images/math/d65f00aaaf2311c86f1dc2f1eab26382f43dfe07.png" alt="\mathrm{ERT}"/> estimates the
+expected running time to reach <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> <a class="reference internal" href="#auger-2005b" id="id15">[Auger:2005b]</a>, as a function of
+<img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/>. In particular, <img class="math" src="_images/math/f04afe0b9c4458b8af630d1bb9575a70fd4727c0.png" alt="\mathrm{RT}_\mathrm{S}"/> and <img class="math" src="_images/math/086aaf1079dddbef4cb92f5feb6cf485b60ace08.png" alt="p_{\mathrm{s}}"/> depend on the <img class="math" src="_images/math/e25562b283b60a89a1720683d6a949718fa0f874.png" alt="f_\mathrm{target}"/> value. Whenever
+not all trials were successful, ERT also depends (strongly) on the termination
+criteria of the algorithm.</p>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[4]</a></td><td><a class="reference external" href="http://en.wikipedia.org/w/index.php?title=Level_of_measurement&amp;oldid=478392481">Wikipedia</a> gives a reasonable introduction to scale types.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="bootstrapping">
+<h3><a class="toc-backref" href="#id37">Bootstrapping</a><a class="headerlink" href="#bootstrapping" title="Permalink to this headline">¶</a></h3>
+<p>The <img class="math" src="_images/math/d65f00aaaf2311c86f1dc2f1eab26382f43dfe07.png" alt="\mathrm{ERT}"/> computes a single measurement from a data sample set (in our case
+from <img class="math" src="_images/math/624aa8fb06170324038d683780fbab4827312ca9.png" alt="\texttt{Ntrial}"/> optimization runs). Bootstrapping <a class="reference internal" href="#efron-1993" id="id18">[Efron:1993]</a> can provide a
+dispersion measure for this aggregated measurement: here, a &#8220;single data
+sample&#8221; is derived from the original data by repeatedly drawing single trials
+with replacement until a successful trial is drawn. The running time of the
+single sample is computed as the sum of function evaluations in the drawn
+trials (for the last trial up to where the target function value is reached)
+<a class="reference internal" href="#auger-2005b" id="id19">[Auger:2005b]</a> <a class="reference internal" href="#auger-2009" id="id20">[Auger:2009]</a>. The distribution of the
+bootstrapped running times is, besides its displacement, a good approximation
+of the true distribution. We provide some percentiles of the bootstrapped
+distribution.</p>
+</div>
+<div class="section" id="empirical-cumulative-distribution-functions">
+<h3><a class="toc-backref" href="#id38">Empirical Cumulative Distribution Functions</a><a class="headerlink" href="#empirical-cumulative-distribution-functions" title="Permalink to this headline">¶</a></h3>
+<p>We exploit the &#8220;horizontal and vertical&#8221; viewpoints introduced in the last
+Section <a class="reference internal" href="#sec-verthori"><span>Fixed-Cost versus Fixed-Target Scenario</span></a>. In Figure <a class="reference internal" href="#fig-ecdf"><span>ECDF</span></a> we plot the <abbr title="Empirical Cumulative Distribution Function">ECDF</abbr> <a class="footnote-reference" href="#id22" id="id21">[5]</a> of the intersection point
+values (stars in Figure <a class="reference internal" href="#fig-horizontalvsvertical"><span>Horizontal vs Vertical View</span></a>) for 450 trials.</p>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id21">[5]</a></td><td>The empirical (cumulative) distribution function
+<img class="math" src="_images/math/08f38db6090f3398a0578b52891b22ec4011547d.png" alt="F:\mathbb{R}\to[0,1]"/> is defined for a given set of real-valued data
+<img class="math" src="_images/math/11a85f3c69ae6702cb1d99d3de451913b8f84c04.png" alt="S"/>, such that <img class="math" src="_images/math/9f5e4397826c0a9d063690c484922b2fcbe72f17.png" alt="F(x)"/> equals the fraction of elements in
+<img class="math" src="_images/math/11a85f3c69ae6702cb1d99d3de451913b8f84c04.png" alt="S"/> which are smaller than <img class="math" src="_images/math/188c175aac0a8a9c22499336711b5d7256407254.png" alt="x"/>. The function <img class="math" src="_images/math/183421431fcc0a42e22f825a33dcc3c51607fa6e.png" alt="F"/> is
+monotonous and a lossless representation of the (unordered) set <img class="math" src="_images/math/11a85f3c69ae6702cb1d99d3de451913b8f84c04.png" alt="S"/>.</td></tr>
+</tbody>
+</table>
+<div class="figure align-center" id="id25">
+<span id="fig-ecdf"></span><a class="reference internal image-reference" href="_images/ecdf.png"><img alt="_images/ecdf.png" src="_images/ecdf.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">ECDF</span></p>
+<div class="legend">
+Illustration of empirical (cumulative) distribution functions (ECDF) of
+running length (left) and precision (right) arising respectively from the
+fixed-target and the fixed-cost scenarios in Figure
+<a class="reference internal" href="#fig-horizontalvsvertical"><span>Horizontal vs Vertical View</span></a>. In each graph the data of 450 trials are
+shown. Left subplot: ECDF of the running time (number of function
+evaluations), divided by search space dimension <img class="math" src="_images/math/9dfa31437b58c0473299320aa638151cd88cf61b.png" alt="D"/>, to fall below
+<img class="math" src="_images/math/9dc8586c93e823971ba1cee6b964e2e552fa7466.png" alt="f_\mathrm{opt} + \Delta f"/> with <img class="math" src="_images/math/61f449199a8f2d973b5ad7aa92db2a35f178fe60.png" alt="\Delta f = 10^{k}"/>, where
+<img class="math" src="_images/math/6d2be265ef79dea4aff76715acfa542156652a84.png" alt="k=1,-1,-4,-8"/> is the first value in the legend. Data for algorithms
+submitted for BBOB 2009 and <img class="math" src="_images/math/0c03f6e01bd52f38a541782748b2acc7ad6152f8.png" alt="\Delta f= 10^{-8}"/> are represented in the
+background in light brown. Right subplot: ECDF of the best achieved
+precision <img class="math" src="_images/math/27dbe5f0cf8dd28bcf55b9a0672441b210c02cbe.png" alt="\Delta f"/> divided by 10<sup>k</sup> (thick red and upper left
+lines in continuation of the left subplot), and best achieved precision
+divided by 10<sup>-8</sup> for running times of <img class="math" src="_images/math/9dfa31437b58c0473299320aa638151cd88cf61b.png" alt="D"/>, <img class="math" src="_images/math/1ccc949722b033c89cabe57c1ee484bc6cd3c82c.png" alt="10\,D"/>,
+<img class="math" src="_images/math/e3b412764fe771222331166d9475c2d4124e05bf.png" alt="100\,D"/>, <img class="math" src="_images/math/2aeb32f3e2759819aeedfcfe005ee8f9e5d29e29.png" alt="1000\,D"/>... function evaluations (from the rightmost
+line to the left cycling through black-cyan-magenta-black).</div>
+</div>
+<p>A cutting line in Figure <a class="reference internal" href="#fig-horizontalvsvertical"><span>Horizontal vs Vertical View</span></a> corresponds to a
+&#8220;data&#8221; line in Figure <a class="reference internal" href="#fig-ecdf"><span>ECDF</span></a>, where 450 (30 x 15) convergence graphs
+are evaluated. For example, the thick red graph in Figure <a class="reference internal" href="#fig-ecdf"><span>ECDF</span></a> shows
+on the left the distribution of the running length (number of function
+evaluations) <a class="reference internal" href="#hoos-1998" id="id23">[Hoos:1998]</a> for reaching precision
+<img class="math" src="_images/math/066c655c4c0b38d522800a4b627f5a46dc72e2ee.png" alt="\Delta f = 10^{-8}"/> (horizontal cut). The graph continues on the right
+as a vertical cut for the maximum number of function evaluations, showing the
+distribution of the best achieved <img class="math" src="_images/math/27dbe5f0cf8dd28bcf55b9a0672441b210c02cbe.png" alt="\Delta f"/> values, divided by 10<sup>-8</sup>. Run length distributions are shown for different target precisions
+<img class="math" src="_images/math/27dbe5f0cf8dd28bcf55b9a0672441b210c02cbe.png" alt="\Delta f"/> on the left (by moving the horizontal cutting line up- or
+downwards). Precision distributions are shown for different fixed number of
+function evaluations on the right. Graphs never cross each other. The
+<img class="math" src="_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/>-value at the transition between left and right subplot corresponds to
+the success probability. In the example, just under 50% for precision 10<sup>-8</sup> (thick red) and just above 70% for precision 10<sup>-1</sup> (cyan).</p>
+<table class="docutils citation" frame="void" id="auger-2005a" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[Auger:2005a]</a></td><td>A Auger and N Hansen. A restart CMA evolution strategy with
+increasing population size. In <em>Proceedings of the IEEE Congress on
+Evolutionary Computation (CEC 2005)</em>, pages 1769–1776. IEEE Press, 2005.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="auger-2005b" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Auger:2005b]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id15">2</a>, <a class="fn-backref" href="#id19">3</a>)</em> A. Auger and N. Hansen. Performance evaluation of an advanced
+local search evolutionary algorithm. In <em>Proceedings of the IEEE Congress on
+Evolutionary Computation (CEC 2005)</em>, pages 1777–1784, 2005.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="auger-2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id20">[Auger:2009]</a></td><td>Anne Auger and Raymond Ros. Benchmarking the pure
+random search on the BBOB-2009 testbed. In Franz Rothlauf, editor, <em>GECCO
+(Companion)</em>, pages 2479–2484. ACM, 2009.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="efron-1993" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id18">[Efron:1993]</a></td><td>B. Efron and R. Tibshirani. <em>An introduction to the
+bootstrap.</em> Chapman &amp; Hall/CRC, 1993.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="harik-1999" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[Harik:1999]</a></td><td>G.R. Harik and F.G. Lobo. A parameter-less genetic
+algorithm. In <em>Proceedings of the Genetic and Evolutionary Computation
+Conference (GECCO)</em>, volume 1, pages 258–265. ACM, 1999.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="hoos-1998" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id23">[Hoos:1998]</a></td><td>H.H. Hoos and T. Stützle. Evaluating Las Vegas
+algorithms—pitfalls and remedies. In <em>Proceedings of the Fourteenth
+Conference on Uncertainty in Artificial Intelligence (UAI-98)</em>,
+pages 238–245, 1998.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="price-1997" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[Price:1997]</a></td><td>K. Price. Differential evolution vs. the functions of
+the second ICEO. In Proceedings of the IEEE International Congress on
+Evolutionary Computation, pages 153–157, 1997.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Black-Box Optimization Benchmarking Procedure</a><ul>
+<li><a class="reference internal" href="#symbols-constants-and-parameters">Symbols, Constants, and Parameters</a><ul>
+<li><a class="reference internal" href="#rationale-for-the-choice-of-ntrial-15">Rationale for the Choice of Ntrial = 15</a></li>
+<li><a class="reference internal" href="#rationale-for-the-choice-of-ftarget">Rationale for the Choice of f<sub>target</sub></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#benchmarking-experiment">Benchmarking Experiment</a><ul>
+<li><a class="reference internal" href="#input-to-the-algorithm-and-initialization">Input to the Algorithm and Initialization</a></li>
+<li><a class="reference internal" href="#termination-criteria-and-restarts">Termination Criteria and Restarts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-complexity-experiment">Time Complexity Experiment</a></li>
+<li><a class="reference internal" href="#parameter-setting-and-tuning-of-algorithms">Parameter Setting and Tuning of Algorithms</a></li>
+<li><a class="reference internal" href="#performance-measurement">Performance Measurement</a><ul>
+<li><a class="reference internal" href="#fixed-cost-versus-fixed-target-scenario">Fixed-Cost versus Fixed-Target Scenario</a></li>
+<li><a class="reference internal" href="#expected-running-time">Expected Running Time</a></li>
+<li><a class="reference internal" href="#bootstrapping">Bootstrapping</a></li>
+<li><a class="reference internal" href="#empirical-cumulative-distribution-functions">Empirical Cumulative Distribution Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="firsttime.html"
+                        title="previous chapter">What is the purpose of COCO?</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="runningexp.html"
+                        title="next chapter">Running Experiments with COCO</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbo_experiment.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="runningexp.html" title="Running Experiments with COCO"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="firsttime.html" title="What is the purpose of COCO?"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO 15.03
+ documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, Finck, Hansen, Ros, Auger.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

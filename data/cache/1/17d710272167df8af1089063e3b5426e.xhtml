@@ -1,0 +1,200 @@
+
+<h1 class="sectionedit1"><a name="black-box_optimization_benchmarking_bbob_2013" id="black-box_optimization_benchmarking_bbob_2013">Black-Box Optimization Benchmarking (BBOB) 2013</a></h1>
+<div class="level1">
+
+</div>
+
+<h4><a name="th_gecco_workshop_for_real-parameter_optimization" id="th_gecco_workshop_for_real-parameter_optimization">4th GECCO Workshop for Real-Parameter Optimization</a></h4>
+<div class="level4">
+
+<p>
+
+The forth Black-Box Optimization Benchmarking workshop took place in Amsterdam on July 06, 2013, as part of GECCO 2013.
+</p>
+
+<p>
+
+
+<br />
+<center>
+
+<a href="/doku.php?id=bbob-2013-results" class="wikilink1" title="bbob-2013-results">workshop results (incl. tables comparing the algorithms)</a>
+</p>
+
+<p>
+<a href="/doku.php?id=bbob-2013-program" class="wikilink1" title="bbob-2013-program">workshop schedule (incl. PDFs of slides)</a>
+
+</center><br />
+</p>
+
+<p>
+Benchmarking of optimization algorithms is crucial to assess performance of optimizers quantitatively, understand weaknesses and
+strengths of each algorithm and is a compulsory path to evaluate new algorithm designs. However, this task turns out to be tedious and difficult to realize even in the single-objective case—at least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2013 workshop for real-parameter optimization, a follow-up of previous editions in <a href="http://coco.gforge.inria.fr/doku.php?id=bbob-2009" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=bbob-2009"  rel="nofollow">2009</a>, <a href="http://coco.gforge.inria.fr/doku.php?id=bbob-2010" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=bbob-2010"  rel="nofollow">2010</a>, and <a href="http://coco.gforge.inria.fr/doku.php?id=bbob-2012" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=bbob-2012"  rel="nofollow">2012</a>, will furnish most of these tedious tasks for its participants:
+</p>
+<ul>
+<li class="level1"><div class="li"> choice and implementation of a well-motivated single-objective benchmark function testbed, </div>
+</li>
+<li class="level1"><div class="li"> design of an experimental set-up, </div>
+</li>
+<li class="level1"><div class="li"> generation of data output, and</div>
+</li>
+<li class="level1"><div class="li"> post-processing and presentation of the results in graphs and tables. </div>
+</li>
+</ul>
+
+<p>
+For this new edition, <strong>we provide essentially the same test-suite</strong> as in the previous years and welcome all high-quality contributions about benchmarking and comparing general numerical optimizers for black-box problems for which the data from all previously benchmarked algorithms is made available on this web page. In addition, we would like to <strong>place further emphasis on expensive optimization</strong> and collect data of optimizers that are especially tailored for problems where only a small budget of function evaluations is affordable. 
+</p>
+
+<p>
+Source code for running experiments in different languages (C, Matlab, Java, R, Python) and
+postprocessing data will be provided as in previous years. What remains to be done for the participants is to allocate CPU-time, run the black-box real-parameter optimizer(s) of their interest in
+ different dimensions a few hundreds of times and finally start the
+ post-processing procedure. Two testbeds are provided, 
+
+</p>
+<ul>
+<li class="level1"><div class="li"> noise-free functions and </div>
+</li>
+<li class="level1"><div class="li"> noisy functions</div>
+</li>
+</ul>
+
+<p>
+
+for which we distinguish between an expensive optimization scenario (where a focus on the first 100D function evaluations is assumed) and a general scenario—compatible with the comparison plots of the previous years.
+</p>
+
+<p>
+The participants can freely choose any or all of them. This new
+edition entirely bans different parameter settings for different test
+functions and encourages analyses that study the impact of parameter
+setting changes.
+</p>
+
+<p>
+
+During the workshop, algorithms and results will be presented by the participants. 
+An overall analysis and comparison will be accomplished by the organizers
+and the overall process will be critically reviewed. 
+A plenary discussion on future improvements will, among others, 
+address the question, of how the testbed should evolve.
+</p>
+
+<p>
+The source code of the test-functions is available in
+Matlab, C, Java, R and Python. 
+Downloads will be made available at <a href="http://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=bbob-2013-downloads"  rel="nofollow">BBOB 2013 downloads</a>. 
+</p>
+
+</div>
+
+<h4><a name="the_workshop_papers" id="the_workshop_papers">The Workshop Papers</a></h4>
+<div class="level4">
+
+<p>
+We encourage any submission that is concerned with black-box optimization benchmarking of continuous optimizers, for example, benchmarking new or not-so-new algorithms on the BBOB-2013 testbed (which have not been tested in BBOB-2009, BBOB-2010, or BBOB-2012) or analyzing the data obtained in BBOB-2009/BBOB-2010/BBOB-2012 or… This year, we also focus on benchmarking optimization algorithms for expensive optimization which especially invites to benchmark surrogate-assisted algorithms (e.g. based on kriging, support vector machines etc.).
+</p>
+
+<p>
+Several templates, that comply with the ACM guidelines, are going to be provided:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> one for benchmarking one algorithm that should contain experimental results obtained with the prescribed experimental procedure (presumably obtained with the provided software) and where the used algorithm is presented and the necessary details to reproduce the result are given (see also <a href="http://coco.lri.fr/BBOB-downloads/download10.0/bbobdocexperiment.pdf" class="urlextern" title="http://coco.lri.fr/BBOB-downloads/download10.0/bbobdocexperiment.pdf"  rel="nofollow">experimental procedure</a>). The paper has no more than 8 pages. We encourage to provide the algorithm source code as well. Example paper: </div>
+<ul>
+<li class="level3"><div class="li"> <a href="/lib/exe/fetch.php?media=example2012nelder.pdf" class="media mediafile mf_pdf" title="example2012nelder.pdf">Nelder-Mead</a> downhill simplex on the noiseless testbed</div>
+</li>
+<li class="level3"><div class="li"> <a href="/lib/exe/fetch.php?media=example2012noisynewuoa.pdf" class="media mediafile mf_pdf" title="example2012noisynewuoa.pdf">NEWUOA</a> on the noisy testbed</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> one which allows the comparison of two optimizers. Example paper:</div>
+<ul>
+<li class="level3"><div class="li"> <a href="/lib/exe/fetch.php?media=example2012cmpnoisefree.pdf" class="media mediafile mf_pdf" title="example2012cmpnoisefree.pdf"> IPOP-CMA-ES vs. BIPOP-CMA-ES</a> on the noiseless testbed</div>
+</li>
+<li class="level3"><div class="li"> <a href="/lib/exe/fetch.php?media=example2012cmpnoisy.pdf" class="media mediafile mf_pdf" title="example2012cmpnoisy.pdf"> NEWUOA vs. BIPOP-CMA-ES</a> on the noisy testbed</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> one which allows the comparison of more than optimizers. Example paper:</div>
+<ul>
+<li class="level3"><div class="li"> <a href="/lib/exe/fetch.php?media=example2012manynoisefree.pdf" class="media mediafile mf_pdf" title="example2012manynoisefree.pdf"> NEWUOA, BIPOP-CMA-ES and IPOP-CMA-ES</a> on the noiseless testbed</div>
+</li>
+<li class="level3"><div class="li"> <a href="/lib/exe/fetch.php?media=example2012manynoisy.pdf" class="media mediafile mf_pdf" title="example2012manynoisy.pdf"> NEWUOA, BIPOP-CMA-ES and IPOP-CMA-ES</a> on the noisy testbed</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h5><a name="how_to_submit_papers" id="how_to_submit_papers">How to submit papers</a></h5>
+<div class="level5">
+
+<p>
+Get all the material from the <a href="/doku.php?id=bbob-2013-downloads" class="wikilink1" title="bbob-2013-downloads">download page</a> to run an experiment and prepare the paper. For the paper &amp; data submission see <a href="/doku.php?id=uploads" class="wikilink1" title="uploads">submission procedure</a>. 
+</p>
+
+</div>
+
+<h4><a name="support_material" id="support_material">Support Material</a></h4>
+<div class="level4">
+
+<p>
+
+Experimental setup documents, code for the benchmark functions (Matlab, C, Java, R, Python) and for the post-processing (Python) are
+provided at the <a href="/doku.php?id=bbob-2013-downloads" class="wikilink1" title="bbob-2013-downloads">download page</a>. To be notified about the release of the code, subscribe to the feed
+<a href="http://coco.gforge.inria.fr/feed.php" class="urlextern" title="http://coco.gforge.inria.fr/feed.php"  rel="nofollow">http://coco.gforge.inria.fr/feed.php</a> and / or subscribe to the announcement list by sending an email to bbob _at_ lri.fr
+</p>
+
+</div>
+
+<h4><a name="important_dates" id="important_dates">Important dates</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> 02/26: code released</div>
+</li>
+<li class="level1"><div class="li"> 03/28: submission deadline</div>
+</li>
+<li class="level1"><div class="li"> 04/15: acceptance notification</div>
+</li>
+<li class="level1"><div class="li"> 04/25: final paper version due</div>
+</li>
+<li class="level1"><div class="li"> 07/06: workshop at <a href="http://www.sigevo.org/gecco-2013" class="urlextern" title="http://www.sigevo.org/gecco-2013"  rel="nofollow">GECCO</a></div>
+</li>
+</ul>
+
+<p>
+
+In order to prepare linking an optimizer to the BBOB-framework code and running first tests, the currently available <a href="http://coco.gforge.inria.fr/doku.php?id=downloads" class="urlextern" title="http://coco.gforge.inria.fr/doku.php?id=downloads"  rel="nofollow">downloads</a> can be used. The code for the final experiment and post-processing obey the very same interface are released soon (see above). 
+</p>
+
+</div>
+
+<h4><a name="contact_and_mailing_list" id="contact_and_mailing_list">Contact and Mailing List</a></h4>
+<div class="level4">
+
+<p>
+
+You can subscribe (or unsubscribe) to our discussion mailing list by following this link <a href="http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss" class="urlextern" title="http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss"  rel="nofollow">http://lists.lri.fr/cgi-bin/mailman/listinfo/bbob-discuss</a>
+</p>
+
+<p>
+To receive announcement about the workshop, send an email to the BBOB team bbob_at_lri.fr with title “register to BBOB announcement list”.
+</p>
+
+</div>
+
+<h4><a name="organization_committee" id="organization_committee">Organization Committee</a></h4>
+<div class="level4">
+
+<p>
+
+Anne Auger, Bernd Bischl, Dimo Brockhoff, Nikolaus Hansen, Olaf Mersmann, Petr Pošík, Heike Trautmann
+
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Black-Box Optimization Benchmarking (BBOB) 2013" [2-] -->

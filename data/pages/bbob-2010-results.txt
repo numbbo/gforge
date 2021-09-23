@@ -1,0 +1,54 @@
+~~NOCACHE~~
+
+This is the BBOB 2010 results page and here are the results from the workshop held in July 2010.
+
+**Updates**\\
+02 Sep 2010: Tables are corrected: ERT was not correct. {{http://coco.lri.fr/BBOB2010-results/tables/difftables2010.txt | List of the changes in the first set of tables}}, {{http://coco.lri.fr/BBOB2010-results/tables2009ref/difftables2010ref2009.txt  | list of the changes in the second set of tables (reference is BBOB-2009)}}. \\
+25 Aug 2010: Tables were updated with reference to GECCO 2010 Proceedings
+
+== Single Function Tables ==
+The following tables display the results relative to the best algorithm from the data set. 
+        *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction.pdf | BBOB-2010: Comparison Tables of All Algorithms on All Noiseless Functions}} 
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction02d.pdf|pdf}} Comparison Tables per function: noiseless testbed 2-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction03d.pdf|pdf}} Comparison Tables per function: noiseless testbed 3-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction05d.pdf|pdf}} Comparison Tables per function: noiseless testbed 5-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction10d.pdf|pdf}} Comparison Tables per function: noiseless testbed 10-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction20d.pdf|pdf}} Comparison Tables per function: noiseless testbed 20-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunction40d.pdf|pdf}} Comparison Tables per function: noiseless testbed 40-D
+        *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy.pdf | BBOB-2010: Comparison Tables of All Algorithms on All Noisy Functions}} 
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy02d.pdf|pdf}} Comparison Tables per function: noisy testbed 2-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy03d.pdf|pdf}} Comparison Tables per function: noisy testbed 3-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy05d.pdf|pdf}} Comparison Tables per function: noisy testbed 5-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy10d.pdf|pdf}} Comparison Tables per function: noisy testbed 10-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy20d.pdf|pdf}} Comparison Tables per function: noisy testbed 20-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables/comptableperfunctionnoisy40d.pdf|pdf}} Comparison Tables per function: noisy testbed 40-D
+
+== Single Function Tables with BBOB-2009 as Reference ==
+
+The following tables display (the same) results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+        *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction.pdf | BBOB-2010: Comparison Tables of All Algorithms on All Noiseless Functions}} 
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction02d.pdf|pdf}} Comparison Tables per function: noiseless testbed 2-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction03d.pdf|pdf}} Comparison Tables per function: noiseless testbed 3-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction05d.pdf|pdf}} Comparison Tables per function: noiseless testbed 5-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction10d.pdf|pdf}} Comparison Tables per function: noiseless testbed 10-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction20d.pdf|pdf}} Comparison Tables per function: noiseless testbed 20-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunction40d.pdf|pdf}} Comparison Tables per function: noiseless testbed 40-D
+        *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy.pdf | BBOB-2010: Comparison Tables of All Algorithms on All Noisy Functions}} 
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy02d.pdf|pdf}} Comparison Tables per function: noisy testbed 2-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy03d.pdf|pdf}} Comparison Tables per function: noisy testbed 3-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy05d.pdf|pdf}} Comparison Tables per function: noisy testbed 5-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy10d.pdf|pdf}} Comparison Tables per function: noisy testbed 10-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy20d.pdf|pdf}} Comparison Tables per function: noisy testbed 20-D
+          *{{http://coco.lri.fr/BBOB2010-results/tables2009ref/comptableperfunctionnoisy40d.pdf|pdf}} Comparison Tables per function: noisy testbed 40-D
+
+== Data ==
+    * [[http://coco.gforge.inria.fr/data-archive/bbob/2010/ | root data folder noiseless test functions]]
+    * [[http://coco.gforge.inria.fr/data-archive/bbob-noisy/2010/ | root data folder noisy test functions]]
+    * [[algorithms | overview page for all algorithms (PDFs, data, etc.) ]]
+
+== Resources: Source code ==
+    * {{auger-et-al-2010-source.tar.gz| Auger et al, all papers}}
+
+== Reference ==
+    * [[http://hal.inria.fr/inria-00516689/en/ | BBOB 2010: Comparison Tables of All Algorithms on All Noiseless Functions, INRIA RT-0388, Updated 10/09/2010]]
+    * [[http://hal.inria.fr/inria-00516690/en/ | BBOB 2010: Comparison Tables of All Algorithms on All Noisy Functions, INRIA RT-0389, Updated 10/09/2010]]

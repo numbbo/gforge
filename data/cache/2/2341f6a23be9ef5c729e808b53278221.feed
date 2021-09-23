@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>http://coco.gforge.inria.fr/</link>
+        <image rdf:resource="http://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2009-03-27T06:47:44+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1237975479&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-downloads&amp;rev=1237735202&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>http://coco.gforge.inria.fr/</link>
+        <url>http://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1237975479&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-25T11:04:39+01:00</dc:date>
+        <dc:creator>sfinck</dc:creator>
+        <title>bbob-2009</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1237975479&amp;do=diff</link>
+        <description>A GECCO Workshop for Real-Parameter Optimization
+
+ Quantifying and comparing performance of optimization algorithms is
+ one important aspect of research in search and optimization. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2009 workshop for real-parameter optimization will furnish most of this
+ tedious task for it's participants: (1)…</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-downloads&amp;rev=1237735202&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-22T16:20:02+01:00</dc:date>
+        <dc:creator>aauger</dc:creator>
+        <title>bbob-2009-downloads</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2009-downloads&amp;rev=1237735202&amp;do=diff</link>
+        <description>This is the BBOB 2009 download page.
+
+[BBOB 2009 (Version 3.3)] (30MB) is all you need and contains all files listed below
+
+
+	*  CODE:
+		* [tar] code in Matlab/Octave 
+		* [tar] code in C 
+		* [tar] post-processing Python package + documentation LaTeX templates</description>
+    </item>
+</rdf:RDF>

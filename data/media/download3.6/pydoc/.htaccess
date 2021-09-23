@@ -1,0 +1,4 @@
+DirectoryIndex bbob_pproc.html
+
+order allow,deny
+allow from all

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://coco.gforge.inria.fr/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://coco.gforge.inria.fr/feed.php">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <description></description>
+        <link>http://coco.gforge.inria.fr/</link>
+        <image rdf:resource="http://coco.gforge.inria.fr/lib/images/favicon.ico" />
+       <dc:date>2010-07-13T12:17:08+02:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1278483597&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1278179171&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1276269281&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=ecj-special-issue&amp;rev=1274860397&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2010&amp;rev=1273256262&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads&amp;rev=1269271285&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1269268055&amp;do=diff"/>
+                <rdf:li rdf:resource="http://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1268331215&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://coco.gforge.inria.fr/lib/images/favicon.ico">
+        <title>COmparing Continuous Optimisers: COCO</title>
+        <link>http://coco.gforge.inria.fr/</link>
+        <url>http://coco.gforge.inria.fr/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1278483597&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-07-07T08:19:57+02:00</dc:date>
+        <dc:creator>rros</dc:creator>
+        <title>downloads - created</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=downloads&amp;rev=1278483597&amp;do=diff</link>
+        <description>This is the COCO download page.
+
+!!BBOB 2010:
+
+BBOB 2010 (Version 10.2, 3.6MB) is all that is needed to run the benchmarking experiments, prepare a single-algorithm workshop paper (comparing to data obtained during BBOB-2009) or compare two or more benchmarked algorithms.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1278179171&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-07-03T19:46:11+02:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>bbob-2010-results</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results&amp;rev=1278179171&amp;do=diff</link>
+        <description>This is the BBOB 2010 results page and here are the first results from the workshop in July 2010, more to come.
+
+Single Function Tables
+
+The following tables display the results relative to the best algorithm from the data set. 
+
+	* [ BBOB-2010: Comparison Tables of All Algorithms on All Noiseless Functions] 
+					* [pdf] Comparison Tables per function: noiseless testbed 2-D
+					* [pdf] Comparison Tables per function: noiseless testbed 3-D
+					* [pdf] Comparison Tables per function: noiseless …</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1276269281&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-06-11T17:14:41+02:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>bbob-2009-results</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results&amp;rev=1276269281&amp;do=diff</link>
+        <description>This is the BBOB 2009 results page and here are the first results from the workshop in July 2009, more to come
+ 
+
+
+Single Function Tables
+
+	* [ BBOB-2009: Comparison Tables of All Algorithms on All Noiseless Functions] 
+					* [pdf] Comparison Tables per function: noiseless testbed 2-D
+					* [pdf] Comparison Tables per function: noiseless testbed 3-D
+					* [pdf] Comparison Tables per function: noiseless testbed 5-D
+					* [pdf] Comparison Tables per function: noiseless testbed 10-D
+					* [pdf…</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=ecj-special-issue&amp;rev=1274860397&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-05-26T09:53:17+02:00</dc:date>
+        <dc:creator>aauger</dc:creator>
+        <title>ecj-special-issue</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=ecj-special-issue&amp;rev=1274860397&amp;do=diff</link>
+        <description>Evolutionary Computation Journal special issue
+
+Call for papers
+
+Following the two BBOB GECCO workshops, we invite participants and other researchers to submit their original work on benchmarking optimizers for real-parameter black-box optimization for an ECJ special issue. Submissions can be extensions of works submitted at the workshops or new submissions. They should be original research which is not published nor currently under review by other journals or conferences.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2010&amp;rev=1273256262&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-05-07T20:17:42+02:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>bbob-2010</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2010&amp;rev=1273256262&amp;do=diff</link>
+        <description>2nd GECCO Workshop for Real-Parameter Optimization
+
+
+ The second Black-Box Optimization Benchmarking workshop will take place in Portland, Wednesday July 7th. The program of the workshop can be downloaded [here].
+ 
+
+ Quantifying and comparing performance of optimization algorithms is
+ one important aspect of research in search and optimization. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it i…</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads&amp;rev=1269271285&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-03-22T16:21:25+02:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>bbob-2010-downloads</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2010-downloads&amp;rev=1269271285&amp;do=diff</link>
+        <description>This is the BBOB 2010 download page.
+
+BBOB 2010 (Version 10.2, 3.6MB) is all that is needed to run the benchmarking experiments, prepare a single-algorithm workshop paper (comparing to data obtained during BBOB-2009) or compare two or more benchmarked algorithms.</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1269268055&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-03-22T15:27:35+02:00</dc:date>
+        <dc:creator>nhansen</dc:creator>
+        <title>bbob-2009</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=bbob-2009&amp;rev=1269268055&amp;do=diff</link>
+        <description>A GECCO Workshop for Real-Parameter Optimization
+
+ Quantifying and comparing performance of optimization algorithms is
+ one important aspect of research in search and optimization. However,
+ this task turns out to be tedious and difficult to realize even in the single-objective case --- at
+ least if one is willing to accomplish it in a scientifically decent
+ and rigorous way. The BBOB 2009 workshop for real-parameter optimization will furnish most of this
+ tedious task for it's participants: (1)…</description>
+    </item>
+    <item rdf:about="http://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1268331215&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-03-11T19:13:35+02:00</dc:date>
+        <dc:creator>aauger</dc:creator>
+        <title>start</title>
+        <link>http://coco.gforge.inria.fr/doku.php?id=start&amp;rev=1268331215&amp;do=diff</link>
+        <description>COCO (COmparing Continuous Optimisers) is a platform for systematic and sound comparisons of real-parameter global optimisers. COCO provides benchmark function testbeds and tools for processing and visualizing data generated by one or several optimizers.</description>
+    </item>
+</rdf:RDF>

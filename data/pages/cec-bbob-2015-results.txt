@@ -1,0 +1,40 @@
+~~NOCACHE~~
+
+This is the CEC-BBOB 2015 results page and here are the results from the special session held at CEC in May 2015.
+
+   
+== Results for all algorithms ==
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+    * Comparison tables per function: noiseless testbed dimensions 2-20: {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed dimensions 2-20 (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_expensive.pdf|pdf}} 
+ 
+== Single Function Tables ==
+
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. Note that there has been no submission for the noisy testbed at CEC 2015 and also none of the algorithms has been benchmarked on the optional 40-dimensional problems.
+
+**Standard Setting**
+    * Comparison tables per function: noiseless testbed 2-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_02D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 3-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_03D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 5-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_05D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 10-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_10D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 20-D: {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_20D.pdf|pdf}} 
+
+**Expensive Setting**
+    * Comparison tables per function: noiseless testbed 2-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_02D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 3-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_03D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 5-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_05D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 10-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_10D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 20-D (expensive setting): {{http://coco.gforge.inria.fr/resulttables-archive/2015-CEC/CECBBOB2015Tables_noise-free_20D_expensive.pdf|pdf}} 
+
+
+
+== Data ==
+    * [[http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-algorithms|overview page listing all 2015 algorithm data sets]]
+    * [[http://coco.gforge.inria.fr/CECBBOB2015archive | root data folder with raw data]]
+    
+
+== Resources: Accepted papers ==
+    * Dimo Brockhoff: Comparison of the MATSuMoTo Library for Expensive Optimization on the Noiseless Black-Box Optimization Benchmarking Testbed {{:pdf2015:03-cec2015-brockhoff.pdf|pdf}}
+    * Bilel Derbel and Philippe Preux: Simultaneous Optimistic Optimization on the Noiseless BBOB Testbed
+    * Ryoji Tanabe and Alex S. Fukunaga: Parameter Tuning for Differential Evolution for Cheap, Medium, and Expensive Computational Budgets {{:pdf2015:02-cec2015-tanabe.pdf|pdf}}
+

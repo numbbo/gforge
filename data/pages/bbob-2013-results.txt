@@ -1,0 +1,57 @@
+~~NOCACHE~~
+
+This is the BBOB 2013 results page and here are the results from the workshop held at GECCO in July 2013.
+
+   
+== Results for all algorithms ==
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+    * Comparison tables per function: noiseless testbed dimensions 2-40: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed dimensions 2-40 (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_expensive.pdf|pdf}} 
+
+Run-length distributions for single functions and all functions in 20-D
+    * Expensive setting {{https://plus.google.com/photos/101835671426479336232/albums/5986943652853077473|Gallery}} 
+    * Standard setting {{https://plus.google.com/photos/101835671426479336232/albums/5986948960858502609|Gallery}}
+ 
+== Single Function Tables ==
+
+The following tables display results relative to the best result of 2009. They can be therefore more easily compared to the result tables from BBOB-2009. 
+
+**Standard Setting**
+    * Comparison tables per function: noiseless testbed 2-D: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_02D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 3-D: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_03D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 5-D: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_05D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 10-D: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_10D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 20-D: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_20D.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 40-D: {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_40D.pdf|pdf}} 
+    * there has been no submission for the noisy testbed in 2013
+
+**Expensive Setting**
+    * Comparison tables per function: noiseless testbed 2-D (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_02D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 3-D (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_03D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 5-D (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_05D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 10-D (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_10D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 20-D (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_20D_expensive.pdf|pdf}} 
+    * Comparison tables per function: noiseless testbed 40-D (expensive setting): {{http://coco.lri.fr/BBOB2013-results/tables/BBOB2013Tables_noise-free_40D_expensive.pdf|pdf}} 
+    * there has been no submission for the noisy testbed in 2013
+
+== Data ==
+    * [[http://coco.gforge.inria.fr/doku.php?id=bbob-2013-algorithms|overview page listing all 2013 algorithm data sets]]
+    * [[http://coco.gforge.inria.fr/data-archive/bbob/2013 | root data folder ]]
+    
+== Resources: Source codes ==
+    * Ilya Loshchilov, Marc Schoenauer, and Michèle Sebag: {{http://coco.gforge.inria.fr/BBOB2013sourcecodes/w0306-loshchilov.tar.gz|BI-population CMA-ES Algorithms with Surrogate Models and Line Searches}}
+    * Thanh-Do Tran, Dimo Brockhoff, and Bilel Derbel: {{sources2013:w0312-tran.tar.gz|Multiobjectivization with NSGA-II on the Noiseless BBOB Testbed}}
+
+== Resources: Accepted papers ==
+    * Costas Voglis: {{pdf2013:w0301-voglis.pdf|Adapt-MEMPSODE: A Memetic Algorithm with Adaptive Selection of Local Searches}}
+    * László Pál: {{pdf2013:w0302-pal.pdf|Benchmarking a Hybrid Multi Level Single Linkage Algorithm on the BBOB Noiseless Testbed}}
+    * László Pál: {{pdf2013:w0303-pal.pdf|Comparison of Multistart Global Optimization Algorithms on the BBOB Noiseless Testbed}}
+    * Tianjun Liao and Thomas Stützle: {{pdf2013:w0304-liao.pdf|Bounding the population size of IPOP-CMA-ES on the Noiseless BBOB Testbed}}
+    * Tianjun Liao and Thomas Stützle: {{pdf2013:w0305-liao.pdf|Testing the impact of parameter tuning on a variant of IPOP-CMA-ES with a bounded maximum population size on the Noiseless BBOB Testbed}}
+    * Ilya Loshchilov, Marc Schoenauer, and Michèle Sebag: {{pdf2013:w0306-loshchilov.pdf|BI-population CMA-ES Algorithms with Surrogate Models and Line Searches}}
+    * Tianjun Liao and Thomas Stützle: {{pdf2013:w0307-liao.pdf|Expensive optimization scenario: IPOP-CMA-ES with a population bound mechanism for Noiseless Function Testbed}}
+    * B.A. Sawyerr, A.O. Adewumi, and M.M. Ali: {{pdf2013:w0308-sawyerr.pdf|Benchmarking Projection-Based Real Coded Genetic Algorithms on BBOB-2013 Noiseless Function Testbed}}
+    * Neal Holtschulte and Melanie Moses: {{pdf2013:w0309-holtschulte.pdf|Benchmarking Cellular Genetic Algorithms on the BBOB Noiseless Testbed}}
+    * Frank Hutter, Holger Hoos, and Kevin Leyton-Brown: {{pdf2013:w0311-hutter.pdf|An evaluation of sequential model-based optimization for expensive blackbox functions}}
+    * Thanh-Do Tran, Dimo Brockhoff, and Bilel Derbel: {{pdf2013:w0312-tran.pdf|Multiobjectivization with NSGA-II on the Noiseless BBOB Testbed}}
+    * Anne Auger, Dimo Brockhoff, and Nikolaus Hansen: {{pdf2013:w0313-auger.pdf|Benchmarking the Local Metamodel CMA-ES on the Noiseless BBOB’2013 Test Bed}}

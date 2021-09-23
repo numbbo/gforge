@@ -1,0 +1,17 @@
+Please upload (1) your pdf file (workshop paper), (2) your data files archive and (3) the source code (or libraries) that can reproduce the data((This is optional, but desired. In case commercial code was used, only the calling script(s) should be submitted such that the data can be reproduced, if the code is added)). Please use as filenames the first authors name plus algorithm name plus, for the final submission, the workshop paper ID, where the algorithm was used, for example 
+
+smith_CHC_ws4p01_v1.pdf \\
+smith_CHC_ws4p01_data_v1.tar.gz \\
+smith_CHC_ws4p01_code_v1.tar.gz
+
+The filesize limit is 25MB. You cannot delete previous submissions but submit as many times as necessary (provided you changed the file names in v2 v3 etc).	 
+		 
+<html>	 
+<form enctype="multipart/form-data" action="uploader.php" method="POST">	 
+<input type="hidden" name="MAX_FILE_SIZE" value="262144000" /> 	 
+Choose a file to upload: <input name="uploadedfile" type="file" />	 
+<input type="submit" value="Upload File" />	 
+</form>	 
+</html>	 
+		 		 
+For any questions or requests, please contact bbob@lri.fr	
