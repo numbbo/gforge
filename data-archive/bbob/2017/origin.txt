@@ -1,0 +1,32 @@
+The data was originally submitted to the BBOB-2017 workshop and the
+data are cleaned-up versioned of the files
+
+EvoSpacePSO-GA-final.zip
+SSEABC.tar.gz
+CMAES-APOP.resubmitted.tgz
+DTS-CMA-ES_1000FED-finalresubmission.tgz
+KL-BIPOP.tgz
+KL-IPOP.tgz
+KL-Restart.tgz
+Ord-H-DTS-resubmitted.tgz
+Ord-N-DTS-resubmitted.tgz
+Ord-Q-DTS-resubmitted.tgz and Ord-Q-DTS_20D-resubmitted.7z combined
+CMA-ES-pitra2017-resubmitted.tgz
+
+in the folder coco/BBOB/workshops/2017-GECCO/submissions-data/.
+
+
+Notes: 
+* The original submission DTS-CMA-ES-resubmitted.tgz was later on
+  replaced by longer experiments in DTS-CMA-ES_1000FED-finalresubmission.tgz
+  after we asked the authors to do so.
+* Ord-Q-DTS-resubmitted.tgz and Ord-Q-DTS_20D-resubmitted.7z were
+  joined after the 20-D data has been submitted by the authors after the 
+  submission deadline but before BBOB-2017. I (Dimo) removed the first entries in
+  all 20-D .info files for everything that is related to instance 1 and
+  the files bbobexp_f??_DIM??.dat. All data in the bbobexp-01_f??_DIM??.dat
+  files have been kept, even if this amounts to 45 instances per function/dimension
+  pair in 20-D.
+* The MATLAB version of CMA-ES, submitted and used within BBOB-2017 by Pitra et al. 
+  do not contain 20-D data (yet) and are therefore not counting as official COCO 
+  data (and are thus also not available online so far).
