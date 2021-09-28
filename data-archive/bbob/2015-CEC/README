@@ -1,0 +1,22 @@
+The data found here correspond to experimental data obtained for the special
+session Black-Box Optimization Benchmarking at CEC'2015 (CEC-BBOB 2015)
+(http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015).
+
+The data are human-readable ASCII files which were obtained using the
+function fgeneric for which the sources and documentation can be found at:
+http://coco.gforge.inria.fr/doku.php?id=cec-bbob-2015-downloads
+
+Note that, starting from 2015, we do not provide the previous python-formatted
+data in order to allow for further developments of the post-processing code.
+
+We list here the algorithms:
+
+MATSUMOTO, submitted by Brockhoff
+R-DE-10e2, submitted by Tanabe and Fukunaga
+R-DE-10e5, submitted by Tanabe and Fukunaga
+RL-SHADE-10e2, submitted by Tanabe and Fukunaga
+RL-SHADE-10e5, submitted by Tanabe and Fukunaga
+R-SHADE-10e2, submitted by Tanabe and Fukunaga
+R-SHADE-20e5, submitted by Tanabe and Fukunaga
+SOO, submitted by Derbel and Preux
+
