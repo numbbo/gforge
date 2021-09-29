@@ -1,0 +1,1 @@
+RewriteRule ^(.*)$ https://docs.google.com/forms/d/1GS48SXGjapUu6WY6Zt-Ma5HCl2izq4ydT7sMa5ujUDI/viewform$1 [R=301,L]
