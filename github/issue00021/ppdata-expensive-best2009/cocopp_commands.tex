@@ -1,0 +1,153 @@
+\providecommand{\bbobecdfcaptionsinglefunctionssingledim}[1]{
+Empirical cumulative distribution of simulated (bootstrapped)
+             runtimes, measured in number of objective function evaluations 
+             divided by dimension (FEvals/DIM) in 
+             dimension #1 and for those targets in
+             $10^{[-8..2]}$ that have just not been reached by 
+             the best algorithm from BBOB 2009 in a given budget of $k$ $\times$ DIM, with 
+             $31$ different values of $k$ chosen 
+             equidistant in logscale within the interval $\{0.5, \dots, 50\}$.
+}
+\providecommand{\cocoversion}{\hspace{\textwidth}\scriptsize\sffamily{}\color{Gray}Data produced with COCO v2.0.480}
+\providecommand{\numofalgs}{2+}
+\providecommand{\bbobECDFslegend}[1]{
+Bootstrapped empirical cumulative distribution of the number of objective function evaluations divided by dimension (FEvals/DIM) for all functions and subgroups in #1-D. The targets are chosen from $10^{[-8..2]}$ such that the best algorithm from BBOB 2009 just not reached them within a given budget of $k$ $\times$ DIM, with $31$ different values of $k$ chosen equidistant in logscale within the interval $\{0.5, \dots, 50\}$. The ``best 2009'' line corresponds to the best \aRT\ observed during BBOB 2009 for each selected target.
+}
+\providecommand{\bbobppfigslegend}[1]{
+Average running time (\aRT\ in number of $f$-evaluations
+                        as $\log_{10}$ value) divided by dimension versus dimension. The target function value
+                        is chosen such that the best algorithm from BBOB 2009 just failed to achieve
+                        an \aRT\ of $10\times\DIM$. Different symbols correspond to different algorithms given in the legend of #1. Light symbols give the maximum number of function evaluations from the longest trial divided by dimension. Black stars indicate a statistically better result compared to all other algorithms with $p<0.01$ and Bonferroni correction number of dimensions (six).  
+Legend: 
+{\color{NavyBlue}$\circ$}: \algorithmA
+, {\color{Magenta}$\diamondsuit$}: \algorithmB
+, {\color{Orange}$\star$}: \algorithmC
+, {\color{CornflowerBlue}$\triangledown$}: \algorithmD
+, {\color{red}$\varhexagon$}: \algorithmE
+, {\color{YellowGreen}$\triangle$}: \algorithmF
+}
+% define some COCO/dvipsnames colors because
+% ACM style does not allow to use them directly
+\definecolor{NavyBlue}{HTML}{000080}
+\definecolor{Magenta}{HTML}{FF00FF}
+\definecolor{Orange}{HTML}{FFA500}
+\definecolor{CornflowerBlue}{HTML}{6495ED}
+\definecolor{YellowGreen}{HTML}{9ACD32}
+\definecolor{Gray}{HTML}{BEBEBE}
+\definecolor{Yellow}{HTML}{FFFF00}
+\definecolor{GreenYellow}{HTML}{ADFF2F}
+\definecolor{ForestGreen}{HTML}{228B22}
+\definecolor{Lavender}{HTML}{FFC0CB}
+\definecolor{SkyBlue}{HTML}{87CEEB}
+\definecolor{NavyBlue}{HTML}{000080}
+\definecolor{Goldenrod}{HTML}{DDF700}
+\definecolor{VioletRed}{HTML}{D02090}
+\definecolor{CornflowerBlue}{HTML}{6495ED}
+\definecolor{LimeGreen}{HTML}{32CD32}
+
+\providecommand{\pptablesfooter}{
+\end{tabularx}
+}
+\providecommand{\pptablesheader}{
+\begin{tabularx}{1.0\textwidth}{@{}c@{}|*{5}{@{}r@{}X@{}}|@{}r@{}@{}l@{}}
+\#FEs/D & \multicolumn{2}{@{}c@{}}{0.5} & \multicolumn{2}{@{}c@{}}{1.2} & \multicolumn{2}{@{}c@{}}{3} & \multicolumn{2}{@{}c@{}}{10} & \multicolumn{2}{@{}c@{}}{50} & \multicolumn{2}{|@{}l@{}}{\#succ}\\\hline
+}
+\providecommand{\algCtables}{\StrLeft{RANDOMSEARCH auger noiseless}{\ntables}}
+\providecommand{\algBtables}{\StrLeft{BIPOP-CMA-ES hansen noiseless}{\ntables}}
+\providecommand{\algAtables}{\StrLeft{BFGS ros noiseless}{\ntables}}
+\providecommand{\ntables}{5}
+\providecommand{\pptablesfooter}{
+\end{tabularx}
+}
+\providecommand{\pptablesheader}{
+\begin{tabularx}{1.0\textwidth}{@{}c@{}|*{5}{@{}r@{}X@{}}|@{}r@{}@{}l@{}}
+\#FEs/D & \multicolumn{2}{@{}c@{}}{0.5} & \multicolumn{2}{@{}c@{}}{1.2} & \multicolumn{2}{@{}c@{}}{3} & \multicolumn{2}{@{}c@{}}{10} & \multicolumn{2}{@{}c@{}}{50} & \multicolumn{2}{|@{}l@{}}{\#succ}\\\hline
+}
+\providecommand{\algFtables}{\StrLeft{lmm-CMA-ES auger noiseless}{\ntables}}
+\providecommand{\algEtables}{\StrLeft{SMAC-BBOB hutter noiseless}{\ntables}}
+\providecommand{\algDtables}{\StrLeft{HCMA loshchilov noiseless}{\ntables}}
+\providecommand{\algCtables}{\StrLeft{RANDOMSEARCH auger noiseless}{\ntables}}
+\providecommand{\algBtables}{\StrLeft{BIPOP-CMA-ES hansen noiseless}{\ntables}}
+\providecommand{\algAtables}{\StrLeft{BFGS ros noiseless}{\ntables}}
+\providecommand{\ntables}{5}
+\providecommand{\pptablesfooter}{
+\end{tabularx}
+}
+\providecommand{\pptablesheader}{
+\begin{tabularx}{1.0\textwidth}{@{}c@{}|*{5}{@{}r@{}X@{}}|@{}r@{}@{}l@{}}
+\#FEs/D & \multicolumn{2}{@{}c@{}}{0.5} & \multicolumn{2}{@{}c@{}}{1.2} & \multicolumn{2}{@{}c@{}}{3} & \multicolumn{2}{@{}c@{}}{10} & \multicolumn{2}{@{}c@{}}{50} & \multicolumn{2}{|@{}l@{}}{\#succ}\\\hline
+}
+\providecommand{\algFtables}{\StrLeft{lmm-CMA-ES auger noiseless}{\ntables}}
+\providecommand{\algEtables}{\StrLeft{SMAC-BBOB hutter noiseless}{\ntables}}
+\providecommand{\algDtables}{\StrLeft{HCMA loshchilov noiseless}{\ntables}}
+\providecommand{\algCtables}{\StrLeft{RANDOMSEARCH auger noiseless}{\ntables}}
+\providecommand{\algBtables}{\StrLeft{BIPOP-CMA-ES hansen noiseless}{\ntables}}
+\providecommand{\algAtables}{\StrLeft{BFGS ros noiseless}{\ntables}}
+\providecommand{\ntables}{5}
+\providecommand{\pptablesfooter}{
+\end{tabularx}
+}
+\providecommand{\pptablesheader}{
+\begin{tabularx}{1.0\textwidth}{@{}c@{}|*{5}{@{}r@{}X@{}}|@{}r@{}@{}l@{}}
+\#FEs/D & \multicolumn{2}{@{}c@{}}{0.5} & \multicolumn{2}{@{}c@{}}{1.2} & \multicolumn{2}{@{}c@{}}{3} & \multicolumn{2}{@{}c@{}}{10} & \multicolumn{2}{@{}c@{}}{50} & \multicolumn{2}{|@{}l@{}}{\#succ}\\\hline
+}
+\providecommand{\algFtables}{\StrLeft{lmm-CMA-ES auger noiseless}{\ntables}}
+\providecommand{\algEtables}{\StrLeft{SMAC-BBOB hutter noiseless}{\ntables}}
+\providecommand{\algDtables}{\StrLeft{HCMA loshchilov noiseless}{\ntables}}
+\providecommand{\algCtables}{\StrLeft{RANDOMSEARCH auger noiseless}{\ntables}}
+\providecommand{\algBtables}{\StrLeft{BIPOP-CMA-ES hansen noiseless}{\ntables}}
+\providecommand{\algAtables}{\StrLeft{BFGS ros noiseless}{\ntables}}
+\providecommand{\ntables}{5}
+\providecommand{\pptablesfooter}{
+\end{tabularx}
+}
+\providecommand{\pptablesheader}{
+\begin{tabularx}{1.0\textwidth}{@{}c@{}|*{5}{@{}r@{}X@{}}|@{}r@{}@{}l@{}}
+\#FEs/D & \multicolumn{2}{@{}c@{}}{0.5} & \multicolumn{2}{@{}c@{}}{1.2} & \multicolumn{2}{@{}c@{}}{3} & \multicolumn{2}{@{}c@{}}{10} & \multicolumn{2}{@{}c@{}}{50} & \multicolumn{2}{|@{}l@{}}{\#succ}\\\hline
+}
+\providecommand{\algFtables}{\StrLeft{lmm-CMA-ES auger noiseless}{\ntables}}
+\providecommand{\algEtables}{\StrLeft{SMAC-BBOB hutter noiseless}{\ntables}}
+\providecommand{\algDtables}{\StrLeft{HCMA loshchilov noiseless}{\ntables}}
+\providecommand{\algCtables}{\StrLeft{RANDOMSEARCH auger noiseless}{\ntables}}
+\providecommand{\algBtables}{\StrLeft{BIPOP-CMA-ES hansen noiseless}{\ntables}}
+\providecommand{\algAtables}{\StrLeft{BFGS ros noiseless}{\ntables}}
+\providecommand{\ntables}{5}
+\providecommand{\pptablesfooter}{
+\end{tabularx}
+}
+\providecommand{\pptablesheader}{
+\begin{tabularx}{1.0\textwidth}{@{}c@{}|*{5}{@{}r@{}X@{}}|@{}r@{}@{}l@{}}
+\#FEs/D & \multicolumn{2}{@{}c@{}}{0.5} & \multicolumn{2}{@{}c@{}}{1.2} & \multicolumn{2}{@{}c@{}}{3} & \multicolumn{2}{@{}c@{}}{10} & \multicolumn{2}{@{}c@{}}{50} & \multicolumn{2}{|@{}l@{}}{\#succ}\\\hline
+}
+\providecommand{\algFtables}{\StrLeft{lmm-CMA-ES auger noiseless}{\ntables}}
+\providecommand{\algEtables}{\StrLeft{SMAC-BBOB hutter noiseless}{\ntables}}
+\providecommand{\algDtables}{\StrLeft{HCMA loshchilov noiseless}{\ntables}}
+\providecommand{\algCtables}{\StrLeft{RANDOMSEARCH auger noiseless}{\ntables}}
+\providecommand{\algBtables}{\StrLeft{BIPOP-CMA-ES hansen noiseless}{\ntables}}
+\providecommand{\algAtables}{\StrLeft{BFGS ros noiseless}{\ntables}}
+\providecommand{\ntables}{5}
+\providecommand{\bbobpptablesmanylegend}[2]{%
+        Average runtime (\aRT\ in number of function 
+        evaluations) divided by the respective best \aRT\ measured during BBOB-2009 in
+        #1.
+        The \aRT\ and in braces, as dispersion measure, the half difference between 
+        10 and 90\%-tile of bootstrapped run lengths appear for each algorithm and 
+        %
+        run-length based target, the corresponding reference \aRT\
+        (preceded by the target \Df-value in \textit{italics}) in the first row. 
+        \#succ is the number of trials that reached the target value of the last column.
+        %
+        The median number of conducted function evaluations is additionally given in 
+        \textit{italics}, if the target in the last column was never reached. 
+        Entries, succeeded by a star, are statistically significantly better (according to
+        the rank-sum test) when compared to all other algorithms of the table, with
+        $p = 0.05$ or $p = 10^{-k}$ when the number $k$ following the star is larger
+        than 1, with Bonferroni correction of #2. A $\downarrow$ indicates the same tested against the best algorithm from BBOB 2009. Best results are printed in bold.
+        \cocoversion}
+\providecommand{\algsfolder}{RANDO_BIPOP_BFGS__SMAC-_lmm-C_HCMA/}
+\providecommand{\algorithmA}{RANDOMSEARCH auger noiseless}
+\providecommand{\algorithmB}{BIPOP-CMA-ES hansen noiseless}
+\providecommand{\algorithmC}{BFGS ros noiseless}
+\providecommand{\algorithmD}{SMAC-BBOB hutter noiseless}
+\providecommand{\algorithmE}{lmm-CMA-ES auger noiseless}
+\providecommand{\algorithmF}{HCMA loshchilov noiseless}
