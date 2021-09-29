@@ -1,0 +1,1122 @@
+.. title:: COCO: The Large Scale Black-Box Optimization Benchmarking (bbob-largescale) Test Suite
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Benchmarking large-scale continuous optimizers: the bbob-largescale testbed, a COCO software guide and beyond
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+.. former title(s):
+
+   COCO: The Large Scale Black-Box Optimization Benchmarking (``bbob-largescale``) Test Suite
+
+
+.. the next two lines are necessary in LaTeX. They will be automatically
+  replaced to put away the \chapter level as ??? and let the "current" level
+  become \section.
+
+.. CHAPTERTITLE
+.. CHAPTERUNDERLINE
+
+
+
+.. |
+.. |
+.. .. sectnum::
+  :depth: 3
+
+
+  :numbered:
+.. .. contents:: Table of Contents
+  :depth: 2
+.. |
+.. |
+
+.. raw:: html
+
+   See also: <I>ArXiv e-prints</I>,
+   <A HREF="http://arxiv.org/abs/XXXX.XXXXX">arXiv:XXXX.XXXXX</A>, 2018.
+
+.. raw:: latex
+
+  {
+  \centering
+  \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Note]
+  
+  Note that this is not the final submission for the special issue.
+  In addition to changing the format and correcting the typesetting to
+  fit to the journal's appearance, a few parts are 
+                           expected to be added, the content of which are described in notes
+                           wherever needed. Note also that, an online version of this document
+                           with nicer typesetting can be found here:
+                           \url{http://coco.gforge.inria.fr/preliminary-bbob-largescale-documentation/}.
+  \end{tcolorbox}
+  }
+
+  % \tableofcontents TOC is automatic with sphinx and moved behind abstract by swap...py
+  \begin{abstract}
+
+
+Benchmarking of optimization solvers is an important and compulsory task for performance assessment that in turn can help in improving the design of algorithms. It is a repetitive and tedious task. Yet, this task has been greatly automatized in the past ten years with the development of the Comparing Continous Optimizers platform (COCO). To date, however, the available test suites do not allow for an easy benchmarking of large-scale algorithms, where large-scale is intended as having more than a few dozens of variables.
+
+In this context, this paper presents in detail a new large scale testbed, called ``bbob-largescale``, built to be representative of typical real-world difficulties and to test the scaling behavior of algorithms. It contrasts with current test suites used for benchmarking solvers.
+
+The test suite contains 24 single-objective
+functions in continuous domain. It extends the well-known
+single-objective noiseless ``bbob`` test suite [HAN2009]_, which has been used since 2009 in
+the `BBOB workshop series`_. The core idea is to make the orthogonal
+transformations in search space, that
+appear in the ``bbob`` test suite, computationally cheaper while retaining some desired
+properties using the previously introduced permuted block diagonal orthogonal matrix.
+
+The paper discusses the implementation details, particularly the introduced normalization and scaling to obtain backwards compatibility with the ``bbob`` test suite.
+Additionnally, a guide for using the test suite within the COCO platform is presented: it is explained how to perform a benchmarking experiment and how to interpret and what can be learned from the different postprocessing output.
+
+
+.. raw:: latex
+
+  \end{abstract}
+  \newpage
+
+
+
+.. _`BBOB workshop series`: http://numbbo.github.io/workshops
+.. _COCO: https://github.com/numbbo/coco
+.. _COCOold: http://coco.gforge.inria.fr
+.. |coco_problem_t| replace::
+  ``coco_problem_t``
+.. _coco_problem_t: http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478
+
+.. |f| replace:: :math:`f`
+
+
+
+.. Some update:
+   - Step ellipsoid: It has been updated the condition: \hat{z}_i > 0.5 (old) --> |\hat{z}_i| > 0.5
+   - Schwefel function:
+        (1) \mathbf{z} = 100 (\mathbf{\Lambda}^{10} (\mathbf{\hat{z}} - \mathbf{x}^{\text{opt}}) + \mathbf{x}^{\text{opt}}) --> \mathbf{z} = 100 (\mathbf{\Lambda}^{10} (\mathbf{\hat{z}} - 2|\mathbf{x}^{\text{opt}}|) + 2|\mathbf{x}^{\text{opt}}|)
+        (2) - frac{1}{D} sum(...) --> - frac{1}{100D} sum(...)
+        (3) \hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 (\hat{x}_{i} - x_i^{\text{opt}}), \text{ for } i=1, \dots, n-1 --> \hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 (\hat{x}_{i} - 2|x_i^{\text{opt}}|), \text{ for } i=1, \dots, n-1
+..
+
+
+.. #################################################################################
+.. #################################################################################
+.. #################################################################################
+
+
+Introduction
+============
+
+Benchmarking is an important task in optimization that every algorithm designer has to do to validate a new algorithm. It can also assist the designer by pointing out weaknesses that have been overlooked in the first conception phase of the algorithm.
+The choice of the test functions is crucial as performance is often aggregated over sets of functions and a bias towards certain properties can lead to a misrepresentation of the "real" performance of an algorithm.
+
+Optimization problems with more than one hundred variables are common in many domains. We therefore naturally need large-scale benchmarking suites to test algorithms and to investigate their scalability. In order to obtain meaningful results from a benchmarking experiment, we thereby need to take care of the representability of the chosen test functions with respect to the real world problems we expect our algorithms to solve beyond the benchmarking, see also [WHI1996eval]_.
+The Blackbox Optimization Benchmarking test suite (``bbob``) of the Comparing Continuous Optimizers platform (COCO_, [HAN2016co]_), introduced in 2009, has been built with exactly this "representability" in mind in order to
+
+    * gather functions that represent difficulties of real-world problems,
+    * have functions that allow to test specific properties of an algorithm (for instance, "is the algorithm exploiting separability?"), and to
+    * provide a wide range of test problems to reduce overfitting and challenge algorithms as much as possible.
+
+In comparison to simpler test function suites that have been around for some time (for example the CUTEr/CUTEst suite [CUTE]_ [CUTEst]_), the ``bbob`` functions are representative of blackbox problems and therefore mostly non-convex and non-smooth. The ``bbob`` test suite is structured into five function groups, namely separable functions, functions with low or moderate conditioning, unimodal functions with high conditioning, multi-modal functions with adequate global structure, and multi-modal functions with weak global structure---relating to challenges observed in real-world problems. [#]_
+
+.. [#] Another possible difficulty of real-world problems is noise. Yet noisy functions are provided in a separate COCO test suite as we typically know beforehand if we have a noisy function or not.
+
+
+Each group contains 5 functions except the second one that contains four functions. This balance between the number of functions per group is important such that aggregated performance can reflect a prediction of the performance on a real world problem.
+
+.. .. todo:: comment: by saying this, we assume that some functions can be separable or almost separable - TO-be-discussed
+
+
+
+An additional important aspect of the ``bbob`` functions is their scalability: every function is analytic and defined for an arbitrary dimension. This suggests that the ``bbob`` test suite could be used to test "large"-scale algorithms.
+Yet there is an intrinsic limitation of the original ``bbob`` test suite that precludes its usage for dimensions larger than a few dozens of variables: Many of the ``bbob`` functions involve matrix multiplications with orthogonal matrices to make them non-separable. More precisely, these ``bbob`` functions are constructed in a onion-like fashion as:
+
+
+.. math::
+   f(x) = F_1\circ F_2\circ\ldots \circ F_k(f_{\text{raw}}(T_1 \circ T_2 \circ \ldots T_l(x)))
+
+
+where :math:`f_{\text{raw}}` is the underlying raw objective function, for example the ellipsoid function :math:`f_{\text{elli}}(x) = \sum_{i=1}^{n} 10^{6\frac{i-1}{n-1}} x_i^2`, the :math:`F_i` are objective space transformations of the form :math:`F_i: \mathbb{R} \rightarrow \mathbb{R}`, and the :math:`T_i` are search space transformations of the form :math:`T_i: \mathbb{R}^n \rightarrow \mathbb{R}^n`. Examples of such search space transformations are simple translations and search space *rotations* :math:`T_R: x\mapsto Rx` with :math:`R` being an orthogonal matrix in :math:`\mathbb{R}^n\times \mathbb{R}^n`.
+
+Orthogonal matrices, that we also refer to as rotation matrices, are at the core of the constructions of many benchmark functions. They allow to have a simple writing of the functions while not favoring a specific representation of the problem (the representation given by the original coordinate system): We can start from a separable function that is typically easy to write and to comprehend and we rotate it to get a non-separable function [SAL1996]_. This way, we keep the simplicity of the writing of separable functions but take out the separability bias. This construction is scalable. Yet, if a full orthogonal matrix is used, the matrix vector product calculation is quadratic in the problem dimension and the computation becomes too prohibitive when having say more than a hundred variables.
+
+For this reason, the idea to replace orthogonal matrices by *sparse orthogonal* matrices has been introduced in [AIT2016]_ to build benchmark functions in large dimensions. Each full orthogonal matrix is thereby replaced by a permuted block matrix :math:`P_1BP_2` with only a linear (in the dimension) number of non-zero coefficients where :math:`P_1` and :math:`P_2` are permutation matrices and :math:`B` is a block-diagonal matrix. The reason for using such so-called *permuted orthogonal block-diagonal matrices* in the context of large-scale optimization benchmarking is two-fold: on the one hand, the computation time for the test functions becomes linear in the problem dimension instead of quadratic, resulting in reasonable computation times, on the other hand, real-world problems in large dimensions are expected to have less than quadratically many degrees of freedom and a test problem construction via sparse orthogonal matrices will automatically keep the number of variable dependencies lower than quadratic.
+
+In this context, the **first contribution** of this paper is to introduce thoroughly the novel ``bbob-largescale`` test suite based on the ``bbob`` suite and the idea of permuted orthogonal block-diagonal matrices. [#]_ This test suite is implemented within the Comparing Continuous Optimizer platform (COCO, [HAN2016co]_).
+We discuss in details the different adjustments needed to arrive to the final test suite. These adjustments are necessary to be backwards compatible with the ``bbob`` test suite and to deal with the different normalizations used to avoid an artificial bias towards certain algorithms or algorithm settings (like optima too close from the origin because of normalization factors).
+
+.. [#] Note that a previous conference paper [VAR2018]_ already used the ``bbob-largescale`` test suite, introduced here. However, the main focus of the conference paper was the analysis of the search performance of CMA-ES variants and no details about the used test problems could be given due to space limitations.
+
+The **second contribution** of this paper is to illustrate how to use the new test suite in the context of the COCO platform to be able to benchmark a novel algorithm. We provide a concrete guide towards the software, the different plots that are automatically producible with COCO and which scientific information we can gather from them.
+
+The paper is organized as follows:
+Section :ref:`sec:relatedwork` discusses available test suites for large-scale optimization and their relation to the proposed ``bbob-largescale`` one. Section :ref:`sec:coco` details the terminology and philosophy underlying the COCO_ platform in which we implement the proposed suite. The actual ``bbob-largescale`` suite is then presented in Section :ref:`sec:bboblargescale` before Section :ref:`sec:functiondescription` gives the detailed definition of each ``bbob-largescale`` function. Last, Section :ref:`sec:tutorial` showcases how the new test suite can be used in COCO and gives examples of scientific conclusions that can be obtained from running numerical experiments with the suite.
+
+
+.. _sec:relatedwork:
+
+Related work: Large-scale benchmarking
+=======================================
+A few test suites for benchmarking numerical optimizers have been around for some time. In the context of large-scale optimization, most notably developed by the "classical" optimization community, are the COPS 3.0 problems [COPS]_ and the general CUTEr/CUTEst problems [CUTE]_ [CUTEst]_.
+
+The COPS 3.0 test suite (Constrained Optimization Problem Set) contains 22 large-scale problems with 398 to 19240 variables, some of which can be used in arbitrary dimension while others are only defined for very specific dimensions. Despite the suite's name, three of the COPS problems are interestingly unconstrained. The CUTEr/CUTEst library, on the other hand, contains many more problems (more than 1000), with 378 of them being unconstrained. 184 of those are available in any dimension and can thus be used to benchmark large-scale optimization algorithms in principle. From these 184 scalable unconstrained problems, finally 73 fall in the category of "blackbox problems", i.e. are not constant, linear, quadratic, or of a sum of squares type.
+
+The main concern that can be raised when using the above problem suites is that it is not clear (simply due to the vast amount of problems and the way they have been collected) whether they are equally difficult over problems, dimensions, and function targets such that aggregation of performance must be done with care.
+
+.. ..todo:: do we know if they are mainly convex, smooth
+
+In the evolutionary computation community, large-scale competitions have been organized at the CEC conference from which three large-scale test suites evolved over time:
+
+* The CEC 2008 suite with 7 functions in 3 dimensions
+* The CEC 2010 suite with 20 functions total and 6 *underlying* functions: Sphere, rotated Ellipsoid, Schwefel’s Problem 1.2, Rosenbrock, rotated Rastrigin, and rotated Ackley. These basic functions are ombined with no/partial/full rotations to create the 20 functions overall, defined for fixed dimension 1000.
+* The CEC 2013 suite, based on the CEC 2010 suite, with additional ``bbob`` transformations, nonuniform subcomponent sizes, imbalance in the contribution of subcomponents and functions with overlapping subcomponents. The problem dimension is again fixed to 1000.
+
+Most notable for the CEC competitions are the fixed (single or small number of) dimensions (although the problems are, in principle, scalable) and the restriction of the performance assessment to a fixed budget (and the ERT for 3 fixed targets in the CEC 2010 case). Investigating the resulting function values for a fixed budget and the restriction to a single or only few dimensions does not allow for the analysis of the algorithms scaling behavior---one of the main statements benchmarking experiments for large-scale algorithms should result in.
+
+Similar to the COPS and CUTEr/CUTEst problems, also for the CEC problems, no effort was spent on investigating whether target difficulties are comparable over problems and dimensions, however, this similarity is necessary to aggregate performances properly over different problems and to investigate the scaling behavior with the problem dimension.
+
+None of the mentioned test suites is furthermore implemented to allow for an *automated benchmarking*, during which the performance data is recorded automatically, to relive a user from the burden of implementing this tedious task. We address the automated benchmarking issue and the above mentioned shortcomings of the currently available test suites for large-scale (nonlinear or blackbox) optimization benchmarking by proposing the ``bbob-largescale`` suite and by providing its implementation via the COCO platform.
+
+
+.. _sec:coco:
+
+Automated Benchmarking with the Comparing Continuous Optimizers Platform
+=========================================================================
+The Comparing Continuous Optimizer platform (COCO_, [HAN2016co]_) has been designed to simplify and standardize the tedious tasks of benchmarking blackbox algorithms in continuous domain. It provides several test suites (for example the unconstrained single-objective ``bbob`` and ``bbob-noisy`` suites and the bi-objective ``bbob-biobj`` suite), interfaced to several languages (C/C++, Java, Matlab/Octave, Python, R) and supported for Linux, Mac, and Windows operating systems. Given example experiments scripts showcase how to connect basic algorithms on the supported test suites. During an experiment, performance data in terms of runtimes to reach target function values for each problem instance / dimension combination is automatically collected and written to files. Those data files can then be read in with COCO's postprocessing module (written in python) that displays performance in graphical and tabular form in both pdf and html format. The huge advantage of the standardized COCO data format is that data from 180+ algorithm variants can be compared easily with its postprocessing.
+
+In order to introduce the new ``bbob-largescale`` test suite in the next section, we will first discuss basic COCO terminology and philosophy, especially regarding the ideas of problem instances, recorded runtimes, and function target values.
+
+
+Throughout the paper, we consider single-objective, unconstrained minimization problems
+of the form
+
+.. math::
+    \min_{x \in \mathbb{R}^n} \ f(x),
+
+where :math:`n` is the problem dimension. The objective is to find, as quickly as possible, one or several solutions :math:`x` in the search
+space :math:`\mathbb{R}^n` with *small* value(s) of :math:`f(x)\in\mathbb{R}`. We
+generally measure the *time* of an optimization run as the number of calls to (queries of) the objective function :math:`f`.
+
+
+More precisely, we talk about an objective **function** |f| as a parametrized mapping
+:math:`\mathbb{R}^n\to\mathbb{R}` with scalable input space, that is,
+:math:`n` is not (yet) determined. Functions are parametrized such that
+different *instances* of the "same" function are available, e.g. translated
+or rotated versions.
+
+We talk about a **problem**, |coco_problem_t|_, as a specific **function
+instance** on which an optimization algorithm is run. Specifically, a problem
+can be described as the triple ``(dimension, function, instance)``. A problem
+can be evaluated and returns an :math:`f`-value. In the context of performance
+assessment, a target :math:`f`-value is attached to each problem.
+That is, a target value is added to the above triple to define a single problem
+in this case.
+
+We then define **runtime**, or **run-length** as the *number of evaluations*
+conducted on a given problem, also referred to as number of *function* evaluations.
+Our central performance measure is the runtime until a given target value
+is hit.
+
+A **test-** or **benchmark-suite** is finally a collection of problems, typically between
+twenty and a hundred, where the number of objectives :math:`m` is fixed.
+
+
+.. |n| replace:: :math:`n`
+.. |theta| replace:: :math:`\theta`
+.. |i| replace:: :math:`i`
+.. |j| replace:: :math:`j`
+.. |t| replace:: :math:`t`
+.. |fi| replace:: :math:`f_i`
+
+
+Functions, Instances and Problems
+---------------------------------
+Each function in COCO_ is *parametrized* by the (input) dimension, |n|, its identifier |i|, and the instance number, |j|,
+that is:
+
+.. math::
+    f_i^j \equiv f(n, i, j): \mathbb{R}^n \to \mathbb{R} \quad x \mapsto f_i^j (x) = f(n, i, j)(x).
+
+Varying |n| or |j| leads to a variation of the same function |i| of a given suite.
+By fixing |n| and |j| for function |fi|, we define an optimization **problem**
+:math:`(n, i, j)\equiv(f_i, n, j)` that can be presented to the optimization algorithm.
+Each problem receives again an index in the suite, mapping the triple :math:`(n, i, j)` to a single
+number.
+
+We can think of |j| as an index to a continuous parameter vector setting,
+as it parametrizes, among others things, translations and rotations. In
+practice, |j| is the discrete identifier for single instantiations of
+these parameters.
+
+The advantage of problem instances in a test suite is that experiments of algorithms
+on slightly varying instances of the same underlying function allows to naturally compare
+stochastic with deterministic algorithms. The recorded runtimes over the instances
+of a function can be interpreted (for both stochastic and deterministic algorithms)
+in the same way as runtimes from multiple runs on the same instance for a stochastic
+algortihm can be used to compare performance.
+
+
+
+Runtime and Target Values
+-------------------------
+
+In order to measure the runtime of an algorithm on a problem, we
+establish a hitting time condition.
+We prescribe a **target value**, |t|, which is a given concrete |f|-value [HAN2016perf]_.
+For a single run, when an algorithm reaches or surpasses the target value |t|
+on problem |p|, we say that it has *solved the problem* |pt| --- it was successful. [#]_
+
+The **runtime** is, then, the evaluation count when the target value |t| was
+reached or surpassed for the first time.
+That is, the runtime is the number of |f|-evaluations needed to solve the problem
+|pt|. [#]_
+Measured runtimes are the only way how we assess the performance of an
+algorithm.
+
+.. dimo: I don't understand this old sentence:
+   Observed success rates are generally translated into runtimes on a subset of
+   problems.
+
+
+.. _Recommendations: https://www.github.com
+
+
+If an algorithm does not hit the target in a single run, its runtime remains
+undefined --- while, then, this runtime is bounded from below by the number of evaluations
+in this unsuccessful run.
+The number of available runtime values depends on the budget the
+algorithm has explored (the larger the budget, the more likely the target-values are reached).
+Therefore, larger budgets are preferable --- however they should not come at
+the expense of abandoning reasonable termination conditions. Instead,
+restarts should be done [HAN2016ex]_.
+
+.. [#] Note the use of the term *problem* in two meanings: as the problem the
+    algorithm is benchmarked on, |p|, and as the problem, |pt|, an algorithm can
+    solve by hitting the target |t| with the runtime, |RT(pt)|, or may fail to solve.
+    Each problem |p| gives raise to a collection of dependent problems |pt|.
+    Viewed as random variables, the events |RT(pt)| given |p| are not
+    independent events for different values of |t|.
+
+.. [#] Target values are directly linked to a problem, leaving the burden to
+    properly define the targets with the designer of the benchmark suite.
+    The alternative is to present final |f|-values as results,
+    leaving the (rather unsurmountable) burden to interpret these values to the
+    reader.
+    Fortunately, there is an automatized generic way to generate target values
+    from observed runtimes, the so-called run-length based target values
+    [HAN2016perf]_.
+
+
+.. |k| replace:: :math:`k`
+.. |p| replace:: :math:`(f_i, n, j)`
+.. |pt| replace:: :math:`(f_i, n, j, t)`
+.. |RT(pt)| replace:: :math:`\mathrm{RT}(f_i, n, j, t)`
+
+
+.. _sec:bboblargescale:
+
+Overview of the Proposed ``bbob-largescale`` Test Suite
+=======================================================
+The ``bbob-largescale`` test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320 and 640) within
+the COCO framework (while all 24 functions are in principal scalable to an arbitrary dimension). It is derived 
+from the existing single-objective, unconstrained ``bbob`` test suite with
+modifications that allow the user to benchmark algorithms on high dimensional problems efficiently.
+We will explain in this section how the ``bbob-largescale`` test suite is built.
+
+
+
+
+The single-objective ``bbob`` functions
+---------------------------------------
+The ``bbob`` test suite relies on the use of a number of raw functions from
+which 24 ``bbob`` functions are generated. Initially, so-called *raw* functions
+are designed. Then, a series of transformations on these raw functions, such as
+linear transformations (e.g., translation, rotation, scaling) and/or non-linear
+transformations (e.g., :math:`T_{\text{osz}}, T_{\text{asy}}`)
+will be applied to obtain the actual ``bbob`` test functions. For example, the test function
+:math:`f_{13}(\mathbf{x})` (`Sharp Ridge function`_) with (vector) variable :math:`\mathbf{x}`
+is derived from a raw function defined as follows:
+
+.. _Sharp Ridge function: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65
+
+.. math::
+    f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) = z_1^2 + 100\sqrt{\sum_{i=2}^{n}z_i^2}.
+
+Then one applies a sequence of transformations:
+a translation by using the vector :math:`\mathbf{x}^{\text{opt}}`;
+then a rotational transformation :math:`\mathbf{R}`; then a scaling transformation
+:math:`\mathbf{\Lambda}^{10}`; then another rotational transformation :math:`\mathbf{Q}`
+to get the relationship
+:math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`; and finally
+a translation in objective space by using :math:`\mathbf{f}_{\text{opt}}` to obtain the final
+function in the testbed:
+
+.. math::
+    f_{13}(\mathbf{x}) = f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) + \mathbf{f}_{\text{opt}}.
+
+
+There are two main reasons behind the use of transformations here:
+
+(i) provide non-trivial problems that cannot be solved by simply exploiting some of their properties (separability, optimum at fixed position, ...) and
+(ii) allow to generate different instances, ideally of similar difficulty, of the same problem by using different (pseudo-)random transformations.
+
+
+Rotational transformations are used to avoid separability and thus coordinate system dependence in the test functions.
+The rotational transformations consist in applying
+an orthogonal matrix to the search space: :math:`x \rightarrow z = \textbf{R}x`, where :math:`\textbf{R}` is the
+orthogonal matrix.
+While the other transformations used in the ``bbob`` test suite could be naturally extended to
+the large scale setting due to their linear complexity, rotational transformations have quadratic time and
+space complexities. Thus, we need to reduce the complexity of these transformations in order for them to be usable, in practice, in the large scale setting.
+
+Extension to large scale setting
+--------------------------------
+Our objective is to construct a large scale test suite where the cost of a function call is
+acceptable in higher dimensions while preserving the main characteristics of the original functions in the ``bbob``
+test suite.
+To this end, we will replace the full orthogonal matrices of the rotational transformations,
+which would be too expensive in our large scale setting, with orthogonal transformations
+that have linear complexity in the problem dimension: *permuted orthogonal block-diagonal matrices* ([AIT2016]_).
+
+Specifically, the matrix of a rotational transformation :math:`\textbf{R}`
+is represented as:
+
+.. math::
+    \textbf{R} = P_{\text{left}}BP_{\text{right}}.
+
+Here, :math:`P_{\text{left}} \text{ and } P_{\text{right}}` are two permutation matrices [#]_ and :math:`B` is a
+block-diagonal matrix of the form:
+
+.. math::
+    B = \left(\begin{matrix}
+    B_1 & 0 & \dots & 0 \\
+    0 & B_2 & \dots & 0 \\
+    0 & 0 & \ddots & 0 \\
+    0 & 0 & \dots & B_{n_b}
+    \end{matrix}
+    \right),
+
+where :math:`n_b` is the number of blocks and :math:`B_i, 1 \leq i \leq n_b`
+are square matrices of sizes :math:`s_i \times s_i` satisfying :math:`s_i \geq 1`
+and :math:`\sum_{i=1}^{n_b}s_i = n`. If we choose the matrices
+:math:`B_i, 1 \leq i \leq n_b` such that they are all orthogonal, the resulting 
+matrix :math:`B` is also an orthogonal matrix.
+
+This representation allows the rotational transformation :math:`\textbf{R}` to satisfy three
+desired properties:
+
+1. Have (almost) linear cost (due to the block structure of :math:`B`).
+2. Introduce non-separability.
+3. Preserve the eigenvalues and therefore the condition number of the original function when it is convex quadratic (since :math:`\textbf{R}` is orthogonal).
+
+.. [#] A *permutation matrix* is a square binary matrix that has exactly one entry of
+    1 in each row and each column and 0s elsewhere.
+
+Generating the orthogonal block matrix :math:`B`
+------------------------------------------------
+The block-matrices :math:`B_i, i=1,2,...,n_b` are uniformly distributed in the set of
+orthogonal matrices of the same size. To this end, we first generate square matrices with
+sizes :math:`s_i` (`i=1,2,...,n_b`) whose entries are i.i.d. standard normally distributed.
+Then we apply the Gram-Schmidt process to orthogonalize these matrices.
+
+The parameters of this procedure include:
+
+- the dimension of the problem :math:`n`,
+- the block sizes :math:`s_1, \dots, s_{n_b}`, where :math:`n_b` is the number of blocks. In the ``bbob-largescale`` test suite, we set :math:`s_i = s := \min\{n, 40\} \forall i=1,2,...,n_b` (except, maybe, for the last block which can be smaller) [#]_ and thus :math:`n_b = \lceil n/s \rceil`.
+
+.. [#] This setting allows to have the problems in dimensions 20 and 40 overlap between the ``bbob`` test suite and its large-scale extension since in these dimensions, the block sizes coincide with the problem dimensions.
+
+Generating the permutation matrices :math:`P`
+---------------------------------------------
+In order to generate the permutation matrix :math:`P`, we start from the identity matrix and apply, successively, a set of so-called *truncated uniform swaps*.
+Each row/column (up to a maximum number of swaps) is swapped with a row/column chosen uniformly from the set of rows/columns within a fixed range :math:`r_s`.
+A random order of the rows/columns is generated to avoid biases towards the first rows/columns.
+
+Let :math:`i` be the index of the first
+variable/row/column to be swapped and :math:`j` be the index of the second swap variable. Then
+
+.. math::
+    j \sim U(\{l_b(i), l_b(i) + 1, \dots, u_b(i)\} \backslash \{i\}),
+
+where :math:`U(S)` is the uniform distribution over the set :math:`S` and :math:`l_b(i) = \max(1,i-r_s)`
+and :math:`u_b(i) = \min(n,i+r_s)` with :math:`r_s` a parameter of the approach.
+If :math:`r_s \leq (n-1)/2`, the average distance between
+the first and the second swap variable ranges from :math:`(\sqrt{2}-1)r_s + 1/2` (in the case of an
+asymmetric choice for :math:`j`, i.e. when :math:`i` is chosen closer to :math:`1` or :math:`n` than :math:`r_s`) to
+:math:`r_s/2 + 1/2` (in the case of a symmetric choice for :math:`j`). It is maximal when the first swap variable is at least :math:`r_s`
+away from both extremes or is one of them.
+
+
+**Algorithm 1** below describes the process of generating a permutation using a
+series of truncated uniform swaps with the following parameters:
+
+- :math:`n`, the number of variables,
+- :math:`n_s`, the number of swaps.
+- :math:`r_s`, the swap range.
+
+Starting with the identity permutation :math:`p` and another permuation :math:`\pi`, drawn uniform
+at random, we apply the swaps defined above
+by taking :math:`p_{\pi}(1), p_{\pi}(2), \dots, p_{\pi}(n_s)`, successively, as
+first swap variable. The resulting vector :math:`p` is the desired permutation.
+
+*Algorithm 1: Truncated Uniform Permutations*
+
+- Inputs: problem dimension :math:`n`, number of swaps :math:`n_s`, swap range :math:`r_s.`
+
+- Output: a vector :math:`\textbf{p} \in \mathbb{N}^n`, defining a permutation.
+
+1. :math:`\textbf{p} \leftarrow (1, \dots, n)`
+2. Generate a permutation :math:`\pi` uniformly at random
+3. :math:`\textbf{for } 1 \leq k \leq n_s \textbf{ do}`
+4. * :math:`i \leftarrow \pi(k)`, i.e., :math:`\textbf{p}_{\pi(k)}` is the first swap variable
+5. * :math:`l_b \leftarrow \max(1, i-r_s)`
+6. * :math:`u_b \leftarrow \min(n, i+r_s)`
+7. * :math:`S \leftarrow \{l_b, l_b + 1, \dots, u_b\} \backslash \{i\}`
+8. * Sample :math:`j` uniformly at random in :math:`S`
+9. * Swap :math:`\textbf{p}_i` and :math:`\textbf{p}_j`
+10. :math:`\textbf{end for}`
+11. :math:`\textbf{return p}`
+
+.. note:: This part will be more detailed in the final submission. We need, in particular, describe more clearly
+   how we get (efficiently) from the permutation :math:`p` to the permutation matrix :math:`P`
+
+
+In this test suite, we set :math:`n_s = n \text{ and } r_s = \lfloor n/3 \rfloor`. Some numerical
+results in [AIT2016]_ show that with such parameters, the proportion of variables that are
+moved from their original position when applying Algorithm 1 is approximately 100\% for all
+dimensions 20, 40, 80, 160, 320, and 640 of the ``bbob-largescale`` test suite.
+
+Implementation
+--------------
+Now, we describe how these changes to the rotational transformations are implemented
+with the realizations of :math:`P_{\text{left}}BP_{\text{right}}`.
+We illustrate this through an example
+on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see the table in the next section), which is defined by
+
+.. math::
+    f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}, \text{with } \mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})), \mathbf{R} = P_{1}BP_{2},
+
+as follows:
+
+(i) First, we obtain the three matrices needed for the transformation, :math:`B, P_1, P_2`,
+as follows:
+
+    .. code-block:: c
+
+        coco_compute_blockrotation(B, seed1, n, s, n_b);
+        coco_compute_truncated_uniform_swap_permutation(P1, seed2, n, n_s, r_s);
+        coco_compute_truncated_uniform_swap_permutation(P2, seed3, n, n_s, r_s);
+
+(ii) Then, whereever in the ``bbob`` test suite, we use the following
+
+    .. code-block:: c
+
+        problem = transform_vars_affine(problem, R, b, n);
+
+    to make a rotational transformation, then in the ``bbob-largescale`` test suite, we replace it with the three transformations
+
+    .. code-block:: c
+
+        problem = transform_vars_permutation(problem, P2, n);
+        problem = transform_vars_blockrotation(problem, B, n, s, n_b);
+        problem = transform_vars_permutation(problem, P1, n);
+
+.. Wassim: the output of the above is not correct, the sentence is displayed inside the code-block. And the phrasing in kinda weird
+
+Here, :math:`n` is again the problem dimension, :math:`s` the size of the blocks in :math:`B`, :math:`n_b:`
+the number of blocks, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented previously.
+
+**Important remark:** Although the complexity of ``bbob`` test suite is reduced considerably by the above replacement of
+rotational transformations, we recommend running the experiment on the ``bbob-largescale`` test suite in parallel.
+
+.. Wassim: I’m not sure this is the appropriate place for this remark, it’s more a general remark on the use of this test suite, and any test suite for that matter. It’s always preferable to run independent experiments in parallel
+
+
+.. _sec:functiondescription:
+
+Functions in ``bbob-largescale`` test suite
+=============================================
+The table below presents the definition of all 24 functions of the ``bbob-largescale`` test suite in detail. Beside the important
+modification on rotational transformations, we also made three changes to the raw functions in the ``bbob`` test suite.
+
+- All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, and Katsuura functions, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
+
+- The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
+
+- For the two Rosenbrock functions and the related Griewank-Rosenbrock function, a different scaling is used than in the original ``bbob`` functions: instead of the factor :math:`\max (1, \frac{\sqrt{n}}{8})` with :math:`n` being the problem dimension, we scale the rotated search vector by the factor :math:`\max (1, \frac{\sqrt{s}}{8})` with :math:`s` being the block size in the matrix :math:`B`. An additional constant is added to the :math:`z` vector to reduce, with high probability, the risk to move important parts of the test function's characteristics out of the domain of interest. Without these adjustments, the original functions become significantly easier in higher dimensions due to the optimum being too close to the origin. For more details, we refer the interested reader to the discussion on the `corresponding github issue <https://github.com/numbbo/coco/issues/1733>`_.
+
+
+
+For a better understanding of the properties of these functions and for the definitions
+of the used transformations and abbreviations, we refer the reader to the original
+``bbob`` `function documention`__ for details.
+
+.. _bbobfunctiondoc: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf
+
+__ bbobfunctiondoc_
+
+
+.. raw:: latex
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Function descriptions of the separable, moderate, and ill-conditioned function groups of the {\ttfamily bbob-largescale} test suite.}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
+
+.. table::
+    :widths: 20 50 30
+
+
+    +----------------------------------+------------------+------------------+
+    |                                  | Formulation      | Transformations  |
+    +==================================+==================+==================+
+    | **Group 1: Separable functions**                                       |
+    +----------------------------------+------------------+------------------+
+    | Sphere Function                  | |def-f1|         | |trafo-f1|       |
+    +----------------------------------+------------------+------------------+
+    | Ellipsoidal Function             | |def-f2|         | |trafo-f2|       |
+    +----------------------------------+------------------+------------------+
+    | Rastrigin Function               | |def-f3|         | |trafo-f3|       |
+    +----------------------------------+------------------+------------------+
+    | Bueche-Rastrigin Function        | |def-f4-1|       | |trafo-f4-1|     |
+    |                                  | |def-f4-2|       | |trafo-f4-2|     |
+    |                                  |                  | |trafo-f4-3|     |
+    +----------------------------------+------------------+------------------+
+    | Linear Slope                     | |def-f5|         | |trafo-f5-1|     |
+    |                                  |                  | |trafo-f5-2|     |
+    |                                  |                  | |trafo-f5-3|     |
+    |                                  |                  | |trafo-f5-4|     |
+    +----------------------------------+------------------+------------------+
+
+
+.. |def-f1| replace:: :math:`f_1(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} z_i^2 + \mathbf{f}_{\text{opt}}`
+.. |trafo-f1| replace:: :math:`\mathbf{z} = \mathbf{x} - \mathbf{x}^{\text{opt}}`
+.. |def-f2| replace:: :math:`f_2(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2+ \mathbf{f}_{\text{opt}}`
+.. |trafo-f2| replace:: :math:`\mathbf{z} = T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right)`
+.. |def-f3| replace:: :math:`f_3(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f3| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{10} T_{\text{asy}}^{0.2} \left( T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right) \right)`
+.. |def-f4-1| replace:: :math:`f_4(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right)`
+.. |def-f4-2| replace:: :math:`+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f4-1| replace:: :math:`z_i = s_i T_{\text{osz}}\left(x_i - x_i^{\text{opt}}\right) \text{for } i = 1,\dots, n\hspace{6cm}`
+.. |trafo-f4-2| replace:: :math:`s_i = \begin{cases} 10 \times 10^{\frac{1}{2} \frac{i-1}{n-1}} & \text{if } z_i >0 \text{ and } i \text{ odd} \\ 10^{\frac{1}{2} \frac{i-1}{n-1}} & \text{otherwise} \end{cases}`
+.. |trafo-f4-3| replace:: :math:`\text{ for } i = 1,\dots, n`
+.. |def-f5| replace:: :math:`f_5(\mathbf{x}) = \gamma(n)\times \sum_{i=1}^{n}\left( 5 \vert s_i \vert - s_i z_i \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f5-1| replace:: :math:`z_i = \begin{cases} x_i & \text{if } x_i^{\mathrm{opt}}x_i < 5^2 \\ x_i^{\mathrm{opt}} & \text{otherwise} \end{cases}`
+.. |trafo-f5-2| replace:: :math:`\text{ for } i=1, \dots, n,\hspace{3.5cm}`
+.. |trafo-f5-3| replace:: :math:`s_i = \text{sign} \left(x_i^{\text{opt}}\right) 10^{\frac{i-1}{n-1}} \text{ for } i=1, \dots, n,\hspace{4cm}`
+.. |trafo-f5-4| replace:: :math:`\mathbf{x}^{\text{opt}} = \mathbf{z}^{\text{opt}} = 5\times \mathbf{1}_{-}^+`
+
+
+.. .. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Your caption here}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
+
+.. table::
+    :widths: 20 50 30
+
+
+    +----------------------------------+------------------+------------------+
+    | **Group 2: Functions with low or moderate conditioning**               |
+    +----------------------------------+------------------+------------------+
+    | Attractive Sector Function       | |def-f6|         | |trafo-f6-1|     |
+    |                                  |                  | |trafo-f6-2|     |
+    |                                  |                  | |trafo-f6-3|     |
+    |                                  |                  | |trafo-f6-4|     |
+    +----------------------------------+------------------+------------------+
+    | Step Ellipsoidal Function        | |def-f7|         | |trafo-f7-1|     |
+    |                                  |                  | |trafo-f7-2|     |
+    |                                  |                  | |trafo-f7-3|     |
+    |                                  |                  | |trafo-f7-4|     |
+    +----------------------------------+------------------+------------------+
+    | Rosenbrock Function, original    | |def-f8|         | |trafo-f8-1|     |
+    |                                  |                  | |trafo-f8-2|     |
+    +----------------------------------+------------------+------------------+
+    | Rosenbrock Function, rotated     | |def-f9|         | |trafo-f9-1|     |
+    |                                  |                  | |trafo-f9-2|     |
+    |                                  |                  | |trafo-f9-3|     |
+    +----------------------------------+------------------+------------------+
+
+
+
+.. |def-f6| replace:: :math:`f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
+.. |trafo-f6-1| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`
+.. |trafo-f6-2| replace:: :math:`\hspace{0.2cm} \text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1.5cm}`
+.. |trafo-f6-3| replace:: :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}`
+.. |trafo-f6-4| replace:: :math:`\text{ for } i=1,\dots, n`
+.. |def-f7| replace:: :math:`f_7(\mathbf{x}) = \gamma(n) \times 0.1 \max\left(\vert \hat{z}_1\vert/10^4, \sum_{i=1}^{n}10^{2\frac{i - 1}{n - 1}}z_i^2\right) + f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f7-1| replace:: :math:`\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},\hspace{4.5cm}`
+.. |trafo-f7-2| replace:: :math:`\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}`
+.. |trafo-f7-3| replace:: :math:`\text{ for } i=1,\dots, n,\hspace{1.5cm}`
+.. |trafo-f7-4| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f8| replace:: :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f8-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`
+.. |trafo-f8-2| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+.. |def-f9| replace:: :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f9-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}`
+.. |trafo-f9-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},`
+.. |trafo-f9-3| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+
+.. .. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Your caption here}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
+
+.. table::
+    :widths: 20 50 30
+
+    +----------------------------------+------------------+------------------+
+    | **Group 3: Functions with high conditioning and unimodal**             |
+    +----------------------------------+------------------+------------------+
+    | Ellipsoidal Function             | |def-f10|        | |trafo-f10|      |
+    +----------------------------------+------------------+------------------+
+    | Discus Function                  | |def-f11|        | |trafo-f11|      |
+    +----------------------------------+------------------+------------------+
+    | Bent Cigar Function              | |def-f12|        | |trafo-f12|      |
+    +----------------------------------+------------------+------------------+
+    | Sharp Ridge Function             | |def-f13|        | |trafo-f13-1|    |
+    |                                  |                  | |trafo-f13-2|    |
+    +----------------------------------+------------------+------------------+
+    | Different Powers Function        | |def-f14|        | |trafo-f14|      |
+    +----------------------------------+------------------+------------------+
+
+
+
+.. |def-f10| replace:: :math:`f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}`
+.. |trafo-f10| replace:: :math:`\mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+.. |def-f11| replace:: :math:`f_{11}(\mathbf{x}) = \gamma(n) \times\left(10^6\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + \sum_{i=\lceil n/40 \rceil+1}^{n}z_i^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f11| replace:: :math:`\mathbf{z} = T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+.. |def-f12| replace:: :math:`f_{12}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 10^6\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2 \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f12| replace:: :math:`\mathbf{z} = \mathbf{R} T_{\text{asy}}^{0.5}(\mathbf{R}((\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+.. |def-f13| replace:: :math:`f_{13}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 100\sqrt{\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2} \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f13-1| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`
+.. |trafo-f13-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f14| replace:: :math:`f_{14}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \vert z_i\vert ^{\left(2 + 4 \times \frac{i-1}{n- 1}\right)} + \mathbf{f}_{\text{opt}}`
+.. |trafo-f14| replace:: :math:`\mathbf{z} = \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+
+
+
+.. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Function descriptions of the multi-modal function group with adequate global structure of the {\ttfamily bbob-largescale} test suite.}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
+
+.. table::
+    :widths: 20 50 30
+
+    +----------------------------------+------------------+------------------+
+    |                                  | Formulation      | Transformations  |
+    +==================================+==================+==================+
+    | **Group 4: Multi-modal functions with adequate global structure**      |
+    +----------------------------------+------------------+------------------+
+    | Rastrigin Function               | |def-f15|        | |trafo-f15-1|    |
+    |                                  |                  | |trafo-f15-2|    |
+    +----------------------------------+------------------+------------------+
+    | Weierstrass Function             | |def-f16-1|      | |trafo-f16-1|    |
+    |                                  | |def-f16-2|      | |trafo-f16-2|    |
+    |                                  |                  | |trafo-f16-3|    |
+    +----------------------------------+------------------+------------------+
+    | Schaffers F7 Function            | |def-f17-1|      | |trafo-f17-1|    |
+    |                                  | |def-f17-2|      | |trafo-f17-2|    |
+    |                                  |                  | |trafo-f17-3|    |
+    +----------------------------------+------------------+------------------+
+    | Schaffers F7 Function,           | |def-f18-1|      | |trafo-f18-1|    |
+    | moderately ill-conditioned       | |def-f18-2|      | |trafo-f18-2|    |
+    |                                  |                  | |trafo-f18-3|    |
+    +----------------------------------+------------------+------------------+
+    | Composite Griewank-Rosenbrock    | |def-f19|        | |trafo-f19-1|    |
+    | Function F8F2                    |                  | |trafo-f19-2|    |
+    |                                  |                  | |trafo-f19-3|    |
+    |                                  |                  | |trafo-f19-4|    |
+    |                                  |                  | |trafo-f19-5|    |
+    +----------------------------------+------------------+------------------+
+
+
+
+.. |def-f15| replace:: :math:`f_{15}(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||\mathbf{z}||^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f15-1| replace:: :math:`\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right) \hspace{5cm}`
+.. |trafo-f15-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f16-1| replace:: :math:`f_{16}(\mathbf{x}) = 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3`
+.. |def-f16-2| replace:: :math:`+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f16-1| replace:: :math:`\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))\hspace{6cm}`
+.. |trafo-f16-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{5.8cm}`
+.. |trafo-f16-3| replace:: :math:`f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)`
+.. |def-f17-1| replace:: :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2`
+.. |def-f17-2| replace:: :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f17-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))`
+.. |trafo-f17-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1cm}`
+.. |trafo-f17-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
+.. |def-f18-1| replace:: :math:`f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2`
+.. |def-f18-2| replace:: :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f18-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))`
+.. |trafo-f18-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{0.5cm}`
+.. |trafo-f18-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
+.. |def-f19| replace:: :math:`f_{19}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f19-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}`
+.. |trafo-f19-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},\hspace{3.4cm}`
+.. |trafo-f19-3| replace:: :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,`
+.. |trafo-f19-4| replace:: :math:`\text{ for } i=1,\dots, n-1,`
+.. |trafo-f19-5| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+
+
+
+.. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Function descriptions of the multi-modal function group with weak global structure of the {\ttfamily bbob-largescale} test suite.}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
+
+.. table::
+    :widths: 20 50 30
+
+    +----------------------------------+------------------+------------------+
+    |                                  | Formulation      | Transformations  |
+    +==================================+==================+==================+
+    | **Group 5: Multi-modal functions with weak global structure**          |
+    +----------------------------------+------------------+------------------+
+    | Schwefel Function                | |def-f20-1|      | |trafo-f20-1|    |
+    |                                  | |def-f20-2|      | |trafo-f20-2|    |
+    |                                  |                  | |trafo-f20-3|    |
+    |                                  |                  | |trafo-f20-4|    |
+    |                                  |                  | |trafo-f20-5|    |
+    +----------------------------------+------------------+------------------+
+    | Gallagher's Gaussian             | |def-f21-1|      | |trafo-f21-01|   |
+    | 101-me Peaks Function            | |def-f21-2|      | |trafo-f21-02|   |
+    |                                  |                  | |trafo-f21-03|   |
+    |                                  |                  | |trafo-f21-04|   |
+    |                                  |                  | |trafo-f21-05|   |
+    |                                  |                  | |trafo-f21-06|   |
+    |                                  |                  | |trafo-f21-07|   |
+    |                                  |                  | |trafo-f21-08|   |
+    |                                  |                  | |trafo-f21-09|   |
+    |                                  |                  | |trafo-f21-10|   |
+    |                                  |                  | |trafo-f21-11|   |
+    |                                  |                  | |trafo-f21-12|   |
+    +----------------------------------+------------------+------------------+
+    | Gallagher's Gaussian             | |def-f22-1|      | |trafo-f22-01|   |
+    | 21-hi Peaks Function             | |def-f22-2|      | |trafo-f22-02|   |
+    |                                  |                  | |trafo-f22-03|   |
+    |                                  |                  | |trafo-f22-04|   |
+    |                                  |                  | |trafo-f22-05|   |
+    |                                  |                  | |trafo-f22-06|   |
+    |                                  |                  | |trafo-f22-07|   |
+    |                                  |                  | |trafo-f22-08|   |
+    |                                  |                  | |trafo-f22-09|   |
+    |                                  |                  | |trafo-f22-10|   |
+    |                                  |                  | |trafo-f22-11|   |
+    |                                  |                  | |trafo-f22-12|   |
+    +----------------------------------+------------------+------------------+
+    | Katsuura Function                | |def-f23-1|      | |trafo-f23-1|    |
+    |                                  | |def-f23-2|      | |trafo-f23-2|    |
+    +----------------------------------+------------------+------------------+
+    | Lunacek bi-Rastrigin Function    | |def-f24-1|      | |trafo-f24-1|    |
+    |                                  | |def-f24-2|      | |trafo-f24-2|    |
+    |                                  |                  | |trafo-f24-3|    |
+    |                                  |                  | |trafo-f24-4|    |
+    |                                  |                  | |trafo-f24-5|    |
+    +----------------------------------+------------------+------------------+
+
+
+.. |def-f20-1| replace:: :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{100n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339`
+.. |def-f20-2| replace:: :math:`+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}`
+.. |trafo-f20-1| replace:: :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},`
+.. |trafo-f20-2| replace:: :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),`
+.. |trafo-f20-3| replace:: :math:`\text{ for } i=1, \dots, n-1,`
+.. |trafo-f20-4| replace:: :math:`\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),`
+.. |trafo-f20-5| replace:: :math:`\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}`
+.. |def-f21-1| replace:: :math:`f_{21}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2`
+.. |def-f21-2| replace:: :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f21-01| replace:: :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`
+.. |trafo-f21-02| replace:: :math:`\mathbf{B} \text{ is a block-diagonal matrix without}`
+.. |trafo-f21-03| replace:: :math:`\text{permuations of the variables.}`
+.. |trafo-f21-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}`
+.. |trafo-f21-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
+.. |trafo-f21-06| replace:: :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}`
+.. |trafo-f21-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}`
+.. |trafo-f21-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.`
+.. |trafo-f21-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}`
+.. |trafo-f21-10| replace:: :math:`\text{from the domain } [-5,5]^n \text{ for }`
+.. |trafo-f21-11| replace:: :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.`
+.. |trafo-f21-12| replace:: :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
+.. |def-f22-1| replace:: :math:`f_{22}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2`
+.. |def-f22-2| replace:: :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f22-01| replace:: :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}`
+.. |trafo-f22-02| replace:: :math:`\mathbf{B} \text{ is a block-diagonal matrix without}`
+.. |trafo-f22-03| replace:: :math:`\text{permuations of the variables.}`
+.. |trafo-f22-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}`
+.. |trafo-f22-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
+.. |trafo-f22-06| replace:: :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}`
+.. |trafo-f22-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}`
+.. |trafo-f22-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.`
+.. |trafo-f22-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}`
+.. |trafo-f22-10| replace:: :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }`
+.. |trafo-f22-11| replace:: :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`
+.. |trafo-f22-12| replace:: :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
+.. |def-f23-1| replace:: :math:`f_{23}(\mathbf{x}) = \left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right)`
+.. |def-f23-2| replace:: :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f23-1| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`
+.. |trafo-f23-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f24-1| replace:: :math:`f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big)`
+.. |def-f24-2| replace:: :math:`+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f24-1| replace:: :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+}`
+.. |trafo-f24-2| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})`
+.. |trafo-f24-3| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`
+.. |trafo-f24-4| replace:: :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},`
+.. |trafo-f24-5| replace:: :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
+
+
+.. raw:: latex
+
+    \end{sidewaystable}
+
+
+
+.. _`COCO framework`: https://github.com/numbbo/coco
+
+.. _`COCO`: https://github.com/numbbo/coco
+
+
+.. _sec:tutorial:
+
+A guide for benchmarking with COCO
+====================================
+The code basis of COCO consists of two parts:
+
+*The experiments part:* It defines the test suites, conducts the performance assessment of solvers and
+provides the output data to be postprocessed. The code is written in C and wrapped in other languages (currently C/C++, Java, Matlab/Octave and Python),
+providing an easy-to-use interface. Apart from the currently implemented test suites, COCO allows
+the definition and integration of new test problems, as well as other functionalities, e.g. data logging options.
+
+*The Postprocessing:* It processes the output data from the experimental part and generates various figures and tables,
+presenting aggregated runtime results.
+
+
+Launching experiments
+---------------------------
+For an installation and usage introduction, we refer to the Getting Started guide of `COCO`_.
+After installation, launching an experiment slightly differs for each language. The ``example_experiment`` file is
+modified so that the solver to be benchmarked is connected to COCO and other parameters of the experiment are set.
+In Python, this becomes as simple as following the next steps:
+
+(i) Import the desired solver to be benchmarked:
+
+  .. code-block:: python
+
+      from scipy.optimize import fmin_slsqp
+
+(ii) Define the experimental setting by specifying the suite, the maximum budget, the maximum number of
+     restarts and other options:
+
+  .. code-block:: python
+
+       suite_name = "bbob-largescale"
+       budget = 1e4  # maxfevals = budget x dimension
+       max_runs = 1e9  # number of (almost) independent trials per problem instance
+       number_of_batches = 20
+       current_batch = 3
+       SOLVER = fmin_slsqp
+       suite_instance = ""
+       suite_options = "dimensions: 2,3,5,10,20,40 function_indices: 1-24"
+
+
+(iii) Add the solver to the restarts loop and set its parameters:
+
+  .. code-block:: python
+
+       for restarts in range(int(max_runs)):
+           remaining_evals = max_evals - fun.evaluations
+                             - fun.evaluations_constraints
+           x0 = center + (restarts > 0) * 0.8 * range_ * (
+                  np.random.rand(fun.dimension) - 0.5)
+           fun(x0)  # can be incommented, if this is done by the solver
+
+           if solver.__name__ in ("fmin_slsqp", ):
+               solver(fun, fun, x0,
+                      iter=1 + remaining_evals / fun.dimension,
+                      iprint=-1)
+
+.. Kostas: Some of the following mentioned again before
+
+The experiment can contain all the problems of the suite, or a subset. By specifying
+function indices, instances or dimensions we can restrict the experiment to a desired set of problems. Also,
+an automatized way for a parallel execution of the experiment is provided: running the experiment in batches
+generates a partition of the set of problems of the suite, and the experiment is performed in parallel for every batch.
+The execution time of the experiment could be restrictive, e.g. when the maximum budget has a large value,
+or when high dimensional problems are to be solved, thus parallelized experiments are strongly recommended.
+In this case, the previously presented experiment could be launched by simply typing::
+
+    python example_experiment.py bbob-largescale 5e4 3 20
+
+Also, it is recommended to start the experiments with small values of budgets, before increasing them gradually.
+
+Postprocessing
+-------------------
+This part of the code, written entirely in Python, aggregates the runtime data to generate various
+figures and tables. Both Single Algorithm results or Comparison results of several algorithms are available.
+Several ways to aggregate the data are used, and each figure is explained in the next section.
+Archived data are also provided by COCO for postprocessing, allowing a comparison of a wide range of solvers
+benchmarked in the past.
+
+.. note:: This part will be more detailed in the final submission. We will give a concrete tutorial-like
+   description of how to use the postprocessing and especially how to use the relatively new feature of COCO
+   to automatically retrieve benchmarking data sets from a set of archived algorithms.
+
+
+
+Different graphs: how to read them, what do we learn from them
+------------------------------------------------------------------
+.. figure:: _figs/ECDF.*
+   :scale: 30
+   :align: center
+
+The ECDF (Empirical Cumulative Distribution Function) figures show the success rate, i.e. the proportion of problems solved,
+versus the running time measured in number of function evaluations divided by dimension, in log-scale. They can refer to a single function (left)
+or to groups of functions (right). In case of unsuccessful trials, the runtime is computed via simulated restarts (bootstrapped ECDF) [HAN2016perf]_. An important
+remark here is that domination of one algorithm over another one in the ECDF does not necessarily mean that the former is faster at every single problem due to the fact that the displayed runtimes are sorted by length and the information about the underlying function is lost in the graphs.
+
+.. figure:: _figs/Scaling.*
+   :scale: 40
+   :align: center
+
+The scaling graphs show the average runtime (aRT) to reach a target function value (e.g. :math:`10^{-8}` far from the optimal function value) measured in number of function
+evaluations divided by dimension in log-scale, versus the dimension. The aRT values are computed as the sum of all function evaluations of the unsuccesful trials,
+plus the sum of runtimes of successful trials, both divided by the number of successful trials [HAN2016perf]_.
+
+Tables with the aRT to reach several target function values are also produced. Finally, in the case of comparison of two solvers, scatter plots
+of aRT values for a number of target f-values in all dimensions are generated.
+
+.. raw:: latex
+
+   \vspace*{2cm}
+   \pagebreak[5]
+   
+   
+
+.. Kostas: add plot?
+
+.. note:: This part will be more detailed in the final submission. We plan, in particular, 
+   to describe how to read the plots (not only what is displayed but also what are the most 
+   important aspects) with some examples that show deficiencies of current large-scale 
+   algorithms and that reveal paths to improve them. One concrete example, we have in mind 
+   (and already prepared the numerical experiments), is the fact that on the linear function,
+   most algorithms perform linear but the separable CMA-ES reveals a performance defect when 
+   its population size increases. The reason for the bad performance is, in this case, the 
+   step size adaptation and a change from the cumulative step size adaptation to two point 
+   adaptation removes the defect.
+
+
+
+Conclusions
+============
+In this paper, we proposed a new benchmarking test suite for large-scale blackbox optimization, based on the existing ``bbob`` test suite. The new ``bbob-largescale`` suite replaces the orthogonal matrices in the original ``bbob`` functions with permuted orthogonal block-diagonal matrices, previously proposed in [AIT2016]_, to get a linear computational complexity in dimension to allow for  experiments in dimensions up to 640 in reasonable time. Additional adjustments to the ``bbob`` functions had to be made (i) to have uniform target values that are comparable, in difficulty, over a wide range of dimensions, (ii) to have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite for the Discus, Bent Cigar and Sharp Ridge functions, and (iii) to not make the Rosenbrock functions significantly easier in higher dimensions due to smaller and smaller distances between the optimum and the search space origin when the dimension increases.
+
+We also showcased how automated benchmarking experiments on the ``bbob-largescale`` test suite can be performed with its implementation in the Comparing Continuous Optimizers platform and gave examples where the graphical benchmarking output revealed deficiencies of current large-scale optimization algorithms and how to address them.
+
+
+
+
+
+
+.. raw:: html
+
+    <H2>Acknowledgments</H2>
+
+.. raw:: latex
+
+    \section*{Acknowledgments}
+
+This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+of the French National Research Agency.
+This work was further supported by a public grant as part of the Investissement d'avenir project, reference ANR-11-LABX-0056-LMH, LabEx LMH, in a joint call with Gaspard Monge Program for optimization, operations research and their interactions with data sciences.
+
+
+
+
+.. ############################# References #########################################
+.. raw:: html
+
+    <H2>References</H2>
+
+.. [AIT2016] O. Ait Elhara, A. Auger, N. Hansen (2016). `Permuted Orthogonal Block-Diagonal
+    Transformation Matrices for Large Scale Optimization Benchmarking`__. GECCO 2016, Jul 2016, Denver,
+    United States.
+.. __: https://hal.inria.fr/hal-01308566
+
+.. [BRO2016] D. Brockhoff, T. Tusar, D. Tusar, T. Wagner, N. Hansen, A. Auger, (2016).
+    `Biobjective Performance Assessment with the COCO Platform`__. *ArXiv e-prints*, `arXiv:1605.01746`__.
+..  __: http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment
+..  __: http://arxiv.org/abs/1605.01746
+
+.. [HAN2009] N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
+   `Real-parameter black-box optimization benchmarking 2009: Noiseless
+   functions definitions`__. `Research Report RR-6829`__, Inria, updated
+   February 2010.
+.. __: http://coco.gforge.inria.fr/
+.. __: https://hal.inria.fr/inria-00362633
+
+.. [HAN2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+  `COCO: The Experimental Procedure`__, *ArXiv e-prints*, `arXiv:1603.08776`__.
+.. __: http://numbbo.github.io/coco-doc/experimental-setup/
+.. __: http://arxiv.org/abs/1603.08776
+
+.. [HAN2016perf] N. Hansen, A. Auger, D. Brockhoff, D. Tusar, T. Tusar (2016).
+    `COCO: Performance Assessment`__. *ArXiv e-prints*, `arXiv:1605.03560`__.
+..  __: http://numbbo.github.io/coco-doc/perf-assessment
+..  __: http://arxiv.org/abs/1605.03560
+
+.. [WHI1996eval] D. Whitley, K. Mathias, S. Rana, and J. Dzubera (1996).
+    `Evaluating Evolutionary Algorithms`__. Artificial Intelligence
+    Volume 85, pp. 245-2761.
+.. __: http://www.cs.colostate.edu/~genitor/1996/aij.pdf
+
+.. [CUTE] I. Bongartz, A. R. Conn, N. Gould, and P. L. Toint (1995).
+   CUTE: Constrained and unconstrained testing environment.
+   ACM Transactions on Mathematical Software (TOMS), 21(1), pp. 123-160.
+
+.. [CUTEst] Nicholas I. M. Gould, Dominique Orban, Philippe L. Toint (2015).
+   CUTEst: a Constrained and Unconstrained Testing Environment with safe threads for mathematical optimization.
+   Computational Optimization and Applications, Volume 60, Issue 3, pp. 545–557.
+
+.. [SAL1996] Ralf Salomon (1996).
+   Re-evaluating genetic algorithm performance under coordinate rotation of benchmark functions.
+   A survey of some theoretical and practical aspects of genetic algorithms.
+   BioSystems 39, pp. 263-278.
+
+.. [HAN2016co] Nikolaus Hansen, Anne Auger, Olaf Mersmann, Tea Tušar, and Dimo Brockhoff (2016).
+   `COCO: A Platform for Comparing Continuous Optimizers in a Black-Box
+   Setting`__, *ArXiv e-prints*, `arXiv:1603.08785`__.
+.. __: http://numbbo.github.io/coco-doc/
+.. __: http://arxiv.org/abs/1603.08785
+
+.. [COPS] A. S. Bondarenko, D. M. Bortz, and J. J. Moré (2000). COPS: Large-scale nonlinearly
+   constrained optimization problems. Technical Report No. ANL/MCS-TM-237. Argonne National Lab., IL, USA.
+
+.. [VAR2018] Konstantinos Varelas, Anne Auger, Dimo Brockhoff, Nikolaus Hansen,
+   Ouassim Ait ElHara, Yann Semet, Rami Kassab, and Frédéric Barbaresco (2018).
+   A Comparative Study of Large-scale Variants of CMA-ES.
+   Accepted for publication at Parallel Problem Solving from Nature (PPSN 2018).
